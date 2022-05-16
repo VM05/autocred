@@ -37,18 +37,29 @@ export const gestion = [
     { id: 3, name: "Ejecutivo Online" },
 ]
 
-export const BASE_URL = "http://dev.autocred.cl/api/"
-export const LOGIN_URL = BASE_URL + "auth/login"
-export const CONTACT_URL = BASE_URL + "utilities/contacts/form"
-export const MARCAS_URL = BASE_URL + "utilities/vehicles/brands"
-export const CONDICIONES_URL = BASE_URL + "utilities/vehicles/conditions"
-export const ANIOS_VEHICULOS_URL = BASE_URL + "utilities/others/years"
-export const CUOTAS_URL = BASE_URL + "utilities/others/terms"
-export const COLORS_URL = BASE_URL + "utilities/others/colors"
-export const NACIONALIDAD_URL = BASE_URL + "utilities/others/nationalities"
-export const RESIDENCIA_URL = BASE_URL + "utilities/others/residenceTypes"
-export const CONTRATO_URL = BASE_URL + "utilities/others/employeeTypes"
-export const PLAZO_CONTRATO_URL = BASE_URL + "utilities/others/contractTypes"
-export const SERVICIOS_URL = BASE_URL + "utilities/others/services"
 
 
+
+export const BASE_URL = "https://dev.autocred.cl"
+export const LOGIN_URL_TOKEN = (token) => BASE_URL + "/ingresar/" + token
+const BASE_URL_API = "https://dev.autocred.cl/api/"
+export const LOGIN_URL = BASE_URL_API + "auth/login"
+export const CONTACT_URL = BASE_URL_API + "utilities/contacts/form"
+export const MARCAS_URL = BASE_URL_API + "utilities/vehicles/brands"
+export const CONDICIONES_URL = BASE_URL_API + "utilities/vehicles/conditions"
+export const ANIOS_VEHICULOS_URL = BASE_URL_API + "utilities/others/years"
+export const CUOTAS_URL = BASE_URL_API + "utilities/others/terms"
+export const COLORS_URL = BASE_URL_API + "utilities/others/colors"
+export const NACIONALIDAD_URL = BASE_URL_API + "utilities/others/nationalities"
+export const RESIDENCIA_URL = BASE_URL_API + "utilities/others/residenceTypes"
+export const CONTRATO_URL = BASE_URL_API + "utilities/others/employeeTypes"
+export const PLAZO_CONTRATO_URL = BASE_URL_API + "utilities/others/contractTypes"
+export const SERVICIOS_URL = BASE_URL_API + "utilities/others/services"
+
+//DEV
+const TOKEN_GOGEMA = "i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG"
+export const URL_GOGEMA = "https://sandboxapiflux.go-gema.com/v1/leads?access-token=" + TOKEN_GOGEMA
+
+//Prod
+// export const TOKEN_GOGEMA = "i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG"
+// export const URL_GOGEMA = "https://sandboxapiflux.go-gema.com/v1/leads?access-token=" + TOKEN_GOGEMA
