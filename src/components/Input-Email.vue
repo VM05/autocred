@@ -20,6 +20,7 @@
       @mouseover="hover = true"
       @mouseleave="hover = false"
       :id="id"
+      @blur="handler"
     />
     <span class="text-red-600 block">{{ validated }}</span>
   </div>
@@ -34,6 +35,10 @@ defineProps({
   id: String,
   label: String,
 });
+const emit = defineEmits(["update:email"]);
+const handler = (e) => {
+  emit("update:email", e.target.value);
+};
 const email = ref("");
 const focus = ref(false);
 const hover = ref(false);

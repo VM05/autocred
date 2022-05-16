@@ -9,6 +9,8 @@
       cols="40"
       class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full"
       :id="id"
+      required
+      @blur="handler"
     ></textarea>
   </div>
 </template>
@@ -18,4 +20,8 @@ defineProps({
   id: String,
   label: String,
 });
+const emit = defineEmits(["update:textArea"]);
+const handler = (e) => {
+  emit("update:textArea", e.target.value);
+};
 </script>

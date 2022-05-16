@@ -43,6 +43,7 @@
                   'text-white bg-primary-900': active,
                   'text-primary-900': !active,
                 }"
+                @click="handler(brand.name)"
               >
                 <span
                   class="block truncate"
@@ -81,10 +82,15 @@ import {
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
 import { servicios } from "../assets/helpers/API";
+const emit = defineEmits(["update:servicio"]);
+
 defineProps({
   data: {},
   label: String,
 });
+const handler = (element) => {
+  emit("update:servicio", element);
+};
 let selected = ref(servicios[0]);
 let query = ref("");
 let filteredBrands = computed(() =>

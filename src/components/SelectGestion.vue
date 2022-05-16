@@ -43,6 +43,7 @@
                   'text-white bg-primary-900': active,
                   'text-primary-900': !active,
                 }"
+                @click="handler(brand.name)"
               >
                 <span
                   class="block truncate"
@@ -87,6 +88,8 @@ defineProps({
 });
 let selected = ref(gestion[0]);
 let query = ref("");
+const emit = defineEmits(["update:gestion"]);
+const handler = (element) => emit("update:gestion", element);
 let filteredBrands = computed(() =>
   query.value === ""
     ? gestion

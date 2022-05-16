@@ -18,6 +18,12 @@
           id="password"
           @update:text="(e) => (loginForm.password = e)"
         />
+        <Paragraph
+          v-if="errorForm"
+          class="text-red-700 justify-self-center mb-2"
+        >
+          Rut y/o Contraseña ingresados no son válidos
+        </Paragraph>
         <Button1
           text="Ingresar"
           secondary
@@ -40,9 +46,6 @@
             class="justify-self-center w-fit"
           />
         </router-link>
-        <Paragraph v-if="errorForm" class="text-red-700 justify-self-center">
-          Problemas al iniciar sesión
-        </Paragraph>
       </div>
     </div>
   </div>
@@ -50,13 +53,14 @@
 
 <script setup>
 import { reactive, ref } from "vue";
+import router from "../router/index";
 import Heading1 from "../components/Heading.vue";
 import InputRut1 from "../components/Input-Rut.vue";
 import Input from "./Form/Input.vue";
 import Button1 from "./Button.vue";
 import Paragraph from "../components/Paragraph.vue";
 import axios from "axios";
-import { LOGIN_URL } from "../assets/helpers/API";
+import { LOGIN_URL, LOGIN_URL_TOKEN } from "../assets/helpers/API";
 import Loading from "./Loading.vue";
 
 const loading = ref(false);
@@ -67,12 +71,16 @@ const handleLogin = async () => {
   try {
     const response = await axios.post(LOGIN_URL, loginForm);
     if (response.data.success) {
+      console.log("CORRECTO");
       loading.value = false;
-      console.log(response.data.access_token);
+      errorForm.value = false;
+      console.log(LOGIN_URL_TOKEN(response.data.token_id));
+      // router.push(LOGIN_URL_TOKEN(response.data.token_id));
     } else {
-      console.log("error");
+      console.log("ELSE ERROR");
     }
   } catch (error) {
+    console.log("CATCH ERROR");
     loading.value = false;
     errorForm.value = true;
   }
