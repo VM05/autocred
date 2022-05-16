@@ -87,7 +87,7 @@
               <div>
                 <img
                   class="h-8 w-auto"
-                  src="/assets/img/autocred.png"
+                  src="../assets/img/autocred.png"
                   alt="Workflow"
                 />
               </div>
