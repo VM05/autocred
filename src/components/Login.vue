@@ -68,6 +68,7 @@ const handleLogin = async () => {
     const response = await axios.post(LOGIN_URL, loginForm);
     if (response.data.success) {
       loading.value = false;
+      console.log(response.data.access_token);
     } else {
       console.log("error");
     }
