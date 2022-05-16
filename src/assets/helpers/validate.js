@@ -10,3 +10,8 @@ export function isObjEmpty(obj) {
     }
     return true;
 }
+
+export function formEmpty(obj) {
+    const stringArray = Object.values(obj)
+    return stringArray.includes("")
+}
