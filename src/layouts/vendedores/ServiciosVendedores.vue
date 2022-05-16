@@ -1,0 +1,22 @@
+<template>
+  <div class="mb-28 grid">
+    <Heading content="Servicio para vendedores" class="mb-8" />
+    <ServiciosList :data="serviciosVendores" right class="mb-20" />
+    <a href="#contacto" class="justify-self-center">
+      <ButtonVue
+        text="Contactanos"
+        class="justify-self-center w-fit"
+        secondary
+      />
+    </a>
+  </div>
+</template>
+
+<script setup>
+import Heading from "../../components/Heading.vue";
+import ServiciosList from "../../components/ServiciosList.vue";
+import ButtonVue from "../../components/Button.vue";
+import { serviciosVendores } from "../../assets/helpers/constants";
+</script>
+
+<style scoped></style>
