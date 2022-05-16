@@ -26,6 +26,7 @@
         @focusin="focus = true"
         @focusout="focus = false"
         :id="id"
+        @blur="handler"
       />
     </div>
     <input
@@ -40,6 +41,8 @@
       :id="id"
       :value="value"
       :disabled="disabled"
+      @blur="handler"
+      required
     />
     <input
       v-else
@@ -53,6 +56,7 @@
       :id="id"
       :value="value"
       :disabled="disabled"
+      @blur="handler"
     />
   </div>
 </template>
@@ -69,6 +73,10 @@ defineProps({
   disabled: Boolean,
   password: Boolean,
 });
+const emit = defineEmits(["update:text"]);
+const handler = (e) => {
+  emit("update:text", e.target.value);
+};
 const hover = ref(false);
 let focus = ref(false);
 </script>

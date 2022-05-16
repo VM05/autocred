@@ -1,38 +1,87 @@
 <template>
   <div class="bg-white shadow-xl py-6 px-12 rounded-xl w-fit my-0 mx-auto">
     <Heading1 content="Iniciar Sesion" headingType="h3" class="border-b pb-2" />
-    <div
-      class="grid items-center justify-items-center gap-4 border-b pb-4 mb-6"
-    >
-      <InputRut1 label="Rut" id="rut" />
-      <Input password label="Contraseña" id="password" />
-      <Button1 text="Ingresar" secondary class="justify-self-center w-fit" />
-      <router-link
-        to="/"
-        class="text-primary-900 underline font-semibold text-base"
+    <Loading v-if="loading" class="my-4" />
+    <div v-else="!loading">
+      <form
+        class="grid items-center justify-items-center gap-4 border-b pb-4 mb-6"
+        @submit.prevent="handleLogin"
       >
-        Olvide mi contraseña
-      </router-link>
-    </div>
-    <div class="grid items-center gap-4">
-      <Paragraph> Aun no tienes tu cuenta en Autocred?</Paragraph>
-      <router-link to="/registro" class="justify-self-center w-fit">
-        <Button1
-          text="Crear Cuenta"
-          outlineSecondary
-          class="justify-self-center w-fit"
+        <InputRut1
+          label="Rut"
+          id="rut"
+          @update:rut="(e) => (loginForm.dni = e)"
         />
-      </router-link>
+        <Input
+          password
+          label="Contraseña"
+          id="password"
+          @update:text="(e) => (loginForm.password = e)"
+        />
+        <Button1
+          text="Ingresar"
+          secondary
+          class="justify-self-center w-fit"
+          type="submit"
+        />
+        <router-link
+          to="/"
+          class="text-primary-900 underline font-semibold text-base"
+        >
+          Olvide mi contraseña
+        </router-link>
+      </form>
+      <div class="grid items-center gap-4">
+        <Paragraph> Aun no tienes tu cuenta en Autocred?</Paragraph>
+        <router-link to="/registro" class="justify-self-center w-fit">
+          <Button1
+            text="Crear Cuenta"
+            outlineSecondary
+            class="justify-self-center w-fit"
+          />
+        </router-link>
+        <Paragraph v-if="errorForm" class="text-red-700 justify-self-center">
+          Problemas al iniciar sesión
+        </Paragraph>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { reactive, ref } from "vue";
 import Heading1 from "../components/Heading.vue";
 import InputRut1 from "../components/Input-Rut.vue";
 import Input from "./Form/Input.vue";
 import Button1 from "./Button.vue";
 import Paragraph from "../components/Paragraph.vue";
+import axios from "axios";
+import { LOGIN_URL } from "../assets/helpers/API";
+import Loading from "./Loading.vue";
+
+const loading = ref(false);
+const errorForm = ref(false);
+
+const handleLogin = async () => {
+  loading.value = true;
+  try {
+    const response = await axios.post(LOGIN_URL, loginForm);
+    if (response.data.success) {
+      loading.value = false;
+    } else {
+      console.log("error");
+    }
+  } catch (error) {
+    loading.value = false;
+    errorForm.value = true;
+  }
+};
+
+const loginForm = reactive({
+  dni: "",
+  password: "",
+  remember_me: "1",
+});
 </script>
 
 <style lang="scss" scoped></style>

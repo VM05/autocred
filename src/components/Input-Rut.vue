@@ -23,6 +23,7 @@
       @mouseleave="hover = false"
       @focusout="format"
       :id="id"
+      @blur="handler"
     />
     <span class="text-red-600 block">{{ validated }}</span>
   </div>
@@ -31,6 +32,10 @@
 <script setup>
 import { ref, computed, onUpdated, unref } from "vue";
 import { validateRut, RutFormat, formatRut } from "@fdograph/rut-utilities";
+const emit = defineEmits(["update:rut"]);
+const handler = (e) => {
+  emit("update:rut", e.target.value);
+};
 defineProps({
   placeholder: String,
   hoverText: String,

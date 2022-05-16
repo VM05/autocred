@@ -11,7 +11,12 @@
       'py-2': user,
     }"
   >
-    <button class="font-medium" :class="{ 'text-sm': user }">
+    <button
+      class="font-medium"
+      :class="{ 'text-sm': user }"
+      :type="type"
+      :disabled="disabled"
+    >
       {{ text }}
     </button>
     <UserIcon class="h-5 w-5" v-if="user" />
@@ -27,6 +32,8 @@ defineProps({
   secondary: Boolean,
   outlinePrimary: Boolean,
   outlineSecondary: Boolean,
+  type: String,
+  disabled: Boolean,
 });
 </script>
 
