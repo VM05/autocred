@@ -74,8 +74,7 @@ const handleLogin = async () => {
       console.log("CORRECTO");
       loading.value = false;
       errorForm.value = false;
-      console.log(LOGIN_URL_TOKEN(response.data.token_id));
-      // router.push(LOGIN_URL_TOKEN(response.data.token_id));
+      router.push(LOGIN_URL_TOKEN(response.data.token_id));
     } else {
       console.log("ELSE ERROR");
     }
