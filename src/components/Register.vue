@@ -61,6 +61,13 @@
         Ha ocurrido un error, revisa que tus datos sean validos o si ya posees
         una cuenta
       </Paragraph>
+      <Paragraph
+        class="text-red-700 justify-self-center mb-2"
+        v-if="errorForm"
+        v-for="error in errorList"
+      >
+        {{ error[0] }}
+      </Paragraph>
     </form>
   </div>
 </template>
@@ -85,11 +92,12 @@ const registerForm = reactive({
   password: "",
   password_confirmation: "",
 });
-const errorPass = ref(false);
+
+const errorList = ref([]);
+
 const errorPassword = computed(() =>
   registerForm.password == registerForm.password_confirmation ? false : true
 );
-
 const handleForm = async () => {
   errorForm.value = false;
   try {
@@ -101,6 +109,8 @@ const handleForm = async () => {
   } catch (error) {
     errorForm.value = true;
     console.log("Catch", error);
+    console.log(error.response.data.errors);
+    errorList.value = error.response.data.errors;
   }
 };
 </script>
