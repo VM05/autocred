@@ -53,7 +53,6 @@
 
 <script setup>
 import { reactive, ref } from "vue";
-import router from "../router/index";
 import Heading1 from "../components/Heading.vue";
 import InputRut1 from "../components/Input-Rut.vue";
 import Input from "./Form/Input.vue";
@@ -70,11 +69,11 @@ const handleLogin = async () => {
   loading.value = true;
   try {
     const response = await axios.post(LOGIN_URL, loginForm);
-    if (response.data.success) {
+    if (await response.data.success) {
       console.log("CORRECTO");
       loading.value = false;
       errorForm.value = false;
-      router.push(LOGIN_URL_TOKEN(response.data.token_id));
+      window.open(LOGIN_URL_TOKEN(response.data.token_id));
     } else {
       console.log("ELSE ERROR");
     }
