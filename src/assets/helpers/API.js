@@ -1,21 +1,3 @@
-export const brandsCars = [
-    { id: 1, name: "Chevrolet" },
-    { id: 2, name: "Nissan" },
-    { id: 3, name: "Suzuki" },
-    { id: 4, name: "Hyundai" },
-    { id: 5, name: "KIA" },
-    { id: 6, name: "Renault" },
-];
-
-export const models = [
-    { id: 1, name: "Chevrolet", models: [{ name: 'Sail' }, { name: 'Sonic' }, { name: 'Camaro' }] },
-    { id: 2, name: "Nissan", models: [{ name: 'Versa' }, { name: 'Qasqai' }, { name: 'Trail' }] },
-    { id: 3, name: "Suzuki", models: [{ name: 'Jimny' }, { name: 'Spresso' }, { name: 'Ignis' }] },
-    { id: 4, name: "Hyundai", models: [{ name: 'Accent' }, { name: 'Tucson' }, { name: 'i10' }] },
-    { id: 5, name: "KIA", models: [{ name: 'Sorento' }, { name: 'Morning' }, { name: 'Rio 5' }] },
-    { id: 6, name: "Renault", models: [{ name: 'Clio' }, { name: 'Kwid' }, { name: 'Duster' }] },
-];
-
 export const direcciones = [
     { name: 'R.Metropolitana', direccion: 'Los Militares 5001, of 404, Las Condes', telefono: '+5692342423', correo: 'contacto@autocred.cl', },
     { name: 'Curico', direccion: 'Direccion Curico 1000', telefono: '+5692342423', correo: 'contacto@autocred.cl', },
@@ -37,6 +19,11 @@ export const gestion = [
     { id: 3, name: "Ejecutivo Online" },
 ]
 
+export const typeCredit = [
+    { value: "conventional", name: "Credito Convencional" },
+    { value: "smart", name: "Compra Inteligente" },
+];
+
 
 
 
@@ -44,6 +31,7 @@ export const BASE_URL = "https://dev.autocred.cl"
 export const LOGIN_URL_TOKEN = (token) => BASE_URL + "/ingresar/" + token
 const BASE_URL_API = "https://dev.autocred.cl/api/"
 export const LOGIN_URL = BASE_URL_API + "auth/login"
+export const REGISTER_URL = BASE_URL_API + "auth/register"
 export const CONTACT_URL = BASE_URL_API + "utilities/contacts/form"
 export const MARCAS_URL = BASE_URL_API + "utilities/vehicles/brands"
 export const CONDICIONES_URL = BASE_URL_API + "utilities/vehicles/conditions"
@@ -55,7 +43,7 @@ export const RESIDENCIA_URL = BASE_URL_API + "utilities/others/residenceTypes"
 export const CONTRATO_URL = BASE_URL_API + "utilities/others/employeeTypes"
 export const PLAZO_CONTRATO_URL = BASE_URL_API + "utilities/others/contractTypes"
 export const SERVICIOS_URL = BASE_URL_API + "utilities/others/services"
-
+export const EVALUACION_URL_1 = BASE_URL_API + "external/evaluations/simulation"
 //DEV
 const TOKEN_GOGEMA = "i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG"
 export const URL_GOGEMA = "https://sandboxapiflux.go-gema.com/v1/leads?access-token=" + TOKEN_GOGEMA

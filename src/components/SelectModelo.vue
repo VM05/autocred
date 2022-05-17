@@ -21,7 +21,7 @@
             :key="model.id"
             :value="model"
             v-slot="{ selected, active }"
-            @click="changeModelo(model)"
+            @click="handler(model)"
           >
             <li
               class="cursor-pointer select-none relative py-2 pl-10 pr-4"
@@ -66,7 +66,11 @@ import {
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
 import { useSimuladorStore } from "../stores/simulador";
 const useSimulador = useSimuladorStore();
-
+const emit = defineEmits(["update:modelo"]);
+const handler = (element) => {
+  changeModelo(element);
+  emit("update:modelo", element);
+};
 let selected = ref({ name: "Modelo" });
 
 const changeModelo = (value) => {

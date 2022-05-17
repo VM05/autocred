@@ -35,6 +35,7 @@
               :key="index"
               :value="anio"
               v-slot="{ selected, active }"
+              @click="handler(anio)"
             >
               <li
                 class="cursor-pointer select-none relative py-2 pl-10 pr-4"
@@ -69,7 +70,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import {
   Combobox,
   ComboboxInput,
@@ -79,9 +80,22 @@ import {
   TransitionRoot,
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
-const { data } = await useFetch(
-  "http://dev.autocred.cl/api/utilities/others/years"
-);
+import axios from "axios";
+const emit = defineEmits(["update:anio"]);
+const data = ref();
+const handler = (element) => emit("update:anio", element);
+onMounted(async () => {
+  try {
+    const marcas = await axios.get(
+      "https://dev.autocred.cl/api/utilities/others/years"
+    );
+    data.value = await marcas.data;
+  } catch (error) {
+    console.log("error");
+    console.log(error);
+  }
+});
+
 let selected = ref(2022);
 let query = ref("");
 </script>

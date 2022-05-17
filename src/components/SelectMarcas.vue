@@ -21,7 +21,7 @@
             :key="brand.id"
             :value="brand"
             v-slot="{ selected, active }"
-            @click="changeMarca(brand)"
+            @click="handler(brand)"
           >
             <li
               class="cursor-pointer select-none relative py-2 pl-10 pr-4"
@@ -67,20 +67,19 @@ import {
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
 import { useSimuladorStore } from "../stores/simulador";
 const useSimulador = useSimuladorStore();
-
+const emit = defineEmits(["update:marca"]);
+const handler = (element) => {
+  changeMarca(element);
+  emit("update:marca", element);
+};
 const data = ref();
 let selected = ref({ name: "Marca" });
-
-// //State Global
-// const marca = useMarca();
-// const modelos = useModelos();
 
 const changeMarca = (value) => {
   useSimulador.marca = value;
 };
 
 onMounted(async () => {
-  console.log("montado");
   try {
     const marcas = await axios.get(
       "https://dev.autocred.cl/api/utilities/vehicles/brands"

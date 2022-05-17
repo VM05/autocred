@@ -15,3 +15,12 @@ export function formEmpty(obj) {
     const stringArray = Object.values(obj)
     return stringArray.includes("")
 }
+
+export function deleteSigns(string) {
+    const response = string.replace(/[$.]/g, '');
+    return response
+}
+
+// function formatNumbers (array:Array){
+//     array.
+// }

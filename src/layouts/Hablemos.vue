@@ -96,20 +96,71 @@ const handleForm = (e) => {
   }
 };
 
+// const sendFormGoGema = async () => {
+//   try {
+//     const response = await axios.post(URL_GOGEMA, formContacto,{
+//       headers: {
+//         "Access-Control-Allow-Origin": "*",
+//         "X-Requested-With": "XMLHttpRequest",
+//         "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+//         "Access-Control-Allow-Headers":
+//           "Content-Type, Authorization, X-Requested-With",
+//         "Access-Control-Expose-Headers": "Content-Length, X-JSON",
+//       },
+//     });
+//     console.log(response);
+//     // if (response) {
+//     //   console.log("Enviado");
+//     //   console.log(response.data);
+//     // } else {
+//     //   console.log("error else");
+//     // }
+//   } catch (error) {
+//     console.log("error catch");
+//   }
+// };
+
+// const sendFormGoGema = async () => {
+//   try {
+//     fetch(URL_GOGEMA, {
+//       method: "POST",
+//       headers: {
+//         Accept: "application/json",
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(formContacto),
+//     })
+//       .then((response) => response.json())
+//       .then((data) => console.log(data));
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
 const sendFormGoGema = async () => {
   try {
-    const response = await axios.post(URL_GOGEMA, formContacto, {
-      headers: { "Access-Control-Allow-Origin": "*" },
+    axios({
+      method: "post",
+      url: "https://sandboxapiflux.go-gema.com/v1/leads",
+      withCredentials: false,
+      params: {
+        "access-token": "i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG",
+      },
+      data: {
+        nombres: "christian",
+        apellidos: "escobar",
+        email: "chris@chris.com",
+        telefono: "+56977031155",
+        mensaje: "a",
+        procedencia_id: 100,
+        tipo_contacto: "web",
+        servicios: "Transferencias",
+        canal_atencion: "Modulo presencial",
+      },
     });
-    console.log(response);
-    // if (response) {
-    //   console.log("Enviado");
-    //   console.log(response.data);
-    // } else {
-    //   console.log("error else");
-    // }
+    console.log("Enviado");
   } catch (error) {
-    console.log("error catch");
+    console.log("Error Catch");
   }
 };
 </script>

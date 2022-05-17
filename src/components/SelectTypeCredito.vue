@@ -23,18 +23,19 @@
             class="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-primary-700 focus:outline-none sm:text-sm z-10"
           >
             <div
-              v-if="data.length === 0 && query !== ''"
+              v-if="typeCredit.length === 0 && query !== ''"
               class="cursor-default select-none relative py-2 px-4 text-gray-700"
             >
               No encontrado
             </div>
 
             <ComboboxOption
-              v-for="(type, index) in data"
+              v-for="(type, index) in typeCredit"
               as="template"
               :key="index"
               :value="type"
               v-slot="{ selected, active }"
+              @click="handler(type)"
             >
               <li
                 class="cursor-pointer select-none relative py-2 pl-10 pr-4"
@@ -79,12 +80,11 @@ import {
   TransitionRoot,
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
+import { typeCredit } from "../assets/helpers/API";
+const emits = defineEmits(["update:type"]);
 
-const data = [
-  { value: "conventional", name: "Credito Convencional" },
-  { value: "smart", name: "Compra Inteligente" },
-];
+const handler = (element) => emits("update:type", element);
 
-let selected = ref(data[0]);
+let selected = ref(typeCredit[0]);
 let query = ref("");
 </script>
