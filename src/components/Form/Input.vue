@@ -27,6 +27,7 @@
         @focusout="focus = false"
         :id="id"
         @blur="handler"
+        required
       />
     </div>
     <input
@@ -57,6 +58,7 @@
       :value="value"
       :disabled="disabled"
       @blur="handler"
+      required
     />
   </div>
 </template>
