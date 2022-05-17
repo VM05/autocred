@@ -30,12 +30,12 @@
           class="justify-self-center w-fit"
           type="submit"
         />
-        <router-link
-          to="/"
+        <a
+          href="https://autocred.cl/password/reset"
           class="text-primary-900 underline font-semibold text-base"
         >
           Olvide mi contraseña
-        </router-link>
+        </a>
       </form>
       <div class="grid items-center gap-4">
         <Paragraph> Aun no tienes tu cuenta en Autocred?</Paragraph>
