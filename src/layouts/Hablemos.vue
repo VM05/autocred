@@ -47,6 +47,7 @@
           </div>
         </div>
       </form>
+      <button @click="sendFormGoGema">GOGEMA</button>
     </div>
   </div>
 </template>
@@ -63,6 +64,7 @@ import { reactive, ref, watch } from "vue";
 import { formEmpty } from "../assets/helpers/validate";
 import { gestion, servicios, URL_GOGEMA } from "../assets/helpers/API";
 import axios from "axios";
+import qs from "qs";
 
 const formContacto = reactive({
   nombres: "",
@@ -82,10 +84,6 @@ watch(formContacto, () => {
   isFormComplete.value = formEmpty(formContacto);
 });
 
-// const openModal = () => {
-//   modal.value = true;
-// };
-
 const handleForm = (e) => {
   e.preventDefault();
   if (formEmpty(formContacto)) {
@@ -96,71 +94,16 @@ const handleForm = (e) => {
   }
 };
 
-// const sendFormGoGema = async () => {
-//   try {
-//     const response = await axios.post(URL_GOGEMA, formContacto,{
-//       headers: {
-//         "Access-Control-Allow-Origin": "*",
-//         "X-Requested-With": "XMLHttpRequest",
-//         "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
-//         "Access-Control-Allow-Headers":
-//           "Content-Type, Authorization, X-Requested-With",
-//         "Access-Control-Expose-Headers": "Content-Length, X-JSON",
-//       },
-//     });
-//     console.log(response);
-//     // if (response) {
-//     //   console.log("Enviado");
-//     //   console.log(response.data);
-//     // } else {
-//     //   console.log("error else");
-//     // }
-//   } catch (error) {
-//     console.log("error catch");
-//   }
-// };
-
-// const sendFormGoGema = async () => {
-//   try {
-//     fetch(URL_GOGEMA, {
-//       method: "POST",
-//       headers: {
-//         Accept: "application/json",
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(formContacto),
-//     })
-//       .then((response) => response.json())
-//       .then((data) => console.log(data));
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
 const sendFormGoGema = async () => {
   try {
-    axios({
-      method: "post",
-      url: "https://sandboxapiflux.go-gema.com/v1/leads",
-      withCredentials: false,
-      params: {
-        "access-token": "i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG",
-      },
-      data: {
-        nombres: "christian",
-        apellidos: "escobar",
-        email: "chris@chris.com",
-        telefono: "+56977031155",
-        mensaje: "a",
-        procedencia_id: 100,
-        tipo_contacto: "web",
-        servicios: "Transferencias",
-        canal_atencion: "Modulo presencial",
-      },
-    });
-    console.log("Enviado");
+    const resp = await axios.post(
+      "https://sandboxapiflux.go-gema.com/v1/leads?access-token=i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG",
+      qs.stringify(formContacto)
+    );
+    console.log(resp.data);
   } catch (error) {
-    console.log("Error Catch");
+    console.log(error);
+    console.log(error.response.data);
   }
 };
 </script>
