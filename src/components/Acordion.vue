@@ -17,28 +17,36 @@
             />
           </DisclosureButton>
           <DisclosurePanel class="px-4 pt-4 pb-2 text-sm text-gray-500">
-            <div class="title flex justify-between w-full">
-              <span>CAE</span>
-              <span>{{ cuota.indicator }} %</span>
-            </div>
-            <div class="title flex justify-between w-full">
-              <span>Tasa de interés</span>
-              <span>{{ cuota.interest_rate }} %</span>
-            </div>
-            <div class="title flex justify-between w-full">
-              <span>Monto total a financiar</span>
-              <span>$ {{ cuota.loan_amount }}</span>
-            </div>
-            <div class="title flex justify-between w-full">
-              <span>Costo total del crédito</span>
-              <span>$ {{ cuota.loan_total }}</span>
-            </div>
-            <div
-              class="title flex justify-between w-full"
-              :v-if="cuota.type == 'smart'"
-            >
-              <span>Valor última cuota (VFMG)</span>
-              <span>$ {{ cuota.last_payment }}</span>
+            <div class="grid">
+              <div class="title flex justify-between w-full">
+                <span>CAE</span>
+                <span>{{ cuota.indicator }} %</span>
+              </div>
+              <div class="title flex justify-between w-full">
+                <span>Tasa de interés</span>
+                <span>{{ cuota.interest_rate }} %</span>
+              </div>
+              <div class="title flex justify-between w-full">
+                <span>Monto total a financiar</span>
+                <span>$ {{ cuota.loan_amount }}</span>
+              </div>
+              <div class="title flex justify-between w-full">
+                <span>Costo total del crédito</span>
+                <span>$ {{ cuota.loan_total }}</span>
+              </div>
+              <div
+                class="title flex justify-between w-full"
+                v-if="creditoSmart"
+              >
+                <span>Valor última cuota (VFMG)</span>
+                <span>$ {{ cuota.last_payment }}</span>
+              </div>
+              <Button
+                text="Me interesa"
+                secondary
+                class="mt-4"
+                @click.prevent="handleAccordion(cuota.term)"
+              />
             </div>
           </DisclosurePanel>
         </Disclosure>
@@ -51,8 +59,14 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import { ChevronUpIcon } from "@heroicons/vue/solid";
 import { camposSimulacion } from "../assets/helpers/constants";
+import Button from "./Button.vue";
+import { ref } from "vue";
 
+const creditoSmart = ref(false);
+const emits = defineEmits(["select:term"]);
+const handleAccordion = (e) => emits("select:term", e);
 const props = defineProps({
   cuotasSimulacion: Array,
+  typeCredit: String,
 });
 </script>

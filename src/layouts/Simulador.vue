@@ -10,66 +10,149 @@
         <Heading1 content="Simula tu credito" white />
         <Heading1 content="Con la mejor cuota" white />
       </div>
-      <form class="card shadow-2xl px-6 py-8" @submit.prevent="handleForm">
-        <div class="title border-b pb-4 border-primary-900">
-          <Heading1 content="Evaluación de Crédito" headingType="h3" />
-        </div>
-        <div class="content py-6 grid grid-cols-3 gap-6 border-b">
-          <div class="col-span-1">
-            <InputRut1
-              placeholder="RUT"
-              class="w-full"
-              @update:rut="(e) => (formSimulador.dni = e)"
-            />
-            <div class="flex">
-              <SelectMarcas1
-                @update:marca="(e) => (formSimulador.vehicle_brand = e.name)"
-              />
-              <SelectModelo1
-                @update:modelo="(e) => (formSimulador.vehicle_model = e.name)"
-              />
-            </div>
-            <div class="flex">
-              <Input
-                placeholder="Version"
-                @update:text="(e) => (formSimulador.vehicle_version = e)"
-              />
 
-              <SelectAnios1
-                @update:anio="(e) => (formSimulador.vehicle_year = e)"
+      <div class="card shadow-2xl px-6 py-8">
+        <Transition>
+          <form @submit.prevent="handleForm" v-show="formActive">
+            <div class="title border-b pb-4 border-primary-900">
+              <Heading1 content="Evaluación de Crédito" headingType="h3" />
+            </div>
+            <div class="content py-6 grid grid-cols-3 gap-6 border-b">
+              <div class="col-span-1">
+                <InputRut1
+                  placeholder="RUT"
+                  class="w-full"
+                  @update:rut="(e) => (formSimulador.dni = e)"
+                />
+                <div class="flex">
+                  <SelectMarcas1
+                    @update:marca="
+                      (e) => (formSimulador.vehicle_brand = e.name)
+                    "
+                  />
+                  <SelectModelo1
+                    @update:modelo="
+                      (e) => (formSimulador.vehicle_model = e.name)
+                    "
+                  />
+                </div>
+                <div class="flex">
+                  <Input
+                    placeholder="Version"
+                    @update:text="(e) => (formSimulador.vehicle_version = e)"
+                  />
+
+                  <SelectAnios1
+                    @update:anio="(e) => (formSimulador.vehicle_year = e)"
+                  />
+                </div>
+                <SelectTypeCredito1
+                  @update:type="(e) => (formSimulador.type = e.value)"
+                />
+              </div>
+              <div class="col-span-1 px-5 border-x grid gap-6">
+                <div class="price">
+                  <Heading1 content="Valor del vehiculo" headingType="h4" />
+                  <SliderRange1
+                    @update:slider="(e) => (formSimulador.vehicle_price = e)"
+                    valorTotal
+                  />
+                </div>
+                <div class="pie">
+                  <Heading1 content="Valor del pie" headingType="h4" />
+                  <SliderRange1
+                    @update:slider="(e) => (formSimulador.requested_amount = e)"
+                  />
+                </div>
+              </div>
+              <div class="grid place-content-center" v-if="loading">
+                <Paragraph class="text-center mb-8">
+                  Estamos evaluando su credito, espere un momento
+                </Paragraph>
+                <Loading />
+              </div>
+              <div class="col-span-1 flex flex-col justify-between" v-else>
+                <Acordion1
+                  :cuotasSimulacion="dataCuotas"
+                  :typeCredit="formSimulador.type"
+                  @select:term="(e) => handleTransition(e)"
+                />
+                <!-- <Button1 text="Enviar" outlinePrimary /> -->
+              </div>
+            </div>
+            <div class="footer grid justify-center py-4">
+              <Button1 text="Evaluar  crédito" secondary />
+            </div>
+          </form>
+        </Transition>
+        <Transition>
+          <form @submit.prevent="handleForm2" v-show="formActive2">
+            <div class="title border-b pb-4 border-primary-900">
+              <Heading1
+                content="Evaluación de Crédito | Datos Personales"
+                headingType="h3"
               />
             </div>
-            <SelectTypeCredito1
-              @update:type="(e) => (formSimulador.type = e.value)"
-            />
-          </div>
-          <div class="col-span-1 px-5 border-x grid gap-6">
-            <div class="price">
-              <Heading1 content="Valor del vehiculo" headingType="h4" />
-              <SliderRange1
-                @update:slider="(e) => (formSimulador.vehicle_price = e)"
-                valorTotal
-              />
+            <div class="content py-6 grid grid-cols-2 gap-6 border-b">
+              <div class="col-span-1">
+                <div class="flex">
+                  <Input
+                    placeholder="Nombre"
+                    @update:text="(e) => (formSimulador.vehicle_version = e)"
+                  />
+                </div>
+                <div class="flex">
+                  <Input
+                    placeholder="Apellido Paterno"
+                    @update:text="(e) => (formSimulador.vehicle_version = e)"
+                  />
+                  <Input
+                    placeholder="Apellido Materno"
+                    @update:text="(e) => (formSimulador.vehicle_version = e)"
+                  />
+                </div>
+                <div class="flex">
+                  <InputEmail
+                    placeholder="Email"
+                    @update:text="(e) => (formSimulador.vehicle_version = e)"
+                  />
+                  <Input
+                    isPhone
+                    placeholder="Telefono"
+                    @update:text="(e) => (formSimulador.vehicle_version = e)"
+                  />
+                </div>
+              </div>
+              <div class="col-span-1 px-5 border-x">
+                <div class="flex">
+                  <Input
+                    placeholder="Renta Liquida"
+                    @update:text="(e) => (formSimulador2.salary = e)"
+                  />
+                </div>
+                <div class="flex">
+                  <SelectNacionalidad />
+                  <Input
+                    date
+                    @update:text="(e) => (formSimulador2.birth_date = e)"
+                  />
+                </div>
+                <div class="flex">
+                  <SelectEmpleo />
+                  <SelectAntiguedad
+                    @update:antiguedad="
+                      (e) => (formSimulador2.work_continuity = e)
+                    "
+                  />
+                </div>
+              </div>
             </div>
-            <div class="pie">
-              <Heading1 content="Valor del pie" headingType="h4" />
-              <SliderRange1
-                @update:slider="(e) => (formSimulador.requested_amount = e)"
-              />
+            <div class="footer grid justify-center py-4">
+              <Button1 text="Ver Resultados" secondary />
             </div>
-          </div>
-          <div class="grid place-content-center" v-if="loading">
-            <Loading />
-          </div>
-          <div class="col-span-1 flex flex-col justify-between" v-else>
-            <Acordion1 :cuotasSimulacion="dataCuotas" />
-            <!-- <Button1 text="Enviar" outlinePrimary /> -->
-          </div>
-        </div>
-        <div class="footer grid justify-center py-4">
-          <Button1 text="Evaluar  crédito" secondary />
-        </div>
-      </form>
+          </form>
+        </Transition>
+      </div>
     </div>
   </div>
 </template>
@@ -88,8 +171,14 @@ import SelectModelo1 from "../components/SelectModelo.vue";
 import { reactive, ref, watch } from "vue";
 import { typeCredit } from "../assets/helpers/API";
 import axios from "axios";
-import { EVALUACION_URL_1 } from "../assets/helpers/API";
+import { EVALUACION_URL_1, EVALUACION_URL_2 } from "../assets/helpers/API";
 import Loading from "../components/Loading.vue";
+import Paragraph from "../components/Paragraph.vue";
+import InputEmail from "../components/Input-Email.vue";
+import SelectNacionalidad from "../components/SelectNacionalidad.vue";
+import SelectEmpleo from "../components/SelectEmpleo.vue";
+import SelectAntiguedad from "../components/SelectAntiguedad.vue";
+import { antiguedad } from "../assets/helpers/API";
 const formSimulador = reactive({
   dni: "",
   vehicle_price: 0,
@@ -102,35 +191,70 @@ const formSimulador = reactive({
   type: typeCredit[0].value,
 });
 const formSimulador2 = reactive({
-  dni: formSimulador.dni,
-  vehicle_year: formSimulador.vehicle_year,
-  vehicle_price: formSimulador.vehicle_price,
-  down_payment: formSimulador.down_payment,
-  requested_amount: formSimulador.requested_amount,
+  dni: "",
+  vehicle_year: "",
+  vehicle_price: "",
+  down_payment: "",
+  requested_amount: "",
   salary: 0, //Number
   term: 0, // Number
-  work_continuity: 0, //Number
-  birth_date: "", //String dia/mes/anio
+  work_continuity: antiguedad[0].value,
+  birth_date: "",
 });
 
 const dataCuotas = ref([]);
 const loading = ref(false);
+const formActive = ref(true);
+const formActive2 = ref(true);
 
+//PASO 1
 const handleForm = async () => {
   loading.value = true;
   try {
     const res = await axios.post(EVALUACION_URL_1, formSimulador);
     dataCuotas.value = await res.data.data;
-    console.log(await res.data.data);
     loading.value = false;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
+
+//PASO INTERMEDIO
+const handleTransition = (e) => {
+  formSimulador2.term = e;
+  formActive.value = false;
+  formActive2.value = true;
+};
+
+const handleForm2 = async () => {
+  try {
+    const res = await axios.post(EVALUACION_URL_2, formSimulador2);
+    dataCuotas.value = await res.data.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//PASO 2
 
 watch(formSimulador, () => {
   if (formSimulador.requested_amount > 0 && formSimulador.vehicle_price > 0) {
     const res = formSimulador.vehicle_price - formSimulador.requested_amount;
     formSimulador.down_payment = res.toString();
   }
+  formSimulador2.dni = formSimulador.dni;
+  formSimulador2.vehicle_year = formSimulador.vehicle_year;
+  formSimulador2.vehicle_price = formSimulador.vehicle_price;
+  formSimulador2.down_payment = formSimulador.down_payment;
+  formSimulador2.requested_amount = formSimulador.requested_amount;
+});
+
+// Watch Format Date
+watch(formSimulador2, () => {
+  let formated = "";
+  formSimulador2.birth_date
+    .split("-")
+    .reduceRight((prev, current) => (formated = prev + "/" + current));
 });
 </script>
 
@@ -152,5 +276,15 @@ watch(formSimulador, () => {
   position: relative;
   top: -10rem;
   justify-self: center;
+}
+/* we will explain what these classes do next! */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>

@@ -8,7 +8,7 @@
       :max="99_999_999"
       :min="1_000_000"
       :merge="100"
-      :step="10_000"
+      :step="50_000"
       :format="{ prefix: '$' }"
       showTooltip="focus"
     />
@@ -19,7 +19,7 @@
       :max="7_000_000"
       :min="1_000_000"
       :merge="100"
-      :step="30_000"
+      :step="50_000"
       :format="{ prefix: '$' }"
       showTooltip="focus"
     />

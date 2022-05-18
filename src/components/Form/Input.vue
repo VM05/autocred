@@ -46,6 +46,22 @@
       required
     />
     <input
+      v-else-if="date"
+      placeholder="dd/mm/yyyy"
+      type="date"
+      :placeholder="placeholder"
+      class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full"
+      @mouseover="hover = true"
+      @mouseleave="hover = false"
+      @focusin="focus = true"
+      @focusout="focus = false"
+      :id="id"
+      :value="value"
+      :disabled="disabled"
+      @blur="handler"
+      required
+    />
+    <input
       v-else
       type="text"
       :placeholder="placeholder"
@@ -74,6 +90,7 @@ defineProps({
   value: String,
   disabled: Boolean,
   password: Boolean,
+  date: Boolean,
 });
 const emit = defineEmits(["update:text"]);
 const handler = (e) => {

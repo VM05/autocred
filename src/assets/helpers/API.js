@@ -12,6 +12,18 @@ export const servicios = [
     { id: 3, name: "Seguro" },
     { id: 4, name: "Tag" },
 ];
+export const empleoType = [
+    { id: 1, value: "JUBILACION", name: "JUBILACIÓN" },
+    { id: 2, value: "HONORARIOS", name: "HONORARIOS " },
+    { id: 3, value: "HONORARIOSCONTRATO", name: "HONORARIOS CONTRATO" },
+    { id: 4, value: "RETIROSOCIEDAD", name: "HONORARIOS" },
+    { id: 4, value: "OTRO", name: "OTRO" }
+];
+export const antiguedad = [
+    { id: 1, value: 24, name: "MAYOR A 24 MESES" },
+    { id: 2, value: 12, name: "MAYOR A 12 MESES " },
+    { id: 3, value: 1, name: "MENOR A 12 MESES" },
+];
 
 export const gestion = [
     { id: 1, name: "Modulo presencial" },
@@ -44,6 +56,9 @@ export const CONTRATO_URL = BASE_URL_API + "utilities/others/employeeTypes"
 export const PLAZO_CONTRATO_URL = BASE_URL_API + "utilities/others/contractTypes"
 export const SERVICIOS_URL = BASE_URL_API + "utilities/others/services"
 export const EVALUACION_URL_1 = BASE_URL_API + "external/evaluations/simulation"
+export const EVALUACION_URL_2 = BASE_URL_API + "external/evaluations/quotation"
+
+
 //DEV
 const TOKEN_GOGEMA = "i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG"
 export const URL_GOGEMA = "https://sandboxapiflux.go-gema.com/v1/leads?access-token=" + TOKEN_GOGEMA
