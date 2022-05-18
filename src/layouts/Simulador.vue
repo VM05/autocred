@@ -205,7 +205,7 @@ const formSimulador2 = reactive({
 const dataCuotas = ref([]);
 const loading = ref(false);
 const formActive = ref(true);
-const formActive2 = ref(true);
+const formActive2 = ref(false);
 
 //PASO 1
 const handleForm = async () => {
