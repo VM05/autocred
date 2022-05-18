@@ -252,9 +252,13 @@ watch(formSimulador, () => {
 // Watch Format Date
 watch(formSimulador2, () => {
   let formated = "";
-  formSimulador2.birth_date
-    .split("-")
-    .reduceRight((prev, current) => (formated = prev + "/" + current));
+
+  if (formSimulador2.birth_date.includes("-")) {
+    formSimulador2.birth_date
+      .split("-")
+      .reduceRight((prev, current) => (formated = prev + "/" + current));
+    formSimulador2.birth_date = formated;
+  }
 });
 </script>
 
