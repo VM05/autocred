@@ -5,7 +5,19 @@
   />
   <div class="grid justify-between mb-24">
     <CardExperiencia1 />
-    <Video src="/assets/video/lorem.mp4" height="100%" controls />
+    <div>
+      <video
+        :width="width"
+        :height="height"
+        :controls="true"
+        :autoplay="true"
+        muted
+        loop
+        class="rounded-3xl"
+      >
+        <source src="../assets/video/lorem.mp4" type="video/mp4" />
+      </video>
+    </div>
   </div>
 </template>
 
