@@ -10,15 +10,15 @@
       label
     }}</label>
     <div v-if="isPhone" class="grid w-full items-center">
-      <label
+      <!-- <label
         class="phone border border-solid px-2 py-2 rounded-lg text-primary-900"
         :for="id"
       >
         +56 9</label
-      >
+      > -->
       <input
         type="tel"
-        maxlength="8"
+        maxlength="12"
         :placeholder="placeholder"
         class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full phone-input"
         @mouseover="hover = true"
@@ -26,7 +26,10 @@
         @focusin="focus = true"
         @focusout="focus = false"
         :id="id"
+        :value="text"
+        @keyup="handler"
         @blur="handler"
+        autocomplete="off"
         required
       />
     </div>
@@ -106,12 +109,9 @@ let focus = ref(false);
   border-top-right-radius: 0px;
   border-right: 1;
 }
-.phone-input {
+/* .phone-input {
   border-bottom-left-radius: 0px;
   border-top-left-radius: 0px;
   border-left: 0;
-}
-.grid {
-  grid-template-columns: auto 1fr;
-}
+} */
 </style>
