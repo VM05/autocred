@@ -3,25 +3,29 @@
     <Heading1 content="Donde estamos" class="mb-14" />
     <div class="grid grid-cols-2 w-full justify-between">
       <div class="grid grillaInfoMapa">
-        <img
-          src="../assets/img/ilustraciones-donde-estamos.svg"
-          alt=""
-          class="h-96 w-fit"
-        />
-        <ul class="flex flex-col gap-2 px-6 border-r-2">
-          <Paragraph1
-            v-for="(direccion, index) in direcciones"
-            :key="index"
-            class="cursor-pointer text-lg"
-            :class="{
-              'text-secondary-900 font-bold': activeDirection == direccion.name,
-              'text-primary-700 font-medium': activeDirection != direccion.name,
-            }"
-            @click="active"
-          >
-            {{ direccion.name }}
-          </Paragraph1>
-        </ul>
+        <div class="flex w-full border-r-2">
+          <img
+            src="../assets/img/ilustraciones-donde-estamos.svg"
+            alt=""
+            class="h-96 w-24"
+          />
+          <ul class="flex flex-col gap-2 px-6">
+            <Paragraph1
+              v-for="(direccion, index) in direcciones"
+              :key="index"
+              class="cursor-pointer text-lg"
+              :class="{
+                'text-secondary-900 font-bold':
+                  activeDirection == direccion.name,
+                'text-primary-700 font-medium':
+                  activeDirection != direccion.name,
+              }"
+              @click="active"
+            >
+              {{ direccion.name }}
+            </Paragraph1>
+          </ul>
+        </div>
         <div class="border-r-2">
           <div
             class="flex flex-col px-6 gap-2"
@@ -36,7 +40,7 @@
                   Presencial
                 </Paragraph>
               </div>
-              <div class="subcontent flex-col pl-6">
+              <div class="subcontent flex flex-col pl-6">
                 <Paragraph class="text-base font-medium text-primary-900">
                   {{ direccion.direccion }}
                 </Paragraph>
@@ -105,6 +109,6 @@ const active = (e) => {
   color: rgb(212, 15, 125);
 }
 .grillaInfoMapa {
-  grid-template-columns: auto 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 </style>
