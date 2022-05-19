@@ -1,5 +1,8 @@
 <template>
   <div class="py-6 w-full">
+    <label :for="id" class="text-primary-900 font-medium text-base">{{
+      label
+    }}</label>
     <Combobox v-model="selected">
       <div class="relative">
         <ComboboxInput
@@ -67,6 +70,10 @@ import {
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
 import { useSimuladorStore } from "../stores/simulador";
 const useSimulador = useSimuladorStore();
+defineProps({
+  label: String,
+  id: String,
+});
 const emit = defineEmits(["update:marca"]);
 const handler = (element) => {
   changeMarca(element);

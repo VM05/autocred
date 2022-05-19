@@ -1,5 +1,8 @@
 <template>
   <div class="py-6 w-full">
+    <label :for="id" class="text-primary-900 font-medium text-base">{{
+      label
+    }}</label>
     <Combobox v-model="selected">
       <div class="relative">
         <ComboboxInput
@@ -81,6 +84,10 @@ import {
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
 import { typeCredit } from "../assets/helpers/API";
+defineProps({
+  label: String,
+  id: String,
+});
 const emits = defineEmits(["update:type"]);
 
 const handler = (element) => emits("update:type", element);

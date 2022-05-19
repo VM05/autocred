@@ -7,7 +7,7 @@
         class="imagen z-0"
       />
       <div class="z-10 absolute top-16 left-16">
-        <Heading1 content="Simula tu credito" white />
+        <Heading1 content="Evalua tu crédito" white />
         <Heading1 content="Con la mejor cuota" white />
       </div>
 
@@ -20,17 +20,23 @@
             <div class="content py-6 grid grid-cols-3 gap-6 border-b">
               <div class="col-span-1">
                 <InputRut1
+                  label="RUT"
+                  id="RUT"
                   placeholder="RUT"
                   class="w-full"
                   @update:rut="(e) => (formSimulador.dni = e)"
                 />
                 <div class="flex">
                   <SelectMarcas1
+                    label="Marca"
+                    id="Marca"
                     @update:marca="
                       (e) => (formSimulador.vehicle_brand = e.name)
                     "
                   />
                   <SelectModelo1
+                    label="Modelo"
+                    id="Modelo"
                     @update:modelo="
                       (e) => (formSimulador.vehicle_model = e.name)
                     "
@@ -38,15 +44,21 @@
                 </div>
                 <div class="flex">
                   <Input
+                    label="Version"
+                    id="Version"
                     placeholder="Version"
                     @update:text="(e) => (formSimulador.vehicle_version = e)"
                   />
 
                   <SelectAnios1
+                    label="Año"
+                    id="Año"
                     @update:anio="(e) => (formSimulador.vehicle_year = e)"
                   />
                 </div>
                 <SelectTypeCredito1
+                  label="Tipo Credito"
+                  id="Tipo Credito"
                   @update:type="(e) => (formSimulador.type = e.value)"
                 />
               </div>
@@ -97,26 +109,36 @@
               <div class="col-span-1">
                 <div class="flex">
                   <Input
+                    label="Nombre"
+                    id="Nombre"
                     placeholder="Nombre"
                     @update:text="(e) => (formSimulador2.name = e)"
                   />
                 </div>
                 <div class="flex">
                   <Input
+                    label="Apellido Paterno"
+                    id="Apellido Paterno"
                     placeholder="Apellido Paterno"
                     @update:text="(e) => (formSimulador2.first_surname = e)"
                   />
                   <Input
+                    label="Apellido Materno"
+                    id="Apellido Materno"
                     placeholder="Apellido Materno"
                     @update:text="(e) => (formSimulador2.second_surname = e)"
                   />
                 </div>
                 <div class="flex">
                   <InputEmail
+                    label="Email"
+                    id="Email"
                     placeholder="Email"
                     @update:email="(e) => (formSimulador2.email = e)"
                   />
                   <Input
+                    label="Telefono"
+                    id="Telefono"
                     isPhone
                     placeholder="Telefono"
                     @update:text="(e) => (formSimulador2.phone = e)"
@@ -126,26 +148,36 @@
               <div class="col-span-1 px-5 border-x">
                 <div class="flex">
                   <Input
+                    label="Renta Liquida"
+                    id="Renta Liquida"
                     placeholder="Renta Liquida"
                     @update:text="(e) => (formSimulador2.salary = e)"
                   />
                 </div>
                 <div class="flex">
                   <SelectNacionalidad
+                    label="Nacionalidad"
+                    id="Nacionalidad"
                     @update:nacionalidad="
                       (e) => (formSimulador2.nationality = e)
                     "
                   />
                   <Input
+                    label="Fecha Nacimiento"
+                    id="Fecha Nacimiento"
                     date
                     @update:text="(e) => (formSimulador2.birth_date = e)"
                   />
                 </div>
                 <div class="flex">
                   <SelectEmpleo
+                    label="Tipo Ingreso"
+                    id="Tipo Ingreso"
                     @update:empleo="(e) => (formSimulador2.income_type = e)"
                   />
                   <SelectAntiguedad
+                    label="Tipo Ingreso"
+                    id="Tipo Ingreso"
                     @update:antiguedad="
                       (e) => (formSimulador2.work_continuity = e)
                     "

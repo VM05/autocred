@@ -1,5 +1,8 @@
 <template>
   <div class="py-6 w-full">
+    <label :for="id" class="text-primary-900 font-medium text-base">{{
+      label
+    }}</label>
     <Combobox v-model="selected">
       <div class="relative">
         <ComboboxInput
@@ -81,6 +84,10 @@ import {
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
 import axios from "axios";
+defineProps({
+  label: String,
+  id: String,
+});
 const emit = defineEmits(["update:anio"]);
 const data = ref();
 const handler = (element) => emit("update:anio", element);

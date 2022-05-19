@@ -1,5 +1,8 @@
 <template>
   <div class="py-6 w-full">
+    <label :for="id" class="text-primary-900 font-medium text-base">{{
+      label
+    }}</label>
     <Combobox v-model="selected">
       <div class="relative">
         <ComboboxInput
@@ -65,6 +68,10 @@ import {
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
 import { useSimuladorStore } from "../stores/simulador";
+defineProps({
+  label: String,
+  id: String,
+});
 const useSimulador = useSimuladorStore();
 const emit = defineEmits(["update:modelo"]);
 const handler = (element) => {

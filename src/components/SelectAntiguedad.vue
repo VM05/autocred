@@ -1,6 +1,8 @@
 <template>
   <div class="py-6 w-full">
-    <label class="text-primary-900 font-medium text-base">{{ label }}</label>
+    <label :for="id" class="text-primary-900 font-medium text-base">{{
+      label
+    }}</label>
     <Combobox v-model="selected">
       <div class="relative">
         <ComboboxInput

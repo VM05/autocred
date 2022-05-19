@@ -1,6 +1,8 @@
 <template>
   <div class="py-6 w-full">
-    <label class="text-primary-900 font-medium text-base">{{ label }}</label>
+    <label :for="id" class="text-primary-900 font-medium text-base">{{
+      label
+    }}</label>
     <Combobox v-model="selected">
       <div class="relative">
         <ComboboxInput
@@ -87,6 +89,7 @@ const emit = defineEmits(["update:empleo"]);
 defineProps({
   data: {},
   label: String,
+  id: String,
 });
 const handler = (element) => {
   emit("update:empleo", element);
