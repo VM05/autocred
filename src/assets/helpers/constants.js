@@ -1,6 +1,5 @@
 export const links = [
     { name: "Inicio", url: "/" },
-    { name: "Nosotros", url: "/nosotros" },
     { name: "Vendedores", url: "/vendedores" },
     { name: "Compradores", url: "/compradores" },
     {
@@ -14,6 +13,7 @@ export const links = [
         ]
     },
     { name: "Preguntas Frecuentes", url: "/preguntas-frecuentes" },
+    { name: "Nosotros", url: "/nosotros" },
 ];
 export const featuresVendedores = [
     {

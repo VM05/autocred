@@ -47,7 +47,6 @@
           </div>
         </div>
       </form>
-      <button @click="sendFormGoGema">GOGEMA</button>
     </div>
   </div>
 </template>
