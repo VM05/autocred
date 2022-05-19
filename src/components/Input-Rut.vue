@@ -1,11 +1,5 @@
 <template>
   <div class="relative py-6 w-full">
-    <span v-show="focus" class="absolute top-0 left-0 text-sm">
-      {{ placeholder }}
-    </span>
-    <span v-show="hover" class="block absolute top-0 right-0 text-black-100">{{
-      hoverText
-    }}</span>
     <label
       :for="id"
       v-if="label"

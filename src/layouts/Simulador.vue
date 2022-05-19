@@ -77,19 +77,29 @@
                   />
                 </div>
               </div>
-              <div class="grid place-content-center" v-if="loading">
-                <Paragraph class="text-center mb-8">
-                  Estamos evaluando su credito, espere un momento
-                </Paragraph>
-                <Loading />
-              </div>
-              <div class="col-span-1 flex flex-col justify-between" v-else>
-                <Acordion1
-                  :cuotasSimulacion="dataCuotas"
-                  :typeCredit="formSimulador.type"
-                  @select:term="(cuota) => handleTransition(cuota)"
-                />
-                <!-- <Button1 text="Enviar" outlinePrimary /> -->
+              <div class="grid place-content-center">
+                <div
+                  class="grid place-content-center"
+                  v-if="!loading && !complete"
+                >
+                  <img src="../assets/img/simulador.svg" alt="" />
+                </div>
+                <div class="grid place-content-center" v-if="loading">
+                  <Paragraph class="text-center mb-8">
+                    Estamos evaluando su credito, espere un momento
+                  </Paragraph>
+                  <Loading />
+                </div>
+                <div
+                  v-else-if="complete"
+                  class="col-span-1 flex flex-col justify-between"
+                >
+                  <Acordion1
+                    :cuotasSimulacion="dataCuotas"
+                    :typeCredit="formSimulador.type"
+                    @select:term="(cuota) => handleTransition(cuota)"
+                  />
+                </div>
               </div>
             </div>
             <div class="footer grid justify-center py-4">
@@ -254,6 +264,7 @@ const formSimulador2 = reactive({
 
 const dataCuotas = ref([]);
 const loading = ref(false);
+const complete = ref(false);
 const formActive = ref(true);
 const formActive2 = ref(false);
 
@@ -264,6 +275,7 @@ const handleForm = async () => {
     const res = await axios.post(EVALUACION_URL_1, formSimulador);
     dataCuotas.value = await res.data.data;
     loading.value = false;
+    complete.value = true;
   } catch (error) {
     console.log(error);
   }
