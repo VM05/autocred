@@ -104,13 +104,13 @@ const handleForm = async () => {
     const res = await axios.post(REGISTER_URL, registerForm);
     console.log(await res);
     if (await res.data.success) {
-      window.open(LOGIN_URL_TOKEN(response.data.token_id));
+      window.open(LOGIN_URL_TOKEN(res.data.token_id));
     }
   } catch (error) {
     errorForm.value = true;
     console.log("Catch", error);
-    console.log(error.response.data.errors);
-    errorList.value = error.response.data.errors;
+    console.log(error.res.data.errors);
+    errorList.value = error.res.data.errors;
   }
 };
 </script>

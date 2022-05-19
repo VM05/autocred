@@ -81,9 +81,9 @@ import {
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
 import axios from "axios";
-const emit = defineEmits(["update:anio"]);
+const emit = defineEmits(["update:nacionalidad"]);
 const data = ref();
-const handler = (element) => emit("update:anio", element);
+const handler = (element) => emit("update:nacionalidad", element);
 onMounted(async () => {
   try {
     const res = await axios.get(

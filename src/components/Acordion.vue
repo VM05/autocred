@@ -45,7 +45,7 @@
                 text="Me interesa"
                 secondary
                 class="mt-4"
-                @click.prevent="handleAccordion(cuota.term)"
+                @click.prevent="handleAccordion(cuota.term, cuota.id)"
               />
             </div>
           </DisclosurePanel>
@@ -64,7 +64,7 @@ import { ref } from "vue";
 
 const creditoSmart = ref(false);
 const emits = defineEmits(["select:term"]);
-const handleAccordion = (e) => emits("select:term", e);
+const handleAccordion = (cuota, id) => emits("select:term", [cuota, id]);
 const props = defineProps({
   cuotasSimulacion: Array,
   typeCredit: String,

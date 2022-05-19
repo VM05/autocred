@@ -75,7 +75,7 @@
                 <Acordion1
                   :cuotasSimulacion="dataCuotas"
                   :typeCredit="formSimulador.type"
-                  @select:term="(e) => handleTransition(e)"
+                  @select:term="(cuota) => handleTransition(cuota)"
                 />
                 <!-- <Button1 text="Enviar" outlinePrimary /> -->
               </div>
@@ -98,28 +98,28 @@
                 <div class="flex">
                   <Input
                     placeholder="Nombre"
-                    @update:text="(e) => (formSimulador.vehicle_version = e)"
+                    @update:text="(e) => (formSimulador2.name = e)"
                   />
                 </div>
                 <div class="flex">
                   <Input
                     placeholder="Apellido Paterno"
-                    @update:text="(e) => (formSimulador.vehicle_version = e)"
+                    @update:text="(e) => (formSimulador2.first_surname = e)"
                   />
                   <Input
                     placeholder="Apellido Materno"
-                    @update:text="(e) => (formSimulador.vehicle_version = e)"
+                    @update:text="(e) => (formSimulador2.second_surname = e)"
                   />
                 </div>
                 <div class="flex">
                   <InputEmail
                     placeholder="Email"
-                    @update:text="(e) => (formSimulador.vehicle_version = e)"
+                    @update:email="(e) => (formSimulador2.email = e)"
                   />
                   <Input
                     isPhone
                     placeholder="Telefono"
-                    @update:text="(e) => (formSimulador.vehicle_version = e)"
+                    @update:text="(e) => (formSimulador2.phone = e)"
                   />
                 </div>
               </div>
@@ -131,14 +131,20 @@
                   />
                 </div>
                 <div class="flex">
-                  <SelectNacionalidad />
+                  <SelectNacionalidad
+                    @update:nacionalidad="
+                      (e) => (formSimulador2.nationality = e)
+                    "
+                  />
                   <Input
                     date
                     @update:text="(e) => (formSimulador2.birth_date = e)"
                   />
                 </div>
                 <div class="flex">
-                  <SelectEmpleo />
+                  <SelectEmpleo
+                    @update:empleo="(e) => (formSimulador2.income_type = e)"
+                  />
                   <SelectAntiguedad
                     @update:antiguedad="
                       (e) => (formSimulador2.work_continuity = e)
@@ -200,6 +206,18 @@ const formSimulador2 = reactive({
   term: 0, // Number
   work_continuity: antiguedad[0].value,
   birth_date: "",
+  vehicle_brand: "X",
+  vehicle_model: "X",
+  vehicle_version: "X",
+  type: "X",
+  name: "X",
+  first_surname: "X",
+  second_surname: "X",
+  email: "X",
+  phone: "X",
+  nationality: "X",
+  income_type: "X",
+  simulation_id: "X",
 });
 
 const dataCuotas = ref([]);
@@ -220,8 +238,9 @@ const handleForm = async () => {
 };
 
 //PASO INTERMEDIO
-const handleTransition = (e) => {
-  formSimulador2.term = e;
+const handleTransition = (cuota) => {
+  formSimulador2.term = cuota[0];
+  formSimulador2.simulation_id = cuota[1];
   formActive.value = false;
   formActive2.value = true;
 };
@@ -247,6 +266,10 @@ watch(formSimulador, () => {
   formSimulador2.vehicle_price = formSimulador.vehicle_price;
   formSimulador2.down_payment = formSimulador.down_payment;
   formSimulador2.requested_amount = formSimulador.requested_amount;
+  formSimulador2.type = formSimulador.type;
+  formSimulador2.vehicle_brand = formSimulador.vehicle_brand;
+  formSimulador2.vehicle_model = formSimulador.vehicle_model;
+  formSimulador2.vehicle_version = formSimulador.vehicle_version;
 });
 
 // Watch Format Date

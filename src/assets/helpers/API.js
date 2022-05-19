@@ -13,11 +13,12 @@ export const servicios = [
     { id: 4, name: "Tag" },
 ];
 export const empleoType = [
-    { id: 1, value: "JUBILACION", name: "JUBILACIÓN" },
-    { id: 2, value: "HONORARIOS", name: "HONORARIOS " },
-    { id: 3, value: "HONORARIOSCONTRATO", name: "HONORARIOS CONTRATO" },
-    { id: 4, value: "RETIROSOCIEDAD", name: "HONORARIOS" },
-    { id: 4, value: "OTRO", name: "OTRO" }
+    { id: 1, value: "EMPLEOACTUAL", name: "EMPLEO ACTUAL" },
+    { id: 2, value: "JUBILACION", name: "JUBILACIÓN" },
+    { id: 3, value: "HONORARIOS", name: "HONORARIOS " },
+    { id: 4, value: "HONORARIOSCONTRATO", name: "HONORARIOS CONTRATO" },
+    { id: 5, value: "RETIROSOCIEDAD", name: "RETIRO SOCIEDAD" },
+    { id: 6, value: "OTRO", name: "OTRO" }
 ];
 export const antiguedad = [
     { id: 1, value: 24, name: "MAYOR A 24 MESES" },
