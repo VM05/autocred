@@ -257,12 +257,11 @@ import InputEmail from "../components/Input-Email.vue";
 import SelectNacionalidad from "../components/SelectNacionalidad.vue";
 import SelectEmpleo from "../components/SelectEmpleo.vue";
 import SelectAntiguedad from "../components/SelectAntiguedad.vue";
-import { antiguedad } from "../assets/helpers/API";
 import Button from "../components/Button.vue";
-import { useRouter, useRoute } from "vue-router";
+import { useRouter } from "vue-router";
+import { empleoType, antiguedad } from "../assets/helpers/API";
 
 const router = useRouter();
-const route = useRoute();
 
 const formSimulador = reactive({
   dni: "",
@@ -285,18 +284,18 @@ const formSimulador2 = reactive({
   term: 0, // Number
   work_continuity: antiguedad[0].value,
   birth_date: "",
-  vehicle_brand: "X",
-  vehicle_model: "X",
-  vehicle_version: "X",
-  type: "X",
-  name: "X",
-  first_surname: "X",
-  second_surname: "X",
-  email: "X",
-  phone: "X",
-  nationality: "X",
-  income_type: "X",
-  simulation_id: "X",
+  vehicle_brand: "",
+  vehicle_model: "",
+  vehicle_version: "",
+  type: "",
+  name: "",
+  first_surname: "",
+  second_surname: "",
+  email: "",
+  phone: "",
+  nationality: "",
+  income_type: empleoType[0].value,
+  simulation_id: "",
 });
 
 const dataCuotas = ref([]);
