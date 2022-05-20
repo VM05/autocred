@@ -103,8 +103,8 @@ const formContacto = reactive({
   mensaje: "",
   procedencia_id: 100,
   tipo_contacto: "web",
-  servicios: servicios[0].name,
-  canal_atencion: gestion[0].name,
+  servicios: "Transferencias",
+  canal_atencion: "Modulo presencial",
 });
 // const modal = ref(false);
 const isFormComplete = ref(formEmpty(formContacto));
