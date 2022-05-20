@@ -32,8 +32,7 @@
     <Features />
     <Simulador />
     <Comentarios compradores />
-    <div id="contacto"></div>
-    <Hablemos />
+    <Hablemos id="contacto" />
   </Container>
 </template>
 

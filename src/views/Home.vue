@@ -45,8 +45,7 @@
     <Comentarios />
     <DondeEstamos />
     <Medios />
-    <div id="contacto"></div>
-    <Hablemos />
+    <Hablemos id="contacto" />
   </Container>
 </template>
 

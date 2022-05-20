@@ -6,7 +6,7 @@
       class="mb-5"
     />
     <ServiciosList1 />
-    <Hablemos />
+    <Hablemos id="contacto" />
   </Container>
 </template>
 

@@ -21,7 +21,7 @@
     </BannerHome>
     <PreguntasList vendedor secondary />
     <PreguntasList comprador primary />
-    <Hablemos />
+    <Hablemos id="contacto" />
   </Container>
 </template>
 
