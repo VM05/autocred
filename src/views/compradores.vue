@@ -12,11 +12,11 @@
           headingType="h4"
           class="mb-5"
         />
-        <a href="#contacto">
+        <router-link to="#contacto">
           <div class="flex flex-row gap-4">
             <Button text="Contactanos" primary />
           </div>
-        </a>
+        </router-link>
       </template>
       <template #image>
         <div class="grid place-content-center">

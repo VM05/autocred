@@ -17,9 +17,9 @@
         <img :src="item.src" alt="" class="absolute top-0" />
       </div>
     </div>
-    <a href="#contacto" class="justify-self-center">
+    <router-link to="#contacto" class="justify-self-center">
       <Button1 text="Hablemos" secondary />
-    </a>
+    </router-link>
   </div>
 </template>
 

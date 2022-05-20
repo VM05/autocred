@@ -11,10 +11,7 @@
         placeat amet exercitationem vitae?
       </Paragraph>
     </div>
-    <router-link
-      :to="{ path: '/', hash: '#contacto' }"
-      class="w-fit self-center"
-    >
+    <router-link to="#contacto" class="w-fit self-center">
       <Button1 text="Agenda tu servicio" secondary class="w-fit self-center" />
     </router-link>
   </div>

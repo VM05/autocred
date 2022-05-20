@@ -34,7 +34,18 @@ const router = createRouter({
         { path: '/servicios', name: 'Servicios', component: servicios },
         { path: '/vendedores', name: 'Vendedores', component: vendedores },
         // { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
-    ]
+    ],
+    scrollBehavior(to, from, savedPosition) {
+        if (to.hash) {
+            return {
+                el: to.hash,
+                top: 100,
+                behavior: 'smooth',
+            }
+        } else {
+            return { top: 0 }
+        }
+    }
 })
 
 export default router

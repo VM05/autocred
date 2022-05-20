@@ -12,11 +12,11 @@
           headingType="h3"
           class="mb-5"
         />
-        <a href="#contacto">
+        <router-link to="#contacto">
           <div class="flex flex-row gap-4">
             <Button text="Viajemos juntos" secondary />
           </div>
-        </a>
+        </router-link>
       </template>
       <template #image>
         <div class="grid place-content-center">
