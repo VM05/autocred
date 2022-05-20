@@ -6,30 +6,41 @@
       @submit.prevent="handleForm"
     >
       <InputRut1
+        :value="data.rut"
         label="Rut"
         id="rut"
         class="input"
         @update:rut="(e) => (registerForm.dni = e)"
       />
       <Input
+        :value="data.nombre"
         label="Nombre"
         id="nombre"
         class="input"
         @update:text="(e) => (registerForm.name = e)"
       />
       <Input
+        :value="data.apellidos"
         label="Apellidos"
         id="apellido"
         class="input"
         @update:text="(e) => (registerForm.surnames = e)"
       />
       <InputEmail1
+        :value="data.correo"
         label="Correo electronico"
         id="email"
         class="input"
         @update:email="(e) => (registerForm.email = e)"
       />
-      <Input isPhone label="Telefono" id="phone" class="input" />
+      <Input
+        isPhone
+        label="Telefono"
+        id="phone"
+        class="input"
+        :value="data.telefono"
+        @update:text="(e) => (registerForm.phone_1 = e)"
+      />
       <Input
         password
         label="Contraseña"
@@ -78,27 +89,45 @@ import InputRut1 from "../components/Input-Rut.vue";
 import Input from "./Form/Input.vue";
 import Button1 from "./Button.vue";
 import InputEmail1 from "./Input-Email.vue";
-import { reactive, computed, ref } from "vue";
+import { reactive, computed, ref, watch } from "vue";
 import axios from "axios";
 import { REGISTER_URL, LOGIN_URL_TOKEN } from "../assets/helpers/API";
 import Paragraph from "./Paragraph.vue";
+import { useRoute } from "vue-router";
 
+const route = useRoute();
+const data = ref(route.params);
 const errorForm = ref(false);
 const registerForm = reactive({
   dni: "",
   name: "",
   surnames: "",
   email: "",
+  phone_1: "",
   password: "",
   password_confirmation: "",
 });
 
+const fillFormFromParams = () => {
+  console.log(data.value);
+  if (data) {
+    console.log("Form from params");
+    registerForm.dni = data.value.rut;
+    registerForm.name = data.value.nombre;
+    registerForm.surnames = data.value.apellidos;
+    registerForm.email = data.value.correo;
+    registerForm.phone_1 = data.value.telefono;
+  } else {
+    console.log("nada");
+  }
+};
 const errorList = ref([]);
 
 const errorPassword = computed(() =>
   registerForm.password == registerForm.password_confirmation ? false : true
 );
 const handleForm = async () => {
+  await fillFormFromParams();
   errorForm.value = false;
   try {
     const res = await axios.post(REGISTER_URL, registerForm);

@@ -24,7 +24,13 @@ const router = createRouter({
             name: 'Preguntas Frecuentes',
             component: FAQ
         },
-        { path: '/registro', name: 'Registro', component: registro },
+        {
+            path: '/registro', name: 'Registro',
+            component: registro,
+            props: (route) => ({
+                ...route.params
+            })
+        },
         { path: '/servicios', name: 'Servicios', component: servicios },
         { path: '/vendedores', name: 'Vendedores', component: vendedores },
         // { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },

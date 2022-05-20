@@ -1,7 +1,7 @@
 <template>
   <div class="relative py-6 w-full">
-    <label :for="id" class="text-primary-900 font-medium text-base">{{
-      label
+    <label :for="props.id" class="text-primary-900 font-medium text-base">{{
+      props.label
     }}</label>
     <!-- <span v-show="focus" class="absolute top-0 left-0 text-sm">
       {{ placeholder }}
@@ -13,13 +13,13 @@
       required
       class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full"
       type="email"
-      :placeholder="placeholder"
+      :placeholder="props.placeholder"
       v-model="email"
       @focusin="focus = true"
       @focusout="focus = false"
       @mouseover="hover = true"
       @mouseleave="hover = false"
-      :id="id"
+      :id="props.id"
       @blur="handler"
     />
     <span class="text-red-600 block">{{ validated }}</span>
@@ -29,17 +29,18 @@
 <script setup>
 import { validateEmail } from "../assets/helpers/validate";
 import { ref, computed, onUpdated, unref } from "vue";
-defineProps({
+const props = defineProps({
   placeholder: String,
   hoverText: String,
   id: String,
   label: String,
+  value: { type: String, default: "" },
 });
 const emit = defineEmits(["update:email"]);
 const handler = (e) => {
   emit("update:email", e.target.value);
 };
-const email = ref("");
+const email = ref(props.value);
 const focus = ref(false);
 const hover = ref(false);
 

@@ -77,7 +77,7 @@
                   />
                 </div>
               </div>
-              <div class="grid place-content-center">
+              <div class="">
                 <div
                   class="grid place-content-center"
                   v-if="!loading && !complete"
@@ -108,97 +108,128 @@
           </form>
         </Transition>
         <Transition>
-          <form @submit.prevent="handleForm2" v-show="formActive2">
-            <div class="title border-b pb-4 border-primary-900">
-              <Heading1
-                content="Evaluación de Crédito | Datos Personales"
-                headingType="h3"
-              />
-            </div>
-            <div class="content py-6 grid grid-cols-2 gap-6 border-b">
-              <div class="col-span-1">
-                <div class="flex">
-                  <Input
-                    label="Nombre"
-                    id="Nombre"
-                    placeholder="Nombre"
-                    @update:text="(e) => (formSimulador2.name = e)"
-                  />
-                </div>
-                <div class="flex">
-                  <Input
-                    label="Apellido Paterno"
-                    id="Apellido Paterno"
-                    placeholder="Apellido Paterno"
-                    @update:text="(e) => (formSimulador2.first_surname = e)"
-                  />
-                  <Input
-                    label="Apellido Materno"
-                    id="Apellido Materno"
-                    placeholder="Apellido Materno"
-                    @update:text="(e) => (formSimulador2.second_surname = e)"
-                  />
-                </div>
-                <div class="flex">
-                  <InputEmail
-                    label="Email"
-                    id="Email"
-                    placeholder="Email"
-                    @update:email="(e) => (formSimulador2.email = e)"
-                  />
-                  <Input
-                    label="Telefono"
-                    id="Telefono"
-                    isPhone
-                    placeholder="Telefono"
-                    @update:text="(e) => (formSimulador2.phone = e)"
-                  />
+          <div v-show="formActive2">
+            <div class="grid place-content-center my-20" v-if="alerts">
+              <Loading v-if="loading" />
+              <div v-if="isSuccess" class="text-center">
+                <Paragraph class="font-bold"
+                  >Estamos evaluando tu solicitud
+                </Paragraph>
+                <Paragraph class="mb-8"
+                  >Te invitamos a registrarte o iniciar sesión para conocer el
+                  resultado.
+                </Paragraph>
+                <div class="flex flex-row gap-2 justify-center">
+                  <!-- <router-link to="/registro"> -->
+                  <Button secondary text="Registro" @click="registerHandle" />
+                  <!-- </router-link> -->
+                  <router-link to="/login">
+                    <Button primary text="Iniciar sesión"></Button>
+                  </router-link>
                 </div>
               </div>
-              <div class="col-span-1 px-5 border-x">
-                <div class="flex">
-                  <Input
-                    label="Renta Liquida"
-                    id="Renta Liquida"
-                    placeholder="Renta Liquida"
-                    @update:text="(e) => (formSimulador2.salary = e)"
-                  />
-                </div>
-                <div class="flex">
-                  <SelectNacionalidad
-                    label="Nacionalidad"
-                    id="Nacionalidad"
-                    @update:nacionalidad="
-                      (e) => (formSimulador2.nationality = e)
-                    "
-                  />
-                  <Input
-                    label="Fecha Nacimiento"
-                    id="Fecha Nacimiento"
-                    date
-                    @update:text="(e) => (formSimulador2.birth_date = e)"
-                  />
-                </div>
-                <div class="flex">
-                  <SelectEmpleo
-                    label="Tipo Ingreso"
-                    id="Tipo Ingreso"
-                    @update:empleo="(e) => (formSimulador2.income_type = e)"
-                  />
-                  <SelectAntiguedad
-                    label="Tipo Ingreso"
-                    id="Tipo Ingreso"
-                    @update:antiguedad="
-                      (e) => (formSimulador2.work_continuity = e)
-                    "
-                  />
-                </div>
+              <div v-if="isError" class="text-center">
+                <Paragraph class="font-bold text-secondary-900"
+                  >Ocurrio un problema con los datos ingresados</Paragraph
+                >
+                <Paragraph class="mb-8 text-secondary-900"
+                  >Intenta de nuevo
+                </Paragraph>
+                <Button text="Volver" outlineSecondary @click="btnBack" />
               </div>
             </div>
-            <div class="footer grid justify-center py-4">
-              <Button1 text="Ver Resultados" secondary />
-            </div>
-          </form>
+            <form @submit.prevent="handleForm2" v-else>
+              <div class="title border-b pb-4 border-primary-900">
+                <Heading1
+                  content="Evaluación de Crédito | Datos Personales"
+                  headingType="h3"
+                />
+              </div>
+              <div class="content py-6 grid grid-cols-2 gap-6 border-b">
+                <div class="col-span-1">
+                  <div class="flex">
+                    <Input
+                      label="Nombre"
+                      id="Nombre"
+                      placeholder="Nombre"
+                      @update:text="(e) => (formSimulador2.name = e)"
+                    />
+                  </div>
+                  <div class="flex">
+                    <Input
+                      label="Apellido Paterno"
+                      id="Apellido Paterno"
+                      placeholder="Apellido Paterno"
+                      @update:text="(e) => (formSimulador2.first_surname = e)"
+                    />
+                    <Input
+                      label="Apellido Materno"
+                      id="Apellido Materno"
+                      placeholder="Apellido Materno"
+                      @update:text="(e) => (formSimulador2.second_surname = e)"
+                    />
+                  </div>
+                  <div class="flex">
+                    <InputEmail
+                      label="Email"
+                      id="Email"
+                      placeholder="Email"
+                      @update:email="(e) => (formSimulador2.email = e)"
+                    />
+                    <Input
+                      label="Telefono"
+                      id="Telefono"
+                      isPhone
+                      placeholder="Telefono"
+                      @update:text="(e) => (formSimulador2.phone = e)"
+                    />
+                  </div>
+                </div>
+                <div class="col-span-1 px-5 border-x">
+                  <div class="flex">
+                    <Input
+                      label="Renta Liquida"
+                      id="Renta Liquida"
+                      placeholder="Renta Liquida"
+                      @update:text="(e) => (formSimulador2.salary = e)"
+                    />
+                  </div>
+                  <div class="flex">
+                    <SelectNacionalidad
+                      label="Nacionalidad"
+                      id="Nacionalidad"
+                      @update:nacionalidad="
+                        (e) => (formSimulador2.nationality = e)
+                      "
+                    />
+                    <Input
+                      label="Fecha Nacimiento"
+                      id="Fecha Nacimiento"
+                      date
+                      @update:text="(e) => (formSimulador2.birth_date = e)"
+                    />
+                  </div>
+                  <div class="flex">
+                    <SelectEmpleo
+                      label="Tipo Ingreso"
+                      id="Tipo Ingreso"
+                      @update:empleo="(e) => (formSimulador2.income_type = e)"
+                    />
+                    <SelectAntiguedad
+                      label="Tipo Ingreso"
+                      id="Tipo Ingreso"
+                      @update:antiguedad="
+                        (e) => (formSimulador2.work_continuity = e)
+                      "
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="footer grid justify-center py-4">
+                <Button1 text="Ver Resultados" secondary />
+              </div>
+            </form>
+          </div>
         </Transition>
       </div>
     </div>
@@ -227,6 +258,12 @@ import SelectNacionalidad from "../components/SelectNacionalidad.vue";
 import SelectEmpleo from "../components/SelectEmpleo.vue";
 import SelectAntiguedad from "../components/SelectAntiguedad.vue";
 import { antiguedad } from "../assets/helpers/API";
+import Button from "../components/Button.vue";
+import { useRouter, useRoute } from "vue-router";
+
+const router = useRouter();
+const route = useRoute();
+
 const formSimulador = reactive({
   dni: "",
   vehicle_price: 0,
@@ -264,6 +301,10 @@ const formSimulador2 = reactive({
 
 const dataCuotas = ref([]);
 const loading = ref(false);
+const alerts = ref(false);
+const isSuccess = ref(false);
+const isError = ref(false);
+
 const complete = ref(false);
 const formActive = ref(true);
 const formActive2 = ref(false);
@@ -290,9 +331,11 @@ const handleTransition = (cuota) => {
 };
 
 const handleForm2 = async () => {
+  loading.value = true;
   try {
     const res = await axios.post(EVALUACION_URL_2, formSimulador2);
-    dataCuotas.value = await res.data.data;
+    if (res.data.success) loading.value = false;
+    isSuccess.value = true;
   } catch (error) {
     console.log(error);
   }
@@ -327,6 +370,26 @@ watch(formSimulador2, () => {
     formSimulador2.birth_date = formated;
   }
 });
+
+watch([loading, isSuccess, isError], () => {
+  loading.value == true || isSuccess.value == true || isError.value == true
+    ? (alerts.value = true)
+    : (alerts.value = false);
+});
+
+const registerHandle = () => {
+  router.push({
+    name: "Registro",
+    params: {
+      rut: formSimulador2.dni,
+      nombre: formSimulador2.name,
+      apellidos:
+        formSimulador2.first_surname + " " + formSimulador2.second_surname,
+      correo: formSimulador2.email,
+      telefono: formSimulador2.phone,
+    },
+  });
+};
 </script>
 
 <style scoped>

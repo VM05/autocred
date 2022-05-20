@@ -26,7 +26,7 @@
         @focusin="focus = true"
         @focusout="focus = false"
         :id="id"
-        :value="text"
+        :value="value"
         @keyup="handler"
         @blur="handler"
         autocomplete="off"
