@@ -33,7 +33,7 @@
             placeholder="Ingresa tu nombre completo"
             label="Nombre"
             id="name"
-            @update:text="(e) => (formContacto.nombres = e)"
+            @update:text="(e) => (formContacto.nombre_completo = e)"
           />
           <InputEmail
             placeholder="Ingresa tu correo de contacto"
@@ -97,8 +97,7 @@ const isError = ref(false);
 const alerts = ref(false);
 
 const formContacto = reactive({
-  nombres: "",
-  apellidos: "escobar",
+  nombre_completo: "",
   email: "",
   telefono: "",
   mensaje: "",
