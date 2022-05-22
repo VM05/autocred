@@ -6,11 +6,12 @@
       headingType="h2"
     />
     <Carousel
-      :itemsToShow="4"
+      :itemsToShow="3"
       :wrap-around="true"
       snapAlign="start"
       :autoplay="500"
       :transition="3000"
+      :breakpoints="breakpoints"
     >
       <Slide v-for="slide in brands" :key="slide">
         <div class="carousel__item">
@@ -32,6 +33,13 @@
 import Heading from "../components/Heading.vue";
 import { Carousel, Navigation, Slide } from "vue3-carousel";
 import { brands } from "../assets/helpers/constants";
+
+const breakpoints = {
+  700: {
+    itemsToShow: 4,
+    snapAlign: "center",
+  },
+};
 </script>
 
 <style scoped>
