@@ -1,12 +1,17 @@
 <template>
-  <div class="bg-black-25 grid py-12 mb-24 px-8">
-    <Heading content="Pilotos que confiaron en Autocred" class="mb-16" />
+  <div class="bg-black-25 flex flex-col md:grid py-6 md:py-12 mb-24 px-8">
+    <Heading
+      content="Pilotos que confiaron en Autocred"
+      class="mb-8 md:mb-16"
+    />
     <Carousel
-      :items-to-show="3"
+      :items-to-show="1"
       :wrapAround="true"
+      snapAlign="start"
       :itemsToScroll="1"
-      :autoplay="3000"
+      :autoplay="false"
       class="mb-8"
+      :breakpoints="breakpoints"
     >
       <slide v-for="slide in comentarios" :key="slide">
         <CardComentario1 :data="slide" />
@@ -40,13 +45,19 @@ import CardComentario1 from "../components/Card-Comentario.vue";
 import Button1 from "../components/Button.vue";
 import { comentarios } from "../assets/helpers/constants";
 
+const breakpoints = {
+  700: {
+    itemsToShow: 3,
+  },
+};
+
 defineProps({
   compradores: Boolean,
 });
 </script>
 
 <style>
-.carousel__viewport {
+/* .carousel__viewport {
   padding-bottom: 1rem;
 }
 li.carousel__slide {
@@ -66,5 +77,5 @@ li.carousel__slide {
 .carousel__slide.carousel__slide--prev,
 .carousel__slide.carousel__slide--visible {
   transform: scale(0.8);
-}
+} */
 </style>
