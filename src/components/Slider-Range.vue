@@ -1,6 +1,8 @@
 <template>
   <div class="w-full">
-    <Input :value="formatValue" disabled />
+    <!-- TODO: Modelar INPUT -->
+    <!-- <Input v-model="value" /> -->
+    <input v-model="value" />
     <Slider
       v-if="props.valorTotal"
       v-model="value"
