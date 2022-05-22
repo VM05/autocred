@@ -3,8 +3,8 @@
     content="Descubre la experiencia de nuestro ultimo piloto"
     class="mb-14"
   />
-  <div class="grid justify-between mb-24">
-    <CardExperiencia1 />
+  <div class="grid justify-between mb-24 md">
+    <CardExperiencia1 class="mb-8 md:mb-0" />
     <div>
       <video
         :width="width"
@@ -28,8 +28,10 @@ import Heading1 from "../components/Heading.vue";
 </script>
 
 <style scoped>
-.grid {
-  grid-template-columns: 0.4fr 1fr;
-  gap: 4rem;
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 0.4fr 1fr;
+    gap: 4rem;
+  }
 }
 </style>
