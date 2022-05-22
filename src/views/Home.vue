@@ -18,12 +18,12 @@
             headingType="h4"
             class="mb-3"
           />
-          <div class="flex flex-row gap-4">
+          <div class="flex flex-col md:flex-row md:gap-4 gap-2">
             <router-link to="/vendedores">
               <Button text="Quiero vender" secondary />
             </router-link>
             <router-link to="/compradores">
-              <Button text="Quiero comprar" outlinePrimary />
+              <Button text="Quiero comprar" primary />
             </router-link>
           </div>
         </div>
@@ -33,7 +33,7 @@
           <img
             src="https://picsum.photos/id/199/536/354"
             alt="lorem"
-            class=""
+            class="w-full md:w-auto"
           />
         </div>
       </template>
