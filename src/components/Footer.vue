@@ -1,7 +1,9 @@
 <template>
-  <Container id="Footer" class="mb-20">
-    <div class="bg-white grid grid-cols-3">
-      <div class="documentos border-x-2 px-12 pt-5 gap-6 flex flex-col">
+  <Container id="Footer" class="mb-4 md:mb-20">
+    <div class="bg-white flex flex-col md:grid md:grid-cols-3 px-4 md:px-0">
+      <div
+        class="documentos md:border-x-2 xl:px-12 md:px-5 pt-5 gap-6 flex flex-col"
+      >
         <div id="documentosLegales">
           <Heading content="Documentos Legales" headingType="h5" />
           <router-link
@@ -25,7 +27,9 @@
           </div>
         </div>
       </div>
-      <div class="contacto border-r-2 px-12 pt-5 gap-6 flex flex-col">
+      <div
+        class="contacto md:border-r-2 xl:px-12 md:px-5 pt-5 gap-6 flex flex-col"
+      >
         <div id="casaMatriz">
           <Heading content="Casa Matriz" headingType="h5" />
           <a
@@ -49,7 +53,7 @@
           </p>
         </div>
       </div>
-      <div class="redes border-r-2 px-12 pt-5">
+      <div class="redes md:border-r-2 xl:px-12 md:px-5 pt-5">
         <Heading content="Redes Sociales" headingType="h5" class="mb-2" />
         <div class="flex flex-col gap-2">
           <router-link v-for="red in rrss" :to="red.url">
@@ -67,7 +71,11 @@
     </div>
   </Container>
   <div class="bg-primary-900 grid place-content-center py-6">
-    <img src="../assets/img/logo-autocred-footer.svg" alt="" />
+    <img
+      src="../assets/img/logo-autocred-footer.svg"
+      alt=""
+      class="w-full h-8 md:h-auto"
+    />
   </div>
 </template>
 
