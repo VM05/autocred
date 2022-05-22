@@ -3,7 +3,7 @@
   <Popover class="bg-white fixed top-0 left-0 w-full z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div
-        class="flex justify-between items-center py-6 md:justify-start md:space-x-10"
+        class="flex justify-between items-center py-6 lg:justify-between md:space-x-10"
       >
         <div class="flex justify-start lg:w-0 lg:flex-1">
           <router-link to="/">
@@ -15,7 +15,7 @@
             />
           </router-link>
         </div>
-        <div class="-mr-2 -my-2 md:hidden">
+        <div class="-mr-2 -my-2 lg:hidden">
           <PopoverButton
             class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary-900"
           >
@@ -23,7 +23,7 @@
             <MenuIcon class="h-6 w-6" aria-hidden="true" />
           </PopoverButton>
         </div>
-        <PopoverGroup as="nav" class="hidden md:flex space-x-10">
+        <PopoverGroup as="nav" class="hidden lg:flex space-x-10">
           <div v-for="link in links" :key="link" class="relative">
             <router-link
               class="text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
@@ -60,7 +60,7 @@
             </Menu>
           </div>
         </PopoverGroup>
-        <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+        <div class="hidden lg:flex items-center justify-end lg:flex-1 lg:w-0">
           <router-link to="/login">
             <Button1 text="Ingresar" outlinePrimary user class="text-lg" />
           </router-link>
@@ -77,87 +77,50 @@
     >
       <PopoverPanel
         focus
-        class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+        class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden"
       >
         <div
           class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50"
         >
-          <div class="pt-5 pb-6 px-5">
+          <div class="pt-5 pb-2 px-5">
             <div class="flex items-center justify-between">
               <div>
                 <img
-                  class="h-8 w-auto"
+                  class="h-12 w-auto"
                   src="../assets/img/autocred.png"
                   alt="Workflow"
                 />
               </div>
               <div class="-mr-2">
                 <PopoverButton
-                  class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                  class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary-900"
                 >
-                  <span class="sr-only">Close menu</span>
+                  <span class="sr-only">Cerrar menu</span>
                   <XIcon class="h-6 w-6" aria-hidden="true" />
                 </PopoverButton>
               </div>
             </div>
             <div class="mt-6">
-              <nav class="grid gap-y-8">
-                <a
-                  v-for="item in solutions"
+              <nav class="flex flex-col gap-4 items-center">
+                <router-link
+                  v-for="item in links"
                   :key="item.name"
-                  :href="item.href"
-                  class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+                  :to="item.url"
+                  class="text-base font-medium text-primary-900 w-full text-center border-b border-primary-900 pb-4 last:border-0"
                 >
-                  <component
-                    :is="item.icon"
-                    class="flex-shrink-0 h-6 w-6 text-indigo-600"
-                    aria-hidden="true"
-                  />
-                  <span class="ml-3 text-base font-medium text-gray-900">
-                    {{ item.name }}
-                  </span>
-                </a>
+                  {{ item.name }}
+                </router-link>
               </nav>
             </div>
           </div>
           <div class="py-6 px-5 space-y-6">
-            <div class="grid grid-cols-2 gap-y-4 gap-x-8">
-              <a
-                href="#"
-                class="text-base font-medium text-gray-900 hover:text-gray-700"
-              >
-                Pricing
-              </a>
-
-              <a
-                href="#"
-                class="text-base font-medium text-gray-900 hover:text-gray-700"
-              >
-                Docs
-              </a>
-              <a
-                v-for="item in resources"
-                :key="item.name"
-                :href="item.href"
-                class="text-base font-medium text-gray-900 hover:text-gray-700"
-              >
-                {{ item.name }}
-              </a>
-            </div>
             <div>
-              <a
-                href="#"
+              <router-link
+                to="/login"
                 class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-900 hover:bg-primary-700"
               >
-                Sign up
-              </a>
-              <p class="mt-6 text-center text-base font-medium text-gray-500">
-                Existing customer?
-                {{ " " }}
-                <a href="#" class="text-indigo-600 hover:text-indigo-500">
-                  Sign in
-                </a>
-              </p>
+                Ingresar
+              </router-link>
             </div>
           </div>
         </div>
