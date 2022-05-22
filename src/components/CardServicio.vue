@@ -1,7 +1,9 @@
 <template>
   <div class="bg-white shadow-2xl cardService rounded-3xl py-4 px-4">
-    <div class="grid place-content-center">
-      <img :src="data.img" :alt="data.name" class="w-full" />
+    <div
+      class="flex flex-col gap-4 md:gap-0 md:grid place-content-center items-center"
+    >
+      <img :src="data.img" :alt="data.name" class="w-24 md:w-full" />
       <div class="content">
         <Heading1
           :content="data.name"
@@ -25,7 +27,7 @@ defineProps({
 </script>
 
 <style scoped>
-.grid {
+.md\:grid {
   grid-template-columns: 100px 1fr;
   gap: 2rem;
 }

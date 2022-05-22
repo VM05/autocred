@@ -1,7 +1,7 @@
 <template>
   <div class="grid">
     <div
-      class="grid gap-4 w-3/5"
+      class="grid gap-4 w-full md:w-3/5"
       :class="[right ? 'justify-self-end' : 'justify-self-start']"
     >
       <CardServicio v-for="cardData in data" :data="cardData" />
