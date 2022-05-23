@@ -208,3 +208,84 @@ export const rrss = [
     { name: "tiktok", url: "tiktok", src: "/img/rrss/rrss-tiktok.svg" }
 
 ]
+
+export const featuresTransferencia = [
+    {
+        name: "Identifacion Biometrica",
+        content:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+        img: "https://uilogos.co/img/logomark/lighting.png",
+    },
+    {
+        name: "Acompañamiento",
+        content:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+        img: "https://uilogos.co/img/logomark/lighting.png",
+    },
+    {
+        name: "En tiempo record",
+        content:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+        img: "https://uilogos.co/img/logomark/lighting.png",
+    },
+    {
+        name: "Proceso completo",
+        content:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+        img: "https://uilogos.co/img/logomark/lighting.png",
+    },
+];
+export const featuresFinanciamiento = [
+    {
+        name: "Credito rapido",
+        content:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+        img: "https://uilogos.co/img/logomark/lighting.png",
+    },
+    {
+        name: "Proceso online",
+        content:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+        img: "https://uilogos.co/img/logomark/lighting.png",
+    },
+    {
+        name: "Variadas ofertas",
+        content:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+        img: "https://uilogos.co/img/logomark/lighting.png",
+    },
+    {
+        name: "Siempre asesorado",
+        content:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+        img: "https://uilogos.co/img/logomark/lighting.png",
+    },
+];
+export const featuresTag = [
+    {
+        name: "Proceso online",
+        content:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+        img: "https://uilogos.co/img/logomark/lighting.png",
+    },
+    {
+        name: "Siempre asesorado",
+        content:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+        img: "https://uilogos.co/img/logomark/lighting.png",
+    }
+];
+export const featuresSeguro = [
+    {
+        name: "Proceso online",
+        content:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+        img: "https://uilogos.co/img/logomark/lighting.png",
+    },
+    {
+        name: "Siempre asesorado",
+        content:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+        img: "https://uilogos.co/img/logomark/lighting.png",
+    }
+];

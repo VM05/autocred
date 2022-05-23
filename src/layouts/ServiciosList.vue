@@ -25,21 +25,36 @@
     <div v-for="element in dataServicios">
       <div v-if="element.id == elementActive">
         <Heading :content="element.title" />
-        <div class="grid grid-cols-2 p-16">
-          <div class="py-16 -ml-6 justify-self-end">
-            <img :src="element.img" :alt="element.title" class="w-full" />
+        <div class="p-16">
+          <div class="grid grid-cols-2 pb-24 mb-20 border-b">
+            <div class="py-16 -ml-6 justify-self-end">
+              <img :src="element.img" :alt="element.title" class="w-full" />
+            </div>
+            <div
+              class="bg-white rounded-xl shadow-xl pt-16 pb-10 px-8 flex flex-col justify-between"
+            >
+              <Paragraph class="text-primary-900 font-medium text-base">
+                {{ element.content }}
+              </Paragraph>
+              <Button
+                :text="element.buttonText"
+                secondary
+                class="w-fit self-center"
+              />
+            </div>
           </div>
-          <div
-            class="bg-white rounded-xl shadow-xl pt-16 pb-10 px-8 flex flex-col justify-between"
-          >
-            <Paragraph class="text-primary-900 font-medium text-base">
-              {{ element.content }}
-            </Paragraph>
-            <Button
-              :text="element.buttonText"
-              secondary
-              class="w-fit self-center"
-            />
+          <div v-if="elementActive == 'transferencias'">
+            <FeaturesList :data="featuresTransferencia" />
+          </div>
+          <div v-if="elementActive == 'financiamiento'">
+            <FeaturesList :data="featuresFinanciamiento" class="mb-24" />
+            <Simulador />
+          </div>
+          <div v-if="elementActive == 'financiamiento'">
+            <FeaturesList :data="featuresTag" class="mb-24" />
+          </div>
+          <div v-if="elementActive == 'seguro'">
+            <FeaturesList :data="featuresSeguro" class="mb-24" />
           </div>
         </div>
       </div>
@@ -52,12 +67,20 @@ import Loading from "../components/Loading.vue";
 import Paragraph1 from "../components/Paragraph.vue";
 import Button1 from "../components/Button.vue";
 import { isObjEmpty } from "../assets/helpers/validate";
-import { dataServicios } from "../assets/helpers/constants";
+import {
+  dataServicios,
+  featuresTransferencia,
+  featuresTag,
+  featuresFinanciamiento,
+  featuresSeguro,
+} from "../assets/helpers/constants";
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 
 import Heading from "../components/Heading.vue";
 import axios from "axios";
+import FeaturesList from "../components/FeaturesList.vue";
+import Simulador from "./Simulador.vue";
 const route = useRoute();
 const data = ref();
 
