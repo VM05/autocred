@@ -93,41 +93,46 @@ export const featuresCompradoress = [
 ];
 export const serviciosVendores = [
     {
-        name: "Transferencias",
-        content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+        name: "VAN/OFICINA MÓVIL",
+        content: "¿Quieres compañía cuando muestras el vehículo?, utiliza nuestro centro móvil para trasladar al potencial comprador donde tú quieras* (Región Metropolitana). Si el comprador está de acuerdo con la compra, contamos con todo lo necesario para realizar la transferencia, recibir pagos con tarjeta o incluso entregar financiamiento en 7 Minutos!. ¿Y lo mejor?, Nuestro servicio de Van es absolutamente gratis.",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
     {
-        name: "Tag",
+        name: "FINANCIAMIENTO",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "Amplía tus opciones de venta con nosotros. En Autocred contamos con una plataforma de pagos que permite a un comprador pagar con Tarjeta de Crédito o con Financiamiento. La evaluación tarda solo 7 minutos y el dinero se abona en tu cuenta al momento de firmar la transferencia con nosotros. No pierdas la oportunidad de vender al mejor valor tu vehículo.",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
     {
-        name: "Seguro Mecanico",
+        name: "TRANSFERENCIA",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "¿Estás listo para transferir tu auto?, contamos con 3 canales de atención para que realices de forma segura la transferencia de tu vehículo. Online, Presencial en nuestros Módulos de Atención, o en el lugar que desees gracias a nuestro servicio de Oficina Móvil. Servicio en línea con el registro civil.",
+        img: "https://uilogos.co/img/logomark/lighting.png",
+    },
+    {
+        name: "QUEREMOS SER MÁS",
+        content:
+            "Porque estamos comprometidos con entregarte la mejor experiencia, además de acompañarte en las etapas de exhibición y entregarte todas las facilidades para que logres un buen negocio, al momento de transferir podemos ayudarte a dar de baja tu Tag (solo autopista Vespucio Norte) y al  comprador le habilitamos uno nuevo. Podemos también asegurar el auto e inspeccionar para que nadie corra riesgos. ",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
 ];
 export const serviciosCompradores = [
     {
-        name: "Financiamiento",
+        name: "VAN/OFICINA MÓVIL",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "¿Un Uber con acompañamiento?, Así es, si tienes claro qué auto te gusta te llevamos a verlo sin costo* (sólo región metropolitana). Durante el viaje podemos verificar el estado de su documentación, historial de multas e incluso ayudarte con el financiamiento realizando una evaluación en <b>¡Tan solo 7 minutos!</b>",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
     {
-        name: "Seguro Automotriz",
+        name: "PLATAFORMA DE PAGO",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "Te gustaría comprar el auto de un particular con tarjeta de crédito?, o mejor aún ¿Financiarlo?, con autocred todo es posible. Trabajamos con diferentes opciones y financieras para que logres hacer de la compra el mejor negocio. Al vendedor se le paga en el mismo minuto que se hace la transferencia para evitar desconfianzas.",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
     {
-        name: "Seguro Mecanico",
+        name: "TRANSFERENCIA, SEGUROS, TAG Y MÁS",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "Queremos ser tu mejor copiloto. Te acompañamos durante el proceso de búsqueda y también te apoyamos a la hora de comprar. Contamos con un servicio de Transferencia en línea con registro civil, un pool de seguros exclusivo para compradores particulares, activamos y entregamos el TAG y todo en cualquiera de nuestros canales de venta; Online, presencial en nuestros Módulos de Atención o donde quieras a través de nuestra Oficina Móvil.",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
 ];
@@ -142,10 +147,10 @@ export const cuotasSimulacion = [
     12, 24, 36, 48
 ]
 export const valores = [
-    { title: "Transparencia", content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus laboriosam sit, illum animi quaerat vero eaque earum cum! Cumque enim minus eum. Nobis ad quaerat labore laboriosam ipsum laudantium consectetur?", src: "https://acsp.cl/wp-content/uploads/2020/08/Shape.png" },
-    { title: "Transparencia", content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus laboriosam sit, illum animi quaerat vero eaque earum cum! Cumque enim minus eum. Nobis ad quaerat labore laboriosam ipsum laudantium consectetur?", src: "https://acsp.cl/wp-content/uploads/2020/08/Shape.png" },
-    { title: "Transparencia", content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus laboriosam sit, illum animi quaerat vero eaque earum cum! Cumque enim minus eum. Nobis ad quaerat labore laboriosam ipsum laudantium consectetur?", src: "https://acsp.cl/wp-content/uploads/2020/08/Shape.png" },
-    { title: "Transparencia", content: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus laboriosam sit, illum animi quaerat vero eaque earum cum! Cumque enim minus eum. Nobis ad quaerat labore laboriosam ipsum laudantium consectetur?", src: "https://acsp.cl/wp-content/uploads/2020/08/Shape.png" }
+    { title: "Libertad", content: "Vende y compra con toda libertad. Nosotros te acompañamos durante todo el proceso. Sin letra chica.", src: "https://acsp.cl/wp-content/uploads/2020/08/Shape.png" },
+    { title: "Responsabilidad", content: "asumimos la tarea de que la compra o venta de tu auto usado se realice de la forma más transparente y justa.", src: "https://acsp.cl/wp-content/uploads/2020/08/Shape.png" },
+    { title: "Empatía", content: "Nos sentamos al lado tanto de compradores como vendedores, entendemos sus dolores y ofrecemos siempre una solución efectiva.", src: "https://acsp.cl/wp-content/uploads/2020/08/Shape.png" },
+    { title: "Honestidad", content: "Entregamos la información necesaria para que ambas partes sepan exactamente el negocio que realizan. Somos el mejor copiloto para hacer un buen negocio en la compra y venta de tu auto usado.", src: "https://acsp.cl/wp-content/uploads/2020/08/Shape.png" }
 ]
 export const questionsComprador = [
     { title: "Lorem ipsum?", content: "No" },
@@ -205,8 +210,6 @@ export const rrss = [
     { name: "facebook", url: "facebook", src: "/img/rrss/rrss-facebook.svg" },
     { name: "instagram", url: "instagram", src: "/img/rrss/rrss-instagram.svg" },
     { name: "linkedin", url: "linkedin", src: "/img/rrss/rrss-linkedin.svg" },
-    { name: "tiktok", url: "tiktok", src: "/img/rrss/rrss-tiktok.svg" }
-
 ]
 
 export const featuresTransferencia = [
@@ -289,3 +292,27 @@ export const featuresSeguro = [
         img: "https://uilogos.co/img/logomark/lighting.png",
     }
 ];
+
+
+export const ventajas = [
+    {
+        name: "Te Guiamos",
+        content:
+            "Estamos disponibles a través de nuestros distintos canales los 7 días de la semana para ayudarte en lo que necesites.",
+        src: '/img/copiloto.png'
+    },
+    {
+        name: "Te Acompañamos",
+        content:
+            "Te llevamos al comprador en nuestra van, entregamos financiamiento y facilidades de pago, y/o te acompañamos a ver o mostrar el auto.",
+        src: '/img/copiloto.png'
+
+    },
+    {
+        name: "Te Apoyamos",
+        content:
+            "Para comprar o vender, contamos con facilidades de pago, servicio de transferencia, seguro y TAG. Todo en un mismo lugar.",
+        src: '/img/mejor-ruta.png'
+
+    }
+]

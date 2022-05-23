@@ -7,8 +7,8 @@ export const direcciones = [
 ]
 
 export const servicios = [
-    { id: 1, name: "Transferencias" },
     { id: 2, name: "Financiamientos" },
+    { id: 1, name: "Transferencias" },
     { id: 3, name: "Seguro" },
     { id: 4, name: "Tag" },
 ];
@@ -27,8 +27,8 @@ export const antiguedad = [
 ];
 
 export const gestion = [
-    { id: 1, name: "Modulo presencial" },
     { id: 2, name: "Van - Oficina Movil" },
+    { id: 1, name: "Modulo presencial" },
     { id: 3, name: "Ejecutivo Online" },
 ]
 

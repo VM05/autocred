@@ -3,12 +3,12 @@
     <BannerHome>
       <template #content>
         <Heading
-          content="Hacer un buen negocio es un camino en que muchos se pierden. Para llegar a destino, confia en un coopiloto experto"
+          content="Si tu destino es hacer un buen negocio, confía en un copiloto experto."
           headingType="h2"
           class="mb-5"
         />
         <Heading
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          content="Te acompañamos en todo el proceso y nos preocupamos de cada detalle: transferencia, TAG, seguros y trámites asociados. Contamos con módulos de atención en distintas zonas de la capital, servicios 100% online para atender a todo Chile, o si quieres llevamos nuestra oficina móvil donde quieras. Gracias a nuestra plataforma de pago puedes vender o comprar con tarjeta de crédito o evaluar tu crédito en tan solo 7 minutos. Trabajamos los 7 días de la semana para lograr que la compra o venta entre personas de cualquier vehículo usado, sea un viaje extraordinario!"
           headingType="h3"
           class="mb-5"
         />

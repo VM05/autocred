@@ -9,17 +9,18 @@
       />
       <div class="content">
         <p class="font-medium text-primary-900 text-lg">
-          <span class="text-secondary-900 font-bold">Autocred</span> ipsum dolor
-          sit amet consectetur adipisicing elit. Sed, enim eveniet itaque facere
-          harum culpa atque dolorum exercitationem temporibus! Reprehenderit
-          vitae magni repudiandae voluptatum! Eaque totam veniam aut autem
-          itaque?
+          <span class="text-secondary-900 font-bold">Autocred</span> nació a
+          fines de 2019 con el objetivo de acompañar, facilitar y financiar la
+          compra y venta de autos usados entre personas. Luego de nuestra
+          primera etapa, hemos sumado a <b>FORUM</b> como un participante y
+          socio estratégico, incorporando servicios y apuntando a las
+          transferencias digitales y móviles.
         </p>
         <p class="font-medium text-primary-900 text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet natus
-          facere nesciunt vero recusandae expedita deleniti, nulla voluptates,
-          optio alias veritatis vitae magnam similique totam, nobis eos voluptas
-          minima. Exercitationem.
+          Nuestro foco es entregar una experiencia inolvidable a las personas a
+          la hora de comprar o vender su auto, entregando un servicio
+          conveniente, eficiente, cómodo y con un gran respaldo, maximizando los
+          beneficios para cada una de las partes.
         </p>
       </div>
     </div>

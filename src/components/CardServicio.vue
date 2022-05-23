@@ -10,8 +10,7 @@
           headingType="h4"
           class="font-bold mb-3"
         />
-        <Paragraph class="font-medium text-base">
-          {{ data.content }}
+        <Paragraph class="font-medium text-base" v-html="data.content">
         </Paragraph>
       </div>
     </div>

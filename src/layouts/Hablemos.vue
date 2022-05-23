@@ -1,8 +1,12 @@
 <template>
   <div class="bg-gray-100 py-6 md:py-12 px-6 md:px-12 md:mb-12 mb-6">
-    <Heading1 content="Hablemos" class="mb-12" />
+    <Heading1 content="Solicita tu servicio con nosotros" class="mb-12" />
     <div class="bg-white rounded-xl card px-6 py-7">
-      <Heading1 content="Formulario" headingType="h3" class="border-b pb-4" />
+      <Heading1
+        content="Formulario Contacto"
+        headingType="h3"
+        class="border-b pb-4"
+      />
       <div class="grid place-content-center my-20" v-if="alerts">
         <Loading v-if="isLoading" />
         <div v-if="isSuccess" class="text-center">

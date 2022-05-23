@@ -6,12 +6,13 @@
       >
         <div id="documentosLegales">
           <Heading content="Documentos Legales" headingType="h5" />
-          <router-link
+          <a
             class="text-base font-medium text-gray-500 hover:text-secondary-800 hover:cursor-pointer"
-            to="/"
+            href="../../public/pdf/Autocred_Terminos_y_condiciones.pdf"
+            target="_blank"
           >
             Terminos y condiciones
-          </router-link>
+          </a>
         </div>
         <div id="somosAutocred">
           <Heading content="Somos Autocred" headingType="h5" />
@@ -33,24 +34,21 @@
         <div id="casaMatriz">
           <Heading content="Casa Matriz" headingType="h5" />
           <a
-            href=""
+            href="https://www.google.cl/maps/place/Spaces/@-33.4145955,-70.603794,17z/data=!3m1!4b1!4m5!3m4!1s0x9662cf4212304611:0xa573dcf4ad3a9b63!8m2!3d-33.4146!4d-70.6016"
             class="text-base font-medium text-gray-500 hover:text-secondary-800 hover:cursor-pointer"
+            target="_blank"
           >
-            {{ direcciones[0].direccion }}
+            El Bosque Norte 0211, Piso 3 (Spaces), Las Condes, RM
           </a>
         </div>
         <div id="contacto">
           <Heading content="Contacto" headingType="h5" />
-          <p
+          <a
             class="text-base font-medium text-gray-500 hover:text-secondary-800 hover:cursor-pointer"
+            href="mailto:mail@autocred.cl"
           >
-            {{ direcciones[0].telefono }}
-          </p>
-          <p
-            class="text-base font-medium text-gray-500 hover:text-secondary-800 hover:cursor-pointer"
-          >
-            {{ direcciones[0].correo }}
-          </p>
+            mail@autocred.cl
+          </a>
         </div>
       </div>
       <div class="redes md:border-r-2 xl:px-12 md:px-5 pt-5">

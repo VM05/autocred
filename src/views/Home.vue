@@ -8,13 +8,13 @@
           class="mb-5"
         />
         <Heading
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          content="Te guiamos y acompañamos en todo el proceso de venta o compra de tu vehículo usado. Cuenta con nosotros ya sea online, presencial o Móvil."
           headingType="h4"
           class="mb-5"
         />
         <div>
           <Heading
-            content="En que viaje te guiamos?"
+            content="¿En que viaje te guiamos?"
             headingType="h4"
             class="mb-3"
           />
@@ -44,7 +44,7 @@
     <Experiencia />
     <Comentarios />
     <DondeEstamos />
-    <Medios />
+    <!-- <Medios /> -->
     <Hablemos id="contacto" />
   </Container>
 </template>
