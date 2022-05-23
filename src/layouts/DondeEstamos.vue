@@ -1,13 +1,15 @@
 <template>
   <div class="py-6 mb-24">
     <Heading1 content="Donde estamos" class="mb-14" />
-    <div class="grid grid-cols-2 w-full justify-between">
+    <div class="grid grid-cols-1 md:grid-cols-2 w-full justify-between">
       <div class="grid grillaInfoMapa">
-        <div class="flex w-full border-r-2">
+        <div
+          class="flex flex-row-reverse justify-between md:flex-row w-full border-0 md:border-r-2"
+        >
           <img
             src="../assets/img/ilustraciones-donde-estamos.svg"
             alt=""
-            class="h-96 w-24"
+            class="h-60 md:h-96 w-24"
           />
           <ul class="flex flex-col gap-2 px-6">
             <Paragraph1
@@ -26,9 +28,9 @@
             </Paragraph1>
           </ul>
         </div>
-        <div class="border-r-2">
+        <div class="border-0 md:border-r-2">
           <div
-            class="flex flex-col px-6 gap-2"
+            class="flex flex-col md:px-6 gap-2"
             v-for="(direccion, index) in direcciones"
             v-show="direccion.name == unref(activeDirection)"
             :key="index"
@@ -76,7 +78,7 @@
           </div>
         </div>
       </div>
-      <div class="px-8">
+      <div class="mt-4 md:mt-0 md:px-8 h-60 md:h-full">
         <!-- <Map1 /> -->
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.530222906549!2d-70.57997978421838!3d-33.40941830279496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf2105f438c5%3A0xe099286da96e6fbe!2sLos%20Militares%205001%2C%20of.%20404%2C%20Las%20Condes%2C%207560955%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1652114966302!5m2!1ses!2scl"
@@ -109,6 +111,11 @@ const active = (e) => {
   color: rgb(212, 15, 125);
 }
 .grillaInfoMapa {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .grillaInfoMapa {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 </style>
