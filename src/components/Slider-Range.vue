@@ -68,7 +68,13 @@ const formatValue = computed(() =>
 
 const format = (e) => {
   if (e.target.value.includes("$")) {
-    value.value = e.target.value.replaceAll("$", "");
+    let desFormat = e.target.value.replaceAll("$", "").replaceAll(".", "");
+    value.value = desFormat;
+    const res = new Intl.NumberFormat("es-CL", {
+      currency: "CLP",
+      style: "currency",
+    }).format(desFormat);
+    e.target.value = res;
   } else {
     value.value = e.target.value;
     const res = new Intl.NumberFormat("es-CL", {
