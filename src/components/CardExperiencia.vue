@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-4 flex-col">
+  <div class="flex gap-4 flex-col items-center">
     <div class="mascara relative grid place-content-center w-full">
       <img
         src="../assets/img/mascara3.svg"

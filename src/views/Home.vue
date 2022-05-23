@@ -13,11 +13,11 @@
           class="mb-5"
         />
         <div>
-          <Heading
+          <!-- <Heading
             content="¿En que viaje te guiamos?"
             headingType="h4"
             class="mb-3"
-          />
+          /> -->
           <div class="flex flex-col md:flex-row md:gap-4 gap-2">
             <router-link to="/vendedores">
               <Button text="Quiero vender" secondary />
