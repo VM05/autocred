@@ -7,7 +7,6 @@
     <Carousel
       :items-to-show="1"
       :wrapAround="true"
-      snapAlign="start"
       :itemsToScroll="1"
       :autoplay="false"
       class="mb-8"
@@ -57,25 +56,27 @@ defineProps({
 </script>
 
 <style>
-/* .carousel__viewport {
-  padding-bottom: 1rem;
-}
-li.carousel__slide {
-  padding-left: 1rem;
-  padding-left: 1rem;
-}
+@media (min-width: 768px) {
+  .carousel__viewport {
+    padding-bottom: 1rem;
+  }
+  li.carousel__slide {
+    padding-left: 1rem;
+    padding-left: 1rem;
+  }
 
-.slide {
-  height: 200px;
-  width: 200px;
-}
+  .slide {
+    height: 200px;
+    width: 200px;
+  }
 
-.carousel__slide.carousel__slide--active.carousel__slide--visible {
-  transform: scale(1);
-}
+  .carousel__slide.carousel__slide--active.carousel__slide--visible {
+    transform: scale(1);
+  }
 
-.carousel__slide.carousel__slide--prev,
-.carousel__slide.carousel__slide--visible {
-  transform: scale(0.8);
-} */
+  .carousel__slide.carousel__slide--prev,
+  .carousel__slide.carousel__slide--visible {
+    transform: scale(0.8);
+  }
+}
 </style>
