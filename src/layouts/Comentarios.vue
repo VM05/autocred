@@ -8,7 +8,7 @@
       :items-to-show="1"
       :wrapAround="true"
       :itemsToScroll="1"
-      :autoplay="false"
+      :autoplay="3500"
       class="mb-8"
       :breakpoints="breakpoints"
     >
