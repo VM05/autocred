@@ -50,7 +50,7 @@
             <FeaturesList :data="featuresFinanciamiento" class="mb-24" />
             <Simulador />
           </div>
-          <div v-if="elementActive == 'financiamiento'">
+          <div v-if="elementActive == 'tag'">
             <FeaturesList :data="featuresTag" class="mb-24" />
           </div>
           <div v-if="elementActive == 'seguro'">
