@@ -1,9 +1,17 @@
 export const direcciones = [
-    { name: 'R.Metropolitana', direccion: 'Los Militares 5001, of 404, Las Condes', telefono: '+5692342423', correo: 'contacto@autocred.cl', },
-    { name: 'Curico', direccion: 'Direccion Curico 1000', telefono: '+5692342423', correo: 'contacto@autocred.cl', },
-    { name: 'Concepcion', direccion: 'Direccion Concepcion 1000', telefono: '+5692342423', correo: 'contacto@autocred.cl', },
-    { name: 'Temuco', direccion: 'Direccion Temuco 1000', telefono: '+5692342423', correo: 'contacto@autocred.cl', },
-    { name: 'Otras Regiones', direccion: 'Direccion Otras Regiones 1000', telefono: '+5692342423', correo: 'contacto@autocred.cl', },
+    {
+        name: 'R.Metropolitana',
+        servicios: ['Presencial', 'Servicio 100 % online', 'Servicio Movil'],
+        sucursales: [
+            { name: 'Sur', content: '<b>Zona Sur</b>: Mall Paseo Quilin <br>Piso 1, Entrada Central Vespucio' },
+            { name: 'Poniente', content: '<b>Zona Poniente</b>: Autocred Cerrillos <br>Las Americas 375' },
+            { name: 'Norte', content: '<b>Zona Norte</b>: Mall Plaza Norte <br>Piso 2, Patio automotriz' },
+            { name: 'Oriente', content: '<b>Zona Oriente</b>: Apumanque <br>Piso 1, Entrada Apoquindo' }
+        ]
+    },
+    {
+        name: 'Otras Regiones', servicios: ['Servicio 100 % online'],
+    },
 ]
 
 export const servicios = [
@@ -25,13 +33,11 @@ export const antiguedad = [
     { id: 2, value: 12, name: "MAYOR A 12 MESES " },
     { id: 3, value: 1, name: "MENOR A 12 MESES" },
 ];
-
 export const gestion = [
     { id: 2, name: "Van - Oficina Movil" },
     { id: 1, name: "Modulo presencial" },
     { id: 3, name: "Ejecutivo Online" },
 ]
-
 export const typeCredit = [
     { value: "conventional", name: "Credito Convencional" },
     { value: "smart", name: "Compra Inteligente" },
