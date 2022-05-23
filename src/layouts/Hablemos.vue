@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 py-12 px-12 mb-12">
+  <div class="bg-gray-100 py-6 md:py-12 px-6 md:px-12 md:mb-12 mb-6">
     <Heading1 content="Hablemos" class="mb-12" />
     <div class="bg-white rounded-xl card px-6 py-7">
       <Heading1 content="Formulario" headingType="h3" class="border-b pb-4" />
@@ -23,12 +23,12 @@
         </div>
       </div>
       <form
-        class="grid grid-cols-2"
+        class="grid md:grid-cols-2 grid-cols-1"
         @submit.prevent="handleForm"
         id="form"
         v-else
       >
-        <div class="left pr-8 border-r">
+        <div class="left p-0 md:pr-8 md:border-r border-0">
           <Input
             placeholder="Ingresa tu nombre completo"
             label="Nombre"
@@ -49,7 +49,7 @@
             @update:text="(e) => (formContacto.telefono = e)"
           />
         </div>
-        <div class="right pl-8">
+        <div class="right md:pl-8 p-0">
           <SelectServicios
             label="Que servicios necesitas?"
             class="w-full"
