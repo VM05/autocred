@@ -2,7 +2,29 @@
   <div class="w-full">
     <!-- TODO: Modelar INPUT -->
     <!-- <Input v-model="value" /> -->
-    <input v-model="value" />
+    <div class="relative py-6 w-full">
+      <input
+        v-if="props.valorTotal"
+        v-model="formatValue"
+        class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full"
+        type="text"
+        min="1000000"
+        max="99999999"
+        placeholder="$1.000.000"
+        @blur="format"
+      />
+      <input
+        v-else
+        v-model="formatValue"
+        class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full"
+        type="text"
+        min="1000000"
+        max="7000000"
+        placeholder="$1.000.000"
+        @blur="format"
+      />
+    </div>
+
     <Slider
       v-if="props.valorTotal"
       v-model="value"
@@ -43,6 +65,19 @@ const formatValue = computed(() =>
     unref(value)
   )
 );
+
+const format = (e) => {
+  if (e.target.value.includes("$")) {
+    value.value = e.target.value.replaceAll("$", "");
+  } else {
+    value.value = e.target.value;
+    const res = new Intl.NumberFormat("es-CL", {
+      currency: "CLP",
+      style: "currency",
+    }).format(e.target.value);
+    e.target.value = res;
+  }
+};
 
 watch(value, () => {
   emits("update:slider", value.value.toString());
