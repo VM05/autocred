@@ -31,7 +31,7 @@
           type="submit"
         />
         <a
-          href="https://autocred.cl/password/reset"
+          :href="PASSWORD_RESET"
           class="text-primary-900 underline font-semibold text-base"
         >
           Olvide mi contraseña
@@ -59,7 +59,11 @@ import Input from "./Form/Input.vue";
 import Button1 from "./Button.vue";
 import Paragraph from "../components/Paragraph.vue";
 import axios from "axios";
-import { LOGIN_URL, LOGIN_URL_TOKEN } from "../assets/helpers/API";
+import {
+  LOGIN_URL,
+  LOGIN_URL_TOKEN,
+  PASSWORD_RESET,
+} from "../assets/helpers/API";
 import Loading from "./Loading.vue";
 
 const loading = ref(false);

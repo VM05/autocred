@@ -39,7 +39,7 @@ export const typeCredit = [
 
 
 
-
+export const PASSWORD_RESET = "https://dev.autocred.cl/password/reset"
 export const BASE_URL = "https://dev.autocred.cl"
 export const LOGIN_URL_TOKEN = (token) => BASE_URL + "/ingresar/" + token
 const BASE_URL_API = "https://dev.autocred.cl/api/"
