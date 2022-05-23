@@ -21,6 +21,11 @@ export function deleteSigns(string) {
     return response
 }
 
-// function formatNumbers (array:Array){
-//     array.
-// }
+export function formatNumbers(num) {
+    const res = new Intl.NumberFormat("es-CL", {
+        currency: "CLP",
+        style: "currency",
+    }).format(num)
+
+    return res
+}

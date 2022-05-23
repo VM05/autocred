@@ -8,7 +8,7 @@
           >
             <div class="title flex justify-between w-full">
               <span>{{ cuota.term }} cuotas</span>
-              <span>{{ cuota.monthly_payment }} /mes</span>
+              <span>{{ formatNumbers(cuota.monthly_payment) }} /mes</span>
             </div>
 
             <ChevronUpIcon
@@ -28,11 +28,11 @@
               </div>
               <div class="title flex justify-between w-full">
                 <span>Monto total a financiar</span>
-                <span>$ {{ cuota.loan_amount }}</span>
+                <span>{{ formatNumbers(cuota.loan_amount) }}</span>
               </div>
               <div class="title flex justify-between w-full">
                 <span>Costo total del crédito</span>
-                <span>$ {{ cuota.loan_total }}</span>
+                <span>{{ formatNumbers(cuota.loan_total) }}</span>
               </div>
               <div
                 class="title flex justify-between w-full"
@@ -58,7 +58,7 @@
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import { ChevronUpIcon } from "@heroicons/vue/solid";
-import { camposSimulacion } from "../assets/helpers/constants";
+import { formatNumbers } from "../assets/helpers/validate";
 import Button from "./Button.vue";
 import { ref } from "vue";
 
