@@ -34,7 +34,7 @@
       :merge="100"
       :step="50_000"
       :format="{ prefix: '$' }"
-      showTooltip="focus"
+      :tooltips="false"
     />
     <Slider
       v-else
@@ -45,7 +45,7 @@
       :merge="100"
       :step="50_000"
       :format="{ prefix: '$' }"
-      showTooltip="focus"
+      :tooltips="false"
     />
   </div>
 </template>
