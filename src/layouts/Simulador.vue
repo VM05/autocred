@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-24">
+  <div class="">
     <div class="relative grid">
       <img
         src="https://picsum.photos/seed/picsum/1000/450"
