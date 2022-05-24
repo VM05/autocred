@@ -8,11 +8,11 @@
   >
     <Disclosure v-slot="{ open }">
       <DisclosureButton
-        class="flex w-full px-4 py-7 text-left text-lg font-medium text-white items-center"
+        class="flex w-full py-2 px-2 md:px-4 md:py-7 text-left text-lg font-medium text-white items-center gap-2"
         :class="{ 'bg-secondary-900': secondary, 'bg-primary-900': primary }"
       >
-        <MinusCircleIcon v-if="open" class="h-w-10 w-10 text-white" />
-        <PlusCircleIcon v-else="open" class="h-w-10 w-10 text-white" />
+        <MinusCircleIcon v-if="open" class="w-8 md:w-10 text-white" />
+        <PlusCircleIcon v-else="open" class="w-8 md:w-10 text-white" />
         <span>{{ data.title }}</span>
       </DisclosureButton>
       <DisclosurePanel class="px-12 py-8 text-lg text-gray-500 font-medium">

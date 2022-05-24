@@ -20,7 +20,7 @@
         v-if="comprador"
         :primary="primary"
         :secondary="secondary"
-        class="cardQuestion justify-self-start"
+        class="cardQuestion justify-self-start md"
       />
     </div>
   </div>
@@ -43,6 +43,11 @@ defineProps({
 
 <style scoped>
 .cardQuestion {
-  width: 80%;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .cardQuestion {
+    width: 80%;
+  }
 }
 </style>
