@@ -84,33 +84,27 @@
                   />
                 </div>
               </div>
-              <div class="">
-                <div
-                  class="grid place-content-center"
-                  v-if="!loading && !complete"
-                >
-                  <img
-                    src="../assets/img/simulador.svg"
-                    alt=""
-                    class="w-full md:w-auto"
-                  />
-                </div>
-                <div class="grid place-content-center" v-if="loading">
-                  <Paragraph class="text-center mb-8">
-                    Estamos evaluando su credito, espere un momento
-                  </Paragraph>
-                  <Loading />
-                </div>
-                <div
-                  v-else-if="complete"
-                  class="col-span-1 flex flex-col justify-between"
-                >
-                  <Acordion1
-                    :cuotasSimulacion="dataCuotas"
-                    :typeCredit="formSimulador.type"
-                    @select:term="(cuota) => handleTransition(cuota)"
-                  />
-                </div>
+              <div
+                class="grid place-content-center"
+                v-if="!loading && !complete"
+              >
+                <img src="../assets/img/simulador.svg" alt="" class="w-full" />
+              </div>
+              <div class="grid place-content-center" v-if="loading">
+                <Paragraph class="text-center mb-8">
+                  Estamos evaluando su credito, espere un momento
+                </Paragraph>
+                <Loading />
+              </div>
+              <div
+                v-else-if="complete"
+                class="col-span-1 flex flex-col justify-between"
+              >
+                <Acordion1
+                  :cuotasSimulacion="dataCuotas"
+                  :typeCredit="formSimulador.type"
+                  @select:term="(cuota) => handleTransition(cuota)"
+                />
               </div>
             </div>
             <div class="footer grid justify-center py-4">
