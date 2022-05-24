@@ -1,11 +1,11 @@
 <template>
   <div class="mb-1">
     <Heading1 content="Nuestro recorrido" />
-    <div class="grid grid-cols-2 pattern">
+    <div class="grid grid-cols-1 md:grid-cols-2 pattern">
       <img
         src="https://api.lorem.space/image/car?w=300&h=300"
         alt=""
-        class="image"
+        class="image w-full"
       />
       <div class="content">
         <p class="font-medium text-primary-900 text-lg">
@@ -36,13 +36,18 @@ import Heading1 from "../../components/Heading.vue";
   border-bottom-right-radius: 100px;
 }
 .content {
-  padding: 3rem 3rem 3rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  padding: 1rem 0 0 0;
 }
 .pattern {
   padding: 0 0 4rem 0;
   /* background-image: url("https://thumbs.dreamstime.com/b/light-grey-network-web-texture-seamless-pattern-great-space-inspired-wallpaper-backgrounds-invitations-packaging-design-132890319.jpg"); */
+}
+@media (min-width: 768px) {
+  .content {
+    padding: 3rem 3rem 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 </style>
