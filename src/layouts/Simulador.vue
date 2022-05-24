@@ -92,7 +92,7 @@
               </div>
               <div class="grid place-content-center" v-if="loading">
                 <Paragraph class="text-center mb-8">
-                  Estamos evaluando su credito, espere un momento
+                  Estamos evaluando su crédito, espere un momento
                 </Paragraph>
                 <Loading />
               </div>
@@ -184,10 +184,10 @@
                       @update:email="(e) => (formSimulador2.email = e)"
                     />
                     <Input
-                      label="Telefono"
+                      label="Teléfono"
                       id="Telefono"
                       isPhone
-                      placeholder="Telefono"
+                      placeholder="Teléfono"
                       @update:text="(e) => (formSimulador2.phone = e)"
                     />
                   </div>

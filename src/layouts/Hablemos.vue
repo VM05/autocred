@@ -47,7 +47,7 @@
           />
           <Input
             placeholder="Ingresa tu numero"
-            label="Telefono"
+            label="Teléfono"
             id="phone"
             isPhone
             @update:text="(e) => (formContacto.telefono = e)"

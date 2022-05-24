@@ -35,7 +35,7 @@
       />
       <Input
         isPhone
-        label="Telefono"
+        label="Teléfono"
         id="phone"
         class="input"
         :value="data.telefono"
