@@ -1,11 +1,14 @@
 <template>
   <div class="">
     <div class="relative grid">
-      <img
-        src="https://picsum.photos/seed/picsum/1000/450"
-        alt=""
-        class="imagen z-0"
-      />
+      <div class="relative z-0">
+        <img
+          src="../assets/img/cotizacion.jpg"
+          alt=""
+          class="imagen z-0 top-0"
+        />
+        <div class="imagen imagenBG top-0 absolute"></div>
+      </div>
       <div class="z-10 absolute top-12 md:top-16 left-4 md:left-16">
         <Heading1 content="Evalua tu crédito" white />
         <Heading1 content="Con la mejor cuota" white />
@@ -406,9 +409,8 @@ const registerHandle = () => {
   width: 100%;
   max-width: 100%;
   height: 200px;
-  background-color: aquamarine;
   border-radius: 40px 40px 0 0;
-  object-fit: fill;
+  object-fit: cover;
   filter: brightness(0.8);
 }
 .card {
@@ -430,15 +432,18 @@ const registerHandle = () => {
 .v-leave-to {
   opacity: 0;
 }
-
+.imagenBG {
+  z-index: 5;
+  background-color: blue;
+  opacity: 0.4;
+}
 @media (min-width: 768px) {
   .imagen {
     width: 100%;
     max-width: 100%;
     height: 450px;
-    background-color: aquamarine;
     border-radius: 40px;
-    object-fit: fill;
+    object-fit: cover;
     filter: brightness(0.8);
   }
   .card {
