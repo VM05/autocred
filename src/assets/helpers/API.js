@@ -1,7 +1,7 @@
 export const direcciones = [
     {
         name: 'R.Metropolitana',
-        servicios: ['Presencial', 'Servicio 100 % online', 'Servicio Movil'],
+        servicios: ['Presencial', 'Servicio 100 % online', 'Servicio Van / Oficina Móvil'],
         sucursales: [
             { name: 'Sur', content: '<b>Zona Sur</b>: Mall Paseo Quilin <br>Piso 1, Entrada Central Vespucio' },
             { name: 'Poniente', content: '<b>Zona Poniente</b>: Autocred Cerrillos <br>Las Americas 375' },

@@ -11,7 +11,7 @@
             href="/pdf/Autocred_Terminos_y_condiciones.pdf"
             target="_blank"
           >
-            Terminos y condiciones
+            Términos y condiciones
           </a>
         </div>
         <div id="somosAutocred">
