@@ -216,8 +216,8 @@
                       @update:empleo="(e) => (formSimulador2.income_type = e)"
                     />
                     <SelectAntiguedad
-                      label="Tipo Ingreso"
-                      id="Tipo Ingreso"
+                      label="Antiguedad Laboral"
+                      id="antiguedad"
                       @update:antiguedad="
                         (e) => (formSimulador2.work_continuity = e)
                       "

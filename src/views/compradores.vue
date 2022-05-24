@@ -23,7 +23,7 @@
           <img
             src="https://picsum.photos/id/199/536/354"
             alt="lorem"
-            class=""
+            class="w-full md:w-auto"
           />
         </div>
       </template>
