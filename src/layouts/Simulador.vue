@@ -6,7 +6,7 @@
         alt=""
         class="imagen z-0"
       />
-      <div class="z-10 absolute top-16 left-16">
+      <div class="z-10 absolute top-12 md:top-16 left-4 md:left-16">
         <Heading1 content="Evalua tu crédito" white />
         <Heading1 content="Con la mejor cuota" white />
       </div>
@@ -17,7 +17,9 @@
             <div class="title border-b pb-4 border-primary-900">
               <Heading1 content="Evaluación de Crédito" headingType="h3" />
             </div>
-            <div class="content py-6 grid grid-cols-3 gap-6 border-b">
+            <div
+              class="content py-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 border-b"
+            >
               <div class="col-span-1">
                 <InputRut1
                   label="RUT"
@@ -26,7 +28,7 @@
                   class="w-full"
                   @update:rut="(e) => (formSimulador.dni = e)"
                 />
-                <div class="flex">
+                <div class="md:flex">
                   <SelectMarcas1
                     label="Marca"
                     id="Marca"
@@ -42,7 +44,7 @@
                     "
                   />
                 </div>
-                <div class="flex">
+                <div class="md:flex">
                   <Input
                     label="Version"
                     id="Version"
@@ -62,7 +64,9 @@
                   @update:type="(e) => (formSimulador.type = e.value)"
                 />
               </div>
-              <div class="col-span-1 px-5 border-x grid gap-6">
+              <div
+                class="col-span-1 md:px-5 md:border-x grid gap-6 mb-8 md:mb-0"
+              >
                 <div class="price">
                   <Heading1 content="Valor del vehiculo" headingType="h4" />
                   <SliderRange1
@@ -82,7 +86,11 @@
                   class="grid place-content-center"
                   v-if="!loading && !complete"
                 >
-                  <img src="../assets/img/simulador.svg" alt="" />
+                  <img
+                    src="../assets/img/simulador.svg"
+                    alt=""
+                    class="w-full md:w-auto"
+                  />
                 </div>
                 <div class="grid place-content-center" v-if="loading">
                   <Paragraph class="text-center mb-8">
@@ -145,7 +153,9 @@
                   headingType="h3"
                 />
               </div>
-              <div class="content py-6 grid grid-cols-2 gap-6 border-b">
+              <div
+                class="content py-6 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 border-b"
+              >
                 <div class="col-span-1">
                   <div class="flex">
                     <Input
@@ -155,7 +165,7 @@
                       @update:text="(e) => (formSimulador2.name = e)"
                     />
                   </div>
-                  <div class="flex">
+                  <div class="md:flex">
                     <Input
                       label="Apellido Paterno"
                       id="Apellido Paterno"
@@ -169,7 +179,7 @@
                       @update:text="(e) => (formSimulador2.second_surname = e)"
                     />
                   </div>
-                  <div class="flex">
+                  <div class="md:flex">
                     <InputEmail
                       label="Email"
                       id="Email"
@@ -185,7 +195,7 @@
                     />
                   </div>
                 </div>
-                <div class="col-span-1 px-5 border-x">
+                <div class="col-span-1 md:px-5 md:border-x">
                   <div class="flex">
                     <Input
                       label="Renta Liquida"
@@ -194,7 +204,7 @@
                       @update:text="(e) => (formSimulador2.salary = e)"
                     />
                   </div>
-                  <div class="flex">
+                  <div class="md:flex">
                     <SelectNacionalidad
                       label="Nacionalidad"
                       id="Nacionalidad"
@@ -209,7 +219,7 @@
                       @update:text="(e) => (formSimulador2.birth_date = e)"
                     />
                   </div>
-                  <div class="flex">
+                  <div class="md:flex">
                     <SelectEmpleo
                       label="Tipo Ingreso"
                       id="Tipo Ingreso"
@@ -395,19 +405,19 @@ const registerHandle = () => {
 .imagen {
   width: 100%;
   max-width: 100%;
-  height: 450px;
+  height: 200px;
   background-color: aquamarine;
-  border-radius: 40px;
+  border-radius: 40px 40px 0 0;
   object-fit: fill;
   filter: brightness(0.8);
 }
 .card {
-  width: 95%;
+  width: 100%;
   height: auto;
   background-color: white;
   border-radius: 40px;
   position: relative;
-  top: -10rem;
+  top: -2rem;
   justify-self: center;
 }
 /* we will explain what these classes do next! */
@@ -419,5 +429,26 @@ const registerHandle = () => {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .imagen {
+    width: 100%;
+    max-width: 100%;
+    height: 450px;
+    background-color: aquamarine;
+    border-radius: 40px;
+    object-fit: fill;
+    filter: brightness(0.8);
+  }
+  .card {
+    width: 95%;
+    height: auto;
+    background-color: white;
+    border-radius: 40px;
+    position: relative;
+    top: -10rem;
+    justify-self: center;
+  }
 }
 </style>

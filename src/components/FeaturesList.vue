@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 gap-5">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
     <CardServicio v-for="cardData in data" :data="cardData" />
   </div>
 </template>
