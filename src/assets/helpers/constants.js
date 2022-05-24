@@ -208,8 +208,8 @@ export const comentarios = [
 ]
 export const rrss = [
     { name: "facebook", url: "facebook", src: "/img/rrss/rrss-facebook.svg" },
-    { name: "instagram", url: "instagram", src: "/img/rrss/rrss-instagram.svg" },
-    { name: "linkedin", url: "linkedin", src: "/img/rrss/rrss-linkedin.svg" },
+    { name: "instagram", url: "https://www.instagram.com/autocredcl/", src: "/img/rrss/rrss-instagram.svg" },
+    { name: "linkedIn", url: "https://www.linkedin.com/company/autocredcl/", src: "/img/rrss/rrss-linkedin.svg" },
 ]
 
 export const featuresTransferencia = [

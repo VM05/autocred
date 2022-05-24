@@ -8,7 +8,7 @@
           <Heading content="Documentos Legales" headingType="h5" />
           <a
             class="text-base font-medium text-gray-500 hover:text-secondary-800 hover:cursor-pointer"
-            href="../../public/pdf/Autocred_Terminos_y_condiciones.pdf"
+            href="/pdf/Autocred_Terminos_y_condiciones.pdf"
             target="_blank"
           >
             Terminos y condiciones
@@ -47,14 +47,14 @@
             class="text-base font-medium text-gray-500 hover:text-secondary-800 hover:cursor-pointer"
             href="mailto:mail@autocred.cl"
           >
-            mail@autocred.cl
+            contacto@autocred.cl
           </a>
         </div>
       </div>
       <div class="redes md:border-r-2 xl:px-12 md:px-5 pt-5">
         <Heading content="Redes Sociales" headingType="h5" class="mb-2" />
         <div class="flex flex-col gap-2">
-          <router-link v-for="red in rrss" :to="red.url">
+          <a v-for="red in rrss" :href="red.url" target="_blank">
             <div class="flex flex-row gap-2 items-center">
               <img :src="red.src" alt="" class="w-5 h-5" />
               <p
@@ -63,7 +63,7 @@
                 {{ red.name }}
               </p>
             </div>
-          </router-link>
+          </a>
         </div>
       </div>
     </div>
