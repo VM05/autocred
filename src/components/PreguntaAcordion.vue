@@ -15,8 +15,10 @@
         <PlusCircleIcon v-else="open" class="w-8 md:w-10 text-white" />
         <span>{{ data.title }}</span>
       </DisclosureButton>
-      <DisclosurePanel class="px-12 py-8 text-lg text-gray-500 font-medium">
-        {{ data.content }}
+      <DisclosurePanel
+        class="px-12 py-8 text-lg text-gray-500 font-medium"
+        v-html="data.content"
+      >
       </DisclosurePanel>
     </Disclosure>
   </div>

@@ -19,37 +19,30 @@ export const featuresVendedores = [
     {
         name: "Credito rapido",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "Evalúa tu crédito en tan solo 7 minutos. Al vendedor se le paga al momento de firmar la transferencia.",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
     {
         name: "La mejor cuota",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "Realizamos una evaluación directa y en linea  con Forum y dos financieras más logrando con esto la mayor probabilidad de otorgamiento.",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
     {
-        name: "Multiservicio",
+        name: "Proceso Online o Presencial",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
-        img: "https://uilogos.co/img/logomark/lighting.png",
-    },
-    {
-        name: "Proceso online",
-        content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "Evalúa tu crédito desde cualquier lugar de forma online o acércate a nuestros módulos para ser asesorado presencialmente.",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
     {
         name: "En tiempo record",
-        content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+        content: "¡Realizamos la primera evaluación en tan solo 7 minutos!",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
     {
         name: "Asesoramiento",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "En Autocred, te guiamos, acompañamos y apoyamos durante todo el proceso de compra junto a todo nuestro equipo para aclarar tus dudas y realizar todos los trámites requeridos para que tu experiencia de compra sea extraordinaria.",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
 ];
@@ -57,37 +50,30 @@ export const featuresCompradoress = [
     {
         name: "Credito rapido",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "Evalúa tu crédito en tan solo 7 minutos. Al vendedor se le paga al momento de firmar la transferencia.",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
     {
         name: "La mejor cuota",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "Realizamos una evaluación directa y en linea  con Forum y dos financieras más logrando con esto la mayor probabilidad de otorgamiento.",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
     {
-        name: "Multiservicio",
+        name: "Proceso Online o Presencial",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
-        img: "https://uilogos.co/img/logomark/lighting.png",
-    },
-    {
-        name: "Proceso online",
-        content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "Evalúa tu crédito desde cualquier lugar de forma online o acércate a nuestros módulos para ser asesorado presencialmente.",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
     {
         name: "En tiempo record",
-        content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+        content: "¡Realizamos la primera evaluación en tan solo 7 minutos!",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
     {
         name: "Asesoramiento",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "En Autocred, te guiamos, acompañamos y apoyamos durante todo el proceso de compra junto a todo nuestro equipo para aclarar tus dudas y realizar todos los trámites requeridos para que tu experiencia de compra sea extraordinaria.",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
 ];
@@ -153,18 +139,26 @@ export const valores = [
     { title: "Honestidad", content: "Entregamos la información necesaria para que ambas partes sepan exactamente el negocio que realizan. Somos el mejor copiloto para hacer un buen negocio en la compra y venta de tu auto usado.", src: "https://acsp.cl/wp-content/uploads/2020/08/Shape.png" }
 ]
 export const questionsComprador = [
-    { title: "Lorem ipsum?", content: "No" },
-    { title: "Lorem ipsum?", content: "Yes" },
-    { title: "Lorem ipsum?", content: "Maybe" },
-    { title: "Lorem ipsum?", content: "Yes!" },
-    { title: "Lorem ipsum?", content: "No!" }
+    { title: "¿Qué tipo de vehículo puedo comprar a través de Autocred?", content: "En Autocred puedes comprar cualquier tipo de vehículo que ya posea un dueño, de una empresa o persona y que tenga patente." },
+    { title: "¿En qué me ayuda Autocred para elegir el mejor auto?", content: "En Autocred queremos que la compra de tu vehículo sea una experiencia extraordinaria, por eso ya sea que recién estes buscando tu vehículo ideal, ya te contactaste con un potencial vendedor o finalmente te decidiste por el auto que te gusta, nuestro equipo de copilotos estarán para guiarte, acompañarte y apoyarte, resolviendo todas las dudas que tengas sobre transferencias del vehículo a tu nombre, antecedentes e historial del vehículo, Tag, Seguro Automotriz y las diferentes alternativas de cómo poder obtener tu vehículo, a través de pago con tarjetas o financiamiento automotriz. En Autocred tienes completa libertad para decidir cómo pagar tu vehículo ya que no cobramos comisión por la compra del vehículo. Queremos que tu experiencia sea extraordinaria, apoyándote en un viaje que muchos se pierden en el camino." },
+    {
+        title: "Si compro un vehículo usado, ¿cuáles son los gastos que yo debería incluir, además del valor negociado con el vendedor?", content: "Además del valor negociado con el vendedor debes considerar: <ul class='list-disc'><li>Registro Civil</li><ul class='list-disc'><li>Documentos necesarios de inscripción:</li><ul class='pl-4'><li>CAV (Certificado de Anotaciones Vigentes)</li></ul></ul></li><li>Impuesto 1,5%</li><li>Notaría</li></ul>"
+    },
+    { title: "¿De qué manera puedo pagar el vehículo que me gusta?", content: "Siempre es importante llegar a un buen acuerdo con el vendedor. Puedes pagar con tarjeta de crédito/débito, transferencia bancaria y/o crédito automotriz. El vale vista, dinero en efectivo y los cheques ya no son recomendados para evitar problemas por estafas." },
+    { title: "¿Cómo hago para ver el auto que quiero de forma acompañada?", content: "Contamos con una van/oficina móvil que permite trasladarte en forma gratuita y muy cómoda hacia el posible vendedor. Pueden también reunirse en alguno de nuestros 4 puntos de encuentro establecido dentro de la región Metropolitana (Mall Paseo Quilín, Mall Plaza Norte, Apumanque, Autoselect)" },
+    { title: "¿Cómo solicito un crédito con Autocred?", content: "Puedes comenzar tu evaluación en línea mediante nuestro formulario de financiamiento, acercarte a cualquiera de nuestros módulos presenciales o solicitar la ayuda de alguno de nuestros ejecutivos online que están disponibles los 7 días de la semana." },
+    { title: "¿Cuánto tiempo demoro en ser evaluado para un crédito?", content: "Al utilizar nuestro Evaluador de Crédito, el tiempo estimado es de 7 minutos para una calificación." }
+
+
 ];
 export const questionsVendedor = [
-    { title: "Lorem ipsum?", content: "No" },
-    { title: "Lorem ipsum?", content: "Yes" },
-    { title: "Lorem ipsum?", content: "Maybe" },
-    { title: "Lorem ipsum?", content: "Yes!" },
-    { title: "Lorem ipsum?", content: "No!" }
+    { title: "¿Debo pagar alguna comisión a Autocred por la venta de mi vehículo?", content: "Ninguna, en Autocred buscamos acompañarte en el proceso de venta de tu vehículo y el precio al cual lo vendas será íntegro para ti. Puedes publicar tu vehículo en cualquier plataforma que estimes conveniente y realizar todo lo relacionado al financiamiento, pago, transferencia, etc." },
+    { title: "¿Dónde se realiza la transferencia de mi vehículo?", content: "La transferencia de tu vehículo se puede realizar en nuestros Puntos Físicos (Mall Paseo Quilín, Mall Plaza Norte, Apumanque, Autoselect), Oficina Móvil o través de nuestro canal online." },
+    { title: "¿Dónde puedo mostrar mi vehículo?", content: "Tienes la libertad de mostrar tu vehículo donde quieras, y lo mejor, siempre lo puedes hacer de forma acompañada. Contamos con una van/oficina móvil que permite trasladar en forma gratuita y muy cómoda al posible comprador al destino donde se encuentre el vendedor. Tenemos también 4 puntos de encuentro establecidos dentro de la región Metropolitana (Mall Paseo Quilín, Mall Plaza Norte, Apumanque, Autoselect) con personal atento y a la espera para poder ser de ayuda." },
+    { title: "¿Cuándo puedo utilizar la van/oficina móvil?", content: "Si eres vendedor@, puedes ofrecer el traslado en nuestra a la parte compradora para que su experiencia sea única y podemos apoyar con nuestros servicios durante el traslado. Si eres comprador@, utiliza nuestra van las veces que quieras para ir al destino del vendedor. Arriba puedes aprovechar de revisar la documentación del vehículo que vas a ver, evaluar tu crédito o solo relajarte y disfrutar del paisaje!" },
+    { title: "¿Cómo sé que el proceso será válido y recibiré mi dinero?", content: "Gracias a nuestras variadas alianzas estratégicas e institucionales como por ejemplo Registro civil, Carabineros de Chile, Plantas de revisión técnica, Autopistas, Aseguradoras, autopistas, Financieras, entre otras, nuestra solución funciona como una pasarela entre comprador y vendedor. Validamos y aseguramos la transacción segura y transparente tanto para el lado del comprador como desde el vendedor. Si el vehículo es pagado con Financiamiento, el pago se hace al mismo instante que la transferencia, logrando así que ambas partes se lleven lo que corresponde por haber realizado el negocio." },
+    { title: "¿Cuánto se demora el pago de mi vehículo por parte del comprador?", content: "Siempre recomendamos que el monto pagado por el comprador sea entregado vía transferencia bancaria. El vale vista también es un mecanismo válido, pero debe ser consultado antes por la parte vendedora al banco originador del documento. Lo recomendado es que el pago se realice previa la firma y el vendedor esté satisfecho con haber recibido el total del dinero." },
+    { title: "¿Dónde hago la entrega de mi vehículo?", content: "Puedes entregar el vehículo donde te sea más cómodo y te sientas seguro. Lo importante es que tengas la certeza de que tu dinero está en tu cuenta antes de pasar las llaves. Con Autocred puedes hacerlo desde tu casa o lugar a convenir realizando la transferencia online, acompañado desde tu casa con nuestro servicio de oficina móvil, o en cualquiera de nuestros módulos de atención ubicados en la capital." }
 ];
 export const brands = [
 

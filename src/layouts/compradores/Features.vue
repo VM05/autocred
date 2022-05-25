@@ -1,6 +1,6 @@
 <template>
   <div class="mb-52">
-    <Heading content="Financia tu proximo auto con Autocred" />
+    <Heading content="Financia tu próximo auto con Autocred" />
     <Heading
       content="Descubre los beneficios"
       headingType="h3"

@@ -18,7 +18,7 @@
         <Transition>
           <form @submit.prevent="handleForm" v-show="formActive">
             <div class="title border-b pb-4 border-primary-900">
-              <Heading1 content="Evaluación de Crédito" headingType="h3" />
+              <Heading1 content="Evaluador de créditos" headingType="h3" />
             </div>
             <div
               class="content py-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 border-b"

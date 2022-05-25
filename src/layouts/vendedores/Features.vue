@@ -2,7 +2,7 @@
   <div class="mb-24 md:mb-52">
     <Heading content="Ya vendiste tu auto?" />
     <Heading
-      content="Financia el otro con Autocred"
+      content="Financia el próximo con Autocred"
       headingType="h3"
       class="border-b mb-10"
     />

@@ -1,7 +1,7 @@
 <template>
   <Container>
     <Heading
-      content="En que consisten nuestros servicios?"
+      content="¡Contamos con diferentes soluciones para hacer de la compra o venta entre personas un viaje extraordinario!"
       headingType="h2"
       class="mb-5"
     />

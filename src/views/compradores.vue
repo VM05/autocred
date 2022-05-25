@@ -3,18 +3,18 @@
     <BannerHome>
       <template #content>
         <Heading
-          content="Te acompanamos en la compra de tu proximo auto"
+          content="En Autocred te acompañamos y apoyamos en la compra de tu próximo vehículo usado."
           headingType="h2"
           class="mb-5"
         />
         <Heading
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+          content="Solicita tu traslado donde el comprador, obtén el mejor financiamiento, transfiere, asegura y adquiere tu TAG con nosotros."
           headingType="h4"
           class="mb-5"
         />
         <router-link to="#contacto">
           <div class="flex flex-row gap-4">
-            <Button text="Contactanos" primary />
+            <Button text="Quiero un copiloto" primary />
           </div>
         </router-link>
       </template>
