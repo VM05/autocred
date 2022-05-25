@@ -195,6 +195,7 @@
                 <div class="col-span-1 md:px-5 md:border-x">
                   <div class="flex">
                     <Input
+                      money
                       label="Renta Liquida"
                       id="Renta Liquida"
                       placeholder="Renta Liquida"

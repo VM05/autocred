@@ -65,6 +65,21 @@
       required
     />
     <input
+      v-else-if="money"
+      type="text"
+      :placeholder="placeholder"
+      class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full"
+      @mouseover="hover = true"
+      @mouseleave="hover = false"
+      @focusin="focus = true"
+      @focusout="focus = false"
+      :id="id"
+      :value="value"
+      :disabled="disabled"
+      @blur="handlerMoney"
+      required
+    />
+    <input
       v-else
       type="text"
       :placeholder="placeholder"
@@ -84,6 +99,7 @@
 
 <script setup>
 import { ref } from "vue";
+import { formatNumbers, unformat } from "../../assets/helpers/validate";
 defineProps({
   placeholder: String,
   hoverText: String,
@@ -94,11 +110,24 @@ defineProps({
   disabled: Boolean,
   password: Boolean,
   date: Boolean,
+  money: Boolean,
 });
 const emit = defineEmits(["update:text"]);
 const handler = (e) => {
   emit("update:text", e.target.value);
 };
+
+const handlerMoney = (e) => {
+  if (e.target.value.includes("$")) {
+    let desFormat = e.target.value.replaceAll("$", "").replaceAll(".", "");
+    emit("update:text", desFormat);
+    e.target.value = formatNumbers(desFormat);
+  } else {
+    emit("update:text", e.target.value);
+    e.target.value = formatNumbers(e.target.value);
+  }
+};
+
 const hover = ref(false);
 let focus = ref(false);
 </script>

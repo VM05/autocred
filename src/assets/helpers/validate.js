@@ -29,3 +29,9 @@ export function formatNumbers(num) {
 
     return res
 }
+
+export function unformat(value) {
+    console.log(value)
+    console.log(value.replaceAll('$', ''))
+    console.log(value.replaceAll('.', ''))
+}
