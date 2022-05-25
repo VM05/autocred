@@ -4,11 +4,13 @@
     to="/servicios"
     class="flex flex-row text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
     activeClass="activeMenu"
-    @mouseenter="toogleMenu"
+    @mouseover="toogleMenu"
+    @click="hideMenu"
   >
     <slot></slot>
     <ChevronDownIcon class="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
   </router-link>
+
   <div
     v-show="active"
     class="absolute right-1/2 left-1/2 mt-2 w-48 -ml-24 rounded-md grid grid-flow-row gap-2 bg-secondary-500"
@@ -32,6 +34,7 @@ const props = defineProps({
 });
 const active = ref(false);
 const toogleMenu = () => (active.value = !active.value);
+const hideMenu = () => (active.value = false);
 </script>
 
 <style scoped></style>
