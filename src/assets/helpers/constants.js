@@ -20,30 +20,30 @@ export const featuresVendedores = [
         name: "Credito rapido",
         content:
             "Evalúa tu crédito en tan solo 7 minutos. Al vendedor se le paga al momento de firmar la transferencia.",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Magenta_Credito_rapido.png",
     },
     {
         name: "La mejor cuota",
         content:
             "Realizamos una evaluación directa y en linea  con Forum y dos financieras más logrando con esto la mayor probabilidad de otorgamiento.",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Magenta_Mejor_cuota.png",
     },
     {
         name: "Proceso Online o Presencial",
         content:
             "Evalúa tu crédito desde cualquier lugar de forma online o acércate a nuestros módulos para ser asesorado presencialmente.",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Magenta_Proceso_online.png",
     },
     {
         name: "En tiempo record",
         content: "¡Realizamos la primera evaluación en tan solo 7 minutos!",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Magenta_Tiempo_record.png",
     },
     {
         name: "Asesoramiento",
         content:
             "En Autocred, te guiamos, acompañamos y apoyamos durante todo el proceso de compra junto a todo nuestro equipo para aclarar tus dudas y realizar todos los trámites requeridos para que tu experiencia de compra sea extraordinaria.",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Magenta_Asesoramiento.png",
     },
 ];
 export const featuresCompradoress = [
@@ -51,55 +51,55 @@ export const featuresCompradoress = [
         name: "Credito rapido",
         content:
             "Evalúa tu crédito en tan solo 7 minutos. Al vendedor se le paga al momento de firmar la transferencia.",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Azul_Credito_rapido.png",
     },
     {
         name: "La mejor cuota",
         content:
             "Realizamos una evaluación directa y en linea  con Forum y dos financieras más logrando con esto la mayor probabilidad de otorgamiento.",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Azul_Mejor_cuota.png",
     },
     {
         name: "Proceso Online o Presencial",
         content:
             "Evalúa tu crédito desde cualquier lugar de forma online o acércate a nuestros módulos para ser asesorado presencialmente.",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Azul_Proceso_online.png",
     },
     {
         name: "En tiempo record",
         content: "¡Realizamos la primera evaluación en tan solo 7 minutos!",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Azul_Tiempo-_record.png",
     },
     {
         name: "Asesoramiento",
         content:
             "En Autocred, te guiamos, acompañamos y apoyamos durante todo el proceso de compra junto a todo nuestro equipo para aclarar tus dudas y realizar todos los trámites requeridos para que tu experiencia de compra sea extraordinaria.",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Azul_Asesoramientoi.png",
     },
 ];
 export const serviciosVendores = [
     {
         name: "VAN/OFICINA MÓVIL",
         content: "¿Quieres compañía cuando muestras el vehículo?, utiliza nuestro centro móvil para trasladar al potencial comprador donde tú quieras* (Región Metropolitana). Si el comprador está de acuerdo con la compra, contamos con todo lo necesario para realizar la transferencia, recibir pagos con tarjeta o incluso entregar financiamiento en 7 Minutos!. ¿Y lo mejor?, Nuestro servicio de Van es absolutamente gratis.",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Magenta_Traslado.png",
     },
     {
         name: "FINANCIAMIENTO",
         content:
             "Amplía tus opciones de venta con nosotros. En Autocred contamos con una plataforma de pagos que permite a un comprador pagar con Tarjeta de Crédito o con Financiamiento. La evaluación tarda solo 7 minutos y el dinero se abona en tu cuenta al momento de firmar la transferencia con nosotros. No pierdas la oportunidad de vender al mejor valor tu vehículo.",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Magenta_Financiamiento.png",
     },
     {
         name: "TRANSFERENCIA",
         content:
             "¿Estás listo para transferir tu auto?, contamos con 3 canales de atención para que realices de forma segura la transferencia de tu vehículo. Online, Presencial en nuestros Módulos de Atención, o en el lugar que desees gracias a nuestro servicio de Oficina Móvil. Servicio en línea con el registro civil.",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Magenta_transferencia.png",
     },
     {
         name: "QUEREMOS SER MÁS",
         content:
             "Porque estamos comprometidos con entregarte la mejor experiencia, además de acompañarte en las etapas de exhibición y entregarte todas las facilidades para que logres un buen negocio, al momento de transferir podemos ayudarte a dar de baja tu Tag (solo autopista Vespucio Norte) y al  comprador le habilitamos uno nuevo. Podemos también asegurar el auto e inspeccionar para que nadie corra riesgos. ",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Magenta_Volante.png",
     },
 ];
 export const serviciosCompradores = [
@@ -107,19 +107,19 @@ export const serviciosCompradores = [
         name: "VAN/OFICINA MÓVIL",
         content:
             "¿Un Uber con acompañamiento?, Así es, si tienes claro qué auto te gusta te llevamos a verlo sin costo* (sólo región metropolitana). Durante el viaje podemos verificar el estado de su documentación, historial de multas e incluso ayudarte con el financiamiento realizando una evaluación en <b>¡Tan solo 7 minutos!</b>",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Azul_traslado.png",
     },
     {
         name: "PLATAFORMA DE PAGO",
         content:
             "Te gustaría comprar el auto de un particular con tarjeta de crédito?, o mejor aún ¿Financiarlo?, con autocred todo es posible. Trabajamos con diferentes opciones y financieras para que logres hacer de la compra el mejor negocio. Al vendedor se le paga en el mismo minuto que se hace la transferencia para evitar desconfianzas.",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Azul_Plataformas_de_pago.png",
     },
     {
         name: "TRANSFERENCIA, SEGUROS, TAG Y MÁS",
         content:
             "Queremos ser tu mejor copiloto. Te acompañamos durante el proceso de búsqueda y también te apoyamos a la hora de comprar. Contamos con un servicio de Transferencia en línea con registro civil, un pool de seguros exclusivo para compradores particulares, activamos y entregamos el TAG y todo en cualquiera de nuestros canales de venta; Online, presencial en nuestros Módulos de Atención o donde quieras a través de nuestra Oficina Móvil.",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Azul_seguro_automotriz.png",
     },
 ];
 export const camposSimulacion = [
@@ -208,28 +208,28 @@ export const rrss = [
 
 export const featuresTransferencia = [
     {
-        name: "Identifacion Biometrica",
+        name: "Identificacion Biometrica",
         content:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Blanco_Identificacion_biometrica.png",
     },
     {
         name: "Acompañamiento",
         content:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Blanco_Acompan╠âamiento.png",
     },
     {
         name: "En tiempo record",
         content:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Blanco_Tiempo_record.png",
     },
     {
         name: "Proceso completo",
         content:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Blanco_Proceso_completo.png",
     },
 ];
 export const featuresFinanciamiento = [
@@ -237,13 +237,13 @@ export const featuresFinanciamiento = [
         name: "Credito rapido",
         content:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Blanco_Credito_rapido.png",
     },
     {
         name: "Proceso online",
         content:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Blanco_Proceso_online.png",
     },
     {
         name: "Variadas ofertas",
@@ -255,7 +255,7 @@ export const featuresFinanciamiento = [
         name: "Siempre asesorado",
         content:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Blanco_Asesoramiento.png",
     },
 ];
 export const featuresTag = [
@@ -263,13 +263,13 @@ export const featuresTag = [
         name: "Proceso online",
         content:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Blanco_Tag.png",
     },
     {
         name: "Siempre asesorado",
         content:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Blanco_Asesoramiento.png",
     }
 ];
 export const featuresSeguro = [
@@ -277,13 +277,13 @@ export const featuresSeguro = [
         name: "Proceso online",
         content:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Blanco_Proceso_online.png",
     },
     {
         name: "Siempre asesorado",
         content:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/src/assets/img/icons/Iconos_Autocred_Blanco_Asesoramiento.png",
     }
 ];
 
