@@ -12,13 +12,16 @@
         >
           {{ item }}
         </Paragraph1>
-        <Button1
-          text="Mas informacion"
-          :outlineSecondary="elementActive != item.toLowerCase()"
-          :secondary="elementActive == item.toLowerCase()"
-          class="w-full"
-          @click="active(item)"
-        />
+        <router-link
+          :to="{ name: 'Servicios', params: { active: item.toLowerCase() } }"
+        >
+          <Button1
+            text="Mas informacion"
+            :outlineSecondary="elementActive != item.toLowerCase()"
+            :secondary="elementActive == item.toLowerCase()"
+            class="w-full"
+          />
+        </router-link>
       </div>
     </div>
     <Loading v-else />
@@ -66,7 +69,6 @@
 import Loading from "../components/Loading.vue";
 import Paragraph1 from "../components/Paragraph.vue";
 import Button1 from "../components/Button.vue";
-import { isObjEmpty } from "../assets/helpers/validate";
 import {
   dataServicios,
   featuresTransferencia,
@@ -74,23 +76,18 @@ import {
   featuresFinanciamiento,
   featuresSeguro,
 } from "../assets/helpers/constants";
-import { ref, onMounted } from "vue";
-import { useRoute } from "vue-router";
+import { ref, onMounted, watch } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
 import Heading from "../components/Heading.vue";
 import axios from "axios";
 import FeaturesList from "../components/FeaturesList.vue";
 import Simulador from "./Simulador.vue";
+const router = useRouter();
 const route = useRoute();
 const data = ref();
 
-const elementActive = ref(
-  isObjEmpty(route.query) ? "" : Object.keys(route.query)[0].toLowerCase()
-);
-const active = (element) => {
-  console.log(element);
-  elementActive.value = element.toLowerCase();
-};
+const elementActive = ref(route.params.active ? route.params.active : "");
 
 //Tipo Axios Get
 onMounted(async () => {
@@ -103,6 +100,10 @@ onMounted(async () => {
     console.log("error");
     console.log(error);
   }
+});
+
+watch(route, () => {
+  elementActive.value = route.params.active;
 });
 </script>
 

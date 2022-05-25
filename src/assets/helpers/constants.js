@@ -6,10 +6,10 @@ export const links = [
         name: "Servicios",
         url: "/servicios",
         sublink: [
-            { name: "Transferencia", link: '?transferencias' },
-            { name: "Financiamiento", link: '?financiamiento' },
-            { name: "Tag", link: '?tag' },
-            { name: "Seguro Automotriz", link: '?seguro' }
+            { name: "Transferencia", link: 'transferencias' },
+            { name: "Financiamiento", link: 'financiamiento' },
+            { name: "Tag", link: 'tag' },
+            { name: "Seguro Automotriz", link: 'seguro' }
         ]
     },
     { name: "Preguntas Frecuentes", url: "/preguntas-frecuentes" },

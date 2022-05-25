@@ -33,7 +33,8 @@
             >
               {{ link.name }}
             </router-link>
-            <Menu v-else as="div" class="">
+            <MenuVue v-else :sublinks="link.sublink">Servicios</MenuVue>
+            <!-- <Menu  as="div" class="">
               <MenuButton>
                 <div
                   class="flex flex-row text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
@@ -57,7 +58,7 @@
                   </router-link>
                 </MenuItem>
               </MenuItems>
-            </Menu>
+            </Menu> -->
           </div>
         </PopoverGroup>
         <div class="hidden lg:flex items-center justify-end lg:flex-1 lg:w-0">
@@ -144,6 +145,7 @@ import {
 import { ChevronDownIcon, MenuIcon, XIcon } from "@heroicons/vue/outline";
 import Button1 from "./Button.vue";
 import { links } from "../assets/helpers/constants";
+import MenuVue from "./Menu.vue";
 </script>
 <style>
 .activeMenu {
