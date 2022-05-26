@@ -257,7 +257,7 @@ export const featuresFinanciamiento = [
         name: "Variadas ofertas",
         content:
             "Evaluamos tu crédito con FORUM y diferentes alternativas para lograr entregar siempre un posible financiamiento.",
-        img: "https://uilogos.co/img/logomark/lighting.png",
+        img: "/img/icons/Iconos_Autocred_Blanco_Financiamiento.png",
     },
     // {
     //     name: "Siempre asesorado",
