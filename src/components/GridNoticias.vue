@@ -1,14 +1,12 @@
 <template>
   <div class="grid gap-12 w-full">
-    <!-- <Noticia :data="campo" v-for="campo in data" /> -->
-    <Noticia highlight />
-    <Noticia />
-    <Noticia />
+    <Noticia v-for="(item, index) in 3" :data="posts[index]" :indice="index" />
   </div>
 </template>
 
 <script setup>
 import Noticia from "../components/Noticia.vue";
+import { posts } from "../assets/helpers/constants";
 </script>
 
 <style scoped>

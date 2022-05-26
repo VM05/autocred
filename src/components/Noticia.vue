@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col gap-2">
-    <img src="https://api.lorem.space/image/furniture?w=300&h=200" alt="" />
+    <img :src="data.img" alt="" />
     <Paragraph class="font-medium text-base text-primary-700">
-      Medio prensa 03-02-22
+      {{ data.medio + " " + data.date }}
     </Paragraph>
     <Heading
       :content="data.title"
@@ -15,7 +15,9 @@
           id: data.id,
           title: data.title,
           content: data.body,
-          image: data.image,
+          image: data.img,
+          medio: data.medio,
+          date: data.date,
         },
       }"
     >
