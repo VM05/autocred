@@ -32,7 +32,7 @@ export const featuresVendedores = [
         name: "Proceso Online o Presencial",
         content:
             "Evalúa tu crédito desde cualquier lugar de forma online o acércate a nuestros módulos para ser asesorado presencialmente.",
-        img: "/img/icons/Iconos_Autocred_Magenta_Proceso_online.png",
+        img: "/img/icons/Iconos_Autocred_Magenta_proceso_online.png",
     },
     {
         name: "En tiempo record",
@@ -217,7 +217,7 @@ export const featuresTransferencia = [
         name: "Acompañamiento",
         content:
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
-        img: "/img/icons/Iconos_Autocred_Blanco_Acompan╠âamiento.png",
+        img: "/img/icons/Iconos_Autocred_Blanco_Acompañamiento.png",
     },
     {
         name: "En tiempo record",
