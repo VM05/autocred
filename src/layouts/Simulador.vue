@@ -115,7 +115,12 @@
         <Transition>
           <div v-show="formActive2">
             <div class="grid place-content-center my-20" v-if="alerts">
-              <Loading v-if="loading" />
+              <div v-if="loading" class="grid place-content-center">
+                <Paragraph class="text-center mb-8">
+                  Estamos evaluando su crédito, espere un momento
+                </Paragraph>
+                <Loading />
+              </div>
               <div v-if="isSuccess" class="text-center">
                 <Paragraph class="font-bold"
                   >Estamos evaluando tu solicitud
