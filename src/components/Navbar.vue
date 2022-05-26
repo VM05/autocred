@@ -89,7 +89,7 @@
                 <img
                   class="h-12 w-auto"
                   src="../assets/img/autocred.png"
-                  alt="Workflow"
+                  alt="Autocred"
                 />
               </div>
               <div class="-mr-2">
@@ -103,14 +103,20 @@
             </div>
             <div class="mt-6">
               <nav class="flex flex-col gap-4 items-center">
-                <router-link
-                  v-for="item in links"
-                  :key="item.name"
-                  :to="item.url"
-                  class="text-base font-medium text-primary-900 w-full text-center border-b border-primary-900 pb-4 last:border-0"
-                >
-                  {{ item.name }}
-                </router-link>
+                <div v-for="item in links">
+                  <router-link
+                    v-if="item.name != 'Servicios'"
+                    :key="item.name"
+                    :to="item.url"
+                    class="text-base font-medium text-primary-900 w-full text-center border-b border-primary-900 pb-4 last:border-0"
+                    activeClass="activeMenu"
+                  >
+                    {{ item.name }}
+                  </router-link>
+                  <MenuVue v-else :sublinks="item.sublink" mobile
+                    >Servicios</MenuVue
+                  >
+                </div>
               </nav>
             </div>
           </div>
