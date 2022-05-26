@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black-25 flex flex-col md:grid py-6 md:py-12 mb-24 px-8">
+  <div class="flex flex-col md:grid py-6 md:py-12 mb-24">
     <Heading
       content="Pilotos que confiaron en Autocred"
       class="mb-8 md:mb-16"
@@ -8,14 +8,14 @@
       :items-to-show="1"
       :wrapAround="true"
       :itemsToScroll="1"
-      :autoplay="3500"
+      :autoplay="5000"
       class="mb-8"
       :breakpoints="breakpoints"
     >
       <slide v-for="slide in comentarios" :key="slide">
         <CardComentario1 :data="slide" />
       </slide>
-      <template #addons>
+      <template #addons class="hidden md:block">
         <Navigation />
       </template>
     </Carousel>
@@ -56,13 +56,17 @@ defineProps({
 </script>
 
 <style>
+li.carousel__slide {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 @media (min-width: 768px) {
   .carousel__viewport {
     padding-bottom: 1rem;
   }
   li.carousel__slide {
     padding-left: 1rem;
-    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .slide {
@@ -77,6 +81,10 @@ defineProps({
   .carousel__slide.carousel__slide--prev,
   .carousel__slide.carousel__slide--visible {
     transform: scale(0.8);
+  }
+
+  .carousel__icon {
+    color: #ba0b7c;
   }
 }
 </style>
