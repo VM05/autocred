@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 mb-24">
+  <div class="mb-24">
     <div v-if="data" class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
       <div v-for="item in data.data" class="flex flex-col items-center gap-4">
         <img src="https://picsum.photos/id/237/220/150" alt="" />

@@ -1,7 +1,9 @@
 <template>
-  <div class="bg-gray-100 py-6 md:py-12 px-6 md:px-12 md:mb-12 mb-6">
+  <div class="py-6 md:py-12 px-6 md:px-12 md:mb-12 mb-6">
     <Heading1 content="Solicita tu servicio con nosotros" class="mb-12" />
-    <div class="bg-transparent md:bg-white rounded-xl card p-0 md:px-6 md:py-7">
+    <div
+      class="bg-transparent md:bg-hablemos-100 rounded-xl card p-0 md:px-6 md:py-7 shadow-xl"
+    >
       <Heading1
         content="Formulario Contacto"
         headingType="h3"

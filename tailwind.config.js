@@ -22,6 +22,9 @@ module.exports = {
           100: '#121820',
           50: '#7b7e82',
           25: '#f1f1f3',
+        },
+        hablemos: {
+          100: '#fafaff'
         }
       }
     },
