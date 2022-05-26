@@ -172,26 +172,34 @@ export const brands = [
     },
     {
         alt: "autofact",
-        url: "/img/brands/autofact.png",
+        url: "/img/brands/autofact2.png",
     },
     {
         alt: "forum",
-        url: "/img/brands/forum.png",
+        url: "/img/brands/forum2.png",
     },
     {
         alt: "tanner",
-        url: "/img/brands/tanner.png",
+        url: "/img/brands/tanner2.png",
     },
     {
         alt: "yapo",
-        url: "/img/brands/Yapo.png",
+        url: "/img/brands/yapo2.png",
+    },
+    {
+        alt: "hdi seguros",
+        url: "/img/brands/hdi.png",
+    },
+    {
+        alt: "MAF",
+        url: "/img/brands/maf.png",
     },
 ];
 export const dataServicios = [
-    { id: 'transferencias', title: "Servicio de transferencias", content: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur earum amet dolore cumque iste ex, esse enim harum officiis odit ratione laboriosam alias magni iusto quae adipisci iure sapiente recusandae?", img: "https://picsum.photos/550/370", buttonText: "Quiero mi copiloto" },
-    { id: 'financiamiento', title: "Financia tu proximo auto", content: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur earum amet dolore cumque iste ex, esse enim harum officiis odit ratione laboriosam alias magni iusto quae adipisci iure sapiente recusandae?", img: "https://picsum.photos/550/370", buttonText: "Quiero mi copiloto" },
-    { id: 'tag', title: "Servicio Tag", content: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur earum amet dolore cumque iste ex, esse enim harum officiis odit ratione laboriosam alias magni iusto quae adipisci iure sapiente recusandae?", img: "https://picsum.photos/550/370", buttonText: "Quiero mi copiloto" },
-    { id: 'seguro', title: "Servicio de seguro automotriz", content: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur earum amet dolore cumque iste ex, esse enim harum officiis odit ratione laboriosam alias magni iusto quae adipisci iure sapiente recusandae?", img: "https://picsum.photos/550/370", buttonText: "Quiero mi copiloto" }
+    { id: 'transferencias', title: "Servicio de transferencias", content: "Transfiere tu auto en minutos, en los módulos físicos, Oficina Móvil u canal online, sin esperas ni filas. En sólo 20 minutos tu trámite estará listo", img: "https://picsum.photos/550/370", buttonText: "Quiero financiar" },
+    { id: 'financiamiento', title: "Financia tu proximo auto", content: "Con Autocred puedes pagar el auto, el píe o la transferencia con tarjetas de crédito. Ó si prefieres, puedes obtener tu financiamiento en minutos. Estamos en línea con FORUM y diferentes instituciones financieras para apoyarte y lograr de la compra o venta el mejor negocio. Obtén tu aprobación en tan solo 7 minutos y el dinero junto con la firma de la transferencia con nosotros.", img: "https://picsum.photos/550/370", buttonText: "Quiero mi copiloto" },
+    { id: 'tag', title: "Servicio Tag", content: "Autocred te da apoyo tanto para la baja de tu TAG y para la obtención del nuevo dispositivo. Slicítalo en nuestros Puntos Físicos, Oficina Móvil y Canal Online, sin necesidad de ir a las oficinas de la concesionaria.", img: "https://picsum.photos/550/370", buttonText: "Quiero mi copiloto" },
+    { id: 'seguro', title: "Servicio de seguro automotriz", content: "Con Autocred asegura tu vehículo al momento de realizar la transferencia de tu vehículo, también a través de nuestros Puntos Físicos, Oficina Móvil y Canal Online. Te ayudamos para que también la inspección sea en el instante y no corras riesgos innecesarios.", img: "https://picsum.photos/550/370", buttonText: "Quiero mi copiloto" }
 ]
 export const comentarios = [
     { nombre: "Juan Ipsum", username: "username", comentario: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde debitis quisquam harum dignissimos a dolorem exercitationem neque, quia facere ad provident quidem saepe nesciunt", src: "/img/referencia-usuarios-01.jpg" },
@@ -210,25 +218,25 @@ export const featuresTransferencia = [
     {
         name: "Identificacion Biometrica",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "",
         img: "/img/icons/Iconos_Autocred_Blanco_Identificacion_biometrica.png",
     },
     {
         name: "Acompañamiento",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "",
         img: "/img/icons/Iconos_Autocred_Blanco_Acompañamiento.png",
     },
     {
         name: "En tiempo record",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "",
         img: "/img/icons/Iconos_Autocred_Blanco_Tiempo_record.png",
     },
     {
         name: "Proceso completo",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "",
         img: "/img/icons/Iconos_Autocred_Blanco_Proceso_completo.png",
     },
 ];
@@ -236,39 +244,39 @@ export const featuresFinanciamiento = [
     {
         name: "Credito rapido",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "En tan solo minutos gestiona tu crédito para la compra de tu vehículo.",
         img: "/img/icons/Iconos_Autocred_Blanco_Credito_rapido.png",
     },
     {
         name: "Proceso online",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "Puedes hacer todo el proceso en forma digital con el soporte de nuestros copilotos a través de nuestro Canal Online, Puntos Físicos o en nuestro Oficina Móvil.",
         img: "/img/icons/Iconos_Autocred_Blanco_Proceso_online.png",
     },
     {
         name: "Variadas ofertas",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "Evaluamos tu crédito con FORUM y diferentes alternativas para lograr entregar siempre un posible financiamiento.",
         img: "https://uilogos.co/img/logomark/lighting.png",
     },
-    {
-        name: "Siempre asesorado",
-        content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
-        img: "/img/icons/Iconos_Autocred_Blanco_Asesoramiento.png",
-    },
+    // {
+    //     name: "Siempre asesorado",
+    //     content:
+    //         "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+    //     img: "/img/icons/Iconos_Autocred_Blanco_Asesoramiento.png",
+    // },
 ];
 export const featuresTag = [
     {
         name: "Proceso online",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "Puedes hacer todo el proceso en forma digital con el soporte de nuestros copilotos a través de nuestro Canal Online, Puntos Físicos o en nuestro Oficina Móvil.",
         img: "/img/icons/Iconos_Autocred_Blanco_Tag.png",
     },
     {
         name: "Siempre asesorado",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "Nuestros copilotos te guiarán y apoyarán permanentemente ante cualquier duda que tengas.",
         img: "/img/icons/Iconos_Autocred_Blanco_Asesoramiento.png",
     }
 ];
@@ -276,13 +284,13 @@ export const featuresSeguro = [
     {
         name: "Proceso online",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "Puedes hacer todo el proceso en forma digital con el soporte de nuestros copilotos a través de nuestro Canal Online, Puntos Físicos o en nuestro Oficina Móvil.",
         img: "/img/icons/Iconos_Autocred_Blanco_Proceso_online.png",
     },
     {
         name: "Siempre asesorado",
         content:
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus officia enim dignissimos repellendus, saepe maxime minima. Veritatis deleniti possimus rem sapiente magnam sed magni recusandae dicta modi. Sequi, voluptates libero",
+            "Nuestros copilotos te guiarán y apoyarán permanentemente ante cualquier duda que tengas.",
         img: "/img/icons/Iconos_Autocred_Blanco_Asesoramiento.png",
     }
 ];
