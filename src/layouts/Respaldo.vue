@@ -22,9 +22,7 @@
           />
         </div>
       </Slide>
-      <template #addons>
-        <Navigation />
-      </template>
+      <template #addons> </template>
     </Carousel>
   </div>
 </template>
