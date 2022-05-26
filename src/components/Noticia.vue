@@ -5,10 +5,22 @@
       Medio prensa 03-02-22
     </Paragraph>
     <Heading
-      content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum aspernatur optio quas modi assumenda in"
-      :headingType="highlight ? 'h3' : 'h5'"
+      :content="data.title"
+      :headingType="highlight || indice == 0 ? 'h3' : 'h5'"
     />
-    <Button text="Ver mas" class="w-min" secondary />
+    <router-link
+      :to="{
+        name: 'Articulo',
+        params: {
+          id: data.id,
+          title: data.title,
+          content: data.body,
+          image: data.image,
+        },
+      }"
+    >
+      <Button text="Ver mas" class="w-min" secondary />
+    </router-link>
   </div>
 </template>
 
@@ -22,6 +34,8 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  indice: Number,
+  data: Object,
 });
 </script>
 

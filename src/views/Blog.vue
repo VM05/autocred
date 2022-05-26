@@ -1,9 +1,6 @@
 <template>
   <Container>
-    <Heading1
-      content="Ingresa con tu cuenta de usuario o registrate"
-      class="text-center mb-5"
-    />
+    <Heading1 content="Autocred en medios" class="mb-4" heading-type="h2" />
     <ListBlog />
   </Container>
 </template>
