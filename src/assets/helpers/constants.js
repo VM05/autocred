@@ -202,10 +202,24 @@ export const dataServicios = [
     { id: 'seguro', title: "Servicio de seguro automotriz", content: "Con Autocred asegura tu vehículo al momento de realizar la transferencia de tu vehículo, también a través de nuestros Puntos Físicos, Oficina Móvil y Canal Online. Te ayudamos para que también la inspección sea en el instante y no corras riesgos innecesarios.", img: "https://picsum.photos/550/370", buttonText: "Quiero mi copiloto" }
 ]
 export const comentarios = [
-    { nombre: "Juan Ipsum", username: "username", comentario: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde debitis quisquam harum dignissimos a dolorem exercitationem neque, quia facere ad provident quidem saepe nesciunt", src: "/img/referencia-usuarios-01.jpg" },
-    { nombre: "Juan Ipsum", username: "username", comentario: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde debitis quisquam harum dignissimos a dolorem exercitationem neque, quia facere ad provident quidem saepe nesciunt", src: "/img/referencia-usuarios-02.jpg" },
-    { nombre: "Juan Ipsum", username: "username", comentario: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde debitis quisquam harum dignissimos a dolorem exercitationem neque, quia facere ad provident quidem saepe nesciunt", src: "/img/referencia-usuarios-03.jpg" },
-    { nombre: "Juan Ipsum", username: "username", comentario: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde debitis quisquam harum dignissimos a dolorem exercitationem neque, quia facere ad provident quidem saepe nesciunt", src: "/img/referencia-usuarios-02.jpg" },
+    {
+        nombre: "Issac Valdés",
+        username: "",
+        comentario: "Hemos hecho 4 transferencias online con Autocred, en Pandemia fue la mejor opción para no ir al Registro Civil y evitar hasta 4 horas de espera. Jackeline, nuestra ejecutiva, fue muy diligente, muy rápida y amable acompañándonos en todo el proceso de la venta de nuestros vehículos. El sistema es muy amigable por lo que recomendé el servicio con Autocred a mis contactos.",
+        src: "/img/icons/Iconos_Autocred_Azul_Copiloto.png"
+    },
+    {
+        nombre: "Nicolás Juri",
+        username: "@nicojuri0208",
+        comentario: "Excelente experiencia con Autocred, Carolina muy atenta y flexible en las necesidades horarias para concretar transferencias, recomendable la plataforma, empresa y ejecutiva.",
+        src: "/img/icons/Iconos_Autocred_Azul_Copiloto.png"
+    },
+    {
+        nombre: "José Valdés",
+        username: "@grupopremiumpropiedades",
+        comentario: "Quiero destacar y felicitar a la empresa Autocred, y su personal, que me ayudaron una enormidad en una compra urgente que tuve que realizar. Todo se realizó en un par de horas, entregándome seguridad, confianza en la compra y sin poner en riesgo mi dinero. Felicitaciones y 100% recomendado Autocred.",
+        src: "/img/icons/Iconos_Autocred_Azul_Copiloto.png"
+    },
 
 ]
 export const rrss = [

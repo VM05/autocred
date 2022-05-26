@@ -5,7 +5,7 @@
       <div>
         <Paragraph1 class="font-bold text-xl"> {{ data.nombre }} </Paragraph1>
         <Paragraph1 class="text-secondary-900 font-medium text-base">
-          @{{ data.username }}
+          {{ data.username }}
         </Paragraph1>
       </div>
     </div>
