@@ -8,7 +8,7 @@ import FAQ from '../views/preguntas-frecuentes.vue'
 import registro from '../views/registro.vue'
 import servicios from '../views/servicios.vue'
 import vendedores from '../views/vendedores.vue'
-import blog from '../views/blog.vue'
+import Blog from '../views/Blog.vue'
 import article from '../views/article.vue'
 
 const router = createRouter({
@@ -33,7 +33,7 @@ const router = createRouter({
         },
         { path: '/servicios', name: 'Servicios', component: servicios, props: (route) => ({ ...route.params }) },
         { path: '/vendedores', name: 'Vendedores', component: vendedores },
-        { path: '/blog', name: 'Blog', component: blog },
+        { path: '/blog', name: 'Blog', component: Blog },
         { path: '/blog/:id', name: 'Articulo', component: article },
 
 
