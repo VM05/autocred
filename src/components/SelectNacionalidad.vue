@@ -84,6 +84,7 @@ import {
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
 import axios from "axios";
+import { NACIONALIDAD_URL } from "../assets/helpers/API";
 defineProps({
   id: String,
   label: String,
@@ -93,9 +94,7 @@ const data = ref();
 const handler = (element) => emit("update:nacionalidad", element);
 onMounted(async () => {
   try {
-    const res = await axios.get(
-      "https://dev.autocred.cl/api/utilities/others/nationalities"
-    );
+    const res = await axios.get(NACIONALIDAD_URL);
     data.value = await res.data;
     // selected.value = await res.data.data[0];
   } catch (error) {

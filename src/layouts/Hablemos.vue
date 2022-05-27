@@ -91,7 +91,7 @@ import ButtonVue from "../components/Button.vue";
 import SelectGestion from "../components/SelectGestion.vue";
 import { reactive, ref, watch } from "vue";
 import { formEmpty } from "../assets/helpers/validate";
-import { gestion, servicios } from "../assets/helpers/API";
+import { gestion, servicios, URL_GOGEMA } from "../assets/helpers/API";
 import axios from "axios";
 import qs from "qs";
 import Loading from "../components/Loading.vue";
@@ -135,10 +135,7 @@ const handleForm = (e) => {
 const sendFormGoGema = async () => {
   isLoading.value = true;
   try {
-    const resp = await axios.post(
-      "https://sandboxapiflux.go-gema.com/v1/leads?access-token=i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG",
-      qs.stringify(formContacto)
-    );
+    const resp = await axios.post(URL_GOGEMA, qs.stringify(formContacto));
     if (await resp.data.message) {
       isLoading.value = false;
       isSuccess.value = true;

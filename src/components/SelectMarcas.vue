@@ -69,6 +69,7 @@ import {
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
 import { useSimuladorStore } from "../stores/simulador";
+import { MARCAS_URL } from "../assets/helpers/API";
 const useSimulador = useSimuladorStore();
 defineProps({
   label: String,
@@ -88,9 +89,7 @@ const changeMarca = (value) => {
 
 onMounted(async () => {
   try {
-    const marcas = await axios.get(
-      "https://dev.autocred.cl/api/utilities/vehicles/brands"
-    );
+    const marcas = await axios.get(MARCAS_URL);
     data.value = await marcas.data;
   } catch (error) {
     console.log("error");
@@ -101,7 +100,7 @@ onMounted(async () => {
 onUpdated(async () => {
   try {
     const response = await axios.get(
-      `https://dev.autocred.cl/api/utilities/vehicles/brands/${useSimulador.marca.id}/models`
+      MARCAS_URL + "/" + useSimulador.marca.id + "/models"
     );
 
     useSimulador.modelos = response.data.data;

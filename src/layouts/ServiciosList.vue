@@ -121,6 +121,7 @@ import Heading from "../components/Heading.vue";
 import axios from "axios";
 import FeaturesList from "../components/FeaturesList.vue";
 import Simulador from "./Simulador.vue";
+import { SERVICIOS_URL } from "../assets/helpers/API";
 const router = useRouter();
 const route = useRoute();
 const data = ref();
@@ -130,9 +131,7 @@ const elementActive = ref(route.params.active ? route.params.active : "");
 //Tipo Axios Get
 onMounted(async () => {
   try {
-    const servicios = await axios.get(
-      "https://dev.autocred.cl/api/utilities/others/services"
-    );
+    const servicios = await axios.get(SERVICIOS_URL);
     data.value = await servicios.data;
   } catch (error) {
     console.log("error");

@@ -84,6 +84,7 @@ import {
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
 import axios from "axios";
+import { ANIOS_VEHICULOS_URL } from "../assets/helpers/API";
 defineProps({
   label: String,
   id: String,
@@ -93,9 +94,7 @@ const data = ref();
 const handler = (element) => emit("update:anio", element);
 onMounted(async () => {
   try {
-    const marcas = await axios.get(
-      "https://dev.autocred.cl/api/utilities/others/years"
-    );
+    const marcas = await axios.get(ANIOS_VEHICULOS_URL);
     data.value = await marcas.data;
   } catch (error) {
     console.log("error");
