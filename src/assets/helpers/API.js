@@ -45,10 +45,11 @@ export const typeCredit = [
 
 
 
-export const PASSWORD_RESET = "https://dev.autocred.cl/password/reset"
-export const BASE_URL = "https://dev.autocred.cl"
+export const PASSWORD_RESET = import.meta.env.VITE_PASSWORD_RESET
+export const BASE_URL = import.meta.env.VITE_BASE_URL
+const BASE_URL_API = import.meta.env.VITE_BASE_URL_API
+
 export const LOGIN_URL_TOKEN = (token) => BASE_URL + "/ingresar/" + token
-const BASE_URL_API = "https://dev.autocred.cl/api/"
 export const LOGIN_URL = BASE_URL_API + "auth/login"
 export const REGISTER_URL = BASE_URL_API + "auth/register"
 export const CONTACT_URL = BASE_URL_API + "utilities/contacts/form"
@@ -66,10 +67,4 @@ export const EVALUACION_URL_1 = BASE_URL_API + "external/evaluations/simulation"
 export const EVALUACION_URL_2 = BASE_URL_API + "external/evaluations/quotation"
 
 
-// //DEV
-// const TOKEN_GOGEMA = "i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG"
-// export const URL_GOGEMA = "https://sandboxapiflux.go-gema.com/v1/leads?access-token=" + TOKEN_GOGEMA
-
-// Prod
-export const TOKEN_GOGEMA = "B6kxjE2iBwDeWOVBmKpS1NeclVsdZQGR"
-export const URL_GOGEMA = "https://apiflux.go-gema.com/v1/leads?access-token=" + TOKEN_GOGEMA
+export const URL_GOGEMA = import.meta.env.VITE_URL_GOGEMA
