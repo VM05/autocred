@@ -46,6 +46,7 @@
       class="text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
       activeClass="activeMenu"
       v-if="mobile"
+      @click="closeFunction"
     >
       {{ item.name }}
     </router-link>
@@ -58,6 +59,7 @@ import { ChevronDownIcon } from "@heroicons/vue/outline";
 const props = defineProps({
   sublinks: Array,
   mobile: Boolean,
+  closeFunction: Function,
 });
 const active = ref(false);
 const toogleMenu = () => (active.value = !active.value);

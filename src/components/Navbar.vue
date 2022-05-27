@@ -57,6 +57,7 @@
       <PopoverPanel
         focus
         class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right lg:hidden"
+        v-slot="{ close }"
       >
         <div
           class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50"
@@ -91,10 +92,15 @@
                     :to="item.url"
                     class="text-base font-medium text-primary-900 w-full text-center border-b border-primary-900 pb-4 last:border-0"
                     activeClass="activeMenu"
+                    @click="close"
                   >
                     {{ item.name }}
                   </router-link>
-                  <MenuVue v-else :sublinks="item.sublink" mobile
+                  <MenuVue
+                    v-else
+                    :sublinks="item.sublink"
+                    mobile
+                    :closeFunction="close"
                     >Servicios</MenuVue
                   >
                 </div>
