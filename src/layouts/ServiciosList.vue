@@ -60,7 +60,22 @@
               <Paragraph1 class="text-primary-900 font-medium text-base mb-3">
                 {{ element.content }}
               </Paragraph1>
-              <router-link to="#contacto" class="w-fit self-center">
+              <router-link
+                :to="{ hash: '#simulador' }"
+                class="w-fit self-center"
+                v-if="element.id == 'financiamiento'"
+              >
+                <Button1
+                  :text="element.buttonText"
+                  secondary
+                  class="w-fit self-center"
+                />
+              </router-link>
+              <router-link
+                :to="{ hash: '#contacto' }"
+                class="w-fit self-center"
+                v-else
+              >
                 <Button1
                   :text="element.buttonText"
                   secondary
@@ -74,7 +89,7 @@
           </div>
           <div v-if="elementActive == 'financiamiento'">
             <FeaturesList :data="featuresFinanciamiento" class="mb-24" />
-            <Simulador />
+            <Simulador id="simulador" />
           </div>
           <div v-if="elementActive == 'tag'">
             <FeaturesList :data="featuresTag" class="mb-24" />
