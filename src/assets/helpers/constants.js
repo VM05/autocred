@@ -39,12 +39,7 @@ export const featuresVendedores = [
         content: "¡Realizamos la primera evaluación en tan solo 7 minutos!",
         img: "/img/icons/Iconos_Autocred_Magenta_Tiempo_record.png",
     },
-    {
-        name: "Asesoramiento",
-        content:
-            "En Autocred, te guiamos, acompañamos y apoyamos durante todo el proceso de compra junto a todo nuestro equipo para aclarar tus dudas y realizar todos los trámites requeridos para que tu experiencia de compra sea extraordinaria.",
-        img: "/img/icons/Iconos_Autocred_Magenta_Asesoramiento.png",
-    },
+
 ];
 export const featuresCompradoress = [
     {
