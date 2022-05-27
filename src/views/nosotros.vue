@@ -21,7 +21,7 @@
       <template #image>
         <div class="grid place-content-center">
           <img
-            src="https://picsum.photos/id/199/536/354"
+            src="../assets/img/nosotros_header_image.png"
             alt="lorem"
             class="w-full md:w-auto"
           />
