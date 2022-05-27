@@ -41,7 +41,7 @@
     <Ventajas />
     <Servicios />
     <Respaldo />
-    <Experiencia />
+    <!-- <Experiencia /> -->
     <Comentarios />
     <DondeEstamos />
     <!-- <Medios /> -->
@@ -59,9 +59,9 @@ import Heading from "../components/Heading.vue";
 import Button from "../components/Button.vue";
 import Comentarios from "../layouts/Comentarios.vue";
 import DondeEstamos from "../layouts/DondeEstamos.vue";
-import Medios from "../layouts/Medios.vue";
+// import Medios from "../layouts/Medios.vue";
 import Hablemos from "../layouts/Hablemos.vue";
-import Experiencia from "../layouts/Experiencia.vue";
+// import Experiencia from "../layouts/Experiencia.vue";
 </script>
 
 <style scoped></style>
