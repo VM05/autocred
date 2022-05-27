@@ -17,10 +17,13 @@
         </div>
         <div class="-mr-2 -my-2 lg:hidden">
           <PopoverButton
-            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary-900"
+            class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100"
           >
-            <span class="sr-only">Open menu</span>
-            <MenuIcon class="h-6 w-6" aria-hidden="true" />
+            <img
+              src="../assets/img/menu-hamburguesa.svg"
+              alt="Open menu"
+              class="h-8 w-8"
+            />
           </PopoverButton>
         </div>
         <PopoverGroup as="nav" class="hidden lg:flex space-x-10">
@@ -34,31 +37,6 @@
               {{ link.name }}
             </router-link>
             <MenuVue v-else :sublinks="link.sublink">Servicios</MenuVue>
-            <!-- <Menu  as="div" class="">
-              <MenuButton>
-                <div
-                  class="flex flex-row text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
-                >
-                  {{ link.name }}
-                  <ChevronDownIcon
-                    class="ml-2 -mr-1 h-5 w-5"
-                    aria-hidden="true"
-                  />
-                </div>
-              </MenuButton>
-              <MenuItems
-                class="absolute right-1/2 left-1/2 mt-2 w-48 -ml-24 rounded-md grid grid-flow-row gap-2 bg-secondary-500"
-              >
-                <MenuItem
-                  v-for="sublink in link.sublink"
-                  class="text-primary-700 hover:bg-primary-900 hover:text-white px-3 py-3 rounded-md"
-                >
-                  <router-link :to="link.url + sublink.link">
-                    {{ sublink.name }}
-                  </router-link>
-                </MenuItem>
-              </MenuItems>
-            </Menu> -->
           </div>
         </PopoverGroup>
         <div class="hidden lg:flex items-center justify-end lg:flex-1 lg:w-0">
@@ -94,10 +72,13 @@
               </div>
               <div class="-mr-2">
                 <PopoverButton
-                  class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary-900"
+                  class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100"
                 >
-                  <span class="sr-only">Cerrar menu</span>
-                  <XIcon class="h-6 w-6" aria-hidden="true" />
+                  <img
+                    src="../assets/img/menu-cerrar.svg"
+                    alt="Cerrar menu"
+                    class="h-6 w-6"
+                  />
                 </PopoverButton>
               </div>
             </div>
