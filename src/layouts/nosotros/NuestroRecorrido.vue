@@ -3,7 +3,7 @@
     <Heading1 content="Nuestro recorrido" />
     <div class="grid grid-cols-1 md:grid-cols-2 pattern">
       <img
-        src="https://api.lorem.space/image/car?w=300&h=300"
+        src="../../assets/img/nuestro_recorrido.jpg"
         alt=""
         class="image w-full md:w-11/12"
       />
