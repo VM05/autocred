@@ -2,7 +2,26 @@
   <div class="mb-24">
     <div v-if="data" class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
       <div v-for="item in data.data" class="flex flex-col items-center gap-4">
-        <img src="https://picsum.photos/id/237/220/150" alt="" />
+        <img
+          src="../assets/img/servicios_Financiamiento.png"
+          alt="servicios_Financiamiento"
+          v-if="item == 'Financiamiento'"
+        />
+        <img
+          src="../assets/img/servicios_SeguroAutomotriz.png"
+          alt="servicios_SeguroAutomotriz"
+          v-if="item == 'Seguro'"
+        />
+        <img
+          src="../assets/img/servicios_TAG.png"
+          alt="servicios_TAG"
+          v-if="item == 'Tag'"
+        />
+        <img
+          src="../assets/img/servicios_Transferencias.png"
+          alt="servicios_Transferencias"
+          v-if="item == 'Transferencias'"
+        />
         <Paragraph1
           class="text-xl"
           :class="{
@@ -28,22 +47,26 @@
     <div v-for="element in dataServicios">
       <div v-if="element.id == elementActive">
         <Heading :content="element.title" />
-        <div class="p-16">
-          <div class="grid grid-cols-2 pb-24 mb-20 border-b">
-            <div class="py-16 -ml-6 justify-self-end">
+        <div class="p-6 md:p-16">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 pb-24 mb-20 border-b gap-2"
+          >
+            <div class="py-16 md:-ml-6 justify-self-end">
               <img :src="element.img" :alt="element.title" class="w-full" />
             </div>
             <div
               class="bg-white rounded-xl shadow-xl pt-16 pb-10 px-8 flex flex-col justify-between"
             >
-              <Paragraph class="text-primary-900 font-medium text-base">
+              <Paragraph1 class="text-primary-900 font-medium text-base mb-3">
                 {{ element.content }}
-              </Paragraph>
-              <Button
-                :text="element.buttonText"
-                secondary
-                class="w-fit self-center"
-              />
+              </Paragraph1>
+              <router-link to="#contacto" class="w-fit self-center">
+                <Button1
+                  :text="element.buttonText"
+                  secondary
+                  class="w-fit self-center"
+                />
+              </router-link>
             </div>
           </div>
           <div v-if="elementActive == 'transferencias'">
