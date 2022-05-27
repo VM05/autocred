@@ -33,7 +33,7 @@
     <Servicios />
     <Comentarios />
     <Respaldo />
-    <Hablemos id="#contacto" />
+    <Hablemos id="contacto" />
   </Container>
 </template>
 
