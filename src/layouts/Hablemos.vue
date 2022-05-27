@@ -107,7 +107,7 @@ const formContacto = reactive({
   email: "",
   telefono: "",
   mensaje: "",
-  procedencia_id: 100,
+  procedencia_id: 103,
   tipo_contacto: "web",
   servicios: servicios[0].name,
   canal_atencion: gestion[0].name,
