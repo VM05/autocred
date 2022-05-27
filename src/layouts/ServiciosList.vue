@@ -49,13 +49,13 @@
         <Heading :content="element.title" />
         <div class="p-6 md:p-16">
           <div
-            class="grid grid-cols-1 md:grid-cols-2 pb-24 mb-20 border-b gap-2"
+            class="grid grid-cols-1 md:grid-cols-2 pb-24 mb-20 border-b gap-2 md:flex md:relative md:justify-end"
           >
-            <div class="py-16 md:-ml-6 justify-self-end">
+            <div class="justify-self-end md:absolute md:w-5/12 top-0 left-0">
               <img :src="element.img" :alt="element.title" class="w-full" />
             </div>
             <div
-              class="bg-white rounded-xl shadow-xl pt-16 pb-10 px-8 flex flex-col justify-between"
+              class="bg-white rounded-xl shadow-xl pt-16 pb-10 px-8 flex flex-col justify-between md:w-1/2"
             >
               <Paragraph1 class="text-primary-900 font-medium text-base mb-3">
                 {{ element.content }}
