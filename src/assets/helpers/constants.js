@@ -156,15 +156,6 @@ export const questionsVendedor = [
     { title: "¿Dónde hago la entrega de mi vehículo?", content: "Puedes entregar el vehículo donde te sea más cómodo y te sientas seguro. Lo importante es que tengas la certeza de que tu dinero está en tu cuenta antes de pasar las llaves. Con Autocred puedes hacerlo desde tu casa o lugar a convenir realizando la transferencia online, acompañado desde tu casa con nuestro servicio de oficina móvil, o en cualquiera de nuestros módulos de atención ubicados en la capital." }
 ];
 export const brands = [
-
-    {
-        alt: "mallplaza",
-        url: "/img/brands/mallplaza.png",
-    },
-    {
-        alt: "apumanque",
-        url: "/img/brands/apumanque.png",
-    },
     {
         alt: "autofact",
         url: "/img/brands/autofact2.png",
