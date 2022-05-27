@@ -206,7 +206,7 @@ export const comentarios = [
         nombre: "Issac Valdés",
         username: "",
         comentario: "Hemos hecho 4 transferencias online con Autocred, en Pandemia fue la mejor opción para no ir al Registro Civil y evitar hasta 4 horas de espera. Jackeline, nuestra ejecutiva, fue muy diligente, muy rápida y amable acompañándonos en todo el proceso de la venta de nuestros vehículos. El sistema es muy amigable por lo que recomendé el servicio con Autocred a mis contactos.",
-        src: "/img/IsaacValdes.png"
+        src: "/img/icons/Iconos_Autocred_Azul_Copiloto.png"
     },
     {
         nombre: "Nicolás Juri",
