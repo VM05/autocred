@@ -2,11 +2,6 @@
   <div class="bg-slate-100 mb:px-32 pt-10 pb-20 grid">
     <div class="title mb-8">
       <HeadingVue content="Esto nos mueve" />
-      <HeadingVue
-        content="lorem ipsum dolor sit amet, consectur..."
-        headingType="h3"
-        class="pb-4 border-b"
-      />
     </div>
     <div class="grid gap-12 md:gap-24 mb-12">
       <div v-for="(item, index) in valores" :key="index" class="card relative">
