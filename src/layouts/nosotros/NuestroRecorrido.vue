@@ -5,7 +5,7 @@
       <img
         src="https://api.lorem.space/image/car?w=300&h=300"
         alt=""
-        class="image w-full"
+        class="image w-full md:w-11/12"
       />
       <div class="content">
         <p class="font-medium text-primary-900 text-lg">
