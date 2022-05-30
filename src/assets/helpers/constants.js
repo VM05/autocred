@@ -302,20 +302,20 @@ export const ventajas = [
         name: "Te Guiamos",
         content:
             "Estamos disponibles a través de nuestros distintos canales los 7 días de la semana para ayudarte en lo que necesites.",
-        src: '/img/copiloto.png'
+        src: '/img/ventajas/ventajas_teguiamos.png'
     },
     {
         name: "Te Acompañamos",
         content:
             "Te llevamos al comprador en nuestra van, entregamos financiamiento y facilidades de pago, y/o te acompañamos a ver o mostrar el auto.",
-        src: '/img/copiloto.png'
+        src: '/img/ventajas/ventajas_teacompañamos.png'
 
     },
     {
         name: "Te Apoyamos",
         content:
             "Para comprar o vender, contamos con facilidades de pago, servicio de transferencia, seguro y TAG. Todo en un mismo lugar.",
-        src: '/img/mejor-ruta.png'
+        src: '/img/ventajas/ventajas_teapoyamos.png'
 
     }
 ]
