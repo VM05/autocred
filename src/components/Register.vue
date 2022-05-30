@@ -94,6 +94,7 @@ import axios from "axios";
 import { REGISTER_URL, LOGIN_URL_TOKEN } from "../assets/helpers/API";
 import Paragraph from "./Paragraph.vue";
 import { useRoute } from "vue-router";
+import { isObjEmpty } from "../assets/helpers/validate";
 
 const route = useRoute();
 const data = ref(route.params);
@@ -109,8 +110,7 @@ const registerForm = reactive({
 });
 
 const fillFormFromParams = () => {
-  console.log(data.value);
-  if (data) {
+  if (!isObjEmpty(data.value)) {
     console.log("Form from params");
     registerForm.dni = data.value.rut;
     registerForm.name = data.value.nombre;
@@ -131,7 +131,6 @@ const handleForm = async () => {
   errorForm.value = false;
   try {
     const res = await axios.post(REGISTER_URL, registerForm);
-    console.log(await res);
     if (await res.data.success) {
       window.open(LOGIN_URL_TOKEN(res.data.token_id));
     }
