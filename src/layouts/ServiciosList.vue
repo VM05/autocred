@@ -3,22 +3,22 @@
     <div v-if="data" class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
       <div v-for="item in data.data" class="flex flex-col items-center gap-4">
         <img
-          src="../assets/img/servicios_Financiamiento.png"
+          src="../assets/img/02-menu-servicios-financiamiento.png"
           alt="servicios_Financiamiento"
           v-if="item == 'Financiamiento'"
         />
         <img
-          src="../assets/img/servicios_SeguroAutomotriz.png"
+          src="../assets/img/04-menu-servicios-seguro-(EN-BAJA).png"
           alt="servicios_SeguroAutomotriz"
           v-if="item == 'Seguro'"
         />
         <img
-          src="../assets/img/servicios_TAG.png"
+          src="../assets/img/03-menu-servicios-tag-(EN-BAJA).png"
           alt="servicios_TAG"
           v-if="item == 'Tag'"
         />
         <img
-          src="../assets/img/servicios_Transferencias.png"
+          src="../assets/img/01-menu-servicios-transferencias.png"
           alt="servicios_Transferencias"
           v-if="item == 'Transferencias'"
         />
@@ -49,7 +49,7 @@
         <Heading :content="element.title" />
         <div class="p-6 md:p-16">
           <div
-            class="grid grid-cols-1 md:grid-cols-2 md:pb-40 mb-20 border-b gap-2 md:flex md:relative md:justify-end"
+            class="grid grid-cols-1 md:grid-cols-2 md:pb-40 mb-20 gap-2 md:flex md:relative md:justify-end"
           >
             <div class="justify-self-end md:absolute md:w-5/12 top-0 left-0">
               <img :src="element.img" :alt="element.title" class="w-full" />

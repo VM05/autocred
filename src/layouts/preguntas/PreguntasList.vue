@@ -23,13 +23,13 @@
         class="cardQuestion justify-self-start md z-10"
       />
       <img
-        src="../../assets/img/faq_comprador.png"
+        src="../../assets/img/preguntas-frecuentes-compradores.png"
         alt=""
         class="img absolute top-0 right-0 z-0 md hidden md:block"
         v-if="comprador"
       />
       <img
-        src="../../assets/img/faq_vendedor.png"
+        src="../../assets/img/preguntas-frecuentes-vendedores-(EN-BAJA).png"
         alt=""
         class="img absolute top-0 left-0 z-0 md hidden md:block"
         v-if="vendedor"

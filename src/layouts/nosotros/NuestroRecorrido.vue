@@ -3,7 +3,7 @@
     <Heading1 content="Nuestro recorrido" />
     <div class="grid grid-cols-1 md:grid-cols-2 pattern">
       <img
-        src="../../assets/img/nuestro_recorrido.jpg"
+        src="../../assets/img/nuestro-recorrido.jpg"
         alt=""
         class="image w-full md:w-11/12"
       />

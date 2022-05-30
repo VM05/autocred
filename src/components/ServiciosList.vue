@@ -7,13 +7,13 @@
       <CardServicio v-for="cardData in data" :data="cardData" />
     </div>
     <img
-      src="../assets/img/home_vendedores.png"
+      src="../assets/img/armado-vendedores.png"
       alt=""
       class="img absolute top-0 left-0 z-0"
       v-if="right"
     />
     <img
-      src="../assets/img/home_compradores.png"
+      src="../assets/img/armado-compradores.png"
       alt=""
       class="img absolute top-0 right-0 z-0 md"
       v-if="!right"

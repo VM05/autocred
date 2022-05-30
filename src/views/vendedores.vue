@@ -21,7 +21,7 @@
       <template #image>
         <div class="grid place-content-center">
           <img
-            src="../assets/img/vendedores_header_image.png"
+            src="../assets/img/portada-vendedores.png"
             alt="lorem"
             class="w-full md:w-auto"
           />
