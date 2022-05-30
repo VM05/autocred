@@ -63,7 +63,7 @@ h6 {
     font-size: 24px;
   }
   h4 {
-    font-size: 22px;
+    font-size: 20px;
   }
   h5 {
     font-size: large;
