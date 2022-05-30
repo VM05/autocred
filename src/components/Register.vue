@@ -132,7 +132,7 @@ const handleForm = async () => {
   try {
     const res = await axios.post(REGISTER_URL, registerForm);
     if (await res.data.success) {
-      window.open(LOGIN_URL_TOKEN(res.data.token_id));
+      window.open(LOGIN_URL_TOKEN(res.data.token_id), "_self");
     }
   } catch (error) {
     errorForm.value = true;

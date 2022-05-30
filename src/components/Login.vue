@@ -77,7 +77,7 @@ const handleLogin = async () => {
       console.log("CORRECTO");
       loading.value = false;
       errorForm.value = false;
-      window.open(LOGIN_URL_TOKEN(response.data.token_id));
+      window.open(LOGIN_URL_TOKEN(response.data.token_id), "_self");
     } else {
       console.log("ELSE ERROR");
     }
