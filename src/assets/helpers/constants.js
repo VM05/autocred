@@ -17,7 +17,7 @@ export const links = [
 ];
 export const featuresVendedores = [
     {
-        name: "Crédito rapido",
+        name: "Crédito rápido",
         content:
             "Evalúa tu crédito en tan solo 7 minutos. Al vendedor se le paga al momento de firmar la transferencia.",
         img: "/img/icons/Iconos_Autocred_Magenta_Credito_rapido.png",
@@ -43,7 +43,7 @@ export const featuresVendedores = [
 ];
 export const featuresCompradoress = [
     {
-        name: "Crédito rapido",
+        name: "Crédito rápido",
         content:
             "Evalúa tu crédito en tan solo 7 minutos. Al vendedor se le paga al momento de firmar la transferencia.",
         img: "/img/icons/Iconos_Autocred_Azul_credito_rapido.png",
@@ -243,7 +243,7 @@ export const featuresTransferencia = [
 ];
 export const featuresFinanciamiento = [
     {
-        name: "Crédito rapido",
+        name: "Crédito rápido",
         content:
             "En tan solo minutos gestiona tu crédito para la compra de tu vehículo.",
         img: "/img/icons/Iconos_Autocred_Blanco_Credito_rapido.png",
