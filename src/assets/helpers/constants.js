@@ -123,10 +123,10 @@ export const cuotasSimulacion = [
     12, 24, 36, 48
 ]
 export const valores = [
-    { title: "Libertad", content: "Vende y compra con toda libertad. Nosotros te acompañamos durante todo el proceso. Sin letra chica.", src: "/public/img/valores/icono_transparencia.png" },
-    { title: "Responsabilidad", content: "asumimos la tarea de que la compra o venta de tu auto usado se realice de la forma más transparente y justa.", src: "/public/img/valores/icono_responsabilidad.png" },
-    { title: "Empatía", content: "Nos sentamos al lado tanto de compradores como vendedores, entendemos sus dolores y ofrecemos siempre una solución efectiva.", src: "/public/img/valores/icono_empatia.png" },
-    { title: "Honestidad", content: "Entregamos la información necesaria para que ambas partes sepan exactamente el negocio que realizan. Somos el mejor copiloto para hacer un buen negocio en la compra y venta de tu auto usado.", src: "/public/img/valores/icono_honestidad.png" }
+    { title: "Libertad", content: "Vende y compra con toda libertad. Nosotros te acompañamos durante todo el proceso. Sin letra chica.", src: "/img/valores/icono_transparencia.png" },
+    { title: "Responsabilidad", content: "asumimos la tarea de que la compra o venta de tu auto usado se realice de la forma más transparente y justa.", src: "/img/valores/icono_responsabilidad.png" },
+    { title: "Empatía", content: "Nos sentamos al lado tanto de compradores como vendedores, entendemos sus dolores y ofrecemos siempre una solución efectiva.", src: "/img/valores/icono_empatia.png" },
+    { title: "Honestidad", content: "Entregamos la información necesaria para que ambas partes sepan exactamente el negocio que realizan. Somos el mejor copiloto para hacer un buen negocio en la compra y venta de tu auto usado.", src: "/img/valores/icono_honestidad.png" }
 ]
 export const questionsComprador = [
     { title: "¿Qué tipo de vehículo puedo comprar a través de Autocred?", content: "En Autocred puedes comprar cualquier tipo de vehículo que ya posea un dueño, de una empresa o persona y que tenga patente." },
