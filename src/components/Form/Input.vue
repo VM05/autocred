@@ -46,6 +46,7 @@
       :value="value"
       :disabled="disabled"
       @blur="handler"
+      @keyup="handler"
       required
     />
     <input

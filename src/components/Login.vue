@@ -68,6 +68,11 @@ import Loading from "./Loading.vue";
 
 const loading = ref(false);
 const errorForm = ref(false);
+const loginForm = reactive({
+  dni: "",
+  password: "",
+  remember_me: "1",
+});
 
 const handleLogin = async () => {
   loading.value = true;
@@ -87,12 +92,6 @@ const handleLogin = async () => {
     errorForm.value = true;
   }
 };
-
-const loginForm = reactive({
-  dni: "",
-  password: "",
-  remember_me: "1",
-});
 </script>
 
 <style lang="scss" scoped></style>
