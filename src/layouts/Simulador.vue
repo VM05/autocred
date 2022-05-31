@@ -80,7 +80,7 @@
                 <div class="pie">
                   <Heading1 content="Valor del pie" headingType="h4" />
                   <SliderRange1
-                    @update:slider="(e) => (formSimulador.requested_amount = e)"
+                    @update:slider="(e) => (formSimulador.down_payment = e)"
                   />
                 </div>
               </div>
@@ -356,9 +356,9 @@ const handleForm2 = async () => {
 //PASO 2
 
 watch(formSimulador, () => {
-  if (formSimulador.requested_amount > 0 && formSimulador.vehicle_price > 0) {
-    const res = formSimulador.vehicle_price - formSimulador.requested_amount;
-    formSimulador.down_payment = res.toString();
+  if (formSimulador.down_payment > 0 && formSimulador.vehicle_price > 0) {
+    const res = formSimulador.vehicle_price - formSimulador.down_payment;
+    formSimulador.requested_amount = res.toString();
   }
   formSimulador2.dni = formSimulador.dni;
   formSimulador2.vehicle_year = formSimulador.vehicle_year;
