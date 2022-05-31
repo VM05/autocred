@@ -10,6 +10,7 @@ import servicios from '../views/servicios.vue'
 import vendedores from '../views/vendedores.vue'
 import Blog from '../views/Blog.vue'
 import article from '../views/article.vue'
+import NotFound from '../views/NotFound.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -37,7 +38,7 @@ const router = createRouter({
         { path: '/blog/:id', name: 'Articulo', component: article },
 
 
-        // { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
+        { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
     ],
     scrollBehavior(to, from, savedPosition) {
         if (to.hash) {
