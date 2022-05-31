@@ -62,6 +62,18 @@ import DondeEstamos from "../layouts/DondeEstamos.vue";
 // import Medios from "../layouts/Medios.vue";
 import Hablemos from "../layouts/Hablemos.vue";
 // import Experiencia from "../layouts/Experiencia.vue";
+import { useHead } from "@vueuse/head";
+
+useHead({
+  title: "Autocred",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Autocred lo hace fácil. Postula simultáneamente tu crédito con diferentes crediticias y obtén una aprobación en segundos",
+    },
+  ],
+});
 </script>
 
 <style scoped></style>

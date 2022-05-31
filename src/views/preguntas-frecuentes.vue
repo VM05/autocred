@@ -32,6 +32,18 @@ import Heading from "../components/Heading.vue";
 import Button from "../components/Button.vue";
 import Hablemos from "../layouts/Hablemos.vue";
 import PreguntasList from "../layouts/preguntas/PreguntasList.vue";
+import { useHead } from "@vueuse/head";
+
+useHead({
+  title: "Autocred | Preguntas Frecuentes",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Autocred lo hace fácil. Postula simultáneamente tu crédito con diferentes crediticias y obtén una aprobación en segundos",
+    },
+  ],
+});
 </script>
 
 <style scoped></style>

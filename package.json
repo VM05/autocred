@@ -13,6 +13,7 @@
     "@headlessui/vue": "^1.6.1",
     "@heroicons/vue": "^1.0.6",
     "@vueform/slider": "^2.0.10",
+    "@vueuse/head": "^0.7.6",
     "axios": "^0.27.2",
     "pinia": "^2.0.14",
     "qs": "^6.10.3",

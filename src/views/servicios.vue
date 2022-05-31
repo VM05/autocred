@@ -17,6 +17,18 @@ import Heading from "../components/Heading.vue";
 
 import Hablemos from "../layouts/Hablemos.vue";
 import ServiciosList1 from "../layouts/ServiciosList.vue";
+import { useHead } from "@vueuse/head";
+
+useHead({
+  title: "Autocred | Servicios",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Autocred lo hace fácil. Postula simultáneamente tu crédito con diferentes crediticias y obtén una aprobación en segundos",
+    },
+  ],
+});
 </script>
 
 <style scoped></style>

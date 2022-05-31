@@ -48,6 +48,18 @@ import Comentarios from "../layouts/Comentarios.vue";
 import Hablemos from "../layouts/Hablemos.vue";
 import NuestroRecorrido from "../layouts/nosotros/NuestroRecorrido.vue";
 import Valores from "../layouts/nosotros/Valores.vue";
+import { useHead } from "@vueuse/head";
+
+useHead({
+  title: "Autocred | Nosotros",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Autocred lo hace fácil. Postula simultáneamente tu crédito con diferentes crediticias y obtén una aprobación en segundos",
+    },
+  ],
+});
 </script>
 
 <style scoped></style>

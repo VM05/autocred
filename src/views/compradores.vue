@@ -46,6 +46,18 @@ import Comentarios from "../layouts/Comentarios.vue";
 import Hablemos from "../layouts/Hablemos.vue";
 import Features from "../layouts/compradores/Features.vue";
 import Simulador from "../layouts/Simulador.vue";
+import { useHead } from "@vueuse/head";
+
+useHead({
+  title: "Autocred | Compradores",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Autocred lo hace fácil. Postula simultáneamente tu crédito con diferentes crediticias y obtén una aprobación en segundos",
+    },
+  ],
+});
 </script>
 
 <style scoped></style>
