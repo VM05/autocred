@@ -39,7 +39,7 @@
                 v-if="cuota.last_payment > 0"
               >
                 <span>Valor última cuota (VFMG)</span>
-                <span>$ {{ formatNumbers(cuota.last_payment) }}</span>
+                <span>{{ formatNumbers(cuota.last_payment) }}</span>
               </div>
               <Button
                 text="Me interesa"
