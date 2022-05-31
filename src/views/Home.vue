@@ -65,7 +65,7 @@ import Hablemos from "../layouts/Hablemos.vue";
 import { useHead } from "@vueuse/head";
 
 useHead({
-  title: "Autocred",
+  title: "Autocred Chile tu mejor copiloto",
   meta: [
     {
       name: "description",
