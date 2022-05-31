@@ -36,10 +36,10 @@
               </div>
               <div
                 class="title flex justify-between w-full"
-                v-if="creditoSmart"
+                v-if="cuota.last_payment > 0"
               >
                 <span>Valor última cuota (VFMG)</span>
-                <span>$ {{ cuota.last_payment }}</span>
+                <span>$ {{ formatNumbers(cuota.last_payment) }}</span>
               </div>
               <Button
                 text="Me interesa"
