@@ -81,7 +81,6 @@
 import Heading from "../components/Heading.vue";
 import { links, rrss } from "../assets/helpers/constants";
 import Container from "../layouts/Container.vue";
-import { direcciones } from "../assets/helpers/API";
 </script>
 
 <style lang="scss" scoped></style>
