@@ -42,6 +42,16 @@
                   {{ servicio }}
                 </Paragraph>
               </div>
+              <ul
+                class="list-disc text-primary-900"
+                v-if="index === 1"
+              >
+                Realiza tus servicios de:
+                <li class="ml-8">Financiamiento</li>
+                <li class="ml-8">Transferencia</li>
+                <li class="ml-8">Tag</li>
+                <li class="ml-8">Seguro e Inspección</li>
+              </ul>
               <div
                 class="subcontent flex flex-col pl-6 gap-2"
                 v-if="servicio == 'Presencial'"
