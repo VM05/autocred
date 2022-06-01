@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-slate-100 mb:px-32 pt-10 pb-20 grid">
+  <div class="mb:px-32 pt-10 pb-20 grid">
     <div class="title mb-8">
       <HeadingVue content="Esto nos mueve" />
     </div>
-    <div class="grid gap-12 md:gap-24 mb-12">
+    <div class="grid gap-4 md:gap-4 mb-12">
       <div v-for="(item, index) in valores" :key="index" class="card relative">
         <div class="shadow-xl py-4 px-6 bg-white rounded-2xl">
           <HeadingVue :content="item.title" />
