@@ -6,7 +6,6 @@
         <Disclosure
           v-slot="{ open }"
           v-if="cuota.monthly_payment > 0"
-          as="div"
           :defaultOpen="index == 0"
         >
           <DisclosureButton
