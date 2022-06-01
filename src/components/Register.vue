@@ -72,12 +72,8 @@
         Ha ocurrido un error, revisa que tus datos sean validos o si ya posees
         una cuenta
       </Paragraph>
-      <Paragraph
-        class="text-red-700 justify-self-center mb-2"
-        v-if="errorForm"
-        v-for="error in errorList"
-      >
-        {{ error[0] }}
+      <Paragraph class="text-red-700 justify-self-center mb-2" v-if="errorForm">
+        {{ errorList }}
       </Paragraph>
     </form>
   </div>
@@ -121,7 +117,7 @@ const fillFormFromParams = () => {
     console.log("nada");
   }
 };
-const errorList = ref([]);
+const errorList = ref();
 
 const errorPassword = computed(() =>
   registerForm.password == registerForm.password_confirmation ? false : true
@@ -136,9 +132,10 @@ const handleForm = async () => {
     }
   } catch (error) {
     errorForm.value = true;
-    console.log("Catch", error);
-    console.log(error.res.data.errors);
-    errorList.value = error.res.data.errors;
+    console.log("Catch", error.response);
+    console.log(error.response.data.message);
+    console.log(error.response.data.errors.dni[0]);
+    errorList.value = error.response.data.errors.dni[0];
   }
 };
 </script>

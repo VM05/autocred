@@ -36,6 +36,7 @@
     </div>
     <input
       v-else-if="password"
+      minlength="6"
       type="password"
       :placeholder="placeholder"
       class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full"
