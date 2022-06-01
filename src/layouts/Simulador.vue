@@ -134,7 +134,11 @@
                   <Button secondary text="Registro" @click="registerHandle" />
                   <!-- </router-link> -->
                   <router-link to="/login">
-                    <Button primary text="Iniciar sesión"></Button>
+                    <Button
+                      primary
+                      text="Iniciar sesión"
+                      @click="loginHandle"
+                    ></Button>
                   </router-link>
                 </div>
               </div>
@@ -399,6 +403,15 @@ const registerHandle = () => {
         formSimulador2.first_surname + " " + formSimulador2.second_surname,
       correo: formSimulador2.email,
       telefono: formSimulador2.phone,
+    },
+  });
+};
+
+const loginHandle = () => {
+  router.push({
+    name: "Login",
+    params: {
+      rut: formSimulador2.dni,
     },
   });
 };

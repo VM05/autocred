@@ -8,6 +8,7 @@
         @submit.prevent="handleLogin"
       >
         <InputRut1
+          :value="data.rut"
           label="Rut"
           id="rut"
           @update:rut="(e) => (loginForm.dni = e)"
@@ -59,13 +60,18 @@ import Input from "./Form/Input.vue";
 import Button1 from "./Button.vue";
 import Paragraph from "../components/Paragraph.vue";
 import axios from "axios";
+import { useRoute } from "vue-router";
+
 import {
   LOGIN_URL,
   LOGIN_URL_TOKEN,
   PASSWORD_RESET,
 } from "../assets/helpers/API";
 import Loading from "./Loading.vue";
+import { isObjEmpty } from "../assets/helpers/validate";
 
+const route = useRoute();
+const data = ref(route.params);
 const loading = ref(false);
 const errorForm = ref(false);
 const loginForm = reactive({
@@ -74,7 +80,17 @@ const loginForm = reactive({
   remember_me: "1",
 });
 
+const fillFormFromParams = () => {
+  if (!isObjEmpty(data.value)) {
+    console.log("Form from params");
+    loginForm.dni = data.value.rut;
+  } else {
+    console.log("nada");
+  }
+};
+
 const handleLogin = async () => {
+  await fillFormFromParams();
   loading.value = true;
   try {
     const response = await axios.post(LOGIN_URL, loginForm);
