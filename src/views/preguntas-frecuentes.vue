@@ -14,7 +14,7 @@
           <img
             src="../assets/img/portada-preguntas-frecuentes.png"
             alt="lorem"
-            class="w-full md:w-auto"
+            class="w-full md:w-3/4 mx-auto"
           />
         </div>
       </template>

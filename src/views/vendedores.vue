@@ -23,7 +23,7 @@
           <img
             src="../assets/img/portada-vendedores.png"
             alt="lorem"
-            class="w-full md:w-auto"
+            class="w-full md:w-3/4 mx-auto"
           />
         </div>
       </template>

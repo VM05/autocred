@@ -29,7 +29,7 @@
         </div>
       </template>
       <template #image>
-        <div class="grid place-content-center">
+        <div class="grid place-content-center h-full">
           <!-- <img
             src="../assets/img/home_header.png"
             alt="lorem"
