@@ -202,9 +202,9 @@ export const comentarios = [
         src: "/img/icons/Iconos_Autocred_Azul_Copiloto.png"
     },
     {
-        nombre: "Nicolás Juri",
-        username: "@nicojuri0208",
-        comentario: "Excelente experiencia con Autocred, Carolina muy atenta y flexible en las necesidades horarias para concretar transferencias, recomendable la plataforma, empresa y ejecutiva.",
+        nombre: "Andrés Martínes",
+        username: "",
+        comentario: "Mi experiencia con Autocred ha sido siempre excelente, en especial por Jackeline nuestra ejecutiva, sin ir más lejos el martes vendimos el auto de mi señora, le envié la información y en unos minutos estaba todo OK. El comprador que no conocía Autocred quedó impresionado de irse con el auto y su contrato ante notario con firma digital, un excelente equipo de trabajo lo recomiendo a todos los conocidos.",
         src: "/img/icons/Iconos_Autocred_Azul_Copiloto.png"
     },
 
