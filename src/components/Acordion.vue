@@ -2,12 +2,8 @@
   <div class="w-full">
     <div class="grid gap-4">
       <Heading content="Selecciona tu Cuota" heading-type="h4" />
-      <div
-        v-for="cuota in props.cuotasSimulacion"
-        :v-key="cuota.id"
-        v-if="cuota.monthly_payment > 0"
-      >
-        <Disclosure v-slot="{ open }">
+      <div v-for="cuota in props.cuotasSimulacion" :v-key="cuota.id">
+        <Disclosure v-slot="{ open }" v-if="cuota.monthly_payment > 0">
           <DisclosureButton
             class="focus:outline-none flex w-full justify-between rounded-lg bg-gray-400 px-4 py-2 text-left text-sm font-medium text-white hover:bg-primary-900"
           >
