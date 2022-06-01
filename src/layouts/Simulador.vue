@@ -122,6 +122,7 @@
                 <Loading />
               </div>
               <div v-if="isSuccess" class="text-center">
+                <Loading medium />
                 <Paragraph class="font-bold"
                   >Estamos evaluando tu solicitud
                 </Paragraph>

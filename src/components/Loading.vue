@@ -1,10 +1,14 @@
 <template>
   <div id="preloader">
-    <div id="loader"></div>
+    <div id="loader" :class="{ 'mediumsize mb-6': props.medium }"></div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const props = defineProps({
+  medium: Boolean,
+});
+</script>
 
 <style scoped>
 #preloader {
@@ -71,5 +75,9 @@
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+.mediumsize {
+  width: 100px !important;
+  height: 100px !important;
 }
 </style>
