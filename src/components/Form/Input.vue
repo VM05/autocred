@@ -9,16 +9,16 @@
     <label :for="id" class="text-primary-900 font-medium text-base">{{
       label
     }}</label>
-    <div v-if="isPhone" class="grid w-full items-center">
-      <!-- <label
+    <div v-if="isPhone" class="flex w-full items-center">
+      <label
         class="phone border border-solid px-2 py-2 rounded-lg text-primary-900"
         :for="id"
       >
-        +56 9</label
-      > -->
+        +56</label
+      >
       <input
         type="tel"
-        maxlength="12"
+        maxlength="9"
         :placeholder="placeholder"
         class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full phone-input"
         @mouseover="hover = true"
@@ -139,9 +139,9 @@ let focus = ref(false);
   border-top-right-radius: 0px;
   border-right: 1;
 }
-/* .phone-input {
+.phone-input {
   border-bottom-left-radius: 0px;
   border-top-left-radius: 0px;
   border-left: 0;
-} */
+}
 </style>

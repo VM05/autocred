@@ -52,7 +52,7 @@
             label="Teléfono"
             id="phone"
             isPhone
-            @update:text="(e) => (formContacto.telefono = e)"
+            @update:text="(e) => (formContacto.telefono = '+56' + e)"
           />
         </div>
         <div class="right md:pl-8 p-0">

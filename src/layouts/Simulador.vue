@@ -193,7 +193,7 @@
                       id="Telefono"
                       isPhone
                       placeholder="Teléfono"
-                      @update:text="(e) => (formSimulador2.phone = e)"
+                      @update:text="(e) => (formSimulador2.phone = '+56' + e)"
                     />
                   </div>
                 </div>
