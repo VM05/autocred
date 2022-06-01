@@ -39,7 +39,7 @@
           }"
         >
           <Button1
-            text="Mas informacion"
+            text="Más información"
             :outlineSecondary="elementActive != item.toLowerCase()"
             :secondary="elementActive == item.toLowerCase()"
             class="w-full"
