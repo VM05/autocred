@@ -419,7 +419,7 @@ const registerHandle = () => {
   background-color: white;
   border-radius: 40px;
   position: relative;
-  top: -2rem;
+  top: -4rem;
   justify-self: center;
 }
 /* we will explain what these classes do next! */
@@ -452,7 +452,7 @@ const registerHandle = () => {
     background-color: white;
     border-radius: 40px;
     position: relative;
-    top: -10rem;
+    top: -15rem;
     justify-self: center;
   }
 }
