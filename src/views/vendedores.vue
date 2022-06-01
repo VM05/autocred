@@ -29,9 +29,9 @@
       </template>
     </BannerHome>
     <ServiciosVendedores />
-    <Features />
     <Hablemos id="contacto" />
     <Comentarios />
+    <Features />
     <Simulador />
   </Container>
 </template>
