@@ -12,9 +12,9 @@
           headingType="h4"
           class="mb-5"
         />
-        <router-link to="#contacto">
+        <router-link to="#simulador">
           <div class="flex flex-row gap-4">
-            <Button text="Quiero un copiloto" primary />
+            <Button text="Obten tu Financiamiento" primary />
           </div>
         </router-link>
       </template>

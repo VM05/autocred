@@ -14,7 +14,7 @@
         />
         <router-link to="#contacto">
           <div class="flex flex-row gap-4">
-            <Button text="Contactanos" secondary />
+            <Button text="Agenda tu servicio" secondary />
           </div>
         </router-link>
       </template>
@@ -30,9 +30,9 @@
     </BannerHome>
     <ServiciosVendedores />
     <Features />
-    <Simulador />
-    <Comentarios />
     <Hablemos id="contacto" />
+    <Comentarios />
+    <Simulador />
   </Container>
 </template>
 

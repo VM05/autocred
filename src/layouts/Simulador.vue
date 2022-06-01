@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="" id="simulador">
     <div class="relative grid">
       <div class="relative z-0">
         <img
