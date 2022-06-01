@@ -40,7 +40,7 @@
             controls
             muted
             src="../assets/video/promo.mp4"
-            class="w-full md:w-auto"
+            class="w-full md:w-auto rounded-3xl"
           ></video>
         </div>
       </template>
