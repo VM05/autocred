@@ -32,7 +32,11 @@
           {{ item }}
         </Paragraph1>
         <router-link
-          :to="{ name: 'Servicios', params: { active: item.toLowerCase() } }"
+          :to="{
+            name: 'Servicios',
+            params: { active: item.toLowerCase() },
+            hash: `#${item.toLowerCase()}`,
+          }"
         >
           <Button1
             text="Mas informacion"
@@ -45,7 +49,7 @@
     </div>
     <Loading v-else />
     <div v-for="element in dataServicios">
-      <div v-if="element.id == elementActive">
+      <div v-if="element.id == elementActive" :id="element.id">
         <Heading :content="element.title" />
         <div class="p-6 md:p-16">
           <div

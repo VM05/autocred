@@ -20,7 +20,11 @@
     <router-link
       v-for="item in props.sublinks"
       class="text-primary-700 hover:bg-primary-900 hover:text-white px-3 py-3 rounded-md"
-      :to="{ name: 'Servicios', params: { active: item.link } }"
+      :to="{
+        name: 'Servicios',
+        params: { active: item.link },
+        hash: `#${item.link}`,
+      }"
     >
       {{ item.name }}
     </router-link>
@@ -42,7 +46,11 @@
       v-show="active"
       v-for="item in props.sublinks"
       as="div"
-      :to="{ name: 'Servicios', params: { active: item.link } }"
+      :to="{
+        name: 'Servicios',
+        params: { active: item.link },
+        hash: `#${item.link}`,
+      }"
       class="text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
       activeClass="activeMenu"
       v-if="mobile"
