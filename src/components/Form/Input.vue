@@ -19,6 +19,7 @@
       <input
         type="tel"
         maxlength="9"
+        minlength="9"
         :placeholder="placeholder"
         class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full phone-input"
         @mouseover="hover = true"
