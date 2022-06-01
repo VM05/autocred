@@ -261,6 +261,12 @@ export const featuresFinanciamiento = [
             "Evaluamos tu crédito con FORUM y diferentes alternativas para lograr entregar siempre un posible financiamiento.",
         img: "/img/icons/Iconos_Autocred_Blanco_Financiamiento.png",
     },
+    {
+        name: "En tiempo record",
+        content:
+            "¡Realizamos la primera evaluación en tan solo 7 minutos!",
+        img: "/img/icons/Iconos_Autocred_Blanco_Tiempo_record.png",
+    },
     // {
     //     name: "Siempre asesorado",
     //     content:
