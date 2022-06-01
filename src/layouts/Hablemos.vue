@@ -60,6 +60,7 @@
             label="Que servicios necesitas?"
             class="w-full"
             @update:servicio="(e) => (formContacto.servicios = e)"
+            :selectService="selectService"
           />
           <SelectGestion
             label="Como quieres que gestionemos tu servicio?"
@@ -101,7 +102,12 @@ const isLoading = ref(false);
 const isSuccess = ref(false);
 const isError = ref(false);
 const alerts = ref(false);
-
+const props = defineProps({
+  selectService: {
+    default: 0,
+    type: Number,
+  },
+});
 const formContacto = reactive({
   nombre_completo: "",
   email: "",
@@ -114,7 +120,6 @@ const formContacto = reactive({
 });
 // const modal = ref(false);
 const isFormComplete = ref(formEmpty(formContacto));
-
 watch(formContacto, () => {
   isFormComplete.value = formEmpty(formContacto);
 });
@@ -149,7 +154,6 @@ const sendFormGoGema = async () => {
     }
   }
 };
-
 const btnBack = () => {
   isSuccess.value = false;
   isError.value = false;

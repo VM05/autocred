@@ -71,7 +71,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onUpdated, watch } from "vue";
 import {
   Combobox,
   ComboboxInput,
@@ -81,26 +81,35 @@ import {
   TransitionRoot,
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
-import { servicios } from "../assets/helpers/API";
+import { dataServicios } from "../assets/helpers/constants";
+import { useContactoStore } from "../stores/contacto";
+
 const emit = defineEmits(["update:servicio"]);
 
 defineProps({
   data: {},
   label: String,
 });
+
+const useContacto = useContactoStore();
+
 const handler = (element) => {
   emit("update:servicio", element);
 };
-let selected = ref(servicios[0]);
+let selected = ref(dataServicios[0]);
 let query = ref("");
 let filteredBrands = computed(() =>
   query.value === ""
-    ? servicios
-    : servicios.filter((brand) =>
+    ? dataServicios
+    : dataServicios.filter((brand) =>
         brand.name
           .toLowerCase()
           .replace(/\s+/g, "")
           .includes(query.value.toLowerCase().replace(/\s+/g, ""))
       )
 );
+
+watch(useContacto, () => {
+  selected.value = useContacto.selectService;
+});
 </script>

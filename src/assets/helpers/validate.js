@@ -35,3 +35,8 @@ export function unformat(value) {
     console.log(value.replaceAll('$', ''))
     console.log(value.replaceAll('.', ''))
 }
+
+export function search(id, array) {
+    const found = array.find(element => element.id == id);
+    return found
+}

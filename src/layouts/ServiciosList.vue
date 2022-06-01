@@ -79,6 +79,7 @@
                 :to="{ hash: '#contacto' }"
                 class="w-fit self-center"
                 v-else
+                @click="useContacto.selectService = element"
               >
                 <Button1
                   :text="element.buttonText"
@@ -126,9 +127,11 @@ import axios from "axios";
 import FeaturesList from "../components/FeaturesList.vue";
 import Simulador from "./Simulador.vue";
 import { SERVICIOS_URL } from "../assets/helpers/API";
-const router = useRouter();
+import { useContactoStore } from "../stores/contacto";
+
 const route = useRoute();
 const data = ref();
+const useContacto = useContactoStore();
 
 const elementActive = ref(route.params.active ? route.params.active : "");
 
