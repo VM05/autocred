@@ -30,11 +30,18 @@
       </template>
       <template #image>
         <div class="grid place-content-center">
-          <img
+          <!-- <img
             src="../assets/img/home_header.png"
             alt="lorem"
             class="w-full md:w-auto"
-          />
+          /> -->
+          <video
+            autoplay
+            controls
+            muted
+            src="../assets/video/promo.mp4"
+            class="w-full md:w-auto"
+          ></video>
         </div>
       </template>
     </BannerHome>
