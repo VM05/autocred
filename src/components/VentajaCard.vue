@@ -7,15 +7,15 @@
         {{ data.content }}
       </Paragraph>
     </div>
-    <router-link to="#contacto" class="w-full self-center">
+    <!-- <router-link to="#contacto" class="w-full self-center">
       <Button1 text="Agenda tu servicio" secondary class="w-full self-center" />
-    </router-link>
+    </router-link> -->
   </div>
 </template>
 
 <script setup>
 import Heading1 from "./Heading.vue";
-import Button1 from "./Button.vue";
+// import Button1 from "./Button.vue";
 import Paragraph from "./Paragraph.vue";
 
 defineProps({

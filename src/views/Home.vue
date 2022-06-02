@@ -3,12 +3,17 @@
     <BannerHome>
       <template #content>
         <Heading
-          content="Tu mejor copiloto para la compra y venta de autos usados entre personas"
+          content="Tu mejor copiloto para la compra y venta de vehículos usados entre personas"
           headingType="h1"
           class="mb-5"
         />
         <Heading
-          content="Te guiamos y acompañamos en todo el proceso de venta o compra de tu vehículo usado. Cuenta con nosotros ya sea online, presencial o Móvil."
+          content="¡Que tu experiencia sea un gran viaje!"
+          headingType="h3"
+          class="mb-5"
+        />
+        <Heading
+          content="Te acompañamos de manera presencial, online y móvil durante todo el proceso."
           headingType="h4"
           class="mb-5"
         />

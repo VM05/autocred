@@ -70,25 +70,25 @@ export const featuresCompradoress = [
 export const serviciosVendores = [
     {
         name: "VAN/OFICINA MÓVIL",
-        content: "¿Quieres compañía cuando muestras el vehículo?, utiliza nuestro centro móvil para trasladar al potencial comprador donde tú quieras* (Región Metropolitana). Si el comprador está de acuerdo con la compra, contamos con todo lo necesario para realizar la transferencia, recibir pagos con tarjeta o incluso entregar financiamiento en 7 Minutos!. ¿Y lo mejor?, Nuestro servicio de Van es absolutamente gratis.",
+        content: "¿Quieres compañía cuando muestras el vehículo? <br> Utiliza nuestra <b>Oficina Móvil</b> para moverte junto al potencial comprador: <br> <ul class='list-disc pl-6'><li>Transferencias</li><li>Pagos con tarjetas</li><li>Servicio de Van 100% gratis</li><li>Financiamiento en solo 7 minutos</li><ul>",
         img: "/img/icons/Iconos_Autocred_Magenta_Traslado.png",
     },
     {
         name: "FINANCIAMIENTO",
         content:
-            "Amplía tus opciones de venta con nosotros. En Autocred contamos con una plataforma de pagos que permite a un comprador pagar con Tarjeta de Crédito o con Financiamiento. La evaluación tarda solo 7 minutos y el dinero se abona en tu cuenta al momento de firmar la transferencia con nosotros. No pierdas la oportunidad de vender al mejor valor tu vehículo.",
+            "Evaluación lista solo en 7 minutos. Nuestra plataforma permite pagos con tarjeta de crédito y financiamiento. El abono llega a tu cuenta al firmar la transferencia.",
         img: "/img/icons/Iconos_Autocred_Magenta_Financiamiento.png",
     },
     {
         name: "TRANSFERENCIA",
         content:
-            "¿Estás listo para transferir tu auto?, contamos con 3 canales de atención para que realices de forma segura la transferencia de tu vehículo. Online, Presencial en nuestros Módulos de Atención, o en el lugar que desees gracias a nuestro servicio de Oficina Móvil. Servicio en línea con el registro civil.",
+            "¿Estás listo para transferir tu auto? Nuestro servicio está en línea con el registro civil, y contamos con 3 formatos de atención para una transferencia segura: <br> <ul class='list-disc pl-6'><li>Online</li><li>Presencial en nuestros módulos</li><li>Oficina Móvil</li><ul>",
         img: "/img/icons/Iconos_Autocred_Magenta_transferencia.png",
     },
     {
         name: "QUEREMOS SER MÁS",
         content:
-            "Porque estamos comprometidos con entregarte la mejor experiencia, además de acompañarte en las etapas de exhibición y entregarte todas las facilidades para que logres un buen negocio, al momento de transferir podemos ayudarte a dar de baja tu Tag (solo autopista Vespucio Norte) y al  comprador le habilitamos uno nuevo. Podemos también asegurar el auto e inspeccionar para que nadie corra riesgos. ",
+            "Porque nos preocupamos de cada detalle, en Autocred puedes dar de baja tu seguro y Tag (solo autopista Vespucio Norte).",
         img: "/img/icons/Iconos_Autocred_Magenta_Volante.png",
     },
 ];
@@ -96,19 +96,19 @@ export const serviciosCompradores = [
     {
         name: "VAN/OFICINA MÓVIL",
         content:
-            "¿Un Uber con acompañamiento?, Así es, si tienes claro qué auto te gusta te llevamos a verlo sin costo* (sólo región metropolitana). Durante el viaje podemos verificar el estado de su documentación, historial de multas e incluso ayudarte con el financiamiento realizando una evaluación en <b>¡Tan solo 7 minutos!</b>",
+            "Utiliza nuestra Oficina Móvil* para moverte junto al potencial comprador: <br> <ul class='list-disc pl-6'><li>Transferencias</li><li>Pagos con tarjetas</li><li>Servicio de Van 100% gratis</li><li>Financiamiento en solo 7 minutos</li><ul>",
         img: "/img/icons/Iconos_Autocred_Azul_traslado.png",
     },
     {
         name: "PLATAFORMA DE PAGO",
         content:
-            "Te gustaría comprar el auto de un particular con tarjeta de crédito?, o mejor aún ¿Financiarlo?, con autocred todo es posible. Trabajamos con diferentes opciones y financieras para que logres hacer de la compra el mejor negocio. Al vendedor se le paga en el mismo minuto que se hace la transferencia para evitar desconfianzas.",
+            "¿Quieres comprar un auto con tarjeta de crédito o financiamiento? En Autocred trabajamos con diferentes opciones financieras para hacer de tu compra, el mejor negocio.",
         img: "/img/icons/Iconos_Autocred_Azul_Plataformas_de_pago.png",
     },
     {
         name: "TRANSFERENCIA, SEGUROS, TAG Y MÁS",
         content:
-            "Queremos ser tu mejor copiloto. Te acompañamos durante el proceso de búsqueda y también te apoyamos a la hora de comprar. Contamos con un servicio de Transferencia en línea con registro civil, un pool de seguros exclusivo para compradores particulares, activamos y entregamos el TAG y todo en cualquiera de nuestros canales de venta; Online, presencial en nuestros Módulos de Atención o donde quieras a través de nuestra Oficina Móvil.",
+            "Somos tu copiloto buscando y comprando. Contamos con Servicio de Transferencia en línea con Registro Civil, seguros exclusivos para compradores particulares, y Activación de TAG presencial, online, en nuestros módulos o donde quieras con nuestra Oficina Móvil.",
         img: "/img/icons/Iconos_Autocred_Azul_seguro_automotriz.png",
     },
 ];
