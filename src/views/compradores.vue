@@ -8,13 +8,13 @@
           class="mb-5"
         />
         <Heading
-          content="Solicita tu traslado donde el comprador, obtén el mejor financiamiento, transfiere, asegura y adquiere tu TAG con nosotros."
+          content="Solicita tu traslado, obtén financiamiento, transfiere, asegura y habilita tu Tag con nosotros."
           headingType="h4"
           class="mb-5"
         />
         <router-link to="#simulador">
           <div class="flex flex-row gap-4">
-            <Button text="Obtén tu Financiamiento" primary />
+            <Button text="Quiero financiar" primary />
           </div>
         </router-link>
       </template>
