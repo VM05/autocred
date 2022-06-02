@@ -41,7 +41,10 @@
     <slot></slot>
     <ChevronDownIcon class="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
   </router-link>
-  <div class="flex flex-col items-center gap-4" :class="{ 'mt-3': active }">
+  <div
+    class="md:hidden flex flex-col items-center gap-4"
+    :class="{ 'mt-3': active }"
+  >
     <router-link
       v-show="active"
       v-for="item in props.sublinks"
