@@ -7,7 +7,7 @@
       <div v-for="(item, index) in valores" :key="index" class="card relative">
         <div class="shadow-xl py-4 px-6 bg-white rounded-2xl">
           <HeadingVue :content="item.title" />
-          <p>{{ item.content }}</p>
+          <Paragraph v-html="item.content" />
         </div>
         <img :src="item.src" alt="" class="absolute top-0" />
       </div>
@@ -22,6 +22,7 @@
 import HeadingVue from "../../components/Heading.vue";
 import { valores } from "../../assets/helpers/constants";
 import Button1 from "../../components/Button.vue";
+import Paragraph from "../../components/Paragraph.vue";
 </script>
 
 <style scoped>

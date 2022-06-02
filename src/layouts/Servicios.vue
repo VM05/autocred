@@ -1,7 +1,7 @@
 <template>
   <div class="mb-24">
     <Heading
-      content="En que consisten nuestros servicios?"
+      content="¿En qué consisten nuestros servicios?"
       class="mb-8"
       v-if="title"
     />

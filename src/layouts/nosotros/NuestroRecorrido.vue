@@ -11,16 +11,17 @@
         <p class="font-medium text-primary-900 text-lg">
           <span class="text-secondary-900 font-bold">Autocred</span> nació a
           fines de 2019 con el objetivo de acompañar, facilitar y financiar la
-          compra y venta de autos usados entre personas. Luego de nuestra
-          primera etapa, hemos sumado a <b>FORUM</b> como un participante y
-          socio estratégico, incorporando servicios y apuntando a las
-          transferencias digitales y móviles.
+          compra o venta de vehículos usados entre personas. Luego de nuestra
+          primera etapa, hemos sumado a <b>FORUM</b> como un socio estratégico,
+          incorporando servicios y apuntando a las transferencias digitales y
+          móviles.
         </p>
+        <br />
         <p class="font-medium text-primary-900 text-lg">
-          Nuestro foco es entregar una experiencia inolvidable a las personas a
-          la hora de comprar o vender su auto, entregando un servicio
+          Nuestro foco es <b>entregar una experiencia inolvidable</b> a las
+          personas que compran o venden un auto, entregando un servicio
           conveniente, eficiente, cómodo y con un gran respaldo, maximizando los
-          beneficios para cada una de las partes.
+          beneficios para todos.
         </p>
       </div>
     </div>
