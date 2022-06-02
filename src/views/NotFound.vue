@@ -29,8 +29,10 @@
 
 <script setup>
 import Container from "../layouts/Container.vue";
-
 import { useHead } from "@vueuse/head";
+import { onMounted } from "vue";
+import { useRouter } from "vue-router";
+const router = useRouter();
 
 useHead({
   title: "Autocred | 404",
@@ -41,6 +43,13 @@ useHead({
         "Autocred lo hace fácil. Postula simultáneamente tu crédito con diferentes crediticias y obtén una aprobación en segundos",
     },
   ],
+});
+
+onMounted(() => {
+  setTimeout(() => {
+    console.log("desde time out");
+    router.push({ name: "Home" });
+  }, 4000);
 });
 </script>
 
