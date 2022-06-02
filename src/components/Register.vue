@@ -82,10 +82,16 @@
             name: 'Login',
             params: { rut: registerForm.dni },
           }"
-          class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-900 hover:bg-primary-700"
+          class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-900 hover:bg-primary-700 mb-3"
         >
           Ingresar
         </router-link>
+        <a
+          :href="PASSWORD_RESET"
+          class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-secondary-900 hover:bg-secondary-700 cursor-pointer"
+        >
+          Recuperar Contraseña
+        </a>
       </div>
     </form>
   </div>
@@ -99,7 +105,11 @@ import Button1 from "./Button.vue";
 import InputEmail1 from "./Input-Email.vue";
 import { reactive, computed, ref, watch } from "vue";
 import axios from "axios";
-import { REGISTER_URL, LOGIN_URL_TOKEN } from "../assets/helpers/API";
+import {
+  REGISTER_URL,
+  LOGIN_URL_TOKEN,
+  PASSWORD_RESET,
+} from "../assets/helpers/API";
 import Paragraph from "./Paragraph.vue";
 import { useRoute } from "vue-router";
 import { isObjEmpty } from "../assets/helpers/validate";
