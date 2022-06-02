@@ -61,6 +61,12 @@
       >
         Las contraseñas no coinciden
       </Paragraph>
+      <Paragraph
+        class="text-red-700 justify-self-center mb-2"
+        v-if="warningPassword"
+      >
+        La contraseña debe contener al menos 6 caracteres
+      </Paragraph>
 
       <Button1
         text="Crear Cuenta"
@@ -144,6 +150,14 @@ const errorList = ref();
 const errorPassword = computed(() =>
   registerForm.password == registerForm.password_confirmation ? false : true
 );
+const warningPassword = ref(false);
+
+watch(registerForm, () => {
+  registerForm.password.length < 6 && registerForm.password.length > 0
+    ? (warningPassword.value = true)
+    : (warningPassword.value = false);
+});
+
 const handleForm = async () => {
   await fillFormFromParams();
   errorForm.value = false;
