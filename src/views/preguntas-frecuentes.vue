@@ -4,7 +4,7 @@
       <template #content>
         <Heading content="Preguntas Frecuentes" headingType="h2" class="mb-5" />
         <Heading
-          content="En Autocred te guiamos en todo el proceso de la compra o venta de tu vehículo junto a nuestros copilotos."
+          content="En Autocred nuestros copilotos te guiarán en todo el proceso de la compra o venta de tu auto."
           headingType="h3"
           class="mb-5"
         />
