@@ -178,7 +178,7 @@ export const brands = [
 ];
 export const dataServicios = [
     { id: 'transferencias', title: "Servicio de transferencias", content: "Transfiere en solo 20 minutos. En nuestros módulos, oficina móvil o vía online, sin filas ni esperas.", img: "/img/servicios/01-servicios-transferencias.png", buttonText: "Agenda tu Servicio", name: "Transferencias" },
-    { id: 'financiamiento', title: "Financia tu proximo auto", content: "Resuelve tu financiamiento silo en 7 minutos. Recibe la aprobación con pago inmediato al vendedor. Paga el 100% del valor del vehículo, dando un pie, transferencia o con tarjetas de crédito. ", img: "/img/servicios/02-servicios-financiamiento.png", buttonText: "Obtén tu Financiamiento", name: "Financiamientos" },
+    { id: 'financiamiento', title: "Financia tu proximo vehículo", content: "Resuelve tu financiamiento silo en 7 minutos. Recibe la aprobación con pago inmediato al vendedor. Paga el 100% del valor del vehículo, dando un pie, transferencia o con tarjetas de crédito. ", img: "/img/servicios/02-servicios-financiamiento.png", buttonText: "Quiero financiar ", name: "Financiamientos" },
     { id: 'tag', title: "Servicio Tag", content: "Te ayudamos con la habilitación o baja de tu Tag para evitar a la concesionaria.", img: "/img/servicios/03-servicios-tag-(EN-BAJA).png", buttonText: "Obtén tu Tag", name: "Tag" },
     { id: 'seguro', title: "Servicio de seguro automotriz", content: "Con Autocred asegura tu vehículo al realizar la transferencia a través de nuestros módulos, Oficina Móvil o vía online.", img: "/img/servicios/04-servicios-seguro-(EN-BAJA).png", buttonText: "Obtén tu Seguro", name: "Seguro" },
     { id: 'van', title: "", content: "", img: "", buttonText: "", name: "Traslado VAN" }
