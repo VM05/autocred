@@ -19,24 +19,24 @@ export const featuresVendedores = [
     {
         name: "Crédito rápido",
         content:
-            "Evalúa tu crédito en tan solo 7 minutos. Al vendedor se le paga al momento de firmar la transferencia.",
+            "En solo 7 minutos evalúa tu crédito con pago al vendedor.",
         img: "/img/icons/Iconos_Autocred_Magenta_Credito_rapido.png",
     },
     {
         name: "La mejor cuota",
         content:
-            "Realizamos una evaluación directa y en linea  con Forum y dos financieras más logrando con esto la mayor probabilidad de otorgamiento.",
+            "Evaluación directa y en línea con financieras que facilitan tu gestión.",
         img: "/img/icons/Iconos_Autocred_Magenta_Mejor_cuota.png",
     },
     {
         name: "Proceso Online o Presencial",
         content:
-            "Evalúa tu crédito desde cualquier lugar de forma online o acércate a nuestros módulos para ser asesorado presencialmente.",
+            "Evalúa tu crédito de forma online o acércate a nuestros módulos.",
         img: "/img/icons/Iconos_Autocred_Magenta_proceso_online.png",
     },
     {
         name: "En tiempo record",
-        content: "¡Realizamos la primera evaluación en tan solo 7 minutos!",
+        content: "En solo 7 minutos realizamos tu primera evaluación.",
         img: "/img/icons/Iconos_Autocred_Magenta_Tiempo_record.png",
     },
 

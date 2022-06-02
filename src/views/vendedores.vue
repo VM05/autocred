@@ -3,12 +3,12 @@
     <BannerHome>
       <template #content>
         <Heading
-          content="Te acompañamos en el proceso de venta de tu auto"
+          content="Somos tu copiloto en la venta de tu auto"
           headingType="h2"
           class="mb-5"
         />
         <Heading
-          content="Publica y vende a través de la plataforma que prefieras, nosotros te acompañamos para vender lo antes posible sin contratiempos ni intermediarios. Obtén siempre el mejor valor por tu vehículo."
+          content="Publica y vende sin contratiempos ni intermediarios. Elige una plataforma de venta y obtén siempre el mejor valor."
           headingType="h4"
           class="mb-5"
         />

@@ -11,7 +11,7 @@
       </div>
       <div class="z-10 absolute top-12 md:top-16 left-4 md:left-16">
         <Heading1 content="Evalua tu crédito" white />
-        <Heading1 content="Con la mejor cuota" white />
+        <Heading1 content="En solo 7 minutos " white />
       </div>
 
       <div class="card shadow-2xl px-6 py-8">
