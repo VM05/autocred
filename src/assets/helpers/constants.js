@@ -177,10 +177,10 @@ export const brands = [
     },
 ];
 export const dataServicios = [
-    { id: 'transferencias', title: "Servicio de transferencias", content: "Transfiere tu auto en minutos, en los módulos físicos, Oficina Móvil u canal online, sin esperas ni filas. En sólo 20 minutos tu trámite estará listo", img: "/img/servicios/01-servicios-transferencias.png", buttonText: "Agenda tu Servicio", name: "Transferencias" },
-    { id: 'financiamiento', title: "Financia tu proximo auto", content: "Con Autocred puedes pagar el auto, el píe o la transferencia con tarjetas de crédito. Ó si prefieres, puedes obtener tu financiamiento en minutos. Estamos en línea con FORUM y diferentes instituciones financieras para apoyarte y lograr de la compra o venta el mejor negocio. Obtén tu aprobación en tan solo 7 minutos y el dinero junto con la firma de la transferencia con nosotros.", img: "/img/servicios/02-servicios-financiamiento.png", buttonText: "Obtén tu Financiamiento", name: "Financiamientos" },
-    { id: 'tag', title: "Servicio Tag", content: "Autocred te da apoyo tanto para la baja de tu TAG y para la obtención del nuevo dispositivo. Slicítalo en nuestros Puntos Físicos, Oficina Móvil y Canal Online, sin necesidad de ir a las oficinas de la concesionaria.", img: "/img/servicios/03-servicios-tag-(EN-BAJA).png", buttonText: "Obtén tu Tag", name: "Tag" },
-    { id: 'seguro', title: "Servicio de seguro automotriz", content: "Con Autocred asegura tu vehículo al momento de realizar la transferencia de tu vehículo, también a través de nuestros Puntos Físicos, Oficina Móvil y Canal Online. Te ayudamos para que también la inspección sea en el instante y no corras riesgos innecesarios.", img: "/img/servicios/04-servicios-seguro-(EN-BAJA).png", buttonText: "Obtén tu Seguro", name: "Seguro" },
+    { id: 'transferencias', title: "Servicio de transferencias", content: "Transfiere en solo 20 minutos. En nuestros módulos, oficina móvil o vía online, sin filas ni esperas.", img: "/img/servicios/01-servicios-transferencias.png", buttonText: "Agenda tu Servicio", name: "Transferencias" },
+    { id: 'financiamiento', title: "Financia tu proximo auto", content: "Resuelve tu financiamiento silo en 7 minutos. Recibe la aprobación con pago inmediato al vendedor. Paga el 100% del valor del vehículo, dando un pie, transferencia o con tarjetas de crédito. ", img: "/img/servicios/02-servicios-financiamiento.png", buttonText: "Obtén tu Financiamiento", name: "Financiamientos" },
+    { id: 'tag', title: "Servicio Tag", content: "Te ayudamos con la habilitación o baja de tu Tag para evitar a la concesionaria.", img: "/img/servicios/03-servicios-tag-(EN-BAJA).png", buttonText: "Obtén tu Tag", name: "Tag" },
+    { id: 'seguro', title: "Servicio de seguro automotriz", content: "Con Autocred asegura tu vehículo al realizar la transferencia a través de nuestros módulos, Oficina Móvil o vía online.", img: "/img/servicios/04-servicios-seguro-(EN-BAJA).png", buttonText: "Obtén tu Seguro", name: "Seguro" },
     { id: 'van', title: "", content: "", img: "", buttonText: "", name: "Traslado VAN" }
 ]
 export const comentarios = [
@@ -246,27 +246,27 @@ export const featuresFinanciamiento = [
     {
         name: "Crédito rápido",
         content:
-            "En tan solo minutos gestiona tu crédito para la compra de tu vehículo.",
+            "Gestiona tu crédito en solo 7 minutos.",
         img: "/img/icons/Iconos_Autocred_Blanco_Credito_rapido.png",
     },
     {
         name: "Proceso online",
         content:
-            "Puedes hacer todo el proceso en forma digital con el soporte de nuestros copilotos a través de nuestro Canal Online, Puntos Físicos o en nuestro Oficina Móvil.",
+            "Nuestros copilotos te guiarán a través del canal digital.",
         img: "/img/icons/Iconos_Autocred_Blanco_Proceso_online.png",
     },
     {
         name: "Variadas ofertas",
         content:
-            "Evaluamos tu crédito con FORUM y diferentes alternativas para lograr entregar siempre un posible financiamiento.",
+            "Realizamos evaluación directa y en línea con instituciones financieras que facilitan la gestión.",
         img: "/img/icons/Iconos_Autocred_Blanco_Financiamiento.png",
     },
-    {
-        name: "En tiempo record",
-        content:
-            "¡Realizamos la primera evaluación en tan solo 7 minutos!",
-        img: "/img/icons/Iconos_Autocred_Blanco_Tiempo_record.png",
-    },
+    // {
+    //     name: "En tiempo record",
+    //     content:
+    //         "¡Realizamos la primera evaluación en tan solo 7 minutos!",
+    //     img: "/img/icons/Iconos_Autocred_Blanco_Tiempo_record.png",
+    // },
     // {
     //     name: "Siempre asesorado",
     //     content:
@@ -278,13 +278,13 @@ export const featuresTag = [
     {
         name: "Proceso online",
         content:
-            "Puedes hacer todo el proceso en forma digital con el soporte de nuestros copilotos a través de nuestro Canal Online, Puntos Físicos o en nuestro Oficina Móvil.",
+            "Nuestros copilotos te guiarán a través del canal digital.",
         img: "/img/icons/Iconos_Autocred_Blanco_Tag.png",
     },
     {
         name: "Siempre asesorado",
         content:
-            "Nuestros copilotos te guiarán y apoyarán permanentemente ante cualquier duda que tengas.",
+            "Nuestros copilotos te apoyarán permanentemente con todas tus dudas.",
         img: "/img/icons/Iconos_Autocred_Blanco_Asesoramiento.png",
     }
 ];
@@ -292,17 +292,16 @@ export const featuresSeguro = [
     {
         name: "Proceso online",
         content:
-            "Puedes hacer todo el proceso en forma digital con el soporte de nuestros copilotos a través de nuestro Canal Online, Puntos Físicos o en nuestro Oficina Móvil.",
+            "Nuestros copilotos te guiarán a través del canal digital.",
         img: "/img/icons/Iconos_Autocred_Blanco_Proceso_online.png",
     },
     {
         name: "Siempre asesorado",
         content:
-            "Nuestros copilotos te guiarán y apoyarán permanentemente ante cualquier duda que tengas.",
+            "Nuestros copilotos te apoyarán permanentemente con todas tus dudas. ",
         img: "/img/icons/Iconos_Autocred_Blanco_Asesoramiento.png",
     }
 ];
-
 
 export const ventajas = [
     {

@@ -3,7 +3,7 @@
     <BannerHome>
       <template #content>
         <Heading
-          content="Somos tu copiloto en la venta de tu auto"
+          content="Somos tu copiloto en la venta de tu vehículo"
           headingType="h2"
           class="mb-5"
         />
