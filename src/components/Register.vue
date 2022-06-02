@@ -72,9 +72,21 @@
         Ha ocurrido un error, revisa que tus datos sean validos o si ya posees
         una cuenta
       </Paragraph>
-      <Paragraph class="text-red-700 justify-self-center mb-2" v-if="errorForm">
-        {{ errorList }}
-      </Paragraph>
+      <div v-if="errorList">
+        <Paragraph class="text-red-700 justify-self-center mb-2">
+          Rut ingresado ya posee un registro. inicia sesión o recupera tu
+          contraseña.
+        </Paragraph>
+        <router-link
+          :to="{
+            name: 'Login',
+            params: { rut: registerForm.dni },
+          }"
+          class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-900 hover:bg-primary-700"
+        >
+          Ingresar
+        </router-link>
+      </div>
     </form>
   </div>
 </template>
