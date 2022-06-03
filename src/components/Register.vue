@@ -160,9 +160,11 @@ watch(registerForm, () => {
   registerForm.password.length < 6 && registerForm.password.length > 0
     ? (warningPassword.value = true)
     : (warningPassword.value = false);
-  registerForm.phone_1.length != 9
-    ? (warningPhone.value = true)
-    : (warningPhone.value = false);
+  if (isObjEmpty(data.value)) {
+    registerForm.phone_1.length != 9
+      ? (warningPhone.value = true)
+      : (warningPhone.value = false);
+  }
 });
 
 const handleForm = async () => {
