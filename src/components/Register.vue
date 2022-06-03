@@ -41,6 +41,9 @@
         :value="data.telefono"
         @update:text="(e) => (registerForm.phone_1 = e)"
       />
+      <Paragraph class="text-red-700 justify-self-center" v-if="warningPhone">
+        El telefono debe contener al menos 9 digitos
+      </Paragraph>
       <Input
         password
         label="Contraseña"
@@ -151,11 +154,15 @@ const errorPassword = computed(() =>
   registerForm.password == registerForm.password_confirmation ? false : true
 );
 const warningPassword = ref(false);
+const warningPhone = ref(false);
 
 watch(registerForm, () => {
   registerForm.password.length < 6 && registerForm.password.length > 0
     ? (warningPassword.value = true)
     : (warningPassword.value = false);
+  registerForm.phone_1.length != 9
+    ? (warningPhone.value = true)
+    : (warningPhone.value = false);
 });
 
 const handleForm = async () => {
