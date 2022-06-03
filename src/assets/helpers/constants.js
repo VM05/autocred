@@ -300,12 +300,12 @@ export const featuresFinanciamiento = [
             "Realizamos evaluación directa y en línea con instituciones financieras que facilitan la gestión.",
         img: "/img/icons/Iconos_Autocred_Blanco_Financiamiento.png",
     },
-    // {
-    //     name: "En tiempo record",
-    //     content:
-    //         "¡Realizamos la primera evaluación en tan solo 7 minutos!",
-    //     img: "/img/icons/Iconos_Autocred_Blanco_Tiempo_record.png",
-    // },
+    {
+        name: "En tiempo record",
+        content:
+            "¡Realizamos la primera evaluación en tan solo 7 minutos!",
+        img: "/img/icons/Iconos_Autocred_Blanco_Tiempo_record.png",
+    },
     // {
     //     name: "Siempre asesorado",
     //     content:
