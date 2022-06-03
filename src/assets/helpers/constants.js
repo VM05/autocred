@@ -301,10 +301,10 @@ export const featuresFinanciamiento = [
         img: "/img/icons/Iconos_Autocred_Blanco_Financiamiento.png",
     },
     {
-        name: "En tiempo record",
+        name: "La mejor cuota",
         content:
-            "¡Realizamos la primera evaluación en tan solo 7 minutos!",
-        img: "/img/icons/Iconos_Autocred_Blanco_Tiempo_record.png",
+            "Evaluación directa y en línea con financieras que facilitan tu gestión.",
+        img: "/img/icons/Iconos_Autocred_Blanco_Mejor_cuota.png",
     },
     // {
     //     name: "Siempre asesorado",
