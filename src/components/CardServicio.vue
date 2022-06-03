@@ -15,7 +15,7 @@
         />
         <Paragraph class="font-medium text-base" v-html="data.content">
         </Paragraph>
-        <p class="text-secondary-900 block mt-2 text-right italic">Saber más</p>
+        <p class="text-secondary-900 block mt-2 text-right italic">Lo quiero</p>
       </div>
     </div>
   </a>
