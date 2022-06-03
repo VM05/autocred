@@ -1,5 +1,8 @@
 <template>
-  <div class="bg-white shadow-2xl cardService rounded-3xl py-4 px-4">
+  <a
+    class="bg-white shadow-2xl cardService rounded-3xl py-4 px-4 cursor-pointer"
+    @click="handlerCardService(data.id)"
+  >
     <div
       class="flex flex-col gap-4 md:gap-0 md:grid place-content-center items-center"
     >
@@ -14,15 +17,26 @@
         </Paragraph>
       </div>
     </div>
-  </div>
+  </a>
 </template>
 
 <script setup>
 import Heading1 from "../components/Heading.vue";
 import Paragraph from "../components/Paragraph.vue";
+import { dataServicios } from "../assets/helpers/constants";
+import { useContactoStore } from "../stores/contacto";
+import router from "../router";
+const useContacto = useContactoStore();
+
 defineProps({
   data: Object,
 });
+
+const handlerCardService = (id) => {
+  const service = dataServicios.find((element) => element.id === id);
+  useContacto.selectService = service;
+  router.push({ hash: "#contacto" });
+};
 </script>
 
 <style scoped>

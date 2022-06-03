@@ -67,51 +67,6 @@ export const featuresCompradoress = [
     },
 
 ];
-export const serviciosVendores = [
-    {
-        name: "VAN/OFICINA MÓVIL",
-        content: "¿Quieres compañía cuando muestras el vehículo? <br> Utiliza nuestra <b>Oficina Móvil</b> para moverte junto al potencial comprador: <br> <ul class='list-disc pl-6'><li>Transferencias</li><li>Pagos con tarjetas</li><li>Servicio de Van 100% gratis</li><li>Financiamiento en solo 7 minutos</li><ul>",
-        img: "/img/icons/Iconos_Autocred_Magenta_Traslado.png",
-    },
-    {
-        name: "FINANCIAMIENTO",
-        content:
-            "Evaluación lista solo en 7 minutos. Nuestra plataforma permite pagos con tarjeta de crédito y financiamiento. El abono llega a tu cuenta al firmar la transferencia.",
-        img: "/img/icons/Iconos_Autocred_Magenta_Financiamiento.png",
-    },
-    {
-        name: "TRANSFERENCIA",
-        content:
-            "¿Estás listo para transferir tu auto? Nuestro servicio está en línea con el registro civil, y contamos con 3 formatos de atención para una transferencia segura: <br> <ul class='list-disc pl-6'><li>Online</li><li>Presencial en nuestros módulos</li><li>Oficina Móvil</li><ul>",
-        img: "/img/icons/Iconos_Autocred_Magenta_transferencia.png",
-    },
-    {
-        name: "QUEREMOS SER MÁS",
-        content:
-            "Porque nos preocupamos de cada detalle, en Autocred puedes dar de baja tu seguro y Tag (solo autopista Vespucio Norte).",
-        img: "/img/icons/Iconos_Autocred_Magenta_Volante.png",
-    },
-];
-export const serviciosCompradores = [
-    {
-        name: "VAN/OFICINA MÓVIL",
-        content:
-            "Utiliza nuestra Oficina Móvil* para moverte junto al potencial comprador: <br> <ul class='list-disc pl-6'><li>Transferencias</li><li>Pagos con tarjetas</li><li>Servicio de Van 100% gratis</li><li>Financiamiento en solo 7 minutos</li><ul>",
-        img: "/img/icons/Iconos_Autocred_Azul_traslado.png",
-    },
-    {
-        name: "PLATAFORMA DE PAGO",
-        content:
-            "¿Quieres comprar un auto con tarjeta de crédito o financiamiento? En Autocred trabajamos con diferentes opciones financieras para hacer de tu compra, el mejor negocio.",
-        img: "/img/icons/Iconos_Autocred_Azul_Plataformas_de_pago.png",
-    },
-    {
-        name: "TRANSFERENCIA, SEGUROS, TAG Y MÁS",
-        content:
-            "Somos tu copiloto buscando y comprando. Contamos con Servicio de Transferencia en línea con Registro Civil, seguros exclusivos para compradores particulares, y Activación de TAG presencial, online, en nuestros módulos o donde quieras con nuestra Oficina Móvil.",
-        img: "/img/icons/Iconos_Autocred_Azul_seguro_automotriz.png",
-    },
-];
 export const camposSimulacion = [
     "CAE",
     "Tasa de interés",
@@ -215,13 +170,6 @@ export const brands = [
         url: "/img/brands/maf.png",
     },
 ];
-export const dataServicios = [
-    { id: 'transferencias', title: "Servicio de transferencias", content: "Transfiere en solo 20 minutos. En nuestros módulos, oficina móvil o vía online, sin filas ni esperas.", img: "/img/servicios/01-servicios-transferencias.png", buttonText: "Agenda tu Servicio", name: "Transferencias" },
-    { id: 'financiamiento', title: "Financia tu proximo vehículo", content: "Resuelve tu financiamiento silo en 7 minutos. Recibe la aprobación con pago inmediato al vendedor. Paga el 100% del valor del vehículo, dando un pie, transferencia o con tarjetas de crédito. ", img: "/img/servicios/02-servicios-financiamiento.png", buttonText: "Quiero financiar ", name: "Financiamientos" },
-    { id: 'tag', title: "Servicio Tag", content: "Te ayudamos con la habilitación o baja de tu Tag para evitar a la concesionaria.", img: "/img/servicios/03-servicios-tag-(EN-BAJA).png", buttonText: "Obtén tu Tag", name: "Tag" },
-    { id: 'seguro', title: "Servicio de seguro automotriz", content: "Con Autocred asegura tu vehículo al realizar la transferencia a través de nuestros módulos, Oficina Móvil o vía online.", img: "/img/servicios/04-servicios-seguro-(EN-BAJA).png", buttonText: "Obtén tu Seguro", name: "Seguro" },
-    { id: 'van', title: "", content: "", img: "", buttonText: "", name: "Traslado VAN" }
-]
 export const comentarios = [
     {
         nombre: "Issac Valdés",
@@ -254,7 +202,6 @@ export const rrss = [
     { name: "instagram", url: "https://www.instagram.com/autocredcl/", src: "/img/rrss/rrss-instagram.svg" },
     { name: "linkedIn", url: "https://www.linkedin.com/company/autocredcl/", src: "/img/rrss/rrss-linkedin.svg" },
 ]
-
 export const featuresTransferencia = [
     {
         name: "Identificacion Biometrica",
@@ -455,3 +402,108 @@ export const posts = [
         "medio": "Medio prensa"
     },
 ]
+
+
+// DATA SERVICIOS
+// serviciosVendores/serviciosCompradores are linked with dataServicios by id
+
+//Used for load select in Contact & page Servicios
+export const dataServicios = [
+    {
+        id: 'transferencias',
+        title: "Servicio de transferencias",
+        content: "Transfiere en solo 20 minutos. En nuestros módulos, oficina móvil o vía online, sin filas ni esperas.",
+        img: "/img/servicios/01-servicios-transferencias.png",
+        buttonText: "Agenda tu Servicio",
+        name: "Transferencias"
+    },
+    {
+        id: 'financiamiento',
+        title: "Financia tu proximo vehículo",
+        content: "Resuelve tu financiamiento silo en 7 minutos. Recibe la aprobación con pago inmediato al vendedor. Paga el 100% del valor del vehículo, dando un pie, transferencia o con tarjetas de crédito. ",
+        img: "/img/servicios/02-servicios-financiamiento.png",
+        buttonText: "Quiero financiar ",
+        name: "Financiamientos"
+    },
+    {
+        id: 'tag',
+        title: "Servicio Tag",
+        content: "Te ayudamos con la habilitación o baja de tu Tag para evitar a la concesionaria.",
+        img: "/img/servicios/03-servicios-tag-(EN-BAJA).png",
+        buttonText: "Obtén tu Tag",
+        name: "Tag"
+    },
+    {
+        id: 'seguro',
+        title: "Servicio de seguro automotriz",
+        content: "Con Autocred asegura tu vehículo al realizar la transferencia a través de nuestros módulos, Oficina Móvil o vía online.",
+        img: "/img/servicios/04-servicios-seguro-(EN-BAJA).png",
+        buttonText: "Obtén tu Seguro",
+        name: "Seguro"
+    },
+    {
+        id: 'van',
+        title: "",
+        content: "",
+        img: "",
+        buttonText: "",
+        name: "Traslado VAN"
+    }
+]
+
+//Used for CardVendedores and load servicios
+export const serviciosVendores = [
+    {
+        id: 'van',
+        name: "VAN/OFICINA MÓVIL",
+        content: "¿Quieres compañía cuando muestras el vehículo? <br> Utiliza nuestra <b>Oficina Móvil</b> para moverte junto al potencial comprador: <br> <ul class='list-disc pl-6'><li>Transferencias</li><li>Pagos con tarjetas</li><li>Servicio de Van 100% gratis</li><li>Financiamiento en solo 7 minutos</li><ul>",
+        img: "/img/icons/Iconos_Autocred_Magenta_Traslado.png",
+    },
+    {
+        id: 'financiamiento',
+        name: "FINANCIAMIENTO",
+        content:
+            "Evaluación lista solo en 7 minutos. Nuestra plataforma permite pagos con tarjeta de crédito y financiamiento. El abono llega a tu cuenta al firmar la transferencia.",
+        img: "/img/icons/Iconos_Autocred_Magenta_Financiamiento.png",
+    },
+    {
+        id: 'transferencias',
+        name: "TRANSFERENCIA",
+        content:
+            "¿Estás listo para transferir tu auto? Nuestro servicio está en línea con el registro civil, y contamos con 3 formatos de atención para una transferencia segura: <br> <ul class='list-disc pl-6'><li>Online</li><li>Presencial en nuestros módulos</li><li>Oficina Móvil</li><ul>",
+        img: "/img/icons/Iconos_Autocred_Magenta_transferencia.png",
+    },
+    {
+        id: 'seguro',
+        name: "QUEREMOS SER MÁS",
+        content:
+            "Porque nos preocupamos de cada detalle, en Autocred puedes dar de baja tu seguro y Tag (solo autopista Vespucio Norte).",
+        img: "/img/icons/Iconos_Autocred_Magenta_Volante.png",
+    },
+];
+
+//Used for CardCompradores and load servicios
+
+export const serviciosCompradores = [
+    {
+        id: 'van',
+        name: "VAN/OFICINA MÓVIL",
+        content:
+            "Utiliza nuestra Oficina Móvil* para moverte junto al potencial comprador: <br> <ul class='list-disc pl-6'><li>Transferencias</li><li>Pagos con tarjetas</li><li>Servicio de Van 100% gratis</li><li>Financiamiento en solo 7 minutos</li><ul>",
+        img: "/img/icons/Iconos_Autocred_Azul_traslado.png",
+    },
+    {
+        id: 'financiamiento',
+        name: "PLATAFORMA DE PAGO",
+        content:
+            "¿Quieres comprar un auto con tarjeta de crédito o financiamiento? En Autocred trabajamos con diferentes opciones financieras para hacer de tu compra, el mejor negocio.",
+        img: "/img/icons/Iconos_Autocred_Azul_Plataformas_de_pago.png",
+    },
+    {
+        id: 'transferencias',
+        name: "TRANSFERENCIA, SEGUROS, TAG Y MÁS",
+        content:
+            "Somos tu copiloto buscando y comprando. Contamos con Servicio de Transferencia en línea con Registro Civil, seguros exclusivos para compradores particulares, y Activación de TAG presencial, online, en nuestros módulos o donde quieras con nuestra Oficina Móvil.",
+        img: "/img/icons/Iconos_Autocred_Azul_seguro_automotriz.png",
+    },
+];
