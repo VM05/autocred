@@ -395,6 +395,7 @@ watch([loading, isSuccess, isError], () => {
 });
 
 const registerHandle = () => {
+  const phoneToRegister = formSimulador2.phone.slice(3);
   router.push({
     name: "Registro",
     params: {
@@ -403,7 +404,7 @@ const registerHandle = () => {
       apellidos:
         formSimulador2.first_surname + " " + formSimulador2.second_surname,
       correo: formSimulador2.email,
-      telefono: formSimulador2.phone,
+      telefono: phoneToRegister,
     },
   });
 };
