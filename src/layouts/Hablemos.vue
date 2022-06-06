@@ -54,6 +54,12 @@
             isPhone
             @update:text="(e) => (formContacto.telefono = '+56' + e)"
           />
+          <Paragraph
+            class="text-red-700 justify-self-center text-center"
+            v-if="warningPhone"
+          >
+            El telefono debe contener al menos 9 digitos
+          </Paragraph>
         </div>
         <div class="right md:pl-8 p-0">
           <SelectServicios
@@ -102,6 +108,7 @@ const isLoading = ref(false);
 const isSuccess = ref(false);
 const isError = ref(false);
 const alerts = ref(false);
+const warningPhone = ref(false);
 const props = defineProps({
   selectService: {
     default: 0,
@@ -122,6 +129,11 @@ const formContacto = reactive({
 const isFormComplete = ref(formEmpty(formContacto));
 watch(formContacto, () => {
   isFormComplete.value = formEmpty(formContacto);
+  if (formContacto.telefono.slice(3).length != 9) {
+    warningPhone.value = true;
+  } else {
+    warningPhone.value = false;
+  }
 });
 watch([isLoading, isSuccess, isError], () => {
   isLoading.value == true || isSuccess.value == true || isError.value == true
