@@ -382,14 +382,19 @@ watch(formSimulador, () => {
   if (formSimulador.down_payment > 0 && formSimulador.vehicle_price > 0) {
     const res = formSimulador.vehicle_price - formSimulador.down_payment;
     formSimulador.requested_amount = res.toString();
-  }
-  if (formSimulador.down_payment < (formSimulador.vehicle_price * 20) / 100) {
-    warningDownPayment.value = true;
-    errorForm.value = true;
-  } else {
-    warningDownPayment.value = false;
     errorForm.value = false;
+
+    if (formSimulador.down_payment < (formSimulador.vehicle_price * 20) / 100) {
+      warningDownPayment.value = true;
+      errorForm.value = true;
+    } else {
+      errorForm.value = false;
+      warningDownPayment.value = false;
+    }
+  } else {
+    errorForm.value = true;
   }
+
   formSimulador2.dni = formSimulador.dni;
   formSimulador2.vehicle_year = formSimulador.vehicle_year;
   formSimulador2.vehicle_price = formSimulador.vehicle_price;
