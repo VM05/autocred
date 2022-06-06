@@ -115,7 +115,11 @@
               </div>
             </div>
             <div class="footer grid justify-center py-4">
-              <Button1 text="Evaluar  crédito" secondary />
+              <Button1
+                text="Evaluar  crédito"
+                secondary
+                :disabled="errorForm"
+              />
             </div>
           </form>
         </Transition>
@@ -294,7 +298,7 @@ import { empleoType, antiguedad } from "../assets/helpers/API";
 import { isObjEmpty } from "../assets/helpers/validate";
 
 const router = useRouter();
-
+const errorForm = ref(false);
 const formSimulador = reactive({
   dni: "",
   vehicle_price: 0,
@@ -381,8 +385,10 @@ watch(formSimulador, () => {
   }
   if (formSimulador.down_payment < (formSimulador.vehicle_price * 20) / 100) {
     warningDownPayment.value = true;
+    errorForm.value = true;
   } else {
     warningDownPayment.value = false;
+    errorForm.value = false;
   }
   formSimulador2.dni = formSimulador.dni;
   formSimulador2.vehicle_year = formSimulador.vehicle_year;
