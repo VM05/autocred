@@ -82,6 +82,13 @@
                   <SliderRange1
                     @update:slider="(e) => (formSimulador.down_payment = e)"
                   />
+                  <Paragraph
+                    class="text-red-700 justify-self-center text-center grid-flow-row col-end-3 mt-2"
+                    v-if="warningDownPayment"
+                  >
+                    Pie Inicial debe ser mayor o igual al 20% del valor del
+                    vehículo
+                  </Paragraph>
                 </div>
               </div>
               <div
@@ -332,7 +339,7 @@ const warningPhone = ref(false);
 const complete = ref(false);
 const formActive = ref(true);
 const formActive2 = ref(false);
-
+const warningDownPayment = ref(false);
 //PASO 1
 const handleForm = async () => {
   loading.value = true;
@@ -371,6 +378,11 @@ watch(formSimulador, () => {
   if (formSimulador.down_payment > 0 && formSimulador.vehicle_price > 0) {
     const res = formSimulador.vehicle_price - formSimulador.down_payment;
     formSimulador.requested_amount = res.toString();
+  }
+  if (formSimulador.down_payment < (formSimulador.vehicle_price * 20) / 100) {
+    warningDownPayment.value = true;
+  } else {
+    warningDownPayment.value = false;
   }
   formSimulador2.dni = formSimulador.dni;
   formSimulador2.vehicle_year = formSimulador.vehicle_year;
