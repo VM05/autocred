@@ -461,10 +461,10 @@ export const serviciosVendores = [
     },
     {
         id: 'financiamiento',
-        name: "FINANCIAMIENTO",
+        name: "PLATAFORMA DE PAGO",
         content:
-            "Evaluación lista solo en 7 minutos. Nuestra plataforma permite pagos con tarjeta de crédito y financiamiento. El abono llega a tu cuenta al firmar la transferencia.",
-        img: "/img/icons/Iconos_Autocred_Magenta_Financiamiento.png",
+            "¿Quieres comprar un auto con tarjeta de crédito o financiamiento? En Autocred trabajamos con diferentes opciones financieras para hacer de tu compra, el mejor negocio.",
+        img: "/img/icons/Iconos_Autocred_Magenta_Plataformas_de_Pago.png",
     },
     {
         id: 'transferencias',
@@ -492,12 +492,13 @@ export const serviciosCompradores = [
             "Utiliza nuestra Oficina Móvil* para moverte junto al potencial comprador: <br> <ul class='list-disc pl-6'><li>Transferencias</li><li>Pagos con tarjetas</li><li>Servicio de Van 100% gratis</li><li>Financiamiento en solo 7 minutos</li><ul>",
         img: "/img/icons/Iconos_Autocred_Azul_traslado.png",
     },
+
     {
         id: 'financiamiento',
-        name: "PLATAFORMA DE PAGO",
+        name: "FINANCIAMIENTO",
         content:
-            "¿Quieres comprar un auto con tarjeta de crédito o financiamiento? En Autocred trabajamos con diferentes opciones financieras para hacer de tu compra, el mejor negocio.",
-        img: "/img/icons/Iconos_Autocred_Azul_Plataformas_de_pago.png",
+            "Evaluación lista solo en 7 minutos. Nuestra plataforma permite pagos con tarjeta de crédito y financiamiento. El abono llega a tu cuenta al firmar la transferencia.",
+        img: "/img/icons/Iconos_Autocred_Azul_financiamiento.png",
     },
     {
         id: 'transferencias',
