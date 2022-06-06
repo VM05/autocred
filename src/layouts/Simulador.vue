@@ -186,7 +186,7 @@
                       @update:text="(e) => (formSimulador2.second_surname = e)"
                     />
                   </div>
-                  <div class="md:flex">
+                  <div class="grid grid-cols-2">
                     <InputEmail
                       label="Email"
                       id="Email"
@@ -200,6 +200,12 @@
                       placeholder="Teléfono"
                       @update:text="(e) => (formSimulador2.phone = '+56' + e)"
                     />
+                    <Paragraph
+                      class="text-red-700 justify-self-center text-center grid-flow-row col-end-3"
+                      v-if="warningPhone"
+                    >
+                      El telefono debe contener al menos 9 digitos
+                    </Paragraph>
                   </div>
                 </div>
                 <div class="col-span-1 md:px-5 md:border-x">
@@ -278,6 +284,7 @@ import SelectAntiguedad from "../components/SelectAntiguedad.vue";
 import Button from "../components/Button.vue";
 import { useRouter } from "vue-router";
 import { empleoType, antiguedad } from "../assets/helpers/API";
+import { isObjEmpty } from "../assets/helpers/validate";
 
 const router = useRouter();
 
@@ -321,7 +328,7 @@ const loading = ref(false);
 const alerts = ref(false);
 const isSuccess = ref(false);
 const isError = ref(false);
-
+const warningPhone = ref(false);
 const complete = ref(false);
 const formActive = ref(true);
 const formActive2 = ref(false);
@@ -385,6 +392,13 @@ watch(formSimulador2, () => {
       .split("-")
       .reduceRight((prev, current) => (formated = prev + "/" + current));
     formSimulador2.birth_date = formated;
+  }
+  if (formSimulador2.phone.length > 0) {
+    if (formSimulador2.phone.slice(3).length != 9) {
+      warningPhone.value = true;
+    } else {
+      warningPhone.value = false;
+    }
   }
 });
 
