@@ -17,7 +17,12 @@
     >
       {{ descriptionVendedores }}
     </p>
-    <ServiciosList :data="serviciosVendores" right class="mb-8" />
+    <ServiciosList
+      :data="serviciosVendores"
+      right
+      class="mb-8"
+      servicio="vendedor"
+    />
     <Heading
       content="Compradores"
       class="pb-4 border-b mb-8 font-bold"
@@ -31,7 +36,7 @@
       {{ descriptionCompradores }}
     </p>
 
-    <ServiciosList :data="serviciosCompradores" />
+    <ServiciosList :data="serviciosCompradores" servicio="comprador" />
   </div>
 </template>
 
