@@ -32,7 +32,7 @@
     <Hablemos id="contacto" />
     <Comentarios />
     <Features />
-    <Simulador />
+    <Simulador id="simulador" />
   </Container>
 </template>
 

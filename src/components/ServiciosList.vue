@@ -4,7 +4,11 @@
       class="grid gap-4 w-full md:w-2/3 z-10"
       :class="[right ? 'justify-self-end' : 'justify-self-start']"
     >
-      <CardServicio v-for="cardData in data" :data="cardData" />
+      <CardServicio
+        v-for="cardData in data"
+        :data="cardData"
+        :servicio="servicio"
+      />
     </div>
     <img
       src="../assets/img/armado-vendedores.png"
@@ -26,6 +30,7 @@ import CardServicio from "./CardServicio.vue";
 defineProps({
   data: Array,
   right: Boolean,
+  servicio: String,
 });
 </script>
 

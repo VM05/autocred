@@ -1,19 +1,23 @@
 <template>
   <a
     class="bg-white shadow-2xl cardService rounded-3xl py-4 px-4 cursor-pointer"
-    @click="handlerCardService(data.id)"
+    @click="handlerCardService(props.data.id)"
   >
     <div
       class="flex flex-col gap-4 md:gap-0 md:grid place-content-center items-center"
     >
-      <img :src="data.img" :alt="data.name" class="w-24 md:w-full" />
+      <img
+        :src="props.data.img"
+        :alt="props.data.name"
+        class="w-24 md:w-full"
+      />
       <div class="content">
         <Heading1
-          :content="data.name"
+          :content="props.data.name"
           headingType="h4"
           class="font-bold mb-3"
         />
-        <Paragraph class="font-medium text-base" v-html="data.content">
+        <Paragraph class="font-medium text-base" v-html="props.data.content">
         </Paragraph>
         <p class="text-secondary-900 block mt-2 text-right italic">Lo quiero</p>
       </div>
@@ -29,8 +33,9 @@ import { useContactoStore } from "../stores/contacto";
 import router from "../router";
 const useContacto = useContactoStore();
 
-defineProps({
+const props = defineProps({
   data: Object,
+  servicio: String,
 });
 
 const handlerCardService = (id) => {
@@ -38,10 +43,17 @@ const handlerCardService = (id) => {
   useContacto.selectService = service;
 
   if (id === "financiamiento") {
-    router.push({
-      name: "Compradores",
-      hash: "#simulador",
-    });
+    if (props.servicio == "comprador")
+      router.push({
+        name: "Compradores",
+        hash: "#simulador",
+      });
+    else if (props.servicio == "vendedor") {
+      router.push({
+        name: "Vendedores",
+        hash: "#simulador",
+      });
+    }
   } else {
     router.push({ hash: "#contacto" });
   }
