@@ -42,10 +42,7 @@
                   {{ servicio }}
                 </Paragraph>
               </div>
-              <ul
-                class="list-disc text-primary-900"
-                v-if="index === 1"
-              >
+              <ul class="list-disc text-primary-900" v-if="index === 1">
                 Realiza tus servicios de:
                 <li class="ml-8">Financiamiento</li>
                 <li class="ml-8">Transferencia</li>
@@ -124,6 +121,7 @@
 
 <script setup>
 import Heading1 from "../components/Heading.vue";
+import Paragraph1 from "../components/Paragraph.vue";
 import { ref, unref } from "vue";
 import { direcciones } from "../assets/helpers/API";
 import Paragraph from "../components/Paragraph.vue";
