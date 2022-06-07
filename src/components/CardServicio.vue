@@ -36,7 +36,15 @@ defineProps({
 const handlerCardService = (id) => {
   const service = dataServicios.find((element) => element.id === id);
   useContacto.selectService = service;
-  router.push({ hash: "#contacto" });
+
+  if (id === "financiamiento") {
+    router.push({
+      name: "Compradores",
+      hash: "#simulador",
+    });
+  } else {
+    router.push({ hash: "#contacto" });
+  }
 };
 </script>
 

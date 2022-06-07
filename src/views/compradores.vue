@@ -30,7 +30,7 @@
     </BannerHome>
     <ServiciosCompradores />
     <Features />
-    <Simulador />
+    <Simulador id="simulador" />
     <Comentarios compradores />
     <Hablemos id="contacto" />
   </Container>
