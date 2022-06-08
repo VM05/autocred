@@ -12,10 +12,12 @@
         :controls="true"
         :autoplay="true"
         muted
-        loop
         class="rounded-3xl"
       >
-        <source src="../assets/video/lorem.mp4" type="video/mp4" />
+        <source
+          src="../assets/video/Autocred-PedroEngel.mp4"
+          type="video/mp4"
+        />
       </video>
     </div>
   </div>

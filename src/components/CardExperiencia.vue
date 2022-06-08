@@ -15,8 +15,8 @@
 
     <Heading content="Pedro Engel" headingType="h3" secondary />
     <Paragraph1 class="font-bold text-base">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis ducimus
-      impedit doloribus, deleniti, odit, consequatur eum dicta obcaecati
+      El destino quiso que acompañaramos a Pedro Engel en la venta de su auto.
+      ¡Gracias a nuestro copiloto la transaccion fue un viaje extraordinario!
     </Paragraph1>
   </div>
 </template>
