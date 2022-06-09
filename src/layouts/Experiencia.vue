@@ -32,7 +32,7 @@ import Heading1 from "../components/Heading.vue";
 <style scoped>
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr;
     gap: 4rem;
   }
 }
