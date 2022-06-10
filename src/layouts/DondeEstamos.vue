@@ -85,6 +85,20 @@
                   </a>
                 </div>
               </div>
+              <div
+                v-if="servicio == 'Servicio Van / Oficina Móvil'"
+                class="ml-6"
+              >
+                <a
+                  class="flex gap-2 items-center mb-4"
+                  :href="'https://api.whatsapp.com/send?phone=56946456800'"
+                >
+                  <ChatIcon class="text-secondary-900 w-5 h-5" />
+                  <Paragraph class="text-primary-900">
+                    Telefono: +56946456800
+                  </Paragraph>
+                </a>
+              </div>
             </div>
           </div>
         </div>
