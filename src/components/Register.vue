@@ -42,7 +42,7 @@
         @update:text="(e) => (registerForm.phone_1 = e)"
       />
       <Paragraph class="text-red-700 justify-self-center" v-if="warningPhone">
-        El telefono debe contener al menos 9 digitos
+        El teléfono debe contener al menos 9 digitos
       </Paragraph>
       <Input
         password

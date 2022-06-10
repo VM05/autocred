@@ -72,6 +72,7 @@
                     :href="
                       'https://api.whatsapp.com/send?phone=' + sucursal.tel
                     "
+                    target="_blank"
                   >
                     <ChatIcon class="text-secondary-900 w-5 h-5" />
                     <Paragraph
@@ -80,7 +81,7 @@
                         'text-secondary-900': activeSucursal == sucursal.name,
                       }"
                     >
-                      Telefono: +{{ sucursal.tel }}
+                      Teléfono: +{{ sucursal.tel }}
                     </Paragraph>
                   </a>
                 </div>
@@ -92,10 +93,11 @@
                 <a
                   class="flex gap-2 items-center mb-4"
                   :href="'https://api.whatsapp.com/send?phone=56946456800'"
+                  target="_blank"
                 >
                   <ChatIcon class="text-secondary-900 w-5 h-5" />
                   <Paragraph class="text-primary-900">
-                    Telefono: +56946456800
+                    Teléfono: +56946456800
                   </Paragraph>
                 </a>
               </div>

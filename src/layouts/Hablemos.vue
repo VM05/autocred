@@ -58,7 +58,7 @@
             class="text-red-700 justify-self-center text-center"
             v-if="warningPhone"
           >
-            El telefono debe contener al menos 9 digitos
+            El teléfono debe contener al menos 9 digitos
           </Paragraph>
         </div>
         <div class="right md:pl-8 p-0">
