@@ -53,19 +53,36 @@
                 class="subcontent flex flex-col pl-6 gap-2"
                 v-if="servicio == 'Presencial'"
               >
-                <div
-                  class="flex gap-2 flex-row cursor-pointer"
-                  v-for="sucursal in direccion.sucursales"
-                  @click="changeSucursal(sucursal.name)"
-                >
-                  <LocationMarkerIcon class="text-secondary-900 w-5 h-5" />
-                  <Paragraph
-                    class="text-base font-medium text-primary-900"
-                    :class="{
-                      'text-secondary-900': activeSucursal == sucursal.name,
-                    }"
-                    v-html="sucursal.content"
-                  />
+                <div v-for="sucursal in direccion.sucursales">
+                  <div
+                    class="flex gap-2 flex-row cursor-pointer"
+                    @click="changeSucursal(sucursal.name)"
+                  >
+                    <LocationMarkerIcon class="text-secondary-900 w-5 h-5" />
+                    <Paragraph
+                      class="text-base font-medium text-primary-900"
+                      :class="{
+                        'text-secondary-900': activeSucursal == sucursal.name,
+                      }"
+                      v-html="sucursal.content"
+                    />
+                  </div>
+                  <a
+                    class="flex gap-2 items-center mb-4"
+                    :href="
+                      'https://api.whatsapp.com/send?phone=' + sucursal.tel
+                    "
+                  >
+                    <ChatIcon class="text-secondary-900 w-5 h-5" />
+                    <Paragraph
+                      class="text-primary-900"
+                      :class="{
+                        'text-secondary-900': activeSucursal == sucursal.name,
+                      }"
+                    >
+                      Telefono: +{{ sucursal.tel }}
+                    </Paragraph>
+                  </a>
                 </div>
               </div>
             </div>
@@ -125,7 +142,7 @@ import Paragraph1 from "../components/Paragraph.vue";
 import { ref, unref } from "vue";
 import { direcciones } from "../assets/helpers/API";
 import Paragraph from "../components/Paragraph.vue";
-import { CheckIcon, LocationMarkerIcon } from "@heroicons/vue/solid";
+import { CheckIcon, LocationMarkerIcon, ChatIcon } from "@heroicons/vue/solid";
 const activeSucursal = ref(direcciones[0].sucursales[0].name);
 const activeDirection = ref("R.Metropolitana");
 const active = (e) => {
