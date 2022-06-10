@@ -40,7 +40,7 @@ useHead({
     {
       name: "description",
       content:
-        "Autocred lo hace fácil. Postula simultáneamente tu crédito con diferentes crediticias y obtén una aprobación en segundos",
+        "En Autocred nuestros copilotos te guiarán en todo el proceso de la compra o venta de tu auto.",
     },
   ],
 });

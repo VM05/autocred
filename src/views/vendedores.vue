@@ -54,7 +54,7 @@ useHead({
     {
       name: "description",
       content:
-        "Autocred lo hace fácil. Postula simultáneamente tu crédito con diferentes crediticias y obtén una aprobación en segundos",
+        "Somos tu copiloto en la venta de tu vehículo. Publica y vende sin contratiempos ni intermediarios. Elige una plataforma de venta y obtén siempre el mejor valor.",
     },
   ],
 });

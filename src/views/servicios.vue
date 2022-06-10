@@ -25,7 +25,7 @@ useHead({
     {
       name: "description",
       content:
-        "Autocred lo hace fácil. Postula simultáneamente tu crédito con diferentes crediticias y obtén una aprobación en segundos",
+        "Diferentes soluciones para que la compra o venta de autos entre las personas sea un viaje extraordinario: Transferencias, Financiamiento, Seguro, Tag",
     },
   ],
 });

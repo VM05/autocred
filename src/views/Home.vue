@@ -82,7 +82,7 @@ useHead({
     {
       name: "description",
       content:
-        "Autocred lo hace fácil. Postula simultáneamente tu crédito con diferentes crediticias y obtén una aprobación en segundos",
+        "Tu mejor copiloto para la compra y venta de vehículos usados entre personas. ¡Que tu experiencia sea un gran viaje! Te acompañamos de manera presencial, online y móvil durante todo el proceso.",
     },
   ],
 });

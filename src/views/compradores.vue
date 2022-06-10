@@ -54,7 +54,7 @@ useHead({
     {
       name: "description",
       content:
-        "Autocred lo hace fácil. Postula simultáneamente tu crédito con diferentes crediticias y obtén una aprobación en segundos",
+        "En Autocred te acompañamos y apoyamos en la compra de tu próximo vehículo usado. Solicita tu traslado, obtén financiamiento, transfiere, asegura y habilita tu Tag con nosotros.",
     },
   ],
 });
