@@ -40,7 +40,7 @@ useHead({
     {
       name: "description",
       content:
-        "En Autocred nuestros copilotos te guiarán en todo el proceso de la compra o venta de tu auto.",
+        "En Autocred nuestros copilotos te guiarán en todo el proceso de la compra o venta de tu vehículo.",
     },
   ],
 });
