@@ -119,11 +119,7 @@
               </div>
             </div>
             <div class="footer grid justify-center py-4">
-              <Button1
-                text="Evaluar  crédito"
-                secondary
-                :disabled="errorForm"
-              />
+              <Button1 text="Evaluar crédito" secondary :disabled="errorForm" />
             </div>
           </form>
         </Transition>
@@ -265,7 +261,11 @@
                 </div>
               </div>
               <div class="footer grid justify-center py-4">
-                <Button1 text="Ver Resultados" secondary />
+                <Button1
+                  text="Ver Resultados"
+                  secondary
+                  :disabled="errorForm2"
+                />
               </div>
             </form>
           </div>
@@ -299,10 +299,12 @@ import SelectAntiguedad from "../components/SelectAntiguedad.vue";
 import Button from "../components/Button.vue";
 import { useRouter } from "vue-router";
 import { empleoType, antiguedad } from "../assets/helpers/API";
-import { isObjEmpty } from "../assets/helpers/validate";
+import { formEmpty } from "../assets/helpers/validate";
 
 const router = useRouter();
 const errorForm = ref(false);
+const errorForm2 = ref(false);
+
 const disabledModel = ref(true);
 const formSimulador = reactive({
   dni: "",
@@ -384,20 +386,28 @@ const handleForm2 = async () => {
 //PASO 2
 
 watch(formSimulador, () => {
-  if (formSimulador.down_payment > 0 && formSimulador.vehicle_price > 0) {
-    const res = formSimulador.vehicle_price - formSimulador.down_payment;
-    formSimulador.requested_amount = res.toString();
-    errorForm.value = false;
-
-    if (formSimulador.down_payment < (formSimulador.vehicle_price * 20) / 100) {
-      warningDownPayment.value = true;
-      errorForm.value = true;
-    } else {
-      errorForm.value = false;
-      warningDownPayment.value = false;
-    }
-  } else {
+  if (formEmpty(formSimulador)) {
     errorForm.value = true;
+  } else {
+    errorForm.value = false;
+    if (formSimulador.down_payment > 0 && formSimulador.vehicle_price > 0) {
+      const res = formSimulador.vehicle_price - formSimulador.down_payment;
+      formSimulador.requested_amount = res.toString();
+      errorForm.value = false;
+
+      if (
+        formSimulador.down_payment <
+        (formSimulador.vehicle_price * 20) / 100
+      ) {
+        warningDownPayment.value = true;
+        errorForm.value = true;
+      } else {
+        errorForm.value = false;
+        warningDownPayment.value = false;
+      }
+    } else {
+      errorForm.value = true;
+    }
   }
 
   formSimulador2.dni = formSimulador.dni;
@@ -415,17 +425,23 @@ watch(formSimulador, () => {
 watch(formSimulador2, () => {
   let formated = "";
 
-  if (formSimulador2.birth_date.includes("-")) {
-    formSimulador2.birth_date
-      .split("-")
-      .reduceRight((prev, current) => (formated = prev + "/" + current));
-    formSimulador2.birth_date = formated;
-  }
-  if (formSimulador2.phone.length > 0) {
-    if (formSimulador2.phone.slice(3).length != 9) {
-      warningPhone.value = true;
-    } else {
-      warningPhone.value = false;
+  if (formEmpty(formSimulador2)) {
+    errorForm2.value = true;
+  } else {
+    errorForm2.value = false;
+
+    if (formSimulador2.birth_date.includes("-")) {
+      formSimulador2.birth_date
+        .split("-")
+        .reduceRight((prev, current) => (formated = prev + "/" + current));
+      formSimulador2.birth_date = formated;
+    }
+    if (formSimulador2.phone.length > 0) {
+      if (formSimulador2.phone.slice(3).length != 9) {
+        warningPhone.value = true;
+      } else {
+        warningPhone.value = false;
+      }
     }
   }
 });
