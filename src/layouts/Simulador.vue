@@ -36,7 +36,10 @@
                     label="Marca"
                     id="Marca"
                     @update:marca="
-                      (e) => (formSimulador.vehicle_brand = e.name)
+                      (e) => {
+                        formSimulador.vehicle_brand = e.name;
+                        disabledModel = false;
+                      }
                     "
                   />
                   <SelectModelo1
@@ -45,6 +48,7 @@
                     @update:modelo="
                       (e) => (formSimulador.vehicle_model = e.name)
                     "
+                    :disabled="disabledModel"
                   />
                 </div>
                 <div class="md:flex">
@@ -299,6 +303,7 @@ import { isObjEmpty } from "../assets/helpers/validate";
 
 const router = useRouter();
 const errorForm = ref(false);
+const disabledModel = ref(true);
 const formSimulador = reactive({
   dni: "",
   vehicle_price: 0,

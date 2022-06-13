@@ -3,22 +3,23 @@
     <label :for="id" class="text-primary-900 font-medium text-base">{{
       label
     }}</label>
-    <Combobox v-model="selected">
+    <Listbox v-model="selected">
       <div class="relative">
-        <ComboboxInput
-          class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full"
-          :displayValue="(brand) => brand.name"
-        />
-        <ComboboxButton
-          class="absolute inset-y-0 right-0 flex items-center pr-2"
+        <ListboxButton
+          class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full text-left"
         >
-          <SelectorIcon class="w-5 h-5 text-gray-400" aria-hidden="true" />
-        </ComboboxButton>
+          <span class="">{{ selected.name }}</span>
+          <span
+            class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
+          >
+            <SelectorIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+          </span>
+        </ListboxButton>
 
-        <ComboboxOptions
+        <ListboxOptions
           class="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-primary-700 focus:outline-none sm:text-sm z-10"
         >
-          <ComboboxOption
+          <ListboxOption
             v-for="brand in data.data"
             as="template"
             :key="brand.id"
@@ -50,10 +51,10 @@
                 />
               </span>
             </li>
-          </ComboboxOption>
-        </ComboboxOptions>
+          </ListboxOption>
+        </ListboxOptions>
       </div>
-    </Combobox>
+    </Listbox>
   </div>
 </template>
 
@@ -61,11 +62,10 @@
 import { ref, onMounted, onUpdated } from "vue";
 import axios from "axios";
 import {
-  Combobox,
-  ComboboxInput,
-  ComboboxButton,
-  ComboboxOptions,
-  ComboboxOption,
+  Listbox,
+  ListboxButton,
+  ListboxOptions,
+  ListboxOption,
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
 import { useSimuladorStore } from "../stores/simulador";
