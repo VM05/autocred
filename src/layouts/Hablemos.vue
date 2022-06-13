@@ -12,9 +12,10 @@
       <div class="grid place-content-center my-20" v-if="alerts">
         <Loading v-if="isLoading" />
         <div v-if="isSuccess" class="text-center">
-          <Paragraph class="font-bold">Gracias por contactarnos</Paragraph>
+          <Paragraph class="font-bold">Gracias!</Paragraph>
           <Paragraph class="mb-8"
-            >Nos comunicaremos contigo a la brevedad
+            >Estamos buscando a tu copiloto y este se comunicará contigo a la
+            brevedad.
           </Paragraph>
           <Button text="Volver" outlinePrimary="" @click="btnBack" />
         </div>
