@@ -105,6 +105,7 @@ import qs from "qs";
 import Loading from "../components/Loading.vue";
 import Paragraph from "../components/Paragraph.vue";
 import Button from "../components/Button.vue";
+import { useContactoStore } from "../stores/contacto";
 const isLoading = ref(false);
 const isSuccess = ref(false);
 const isError = ref(false);
@@ -112,11 +113,7 @@ const alerts = ref(false);
 const warningPhone = ref(false);
 
 //Use Params
-const URL = window.location.search;
-const urlParams = new URLSearchParams(URL);
-const utm_source = urlParams.get("utm_source");
-const utm_medium = urlParams.get("utm_medium");
-const utm_campaign = urlParams.get("utm_campaign");
+const useUtms = useContactoStore();
 
 const props = defineProps({
   selectService: {
@@ -133,9 +130,9 @@ const formContacto = reactive({
   tipo_contacto: "web",
   servicios: servicios[0].name,
   canal_atencion: gestion[0].name,
-  utm_source: utm_source,
-  utm_medium: utm_medium,
-  utm_campaign: utm_campaign,
+  utm_source: useUtms.utm_source,
+  utm_medium: useUtms.utm_medium,
+  utm_campaign: useUtms.utm_campaign,
 });
 // const modal = ref(false);
 const isFormComplete = ref(formEmpty(formContacto));
