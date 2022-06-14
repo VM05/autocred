@@ -110,6 +110,14 @@ const isSuccess = ref(false);
 const isError = ref(false);
 const alerts = ref(false);
 const warningPhone = ref(false);
+
+//Use Params
+const URL = window.location.search;
+const urlParams = new URLSearchParams(URL);
+const utm_source = urlParams.get("utm_source");
+const utm_medium = urlParams.get("utm_medium");
+const utm_campaign = urlParams.get("utm_campaign");
+
 const props = defineProps({
   selectService: {
     default: 0,
@@ -125,6 +133,9 @@ const formContacto = reactive({
   tipo_contacto: "web",
   servicios: servicios[0].name,
   canal_atencion: gestion[0].name,
+  utm_source: utm_source,
+  utm_medium: utm_medium,
+  utm_campaign: utm_campaign,
 });
 // const modal = ref(false);
 const isFormComplete = ref(formEmpty(formContacto));
