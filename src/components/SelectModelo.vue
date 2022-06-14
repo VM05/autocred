@@ -25,7 +25,6 @@
             :key="model.id"
             :value="model"
             v-slot="{ selected, active }"
-            @click="handler(model)"
           >
             <li
               class="cursor-pointer select-none relative py-2 pl-10 pr-4"
@@ -75,13 +74,19 @@ defineProps({
 });
 const useSimulador = useSimuladorStore();
 const emit = defineEmits(["update:modelo"]);
-const handler = (element) => {
-  changeModelo(element);
-  emit("update:modelo", element);
-};
+// const handler = (element) => {
+//   changeModelo(element);
+//   emit("update:modelo", element);
+// };
+
 let selected = ref({ name: "Modelo" });
 
 const changeModelo = (value) => {
   useSimulador.modelo = value;
 };
+
+watch(selected, () => {
+  changeModelo(selected.value);
+  emit("update:modelo", selected.value);
+});
 </script>

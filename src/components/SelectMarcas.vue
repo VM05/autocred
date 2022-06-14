@@ -25,7 +25,6 @@
             :key="brand.id"
             :value="brand"
             v-slot="{ selected, active }"
-            @click="handler(brand)"
           >
             <li
               class="cursor-pointer select-none relative py-2 pl-10 pr-4"
@@ -59,7 +58,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUpdated } from "vue";
+import { ref, onMounted, onUpdated, watch } from "vue";
 import axios from "axios";
 import {
   Listbox,
@@ -75,11 +74,12 @@ defineProps({
   label: String,
   id: String,
 });
+
 const emit = defineEmits(["update:marca"]);
-const handler = (element) => {
-  changeMarca(element);
-  emit("update:marca", element);
-};
+// const handler = (element) => {
+//   changeMarca(element);
+//   emit("update:marca", element);
+// };
 const data = ref();
 let selected = ref({ name: "Marca" });
 
@@ -87,6 +87,10 @@ const changeMarca = (value) => {
   useSimulador.marca = value;
 };
 
+watch(selected, () => {
+  changeMarca(selected.value);
+  emit("update:marca", selected.value);
+});
 onMounted(async () => {
   try {
     const marcas = await axios.get(MARCAS_URL);
