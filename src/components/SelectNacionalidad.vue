@@ -99,7 +99,7 @@ let selected = ref("Nacionalidad");
 let query = ref("");
 
 const changeNacionalidad = (value) => {
-  useSimulador.marca = value;
+  useSimulador.nacionalidad = value;
 };
 
 watch(selected, () => {

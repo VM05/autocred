@@ -104,6 +104,6 @@ watch(selected, () => {
   emit("update:antiguedad", selected.value.value);
 });
 const changeAntiguedad = (value) => {
-  useSimulador.marca = value;
+  useSimulador.antiguedad = value;
 };
 </script>
