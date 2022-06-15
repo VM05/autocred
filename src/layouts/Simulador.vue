@@ -39,6 +39,7 @@
                       (e) => {
                         formSimulador.vehicle_brand = e.name;
                         disabledModel = false;
+                        useSimulador.resetModelo();
                       }
                     "
                   />
@@ -46,7 +47,10 @@
                     label="Modelo"
                     id="Modelo"
                     @update:modelo="
-                      (e) => (formSimulador.vehicle_model = e.name)
+                      (e) =>
+                        e.name != 'Modelo'
+                          ? (formSimulador.vehicle_model = e.name)
+                          : (formSimulador.vehicle_model = '')
                     "
                     :disabled="disabledModel"
                   />
@@ -300,6 +304,8 @@ import Button from "../components/Button.vue";
 import { useRouter } from "vue-router";
 import { empleoType, antiguedad } from "../assets/helpers/API";
 import { formEmpty } from "../assets/helpers/validate";
+import { useSimuladorStore } from "../stores/simulador";
+const useSimulador = useSimuladorStore();
 
 const router = useRouter();
 const errorForm = ref(false);

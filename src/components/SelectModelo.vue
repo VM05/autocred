@@ -79,12 +79,14 @@ const emit = defineEmits(["update:modelo"]);
 //   emit("update:modelo", element);
 // };
 
-let selected = ref({ name: "Modelo" });
+let selected = ref(useSimulador.modelo);
 
 const changeModelo = (value) => {
   useSimulador.modelo = value;
 };
-
+watch(useSimulador, () => {
+  selected.value = useSimulador.modelo;
+});
 watch(selected, () => {
   changeModelo(selected.value);
   emit("update:modelo", selected.value);
