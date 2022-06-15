@@ -3,18 +3,18 @@
     <label :for="id" class="text-primary-900 font-medium text-base">{{
       label
     }}</label>
-    <Combobox v-model="selected">
+    <Listbox v-model="selected">
       <div class="relative">
-        <ComboboxInput
-          class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full"
-          :displayValue="(brand) => brand.name"
-          @change="query = $event.target.value"
-        />
-        <ComboboxButton
-          class="absolute inset-y-0 right-0 flex items-center pr-2"
+        <ListboxButton
+          class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full text-left"
         >
-          <SelectorIcon class="w-5 h-5 text-gray-400" aria-hidden="true" />
-        </ComboboxButton>
+          <span class="">{{ selected.name }}</span>
+          <span
+            class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
+          >
+            <SelectorIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
+          </span>
+        </ListboxButton>
 
         <TransitionRoot
           leave="transition ease-in duration-100"
@@ -22,17 +22,10 @@
           leaveTo="opacity-0"
           @after-leave="query = ''"
         >
-          <ComboboxOptions
+          <ListboxOptions
             class="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-primary-700 focus:outline-none sm:text-sm z-10"
           >
-            <div
-              v-if="filteredBrands.length === 0 && query !== ''"
-              class="cursor-default select-none relative py-2 px-4 text-gray-700"
-            >
-              No encontrado
-            </div>
-
-            <ComboboxOption
+            <ListboxOption
               v-for="brand in filteredBrands"
               as="template"
               :key="brand.id"
@@ -45,7 +38,6 @@
                   'text-white bg-primary-900': active,
                   'text-primary-900': !active,
                 }"
-                @click="handler(brand.value)"
               >
                 <span
                   class="block truncate"
@@ -64,26 +56,29 @@
                   />
                 </span>
               </li>
-            </ComboboxOption>
-          </ComboboxOptions>
+            </ListboxOption>
+          </ListboxOptions>
         </TransitionRoot>
       </div>
-    </Combobox>
+    </Listbox>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import {
-  Combobox,
-  ComboboxInput,
-  ComboboxButton,
-  ComboboxOptions,
-  ComboboxOption,
+  Listbox,
+  ListboxButton,
+  ListboxOptions,
+  ListboxOption,
   TransitionRoot,
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
 import { empleoType } from "../assets/helpers/API";
+import { useSimuladorStore } from "../stores/simulador";
+
+const useSimulador = useSimuladorStore();
+
 const emit = defineEmits(["update:empleo"]);
 
 defineProps({
@@ -91,9 +86,7 @@ defineProps({
   label: String,
   id: String,
 });
-const handler = (element) => {
-  emit("update:empleo", element);
-};
+
 let selected = ref(empleoType[0]);
 let query = ref("");
 let filteredBrands = computed(() =>
@@ -106,4 +99,13 @@ let filteredBrands = computed(() =>
           .includes(query.value.toLowerCase().replace(/\s+/g, ""))
       )
 );
+
+watch(selected, () => {
+  changeEmpleo(selected.value);
+  emit("update:empleo", selected.value.value);
+});
+
+const changeEmpleo = (value) => {
+  useSimulador.empleo = value;
+};
 </script>

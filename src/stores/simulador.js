@@ -6,6 +6,9 @@ export const useSimuladorStore = defineStore("simulador", {
         modelos: [],
         modelo: '',
         anio: '',
-        typeCredit: ''
+        typeCredit: '',
+        empleo: '',
+        antiguedad: '',
+        nacionalidad: ''
     })
 })
