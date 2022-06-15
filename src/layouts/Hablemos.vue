@@ -130,9 +130,9 @@ const formContacto = reactive({
   tipo_contacto: "web",
   servicios: servicios[0].name,
   canal_atencion: gestion[0].name,
-  utm_source: useUtms.utm_source,
-  utm_medium: useUtms.utm_medium,
-  utm_campaign: useUtms.utm_campaign,
+  utm_source: useUtms.utm_source || "web",
+  utm_medium: useUtms.utm_medium || "web",
+  utm_campaign: useUtms.utm_campaign || "web",
 });
 // const modal = ref(false);
 const isFormComplete = ref(formEmpty(formContacto));
