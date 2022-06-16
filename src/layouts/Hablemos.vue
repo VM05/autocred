@@ -63,11 +63,10 @@
           </Paragraph>
         </div>
         <div class="right md:pl-8 p-0">
-          <SelectServicios
-            label="Que servicios necesitas?"
-            class="w-full"
-            @update:servicio="(e) => (formContacto.servicios = e)"
-            :selectService="selectService"
+          <CheckServicios
+            label="¿Qué servicios necesitas?"
+            class="w-full mb-4"
+            @update:checkServicios="(e) => handleCheck(e)"
           />
           <SelectGestion
             label="Como quieres que gestionemos tu servicio?"
@@ -81,7 +80,12 @@
             @update:textArea="(e) => (formContacto.mensaje = e)"
           />
           <div class="flex justify-end">
-            <ButtonVue text="Enviar" outlinePrimary type="submit" />
+            <ButtonVue
+              text="Enviar"
+              outlinePrimary
+              type="submit"
+              :disabled="warnings.isWarning"
+            />
           </div>
         </div>
       </form>
@@ -93,7 +97,8 @@
 import Heading1 from "../components/Heading.vue";
 import Input from "../components/Form/Input.vue";
 import InputEmail from "../components/Input-Email.vue";
-import SelectServicios from "../components/SelectServicios.vue";
+// import SelectServicios from "../components/SelectServicios.vue";
+import CheckServicios from "../components/CheckServicios.vue";
 import TextArea1 from "../components/TextArea.vue";
 import ButtonVue from "../components/Button.vue";
 import SelectGestion from "../components/SelectGestion.vue";
@@ -114,7 +119,11 @@ const isSuccess = ref(false);
 const isError = ref(false);
 const alerts = ref(false);
 const warningPhone = ref(false);
-
+const warnings = reactive({
+  warningTelefono: false,
+  warningServicios: false,
+  isWarning: false,
+});
 //Use Params
 const useUtms = useContactoStore();
 
@@ -139,31 +148,17 @@ const formContacto = reactive({
 });
 // const modal = ref(false);
 const isFormComplete = ref(formEmpty(formContacto));
-watch(formContacto, () => {
-  isFormComplete.value = formEmpty(formContacto);
-  if (formContacto.telefono.slice(3).length != 9) {
-    warningPhone.value = true;
-  } else {
-    warningPhone.value = false;
-  }
-});
-watch([isLoading, isSuccess, isError], () => {
-  isLoading.value == true || isSuccess.value == true || isError.value == true
-    ? (alerts.value = true)
-    : (alerts.value = false);
-});
 
-const handleForm = (e) => {
+const handleForm = async (e) => {
   e.preventDefault();
   if (formEmpty(formContacto)) {
     console.log("vacio");
   } else {
     console.log("enviando");
-    sendFormGoGema();
+    await sendFormGoGema();
     router.push({ path: route.path, hash: contactRouteSuccess() });
   }
 };
-
 const contactRouteSuccess = () => {
   let res = "#confirmacion";
   res = res + "-" + route.name.replace(" ", "-");
@@ -190,6 +185,40 @@ const btnBack = () => {
   isSuccess.value = false;
   isError.value = false;
 };
+const handleCheck = (e) => {
+  let formated = e.value.join(",");
+  formContacto.servicios = formated;
+};
+
+watch(warnings, () => {
+  if (warnings.warningTelefono == false && warnings.warningServicios == false) {
+    warnings.isWarning = false;
+  } else {
+    warnings.isWarning = true;
+  }
+});
+watch(formContacto, () => {
+  isFormComplete.value = formEmpty(formContacto);
+  formContacto.mensaje =
+    formContacto.nombre_completo +
+    " desea evaluar servicios de " +
+    formContacto.servicios;
+  if (formContacto.telefono.length > 0 && formContacto.telefono.length < 12) {
+    warnings.warningTelefono = true;
+  } else {
+    warnings.warningTelefono = false;
+  }
+  if (formContacto.servicios.length > 0) {
+    warnings.warningServicios = false;
+  } else {
+    warnings.warningServicios = true;
+  }
+});
+watch([isLoading, isSuccess, isError], () => {
+  isLoading.value == true || isSuccess.value == true || isError.value == true
+    ? (alerts.value = true)
+    : (alerts.value = false);
+});
 </script>
 
 <style scoped></style>

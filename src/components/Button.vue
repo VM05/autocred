@@ -10,12 +10,16 @@
         outlineSecondary,
       'py-2': user,
       'cursor-pointer': !disabled,
-      'bg-black-50 hover:bg-black-50 hover:cursor-not-allowed': disabled,
+      'bg-black-50 hover:bg-black-50 hover:cursor-not-allowed border-black-50':
+        disabled,
     }"
   >
     <button
       class="font-medium"
-      :class="{ 'text-sm': user, 'hover:cursor-not-allowed': disabled }"
+      :class="{
+        'text-sm': user,
+        'hover:cursor-not-allowed text-white': disabled,
+      }"
       :type="type"
       :disabled="disabled"
     >
