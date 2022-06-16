@@ -106,6 +106,9 @@ import Loading from "../components/Loading.vue";
 import Paragraph from "../components/Paragraph.vue";
 import Button from "../components/Button.vue";
 import { useContactoStore } from "../stores/contacto";
+import { useRoute, useRouter } from "vue-router";
+const route = useRoute();
+const router = useRouter();
 const isLoading = ref(false);
 const isSuccess = ref(false);
 const isError = ref(false);
@@ -149,6 +152,7 @@ watch([isLoading, isSuccess, isError], () => {
     ? (alerts.value = true)
     : (alerts.value = false);
 });
+
 const handleForm = (e) => {
   e.preventDefault();
   if (formEmpty(formContacto)) {
@@ -156,7 +160,14 @@ const handleForm = (e) => {
   } else {
     console.log("enviando");
     sendFormGoGema();
+    router.push({ path: route.path, hash: contactRouteSuccess() });
   }
+};
+
+const contactRouteSuccess = () => {
+  let res = "#confirmacion";
+  res = res + "-" + route.name.replace(" ", "-");
+  return res.toLowerCase();
 };
 const sendFormGoGema = async () => {
   isLoading.value = true;
