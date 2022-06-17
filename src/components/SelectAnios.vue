@@ -93,7 +93,6 @@ onMounted(async () => {
     data.value = await marcas.data;
   } catch (error) {
     console.log("error");
-    console.log(error);
   }
 });
 

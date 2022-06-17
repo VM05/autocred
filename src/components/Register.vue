@@ -138,14 +138,11 @@ const registerForm = reactive({
 
 const fillFormFromParams = () => {
   if (!isObjEmpty(data.value)) {
-    console.log("Form from params");
     registerForm.dni = data.value.rut;
     registerForm.name = data.value.nombre;
     registerForm.surnames = data.value.apellidos;
     registerForm.email = data.value.correo;
     registerForm.phone_1 = data.value.telefono;
-  } else {
-    console.log("nada");
   }
 };
 const errorList = ref();
@@ -177,9 +174,7 @@ const handleForm = async () => {
     }
   } catch (error) {
     errorForm.value = true;
-    console.log("Catch", error.response);
-    console.log(error.response.data.message);
-    console.log(error.response.data.errors.dni[0]);
+
     errorList.value = error.response.data.errors.dni[0];
   }
 };

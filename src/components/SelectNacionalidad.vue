@@ -91,7 +91,6 @@ onMounted(async () => {
     data.value = await res.data;
   } catch (error) {
     console.log("error");
-    console.log(error);
   }
 });
 

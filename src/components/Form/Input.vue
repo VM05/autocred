@@ -102,7 +102,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { formatNumbers, unformat } from "../../assets/helpers/validate";
+import { formatNumbers } from "../../assets/helpers/validate";
 defineProps({
   placeholder: String,
   hoverText: String,

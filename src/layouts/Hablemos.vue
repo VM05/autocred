@@ -151,9 +151,7 @@ const isFormComplete = ref(formEmpty(formContacto));
 
 const handleForm = async (e) => {
   e.preventDefault();
-  if (formEmpty(formContacto)) {
-    console.log("vacio");
-  } else {
+  if (!formEmpty(formContacto)) {
     console.log("enviando");
     await sendFormGoGema();
     router.push({ path: route.path, hash: contactRouteSuccess() });
@@ -172,9 +170,7 @@ const sendFormGoGema = async () => {
       isLoading.value = false;
       isSuccess.value = true;
     }
-    console.log(resp.data);
   } catch (error) {
-    console.log(error);
     if (error.response.data.message) {
       isLoading.value = false;
       isError.value = true;

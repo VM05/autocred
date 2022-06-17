@@ -366,7 +366,7 @@ const handleForm = async () => {
     loading.value = false;
     complete.value = true;
   } catch (error) {
-    console.log(error);
+    console.log("error");
   }
 };
 
@@ -385,7 +385,7 @@ const handleForm2 = async () => {
     if (res.data.success) loading.value = false;
     isSuccess.value = true;
   } catch (error) {
-    console.log(error);
+    console.log("error");
   }
 };
 

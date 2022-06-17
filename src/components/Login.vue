@@ -82,10 +82,7 @@ const loginForm = reactive({
 
 const fillFormFromParams = () => {
   if (!isObjEmpty(data.value)) {
-    console.log("Form from params");
     loginForm.dni = data.value.rut;
-  } else {
-    console.log("nada");
   }
 };
 
@@ -95,15 +92,12 @@ const handleLogin = async () => {
   try {
     const response = await axios.post(LOGIN_URL, loginForm);
     if (await response.data.success) {
-      console.log("CORRECTO");
       loading.value = false;
       errorForm.value = false;
       window.open(LOGIN_URL_TOKEN(response.data.token_id), "_self");
     } else {
-      console.log("ELSE ERROR");
     }
   } catch (error) {
-    console.log("CATCH ERROR");
     loading.value = false;
     errorForm.value = true;
   }

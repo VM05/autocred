@@ -142,7 +142,6 @@ onMounted(async () => {
     data.value = await servicios.data;
   } catch (error) {
     console.log("error");
-    console.log(error);
   }
 });
 

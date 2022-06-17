@@ -47,7 +47,6 @@ useHead({
 
 onMounted(() => {
   setTimeout(() => {
-    console.log("desde time out");
     router.push({ name: "Home" });
   }, 4000);
 });
