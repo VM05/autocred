@@ -6,13 +6,13 @@
       >
         <div id="documentosLegales">
           <Heading content="Documentos Legales" headingType="h5" />
-          <a
+          <router-link
             class="text-base font-medium text-gray-500 hover:text-secondary-800 hover:cursor-pointer"
-            href="/pdf/Autocred_Terminos_y_condiciones.pdf"
+            to="/terminos-y-condiciones"
             target="_blank"
           >
             Términos y condiciones
-          </a>
+          </router-link>
         </div>
         <div id="somosAutocred">
           <Heading content="Somos Autocred" headingType="h5" />

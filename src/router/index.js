@@ -14,7 +14,7 @@ import NotFound from '../views/NotFound.vue'
 import Autocred from '../views/Autocred.vue'
 import Yapo from '../views/Yapo/Yapo.vue'
 import Financiamiento from '../views/Yapo/Financiamiento.vue'
-
+import Terms from '../views/Terms.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -69,6 +69,8 @@ const router = createRouter({
                 { path: '/vendedores', name: 'Vendedores', component: vendedores },
                 { path: '/blog', name: 'Blog', component: Blog },
                 { path: '/blog/:id', name: 'Articulo', component: article },
+                { path: '/terminos-y-condiciones', name: 'Terms', component: Terms },
+
             ]
         },
         { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
