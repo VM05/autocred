@@ -4,7 +4,6 @@ import Footer from "./components/Footer.vue";
 import { useHead } from "@vueuse/head";
 import { useContactoStore } from "./stores/contacto";
 import { onMounted } from "vue";
-
 useHead({
   title: "Autocred Chile tu mejor copiloto",
   meta: [
@@ -23,9 +22,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <Navbar />
   <router-view></router-view>
-  <Footer />
 </template>
 
 <style></style>
