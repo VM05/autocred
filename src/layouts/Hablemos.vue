@@ -199,10 +199,12 @@ watch(warnings, () => {
 });
 watch(formContacto, () => {
   isFormComplete.value = formEmpty(formContacto);
-  formContacto.mensaje =
-    formContacto.nombre_completo +
-    " desea evaluar servicios de " +
-    formContacto.servicios;
+  if (formContacto.mensaje.length == 0) {
+    formContacto.mensaje =
+      formContacto.nombre_completo +
+      " desea evaluar servicios de " +
+      formContacto.servicios;
+  }
   if (formContacto.telefono.length > 0 && formContacto.telefono.length < 12) {
     warnings.warningTelefono = true;
   } else {
