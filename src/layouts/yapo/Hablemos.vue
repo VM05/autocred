@@ -5,7 +5,7 @@ import InputEmail from "../../components/Input-Email.vue";
 import ButtonVue from "../../components/Button.vue";
 import { ref, reactive, watch } from "vue";
 import { formEmpty } from "../../assets/helpers/validate";
-import Modal from "../../components/yapo/Modal.vue";
+import Modal from "../../components/Yapo/Modal.vue";
 import CheckServicios from "../../components/CheckServicios.vue";
 
 import { gestion, servicios, URL_GOGEMA } from "../../assets/helpers/API";
