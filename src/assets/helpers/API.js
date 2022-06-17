@@ -44,7 +44,12 @@ export const typeCredit = [
     { value: "conventional", name: "Credito Convencional" },
     { value: "smart", name: "Compra Inteligente" },
 ];
-
+export const servicioCards = [
+    { id: 2, name: "Oficina Móvil", src: "/img/yapo/van.png", content: "Solicita acompañamiento y traslado gratuito para ver el vehículo del vendedor." },
+    { id: 1, name: "Financiamiento", src: "/img/yapo/financiamiento.png", content: "Paga con tarjeta o evalúa tu crédito en minutos y pagamos al instante al vendedor." },
+    { id: 3, name: "Transferencia", src: "/img/yapo/transferencia.png", content: "Realiza la transferencia del vehículo de forma online, en nuestros módulos o Van." },
+    { id: 4, name: "Seguro y Tag", src: "/img/yapo/seguro.png", content: "Al realizar la compra a través de nuestros servicios obtiene tu Tag y Seguro Automotriz." },
+];
 
 
 export const PASSWORD_RESET = import.meta.env.VITE_PASSWORD_RESET
