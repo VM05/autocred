@@ -16,18 +16,18 @@
 import { onMounted, reactive, ref } from "vue";
 const contenido = ref("");
 const hightlightsImages = reactive({
-  copiloto: "url(../src/assets/svg/palabras-destacadas-copiloto.svg)",
-  juntos: "url(../src/assets/svg/palabras-destacadas-juntos.svg)",
-  servicios: "url(../src/assets/svg/palabras-destacadas-servicios.svg)",
-  piloto: "url(../src/assets/svg/palabras-destacadas-piloto.svg)",
-  confiaron: "url(../src/assets/svg/palabras-destacadas-confiaron.svg)",
-  compradores: "url(../src/assets/svg/palabras-destacadas-compradores.svg)",
-  vendedores: "url(../src/assets/svg/palabras-destacadas-vendedores.svg)",
-  recorrido: "url(../src/assets/svg/palabras-destacadas-recorrido.svg)",
-  experto: "url(../src/assets/svg/palabras-destacadas-experto.svg)",
-  expertos: "url(../src/assets/svg/palabras-destacadas-expertos.svg)",
-  mueve: "url(../src/assets/svg/palabras-destacadas-mueve.svg)",
-  default: "url(../src/assets/svg/palabras-destacadas-copiloto.svg)",
+  copiloto: "url(svg/palabras-destacadas-copiloto.svg)",
+  juntos: "url(svg/palabras-destacadas-juntos.svg)",
+  servicios: "url(svg/palabras-destacadas-servicios.svg)",
+  piloto: "url(svg/palabras-destacadas-piloto.svg)",
+  confiaron: "url(svg/palabras-destacadas-confiaron.svg)",
+  compradores: "url(svg/palabras-destacadas-compradores.svg)",
+  vendedores: "url(svg/palabras-destacadas-vendedores.svg)",
+  recorrido: "url(svg/palabras-destacadas-recorrido.svg)",
+  experto: "url(svg/palabras-destacadas-experto.svg)",
+  expertos: "url(svg/palabras-destacadas-expertos.svg)",
+  mueve: "url(svg/palabras-destacadas-mueve.svg)",
+  default: "url(svg/palabras-destacadas-copiloto.svg)",
 });
 const activeImage = () => {
   switch (props.highlightImg) {
