@@ -31,7 +31,7 @@
             <router-link
               class="text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
               :to="link.url"
-              activeClass="activeMenu"
+              exact-active-class="activeMenu"
               v-if="link.name != 'Servicios'"
             >
               {{ link.name }}
