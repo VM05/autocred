@@ -420,7 +420,7 @@ export const dataServicios = [
     {
         id: 'financiamiento',
         title: "Financia tu proximo vehículo",
-        content: "Resuelve tu financiamiento silo en 7 minutos. Recibe la aprobación con pago inmediato al vendedor. Paga el 100% del valor del vehículo, dando un pie, transferencia o con tarjetas de crédito. ",
+        content: "Resuelve tu financiamiento solo en 7 minutos. Recibe la aprobación con pago inmediato al vendedor. Paga el 100% del valor del vehículo, dando un pie, transferencia o con tarjetas de crédito. ",
         img: "/img/servicios/02-servicios-financiamiento.png",
         buttonText: "Quiero financiar ",
         name: "Financiamientos"

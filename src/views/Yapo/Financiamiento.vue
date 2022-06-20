@@ -4,7 +4,7 @@
       <template #content>
         <Heading
           content="En Autocred te acompañamos y apoyamos en la compra de tu próximo vehículo usado."
-          headingType="h1"
+          headingType="h2"
           class="mb-5"
         />
         <!-- <Heading
@@ -14,7 +14,7 @@
         /> -->
         <div>
           <Heading
-            content="Resuelve tu financiamiento silo en 7 minutos. Recibe la aprobación con pago inmediato al vendedor. Paga el 100% del valor del vehículo, dando un pie, transferencia o con tarjetas de crédito."
+            content="Resuelve tu financiamiento solo en 7 minutos. Recibe la aprobación con pago inmediato al vendedor. Paga el 100% del valor del vehículo, dando un pie, transferencia o con tarjetas de crédito."
             headingType="h4"
             class="mb-3"
           />
@@ -35,7 +35,7 @@
     </BannerHome>
     <Simulador />
     <!-- <Contacto /> -->
-    <!-- <div class="md:hidden mt-8">
+    <div class="md:hidden mt-8">
       <Heading content="Conoce más sobre Autocred" class="mb-4" />
       <video
         src="../../assets/video/promo.mp4"
@@ -45,7 +45,7 @@
         class="rounded-3xl mb-8"
       ></video>
     </div>
-    <CardServicio
+    <!-- <CardServicio
       v-for="servicio in servicioCards"
       :data="servicio"
       @clickCard="recibe"
