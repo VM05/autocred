@@ -1,6 +1,11 @@
 <template>
   <div class="mb-28 grid">
-    <Heading content="Servicio para vendedores" class="mb-8" />
+    <Heading
+      content="Servicio para vendedores"
+      class="mb-8"
+      highlight="vendedores"
+      highlight-img="vendedores"
+    />
     <ServiciosList :data="serviciosVendores" right class="mb-20" />
     <router-link to="#contacto" class="justify-self-center">
       <ButtonVue

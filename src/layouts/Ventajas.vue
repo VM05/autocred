@@ -1,6 +1,11 @@
 <template>
   <div class="mb-24">
-    <Heading1 content="Ventajas de viajar juntos" class="mb-4" />
+    <Heading1
+      content="Ventajas de viajar juntos"
+      class="mb-4"
+      highlight="juntos"
+      highlight-img="juntos"
+    />
     <div
       class="w-full grid-cols-1 grid md:grid-cols-3 gap-16 md:gap-8 lg:gap-32 mb-20"
     >

@@ -4,6 +4,8 @@
       content="¿En qué consisten nuestros servicios?"
       class="mb-8"
       v-if="title"
+      highlight="servicios"
+      highlightImg="servicios"
     />
     <Heading
       content="Vendedores"

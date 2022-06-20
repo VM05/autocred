@@ -3,6 +3,8 @@
     <Heading
       content="Pilotos que confiaron en Autocred"
       class="mb-8 md:mb-16"
+      highlight="confiaron"
+      highlight-img="confiaron"
     />
     <Carousel
       :items-to-show="1"

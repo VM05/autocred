@@ -6,6 +6,8 @@
           content="Si tu destino es hacer un buen negocio, confía en un copiloto experto."
           headingType="h2"
           class="mb-5"
+          highlight="experto"
+          highlightImg="experto"
         />
         <Heading
           content="Estamos disponibles los 7 días de la semana para que la compra o venta entre personas de cualquier vehículo usado, sea un viaje extraordinario."

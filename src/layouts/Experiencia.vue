@@ -2,6 +2,8 @@
   <Heading1
     content="Descubre la experiencia de nuestro ultimo piloto"
     class="mb-14"
+    highlight="piloto"
+    highlight-img="piloto"
   />
   <div class="grid justify-between mb-24 md">
     <CardExperiencia1 class="mb-8 md:mb-0" />

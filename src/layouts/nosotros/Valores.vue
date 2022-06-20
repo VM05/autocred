@@ -1,7 +1,11 @@
 <template>
   <div class="mb:px-32 pt-10 pb-20 grid">
     <div class="title mb-8">
-      <HeadingVue content="Esto nos mueve" />
+      <HeadingVue
+        content="Esto nos mueve"
+        highlight="mueve"
+        highlight-img="mueve"
+      />
     </div>
     <div class="grid gap-4 md:gap-4 mb-12">
       <div v-for="(item, index) in valores" :key="index" class="card relative">

@@ -1,6 +1,10 @@
 <template>
   <div class="mb-1">
-    <Heading1 content="Nuestro recorrido" />
+    <Heading1
+      content="Nuestro recorrido"
+      highlight="recorrido"
+      highlight-img="recorrido"
+    />
     <div class="grid grid-cols-1 md:grid-cols-2 pattern">
       <img
         src="../../assets/img/nuestro-recorrido.jpg"

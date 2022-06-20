@@ -6,6 +6,8 @@
           content="Tu mejor copiloto para la compra y venta de vehículos usados entre personas"
           headingType="h1"
           class="mb-5"
+          highlight="copiloto"
+          highlightImg="copiloto"
         />
         <Heading
           content="¡Que tu experiencia sea un gran viaje!"
