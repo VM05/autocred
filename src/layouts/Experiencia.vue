@@ -1,6 +1,6 @@
 <template>
   <Heading1
-    content="Descubre la experiencia de nuestro ultimo piloto"
+    content="Descubre la experiencia de nuestro último piloto"
     class="mb-14"
     highlight="piloto"
     highlight-img="piloto"
