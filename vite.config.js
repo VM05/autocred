@@ -53,6 +53,7 @@ export default defineConfig(({ command, mode }) => {
           gtm: [
             {
               id: 'GTM-NCBTPD5',
+              id: 'AW-10870501766'
             }
           ],
         })
