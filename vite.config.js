@@ -46,6 +46,9 @@ export default defineConfig(({ command, mode }) => {
               allow_google_signals: true,
               allow_ad_personalization_signals: true,
             },
+          },
+          {
+            id: 'AW-10870501766'
           }],
           pixel: {
             id: '6b6ae67a-e1b2-4508-9c12-629992ce2545',
@@ -53,9 +56,6 @@ export default defineConfig(({ command, mode }) => {
           gtm: [
             {
               id: 'GTM-NCBTPD5'
-            },
-            {
-              id: 'AW-10870501766'
             }
           ],
         })
