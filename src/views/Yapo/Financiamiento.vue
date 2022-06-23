@@ -3,7 +3,7 @@
     <BannerHome>
       <template #content>
         <Heading
-          content="En Autocred te acompañamos y apoyamos en la compra de tu próximo vehículo usado."
+          content="Obtén tu financiamiento en solo 7 minutos."
           headingType="h2"
           class="mb-5"
         />
@@ -14,7 +14,7 @@
         /> -->
         <div>
           <Heading
-            content="Resuelve tu financiamiento solo en 7 minutos. Recibe la aprobación con pago inmediato al vendedor. Paga el 100% del valor del vehículo, dando un pie, transferencia o con tarjetas de crédito."
+            content="Te acompañamos en la compra de tu próximo vehículo usado, realizamos el pago inmediato al vendedor y puedes pagar el pie con transferencia, tarjeta de débito o crédito."
             headingType="h4"
             class="mb-3"
           />
