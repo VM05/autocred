@@ -58,7 +58,7 @@
     <Experiencia />
     <Comentarios />
     <DondeEstamos />
-    <!-- <Medios /> -->
+    <Medios />
     <Hablemos id="contacto" />
   </Container>
 </template>
@@ -73,7 +73,7 @@ import Heading from "../components/Heading.vue";
 import Button from "../components/Button.vue";
 import Comentarios from "../layouts/Comentarios.vue";
 import DondeEstamos from "../layouts/DondeEstamos.vue";
-// import Medios from "../layouts/Medios.vue";
+import Medios from "../layouts/Medios.vue";
 import Hablemos from "../layouts/Hablemos.vue";
 import Experiencia from "../layouts/Experiencia.vue";
 import { useHead } from "@vueuse/head";
