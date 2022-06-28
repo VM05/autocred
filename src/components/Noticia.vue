@@ -4,6 +4,7 @@
     <Paragraph class="font-medium text-base text-primary-700">
       {{ data.medio + " " + data.date }}
     </Paragraph>
+
     <Heading
       :content="data.title"
       :headingType="highlight || indice == 0 ? 'h3' : 'h5'"

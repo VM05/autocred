@@ -315,10 +315,87 @@ export const ventajas = [
 export const posts = [
     {
         "id": 1,
-        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-        "img": "https://api.lorem.space/image/furniture?w=300&h=200",
-        "date": "03-02-22",
+        "title": "Forum debuta en mundo venture e invierte US$ 1 millón en Autocred | DFMAS",
+        "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
+        para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se
+    suban y que
+    puedan realizar todos los trámites, incluidos los seguros”, cuenta Felipe Lira (38), ingeniero comercial y
+    cofundador de Autocred.</p>
+<p class="mb-2">En la mañana del 3 de enero de 2022, Forum -compañía chilena de propiedad de BBVA-, escribió un
+    cheque por US$ 1 millón. ¿El destinatario? <b>Autocred SpA, una incipiente startup chilena dedicada a facilitar
+        las transacciones de autos usados entre clientes particulares.</b> Se trata de la primera apuesta
+    venture de una de las principales compañías dedicadas al financiamiento automotriz en Chile. </p>
+
+<p class="mb-2"> Con esta transacción <b>Forum se quedó con el 29,01% de la compañía,</b> ingresó al directorio y
+    diversificó sus líneas de negocio, las cuales están enfocadas casi exclusivamente en el financiamiento de autos
+    nuevos. </p>
+
+<p class="mb-2">“El mercado usado es mucho más grande que el de vehículos cero kilómetro. Esto nos pareció un
+    vehículo interesante para ver si nuestros productos también podrían funcionar ahí. Nos mostraron los números,
+    nosotros conocíamos el tamaño del mercado y nos pareció interesante poner nuestra tecnología y productos ahí”,
+    dice <b>Martín Cook, jefe comercial de Forum,</b> quien agrega que se trata de una operación fuera del negocio
+    tradicional de la firma y que dejarán que el día a día de la startup opere de forma independiente. </p>
+
+<p class="mb-2"><b>Autocred fue fundada en 2019 por Lira y Paul Tacchi (70),</b> un exejecutivo del banco londinense
+    HSBC. “Mi socio dice que entre él y yo tenemos 100 años de experiencia”, afirma. Se conocen hace 18 años cuando
+    ambos coincidieron en un proyecto empresarial. “Yo después me salí y entré al rubro automotriz. Y Paul, por su
+    lado, hizo lo mismo. Luego, años después, nos encontramos y empezamos el primer negocio entre los dos”. </p>
+
+<p class="mb-2">¿Qué es lo que hacen? En palabras de Lira <b>se hacen cargo de la “última milla” de la compra y
+        venta de los autos usados,</b> es decir, de mostrar, asesorar y concretar la operación entre las dos partes.
+    Además, se preocupan de la transferencia de recursos, el financiamiento, tag y el seguro. </p>
+
+<p class="mb-2">Para eso, <b>tienen alianzas con diversas compañías, como HDI, Tanner, MAF, Autofact y Yapo.</b>
+    Autocred, a diferencia de otras compañías similares, no cobra una comisión por la venta del auto, sino que un
+    fee
+    por cada servicio prestado, aclara el cofundador. </p>
+
+<h4 class="font-bold my-3">2 mil transferencias</h4>
+
+<p class="mb-2">A Felipe Lira le gusta decir que su compañía “es el origen de diversas
+    experiencias”.<br>
+    “Partimos hace 10 años con Paul con un negocio tecnológico enfocado en los dealers de
+    automóviles”, recuerda el ejecutivo. “Construimos un software que hoy tiene distintas características, pero
+    principalmente apoya todo lo que es la transacción de vehículos de cara a los concesionarios”. </p>
+
+<p class="mb-2">Así se dio cuenta de los dolores que existen al momento de comprar o vender un auto usado,
+    especialmente para aquellas personas que no quieren acudir a un concesionario. “Existe desconfianza, muchos
+    trámites que tienes que hacer, como la transferencia, el seguro, el financiamiento y las modalidades de pago”,
+    cuenta. </p>
+
+<p class="mb-2">Y agrega: <b>“Tienes que pensar que los dealers se quedan con el 20% o 30% del precio del auto”,</b>
+    aclara el ejecutivo. “Cuando no hay ese intermediario y se hace de manera directa, ese porcentaje se reparte
+    entre el vendedor y el comprador particular. Es el negocio perfecto”. </p>
+
+<p class="mb-2">En 2019 se juntó de nuevo con Tacchi y desarrollaron Autocred. “Hicimos un piloto y
+    abrimos un módulo en el pasillo de un supermercado”, recuerda. “Pero nos agarró el estallido social.<b>Estábamos
+        construyendo el primer local en un Walmart y dado que empezaron las quemas, se detuvo todo y quedamos
+        atendiendo
+        con una plataforma digital”.</b></p>
+
+<p class="mb-2"><b>Durante 2020 y 2021 realizaron más de 2.000 transferencias, entregaron 200 créditos y tramitaron
+        800 tag. Todo online.</b> “Eso nos sirvió mucho para depurar el modelo y fomentar la relación con nuestros
+    clientes”, señala Lira. En junio relanzaron el negocio y debutaron con cuatro locaciones presenciales que
+    recorren el anillo de Vespucio: “Estamos en la zona sur (Maipú), poniente (Cerrillos), norte (Plaza Norte) y
+    oriente (Apumanque). “Nos dimos cuenta de que el factor de verse en persona era muy importante, por eso no
+    descartamos este canal”, aclara Lira.</p>
+
+<h4 class="font-bold mb-3">Alianza con Yapo</h4>
+
+<p class="mb-2">Según Felipe Lira, la hoja de ruta de Autocred está enfocada en Santiago. “La idea es concentrarse
+    en la capital, para luego expandirnos a La Serena, Viña del Mar y Rancagua, y después aterrizar en Temuco y
+    Concepción. No estamos mirando más allá de 18 meses porque pasan muchas cosas entremedio”, aclara el ejecutivo,
+    quien <b>no descarta vender otro porcentaje de la empresa para pavimentar su expansión nacional.</b> Además,
+    tienen proyectado duplicar su crecimiento en 2022, crecer con los recintos físicos y su atención virtual, y
+    potenciar sus porcentajes de penetración con los distintos productos.<b> “La idea es llegar a las mil
+        transferencias mensuales de aquí a diciembre”, agrega.</b></p>
+
+<p class="mb-2"><b>También están desarrollando una alianza con Yapo,</b> uno de los marketplace de autos con más
+    tracción y ventas en Chile y que más problemas muestra en su negocio automotriz. El acuerdo, dice Lira, busca
+    dotar a los usuarios de acompañamiento y experiencia de compra. ¿Forum seguirá desarrollando su faceta venture?
+    Martín Cook adelanta que por ahora solamente están enfocados enAutocred.</p>`,
+        "img": "https://dfmas.df.cl/dfmas/site/artic/20220624/imag/foto_0000000920220624142623/MG_6216.jpg",
+        "date": "28-06-22",
         "medio": "Medio prensa"
     },
     {
@@ -329,78 +406,10 @@ export const posts = [
         "date": "03-02-22",
         "medio": "Medio prensa"
     },
-    {
-        "id": 3,
-        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-        "img": "https://api.lorem.space/image/furniture?w=300&h=200",
-        "date": "03-02-22",
-        "medio": "Medio prensa"
-    },
-    {
-        "id": 4,
-        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-        "img": "https://api.lorem.space/image/furniture?w=300&h=200",
-        "date": "03-02-22",
-        "medio": "Medio prensa"
-    },
-    {
-        "id": 5,
-        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-        "img": "https://api.lorem.space/image/furniture?w=300&h=200",
-        "date": "03-02-22",
-        "medio": "Medio prensa"
-    },
-    {
-        "id": 6,
-        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-        "img": "https://api.lorem.space/image/furniture?w=300&h=200",
-        "date": "03-02-22",
-        "medio": "Medio prensa"
-    },
-    {
-        "id": 7,
-        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-        "img": "https://api.lorem.space/image/furniture?w=300&h=200",
-        "date": "03-02-22",
-        "medio": "Medio prensa"
-    },
-    {
-        "id": 8,
-        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-        "img": "https://api.lorem.space/image/furniture?w=300&h=200",
-        "date": "03-02-22",
-        "medio": "Medio prensa"
-    },
-    {
-        "id": 9,
-        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-        "img": "https://api.lorem.space/image/furniture?w=300&h=200",
-        "date": "03-02-22",
-        "medio": "Medio prensa"
-    },
-    {
-        "id": 10,
-        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-        "img": "https://api.lorem.space/image/furniture?w=300&h=200",
-        "date": "03-02-22",
-        "medio": "Medio prensa"
-    },
-    {
-        "id": 11,
-        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-        "img": "https://api.lorem.space/image/furniture?w=300&h=200",
-        "date": "03-02-22",
-        "medio": "Medio prensa"
-    },
+
+
+
+
 ]
 
 

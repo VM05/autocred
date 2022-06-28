@@ -18,32 +18,7 @@ import Terms from '../views/Terms.vue'
 
 const router = createRouter({
     history: createWebHistory(),
-    // routes: [
-    //     { path: '/', name: 'Home', component: Home },
-    //     { path: '/login', name: 'Login', component: login },
-    //     { path: '/compradores', name: 'Compradores', component: compradores },
-    //     { path: '/encuesta', name: 'Encuesta', component: encuesta },
-    //     { path: '/nosotros', name: 'Nosotros', component: nosotros },
-    //     {
-    //         path: '/preguntas-frecuentes',
-    //         name: 'Preguntas Frecuentes',
-    //         component: FAQ
-    //     },
-    //     {
-    //         path: '/registro', name: 'Registro',
-    //         component: registro,
-    //         props: (route) => ({
-    //             ...route.params
-    //         })
-    //     },
-    //     { path: '/servicios', name: 'Servicios', component: servicios, props: (route) => ({ ...route.params }) },
-    //     { path: '/vendedores', name: 'Vendedores', component: vendedores },
-    //     { path: '/blog', name: 'Blog', component: Blog },
-    //     { path: '/blog/:id', name: 'Articulo', component: article },
 
-
-    //     { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
-    // ],
     routes: [
         {
             path: '/', name: 'Autocred', component: Autocred,

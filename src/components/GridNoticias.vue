@@ -1,6 +1,6 @@
 <template>
   <div class="grid gap-12 w-full">
-    <Noticia v-for="(item, index) in 3" :data="posts[index]" :indice="index" />
+    <Noticia v-for="(item, index) in 1" :data="posts[index]" :indice="index" />
   </div>
 </template>
 

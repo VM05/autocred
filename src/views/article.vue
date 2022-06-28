@@ -10,8 +10,10 @@
         {{ $route.params.medio + " " + $route.params.date }}
       </Paragraph>
       <Heading :content="$route.params.title" class="mb-4" />
-      <Paragraph class="font-medium text-base text-primary-700">
-        {{ $route.params.content }}
+      <Paragraph
+        class="font-medium text-base text-primary-700"
+        v-html="$route.params.content"
+      >
       </Paragraph>
     </div>
     <Medios />
@@ -31,5 +33,6 @@ img {
   width: 100%;
   object-fit: cover;
   height: 400px;
+  object-position: 25% 25%;
 }
 </style>

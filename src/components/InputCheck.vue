@@ -21,7 +21,7 @@
 
 <script setup>
 import { CheckIcon } from "@heroicons/vue/solid";
-
+import { useContactoStore } from "../stores/contacto";
 import { ref } from "vue";
 const props = defineProps({
   servicio: Object,
@@ -30,8 +30,11 @@ const emit = defineEmits(["check:servicio"]);
 const isSelected = ref(false);
 const clickService = (item) => {
   emit("check:servicio", item);
+
   isSelected.value = !isSelected.value;
 };
+
+const useContacto = useContactoStore();
 </script>
 
 <style scoped></style>

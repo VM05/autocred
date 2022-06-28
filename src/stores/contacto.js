@@ -6,6 +6,7 @@ export const useContactoStore = defineStore("contacto", {
     state: () => {
         return {
             selectService: dataServicios[0],
+            selectServiceTest: [],
             utm_source: '',
             utm_medium: '',
             utm_campaign: '',
