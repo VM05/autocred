@@ -13,4 +13,9 @@ import { posts } from "../assets/helpers/constants";
 .grid {
   grid-template-columns: 1.5fr 1fr 1fr;
 }
+@media screen and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
