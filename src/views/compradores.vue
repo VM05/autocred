@@ -48,6 +48,8 @@ import Features from "../layouts/compradores/Features.vue";
 import Simulador from "../layouts/Simulador.vue";
 import { useHead } from "@vueuse/head";
 
+a;
+
 useHead({
   title: "Autocred | Compradores",
   meta: [

@@ -26,7 +26,7 @@
             />
           </PopoverButton>
         </div>
-        <PopoverGroup as="nav" class="hidden lg:flex space-x-10">
+        <PopoverGroup as="nav" class="hidden lg:flex link-width">
           <div v-for="link in links" :key="link" class="relative">
             <router-link
               class="text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
@@ -148,5 +148,9 @@ import MenuVue from "./Menu.vue";
 }
 .activeMenu:hover {
   font-weight: 700;
+}
+
+.linkl-width {
+  width: 120px;
 }
 </style>

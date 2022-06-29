@@ -366,34 +366,10 @@ export const posts = [
 <p class="mb-2">Y agrega: <b>“Tienes que pensar que los dealers se quedan con el 20% o 30% del precio del auto”,</b>
     aclara el ejecutivo. “Cuando no hay ese intermediario y se hace de manera directa, ese porcentaje se reparte
     entre el vendedor y el comprador particular. Es el negocio perfecto”. </p>
-
-<p class="mb-2">En 2019 se juntó de nuevo con Tacchi y desarrollaron Autocred. “Hicimos un piloto y
-    abrimos un módulo en el pasillo de un supermercado”, recuerda. “Pero nos agarró el estallido social.<b>Estábamos
-        construyendo el primer local en un Walmart y dado que empezaron las quemas, se detuvo todo y quedamos
-        atendiendo
-        con una plataforma digital”.</b></p>
-
-<p class="mb-2"><b>Durante 2020 y 2021 realizaron más de 2.000 transferencias, entregaron 200 créditos y tramitaron
-        800 tag. Todo online.</b> “Eso nos sirvió mucho para depurar el modelo y fomentar la relación con nuestros
-    clientes”, señala Lira. En junio relanzaron el negocio y debutaron con cuatro locaciones presenciales que
-    recorren el anillo de Vespucio: “Estamos en la zona sur (Maipú), poniente (Cerrillos), norte (Plaza Norte) y
-    oriente (Apumanque). “Nos dimos cuenta de que el factor de verse en persona era muy importante, por eso no
-    descartamos este canal”, aclara Lira.</p>
-
-<h4 class="font-bold mb-3">Alianza con Yapo</h4>
-
-<p class="mb-2">Según Felipe Lira, la hoja de ruta de Autocred está enfocada en Santiago. “La idea es concentrarse
-    en la capital, para luego expandirnos a La Serena, Viña del Mar y Rancagua, y después aterrizar en Temuco y
-    Concepción. No estamos mirando más allá de 18 meses porque pasan muchas cosas entremedio”, aclara el ejecutivo,
-    quien <b>no descarta vender otro porcentaje de la empresa para pavimentar su expansión nacional.</b> Además,
-    tienen proyectado duplicar su crecimiento en 2022, crecer con los recintos físicos y su atención virtual, y
-    potenciar sus porcentajes de penetración con los distintos productos.<b> “La idea es llegar a las mil
-        transferencias mensuales de aquí a diciembre”, agrega.</b></p>
-
-<p class="mb-2"><b>También están desarrollando una alianza con Yapo,</b> uno de los marketplace de autos con más
-    tracción y ventas en Chile y que más problemas muestra en su negocio automotriz. El acuerdo, dice Lira, busca
-    dotar a los usuarios de acompañamiento y experiencia de compra. ¿Forum seguirá desarrollando su faceta venture?
-    Martín Cook adelanta que por ahora solamente están enfocados enAutocred.</p>`,
+    
+    <a href="https://dfmas.df.cl/df-mas/punto-de-partida/forum-debuta-en-mundo-venture-e-invierte-us-1-millon-en-autocred" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">Ver la entrevista completa aquí</a>
+    
+    `,
         "img": "https://dfmas.df.cl/dfmas/site/artic/20220624/imag/foto_0000000920220624142623/MG_6216.jpg",
         "date": "28-06-22",
         "medio": "Medio prensa"
