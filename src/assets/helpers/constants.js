@@ -315,7 +315,7 @@ export const ventajas = [
 export const posts = [
     {
         "id": 1,
-        "title": "Felipe Lira Socio Director habla sobre Autocred y la compra o venta de autos usados",
+        "title": "Programa Emprender es Clave de Radio La Clave, Felipe Lira Socio Director habla sobre Autocred y la compra o venta de autos usados",
         "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
         para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se
     suban y que puedan realizar todos los trámites, incluidos los seguros”, cuenta Felipe Lira (38), ingeniero comercial y
