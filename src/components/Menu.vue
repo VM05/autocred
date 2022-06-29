@@ -2,7 +2,7 @@
   <router-link
     as="div"
     to="/servicios"
-    class="flex flex-row text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
+    class="flex flex-row text-base justify-center font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
     activeClass="activeMenu"
     @mouseover="toogleMenu"
     @click="hideMenu"

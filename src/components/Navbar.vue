@@ -26,8 +26,12 @@
             />
           </PopoverButton>
         </div>
-        <PopoverGroup as="nav" class="hidden lg:flex link-width">
-          <div v-for="link in links" :key="link" class="relative">
+        <PopoverGroup as="nav" class="hidden lg:flex">
+          <div
+            v-for="link in links"
+            :key="link"
+            class="relative link-width text-center"
+          >
             <router-link
               class="text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
               :to="link.url"
@@ -150,7 +154,15 @@ import MenuVue from "./Menu.vue";
   font-weight: 700;
 }
 
-.linkl-width {
-  width: 120px;
+.link-width {
+  min-width: 140px;
+}
+
+.link-width:nth-child(1) {
+  min-width: 80px;
+}
+
+.link-width:nth-child(5) {
+  min-width: 205px;
 }
 </style>

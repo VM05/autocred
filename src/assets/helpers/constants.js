@@ -315,6 +315,24 @@ export const ventajas = [
 export const posts = [
     {
         "id": 1,
+        "title": "Felipe Lira Socio Director habla sobre Autocred y la compra o venta de autos usados",
+        "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
+        para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se
+    suban y que puedan realizar todos los trámites, incluidos los seguros”, cuenta Felipe Lira (38), ingeniero comercial y
+    cofundador de Autocred.</p>
+    
+    <div class="relative mx-auto" style="padding-top: 56.25%;">
+    <iframe class="mx-auto absolute inset-0 w-full aspect-video" src="https://www.youtube.com/embed/vmfLw2LqU8I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <a href="https://www.youtube.com/embed/vmfLw2LqU8I" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">Ver la entrevista completa aquí</a>
+    
+    `,
+        "img": "https://dfmas.df.cl/dfmas/site/artic/20220624/imag/foto_0000000920220624142623/MG_6216.jpg",
+        "date": "29-06-22",
+        "medio": "Radio"
+    },
+    {
+        "id": 2,
         "title": "Forum debuta en mundo venture e invierte US$ 1 millón en Autocred | DFMAS",
         "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
         para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se
@@ -374,6 +392,7 @@ export const posts = [
         "date": "28-06-22",
         "medio": "Medio prensa"
     },
+
 
 
 
