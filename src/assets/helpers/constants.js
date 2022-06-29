@@ -321,13 +321,13 @@ export const posts = [
     suban y que puedan realizar todos los trámites, incluidos los seguros”, cuenta Felipe Lira (38), ingeniero comercial y
     cofundador de Autocred.</p>
     
-    <div class="relative mx-auto" style="padding-top: 56.25%;">
-    <iframe class="mx-auto absolute inset-0 w-full aspect-video" src="https://www.youtube.com/embed/vmfLw2LqU8I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="relative mx-auto my-5" >
+    <iframe class="mx-auto  w-full aspect-video " src="https://www.youtube.com/embed/vmfLw2LqU8I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <a href="https://www.youtube.com/embed/vmfLw2LqU8I" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">Ver la entrevista completa aquí</a>
     
     `,
-        "img": "https://dfmas.df.cl/dfmas/site/artic/20220624/imag/foto_0000000920220624142623/MG_6216.jpg",
+        "img": "../../../public/img/blog/emprendereslaclave.jpg",
         "date": "29-06-22",
         "medio": "Radio"
     },
