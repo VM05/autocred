@@ -327,7 +327,7 @@ export const posts = [
     <a href="https://www.youtube.com/watch?v=vmfLw2LqU8I" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">Ver la entrevista completa aquí</a>
     
     `,
-        "img": "../../../public/img/blog/emprendereslaclave.jpg",
+        "img": "/img/blog/emprendereslaclave.jpg",
         "date": "29-06-22",
         "medio": "Radio"
     },
