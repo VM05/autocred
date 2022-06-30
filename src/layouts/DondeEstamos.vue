@@ -1,5 +1,5 @@
 <template>
-  <div class="py-6 mb-24">
+  <div class="py-6 mb-24 md:px-12">
     <Heading1 content="Donde estamos" class="mb-14" />
     <div class="grid grid-cols-1 w-full justify-between grillaDondeEstamos">
       <div class="grid grillaInfoMapa">
@@ -116,6 +116,7 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           v-if="activeSucursal == 'Sur'"
+          class="rounded-xl"
         ></iframe>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.414112900417!2d-70.71273566849709!3d-33.490601445418534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c4aef958984d%3A0x9e2a2c3a8e90ba9!2sLas%20Am%C3%A9ricas%20375%2C%20Los%20Cerrillos%2C%20Cerrillos%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1653345499515!5m2!1ses!2scl"
@@ -126,6 +127,7 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           v-if="activeSucursal == 'Poniente'"
+          class="rounded-xl"
         ></iframe>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3332.1883355798504!2d-70.6804971842194!3d-33.36614880057788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c7c1ba017f13%3A0xeb5ac418f75ed2d6!2sMallplaza%20Norte!5e0!3m2!1ses!2scl!4v1653345545191!5m2!1ses!2scl"
@@ -136,6 +138,7 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           v-if="activeSucursal == 'Norte'"
+          class="rounded-xl"
         ></iframe>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.505215685737!2d-70.56979638421825!3d-33.410070502828226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cedde4485d87%3A0x7ce640d67d70fa10!2sApumanque!5e0!3m2!1ses!2scl!4v1653345593924!5m2!1ses!2scl"
@@ -146,6 +149,7 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           v-if="activeSucursal == 'Oriente'"
+          class="rounded-xl"
         ></iframe>
       </div>
     </div>

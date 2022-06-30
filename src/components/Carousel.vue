@@ -50,5 +50,6 @@ export default defineComponent({
   box-sizing: content-box;
   background-color: transparent;
   margin: 0 2rem;
+  transform: translate(-50%, -50%);
 }
 </style>

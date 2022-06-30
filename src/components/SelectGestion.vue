@@ -5,6 +5,7 @@
       <div class="relative">
         <ComboboxInput
           class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full"
+          readonly
           :displayValue="(brand) => brand.name"
           @change="query = $event.target.value"
         />

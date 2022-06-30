@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-24">
+  <div class="mb-24 md:px-12">
     <Heading content="Autocred en Medios" class="mb-10" />
     <router-link
       class="showMore w-full flex justify-end items-center gap-2 mb-6 hidden md:flex"

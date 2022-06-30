@@ -1,5 +1,5 @@
 <template>
-  <div class="mb:px-32 pt-10 pb-20 grid">
+  <div class="pt-10 pb-20 grid md:px-12">
     <div class="title mb-8">
       <HeadingVue
         content="Esto nos mueve"

@@ -1,6 +1,9 @@
 <template>
   <div class="mb-24">
-    <div v-if="data" class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+    <div
+      v-if="data"
+      class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 md:px-12"
+    >
       <div v-for="item in data.data" class="flex flex-col items-center gap-4">
         <img
           src="../assets/img/02-menu-servicios-financiamiento.png"
@@ -50,8 +53,8 @@
     <Loading v-else />
     <div v-for="element in dataServicios">
       <div v-if="element.id == elementActive" :id="element.id">
-        <Heading :content="element.title" />
-        <div class="p-6 md:p-16">
+        <Heading :content="element.title" class="md:px-12" />
+        <div class="md:px-12">
           <div
             class="grid grid-cols-1 md:grid-cols-2 md:pb-40 mb-20 gap-2 md:flex md:relative md:justify-end"
           >

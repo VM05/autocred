@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-28 grid">
+  <div class="mb-28 grid md:px-12">
     <Heading
       content="Servicio para vendedores"
       class="mb-8"

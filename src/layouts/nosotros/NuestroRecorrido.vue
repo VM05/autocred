@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-1">
+  <div class="mb-1 md:px-12">
     <Heading1
       content="Nuestro recorrido"
       highlight="recorrido"

@@ -3,7 +3,7 @@
     <Heading
       content="Diferentes soluciones para que la compra o venta de vehículos entre las personas sea un viaje extraordinario:"
       headingType="h2"
-      class="mb-5"
+      class="mb-10 md:px-12"
     />
     <ServiciosList1 />
     <Hablemos id="contacto" />

@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-20">
+  <div class="mb-20 md:px-12">
     <Heading v-if="comprador" content="Comprador" class="mb-10" />
     <Heading v-if="vendedor" content="Vendedor" class="mb-10" />
 
@@ -31,7 +31,7 @@
       <img
         src="../../assets/img/preguntas-frecuentes-vendedores-(EN-BAJA).png"
         alt=""
-        class="img absolute top-0 left-0 z-0 md hidden md:block"
+        class="img absolute top-0 left-10 z-0 md hidden md:block"
         v-if="vendedor"
       />
     </div>

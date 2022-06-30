@@ -2,7 +2,7 @@
   <div class="flex flex-col md:grid py-6 md:py-12 mb-24">
     <Heading
       content="Pilotos que confiaron en Autocred"
-      class="mb-8 md:mb-16"
+      class="mb-8 md:mb-16 md:px-12"
       highlight="confiaron"
       highlight-img="confiaron"
     />

@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-24 md:mb-52">
+  <div class="mb-24 md:mb-52 md:px-12">
     <Heading content="Ya vendiste tu auto?" />
     <Heading
       content="Financia el próximo con Autocred"
