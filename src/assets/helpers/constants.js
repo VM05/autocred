@@ -324,7 +324,7 @@ export const posts = [
     <div class="relative mx-auto my-5" >
     <iframe class="mx-auto  w-full aspect-video " src="https://www.youtube.com/embed/vmfLw2LqU8I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <a href="https://www.youtube.com/embed/vmfLw2LqU8I" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">Ver la entrevista completa aquí</a>
+    <a href="https://www.youtube.com/watch?v=vmfLw2LqU8I" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">Ver la entrevista completa aquí</a>
     
     `,
         "img": "../../../public/img/blog/emprendereslaclave.jpg",
