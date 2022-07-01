@@ -1,6 +1,6 @@
 <template>
   <div class="grid gap-12 w-full">
-    <Noticia v-for="(item, index) in 2" :data="posts[index]" :indice="index" />
+    <Noticia v-for="(item, index) in 3" :data="posts[index]" :indice="index" />
   </div>
 </template>
 
@@ -13,6 +13,15 @@ import { posts } from "../assets/helpers/constants";
 .grid {
   grid-template-columns: 1.5fr 1fr 1fr;
 }
+
+:deep(.noticia-grid:nth-child(2) .imagen-noticia img) {
+  height: 200px;
+}
+
+:deep(.noticia-grid:nth-child(3) .imagen-noticia img) {
+  height: 200px;
+}
+
 @media screen and (max-width: 500px) {
   .grid {
     grid-template-columns: 1fr;

@@ -2,7 +2,7 @@
   <div class="mb-24 md:px-12">
     <Heading1
       content="Ventajas de viajar juntos"
-      class="mb-4"
+      class="mb-12"
       highlight="juntos"
       highlight-img="juntos"
     />

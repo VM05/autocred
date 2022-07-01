@@ -28,7 +28,7 @@
 
 <script setup>
 import { validateEmail } from "../assets/helpers/validate";
-import { ref, computed, onUpdated, unref } from "vue";
+import { ref, computed, onUpdated, unref, onMounted } from "vue";
 const props = defineProps({
   placeholder: String,
   hoverText: String,
@@ -57,6 +57,8 @@ const validated = computed(() => {
 const isError = computed(() => {
   return validateEmail(unref(email)) ? false : true;
 });
+
+onMounted(() => {});
 
 onUpdated(() => {
   isError;

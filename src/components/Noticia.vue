@@ -1,6 +1,9 @@
 <template>
-  <div class="flex flex-col gap-2">
-    <img :src="data.img" alt="" />
+  <div class="flex flex-col gap-2 noticia-grid">
+    <div class="imagen-noticia">
+      <img :src="data.img" alt="" />
+    </div>
+
     <Paragraph class="font-medium text-base text-primary-700">
       {{ data.medio + " " + data.date }}
     </Paragraph>

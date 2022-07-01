@@ -184,20 +184,24 @@
                       label="Nombre"
                       id="Nombre"
                       placeholder="Nombre"
+                      :value="formSimulador2.name"
                       @update:text="(e) => (formSimulador2.name = e)"
                     />
                   </div>
+
                   <div class="md:flex">
                     <Input
                       label="Apellido Paterno"
                       id="Apellido Paterno"
                       placeholder="Apellido Paterno"
+                      :value="formSimulador2.first_surname"
                       @update:text="(e) => (formSimulador2.first_surname = e)"
                     />
                     <Input
                       label="Apellido Materno"
                       id="Apellido Materno"
                       placeholder="Apellido Materno"
+                      :value="formSimulador2.second_surname"
                       @update:text="(e) => (formSimulador2.second_surname = e)"
                     />
                   </div>
@@ -206,6 +210,7 @@
                       label="Email"
                       id="Email"
                       placeholder="Email"
+                      :value="formSimulador2.email"
                       @update:email="(e) => (formSimulador2.email = e)"
                     />
                     <Input
@@ -213,6 +218,7 @@
                       id="Telefono"
                       isPhone
                       placeholder="Teléfono"
+                      :value="formSimulador2.phone"
                       @update:text="(e) => (formSimulador2.phone = '+56' + e)"
                     />
                     <Paragraph
@@ -230,6 +236,7 @@
                       label="Renta Liquida"
                       id="Renta Liquida"
                       placeholder="Renta Liquida"
+                      :value="formSimulador2.salary"
                       @update:text="(e) => (formSimulador2.salary = e)"
                     />
                   </div>
@@ -245,6 +252,7 @@
                       label="Fecha Nacimiento"
                       id="Fecha Nacimiento"
                       date
+                      :value="formSimulador2.birth_date"
                       @update:text="(e) => (formSimulador2.birth_date = e)"
                     />
                   </div>
@@ -293,7 +301,11 @@ import SelectModelo1 from "../components/SelectModelo.vue";
 import { reactive, ref, watch } from "vue";
 import { typeCredit } from "../assets/helpers/API";
 import axios from "axios";
-import { EVALUACION_URL_1, EVALUACION_URL_2 } from "../assets/helpers/API";
+import {
+  EVALUACION_URL_1,
+  EVALUACION_URL_2,
+  CARGA_DATA,
+} from "../assets/helpers/API";
 import Loading from "../components/Loading.vue";
 import Paragraph from "../components/Paragraph.vue";
 import InputEmail from "../components/Input-Email.vue";
@@ -371,9 +383,31 @@ const handleForm = async () => {
 };
 
 //PASO INTERMEDIO
-const handleTransition = (cuota) => {
+const handleTransition = async (cuota) => {
+  try {
+    const res = await axios.get(CARGA_DATA + formSimulador.dni);
+    console.log(res);
+    const {
+      name,
+      income_salary,
+      first_surname,
+      nationality,
+      email,
+      second_surname,
+      birth_date,
+    } = res.data;
+    formSimulador2.name = name;
+    formSimulador2.first_surname = first_surname;
+    formSimulador2.salary = income_salary;
+    formSimulador2.second_surname = second_surname;
+    formSimulador2.email = email;
+    formSimulador2.birth_date = birth_date;
+  } catch (error) {
+    console.log(error);
+  }
   formSimulador2.term = cuota[0];
   formSimulador2.simulation_id = cuota[1];
+
   formActive.value = false;
   formActive2.value = true;
 };
@@ -382,6 +416,7 @@ const handleForm2 = async () => {
   loading.value = true;
   try {
     const res = await axios.post(EVALUACION_URL_2, formSimulador2);
+    console.log(res);
     if (res.data.success) loading.value = false;
     isSuccess.value = true;
   } catch (error) {

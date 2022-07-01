@@ -1,7 +1,7 @@
 <template>
   <div class="grid relative">
     <div
-      class="grid gap-4 w-full md:w-2/3 z-10"
+      class="grid gap-8 w-full md:w-2/3 z-10"
       :class="[right ? 'justify-self-end' : 'justify-self-start']"
     >
       <CardServicio

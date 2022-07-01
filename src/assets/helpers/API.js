@@ -72,6 +72,7 @@ export const PLAZO_CONTRATO_URL = BASE_URL_API + "utilities/others/contractTypes
 export const SERVICIOS_URL = BASE_URL_API + "utilities/others/services"
 export const EVALUACION_URL_1 = BASE_URL_API + "external/evaluations/simulation"
 export const EVALUACION_URL_2 = BASE_URL_API + "external/evaluations/quotation"
+export const CARGA_DATA = BASE_URL_API + "utilities/users/exists?dni="
 
 
 export const URL_GOGEMA = import.meta.env.VITE_URL_GOGEMA

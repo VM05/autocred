@@ -313,8 +313,28 @@ export const ventajas = [
 ]
 
 export const posts = [
+
     {
         "id": 1,
+        "title": "Entrevista en Radio Biobío Felipe Lira, Socio Fundador de Autocred habla sobre el mercado automotriz de autos usados.",
+        "body": ` <p class="mb-2">En programa Una semana en La Radio, de Radio Biobío, Felipe Lira, Socio Fundador de Autocred habla sobre el aumento de la demanda automotriz de vehículos usados y cómo Autocred llega para apoyar en la compra y venta de vehículos usados entre personas, acompañando y apoyando en todo el proceso a cada una de las partes con Financiamiento, Seguro, Tag, Transferencia y todo lo necesario para que la experiencia de este proceso sea un gran viaje.</p>
+    
+    <div class="mt-10 flex justify-center" >
+        <audio controls>
+        <source src="/audio/entrevista.mp3" type="audio/ogg">
+        <source src="/audio/entrevista.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+        </audio>
+    </div>
+   
+    
+    `,
+        "img": "/img/blog/biobio.jpg",
+        "date": "19-06-22",
+        "medio": "Radio"
+    },
+    {
+        "id": 2,
         "title": "Programa Emprender es Clave de Radio La Clave, Felipe Lira Socio Director habla sobre Autocred y la compra o venta de autos usados",
         "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
         para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se
@@ -332,7 +352,7 @@ export const posts = [
         "medio": "Radio"
     },
     {
-        "id": 2,
+        "id": 3,
         "title": "Forum debuta en mundo venture e invierte US$ 1 millón en Autocred | DFMAS",
         "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
         para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se
@@ -452,27 +472,27 @@ export const dataServicios = [
 export const serviciosVendores = [
     {
         id: 'van',
-        name: "VAN/OFICINA MÓVIL",
+        name: "Van/oficina móvil",
         content: "¿Quieres compañía cuando muestras el vehículo? <br> Utiliza nuestra <b>Oficina Móvil</b> para moverte junto al potencial comprador: <br> <ul class='list-disc pl-6'><li>Transferencias</li><li>Pagos con tarjetas</li><li>Servicio de Van 100% gratis</li><li>Financiamiento en solo 7 minutos</li><ul>",
         img: "/img/icons/Iconos_Autocred_Magenta_Traslado.png",
     },
     {
         id: 'financiamiento',
-        name: "PLATAFORMA DE PAGO",
+        name: "Plataforma de pago",
         content:
             "¿Quieres comprar un auto con tarjeta de crédito o financiamiento? En Autocred trabajamos con diferentes opciones financieras para hacer de tu compra, el mejor negocio.",
         img: "/img/icons/Iconos_Autocred_Magenta_Plataformas_de_Pago.png",
     },
     {
         id: 'transferencias',
-        name: "TRANSFERENCIA",
+        name: "Transferencia",
         content:
             "¿Estás listo para transferir tu auto? Nuestro servicio está en línea con el registro civil, y contamos con 3 formatos de atención para una transferencia segura: <br> <ul class='list-disc pl-6'><li>Online</li><li>Presencial en nuestros módulos</li><li>Oficina Móvil</li><ul>",
         img: "/img/icons/Iconos_Autocred_Magenta_transferencia.png",
     },
     {
         id: 'seguro',
-        name: "QUEREMOS SER MÁS",
+        name: "Queremos ser más",
         content:
             "Porque nos preocupamos de cada detalle, en Autocred puedes dar de baja tu seguro y Tag (solo autopista Vespucio Norte).",
         img: "/img/icons/Iconos_Autocred_Magenta_Volante.png",
@@ -484,7 +504,7 @@ export const serviciosVendores = [
 export const serviciosCompradores = [
     {
         id: 'van',
-        name: "VAN/OFICINA MÓVIL",
+        name: "Van/oficina móvil",
         content:
             "Utiliza nuestra Oficina Móvil* para moverte junto al potencial comprador: <br> <ul class='list-disc pl-6'><li>Transferencias</li><li>Pagos con tarjetas</li><li>Servicio de Van 100% gratis</li><li>Financiamiento en solo 7 minutos</li><ul>",
         img: "/img/icons/Iconos_Autocred_Azul_traslado.png",
@@ -492,14 +512,14 @@ export const serviciosCompradores = [
 
     {
         id: 'financiamiento',
-        name: "FINANCIAMIENTO",
+        name: "Financiamiento",
         content:
             "Evaluación lista solo en 7 minutos. Nuestra plataforma permite pagos con tarjeta de crédito y financiamiento. El abono llega a tu cuenta al firmar la transferencia.",
         img: "/img/icons/Iconos_Autocred_Azul_financiamiento.png",
     },
     {
         id: 'transferencias',
-        name: "TRANSFERENCIA, SEGUROS, TAG Y MÁS",
+        name: "Transferencia, seguros, tag y más",
         content:
             "Somos tu copiloto buscando y comprando. Contamos con Servicio de Transferencia en línea con Registro Civil, seguros exclusivos para compradores particulares, y Activación de TAG presencial, online, en nuestros módulos o donde quieras con nuestra Oficina Móvil.",
         img: "/img/icons/Iconos_Autocred_Azul_seguro_automotriz.png",
