@@ -210,7 +210,6 @@
                       label="Email"
                       id="Email"
                       placeholder="Email"
-                      :value="formSimulador2.email"
                       @update:email="(e) => (formSimulador2.email = e)"
                     />
                     <Input
@@ -218,7 +217,6 @@
                       id="Telefono"
                       isPhone
                       placeholder="Teléfono"
-                      :value="formSimulador2.phone"
                       @update:text="(e) => (formSimulador2.phone = '+56' + e)"
                     />
                     <Paragraph
@@ -252,7 +250,6 @@
                       label="Fecha Nacimiento"
                       id="Fecha Nacimiento"
                       date
-                      :value="formSimulador2.birth_date"
                       @update:text="(e) => (formSimulador2.birth_date = e)"
                     />
                   </div>

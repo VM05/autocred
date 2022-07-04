@@ -19,6 +19,7 @@
       @focusout="focus = false"
       @mouseover="hover = true"
       @mouseleave="hover = false"
+      valor="valor"
       :id="props.id"
       @blur="handler"
     />
@@ -28,13 +29,18 @@
 
 <script setup>
 import { validateEmail } from "../assets/helpers/validate";
-import { ref, computed, onUpdated, unref, onMounted } from "vue";
+import { ref, computed, onUpdated, unref } from "vue";
+import { Input } from "postcss";
 const props = defineProps({
   placeholder: String,
   hoverText: String,
   id: String,
   label: String,
   value: { type: String, default: "" },
+  valor: {
+    type: String,
+    default: "",
+  },
 });
 const emit = defineEmits(["update:email"]);
 const handler = (e) => {
@@ -57,8 +63,6 @@ const validated = computed(() => {
 const isError = computed(() => {
   return validateEmail(unref(email)) ? false : true;
 });
-
-onMounted(() => {});
 
 onUpdated(() => {
   isError;
