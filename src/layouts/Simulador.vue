@@ -234,7 +234,6 @@
                       label="Renta Liquida"
                       id="Renta Liquida"
                       placeholder="Renta Liquida"
-                      :value="formSimulador2.salary"
                       @update:text="(e) => (formSimulador2.salary = e)"
                     />
                   </div>
@@ -395,7 +394,6 @@ const handleTransition = async (cuota) => {
     } = res.data;
     formSimulador2.name = name;
     formSimulador2.first_surname = first_surname;
-    formSimulador2.salary = income_salary;
     formSimulador2.second_surname = second_surname;
     formSimulador2.email = email;
     formSimulador2.birth_date = birth_date;
