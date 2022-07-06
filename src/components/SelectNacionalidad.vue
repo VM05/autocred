@@ -79,9 +79,10 @@ import { NACIONALIDAD_URL } from "../assets/helpers/API";
 import { useSimuladorStore } from "../stores/simulador";
 const useSimulador = useSimuladorStore();
 
-defineProps({
+const props = defineProps({
   id: String,
   label: String,
+  valor: String,
 });
 const emit = defineEmits(["update:nacionalidad"]);
 const data = ref();
@@ -100,6 +101,12 @@ let query = ref("");
 const changeNacionalidad = (value) => {
   useSimulador.nacionalidad = value;
 };
+
+watch(props, () => {
+  if (props.valor != "") {
+    selected.value = props.valor;
+  }
+});
 
 watch(selected, () => {
   changeNacionalidad(selected.value);

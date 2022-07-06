@@ -249,6 +249,7 @@
                       @update:nacionalidad="
                         (e) => (formSimulador2.nationality = e)
                       "
+                      :valor="formSimulador2.nationality"
                     />
                     <Input
                       label="Fecha Nacimiento"
@@ -412,6 +413,9 @@ const handleTransition = async (cuota) => {
     (await res.data.income_salary) != undefined
       ? (formSimulador2.salary = await res.data.income_salary)
       : (formSimulador2.salary = "");
+    (await res.data.nationality) != undefined
+      ? (formSimulador2.nationality = await res.data.nationality)
+      : (formSimulador2.salary = "Nacionalidad");
     (await res.data.work_continuity) != undefined
       ? (formSimulador2.work_continuity = await res.data.work_continuity)
       : (formSimulador2.work_continuity = 24);
