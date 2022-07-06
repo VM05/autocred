@@ -29,7 +29,7 @@
 
 <script setup>
 import { validateEmail } from "../assets/helpers/validate";
-import { ref, computed, onUpdated, unref } from "vue";
+import { ref, computed, onUpdated, unref, watch } from "vue";
 import { Input } from "postcss";
 const props = defineProps({
   placeholder: String,
@@ -66,6 +66,12 @@ const isError = computed(() => {
 
 onUpdated(() => {
   isError;
+});
+
+watch(props, () => {
+  if (props.value != "") {
+    email.value = props.value;
+  }
 });
 </script>
 

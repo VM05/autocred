@@ -211,13 +211,15 @@
                       id="Email"
                       placeholder="Email"
                       @update:email="(e) => (formSimulador2.email = e)"
+                      :value="formSimulador2.email ? formSimulador2.email : ''"
                     />
                     <Input
                       label="Teléfono"
                       id="Telefono"
                       isPhone
                       placeholder="Teléfono"
-                      @update:text="(e) => (formSimulador2.phone = '+56' + e)"
+                      @update:text="(e) => (formSimulador2.phone = e)"
+                      :value="formSimulador2.phone ? formSimulador2.phone : ''"
                     />
                     <Paragraph
                       class="text-red-700 justify-self-center text-center grid-flow-row col-end-3"
@@ -235,6 +237,9 @@
                       id="Renta Liquida"
                       placeholder="Renta Liquida"
                       @update:text="(e) => (formSimulador2.salary = e)"
+                      :valor="
+                        formSimulador2.salary ? formSimulador2.salary : ''
+                      "
                     />
                   </div>
                   <div class="md:flex">
@@ -257,12 +262,18 @@
                       label="Tipo Ingreso"
                       id="Tipo Ingreso"
                       @update:empleo="(e) => (formSimulador2.income_type = e)"
+                      :valor="formSimulador2.income_type"
                     />
                     <SelectAntiguedad
                       label="Antiguedad Laboral"
                       id="antiguedad"
                       @update:antiguedad="
                         (e) => (formSimulador2.work_continuity = e)
+                      "
+                      :valor="
+                        formSimulador2.work_continuity
+                          ? formSimulador2.work_continuity
+                          : 0
                       "
                     />
                   </div>
@@ -339,7 +350,7 @@ const formSimulador2 = reactive({
   requested_amount: "",
   salary: 0, //Number
   term: 0, // Number
-  work_continuity: antiguedad[0].value,
+  work_continuity: "",
   birth_date: "",
   vehicle_brand: "",
   vehicle_model: "",
@@ -351,7 +362,7 @@ const formSimulador2 = reactive({
   email: "",
   phone: "",
   nationality: "",
-  income_type: empleoType[0].value,
+  income_type: "",
   simulation_id: "",
 });
 
@@ -383,20 +394,37 @@ const handleTransition = async (cuota) => {
   try {
     const res = await axios.get(CARGA_DATA + formSimulador.dni);
     console.log(res);
-    const {
-      name,
-      income_salary,
-      first_surname,
-      nationality,
-      email,
-      second_surname,
-      birth_date,
-    } = res.data;
-    formSimulador2.name = name;
-    formSimulador2.first_surname = first_surname;
-    formSimulador2.second_surname = second_surname;
-    formSimulador2.email = email;
-    formSimulador2.birth_date = birth_date;
+    (await res.data.name) != undefined
+      ? (formSimulador2.name = await res.data.name)
+      : (formSimulador2.name = "");
+    (await res.data.first_surname) != undefined
+      ? (formSimulador2.first_surname = await res.data.first_surname)
+      : (formSimulador2.first_surname = "");
+    (await res.data.second_surname) != undefined
+      ? (formSimulador2.second_surname = await res.data.second_surname)
+      : (formSimulador2.second_surname = "");
+    (await res.data.email) != undefined
+      ? (formSimulador2.email = await res.data.email)
+      : (formSimulador2.email = "");
+    (await res.data.income_type) != undefined
+      ? (formSimulador2.income_type = await res.data.income_type)
+      : (formSimulador2.income_type = "EMPLEOLABORAL");
+    (await res.data.income_salary) != undefined
+      ? (formSimulador2.salary = await res.data.income_salary)
+      : (formSimulador2.salary = "");
+    (await res.data.work_continuity) != undefined
+      ? (formSimulador2.work_continuity = await res.data.work_continuity)
+      : (formSimulador2.work_continuity = 24);
+    (await res.data.phone) != undefined
+      ? (formSimulador2.phone = await res.data.phone.slice(3))
+      : (formSimulador2.phone = "");
+
+    // (await res.data.birth_date) != undefined
+    //   ? (formSimulador2.birth_date = await res.data.birth_date
+    //       .split("/")
+    //       .reverse()
+    //       .join("-"))
+    //   : "";
   } catch (error) {
     console.log(error);
   }
@@ -409,6 +437,7 @@ const handleTransition = async (cuota) => {
 
 const handleForm2 = async () => {
   loading.value = true;
+  formSimulador2.phone = "+56" + formSimulador2.phone;
   try {
     const res = await axios.post(EVALUACION_URL_2, formSimulador2);
     console.log(res);
@@ -467,13 +496,14 @@ watch(formSimulador2, () => {
     errorForm2.value = false;
 
     if (formSimulador2.birth_date.includes("-")) {
+      console.log(formSimulador2.birth_date);
       formSimulador2.birth_date
         .split("-")
         .reduceRight((prev, current) => (formated = prev + "/" + current));
       formSimulador2.birth_date = formated;
     }
     if (formSimulador2.phone.length > 0) {
-      if (formSimulador2.phone.slice(3).length != 9) {
+      if (formSimulador2.phone.length != 9) {
         warningPhone.value = true;
       } else {
         warningPhone.value = false;

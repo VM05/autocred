@@ -77,7 +77,7 @@
       @focusin="focus = true"
       @focusout="focus = false"
       :id="id"
-      :value="value"
+      :value="valorRenta"
       :disabled="disabled"
       @blur="handlerMoney"
       required
@@ -101,9 +101,9 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { formatNumbers } from "../../assets/helpers/validate";
-defineProps({
+const props = defineProps({
   placeholder: String,
   hoverText: String,
   id: String,
@@ -114,7 +114,10 @@ defineProps({
   password: Boolean,
   date: Boolean,
   money: Boolean,
+  valor: String,
 });
+
+const valorRenta = ref(props.valor);
 const emit = defineEmits(["update:text"]);
 const handler = (e) => {
   emit("update:text", e.target.value);
@@ -133,6 +136,12 @@ const handlerMoney = (e) => {
 
 const hover = ref(false);
 let focus = ref(false);
+
+watch(props, () => {
+  if (props.valor != "") {
+    valorRenta.value = formatNumbers(props.valor);
+  }
+});
 </script>
 
 <style scoped>

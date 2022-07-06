@@ -81,13 +81,13 @@ const useSimulador = useSimuladorStore();
 
 const emit = defineEmits(["update:empleo"]);
 
-defineProps({
-  data: {},
+const props = defineProps({
   label: String,
   id: String,
+  valor: String,
 });
 
-let selected = ref(empleoType[0]);
+let selected = ref("");
 let query = ref("");
 let filteredBrands = computed(() =>
   query.value === ""
@@ -99,6 +99,37 @@ let filteredBrands = computed(() =>
           .includes(query.value.toLowerCase().replace(/\s+/g, ""))
       )
 );
+
+watch(props, () => {
+  if (props.valor != "") {
+    switch (props.valor) {
+      case "EMPLEOACTUAL":
+        selected.value = empleoType[0];
+        break;
+      case "JUBILACION":
+        selected.value = empleoType[1];
+        break;
+      case "HONORARIOS":
+        selected.value = empleoType[2];
+        break;
+
+      case "HONORARIOSCONTRATO":
+        selected.value = empleoType[3];
+        break;
+
+      case "RETIROSOCIEDAD":
+        selected.value = empleoType[4];
+        break;
+      case "OTRO":
+        selected.value = empleoType[5];
+        break;
+
+      default:
+        selected.value = empleoType[0];
+        break;
+    }
+  }
+});
 
 watch(selected, () => {
   changeEmpleo(selected.value);

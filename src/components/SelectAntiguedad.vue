@@ -1,7 +1,7 @@
 <template>
   <div class="py-6 w-full">
     <label :for="id" class="text-primary-900 font-medium text-base">{{
-      label
+      props.label
     }}</label>
     <Listbox v-model="selected">
       <div class="relative">
@@ -79,14 +79,14 @@ import { useSimuladorStore } from "../stores/simulador";
 const useSimulador = useSimuladorStore();
 const emit = defineEmits(["update:antiguedad"]);
 
-defineProps({
-  data: {},
+const props = defineProps({
   label: String,
+  valor: { type: Number, default: 0 },
 });
 const handler = (element) => {
   emit("update:antiguedad", element);
 };
-let selected = ref(antiguedad[0]);
+let selected = ref("");
 let query = ref("");
 let filteredBrands = computed(() =>
   query.value === ""
@@ -98,11 +98,56 @@ let filteredBrands = computed(() =>
           .includes(query.value.toLowerCase().replace(/\s+/g, ""))
       )
 );
+// watch(props, () => {
+//   console.log("asdasdasdasdasdasdsadsa");
+//   if (props.valor > 0) {
+//     switch (props.valor) {
+//       case 24:
+//         selected.value = antiguedad[0];
+//         break;
+//       case 12:
+//         selected.value = antiguedad[1];
+//         break;
+//       case 1:
+//         selected.value = antiguedad[2];
+//         break;
+
+//       default:
+//         selected.value = antiguedad[0];
+//         break;
+//     }
+//   }
+// });
+
+watch(
+  () => props.valor,
+  () => {
+    console.log("deep watch");
+    if (props.valor > 0) {
+      switch (props.valor) {
+        case 24:
+          selected.value = antiguedad[0];
+          break;
+        case 12:
+          selected.value = antiguedad[1];
+          break;
+        case 1:
+          selected.value = antiguedad[2];
+          break;
+
+        default:
+          selected.value = antiguedad[0];
+          break;
+      }
+    }
+  }
+);
 
 watch(selected, () => {
   changeAntiguedad(selected.value);
   emit("update:antiguedad", selected.value.value);
 });
+
 const changeAntiguedad = (value) => {
   useSimulador.antiguedad = value;
 };
