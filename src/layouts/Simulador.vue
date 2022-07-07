@@ -10,7 +10,7 @@
         <div class="imagen imagenBG top-0 absolute"></div>
       </div>
       <div class="z-10 absolute top-12 md:top-16 left-4 md:left-16">
-        <Heading1 content="Evalua tu crédito" white />
+        <Heading1 content="Evalúa tu crédito" white />
         <Heading1 content="En solo 7 minutos " white />
       </div>
 
@@ -18,7 +18,7 @@
         <Transition>
           <form @submit.prevent="handleForm" v-show="formActive">
             <div class="title border-b pb-4 border-primary-900">
-              <Heading1 content="Evaluador de créditos" headingType="h3" />
+              <Heading1 content="Etapa 1: Evalúa tú crédito" headingType="h3" />
             </div>
             <div
               class="content py-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 border-b"
@@ -136,19 +136,15 @@
                 </Paragraph>
                 <Loading />
               </div>
-              <div v-if="isSuccess" class="text-center">
-                <Loading medium />
+              <div v-if="isSuccess && !newUser" class="text-center">
                 <Paragraph class="font-bold"
                   >Estamos evaluando tu solicitud
                 </Paragraph>
                 <Paragraph class="mb-8"
-                  >Te invitamos a registrarte o iniciar sesión para conocer el
-                  resultado.
+                  >Te invitamos a iniciar sesión o recuperar tu contraseña para
+                  conocer el resultado.
                 </Paragraph>
-                <div class="flex flex-row gap-2 justify-center">
-                  <!-- <router-link to="/registro"> -->
-                  <Button secondary text="Registro" @click="registerHandle" />
-                  <!-- </router-link> -->
+                <div class="flex flex-col gap-2 justify-center">
                   <router-link to="/login">
                     <Button
                       primary
@@ -156,6 +152,14 @@
                       @click="loginHandle"
                     ></Button>
                   </router-link>
+                  <!-- <router-link to="/registro"> -->
+                  <a
+                    :href="PASSWORD_RESET"
+                    class="text-primary-900 underline font-semibold text-base"
+                  >
+                    Recuperar mi contraseña
+                  </a>
+                  <!-- </router-link> -->
                 </div>
               </div>
               <div v-if="isError" class="text-center">
@@ -171,7 +175,7 @@
             <form @submit.prevent="handleForm2" v-else>
               <div class="title border-b pb-4 border-primary-900">
                 <Heading1
-                  content="Evaluación de Crédito | Datos Personales"
+                  content="Etapa 2: Ingresa tus datos personales requeridos"
                   headingType="h3"
                 />
               </div>
@@ -311,6 +315,9 @@ import {
   EVALUACION_URL_1,
   EVALUACION_URL_2,
   CARGA_DATA,
+  REGISTER_URL_TWO,
+  LOGIN_URL_TOKEN,
+  PASSWORD_RESET,
 } from "../assets/helpers/API";
 import Loading from "../components/Loading.vue";
 import Paragraph from "../components/Paragraph.vue";
@@ -365,6 +372,14 @@ const formSimulador2 = reactive({
   simulation_id: "",
 });
 
+const registerForm = reactive({
+  dni: "",
+  name: "",
+  surnames: "",
+  email: "",
+  phone_1: "",
+});
+
 const dataCuotas = ref([]);
 const loading = ref(false);
 const alerts = ref(false);
@@ -375,6 +390,7 @@ const complete = ref(false);
 const formActive = ref(true);
 const formActive2 = ref(false);
 const warningDownPayment = ref(false);
+const newUser = ref(false);
 //PASO 1
 const handleForm = async () => {
   loading.value = true;
@@ -392,34 +408,40 @@ const handleForm = async () => {
 const handleTransition = async (cuota) => {
   try {
     const res = await axios.get(CARGA_DATA + formSimulador.dni);
-    (await res.data.name) != undefined
-      ? (formSimulador2.name = await res.data.name)
-      : (formSimulador2.name = "");
-    (await res.data.first_surname) != undefined
-      ? (formSimulador2.first_surname = await res.data.first_surname)
-      : (formSimulador2.first_surname = "");
-    (await res.data.second_surname) != undefined
-      ? (formSimulador2.second_surname = await res.data.second_surname)
-      : (formSimulador2.second_surname = "");
-    (await res.data.email) != undefined
-      ? (formSimulador2.email = await res.data.email)
-      : (formSimulador2.email = "");
-    (await res.data.income_type) != undefined
-      ? (formSimulador2.income_type = await res.data.income_type)
-      : (formSimulador2.income_type = "EMPLEOLABORAL");
-    (await res.data.income_salary) != undefined
-      ? (formSimulador2.salary = await res.data.income_salary)
-      : (formSimulador2.salary = "0");
-    (await res.data.nationality) != undefined
-      ? (formSimulador2.nationality = await res.data.nationality)
-      : (formSimulador2.nationality = "Nacionalidad");
-    (await res.data.work_continuity) != undefined
-      ? (formSimulador2.work_continuity = await res.data.work_continuity)
-      : (formSimulador2.work_continuity = 24);
-    (await res.data.phone) != undefined
-      ? (formSimulador2.phone = await res.data.phone.slice(3))
-      : (formSimulador2.phone = "");
 
+    if (res.data.success == true) {
+      (await res.data.name) != undefined
+        ? (formSimulador2.name = await res.data.name)
+        : (formSimulador2.name = "");
+      (await res.data.first_surname) != undefined
+        ? (formSimulador2.first_surname = await res.data.first_surname)
+        : (formSimulador2.first_surname = "");
+      (await res.data.second_surname) != undefined
+        ? (formSimulador2.second_surname = await res.data.second_surname)
+        : (formSimulador2.second_surname = "");
+      (await res.data.email) != undefined
+        ? (formSimulador2.email = await res.data.email)
+        : (formSimulador2.email = "");
+      (await res.data.income_type) != undefined
+        ? (formSimulador2.income_type = await res.data.income_type)
+        : (formSimulador2.income_type = "EMPLEOLABORAL");
+      (await res.data.income_salary) != undefined
+        ? (formSimulador2.salary = await res.data.income_salary)
+        : (formSimulador2.salary = "0");
+      (await res.data.nationality) != undefined
+        ? (formSimulador2.nationality = await res.data.nationality)
+        : (formSimulador2.nationality = "Nacionalidad");
+      (await res.data.work_continuity) != undefined
+        ? (formSimulador2.work_continuity = await res.data.work_continuity)
+        : (formSimulador2.work_continuity = 24);
+      (await res.data.phone) != undefined
+        ? (formSimulador2.phone = await res.data.phone.slice(3))
+        : (formSimulador2.phone = "");
+    } else {
+      newUser.value = true;
+      formSimulador2.work_continuity = 24;
+      formSimulador2.income_type = "EMPLEOLABORAL";
+    }
     // (await res.data.birth_date) != undefined
     //   ? (formSimulador2.birth_date = await res.data.birth_date
     //       .split("/")
@@ -436,9 +458,38 @@ const handleTransition = async (cuota) => {
   formActive2.value = true;
 };
 
+const volverAnterior = () => {
+  formActive2.value = false;
+  formActive.value = true;
+};
+
 const handleForm2 = async () => {
   loading.value = true;
   formSimulador2.phone = "+56" + formSimulador2.phone;
+  if (newUser.value == true) {
+    registerForm.dni = formSimulador.dni;
+    registerForm.name = formSimulador2.name;
+    registerForm.surnames =
+      formSimulador2.first_surname + " " + formSimulador2.second_surname;
+    registerForm.email = formSimulador2.email;
+    registerForm.phone_1 = formSimulador2.phone;
+    try {
+      const res_register = await axios.post(REGISTER_URL_TWO, registerForm);
+
+      const res = await axios.post(EVALUACION_URL_2, formSimulador2);
+      console.log(res);
+      if (res.data.success) loading.value = false;
+      isSuccess.value = true;
+
+      if (await res_register.data.success) {
+        window.open(LOGIN_URL_TOKEN(res_register.data.token_id), "_self");
+      }
+      console.log("funciono");
+    } catch (error) {
+      console.log(error);
+    }
+    return;
+  }
   try {
     const res = await axios.post(EVALUACION_URL_2, formSimulador2);
     console.log(res);

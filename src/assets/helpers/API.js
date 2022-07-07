@@ -59,6 +59,7 @@ const BASE_URL_API = import.meta.env.VITE_BASE_URL_API
 export const LOGIN_URL_TOKEN = (token) => BASE_URL + "/ingresar/" + token
 export const LOGIN_URL = BASE_URL_API + "auth/login"
 export const REGISTER_URL = BASE_URL_API + "auth/register"
+export const REGISTER_URL_TWO = BASE_URL_API + "auth/register2"
 export const CONTACT_URL = BASE_URL_API + "utilities/contacts/form"
 export const MARCAS_URL = BASE_URL_API + "utilities/vehicles/brands"
 export const CONDICIONES_URL = BASE_URL_API + "utilities/vehicles/conditions"
