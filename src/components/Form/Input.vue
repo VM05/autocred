@@ -114,7 +114,7 @@ const props = defineProps({
   password: Boolean,
   date: Boolean,
   money: Boolean,
-  valor: String,
+  valor: Number,
 });
 
 const valorRenta = ref(props.valor);

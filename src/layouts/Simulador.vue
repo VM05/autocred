@@ -237,9 +237,7 @@
                       id="Renta Liquida"
                       placeholder="Renta Liquida"
                       @update:text="(e) => (formSimulador2.salary = e)"
-                      :valor="
-                        formSimulador2.salary ? formSimulador2.salary : ''
-                      "
+                      :valor="formSimulador2.salary ? formSimulador2.salary : 0"
                     />
                   </div>
                   <div class="md:flex">
@@ -394,7 +392,6 @@ const handleForm = async () => {
 const handleTransition = async (cuota) => {
   try {
     const res = await axios.get(CARGA_DATA + formSimulador.dni);
-    console.log(res);
     (await res.data.name) != undefined
       ? (formSimulador2.name = await res.data.name)
       : (formSimulador2.name = "");
@@ -412,10 +409,10 @@ const handleTransition = async (cuota) => {
       : (formSimulador2.income_type = "EMPLEOLABORAL");
     (await res.data.income_salary) != undefined
       ? (formSimulador2.salary = await res.data.income_salary)
-      : (formSimulador2.salary = "");
+      : (formSimulador2.salary = "0");
     (await res.data.nationality) != undefined
       ? (formSimulador2.nationality = await res.data.nationality)
-      : (formSimulador2.salary = "Nacionalidad");
+      : (formSimulador2.nationality = "Nacionalidad");
     (await res.data.work_continuity) != undefined
       ? (formSimulador2.work_continuity = await res.data.work_continuity)
       : (formSimulador2.work_continuity = 24);

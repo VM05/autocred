@@ -122,7 +122,6 @@ let filteredBrands = computed(() =>
 watch(
   () => props.valor,
   () => {
-    console.log("deep watch");
     if (props.valor > 0) {
       switch (props.valor) {
         case 24:
