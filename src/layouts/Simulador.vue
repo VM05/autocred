@@ -145,8 +145,9 @@
                   >Estamos evaluando tu solicitud
                 </Paragraph>
                 <Paragraph class="mb-8"
-                  >Te invitamos a iniciar sesión o recuperar tu contraseña para
-                  conocer el resultado.
+                  >{{ formSimulador2.name }}, te invitamos a iniciar sesión o
+                  recuperar tu contraseña para conocer tu resultado y continuar
+                  con el proceso
                 </Paragraph>
                 <div class="flex flex-col gap-2 justify-center">
                   <router-link to="/login">
@@ -159,7 +160,7 @@
                   <!-- <router-link to="/registro"> -->
                   <a
                     :href="PASSWORD_RESET"
-                    class="text-primary-900 underline font-semibold text-base"
+                    class="text-primary-900 underline font-semibold text-base mt-5"
                   >
                     Recuperar mi contraseña
                   </a>
@@ -428,7 +429,6 @@ const handleForm = async () => {
 
 //PASO INTERMEDIO
 const handleTransition = async (cuota) => {
-  console.log("prueba volver");
   try {
     const res = await axios.get(CARGA_DATA + formSimulador.dni);
 
@@ -520,9 +520,8 @@ const handleForm2 = async () => {
     return;
   }
   try {
-    console.log(formSimulador2);
     const res = await axios.post(EVALUACION_URL_2, formSimulador2);
-    console.log(res);
+
     if (res.data.success) loading.value = false;
     isSuccess.value = true;
   } catch (error) {
@@ -592,7 +591,6 @@ watch(formSimulador2, () => {
     errorForm2.value = false;
 
     if (formSimulador2.birth_date.includes("-")) {
-      console.log(formSimulador2.birth_date);
       formSimulador2.birth_date
         .split("-")
         .reduceRight((prev, current) => (formated = prev + "/" + current));

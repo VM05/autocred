@@ -88,7 +88,6 @@ const props = defineProps({
 });
 
 let selected = ref("");
-console.log(selected.value);
 let query = ref("");
 let filteredBrands = computed(() =>
   query.value === ""
