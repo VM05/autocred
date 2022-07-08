@@ -242,7 +242,7 @@
                       id="Renta Líquida"
                       placeholder="Renta Líquida"
                       @update:text="(e) => (formSimulador2.salary = e)"
-                      :valor="formSimulador2.salary ? formSimulador2.salary : 0"
+                      :valor="formSimulador2.salary"
                     />
                   </div>
                   <div class="md:flex">
@@ -328,7 +328,6 @@ import SelectEmpleo from "../components/SelectEmpleo.vue";
 import SelectAntiguedad from "../components/SelectAntiguedad.vue";
 import Button from "../components/Button.vue";
 import { useRouter } from "vue-router";
-import { empleoType, antiguedad } from "../assets/helpers/API";
 import { formEmpty } from "../assets/helpers/validate";
 import { useSimuladorStore } from "../stores/simulador";
 import { useContactoStore } from "../stores/contacto";
@@ -439,7 +438,7 @@ const handleTransition = async (cuota) => {
         : (formSimulador2.income_type = "EMPLEOACTUAL");
       (await res.data.income_salary) != undefined
         ? (formSimulador2.salary = await res.data.income_salary)
-        : (formSimulador2.salary = "0");
+        : (formSimulador2.salary = "380000");
       (await res.data.nationality) != undefined
         ? (formSimulador2.nationality = await res.data.nationality)
         : (formSimulador2.nationality = "Nacionalidad");
@@ -455,6 +454,7 @@ const handleTransition = async (cuota) => {
       newUser.value = true;
       formSimulador2.work_continuity = 24;
       formSimulador2.income_type = "EMPLEOACTUAL";
+      formSimulador2.salary = "380000";
     }
     // (await res.data.birth_date) != undefined
     //   ? (formSimulador2.birth_date = await res.data.birth_date
