@@ -122,7 +122,9 @@ import {
 import Paragraph from "./Paragraph.vue";
 import { useRoute } from "vue-router";
 import { isObjEmpty } from "../assets/helpers/validate";
+import { useContactoStore } from "../stores/contacto";
 
+const useUtms = useContactoStore();
 const route = useRoute();
 const data = ref(route.params);
 const errorForm = ref(false);
@@ -134,6 +136,9 @@ const registerForm = reactive({
   phone_1: "",
   password: "",
   password_confirmation: "",
+  source: useUtms.utm_source || "",
+  medium: useUtms.utm_medium || "",
+  campaign: useUtms.utm_campaign || "",
 });
 
 const fillFormFromParams = () => {

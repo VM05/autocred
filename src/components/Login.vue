@@ -92,7 +92,6 @@ const handleLogin = async () => {
   try {
     const response = await axios.post(LOGIN_URL, loginForm);
     if (await response.data.success) {
-      loading.value = false;
       errorForm.value = false;
       window.open(LOGIN_URL_TOKEN(response.data.token_id), "_self");
     } else {

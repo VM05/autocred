@@ -107,7 +107,8 @@
               </div>
               <div class="grid place-content-center" v-if="loading">
                 <Paragraph class="text-center mb-8">
-                  Estamos evaluando su crédito, espere un momento
+                  Estamos evaluando las distintas opciones de valores y número
+                  de cuotas
                 </Paragraph>
                 <Loading />
               </div>
@@ -237,9 +238,9 @@
                   <div class="flex">
                     <Input
                       money
-                      label="Renta Liquida"
-                      id="Renta Liquida"
-                      placeholder="Renta Liquida"
+                      label="Renta Líquida"
+                      id="Renta Líquida"
+                      placeholder="Renta Líquida"
                       @update:text="(e) => (formSimulador2.salary = e)"
                       :valor="formSimulador2.salary ? formSimulador2.salary : 0"
                     />
@@ -282,7 +283,7 @@
                   </div>
                 </div>
               </div>
-              <div class="footer grid justify-center py-4">
+              <div class="footer flex gap-x-10 justify-center py-4">
                 <Button1
                   text="Ver Resultados"
                   secondary
@@ -330,8 +331,10 @@ import { useRouter } from "vue-router";
 import { empleoType, antiguedad } from "../assets/helpers/API";
 import { formEmpty } from "../assets/helpers/validate";
 import { useSimuladorStore } from "../stores/simulador";
-const useSimulador = useSimuladorStore();
+import { useContactoStore } from "../stores/contacto";
 
+const useSimulador = useSimuladorStore();
+const useUtms = useContactoStore();
 const router = useRouter();
 const errorForm = ref(false);
 const errorForm2 = ref(false);
@@ -347,6 +350,9 @@ const formSimulador = reactive({
   vehicle_version: "",
   vehicle_year: "2022",
   type: typeCredit[0].value,
+  source: useUtms.utm_source || "Autocred",
+  medium: useUtms.utm_medium || "Autocred",
+  campaign: useUtms.utm_campaign || "Autocred",
 });
 const formSimulador2 = reactive({
   dni: "",
@@ -370,6 +376,9 @@ const formSimulador2 = reactive({
   nationality: "",
   income_type: "",
   simulation_id: "",
+  source: useUtms.utm_source || "Autocred",
+  medium: useUtms.utm_medium || "Autocred",
+  campaign: useUtms.utm_campaign || "Autocred",
 });
 
 const registerForm = reactive({
@@ -378,6 +387,9 @@ const registerForm = reactive({
   surnames: "",
   email: "",
   phone_1: "",
+  source: useUtms.utm_source || "Autocred",
+  medium: useUtms.utm_medium || "Autocred",
+  campaign: useUtms.utm_campaign || "Autocred",
 });
 
 const dataCuotas = ref([]);
@@ -424,7 +436,7 @@ const handleTransition = async (cuota) => {
         : (formSimulador2.email = "");
       (await res.data.income_type) != undefined
         ? (formSimulador2.income_type = await res.data.income_type)
-        : (formSimulador2.income_type = "EMPLEOLABORAL");
+        : (formSimulador2.income_type = "EMPLEOACTUAL");
       (await res.data.income_salary) != undefined
         ? (formSimulador2.salary = await res.data.income_salary)
         : (formSimulador2.salary = "0");
@@ -437,10 +449,12 @@ const handleTransition = async (cuota) => {
       (await res.data.phone) != undefined
         ? (formSimulador2.phone = await res.data.phone.slice(3))
         : (formSimulador2.phone = "");
+
+      console.log(formSimulador2.income_type);
     } else {
       newUser.value = true;
       formSimulador2.work_continuity = 24;
-      formSimulador2.income_type = "EMPLEOLABORAL";
+      formSimulador2.income_type = "EMPLEOACTUAL";
     }
     // (await res.data.birth_date) != undefined
     //   ? (formSimulador2.birth_date = await res.data.birth_date
@@ -478,19 +492,19 @@ const handleForm2 = async () => {
 
       const res = await axios.post(EVALUACION_URL_2, formSimulador2);
       console.log(res);
-      if (res.data.success) loading.value = false;
+
       isSuccess.value = true;
 
       if (await res_register.data.success) {
         window.open(LOGIN_URL_TOKEN(res_register.data.token_id), "_self");
       }
-      console.log("funciono");
     } catch (error) {
       console.log(error);
     }
     return;
   }
   try {
+    console.log(formSimulador2);
     const res = await axios.post(EVALUACION_URL_2, formSimulador2);
     console.log(res);
     if (res.data.success) loading.value = false;
