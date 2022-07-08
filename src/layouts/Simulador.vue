@@ -248,6 +248,12 @@
                       :valor="formSimulador2.salary"
                       class="pt-6 pb-0"
                     />
+                    <Paragraph
+                      class="text-red-700 justify-self-center grid-flow-row text-center"
+                      v-if="warningSalary"
+                    >
+                      Renta liquida debe ser igual o mayor a $450.000
+                    </Paragraph>
                   </div>
                   <div class="md:flex">
                     <SelectNacionalidad
@@ -454,8 +460,12 @@ const handleTransition = async (cuota) => {
       (await res.data.phone) != undefined
         ? (formSimulador2.phone = await res.data.phone.slice(3))
         : (formSimulador2.phone = "");
-
-      console.log(formSimulador2.income_type);
+      (await res.data.birth_date) != undefined
+        ? (formSimulador2.birth_date = document.querySelector(
+            'input[type="date"]'
+          ).value =
+            await res.data.birth_date.split("/").reverse().join("-"))
+        : "";
     } else {
       newUser.value = true;
       formSimulador2.work_continuity = 24;
@@ -569,6 +579,12 @@ watch(formSimulador2, () => {
       warningPhone.value = false;
     }
   }
+
+  // if (formSimulador2.salary <= 449999) {
+  //   warningSalary.value = true;
+  // } else {
+  //   warningSalary.value = false;
+  // }
 
   if (formEmpty(formSimulador2)) {
     errorForm2.value = true;
