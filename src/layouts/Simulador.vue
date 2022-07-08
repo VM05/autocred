@@ -18,7 +18,10 @@
         <Transition>
           <form @submit.prevent="handleForm" v-show="formActive">
             <div class="title border-b pb-4 border-primary-900">
-              <Heading1 content="Etapa 1: Evalúa tú crédito" headingType="h3" />
+              <Heading1
+                content="Etapa 1: Consulta plazo y valor cuota"
+                headingType="h3"
+              />
             </div>
             <div
               class="content py-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 border-b"
@@ -106,10 +109,6 @@
                 <img src="../assets/img/simulador.svg" alt="" class="w-full" />
               </div>
               <div class="grid place-content-center" v-if="loading">
-                <Paragraph class="text-center mb-8">
-                  Estamos evaluando las distintas opciones de valores y número
-                  de cuotas
-                </Paragraph>
                 <Loading />
               </div>
               <div
@@ -124,7 +123,11 @@
               </div>
             </div>
             <div class="footer grid justify-center py-4">
-              <Button1 text="Evaluar crédito" secondary :disabled="errorForm" />
+              <Button1
+                text="Consulta tu cuota"
+                secondary
+                :disabled="errorForm"
+              />
             </div>
           </form>
         </Transition>
@@ -176,7 +179,7 @@
             <form @submit.prevent="handleForm2" v-else>
               <div class="title border-b pb-4 border-primary-900">
                 <Heading1
-                  content="Etapa 2: Ingresa tus datos personales requeridos"
+                  content="Etapa 2: Ingresa tus datos personales para evaluar"
                   headingType="h3"
                 />
               </div>
@@ -235,7 +238,7 @@
                   </div>
                 </div>
                 <div class="col-span-1 md:px-5 md:border-x">
-                  <div class="flex">
+                  <div class="flex flex-col">
                     <Input
                       money
                       label="Renta Líquida"
@@ -243,7 +246,14 @@
                       placeholder="Renta Líquida"
                       @update:text="(e) => (formSimulador2.salary = e)"
                       :valor="formSimulador2.salary"
+                      class="pt-6 pb-0"
                     />
+                    <Paragraph
+                      class="text-red-700 justify-self-center grid-flow-row text-center"
+                      v-if="warningSalary"
+                    >
+                      Renta liquida debe ser igual o mayor a $450.000
+                    </Paragraph>
                   </div>
                   <div class="md:flex">
                     <SelectNacionalidad
@@ -309,7 +319,7 @@ import Acordion1 from "../components/Acordion.vue";
 import SelectAnios1 from "../components/SelectAnios.vue";
 import SelectTypeCredito1 from "../components/SelectTypeCredito.vue";
 import SelectModelo1 from "../components/SelectModelo.vue";
-import { reactive, ref, watch } from "vue";
+import { reactive, ref, watch, onMounted, onUpdated } from "vue";
 import { typeCredit } from "../assets/helpers/API";
 import axios from "axios";
 import {
@@ -335,8 +345,8 @@ import { useContactoStore } from "../stores/contacto";
 const useSimulador = useSimuladorStore();
 const useUtms = useContactoStore();
 const router = useRouter();
-const errorForm = ref(false);
-const errorForm2 = ref(false);
+const errorForm = ref(true);
+const errorForm2 = ref(true);
 
 const disabledModel = ref(true);
 const formSimulador = reactive({
@@ -398,6 +408,7 @@ const isSuccess = ref(false);
 const isError = ref(false);
 const warningPhone = ref(false);
 const complete = ref(false);
+const warningSalary = ref(false);
 const formActive = ref(true);
 const formActive2 = ref(false);
 const warningDownPayment = ref(false);
@@ -417,6 +428,7 @@ const handleForm = async () => {
 
 //PASO INTERMEDIO
 const handleTransition = async (cuota) => {
+  console.log("prueba volver");
   try {
     const res = await axios.get(CARGA_DATA + formSimulador.dni);
 
@@ -556,7 +568,27 @@ watch(formSimulador, () => {
 watch(formSimulador2, () => {
   let formated = "";
 
-  if (formEmpty(formSimulador2)) {
+  if (formSimulador2.phone.length > 0) {
+    if (formSimulador2.phone.length != 9) {
+      warningPhone.value = true;
+    } else {
+      warningPhone.value = false;
+    }
+  }
+
+  if (formSimulador2.salary <= 449999) {
+    warningSalary.value = true;
+  } else {
+    warningSalary.value = false;
+  }
+
+  console.log(formEmpty(formSimulador2));
+
+  if (
+    !formEmpty(formSimulador2) &&
+    warningSalary.value == true &&
+    warningPhone == true
+  ) {
     errorForm2.value = true;
   } else {
     errorForm2.value = false;
@@ -567,13 +599,6 @@ watch(formSimulador2, () => {
         .split("-")
         .reduceRight((prev, current) => (formated = prev + "/" + current));
       formSimulador2.birth_date = formated;
-    }
-    if (formSimulador2.phone.length > 0) {
-      if (formSimulador2.phone.length != 9) {
-        warningPhone.value = true;
-      } else {
-        warningPhone.value = false;
-      }
     }
   }
 });
