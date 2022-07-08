@@ -248,12 +248,6 @@
                       :valor="formSimulador2.salary"
                       class="pt-6 pb-0"
                     />
-                    <Paragraph
-                      class="text-red-700 justify-self-center grid-flow-row text-center"
-                      v-if="warningSalary"
-                    >
-                      Renta liquida debe ser igual o mayor a $450.000
-                    </Paragraph>
                   </div>
                   <div class="md:flex">
                     <SelectNacionalidad
@@ -576,19 +570,7 @@ watch(formSimulador2, () => {
     }
   }
 
-  if (formSimulador2.salary <= 449999) {
-    warningSalary.value = true;
-  } else {
-    warningSalary.value = false;
-  }
-
-  console.log(formEmpty(formSimulador2));
-
-  if (
-    !formEmpty(formSimulador2) &&
-    warningSalary.value == true &&
-    warningPhone == true
-  ) {
+  if (formEmpty(formSimulador2)) {
     errorForm2.value = true;
   } else {
     errorForm2.value = false;
