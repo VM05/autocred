@@ -359,7 +359,7 @@ const formSimulador2 = reactive({
   vehicle_price: "",
   down_payment: "",
   requested_amount: "",
-  salary: 0, //Number
+  salary: "", //Number
   term: 0, // Number
   work_continuity: "",
   birth_date: "",
@@ -438,7 +438,7 @@ const handleTransition = async (cuota) => {
         : (formSimulador2.income_type = "EMPLEOACTUAL");
       (await res.data.income_salary) != undefined
         ? (formSimulador2.salary = await res.data.income_salary)
-        : (formSimulador2.salary = "380000");
+        : (formSimulador2.salary = "");
       (await res.data.nationality) != undefined
         ? (formSimulador2.nationality = await res.data.nationality)
         : (formSimulador2.nationality = "Nacionalidad");
@@ -454,7 +454,7 @@ const handleTransition = async (cuota) => {
       newUser.value = true;
       formSimulador2.work_continuity = 24;
       formSimulador2.income_type = "EMPLEOACTUAL";
-      formSimulador2.salary = "380000";
+      formSimulador2.salary = "";
     }
     // (await res.data.birth_date) != undefined
     //   ? (formSimulador2.birth_date = await res.data.birth_date
