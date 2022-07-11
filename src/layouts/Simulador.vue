@@ -33,6 +33,7 @@
                   placeholder="RUT"
                   class="w-full"
                   @update:rut="(e) => (formSimulador.dni = e)"
+                  @keypress="onlyNumber"
                 />
                 <div class="md:flex">
                   <SelectMarcas1
@@ -82,16 +83,18 @@
                 class="col-span-1 md:px-5 md:border-x grid gap-6 mb-8 md:mb-0"
               >
                 <div class="price">
-                  <Heading1 content="Valor del vehiculo" headingType="h4" />
+                  <Heading1 content="Valor del vehículo" headingType="h4" />
                   <SliderRange1
                     @update:slider="(e) => (formSimulador.vehicle_price = e)"
                     valorTotal
+                    @keypress="onlyNumber"
                   />
                 </div>
                 <div class="pie">
                   <Heading1 content="Valor del pie" headingType="h4" />
                   <SliderRange1
                     @update:slider="(e) => (formSimulador.down_payment = e)"
+                    @keypress="onlyNumber"
                   />
                   <Paragraph
                     class="text-red-700 justify-self-center text-center grid-flow-row col-end-3 mt-2"
@@ -195,6 +198,7 @@
                       placeholder="Nombre"
                       :value="formSimulador2.name"
                       @update:text="(e) => (formSimulador2.name = e)"
+                      @textvalue="(e) => checkInput(e)"
                     />
                     <Paragraph
                       class="absolute w-full bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
@@ -212,6 +216,7 @@
                         placeholder="Apellido Paterno"
                         :value="formSimulador2.first_surname"
                         @update:text="(e) => (formSimulador2.first_surname = e)"
+                        @textvalue="(e) => checkSurname(e)"
                       />
                       <Paragraph
                         class="absolute w-full bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
@@ -251,6 +256,7 @@
                         :value="
                           formSimulador2.phone ? formSimulador2.phone : ''
                         "
+                        @keypress="onlyNumber"
                       />
                       <Paragraph
                         class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
@@ -271,6 +277,7 @@
                       @update:text="(e) => (formSimulador2.salary = e)"
                       :valor="formSimulador2.salary"
                       class="pt-6 pb-0"
+                      @keypress="onlyNumber"
                     />
                     <Paragraph
                       class="text-red-700 justify-self-center grid-flow-row text-center"
@@ -279,21 +286,34 @@
                       Renta liquida debe ser igual o mayor a $450.000
                     </Paragraph>
                   </div>
+                  <div></div>
                   <div class="md:flex">
-                    <SelectNacionalidad
-                      label="Nacionalidad"
-                      id="Nacionalidad"
-                      @update:nacionalidad="
-                        (e) => (formSimulador2.nationality = e)
-                      "
-                      :valor="formSimulador2.nationality"
-                    />
-                    <Input
-                      label="Fecha Nacimiento"
-                      id="Fecha Nacimiento"
-                      date
-                      @update:text="(e) => (formSimulador2.birth_date = e)"
-                    />
+                    <div class="w-full md:w-1/2">
+                      <SelectNacionalidad
+                        label="Nacionalidad"
+                        id="Nacionalidad"
+                        @update:nacionalidad="
+                          (e) => (formSimulador2.nationality = e)
+                        "
+                        :valor="formSimulador2.nationality"
+                      />
+                    </div>
+                    <div class="relative w-full md:w-1/2">
+                      <Input
+                        label="Fecha Nacimiento"
+                        id="Fecha Nacimiento"
+                        date
+                        @update:text="(e) => (formSimulador2.birth_date = e)"
+                        @textvalue="checkFecha(e)"
+                      />
+
+                      <Paragraph
+                        class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                        v-if="warningFecha"
+                      >
+                        Debe ingresar una fecha valida
+                      </Paragraph>
+                    </div>
                   </div>
                   <div class="md:flex">
                     <SelectEmpleo
@@ -348,7 +368,7 @@ import Acordion1 from "../components/Acordion.vue";
 import SelectAnios1 from "../components/SelectAnios.vue";
 import SelectTypeCredito1 from "../components/SelectTypeCredito.vue";
 import SelectModelo1 from "../components/SelectModelo.vue";
-import { reactive, ref, watch, onMounted, onUpdated } from "vue";
+import { reactive, ref, watch, onMounted, onUpdated, computed } from "vue";
 import { typeCredit } from "../assets/helpers/API";
 import axios from "axios";
 import {
@@ -370,6 +390,7 @@ import { useRouter } from "vue-router";
 import { formEmpty, validateEmail } from "../assets/helpers/validate";
 import { useSimuladorStore } from "../stores/simulador";
 import { useContactoStore } from "../stores/contacto";
+import { findProp } from "@vue/compiler-core";
 
 const useSimulador = useSimuladorStore();
 const useUtms = useContactoStore();
@@ -435,11 +456,12 @@ const loading = ref(false);
 const alerts = ref(false);
 const isSuccess = ref(false);
 const isError = ref(false);
-const warningPhone = ref(true);
-const warningSalary = ref(true);
-const warningName = ref(true);
-const warningSurname = ref(true);
-const warningMail = ref(true);
+const warningPhone = ref(false);
+const warningSalary = ref(false);
+const warningName = ref(false);
+const warningSurname = ref(false);
+const warningFecha = ref(false);
+const warningMail = ref(false);
 const complete = ref(false);
 const formActive = ref(true);
 const formActive2 = ref(false);
@@ -502,9 +524,22 @@ const handleTransition = async (cuota) => {
       formSimulador2.work_continuity = 24;
       formSimulador2.income_type = "EMPLEOACTUAL";
       formSimulador2.salary = "";
+      formSimulador2.name = "";
+      formSimulador2.first_surname = "";
+      formSimulador2.second_surname = "";
+      formSimulador2.email = "";
+      formSimulador2.phone = "";
     }
   } catch (error) {
     console.log(error);
+  }
+
+  if (formSimulador2.salary) {
+    if (formSimulador2.salary <= 449999) {
+      warningSalary.value = true;
+    } else {
+      warningSalary.value = false;
+    }
   }
   formSimulador2.term = cuota[0];
   formSimulador2.simulation_id = cuota[1];
@@ -596,6 +631,43 @@ watch(formSimulador, () => {
   formSimulador2.vehicle_version = formSimulador.vehicle_version;
 });
 
+const checkInput = (e) => {
+  if (e.length >= 0) {
+    if (formSimulador2.name == "") {
+      warningName.value = true;
+    } else {
+      warningName.value = false;
+    }
+  }
+};
+
+const checkSurname = (e) => {
+  if (e.length >= 0) {
+    if (formSimulador2.first_surname == "") {
+      warningSurname.value = true;
+    } else {
+      warningSurname.value = false;
+    }
+  }
+};
+
+const checkFecha = (e) => {
+  if (formSimulador2.birth_date.length >= 0) {
+    if (formSimulador2.birth_date == "") {
+      warningFecha.value = true;
+    } else {
+      warningFecha.value = false;
+    }
+  }
+};
+
+const onlyNumber = ($event) => {
+  let keyCode = $event.keyCode ? $event.keyCode : $event.which;
+  if ((keyCode < 48 || keyCode > 57) && keyCode !== 46) {
+    $event.preventDefault();
+  }
+};
+
 // Watch Format Date
 watch(formSimulador2, () => {
   let formated = "";
@@ -607,23 +679,12 @@ watch(formSimulador2, () => {
       warningPhone.value = false;
     }
   }
-
-  if (formSimulador2.salary <= 449999) {
-    warningSalary.value = true;
-  } else {
-    warningSalary.value = false;
-  }
-
-  if (formSimulador2.name == "") {
-    warningName.value = true;
-  } else {
-    warningName.value = false;
-  }
-
-  if (formSimulador2.first_surname == "") {
-    warningSurname.value = true;
-  } else {
-    warningSurname.value = false;
+  if (formSimulador2.salary.length > 0) {
+    if (formSimulador2.salary <= 449999) {
+      warningSalary.value = true;
+    } else {
+      warningSalary.value = false;
+    }
   }
 
   if (!validateEmail(formSimulador2.email)) {

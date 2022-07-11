@@ -55,6 +55,8 @@
       v-else-if="date"
       placeholder="dd/mm/yyyy"
       type="date"
+      pattern="[1-9][0-9]{2}"
+      max="2022-12-31"
       :placeholder="placeholder"
       class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full"
       @mouseover="hover = true"
@@ -118,9 +120,10 @@ const props = defineProps({
 });
 
 const valorRenta = ref(props.valor);
-const emit = defineEmits(["update:text"]);
+const emit = defineEmits(["update:text", "textvalue"]);
 const handler = (e) => {
   emit("update:text", e.target.value);
+  emit("textvalue", e.target.value);
 };
 
 const handlerMoney = (e) => {
