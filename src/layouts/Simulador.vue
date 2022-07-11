@@ -188,7 +188,7 @@
                 class="content py-6 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 border-b"
               >
                 <div class="col-span-1">
-                  <div class="flex">
+                  <div class="flex flex-col relative">
                     <Input
                       label="Nombre"
                       id="Nombre"
@@ -196,25 +196,44 @@
                       :value="formSimulador2.name"
                       @update:text="(e) => (formSimulador2.name = e)"
                     />
+                    <Paragraph
+                      class="absolute w-full bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                      v-if="warningName"
+                    >
+                      Debe ingresar su nombre
+                    </Paragraph>
                   </div>
 
                   <div class="md:flex">
-                    <Input
-                      label="Apellido Paterno"
-                      id="Apellido Paterno"
-                      placeholder="Apellido Paterno"
-                      :value="formSimulador2.first_surname"
-                      @update:text="(e) => (formSimulador2.first_surname = e)"
-                    />
-                    <Input
-                      label="Apellido Materno"
-                      id="Apellido Materno"
-                      placeholder="Apellido Materno"
-                      :value="formSimulador2.second_surname"
-                      @update:text="(e) => (formSimulador2.second_surname = e)"
-                    />
+                    <div class="relative">
+                      <Input
+                        label="Apellido Paterno"
+                        id="Apellido Paterno"
+                        placeholder="Apellido Paterno"
+                        :value="formSimulador2.first_surname"
+                        @update:text="(e) => (formSimulador2.first_surname = e)"
+                      />
+                      <Paragraph
+                        class="absolute w-full bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                        v-if="warningSurname"
+                      >
+                        Debe ingresar su apellido paterno
+                      </Paragraph>
+                    </div>
+
+                    <div>
+                      <Input
+                        label="Apellido Materno"
+                        id="Apellido Materno"
+                        placeholder="Apellido Materno"
+                        :value="formSimulador2.second_surname"
+                        @update:text="
+                          (e) => (formSimulador2.second_surname = e)
+                        "
+                      />
+                    </div>
                   </div>
-                  <div class="grid grid-cols-2">
+                  <div class="grid grid-cols-1 md:grid-cols-2">
                     <InputEmail
                       label="Email"
                       id="Email"
@@ -222,20 +241,24 @@
                       @update:email="(e) => (formSimulador2.email = e)"
                       :value="formSimulador2.email ? formSimulador2.email : ''"
                     />
-                    <Input
-                      label="Teléfono"
-                      id="Telefono"
-                      isPhone
-                      placeholder="Teléfono"
-                      @update:text="(e) => (formSimulador2.phone = e)"
-                      :value="formSimulador2.phone ? formSimulador2.phone : ''"
-                    />
-                    <Paragraph
-                      class="text-red-700 justify-self-center text-center grid-flow-row col-end-3"
-                      v-if="warningPhone"
-                    >
-                      El teléfono debe contener al menos 9 digitos
-                    </Paragraph>
+                    <div class="relative">
+                      <Input
+                        label="Teléfono"
+                        id="Telefono"
+                        isPhone
+                        placeholder="Teléfono"
+                        @update:text="(e) => (formSimulador2.phone = e)"
+                        :value="
+                          formSimulador2.phone ? formSimulador2.phone : ''
+                        "
+                      />
+                      <Paragraph
+                        class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                        v-if="warningPhone"
+                      >
+                        El teléfono debe contener al menos 9 digitos
+                      </Paragraph>
+                    </div>
                   </div>
                 </div>
                 <div class="col-span-1 md:px-5 md:border-x">
@@ -296,6 +319,11 @@
               </div>
               <div class="footer flex gap-x-10 justify-center py-4">
                 <Button1
+                  text="Volver"
+                  outlinePrimary
+                  @click.prevent="volverAnterior"
+                />
+                <Button1
                   text="Ver Resultados"
                   secondary
                   :disabled="errorForm2"
@@ -339,7 +367,7 @@ import SelectEmpleo from "../components/SelectEmpleo.vue";
 import SelectAntiguedad from "../components/SelectAntiguedad.vue";
 import Button from "../components/Button.vue";
 import { useRouter } from "vue-router";
-import { formEmpty } from "../assets/helpers/validate";
+import { formEmpty, validateEmail } from "../assets/helpers/validate";
 import { useSimuladorStore } from "../stores/simulador";
 import { useContactoStore } from "../stores/contacto";
 
@@ -407,9 +435,12 @@ const loading = ref(false);
 const alerts = ref(false);
 const isSuccess = ref(false);
 const isError = ref(false);
-const warningPhone = ref(false);
+const warningPhone = ref(true);
+const warningSalary = ref(true);
+const warningName = ref(true);
+const warningSurname = ref(true);
+const warningMail = ref(true);
 const complete = ref(false);
-const warningSalary = ref(false);
 const formActive = ref(true);
 const formActive2 = ref(false);
 const warningDownPayment = ref(false);
@@ -472,12 +503,6 @@ const handleTransition = async (cuota) => {
       formSimulador2.income_type = "EMPLEOACTUAL";
       formSimulador2.salary = "";
     }
-    // (await res.data.birth_date) != undefined
-    //   ? (formSimulador2.birth_date = await res.data.birth_date
-    //       .split("/")
-    //       .reverse()
-    //       .join("-"))
-    //   : "";
   } catch (error) {
     console.log(error);
   }
@@ -489,6 +514,10 @@ const handleTransition = async (cuota) => {
 };
 
 const volverAnterior = () => {
+  formSimulador2.nationality = "";
+  formSimulador2.salary = "";
+  formSimulador2.income_type = "";
+  formSimulador2.work_continuity = "";
   formActive2.value = false;
   formActive.value = true;
 };
@@ -579,13 +608,38 @@ watch(formSimulador2, () => {
     }
   }
 
-  // if (formSimulador2.salary <= 449999) {
-  //   warningSalary.value = true;
-  // } else {
-  //   warningSalary.value = false;
-  // }
+  if (formSimulador2.salary <= 449999) {
+    warningSalary.value = true;
+  } else {
+    warningSalary.value = false;
+  }
 
-  if (formEmpty(formSimulador2)) {
+  if (formSimulador2.name == "") {
+    warningName.value = true;
+  } else {
+    warningName.value = false;
+  }
+
+  if (formSimulador2.first_surname == "") {
+    warningSurname.value = true;
+  } else {
+    warningSurname.value = false;
+  }
+
+  if (!validateEmail(formSimulador2.email)) {
+    warningMail.value = true;
+  } else {
+    warningMail.value = false;
+  }
+
+  if (
+    formEmpty(formSimulador2) ||
+    warningPhone.value == true ||
+    warningSalary.value == true ||
+    warningName.value == true ||
+    warningSurname.value == true ||
+    warningMail.value == true
+  ) {
     errorForm2.value = true;
   } else {
     errorForm2.value = false;
