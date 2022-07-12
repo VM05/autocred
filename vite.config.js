@@ -3,6 +3,8 @@ import vue from '@vitejs/plugin-vue'
 import ViteRadar from 'vite-plugin-radar'
 
 
+
+
 // https://vitejs.dev/config/
 
 // export default defineConfig({
@@ -22,11 +24,17 @@ import ViteRadar from 'vite-plugin-radar'
 // })
 
 export default defineConfig(({ command, mode }) => {
+
+
   if (mode === 'development') {
     return {
       plugins: [
         vue(),
-      ]
+      ],
+      build: {
+        chunkSizeWarningLimit: 1600,
+      },
+
     }
   } else {
     return {
@@ -61,5 +69,9 @@ export default defineConfig(({ command, mode }) => {
         })
       ]
     }
+
   }
+
+
 })
+

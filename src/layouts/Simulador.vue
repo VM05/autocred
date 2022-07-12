@@ -226,7 +226,7 @@
                       </Paragraph>
                     </div>
 
-                    <div>
+                    <div class="relative">
                       <Input
                         label="Apellido Materno"
                         id="Apellido Materno"
@@ -235,7 +235,15 @@
                         @update:text="
                           (e) => (formSimulador2.second_surname = e)
                         "
+                        @textvalue="(e) => checkSecondSurname(e)"
                       />
+
+                      <Paragraph
+                        class="absolute w-full bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                        v-if="warningSecondSurname"
+                      >
+                        Debe ingresar su apellido Materno
+                      </Paragraph>
                     </div>
                   </div>
                   <div class="grid grid-cols-1 md:grid-cols-2">
@@ -268,7 +276,7 @@
                   </div>
                 </div>
                 <div class="col-span-1 md:px-5 md:border-x">
-                  <div class="flex flex-col">
+                  <div class="flex flex-col relative">
                     <Input
                       money
                       label="Renta Líquida"
@@ -276,11 +284,10 @@
                       placeholder="Renta Líquida"
                       @update:text="(e) => (formSimulador2.salary = e)"
                       :valor="formSimulador2.salary"
-                      class="pt-6 pb-0"
                       @keypress="onlyNumber"
                     />
                     <Paragraph
-                      class="text-red-700 justify-self-center grid-flow-row text-center"
+                      class="absolute w-full -bottom-6 md:-bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
                       v-if="warningSalary"
                     >
                       Renta liquida debe ser igual o mayor a $450.000
@@ -460,6 +467,7 @@ const warningPhone = ref(false);
 const warningSalary = ref(false);
 const warningName = ref(false);
 const warningSurname = ref(false);
+const warningSecondSurname = ref(false);
 const warningFecha = ref(false);
 const warningMail = ref(false);
 const complete = ref(false);
@@ -647,6 +655,16 @@ const checkSurname = (e) => {
       warningSurname.value = true;
     } else {
       warningSurname.value = false;
+    }
+  }
+};
+
+const checkSecondSurname = (e) => {
+  if (e.length >= 0) {
+    if (formSimulador2.second_surname == "") {
+      warningSecondSurname.value = true;
+    } else {
+      warningSecondSurname.value = false;
     }
   }
 };
