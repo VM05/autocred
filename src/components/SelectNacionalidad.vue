@@ -86,16 +86,18 @@ const props = defineProps({
 });
 const emit = defineEmits(["update:nacionalidad"]);
 const data = ref();
+const nacionalidad = ref("");
 onMounted(async () => {
   try {
     const res = await axios.get(NACIONALIDAD_URL);
     data.value = await res.data;
+    nacionalidad.value = res.data.data[1];
   } catch (error) {
     console.log("error");
   }
 });
 
-let selected = ref("Nacionalidad");
+let selected = ref(nacionalidad);
 let query = ref("");
 
 const changeNacionalidad = (value) => {

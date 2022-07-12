@@ -316,6 +316,42 @@ export const posts = [
 
     {
         "id": 1,
+        "title": "Yapo.cl la nueva alianza de Autocred",
+        "body": ` <p class="mb-2">En Autocred queremos ser el mejor copiloto para la compra y venta de vehículos usados entre personas. Felipe Lira Socio Director de Autocred en entrevista con Claudia Castro, Gerenta Comercial de Yapo.cl explicó todo los beneficios de esta alianza enfocado siempre en apoyar a las personas en todo el proceso.</p>
+
+        <h2 class='bold text-2xl my-5'>Beneficios de la alianza con Autocred</h2>
+
+        <ul class='list-disc pl-6 pb-6'>
+        <li class="mb-3">Realizar todas las transacciones en un solo lugar</li>
+        
+        <li class="mb-3">Obtener los informes del vehículo</li>
+        
+        <li class="mb-3">Hacer la transferencia</li>
+        
+        <li class="mb-3">Adquirir el seguro automotriz</li>
+        
+        <li class="mb-3">Habilitación del tag</li>
+        
+        <li class="mb-3">Cuentan con una oficina móvil dentro de la Región Metropolitana, que te lleva al vendedor</li>
+        
+        </ul>
+    
+        <div class="relative mx-auto my-5" >
+        <iframe class="mx-auto  w-full aspect-video " src="https://www.youtube.com/embed/48MXJ4e2csw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        
+    <a href="https://blog.yapo.cl/2022/07/06/beneficios-de-la-alianza-de-yapo-con-autocred/?utm_source=emblue&utm_medium=email&utm_campaign=20220706-newsletter-adv-3002" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">Puedes leer todo el artículo aquí</a>
+   
+    
+    `,
+        "img": "/img/blog/Conversaciones-digitales-Autocred.png",
+        "date": "12-07-22",
+        "medio": "Entrevista"
+    },
+
+    {
+        "id": 2,
         "title": "Entrevista en Radio Biobío Felipe Lira, Socio Fundador de Autocred habla sobre el mercado automotriz de autos usados.",
         "body": ` <p class="mb-2">En programa Una semana en La Radio, de Radio Biobío, Felipe Lira, Socio Fundador de Autocred habla sobre el aumento de la demanda automotriz de vehículos usados y cómo Autocred llega para apoyar en la compra y venta de vehículos usados entre personas, acompañando y apoyando en todo el proceso a cada una de las partes con Financiamiento, Seguro, Tag, Transferencia y todo lo necesario para que la experiencia de este proceso sea un gran viaje.</p>
     
@@ -327,6 +363,7 @@ export const posts = [
         </audio>
     </div>
    
+
     
     `,
         "img": "/img/blog/biobio.jpg",
@@ -334,7 +371,7 @@ export const posts = [
         "medio": "Radio"
     },
     {
-        "id": 2,
+        "id": 3,
         "title": "Programa Emprender es Clave de Radio La Clave, Felipe Lira Socio Director habla sobre Autocred y la compra o venta de autos usados",
         "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
         para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se
@@ -352,7 +389,7 @@ export const posts = [
         "medio": "Radio"
     },
     {
-        "id": 3,
+        "id": 4,
         "title": "Forum debuta en mundo venture e invierte US$ 1 millón en Autocred | DFMAS",
         "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
         para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se

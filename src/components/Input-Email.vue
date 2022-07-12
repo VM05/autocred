@@ -23,10 +23,10 @@
       :id="props.id"
       @blur="handler"
     />
-    <span
+    <!-- <span
       class="absolute w-full -bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
       >{{ validated }}</span
-    >
+    > -->
   </div>
 </template>
 
@@ -45,9 +45,10 @@ const props = defineProps({
     default: "",
   },
 });
-const emit = defineEmits(["update:email"]);
+const emit = defineEmits(["update:email", "textvalue"]);
 const handler = (e) => {
   emit("update:email", e.target.value);
+  emit("textvalue", e.target.value);
 };
 const email = ref(props.value);
 const focus = ref(false);

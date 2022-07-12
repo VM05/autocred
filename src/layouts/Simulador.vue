@@ -247,13 +247,26 @@
                     </div>
                   </div>
                   <div class="grid grid-cols-1 md:grid-cols-2">
-                    <InputEmail
-                      label="Email"
-                      id="Email"
-                      placeholder="Email"
-                      @update:email="(e) => (formSimulador2.email = e)"
-                      :value="formSimulador2.email ? formSimulador2.email : ''"
-                    />
+                    <div class="relative">
+                      <InputEmail
+                        label="Email"
+                        id="Email"
+                        placeholder="Email"
+                        @update:email="(e) => (formSimulador2.email = e)"
+                        :value="
+                          formSimulador2.email ? formSimulador2.email : ''
+                        "
+                        @textvalue="(e) => checkEmail(e)"
+                      />
+
+                      <Paragraph
+                        class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                        v-if="warningEmail"
+                      >
+                        Por favor ingresa una direccion de correo valida
+                      </Paragraph>
+                    </div>
+
                     <div class="relative">
                       <Input
                         label="Teléfono"
@@ -265,6 +278,7 @@
                           formSimulador2.phone ? formSimulador2.phone : ''
                         "
                         @keypress="onlyNumber"
+                        @textvalue="(e) => checkTelefono(e)"
                       />
                       <Paragraph
                         class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
@@ -285,6 +299,7 @@
                       @update:text="(e) => (formSimulador2.salary = e)"
                       :valor="formSimulador2.salary"
                       @keypress="onlyNumber"
+                      @textvalue="(e) => checkRenta(e)"
                     />
                     <Paragraph
                       class="absolute w-full -bottom-6 md:-bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
@@ -315,7 +330,7 @@
                       />
 
                       <Paragraph
-                        class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                        class="absolute w-full -bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
                         v-if="warningFecha"
                       >
                         Debe ingresar una fecha valida
@@ -469,7 +484,9 @@ const warningName = ref(false);
 const warningSurname = ref(false);
 const warningSecondSurname = ref(false);
 const warningFecha = ref(false);
+const warningNacionalidad = ref(false);
 const warningMail = ref(false);
+const warningEmail = ref(false);
 const complete = ref(false);
 const formActive = ref(true);
 const formActive2 = ref(false);
@@ -514,7 +531,7 @@ const handleTransition = async (cuota) => {
         : (formSimulador2.salary = "");
       (await res.data.nationality) != undefined
         ? (formSimulador2.nationality = await res.data.nationality)
-        : (formSimulador2.nationality = "Nacionalidad");
+        : (formSimulador2.nationality = "CHILENA");
       (await res.data.work_continuity) != undefined
         ? (formSimulador2.work_continuity = await res.data.work_continuity)
         : (formSimulador2.work_continuity = 24);
@@ -639,6 +656,10 @@ watch(formSimulador, () => {
   formSimulador2.vehicle_version = formSimulador.vehicle_version;
 });
 
+const prueba = () => {
+  console.log("hola");
+};
+
 const checkInput = (e) => {
   if (e.length >= 0) {
     if (formSimulador2.name == "") {
@@ -655,6 +676,26 @@ const checkSurname = (e) => {
       warningSurname.value = true;
     } else {
       warningSurname.value = false;
+    }
+  }
+};
+
+const checkTelefono = (e) => {
+  if (e.length >= 0) {
+    if (formSimulador2.phone == "") {
+      warningPhone.value = true;
+    } else {
+      warningPhone.value = false;
+    }
+  }
+};
+
+const checkEmail = (e) => {
+  if (e.length >= 0) {
+    if (formSimulador2.email == "" || !validateEmail(e)) {
+      warningEmail.value = true;
+    } else {
+      warningEmail.value = false;
     }
   }
 };
@@ -679,6 +720,18 @@ const checkFecha = (e) => {
   }
 };
 
+const checkRenta = (e) => {
+  if (e.length >= 0) {
+    if (formSimulador2.salary.length >= 0) {
+      if (formSimulador2.salary <= 449999) {
+        warningSalary.value = true;
+      } else {
+        warningSalary.value = false;
+      }
+    }
+  }
+};
+
 const onlyNumber = ($event) => {
   let keyCode = $event.keyCode ? $event.keyCode : $event.which;
   if ((keyCode < 48 || keyCode > 57) && keyCode !== 46) {
@@ -697,6 +750,7 @@ watch(formSimulador2, () => {
       warningPhone.value = false;
     }
   }
+
   if (formSimulador2.salary.length > 0) {
     if (formSimulador2.salary <= 449999) {
       warningSalary.value = true;

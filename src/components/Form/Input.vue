@@ -127,6 +127,7 @@ const handler = (e) => {
 };
 
 const handlerMoney = (e) => {
+  emit("textvalue", e.target.value);
   if (e.target.value.includes("$")) {
     let desFormat = e.target.value.replaceAll("$", "").replaceAll(".", "");
     emit("update:text", desFormat);
