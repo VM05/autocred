@@ -14,6 +14,12 @@ import { posts } from "../assets/helpers/constants";
   grid-template-columns: 1.5fr 1fr 1fr;
 }
 
+:deep(.noticia-grid:nth-child(1) .imagen-noticia img) {
+  height: 235px;
+  zoom: 0.9;
+  object-position: 40% 10%;
+}
+
 :deep(.noticia-grid:nth-child(2) .imagen-noticia img) {
   height: 200px;
 }

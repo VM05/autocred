@@ -345,7 +345,7 @@ export const posts = [
    
     
     `,
-        "img": "/img/blog/Conversaciones-digitales-Autocred.png",
+        "img": "/img/blog/Conversaciones-digitales-Autocred.jpg",
         "date": "12-07-22",
         "medio": "Entrevista"
     },
