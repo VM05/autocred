@@ -242,7 +242,7 @@
                         class="absolute w-full bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
                         v-if="warningSecondSurname"
                       >
-                        Debe ingresar su apellido Materno
+                        Debe ingresar su apellido materno
                       </Paragraph>
                     </div>
                   </div>
