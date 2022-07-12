@@ -38,6 +38,9 @@ export default defineConfig(({ command, mode }) => {
     }
   } else {
     return {
+      build: {
+        chunkSizeWarningLimit: 1600,
+      },
       plugins: [
         vue(),
         ViteRadar({
