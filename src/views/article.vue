@@ -1,20 +1,16 @@
 <template>
   <Container>
     <div class="mb-16">
-      <img
-        :src="$route.params.image"
-        alt=""
-        class="w-full mb-4 h-64 object-contain"
-      />
+      <img :src="imagen" alt="" class="w-full mb-4 h-64 object-contain" />
       <Paragraph class="font-medium text-base text-primary-700 mb-4">
-        {{ $route.params.medio + " " + $route.params.date }}
+        {{ media + " " + fecha }}
       </Paragraph>
 
-      <Heading v-html="$route.params.title" class="mb-4" />
+      <Heading v-html="titulo" class="mb-4" />
 
       <Paragraph
         class="font-medium text-base text-primary-700"
-        v-html="$route.params.content"
+        v-html="content"
       >
       </Paragraph>
     </div>
@@ -27,6 +23,38 @@ import Container from "../layouts/Container.vue";
 import Paragraph from "../components/Paragraph.vue";
 import Heading from "../components/Heading.vue";
 import Medios from "../layouts/Medios.vue";
+import { posts } from "../assets/helpers/constants";
+import { ref, watch, onMounted } from "vue";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+const content = ref("");
+const imagen = ref("");
+const titulo = ref("");
+const media = ref("");
+const fecha = ref("");
+
+onMounted(() => {
+  const numero = route.params.id - 1;
+  console.log(posts);
+  const { body, title, img, date, medio } = posts[numero];
+  content.value = body;
+  imagen.value = img;
+  titulo.value = title;
+  media.value = medio;
+  fecha.value = date;
+});
+
+watch(
+  () => route.params.id,
+  () => {
+    content.value = route.params.content;
+    imagen.value = route.params.image;
+    titulo.value = route.params.title;
+    media.value = route.params.medio;
+    fecha.value = route.params.date;
+  }
+);
 </script>
 
 <style scoped>
