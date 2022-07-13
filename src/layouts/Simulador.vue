@@ -858,6 +858,7 @@ const loginHandle = () => {
     border-radius: 40px;
     object-fit: cover;
     filter: brightness(0.8);
+    margin-bottom: 550px;
   }
   .card {
     width: 95%;
@@ -865,8 +866,9 @@ const loginHandle = () => {
     background-color: white;
     border-radius: 40px;
     position: relative;
-    top: -15rem;
     justify-self: center;
+    position: absolute;
+    top: 20%;
   }
 }
 </style>

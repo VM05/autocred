@@ -51,9 +51,13 @@
       </div>
     </div>
     <Loading v-else />
+
     <div v-for="element in dataServicios">
       <div v-if="element.id == elementActive" :id="element.id">
         <Heading :content="element.title" class="md:px-12" />
+        <div v-if="elementActive == 'financiamiento'">
+          <Simulador id="simulador" />
+        </div>
         <div class="md:px-12">
           <div
             class="grid grid-cols-1 md:grid-cols-2 md:pb-40 mb-20 gap-2 md:flex md:relative md:justify-end"
@@ -97,7 +101,6 @@
           </div>
           <div v-if="elementActive == 'financiamiento'">
             <FeaturesList :data="featuresFinanciamiento" class="mb-24" />
-            <Simulador id="simulador" />
           </div>
           <div v-if="elementActive == 'tag'">
             <FeaturesList :data="featuresTag" class="mb-24" />

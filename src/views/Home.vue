@@ -59,6 +59,7 @@
     <Comentarios />
     <DondeEstamos />
     <Medios />
+    <Simulador />
     <Hablemos id="contacto" />
   </Container>
 </template>
@@ -77,6 +78,7 @@ import Medios from "../layouts/Medios.vue";
 import Hablemos from "../layouts/Hablemos.vue";
 import Experiencia from "../layouts/Experiencia.vue";
 import { useHead } from "@vueuse/head";
+import Simulador from "../layouts/Simulador.vue";
 
 useHead({
   title: "Autocred Chile tu mejor copiloto",

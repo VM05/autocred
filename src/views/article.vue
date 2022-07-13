@@ -9,7 +9,9 @@
       <Paragraph class="font-medium text-base text-primary-700 mb-4">
         {{ $route.params.medio + " " + $route.params.date }}
       </Paragraph>
-      <Heading :content="$route.params.title" class="mb-4" />
+
+      <Heading v-html="$route.params.title" class="mb-4" />
+
       <Paragraph
         class="font-medium text-base text-primary-700"
         v-html="$route.params.content"

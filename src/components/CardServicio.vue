@@ -54,6 +54,8 @@ const handlerCardService = (id) => {
         hash: "#simulador",
       });
     }
+  } else if (props.data.name == "Crédito rápido") {
+    router.push({ hash: "#simulador" });
   } else {
     router.push({ hash: "#contacto" });
   }
