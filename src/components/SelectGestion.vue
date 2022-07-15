@@ -1,6 +1,6 @@
 <template>
   <div class="py-6">
-    <label class="text-primary-900 font-medium text-base">{{ label }}</label>
+    <label class="text-primary-900 font-bold text-base">{{ label }}</label>
     <Combobox v-model="selected">
       <div class="relative">
         <ComboboxInput
@@ -10,9 +10,12 @@
           @change="query = $event.target.value"
         />
         <ComboboxButton
-          class="absolute inset-y-0 right-0 flex items-center pr-2"
+          class="absolute inset-y-0 right-0 flex items-center pr-2 w-full flex flex-row-reverse"
         >
-          <SelectorIcon class="w-5 h-5 text-gray-400" aria-hidden="true" />
+          <SelectorIcon
+            class="w-5 h-5 text-gray-400 right-0"
+            aria-hidden="true"
+          />
         </ComboboxButton>
 
         <TransitionRoot

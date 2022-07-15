@@ -44,12 +44,12 @@
           />
           <InputEmail
             placeholder="Ingresa tu correo de contacto"
-            label="Correo Electronico"
+            label="Correo electrónico"
             id="email"
             @update:email="(e) => (formContacto.email = e)"
           />
           <Input
-            placeholder="Ingresa tu numero"
+            placeholder="Ingresa tu número"
             label="Teléfono"
             id="phone"
             isPhone
@@ -69,13 +69,13 @@
             @update:checkServicios="(e) => handleCheck(e)"
           />
           <SelectGestion
-            label="Como quieres que gestionemos tu servicio?"
+            label="¿Cómo quieres que gestionemos tu servicio?"
             class="w-full"
             @update:gestion="(e) => (formContacto.canal_atencion = e)"
           />
 
           <TextArea1
-            label="Como te podemos ayudar?"
+            label="¿Cómo te podemos ayudar?"
             id="textarea"
             @update:textArea="(e) => (formContacto.mensaje = e)"
           />
