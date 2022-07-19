@@ -11,6 +11,7 @@
         v-if="vendedor"
         :primary="primary"
         :secondary="secondary"
+        :llave="index"
         class="cardQuestion justify-self-end z-10"
       />
       <PreguntaAcordion
@@ -20,6 +21,7 @@
         v-if="comprador"
         :primary="primary"
         :secondary="secondary"
+        :llave="index"
         class="cardQuestion justify-self-start md z-10"
       />
       <img

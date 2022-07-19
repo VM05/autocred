@@ -60,7 +60,7 @@
         </div>
         <div class="md:px-12">
           <div
-            class="grid grid-cols-1 md:grid-cols-2 md:pb-40 mb-20 gap-2 md:flex md:relative md:justify-end"
+            class="grid grid-cols-1 md:grid-cols-2 md:pb-40 mb-18 md:mb-36 gap-2 md:flex md:relative md:justify-end"
           >
             <div class="justify-self-end md:absolute md:w-5/12 top-0 left-0">
               <img :src="element.img" :alt="element.title" class="w-full" />
@@ -96,6 +96,7 @@
               </router-link>
             </div>
           </div>
+          <div class="my-10"><hr /></div>
           <div v-if="elementActive == 'transferencias'">
             <FeaturesList :data="featuresTransferencia" />
           </div>

@@ -49,6 +49,7 @@ import { comentarios } from "../assets/helpers/constants";
 const breakpoints = {
   700: {
     itemsToShow: 3,
+    autoplay: 0,
   },
 };
 

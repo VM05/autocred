@@ -1,6 +1,6 @@
 <template>
   <div class="py-6 w-full">
-    <label :for="id" class="text-primary-900 font-medium text-base">{{
+    <label :for="id" class="text-primary-900 font-bold text-base">{{
       label
     }}</label>
     <Listbox v-model="selected" :disabled="disabled">

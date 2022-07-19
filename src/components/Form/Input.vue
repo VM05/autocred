@@ -6,7 +6,7 @@
     <span v-show="hover" class="block absolute top-0 right-0 text-black-100">{{
       hoverText
     }}</span> -->
-    <label :for="id" class="text-primary-900 font-medium text-base">{{
+    <label :for="id" class="text-primary-900 font-bold text-base">{{
       label
     }}</label>
     <div v-if="isPhone" class="flex w-full items-center">
@@ -21,7 +21,7 @@
         maxlength="9"
         minlength="9"
         :placeholder="placeholder"
-        class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full phone-input"
+        class="px-4 py-2 border border-solid font-medium focus-visible:outline-primary-700 rounded-lg w-full phone-input"
         @mouseover="hover = true"
         @mouseleave="hover = false"
         @focusin="focus = true"

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="whitespace-nowrap inline-flex gap-1 items-center justify-center py-2 border border-transparent rounded-lg shadow-sm text-base px-5 font-medium transition-colors"
+    class="whitespace-nowrap inline-flex gap-1 items-center justify-center py-3 border border-transparent rounded-lg shadow-sm text-base px-5 font-medium transition-colors"
     :class="{
       'hover:bg-secondary-900 bg-secondary-700 text-white': secondary,
       'hover:bg-primary-900 bg-primary-700 text-white': primary,

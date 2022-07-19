@@ -1,6 +1,6 @@
 <template>
   <div class="relative py-6 w-full">
-    <label :for="props.id" class="text-primary-900 font-medium text-base">{{
+    <label :for="props.id" class="text-primary-900 font-bold text-base">{{
       props.label
     }}</label>
     <!-- <span v-show="focus" class="absolute top-0 left-0 text-sm">

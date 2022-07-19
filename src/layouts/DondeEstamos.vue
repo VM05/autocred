@@ -1,6 +1,6 @@
 <template>
   <div class="py-6 mb-24 md:px-12">
-    <Heading1 content="Donde estamos" class="mb-14" />
+    <Heading1 content="Dónde estamos" class="mb-14" />
     <div class="grid grid-cols-1 w-full justify-between grillaDondeEstamos">
       <div class="grid grillaInfoMapa">
         <div
@@ -11,15 +11,15 @@
             alt=""
             class="h-60 md:h-96 w-24"
           />
-          <ul class="flex flex-col gap-2 px-6">
+          <ul class="flex flex-col gap-2 px-6 contenedor-regiones">
             <Paragraph1
               v-for="(direccion, index) in direcciones"
               :key="index"
               class="cursor-pointer text-lg"
               :class="{
-                'text-secondary-900 font-bold':
+                'text-secondary-900 font-bold cabraloca relative translate-x-2':
                   activeDirection == direccion.name,
-                'text-primary-700 font-medium':
+                'text-primary-700 font-medium ':
                   activeDirection != direccion.name,
               }"
               @click="active"
@@ -163,6 +163,7 @@ import { ref, unref } from "vue";
 import { direcciones } from "../assets/helpers/API";
 import Paragraph from "../components/Paragraph.vue";
 import { CheckIcon, LocationMarkerIcon, ChatIcon } from "@heroicons/vue/solid";
+import { useHead } from "@vueuse/head";
 const activeSucursal = ref(direcciones[0].sucursales[0].name);
 const activeDirection = ref("R.Metropolitana");
 const active = (e) => {
@@ -176,6 +177,22 @@ const changeSucursal = (sucursal) => {
 <style scoped>
 .active {
   color: rgb(212, 15, 125);
+}
+
+.cabraloca::before {
+  content: "";
+  width: 14px;
+  height: 12px;
+  background: rgb(212, 15, 125);
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%) skew(-30deg);
+  border-radius: 3px;
+}
+
+.contenedor-regiones {
+  min-width: 200px;
 }
 .grillaInfoMapa {
   grid-template-columns: 1fr;

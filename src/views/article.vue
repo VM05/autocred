@@ -36,7 +36,6 @@ const fecha = ref("");
 
 onMounted(() => {
   const numero = route.params.id - 1;
-  console.log(posts);
   const { body, title, img, date, medio } = posts[numero];
   content.value = body;
   imagen.value = img;

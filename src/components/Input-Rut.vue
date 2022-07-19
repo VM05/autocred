@@ -3,7 +3,7 @@
     <label
       :for="props.id"
       v-if="props.label"
-      class="text-primary-900 font-medium text-base"
+      class="text-primary-900 font-bold text-base"
       >{{ props.label }}</label
     >
     <input

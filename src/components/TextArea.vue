@@ -1,6 +1,6 @@
 <template>
   <div class="w-full py-6">
-    <label :for="id" class="block text-primary-900 font-medium text-base">{{
+    <label :for="id" class="block text-primary-900 font-bold text-base">{{
       label
     }}</label>
     <textarea
