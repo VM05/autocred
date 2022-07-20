@@ -316,6 +316,36 @@ export const posts = [
 
     {
         "id": 1,
+        "title": "Julio y Agosto, los meses claves para comprar autos usados.",
+        "body": ` <p class="mb-2">El mercado de los autos usados vería reflejada la histórica alza del dólar en septiembre. Felipe Lira socio director de Autocred explica en esta nota de T13.cl porqué estos meses son propicios para adquirir un vehículo usado.</p>
+
+        <p class="mb-2">En Autocred buscamos guiar, acompañar y apoyar en todo el proceso de la compra o venta de vehículos usados entre personas, apoyándolos en los servicios de:</p>
+
+        <ul class='list-disc pl-6 pb-6'>
+        <li class="mb-3">Transferencia vehicular</li>
+        
+        <li class="mb-3">Financiamiento automotriz con la mejor cuota del mercado</li>
+        
+        <li class="mb-3">Seguro automotriz</li>
+        
+        <li class="mb-3">Habilitación de TAG</li>
+        
+        </ul>
+    
+        <p class="mb-2">Estos servicios se pueden realizar todos en un mismo lugar, ya sea en línea a través de nuestros canales digitales, módulos de atención en Mall Quilín, Mall Plaza Norte, Mall Apumanque o Autocred Cerrillos, además de de nuestra Van/Oficina Móvil que permite acercar al potencial comprador con el vendedor.</p>
+
+        
+    <a href="https://www.t13.cl/noticia/negocios/mercado-autos-usados-veria-reflejada-historica-alza-del-dolar-septiembre-13-07-2022" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">Puedes ver la nota completa aquí</a>
+   
+    
+    `,
+        "img": "/img/blog/t13.jpg",
+        "date": "20-07-22",
+        "medio": "Prensa"
+    },
+
+    {
+        "id": 2,
         "title": "Yapo.cl la nueva alianza de Autocred",
         "body": ` <p class="mb-2">En Autocred queremos ser el mejor copiloto para la compra y venta de vehículos usados entre personas. Felipe Lira Socio Director de Autocred en entrevista con Claudia Castro, Gerenta Comercial de Yapo.cl explicó todo los beneficios de esta alianza enfocado siempre en apoyar a las personas en todo el proceso.</p>
 
@@ -351,7 +381,7 @@ export const posts = [
     },
 
     {
-        "id": 2,
+        "id": 3,
         "title": "Entrevista en Radio Biobío Felipe Lira, Socio Fundador de Autocred habla sobre el mercado automotriz de autos usados.",
         "body": ` <p class="mb-2">En programa Una semana en La Radio, de Radio Biobío, Felipe Lira, Socio Fundador de Autocred habla sobre el aumento de la demanda automotriz de vehículos usados y cómo Autocred llega para apoyar en la compra y venta de vehículos usados entre personas, acompañando y apoyando en todo el proceso a cada una de las partes con Financiamiento, Seguro, Tag, Transferencia y todo lo necesario para que la experiencia de este proceso sea un gran viaje.</p>
     
@@ -371,7 +401,7 @@ export const posts = [
         "medio": "Radio"
     },
     {
-        "id": 3,
+        "id": 4,
         "title": "Programa Emprender es Clave de Radio La Clave, Felipe Lira Socio Director habla sobre Autocred y la compra o venta de autos usados",
         "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
         para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se
@@ -389,7 +419,7 @@ export const posts = [
         "medio": "Radio"
     },
     {
-        "id": 4,
+        "id": 5,
         "title": "Forum debuta en mundo venture e invierte US$ 1 millón en Autocred | DFMAS",
         "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
         para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se

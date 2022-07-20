@@ -102,7 +102,7 @@ import CheckServicios from "../components/CheckServicios.vue";
 import TextArea1 from "../components/TextArea.vue";
 import ButtonVue from "../components/Button.vue";
 import SelectGestion from "../components/SelectGestion.vue";
-import { reactive, ref, watch } from "vue";
+import { reactive, ref, watch, onMounted } from "vue";
 import { formEmpty } from "../assets/helpers/validate";
 import { gestion, servicios, URL_GOGEMA } from "../assets/helpers/API";
 import axios from "axios";
@@ -149,6 +149,10 @@ const formContacto = reactive({
 // const modal = ref(false);
 const isFormComplete = ref(formEmpty(formContacto));
 
+onMounted(() => {
+  console.log(route);
+  console.log(router);
+});
 const handleForm = async (e) => {
   e.preventDefault();
   if (!formEmpty(formContacto)) {
