@@ -19,7 +19,7 @@ export const servicios = [
     { id: 1, name: "Transferencias" },
     { id: 3, name: "Seguro" },
     { id: 4, name: "Tag" },
-    { id: 5, name: "Traslado VAN" },
+    // { id: 5, name: "Traslado VAN" },
 
 ];
 export const empleoType = [
