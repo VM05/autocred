@@ -15,6 +15,8 @@ import Autocred from '../views/Autocred.vue'
 import Yapo from '../views/Yapo/Yapo.vue'
 import Financiamiento from '../views/Yapo/Financiamiento.vue'
 import Terms from '../views/Terms.vue'
+import ComparaOnline from '../views/compara-online/ComparaOnline.vue'
+import ComparaFinanciamiento from '../views/compara-online/ComparaFinanciamiento.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -53,6 +55,12 @@ const router = createRouter({
             path: '/yapo', name: 'Yapo', component: Yapo,
             children: [
                 { path: '/yapo/financiamiento', name: 'Financiamiento-Yapo', component: Financiamiento },
+            ]
+        },
+        {
+            path: '/compara-online', name: 'comprara-online', component: ComparaOnline,
+            children: [
+                { path: '/compara-online/financiamiento', name: 'Financiamiento-comprara-online', component: ComparaFinanciamiento },
             ]
         },
 
