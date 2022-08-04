@@ -18,6 +18,7 @@ const storeContacto = useContactoStore();
 
 onMounted(() => {
   storeContacto.fetchUtms();
+  storeContacto.getProcedencia();
 });
 </script>
 

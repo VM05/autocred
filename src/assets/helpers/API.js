@@ -51,6 +51,52 @@ export const servicioCards = [
     { id: 4, name: "Seguro y Tag", src: "/img/yapo/seguro.png", content: "Al realizar la compra a través de nuestros servicios obtiene tu Tag y Seguro Automotriz." },
 ];
 
+export const procedencias = [
+    { id: 1, name: "yapo", procedenciaId: 61 },
+    { id: 2, name: "google", procedenciaId: 110 },
+    { id: 3, name: "Otras_Plataformas", procedenciaId: 109 },
+    { id: 4, name: "Modulo", procedenciaId: 108 },
+    { id: 5, name: "Referido", procedenciaId: 107 },
+    { id: 6, name: "Contacto Directo", procedenciaId: 107 },
+    { id: 7, name: "Instagram", procedenciaId: 106 },
+    { id: 8, name: "Autocred", procedenciaId: 105 },
+    { id: 9, name: "Forum", procedenciaId: 104 },
+    { id: 10, name: "kovacs_promociones", procedenciaId: 102 },
+    { id: 11, name: "Sitio_Web_Anfruns", procedenciaId: 68 },
+    { id: 12, name: "BCI seguros", procedenciaId: 69 },
+    { id: 13, name: "kia-konfidence", procedenciaId: 50 },
+    { id: 14, name: "vitrinas", procedenciaId: 100 },
+    { id: 15, name: "facebook", procedenciaId: 111 },
+    { id: 16, name: "ingreso_manual", procedenciaId: 81 },
+    { id: 17, name: "mercadolibre", procedenciaId: 72 },
+    { id: 18, name: "emol", procedenciaId: 71 },
+    { id: 19, name: "larruy", procedenciaId: 66 },
+    { id: 20, name: "autolocal", procedenciaId: 62 },
+    { id: 21, name: "chileautos", procedenciaId: 60 },
+    { id: 22, name: "Destacados", procedenciaId: 24 },
+    { id: 23, name: "Demotores", procedenciaId: 23 },
+    { id: 24, name: "toyota-usados", procedenciaId: 22 },
+    { id: 25, name: "autousado", procedenciaId: 21 },
+    { id: 26, name: "mitula", procedenciaId: 20 },
+    { id: 27, name: "volksWagen-usados", procedenciaId: 18 },
+    { id: 28, name: "trovit", procedenciaId: 17 },
+    { id: 29, name: "mercedesBenz-usados", procedenciaId: 16 },
+    { id: 30, name: "nissan-usados", procedenciaId: 15 },
+    { id: 31, name: "publimetro", procedenciaId: 14 },
+    { id: 32, name: "chevrolet-usados", procedenciaId: 13 },
+    { id: 33, name: "furgon-usados", procedenciaId: 11 },
+    { id: 34, name: "hyundai-usados", procedenciaId: 10 },
+    { id: 35, name: "camioneta-usada", procedenciaId: 9 },
+    { id: 36, name: "jeepusados", procedenciaId: 8 },
+    { id: 37, name: "comsercial-st", procedenciaId: 5 },
+    { id: 38, name: "autosdelujo", procedenciaId: 4 },
+    { id: 39, name: "autosonline", procedenciaId: 3 },
+    { id: 40, name: "amotormas", procedenciaId: 2 },
+    { id: 41, name: "amotor", procedenciaId: 1 },
+
+
+]
+
 
 export const PASSWORD_RESET = import.meta.env.VITE_PASSWORD_RESET
 export const BASE_URL = import.meta.env.VITE_BASE_URL

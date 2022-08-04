@@ -138,21 +138,18 @@ const formContacto = reactive({
   email: "",
   telefono: "",
   mensaje: "",
-  procedencia_id: 103,
-  tipo_contacto: "web",
+  procedencia_id: useUtms.utm_procedenciaId || 103,
+  tipo_contacto: useUtms.utm_tipoProcedencia || "web",
   servicios: servicios[0].name,
   canal_atencion: gestion[0].name,
   utm_source: useUtms.utm_source || "web",
   utm_medium: useUtms.utm_medium || "web",
   utm_campaign: useUtms.utm_campaign || "web",
 });
+
 // const modal = ref(false);
 const isFormComplete = ref(formEmpty(formContacto));
 
-onMounted(() => {
-  console.log(route);
-  console.log(router);
-});
 const handleForm = async (e) => {
   e.preventDefault();
   if (!formEmpty(formContacto)) {
