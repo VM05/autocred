@@ -44,7 +44,7 @@ export const useContactoStore = defineStore("contacto", {
                 }
             } else {
                 this.utm_procedenciaId = 103;
-                console.log(this.utm_procedenciaId)
+
             }
         }
     }
