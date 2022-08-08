@@ -9,7 +9,7 @@ import { useHead } from '@vueuse/head';
 import { useHead } from "@vueuse/head";
 
 useHead({
-  title: "Autocred | Servicios",
+  title: "Autocred | Yapo",
   meta: [
     {
       name: "description",
