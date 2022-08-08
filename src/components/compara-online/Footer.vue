@@ -7,7 +7,7 @@
         class="h-6 xl:h-10 w-auto"
       />
       <img
-        src="../../assets/img/Logo-Compara_white.png"
+        src="../../assets/img/logo-compara-blanco.svg"
         alt=""
         class="h-6 xl:h-10 w-auto"
       />

@@ -93,6 +93,8 @@ export const procedencias = [
     { id: 39, name: "autosonline", procedenciaId: 3 },
     { id: 40, name: "amotormas", procedenciaId: 2 },
     { id: 41, name: "amotor", procedenciaId: 1 },
+    { id: 42, name: "comparaonline", procedenciaId: 114 },
+    { id: 43, name: "youtube", procedenciaId: 113 },
 
 
 ]
