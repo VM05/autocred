@@ -8,7 +8,7 @@
 import { useHead } from "@vueuse/head";
 
 useHead({
-  title: "Autocred | Servicios",
+  title: "Autocred | Compara Online",
   meta: [
     {
       name: "description",
