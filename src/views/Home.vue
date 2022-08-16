@@ -1,5 +1,6 @@
 <template>
   <Container>
+    <ModalVanMovil />
     <BannerHome>
       <template #content>
         <Heading
@@ -79,6 +80,7 @@ import Hablemos from "../layouts/Hablemos.vue";
 import Experiencia from "../layouts/Experiencia.vue";
 import { useHead } from "@vueuse/head";
 import Simulador from "../layouts/Simulador.vue";
+import ModalVanMovil from "../components/modalVanMovil.vue";
 
 useHead({
   title: "Autocred Chile tu mejor copiloto",

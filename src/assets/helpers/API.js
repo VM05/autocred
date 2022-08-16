@@ -22,6 +22,16 @@ export const servicios = [
     { id: 5, name: "Traslado en VAN" },
 
 ];
+
+const hoy = new Date().toLocaleDateString().split("-").reverse().join("-");
+
+export let horas = [
+    { id: 1, value: "09", name: "DE 9:00 A 11:00", fecha: new Date(`${hoy}T09:00:00`) },
+    { id: 2, value: "11", name: "DE 11:00 A 13:00", fecha: new Date(`${hoy}T11:00:00`) },
+    { id: 3, value: "15", name: "DE 15:00 A 17:00", fecha: new Date(`${hoy}T15:00:00`) },
+    { id: 4, value: "17", name: "DE 17:00 A 19:00", fecha: new Date(`${hoy}T17:00:00`) },
+];
+
 export const empleoType = [
     { id: 1, value: "EMPLEOACTUAL", name: "EMPLEO ACTUAL" },
     { id: 2, value: "JUBILACION", name: "JUBILACIÓN" },
@@ -122,6 +132,8 @@ export const SERVICIOS_URL = BASE_URL_API + "utilities/others/services"
 export const EVALUACION_URL_1 = BASE_URL_API + "external/evaluations/simulation"
 export const EVALUACION_URL_2 = BASE_URL_API + "external/evaluations/quotation"
 export const CARGA_DATA = BASE_URL_API + "utilities/users/exists?dni="
+export const CALENDAR_INSERT_URL = "https://calendardev.autocred.cl/api/calender/insertevent"
+export const CALENDAR_GET_URL = "https://calendardev.autocred.cl/api/calender/getevents"
 
 
 export const URL_GOGEMA = import.meta.env.VITE_URL_GOGEMA
