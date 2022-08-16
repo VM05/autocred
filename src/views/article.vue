@@ -1,7 +1,17 @@
 <template>
   <Container>
     <div class="mb-16">
-      <img :src="imagen" alt="" class="w-full mb-4 h-64 object-contain" />
+      <picture>
+        <source :srcset="imagen" media="(min-width: 600px)" />
+
+        <source
+          :srcset="imagenMobile"
+          class="w-full"
+          media="(max-width: 599px)"
+        />
+        <img :src="imagen" alt="prueba" class="w-full" />
+      </picture>
+      <!-- <img :src="imagen" alt="" class="w-full mb-4 h-64 object-contain" /> -->
       <Paragraph class="font-medium text-base text-primary-700 mb-4">
         {{ media + " " + fecha }}
       </Paragraph>
@@ -24,7 +34,7 @@ import Paragraph from "../components/Paragraph.vue";
 import Heading from "../components/Heading.vue";
 import Medios from "../layouts/Medios.vue";
 import { posts } from "../assets/helpers/constants";
-import { ref, watch, onMounted } from "vue";
+import { ref, watch, onMounted, onBeforeMount } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
@@ -33,15 +43,17 @@ const imagen = ref("");
 const titulo = ref("");
 const media = ref("");
 const fecha = ref("");
+const imagenMobile = ref("");
 
-onMounted(() => {
+onBeforeMount(() => {
   const numero = route.params.id - 1;
-  const { body, title, img, date, medio } = posts[numero];
+  const { body, title, img, date, medio, imgMobile } = posts[numero];
   content.value = body;
   imagen.value = img;
   titulo.value = title;
   media.value = medio;
   fecha.value = date;
+  imagenMobile.value = imgMobile;
 });
 
 watch(
@@ -52,6 +64,7 @@ watch(
     titulo.value = route.params.title;
     media.value = route.params.medio;
     fecha.value = route.params.date;
+    imagenMobile.value = route.params.imgMobile;
   }
 );
 </script>

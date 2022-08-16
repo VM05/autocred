@@ -314,8 +314,34 @@ export const ventajas = [
 
 export const posts = [
 
+
     {
         "id": 1,
+        "title": "Startup nacional simplifica la transferencia de vehículos usados entre particulares",
+        "body": ` <p class="mb-2 font-bold">La plataforma está en línea con financieras, Registro Civil, notarías y empresas de seguro y además su servicio incluye traslado en van para conectar al comprador y vendedor.</p>
+
+        <p class="mb-2">Todos conocemos a alguien que ha vivido lo complejo que ha sido comprar o vender su vehículo en los últimos tres años. La pandemia ha generado –de manera indirecta– un gran impacto en la industria automotriz, sin embargo, la penetración del crédito en este segmento todavía es muy baja.</p>
+
+        <p class="mb-2">Según cifras de la Cámara de Comercio Automotriz, las ventas de autos usados marcaron máximas históricas en 2021, año en que alcanzaron una cifra de 1.429.335 unidades vendidas a diciembre, cerca de 400 mil más que el año anterior y el 2022 sigue la misma tendencia.</p>
+        
+        <p class="mb-2">Escenario al que sale al paso la startup nacional Autocred quién, tras una temporada piloto y hoy en alianza con Forum, viene a facilitar la compra y venta de autos usados entre personas; con la promesa de ser el mejor copiloto para sus clientes y acompañarlos en  este viaje extraordinario.</p>
+
+        <p class="mb-2">“Nuestro objetivo es guiar, apoyar y acompañar a nuestros clientes.  Estamos disponibles los siete días de la semana, incluimos traslado, financiamiento, facilidades de pago, servicio de transferencia, seguro y TAG; todo en un mismo lugar”, asegura Felipe Lira, socio fundador de Autocred.</p>
+
+        <h2 class='bold text-2xl my-5'>Acceso a credito</h2>
+    
+        <p class="mb-2">El objetivo de esta startup es que el acceso al crédito en autos usados, que actualmente es cercano el 0% llegue al 20%. Durante este 2022, Autocred avanzará en un importante plan de expansión a nivel nacional, en que además de tener presencia en cuatro locales en Santiago, tendrá lanzamientos en regiones: Valparaíso, Rancagua, La Serena y Viña del Mar.</p>
+
+    <a href="https://www.losandeshoy.cl/2022/08/09/startup-nacional-simplifica-la-transferencia-de-vehiculos-usados-entre-particulares/" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">Puedes ver la nota completa aquí</a>
+   
+    
+    `,
+        "img": "/img/blog/autocred-alt.webp",
+        "date": "09-08-22",
+        "medio": "Prensa"
+    },
+    {
+        "id": 2,
         "title": "Julio y Agosto, los meses claves para comprar autos usados.",
         "body": ` <p class="mb-2">El mercado de los autos usados vería reflejada la histórica alza del dólar en septiembre. Felipe Lira socio director de Autocred explica en esta nota de T13.cl porqué estos meses son propicios para adquirir un vehículo usado.</p>
 
@@ -345,7 +371,7 @@ export const posts = [
     },
 
     {
-        "id": 2,
+        "id": 3,
         "title": "Yapo.cl la nueva alianza de Autocred",
         "body": ` <p class="mb-2">En Autocred queremos ser el mejor copiloto para la compra y venta de vehículos usados entre personas. Felipe Lira Socio Director de Autocred en entrevista con Claudia Castro, Gerenta Comercial de Yapo.cl explicó todo los beneficios de esta alianza enfocado siempre en apoyar a las personas en todo el proceso.</p>
 

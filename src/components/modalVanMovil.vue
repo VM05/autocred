@@ -46,8 +46,8 @@
               label="Fecha de visita"
               id="fecha-nacimiento"
               placeholder="fecha"
-              :value="formAgenda.fecha"
-              @update:text="(e) => (formAgenda.fecha = e)"
+              :value="formAgenda.start"
+              @update:text="(e) => (formAgenda.start = e)"
               class="py-0"
               @change="cambiarHoras"
               :fecha="hoy"
@@ -154,7 +154,7 @@ const isSuccess = ref(false);
 let arregloDePrueba = ref([]);
 
 const formAgenda = reactive({
-  fecha: hoy,
+  start: hoy,
   titulo_evento: "",
   correo: "",
   telefonoModal: "",
@@ -165,7 +165,7 @@ const formAgenda = reactive({
 const cerrarEvento = () => {
   isSuccess.value = false;
   isOpen.value = false;
-  formAgenda.fecha = hoy;
+  formAgenda.start = hoy;
   warningName.value = false;
   warningEmail.value = false;
   warningPhone.value = false;
@@ -176,17 +176,16 @@ const handleAuthClick = async () => {
   isLoading.value = true;
 
   try {
-    const respuesta = await axios.post(CALENDAR_INSERT_URL, formAgenda);
+    const respuesta = await axios.post(CALENDAR_INSERT_URL, formAgenda.start);
     if (respuesta.status == "200") {
       isLoading.value = false;
       isSuccess.value = true;
-
       formAgenda.titulo_evento = "";
       formAgenda.correo = "";
       formAgenda.telefonoModal = "";
       formAgenda.horaInicio = "";
       formAgenda.horaFinal = "";
-      formAgenda.fecha = hoy;
+      formAgenda.start = hoy;
       cambiarHoras();
     }
   } catch (error) {
@@ -198,13 +197,13 @@ const cambiarHoras = async () => {
   let arregloDeApoyo = horas;
 
   try {
-    const respuesta = await axios.get(CALENDAR_GET_URL, formAgenda.fecha);
+    const respuesta = await axios.post(CALENDAR_GET_URL, formAgenda.start);
 
     respuesta.items.forEach((item) => {
       if (item.status == "confirmed") {
         console.log(item.start.dateTime);
         let tiempoInicio = item.start.dateTime.substring(11, 13);
-        if (formAgenda.fecha == hoy) {
+        if (formAgenda.start == hoy) {
           arregloDeApoyo = arregloDeApoyo.filter(
             (hora) =>
               hora.value != tiempoInicio &&

@@ -22,6 +22,7 @@
           image: data.img,
           medio: data.medio,
           date: data.date,
+          imgMobile: data.imgMobile,
         },
       }"
     >
