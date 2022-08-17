@@ -332,7 +332,7 @@ export const posts = [
     
         <p class="mb-2">El objetivo de esta startup es que el acceso al crédito en autos usados, que actualmente es cercano el 0% llegue al 20%. Durante este 2022, Autocred avanzará en un importante plan de expansión a nivel nacional, en que además de tener presencia en cuatro locales en Santiago, tendrá lanzamientos en regiones: Valparaíso, Rancagua, La Serena y Viña del Mar.</p>
 
-    <a href="https://www.losandeshoy.cl/2022/08/09/startup-nacional-simplifica-la-transferencia-de-vehiculos-usados-entre-particulares/" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">Puedes ver la nota completa aquí</a>
+    <a href="https://www.t13.cl/noticia/emprendedores/startup-nacional-simplifica-transferencia-vehiculos-usados-particulares" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">Puedes ver la nota completa aquí</a>
    
     
     `,
@@ -407,7 +407,7 @@ export const posts = [
     },
 
     {
-        "id": 3,
+        "id": 4,
         "title": "Entrevista en Radio Biobío Felipe Lira, Socio Fundador de Autocred habla sobre el mercado automotriz de autos usados.",
         "body": ` <p class="mb-2">En programa Una semana en La Radio, de Radio Biobío, Felipe Lira, Socio Fundador de Autocred habla sobre el aumento de la demanda automotriz de vehículos usados y cómo Autocred llega para apoyar en la compra y venta de vehículos usados entre personas, acompañando y apoyando en todo el proceso a cada una de las partes con Financiamiento, Seguro, Tag, Transferencia y todo lo necesario para que la experiencia de este proceso sea un gran viaje.</p>
     
@@ -427,7 +427,7 @@ export const posts = [
         "medio": "Radio"
     },
     {
-        "id": 4,
+        "id": 5,
         "title": "Programa Emprender es Clave de Radio La Clave, Felipe Lira Socio Director habla sobre Autocred y la compra o venta de autos usados",
         "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
         para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se
@@ -445,7 +445,7 @@ export const posts = [
         "medio": "Radio"
     },
     {
-        "id": 5,
+        "id": 6,
         "title": "Forum debuta en mundo venture e invierte US$ 1 millón en Autocred | DFMAS",
         "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
         para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se

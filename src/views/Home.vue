@@ -1,6 +1,6 @@
 <template>
   <Container>
-    <ModalVanMovil />
+    <!-- <ModalVanMovil /> -->
     <BannerHome>
       <template #content>
         <Heading
