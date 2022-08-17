@@ -332,8 +332,14 @@ export const posts = [
     
         <p class="mb-2">El objetivo de esta startup es que el acceso al crédito en autos usados, que actualmente es cercano el 0% llegue al 20%. Durante este 2022, Autocred avanzará en un importante plan de expansión a nivel nacional, en que además de tener presencia en cuatro locales en Santiago, tendrá lanzamientos en regiones: Valparaíso, Rancagua, La Serena y Viña del Mar.</p>
 
-    <a href="https://www.t13.cl/noticia/emprendedores/startup-nacional-simplifica-transferencia-vehiculos-usados-particulares" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">Puedes ver la nota completa aquí</a>
-   
+        <h2 class='bold text-2xl my-5'>Fuentes:</h2>
+    <ul>
+    <li><a href="https://www.t13.cl/noticia/emprendedores/startup-nacional-simplifica-transferencia-vehiculos-usados-particulares" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">t13.cl</a></li>
+    <li> <a href="https://www.losandeshoy.cl/2022/08/09/startup-nacional-simplifica-la-transferencia-de-vehiculos-usados-entre-particulares/" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">LosAndeshoy.cl</a></li>
+    <li>  <a href="https://cosasparaminas.wordpress.com/2022/08/09/autocred-la-solucion-al-problema-de-transferir-y-financiar-autos-usados-entre-personas/" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">cosasparaminas</a></li>
+    <li> <a href="https://www.elinformador.cl/nacional/startup-nacional-simplifica-la-transferencia-de-vehiculos-usados-entre-particulares/" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">elinformador.cl</a></li>
+    <li>  <a href="https://www.m360.cl/noticias/noticia/startup-nacional-simplifica-la-transferencia-de-vehiculos-usados-entre/2022-08-13/140822.html" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">m360.cl</a></li>
+    </ul>
     
     `,
         "img": "/img/blog/autocred-alt.webp",
