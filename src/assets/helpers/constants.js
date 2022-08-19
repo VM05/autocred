@@ -339,6 +339,7 @@ export const posts = [
     <li>  <a href="https://cosasparaminas.wordpress.com/2022/08/09/autocred-la-solucion-al-problema-de-transferir-y-financiar-autos-usados-entre-personas/" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">cosasparaminas</a></li>
     <li> <a href="https://www.elinformador.cl/nacional/startup-nacional-simplifica-la-transferencia-de-vehiculos-usados-entre-particulares/" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">elinformador.cl</a></li>
     <li>  <a href="https://www.m360.cl/noticias/noticia/startup-nacional-simplifica-la-transferencia-de-vehiculos-usados-entre/2022-08-13/140822.html" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">m360.cl</a></li>
+    <li>  <a href="https://www.zoomtecnologico.com/2022/08/09/autocred-transfiere-autos/" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">zoomtecnologico.com</a></li>
     </ul>
     
     `,
