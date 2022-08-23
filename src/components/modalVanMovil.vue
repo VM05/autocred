@@ -202,14 +202,14 @@ const handleAuthClick = async () => {
 
   let eventos = {
     status: "confirmed",
-    summary: "Visita Van Movil",
+    summary: `Visita Oficina Movil - ${formAgenda.titulo_evento}`,
     description: `+56${formAgenda.telefonoModal}`,
     creator: {
-      email: "oficina.movil@autocred.cl",
+      email: "victor.montiel@autocred.cl",
       self: true,
     },
     organizer: {
-      email: "oficina.movil@autocred.cl",
+      email: "victor.montiel@autocred.cl",
       self: true,
     },
     start: {
@@ -230,7 +230,7 @@ const handleAuthClick = async () => {
         responseStatus: "needsAction",
       },
       {
-        email: "oficina.movil@autocred.cl",
+        email: "victor.montiel@autocred.cl",
         organizer: true,
         self: true,
         responseStatus: "needsAction",
