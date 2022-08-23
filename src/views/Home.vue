@@ -1,6 +1,5 @@
 <template>
   <Container>
-    <!-- <ModalVanMovil /> -->
     <BannerHome>
       <template #content>
         <Heading
@@ -66,6 +65,7 @@
 </template>
 
 <script setup>
+import EventCalendar from "../components/EventCalendar.vue";
 import Container from "../layouts/Container.vue";
 import Servicios from "../layouts/Servicios.vue";
 import BannerHome from "../layouts/BannerHome.vue";

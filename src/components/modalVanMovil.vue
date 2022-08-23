@@ -1,12 +1,13 @@
 <template>
-  <button
+  <Button
+    class="mb-10"
+    secondary
     @click="
       isOpen = true;
       cambiarHoras();
     "
-  >
-    abrir modal
-  </button>
+    text="Abrir Modal"
+  />
 
   <Modal v-if="isOpen" @on:close="cerrarEvento">
     <template v-slot:header>
@@ -110,7 +111,7 @@
           <Button primary type="submit" text="Agregar" :disabled="errorForm" />
         </div>
       </form>
-      <div v-if="isSuccess && !isLoading" class="text-center">
+      <div v-if="isSuccess && !isLoading" class="text-center flex flex-col">
         <Paragraph class="font-bold">Hemos agendado tu visita</Paragraph>
         <Paragraph class="mb-8"
           >Un ejecutivo te contactara en el transcurso del dia para confirmar la
@@ -172,21 +173,94 @@ const cerrarEvento = () => {
   cambiarHoras();
 };
 
+// let eventos = {
+//   summary: "Visita Van Movil",
+//   description: `+56${formAgenda.telefonoModal}`,
+//   start: {
+//     dateTime: `${formAgenda.start}T${formAgenda.horaInicio}`,
+//     timeZone: "GMT-4",
+//   },
+//   end: {
+//     dateTime: `${formAgenda.start}T${formAgenda.horaFinal}`,
+//     timeZone: "GMT-4",
+//   },
+//   attendees: [
+//     { email: `${formAgenda.correo}` },
+//     { email: "victor.montiel@autocred.cl" },
+//   ],
+//   reminders: {
+//     useDefault: false,
+//     overrides: [
+//       { method: "email", minutes: 24 * 60 },
+//       { method: "popup", minutes: 0 },
+//     ],
+//   },
+// };
+
 const handleAuthClick = async () => {
   isLoading.value = true;
 
+  let eventos = {
+    status: "confirmed",
+    summary: "Visita Van Movil",
+    description: `+56${formAgenda.telefonoModal}`,
+    creator: {
+      email: "oficina.movil@autocred.cl",
+      self: true,
+    },
+    organizer: {
+      email: "oficina.movil@autocred.cl",
+      self: true,
+    },
+    start: {
+      dateTime: `${formAgenda.start}T${formAgenda.horaInicio}`,
+      timeZone: "GMT-04:00",
+    },
+    end: {
+      dateTime: `${formAgenda.start}T${formAgenda.horaFinal}`,
+      timeZone: "GMT-04:00",
+    },
+    attendees: [
+      {
+        email: `${formAgenda.correo}`,
+        responseStatus: "needsAction",
+      },
+      {
+        email: "oficina.movil@autocred.cl",
+        responseStatus: "needsAction",
+      },
+      {
+        email: "oficina.movil@autocred.cl",
+        organizer: true,
+        self: true,
+        responseStatus: "needsAction",
+      },
+    ],
+    reminders: {
+      useDefault: false,
+      overrides: [
+        {
+          method: "email",
+          minutes: 1440,
+        },
+        {
+          method: "popup",
+          minutes: 0,
+        },
+      ],
+    },
+    eventType: "default",
+  };
+
   try {
-    const respuesta = await axios.post(CALENDAR_INSERT_URL, formAgenda.start);
+    const respuesta = await axios.post(CALENDAR_INSERT_URL, eventos);
     if (respuesta.status == "200") {
       isLoading.value = false;
       isSuccess.value = true;
       formAgenda.titulo_evento = "";
       formAgenda.correo = "";
       formAgenda.telefonoModal = "";
-      formAgenda.horaInicio = "";
-      formAgenda.horaFinal = "";
       formAgenda.start = hoy;
-      cambiarHoras();
     }
   } catch (error) {
     console.log(error);
@@ -195,29 +269,42 @@ const handleAuthClick = async () => {
 
 const cambiarHoras = async () => {
   let arregloDeApoyo = horas;
-
   try {
-    const respuesta = await axios.post(CALENDAR_GET_URL, formAgenda.start);
-
-    respuesta.items.forEach((item) => {
-      if (item.status == "confirmed") {
-        console.log(item.start.dateTime);
-        let tiempoInicio = item.start.dateTime.substring(11, 13);
-        if (formAgenda.start == hoy) {
-          arregloDeApoyo = arregloDeApoyo.filter(
-            (hora) =>
-              hora.value != tiempoInicio &&
-              new Date(`${hoy}T${horaDelDia}:00:00`).getTime() <
-                hora.fecha.getTime()
-          );
-        } else {
-          arregloDeApoyo = arregloDeApoyo.filter(
-            (hora) => hora.value != tiempoInicio
-          );
-        }
-      }
+    const respuesta = await axios.post(CALENDAR_GET_URL, {
+      start: formAgenda.start,
     });
 
+    console.log(respuesta.data);
+
+    if (respuesta.data.length <= 0) {
+      if (formAgenda.start == hoy) {
+        arregloDeApoyo = arregloDeApoyo.filter(
+          (hora) =>
+            new Date(`${hoy}T${horaDelDia}:00:00`).getTime() <
+            hora.fecha.getTime()
+        );
+      } else {
+        arregloDeApoyo = horas;
+      }
+    } else {
+      respuesta.data.forEach((item) => {
+        if (item.status == "confirmed") {
+          let tiempoInicio = item.start.dateTime.substring(11, 13);
+          if (formAgenda.start == hoy) {
+            arregloDeApoyo = arregloDeApoyo.filter(
+              (hora) =>
+                hora.value != tiempoInicio &&
+                new Date(`${hoy}T${horaDelDia}:00:00`).getTime() <
+                  hora.fecha.getTime()
+            );
+          } else {
+            arregloDeApoyo = arregloDeApoyo.filter(
+              (hora) => hora.value != tiempoInicio
+            );
+          }
+        }
+      });
+    }
     if (arregloDeApoyo.length > 0) {
       arregloDePrueba.value = arregloDeApoyo;
     } else {
@@ -229,12 +316,6 @@ const cambiarHoras = async () => {
     console.log(error);
   }
 };
-
-onBeforeMount(() => {
-  cambiarHoras();
-  formAgenda.horaInicio = "09:00:00";
-  formAgenda.horaFinal = "11:00:00";
-});
 
 const checkName = (e) => {
   if (e.length >= 0) {
@@ -286,8 +367,11 @@ watch(formAgenda, () => {
   }
 });
 
+watch(arregloDePrueba, () => {
+  console.log(arregloDePrueba.value);
+});
+
 watch(hora, () => {
-  console.log(hora.value);
   switch (hora.value) {
     case "09":
       formAgenda.horaInicio = "09:00:00";

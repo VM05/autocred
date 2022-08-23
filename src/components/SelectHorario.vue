@@ -66,7 +66,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, onMounted, onBeforeMount } from "vue";
+import { ref, computed, watch, onMounted } from "vue";
 import {
   Listbox,
   ListboxButton,
@@ -106,11 +106,12 @@ watch(selected, () => {
   emit("update:hora", selected.value.value);
 });
 
-onBeforeMount(() => {
+onMounted(() => {
   selected.value = props.valor[0];
 });
 
 watch(props, () => {
+  console.log(props.valor);
   if (props.valor != undefined) {
     selected.value = props.valor[0];
   }

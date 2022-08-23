@@ -17,6 +17,7 @@ import Financiamiento from '../views/Yapo/Financiamiento.vue'
 import Terms from '../views/Terms.vue'
 import ComparaOnline from '../views/compara-online/ComparaOnline.vue'
 import ComparaFinanciamiento from '../views/compara-online/ComparaFinanciamiento.vue'
+import calendarioVanMovil from '../views/CalendarioVanMovil.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -29,6 +30,7 @@ const router = createRouter({
                 { path: '/login', name: 'Login', component: login },
                 { path: '/compradores', name: 'Compradores', component: compradores },
                 { path: '/encuesta', name: 'Encuesta', component: encuesta },
+                { path: '/calendario', name: 'Calendario', component: calendarioVanMovil },
                 { path: '/nosotros', name: 'Nosotros', component: nosotros },
                 {
                     path: '/preguntas-frecuentes',

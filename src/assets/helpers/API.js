@@ -132,8 +132,8 @@ export const SERVICIOS_URL = BASE_URL_API + "utilities/others/services"
 export const EVALUACION_URL_1 = BASE_URL_API + "external/evaluations/simulation"
 export const EVALUACION_URL_2 = BASE_URL_API + "external/evaluations/quotation"
 export const CARGA_DATA = BASE_URL_API + "utilities/users/exists?dni="
-export const CALENDAR_INSERT_URL = "https://calendardev.autocred.cl/api/calender/insertevent"
-export const CALENDAR_GET_URL = "https://calendardev.autocred.cl/api/calender/getevents"
+export const CALENDAR_INSERT_URL = "https://calendardev.autocred.cl/api/calendar/insertevent"
+export const CALENDAR_GET_URL = "https://calendardev.autocred.cl/api/calendar/geteventday"
 
 
 export const URL_GOGEMA = import.meta.env.VITE_URL_GOGEMA

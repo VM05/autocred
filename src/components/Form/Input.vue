@@ -56,7 +56,6 @@
       placeholder="dd/mm/yyyy"
       type="date"
       pattern="[1-9][0-9]{2}"
-      max="2022-12-31"
       :placeholder="placeholder"
       class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full"
       @mouseover="hover = true"
@@ -66,8 +65,9 @@
       :id="id"
       :value="value"
       :disabled="disabled"
-      @blur="handler"
+      @change="handler"
       required
+      :min="fecha"
     />
     <input
       v-else-if="money"
@@ -117,6 +117,7 @@ const props = defineProps({
   date: Boolean,
   money: Boolean,
   valor: Number,
+  fecha: String,
 });
 
 const valorRenta = ref(props.valor);
