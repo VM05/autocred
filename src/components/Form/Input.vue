@@ -55,7 +55,6 @@
       v-else-if="date"
       placeholder="dd/mm/yyyy"
       type="date"
-      pattern="[1-9][0-9]{2}"
       :placeholder="placeholder"
       class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full"
       @mouseover="hover = true"
@@ -63,7 +62,7 @@
       @focusin="focus = true"
       @focusout="focus = false"
       :id="id"
-      :value="value"
+      value="value"
       :disabled="disabled"
       @change="handler"
       required

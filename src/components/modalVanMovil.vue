@@ -141,13 +141,15 @@ import {
 } from "../assets/helpers/API";
 import { formEmpty, validateEmail } from "../assets/helpers/validate";
 import axios from "axios";
+import moment from "moment";
 
 onMounted(() => {
   console.log(new Date().toLocaleDateString());
-  console.log(hoy);
+  console.log(moment(new Date()).format("DD/MM/YYYY"));
 });
 
-const hoy = new Date().toLocaleDateString().split("/").reverse().join("-");
+const hoy = moment(new Date()).format("DD/MM/YYYY");
+// const hoy = new Date().toLocaleDateString().split("-").reverse().join("-");
 const horaDelDia = String(new Date().getHours());
 const isOpen = ref(false);
 const hora = ref();
