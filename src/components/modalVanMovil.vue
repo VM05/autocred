@@ -142,7 +142,7 @@ import {
 import { formEmpty, validateEmail } from "../assets/helpers/validate";
 import axios from "axios";
 
-const hoy = new Date().toLocaleDateString().split("-").reverse().join("/");
+const hoy = new Date().toLocaleDateString().split("-").join("/");
 const horaDelDia = String(new Date().getHours());
 const isOpen = ref(false);
 const hora = ref();
