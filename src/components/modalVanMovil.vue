@@ -143,11 +143,6 @@ import { formEmpty, validateEmail } from "../assets/helpers/validate";
 import axios from "axios";
 import moment from "moment";
 
-onMounted(() => {
-  console.log(new Date().toLocaleDateString());
-  console.log(moment(new Date()).format("DD/MM/YYYY"));
-});
-
 const hoy = moment(new Date()).format("YYYY-MM-DD");
 // const hoy = new Date().toLocaleDateString().split("-").reverse().join("-");
 const horaDelDia = String(new Date().getHours());
