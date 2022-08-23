@@ -144,6 +144,7 @@ import axios from "axios";
 
 onMounted(() => {
   console.log(new Date().toLocaleDateString());
+  console.log(hoy);
 });
 
 const hoy = new Date().toLocaleDateString().split("-").reverse().join("-");
