@@ -62,7 +62,7 @@
       @focusin="focus = true"
       @focusout="focus = false"
       :id="id"
-      value="value"
+      :value="value"
       :disabled="disabled"
       @change="handler"
       required
