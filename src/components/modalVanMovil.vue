@@ -147,7 +147,7 @@ onMounted(() => {
   console.log(hoy);
 });
 
-const hoy = new Date().toLocaleDateString().split("-").reverse().join("-");
+const hoy = new Date().toLocaleDateString().split("/").reverse().join("-");
 const horaDelDia = String(new Date().getHours());
 const isOpen = ref(false);
 const hora = ref();
