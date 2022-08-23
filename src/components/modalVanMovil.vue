@@ -148,7 +148,7 @@ onMounted(() => {
   console.log(moment(new Date()).format("DD/MM/YYYY"));
 });
 
-const hoy = moment(new Date()).format("DD-MM-YYYY");
+const hoy = moment(new Date()).format("YYYY-MM-DD");
 // const hoy = new Date().toLocaleDateString().split("-").reverse().join("-");
 const horaDelDia = String(new Date().getHours());
 const isOpen = ref(false);
