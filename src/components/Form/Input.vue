@@ -31,7 +31,6 @@
         @keyup="handler"
         @blur="handler"
         autocomplete="off"
-        required
       />
     </div>
     <input

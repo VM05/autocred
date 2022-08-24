@@ -48,19 +48,21 @@
             id="email"
             @update:email="(e) => (formContacto.email = e)"
           />
-          <Input
-            placeholder="Ingresa tu número"
-            label="Teléfono"
-            id="phone"
-            isPhone
-            @update:text="(e) => (formContacto.telefono = '+56' + e)"
-          />
-          <Paragraph
-            class="text-red-700 justify-self-center text-center"
-            v-if="warningPhone"
-          >
-            El teléfono debe contener al menos 9 digitos
-          </Paragraph>
+          <div class="relative">
+            <Input
+              placeholder="Ingresa tu número"
+              label="Teléfono"
+              id="phone"
+              isPhone
+              @update:text="(e) => (formContacto.telefono = '+56' + e)"
+            />
+            <Paragraph
+              class="text-red-700 justify-self-center text-center absolute -bottom-6 w-full md:-bottom-0 left-1/2 -translate-x-1/2"
+              v-if="warnings.warningTelefono"
+            >
+              El teléfono debe contener al menos 9 digitos
+            </Paragraph>
+          </div>
         </div>
         <div class="right md:pl-8 p-0">
           <CheckServicios
@@ -103,7 +105,7 @@ import TextArea1 from "../components/TextArea.vue";
 import ButtonVue from "../components/Button.vue";
 import SelectGestion from "../components/SelectGestion.vue";
 import { reactive, ref, watch, onMounted } from "vue";
-import { formEmpty } from "../assets/helpers/validate";
+import { formEmpty, validateEmail } from "../assets/helpers/validate";
 import { gestion, servicios, URL_GOGEMA } from "../assets/helpers/API";
 import axios from "axios";
 import qs from "qs";
@@ -118,11 +120,10 @@ const isLoading = ref(false);
 const isSuccess = ref(false);
 const isError = ref(false);
 const alerts = ref(false);
-const warningPhone = ref(false);
 const warnings = reactive({
   warningTelefono: false,
-  warningServicios: false,
-  isWarning: false,
+  warningServicios: true,
+  isWarning: true,
 });
 //Use Params
 const useUtms = useContactoStore();
@@ -140,7 +141,7 @@ const formContacto = reactive({
   mensaje: "",
   procedencia_id: useUtms.utm_procedenciaId || 103,
   tipo_contacto: useUtms.utm_tipoProcedencia || "web",
-  servicios: servicios[0].name,
+  servicios: "",
   canal_atencion: gestion[0].name,
   utm_source: useUtms.utm_source || "web",
   utm_medium: useUtms.utm_medium || "web",
@@ -149,13 +150,18 @@ const formContacto = reactive({
 
 // const modal = ref(false);
 const isFormComplete = ref(formEmpty(formContacto));
+const isEmailValid = ref(validateEmail(formContacto.email));
 
 const handleForm = async (e) => {
   e.preventDefault();
+
   if (!formEmpty(formContacto)) {
-    console.log("enviando");
     await sendFormGoGema();
-    router.push({ path: route.path, hash: contactRouteSuccess() });
+    if (isSuccess.value == true) {
+      router.push({ path: route.path, hash: contactRouteSuccess() });
+    } else {
+      router.push({ path: route.path, hash: contactRouteIncomplete() });
+    }
   }
 };
 const contactRouteSuccess = () => {
@@ -163,6 +169,13 @@ const contactRouteSuccess = () => {
   res = res + "-" + route.name.replace(" ", "-");
   return res.toLowerCase();
 };
+
+const contactRouteIncomplete = () => {
+  let res = "#no-informado";
+  res = res + "-" + route.name.replace(" ", "-");
+  return res.toLowerCase();
+};
+
 const sendFormGoGema = async () => {
   isLoading.value = true;
   try {
@@ -187,15 +200,10 @@ const handleCheck = (e) => {
   formContacto.servicios = formated;
 };
 
-watch(warnings, () => {
-  if (warnings.warningTelefono == false && warnings.warningServicios == false) {
-    warnings.isWarning = false;
-  } else {
-    warnings.isWarning = true;
-  }
-});
 watch(formContacto, () => {
   isFormComplete.value = formEmpty(formContacto);
+  isEmailValid.value = validateEmail(formContacto.email);
+  console.log(isEmailValid.value);
   if (formContacto.mensaje.length == 0) {
     formContacto.mensaje =
       formContacto.nombre_completo +
@@ -211,6 +219,16 @@ watch(formContacto, () => {
     warnings.warningServicios = false;
   } else {
     warnings.warningServicios = true;
+  }
+
+  if (
+    warnings.warningTelefono == false &&
+    warnings.warningServicios == false &&
+    isEmailValid.value == true
+  ) {
+    warnings.isWarning = false;
+  } else {
+    warnings.isWarning = true;
   }
 });
 watch([isLoading, isSuccess, isError], () => {
