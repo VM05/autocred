@@ -3,12 +3,16 @@
     <label :for="id" class="text-primary-900 font-medium text-base">{{
       label
     }}</label>
-    <Listbox v-model="selected">
+    <Listbox v-model="selected" :disabled="props.deshabilitar">
       <div class="relative">
         <ListboxButton
           class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full text-left"
+          :class="props.deshabilitar ? 'bg-slate-100' : ''"
         >
-          <span class="" v-if="selected">{{ selected.name }}</span>
+          <span class="" v-if="selected && !props.deshabilitar">{{
+            selected.name
+          }}</span>
+          <span class="" v-else>Espere...</span>
 
           <span
             class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
@@ -25,6 +29,7 @@
         >
           <ListboxOptions
             class="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-primary-700 focus:outline-none sm:text-sm z-10"
+            disabled
           >
             <ListboxOption
               v-for="fecha in filteredFechas"
@@ -86,6 +91,7 @@ const props = defineProps({
     type: Array,
     default: [{ id: 0, value: "0", name: "Ingrese una fecha" }],
   },
+  deshabilitar: Boolean,
 });
 
 let selected = ref(props.valor[0]);
@@ -102,7 +108,6 @@ let filteredFechas = computed(() =>
 );
 
 watch(selected, () => {
-  changeHora(selected.value);
   emit("update:hora", selected.value.value);
 });
 
@@ -111,13 +116,8 @@ onMounted(() => {
 });
 
 watch(props, () => {
-  console.log(props.valor);
   if (props.valor != undefined) {
     selected.value = props.valor[0];
   }
 });
-
-const changeHora = (value) => {
-  console.log(value.value);
-};
 </script>

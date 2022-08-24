@@ -63,6 +63,7 @@
               @update:hora="(e) => (hora = e)"
               class="py-0"
               :valor="arregloDePrueba"
+              :deshabilitar="deshabilitado"
             />
           </div>
         </div>
@@ -155,6 +156,7 @@ const warningEmail = ref(false);
 const warningPhone = ref(false);
 const isSuccess = ref(false);
 let arregloDePrueba = ref([]);
+const deshabilitado = ref(false);
 
 const formAgenda = reactive({
   start: hoy,
@@ -207,11 +209,11 @@ const handleAuthClick = async () => {
     summary: `${formAgenda.titulo_evento} - Visita Oficina Movil`,
     description: `+56${formAgenda.telefonoModal}`,
     creator: {
-      email: "victor.montiel@autocred.cl",
+      email: "oficina.movil@autocred.cl",
       self: true,
     },
     organizer: {
-      email: "victor.montiel@autocred.cl",
+      email: "oficina.movil@autocred.cl",
       self: true,
     },
     start: {
@@ -233,6 +235,10 @@ const handleAuthClick = async () => {
       },
       {
         email: "victor.montiel@autocred.cl",
+        responseStatus: "needsAction",
+      },
+      {
+        email: "oficina.movil@autocred.cl",
         organizer: true,
         self: true,
         responseStatus: "needsAction",
@@ -270,13 +276,12 @@ const handleAuthClick = async () => {
 };
 
 const cambiarHoras = async () => {
+  deshabilitado.value = true;
   let arregloDeApoyo = horas;
   try {
     const respuesta = await axios.post(CALENDAR_GET_URL, {
       start: formAgenda.start,
     });
-
-    console.log(respuesta.data);
 
     if (respuesta.data.length <= 0) {
       if (formAgenda.start == hoy) {
@@ -317,6 +322,7 @@ const cambiarHoras = async () => {
   } catch (error) {
     console.log(error);
   }
+  deshabilitado.value = false;
 };
 
 const checkName = (e) => {
@@ -369,31 +375,27 @@ watch(formAgenda, () => {
   }
 });
 
-watch(arregloDePrueba, () => {
-  console.log(arregloDePrueba.value);
-});
-
 watch(hora, () => {
   switch (hora.value) {
     case "09":
       formAgenda.horaInicio = "09:00:00";
       formAgenda.horaFinal = "11:00:00";
-      console.log(formAgenda.horaInicio);
+
       break;
     case "11":
       formAgenda.horaInicio = "11:00:00";
       formAgenda.horaFinal = "13:00:00";
-      console.log(formAgenda.horaInicio);
+
       break;
     case "15":
       formAgenda.horaInicio = "15:00:00";
       formAgenda.horaFinal = "17:00:00";
-      console.log(formAgenda.horaInicio);
+
       break;
     case "17":
       formAgenda.horaInicio = "17:00:00";
       formAgenda.horaFinal = "19:00:00";
-      console.log(formAgenda.horaInicio);
+
       break;
     case "0":
       formAgenda.horaInicio = "";
@@ -402,9 +404,8 @@ watch(hora, () => {
     default:
       formAgenda.horaInicio = "";
       formAgenda.horaFinal = "";
-      console.log(formAgenda.horaInicio);
+
       break;
   }
-  console.log(formAgenda.horaInicio, formAgenda.horaFinal);
 });
 </script>
