@@ -27,10 +27,10 @@
           /> -->
           <div class="flex flex-col md:flex-row md:gap-4 gap-2">
             <router-link to="/vendedores">
-              <Button text="Quiero vender" secondary />
+              <Button text="Quiero vender" secondary id="quiero-vender" />
             </router-link>
             <router-link to="/compradores">
-              <Button text="Quiero comprar" primary />
+              <Button text="Quiero comprar" primary id="quiero-comprar" />
             </router-link>
           </div>
         </div>

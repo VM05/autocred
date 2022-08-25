@@ -17,7 +17,7 @@
       </div>
     </div>
     <router-link to="#contacto" class="justify-self-center">
-      <Button1 text="Hablemos" secondary />
+      <Button1 text="Hablemos" secondary id="hablemos" />
     </router-link>
   </div>
 </template>

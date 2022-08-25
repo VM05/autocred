@@ -13,6 +13,7 @@
         :secondary="secondary"
         :llave="index"
         class="cardQuestion justify-self-end z-10"
+        :id="'pregunta-vendedor-' + (index + 1)"
       />
       <PreguntaAcordion
         v-for="(item, index) in questionsComprador"
@@ -23,6 +24,7 @@
         :secondary="secondary"
         :llave="index"
         class="cardQuestion justify-self-start md z-10"
+        :id="'pregunta-comprador-' + (index + 1)"
       />
       <img
         src="../../assets/img/preguntas-frecuentes-compradores.png"

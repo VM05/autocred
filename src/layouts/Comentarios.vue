@@ -27,12 +27,14 @@
         primary
         text="Agenda tu servicio"
         class="justify-self-center w-fit"
+        id="angedar-servicio-compradores"
       />
       <Button1
         v-else
         secondary
         text="Agenda tu servicio"
         class="justify-self-center w-fit"
+        id="agendar-servicio"
       />
     </router-link>
   </div>

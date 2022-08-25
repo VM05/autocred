@@ -22,6 +22,7 @@
                 'text-primary-700 font-medium ':
                   activeDirection != direccion.name,
               }"
+              :id="index == 0 ? 'direccion-metropolitana' : 'otras-regiones'"
               @click="active"
             >
               {{ direccion.name }}
@@ -53,8 +54,9 @@
                 class="subcontent flex flex-col pl-6 gap-2"
                 v-if="servicio == 'Presencial'"
               >
-                <div v-for="sucursal in direccion.sucursales">
+                <div v-for="(sucursal, index) in direccion.sucursales">
                   <div
+                    :id="'zona-' + (index + 1)"
                     class="flex gap-2 flex-row cursor-pointer"
                     @click="changeSucursal(sucursal.name)"
                   >

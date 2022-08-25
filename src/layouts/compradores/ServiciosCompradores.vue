@@ -8,7 +8,11 @@
     />
     <ServiciosList :data="serviciosCompradores" right class="mb-20" />
     <router-link to="#contacto" class="justify-self-center"
-      ><ButtonVue text="Contactanos" class="justify-self-center w-fit" primary
+      ><ButtonVue
+        text="Contactanos"
+        class="justify-self-center w-fit"
+        primary
+        id="contactanos"
     /></router-link>
   </div>
 </template>

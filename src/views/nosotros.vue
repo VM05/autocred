@@ -16,7 +16,11 @@
         />
         <router-link to="#contacto">
           <div class="flex flex-row gap-4">
-            <Button text="Viajemos juntos" secondary />
+            <Button
+              text="Viajemos juntos"
+              secondary
+              id="boton-viajemos-juntos"
+            />
           </div>
         </router-link>
       </template>

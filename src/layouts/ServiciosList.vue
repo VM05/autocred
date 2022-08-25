@@ -4,7 +4,10 @@
       v-if="data"
       class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 md:px-12"
     >
-      <div v-for="item in data.data" class="flex flex-col items-center gap-4">
+      <div
+        v-for="(item, index) in data.data"
+        class="flex flex-col items-center gap-4"
+      >
         <img
           src="../assets/img/02-menu-servicios-financiamiento.png"
           alt="servicios_Financiamiento"
@@ -46,6 +49,15 @@
             :outlineSecondary="elementActive != item.toLowerCase()"
             :secondary="elementActive == item.toLowerCase()"
             class="w-full"
+            :id="
+              index == 0
+                ? 'servicio-transferencias'
+                : index == 1
+                ? 'servicio-financiamiento'
+                : index == 2
+                ? 'servicio-seguro'
+                : 'servicio-tag'
+            "
           />
         </router-link>
       </div>

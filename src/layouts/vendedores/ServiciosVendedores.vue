@@ -12,6 +12,7 @@
         text="Contactanos"
         class="justify-self-center w-fit"
         secondary
+        id="contactanos"
       />
     </router-link>
   </div>

@@ -14,7 +14,11 @@
         />
         <router-link to="#contacto">
           <div class="flex flex-row gap-4">
-            <Button text="Agenda tu servicio" secondary />
+            <Button
+              text="Agenda tu servicio"
+              secondary
+              id="agendar-servicio-banner"
+            />
           </div>
         </router-link>
       </template>

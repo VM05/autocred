@@ -14,7 +14,11 @@
         />
         <router-link to="#simulador">
           <div class="flex flex-row gap-4">
-            <Button text="Quiero financiar" primary />
+            <Button
+              text="Quiero financiar"
+              primary
+              id="quiero-financiar-banner"
+            />
           </div>
         </router-link>
       </template>
