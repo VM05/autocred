@@ -92,6 +92,7 @@
                   :text="element.buttonText"
                   secondary
                   class="w-fit self-center"
+                  id="quiero-financiar"
                 />
               </router-link>
               <router-link
@@ -99,6 +100,13 @@
                 class="w-fit self-center"
                 v-else
                 @click="useContacto.selectService = element"
+                :id="
+                  element.id == 'transferencias'
+                    ? 'boton-transferencia'
+                    : element.id == 'tag'
+                    ? 'boton-tag'
+                    : 'boton-seguro'
+                "
               >
                 <Button1
                   :text="element.buttonText"
