@@ -52,6 +52,7 @@
                 secondary
                 class="mt-4"
                 @click.prevent="handleAccordion(cuota.term, cuota.id)"
+                :id="'boton-' + cuota.term + '-cuotas'"
               />
             </div>
           </DisclosurePanel>

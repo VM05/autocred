@@ -130,6 +130,7 @@
                 text="Consulta tu cuota"
                 secondary
                 :disabled="errorForm"
+                id="boton-consultar-cuota"
               />
             </div>
           </form>
@@ -364,11 +365,13 @@
                   text="Volver"
                   outlinePrimary
                   @click.prevent="volverAnterior"
+                  id="volver-anterior"
                 />
                 <Button1
                   text="Ver Resultados"
                   secondary
                   :disabled="errorForm2"
+                  id="boton-ver-resultados"
                 />
               </div>
             </form>
@@ -610,7 +613,7 @@ const handleForm2 = async () => {
   }
   try {
     const res = await axios.post(EVALUACION_URL_2, formSimulador2);
-
+    console.log(res);
     if (res.data.success) loading.value = false;
     isSuccess.value = true;
   } catch (error) {
