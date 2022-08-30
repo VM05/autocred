@@ -103,21 +103,21 @@ let filteredBrands = computed(() =>
 watch(props, () => {
   if (props.valor != "") {
     switch (props.valor) {
-      case "EMPLEOACTUAL":
+      case "EMPLEO ACTUAL":
         selected.value = empleoType[0];
         break;
-      case "JUBILACION":
+      case "JUBILACIÓN":
         selected.value = empleoType[1];
         break;
       case "HONORARIOS":
         selected.value = empleoType[2];
         break;
 
-      case "HONORARIOSCONTRATO":
+      case "HONORARIOS CONTRATO":
         selected.value = empleoType[3];
         break;
 
-      case "RETIROSOCIEDAD":
+      case "RETIRO SOCIEDAD":
         selected.value = empleoType[4];
         break;
       case "OTRO":
