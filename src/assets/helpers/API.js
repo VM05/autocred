@@ -33,11 +33,11 @@ export let horas = [
 ];
 
 export const empleoType = [
-    { id: 1, value: "EMPLEOACTUAL", name: "EMPLEO ACTUAL" },
-    { id: 2, value: "JUBILACION", name: "JUBILACIÓN" },
+    { id: 1, value: "EMPLEO ACTUAL", name: "EMPLEO ACTUAL" },
+    { id: 2, value: "JUBILACIÓN", name: "JUBILACIÓN" },
     { id: 3, value: "HONORARIOS", name: "HONORARIOS " },
-    { id: 4, value: "HONORARIOSCONTRATO", name: "HONORARIOS CONTRATO" },
-    { id: 5, value: "RETIROSOCIEDAD", name: "RETIRO SOCIEDAD" },
+    { id: 4, value: "HONORARIOS CONTRATO", name: "HONORARIOS CONTRATO" },
+    { id: 5, value: "RETIRO SOCIEDAD", name: "RETIRO SOCIEDAD" },
     { id: 6, value: "OTRO", name: "OTRO" }
 ];
 export const antiguedad = [

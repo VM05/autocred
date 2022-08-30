@@ -550,7 +550,7 @@ const handleTransition = async (cuota) => {
     } else {
       newUser.value = true;
       formSimulador2.work_continuity = 24;
-      formSimulador2.income_type = "EMPLEOACTUAL";
+      formSimulador2.income_type = "EMPLEO ACTUAL";
       formSimulador2.salary = "";
       formSimulador2.name = "";
       formSimulador2.first_surname = "";
