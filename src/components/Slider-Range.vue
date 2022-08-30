@@ -19,7 +19,7 @@
         class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full"
         type="text"
         min="1000000"
-        max="7000000"
+        max="10000000"
         placeholder="$1.000.000"
         @blur="format"
       />
@@ -40,7 +40,7 @@
       v-else
       v-model="value"
       class="slider-red secon"
-      :max="7_000_000"
+      :max="20_000_000"
       :min="1_000_000"
       :merge="100"
       :step="50_000"
