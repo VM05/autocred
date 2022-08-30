@@ -528,7 +528,7 @@ const handleTransition = async (cuota) => {
         : (formSimulador2.email = "");
       (await res.data.income_type) != undefined
         ? (formSimulador2.income_type = await res.data.income_type)
-        : (formSimulador2.income_type = "EMPLEOACTUAL");
+        : (formSimulador2.income_type = "EMPLEO ACTUAL");
       (await res.data.income_salary) != undefined
         ? (formSimulador2.salary = await res.data.income_salary)
         : (formSimulador2.salary = "");
