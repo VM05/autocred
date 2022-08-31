@@ -685,7 +685,7 @@ const checkSurname = (e) => {
 
 const checkTelefono = (e) => {
   if (e.length >= 0) {
-    if (formSimulador2.phone == "") {
+    if (formSimulador2.phone == "" || formSimulador2.phone.length < 9) {
       warningPhone.value = true;
     } else {
       warningPhone.value = false;
