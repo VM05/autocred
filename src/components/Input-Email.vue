@@ -24,7 +24,7 @@
       @blur="handler"
     />
     <span
-      class="absolute w-full -bottom-6 md:-bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+      class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
       >{{ validated }}</span
     >
   </div>

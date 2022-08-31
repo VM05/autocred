@@ -260,12 +260,12 @@
                         @textvalue="(e) => checkEmail(e)"
                       />
 
-                      <Paragraph
+                      <!-- <Paragraph
                         class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
                         v-if="warningEmail"
                       >
                         Por favor ingresa una direccion de correo valida
-                      </Paragraph>
+                      </Paragraph> -->
                     </div>
 
                     <div class="relative">
