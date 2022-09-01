@@ -176,7 +176,6 @@ onMounted(async () => {
 
 watch(route, () => {
   elementActive.value = route.params.active;
-  console.log(elementActive.value);
 });
 </script>
 
