@@ -167,6 +167,8 @@ onMounted(async () => {
   try {
     const servicios = await axios.get(SERVICIOS_URL);
     data.value = await servicios.data;
+
+    const urlParams = window.URLSearchParams(window.location.search);
   } catch (error) {
     console.log("error");
   }
@@ -174,6 +176,7 @@ onMounted(async () => {
 
 watch(route, () => {
   elementActive.value = route.params.active;
+  console.log(elementActive.value);
 });
 </script>
 

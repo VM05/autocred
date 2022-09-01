@@ -18,6 +18,8 @@ import Terms from '../views/Terms.vue'
 import ComparaOnline from '../views/compara-online/ComparaOnline.vue'
 import ComparaFinanciamiento from '../views/compara-online/ComparaFinanciamiento.vue'
 import calendarioVanMovil from '../views/CalendarioVanMovil.vue'
+import Amotor from '../views/amotor/Amotor.vue'
+import AmotorFinanciamiento from '../views/amotor/AmotorFinanciamiento.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -60,9 +62,15 @@ const router = createRouter({
             ]
         },
         {
-            path: '/compara-online', name: 'comprara-online', component: ComparaOnline,
+            path: '/compara-online', name: 'comprara-online', component: Amotor,
             children: [
                 { path: '/compara-online/financiamiento', name: 'Financiamiento-comprara-online', component: ComparaFinanciamiento },
+            ]
+        },
+        {
+            path: '/amotor', name: 'amotor', component: Amotor,
+            children: [
+                { path: '/amotor/financiamiento', name: 'Amotor', component: AmotorFinanciamiento },
             ]
         },
 
