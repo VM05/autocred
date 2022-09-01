@@ -167,11 +167,25 @@ onMounted(async () => {
   try {
     const servicios = await axios.get(SERVICIOS_URL);
     data.value = await servicios.data;
-
-    const urlParams = window.URLSearchParams(window.location.search);
   } catch (error) {
     console.log("error");
   }
+
+  const urlsearch = window.location.href;
+
+  if (urlsearch.indexOf("#tag") > 0) {
+    elementActive.value = "tag";
+  } else if (urlsearch.indexOf("#financiamiento") > 0) {
+    elementActive.value = "financiamiento";
+  } else if (urlsearch.indexOf("#seguro") > 0) {
+    elementActive.value = "seguro";
+  } else if (urlsearch.indexOf("#transferencias") > 0) {
+    elementActive.value = "transferencias";
+  } else {
+    elementActive.value = "";
+  }
+
+  console.log(elementActive.value);
 });
 
 watch(route, () => {

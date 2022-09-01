@@ -62,7 +62,7 @@ const router = createRouter({
             ]
         },
         {
-            path: '/compara-online', name: 'comprara-online', component: Amotor,
+            path: '/compara-online', name: 'comprara-online', component: ComparaOnline,
             children: [
                 { path: '/compara-online/financiamiento', name: 'Financiamiento-comprara-online', component: ComparaFinanciamiento },
             ]
