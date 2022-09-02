@@ -2,16 +2,23 @@
   <div class="bg-white fixed top-0 left-0 w-full z-50 py-4">
     <ContainerVue>
       <div class="flex flex-row justify-between w-full menu bg-white">
-        <img
-          src="../../assets/img/logo-autocred-menu.svg"
-          alt="Autocred"
-          class="h-6 xl:h-12 w-auto"
-        />
-        <img
-          src="../../assets/img/compara.png"
-          alt="Yapo"
-          class="h-6 xl:h-12 w-auto"
-        />
+        <a href="https://www.autocred.cl" id="imagen-autocred">
+          <img
+            src="../../assets/img/logo-autocred-menu.svg"
+            alt="Autocred"
+            class="h-6 xl:h-12 w-auto"
+          />
+        </a>
+        <a
+          href="https://www.comparaonline.cl/credito-automotriz/product/autocred/credito-automotriz-scotiamovil"
+          target="_blank"
+        >
+          <img
+            src="../../assets/img/compara.png"
+            alt="Yapo"
+            class="h-6 xl:h-12 w-auto"
+          />
+        </a>
       </div>
     </ContainerVue>
   </div>
