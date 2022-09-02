@@ -5,8 +5,6 @@
       class="text-center mb-5"
     />
     <Login1 />
-
-    <Button class="mb-10" secondary @click="consolaDatos()" text="Abrir" />
   </Container>
 </template>
 
