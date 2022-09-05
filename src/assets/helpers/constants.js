@@ -314,9 +314,28 @@ export const ventajas = [
 
 export const posts = [
 
-
     {
         "id": 1,
+        "title": "Viernes de emprendedores con Felipe Lira, Socio Fundador de Autocred habla sobre el mercado automotriz de autos usados.",
+        "body": ` <p class="mb-2">El 19 de agosto en la edición AM de Radio Duna, tuvimos Viernes de Emprendedores con Felipe Lira, socio fundador de Autocred:</p>
+    
+    <div class="mt-10 flex justify-center" >
+       
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FRadioDuna%2Fvideos%2F365438125630297%2F&show_text=0&width=560" width="860" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+    </div>
+   
+
+    
+    `,
+        "img": "/img/blog/radioduna.png",
+        "imgMobile": "/img/blog/dunamobile.png",
+        "date": "19-08-22",
+        "medio": "Radio"
+    },
+
+
+    {
+        "id": 2,
         "title": "Startup nacional simplifica la transferencia de vehículos usados entre particulares",
         "body": ` <p class="mb-2 font-bold">La plataforma está en línea con financieras, Registro Civil, notarías y empresas de seguro y además su servicio incluye traslado en van para conectar al comprador y vendedor.</p>
 
@@ -348,7 +367,7 @@ export const posts = [
         "medio": "Prensa"
     },
     {
-        "id": 2,
+        "id": 3,
         "title": "Julio y Agosto, los meses claves para comprar autos usados.",
         "body": ` <p class="mb-2">El mercado de los autos usados vería reflejada la histórica alza del dólar en septiembre. Felipe Lira socio director de Autocred explica en esta nota de T13.cl porqué estos meses son propicios para adquirir un vehículo usado.</p>
 
@@ -378,7 +397,7 @@ export const posts = [
     },
 
     {
-        "id": 3,
+        "id": 4,
         "title": "Yapo.cl la nueva alianza de Autocred",
         "body": ` <p class="mb-2">En Autocred queremos ser el mejor copiloto para la compra y venta de vehículos usados entre personas. Felipe Lira Socio Director de Autocred en entrevista con Claudia Castro, Gerenta Comercial de Yapo.cl explicó todo los beneficios de esta alianza enfocado siempre en apoyar a las personas en todo el proceso.</p>
 
@@ -414,7 +433,7 @@ export const posts = [
     },
 
     {
-        "id": 4,
+        "id": 5,
         "title": "Entrevista en Radio Biobío Felipe Lira, Socio Fundador de Autocred habla sobre el mercado automotriz de autos usados.",
         "body": ` <p class="mb-2">En programa Una semana en La Radio, de Radio Biobío, Felipe Lira, Socio Fundador de Autocred habla sobre el aumento de la demanda automotriz de vehículos usados y cómo Autocred llega para apoyar en la compra y venta de vehículos usados entre personas, acompañando y apoyando en todo el proceso a cada una de las partes con Financiamiento, Seguro, Tag, Transferencia y todo lo necesario para que la experiencia de este proceso sea un gran viaje.</p>
     
@@ -434,7 +453,7 @@ export const posts = [
         "medio": "Radio"
     },
     {
-        "id": 5,
+        "id": 6,
         "title": "Programa Emprender es Clave de Radio La Clave, Felipe Lira Socio Director habla sobre Autocred y la compra o venta de autos usados",
         "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
         para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se
@@ -452,7 +471,7 @@ export const posts = [
         "medio": "Radio"
     },
     {
-        "id": 6,
+        "id": 7,
         "title": "Forum debuta en mundo venture e invierte US$ 1 millón en Autocred | DFMAS",
         "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
         para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se
