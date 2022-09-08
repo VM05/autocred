@@ -22,6 +22,7 @@
       valor="valor"
       :id="props.id"
       @blur="handler"
+      :name="nombre"
     />
     <span
       class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
@@ -44,6 +45,7 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  nombre: String,
 });
 const emit = defineEmits(["update:email", "textvalue"]);
 const handler = (e) => {

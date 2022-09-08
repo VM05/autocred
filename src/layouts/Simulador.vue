@@ -334,7 +334,7 @@
                         class="absolute w-full -bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
                         v-if="warningFecha"
                       >
-                        Debe ingresar una fecha valida
+                        {{ mensajeFecha }}
                       </Paragraph>
                     </div>
                   </div>
@@ -422,7 +422,8 @@ const useUtms = useContactoStore();
 const router = useRouter();
 const errorForm = ref(true);
 const errorForm2 = ref(true);
-
+const fecha_hoy = new Date();
+const mensajeFecha = ref("");
 const disabledModel = ref(true);
 const formSimulador = reactive({
   dni: "",
@@ -659,10 +660,6 @@ watch(formSimulador, () => {
   formSimulador2.vehicle_version = formSimulador.vehicle_version;
 });
 
-const prueba = () => {
-  console.log("hola");
-};
-
 const checkInput = (e) => {
   if (e.length >= 0) {
     if (formSimulador2.name == "") {
@@ -714,8 +711,22 @@ const checkSecondSurname = (e) => {
 };
 
 const checkFecha = (e) => {
+  let fecha_cumple = new Date(formSimulador2.birth_date);
+  let fechaValida = fecha_hoy.getFullYear() - fecha_cumple.getFullYear();
+  let mesValido = fecha_hoy.getMonth() - fecha_cumple.getMonth();
+  if (
+    mesValido < 0 ||
+    (mesValido === 0 && fecha_hoy.getDate() < fecha_cumple.getDate())
+  ) {
+    fechaValida--;
+  }
+
   if (formSimulador2.birth_date.length >= 0) {
     if (formSimulador2.birth_date == "") {
+      mensajeFecha.value = "Debe ingresar una fecha valida";
+      warningFecha.value = true;
+    } else if (fechaValida < 18) {
+      mensajeFecha.value = "Debe ser mayor de edad para evaluar";
       warningFecha.value = true;
     } else {
       warningFecha.value = false;
@@ -746,6 +757,8 @@ const onlyNumber = ($event) => {
 watch(formSimulador2, () => {
   let formated = "";
 
+  console.log();
+
   if (formSimulador2.phone.length > 0) {
     if (formSimulador2.phone.length != 9) {
       warningPhone.value = true;
@@ -774,7 +787,8 @@ watch(formSimulador2, () => {
     warningSalary.value == true ||
     warningName.value == true ||
     warningSurname.value == true ||
-    warningMail.value == true
+    warningMail.value == true ||
+    warningFecha.value == true
   ) {
     errorForm2.value = true;
   } else {
@@ -809,6 +823,11 @@ const registerHandle = () => {
     },
   });
 };
+
+onMounted(() => {
+  console.log(fecha_hoy.getFullYear());
+  console.log(formSimulador2.birth_date);
+});
 
 const loginHandle = () => {
   router.push({

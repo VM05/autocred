@@ -75,7 +75,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import {
   Combobox,
   ComboboxInput,
@@ -86,7 +86,7 @@ import {
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
 import { gestion } from "../assets/helpers/API";
-defineProps({
+const props = defineProps({
   data: {},
   label: String,
 });

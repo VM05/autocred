@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.7.0",
     "@fdograph/rut-utilities": "^1.4.0",
     "@fullcalendar/core": "^5.11.2",
     "@fullcalendar/daygrid": "^5.11.2",

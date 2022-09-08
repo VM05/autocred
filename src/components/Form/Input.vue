@@ -31,6 +31,7 @@
         @keyup="handler"
         @blur="handler"
         autocomplete="off"
+        :name="nombre"
       />
     </div>
     <input
@@ -96,6 +97,7 @@
       :disabled="disabled"
       @blur="handler"
       required
+      :name="nombre"
     />
   </div>
 </template>
@@ -116,6 +118,7 @@ const props = defineProps({
   money: Boolean,
   valor: Number,
   fecha: String,
+  nombre: String,
 });
 
 const valorRenta = ref(props.valor);

@@ -70,7 +70,7 @@ import Button from "./Button.vue";
 import { ref } from "vue";
 import Heading from "./Heading.vue";
 
-const creditoSmart = ref(false);
+// const creditoSmart = ref(false);
 const emits = defineEmits(["select:term"]);
 const handleAccordion = (cuota, id) => emits("select:term", [cuota, id]);
 const props = defineProps({

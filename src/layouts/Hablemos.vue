@@ -30,23 +30,36 @@
         </div>
       </div>
       <form
-        class="grid md:grid-cols-2 grid-cols-1"
+        class="grid md:grid-cols-2 grid-cols-1 form-prueba"
         @submit.prevent="handleForm"
         id="form"
-        v-else
+        v-show="!isSuccess && !isError && !isLoading"
       >
+        <input
+          type="hidden"
+          name="user_servicios"
+          :value="formContacto.servicios"
+        />
+
+        <input type="hidden" name="user_errorform" :value="errorForm" />
+        <input type="hidden" name="user_browser" :value="browserName" />
+        <input type="hidden" name="user_device" :value="dispositivo" />
+        <input type="hidden" name="user_href" :value="direccion_sitio" />
+
         <div class="left p-0 md:pr-8 md:border-r border-0">
           <Input
             placeholder="Ingresa tu nombre completo"
             label="Nombre"
             id="name"
             @update:text="(e) => (formContacto.nombre_completo = e)"
+            nombre="user_name"
           />
           <InputEmail
             placeholder="Ingresa tu correo de contacto"
             label="Correo electrónico"
             id="email"
             @update:email="(e) => (formContacto.email = e)"
+            nombre="user_email"
           />
           <div class="relative">
             <Input
@@ -55,6 +68,7 @@
               id="phone"
               isPhone
               @update:text="(e) => (formContacto.telefono = '+56' + e)"
+              nombre="user_phone"
             />
             <Paragraph
               class="text-red-700 justify-self-center text-center absolute -bottom-6 w-full md:-bottom-0 left-1/2 -translate-x-1/2"
@@ -74,6 +88,7 @@
             label="¿Cómo quieres que gestionemos tu servicio?"
             class="w-full"
             @update:gestion="(e) => (formContacto.canal_atencion = e)"
+            :key="componentKey"
           />
 
           <TextArea1
@@ -82,12 +97,7 @@
             @update:textArea="(e) => (formContacto.mensaje = e)"
           />
           <div class="flex justify-end">
-            <ButtonVue
-              text="Enviar"
-              outlinePrimary
-              type="submit"
-              :disabled="warnings.isWarning"
-            />
+            <ButtonVue text="Enviar" outlinePrimary type="submit" />
           </div>
         </div>
       </form>
@@ -104,7 +114,7 @@ import CheckServicios from "../components/CheckServicios.vue";
 import TextArea1 from "../components/TextArea.vue";
 import ButtonVue from "../components/Button.vue";
 import SelectGestion from "../components/SelectGestion.vue";
-import { reactive, ref, watch, onMounted } from "vue";
+import { reactive, ref, watch, onMounted, getCurrentInstance } from "vue";
 import { formEmpty, validateEmail } from "../assets/helpers/validate";
 import { gestion, servicios, URL_GOGEMA } from "../assets/helpers/API";
 import axios from "axios";
@@ -114,6 +124,8 @@ import Paragraph from "../components/Paragraph.vue";
 import Button from "../components/Button.vue";
 import { useContactoStore } from "../stores/contacto";
 import { useRoute, useRouter } from "vue-router";
+import emailjs from "@emailjs/browser";
+
 const route = useRoute();
 const router = useRouter();
 const isLoading = ref(false);
@@ -125,6 +137,44 @@ const warnings = reactive({
   warningServicios: true,
   isWarning: true,
 });
+const errorForm = ref(" uno de los campos esta vacio");
+const dispositivo = ref("");
+const browserName = ref("");
+const direccion_sitio = window.location.href;
+
+const encuentraDispositivo = () => {
+  let userAgent = navigator.userAgent;
+
+  if (userAgent.match(/chrome|chromium|crios/i)) {
+    browserName.value = "Chrome";
+  } else if (userAgent.match(/firefox|fxios/i)) {
+    browserName.value = "Firefox";
+  } else if (userAgent.match(/safari/i)) {
+    browserName.value = "Safari";
+  } else if (userAgent.match(/opr\//i)) {
+    browserName.value = "Opera";
+  } else if (userAgent.match(/edg/i)) {
+    browserName.value = "Edge";
+  } else {
+    browserName.value = "Unknown";
+  }
+
+  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(userAgent)) {
+    dispositivo.value = "tablet";
+  } else if (
+    /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+      userAgent
+    )
+  ) {
+    dispositivo.value = "mobile";
+  }
+  dispositivo.value = "desktop";
+};
+
+onMounted(() => {
+  encuentraDispositivo();
+});
+
 //Use Params
 const useUtms = useContactoStore();
 
@@ -157,9 +207,20 @@ const handleForm = async (e) => {
 
   if (!formEmpty(formContacto)) {
     await sendFormGoGema();
+
     if (isSuccess.value == true) {
+      const formulario = document.getElementById("form");
+      formulario.reset();
       router.push({ path: route.path, hash: contactRouteSuccess() });
+
+      const span = document.querySelectorAll(".mt-1 span");
+      span.forEach((span) => {
+        if (span.style.display === "none") {
+          span.click();
+        }
+      });
     } else {
+      enviarMail();
       router.push({ path: route.path, hash: contactRouteIncomplete() });
     }
   }
@@ -185,13 +246,22 @@ const sendFormGoGema = async () => {
       isSuccess.value = true;
     }
   } catch (error) {
+    errorForm.value = error.response.request.response;
     if (error.response.data.message) {
       isLoading.value = false;
       isError.value = true;
     }
   }
 };
+
+const componentKey = ref(0);
+
+const forceRerender = () => {
+  componentKey.value += 1;
+};
+
 const btnBack = () => {
+  forceRerender();
   isSuccess.value = false;
   isError.value = false;
 };
@@ -203,7 +273,7 @@ const handleCheck = (e) => {
 watch(formContacto, () => {
   isFormComplete.value = formEmpty(formContacto);
   isEmailValid.value = validateEmail(formContacto.email);
-  console.log(isEmailValid.value);
+
   if (formContacto.mensaje.length == 0) {
     formContacto.mensaje =
       formContacto.nombre_completo +
@@ -236,6 +306,16 @@ watch([isLoading, isSuccess, isError], () => {
     ? (alerts.value = true)
     : (alerts.value = false);
 });
+
+const enviarMail = () => {
+  const formulario = document.getElementById("form");
+  emailjs.sendForm(
+    "service_pgv1taa",
+    "template_seiqd1b",
+    formulario,
+    "Jm7OFS9JSVMS2XjET"
+  );
+};
 </script>
 
 <style scoped></style>
