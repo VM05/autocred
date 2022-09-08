@@ -97,7 +97,12 @@
             @update:textArea="(e) => (formContacto.mensaje = e)"
           />
           <div class="flex justify-end">
-            <ButtonVue text="Enviar" outlinePrimary type="submit" />
+            <ButtonVue
+              text="Enviar"
+              outlinePrimary
+              type="submit"
+              :disabled="warnings.isWarning"
+            />
           </div>
         </div>
       </form>
@@ -271,15 +276,16 @@ const handleCheck = (e) => {
 };
 
 watch(formContacto, () => {
+  console.log(formContacto.mensaje);
   isFormComplete.value = formEmpty(formContacto);
   isEmailValid.value = validateEmail(formContacto.email);
 
-  if (formContacto.mensaje.length == 0) {
-    formContacto.mensaje =
-      formContacto.nombre_completo +
-      " desea evaluar servicios de " +
-      formContacto.servicios;
-  }
+  // if (formContacto.mensaje.length == 0) {
+  //   formContacto.mensaje =
+  //     formContacto.nombre_completo +
+  //     " desea evaluar servicios de " +
+  //     formContacto.servicios;
+  // }
   if (formContacto.telefono.length > 0 && formContacto.telefono.length < 12) {
     warnings.warningTelefono = true;
   } else {

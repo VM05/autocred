@@ -22,6 +22,7 @@
       valor="valor"
       :id="props.id"
       @blur="handler"
+      @keypress="handler"
       :name="nombre"
     />
     <span
