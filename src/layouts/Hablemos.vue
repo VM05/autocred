@@ -276,7 +276,6 @@ const handleCheck = (e) => {
 };
 
 watch(formContacto, () => {
-  console.log(formContacto.mensaje);
   isFormComplete.value = formEmpty(formContacto);
   isEmailValid.value = validateEmail(formContacto.email);
 
@@ -300,7 +299,8 @@ watch(formContacto, () => {
   if (
     warnings.warningTelefono == false &&
     warnings.warningServicios == false &&
-    isEmailValid.value == true
+    isEmailValid.value == true &&
+    isFormComplete.value == false
   ) {
     warnings.isWarning = false;
   } else {
