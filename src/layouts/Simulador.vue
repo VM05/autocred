@@ -258,6 +258,7 @@
                           formSimulador2.email ? formSimulador2.email : ''
                         "
                         @textvalue="(e) => checkEmail(e)"
+                        :key="componentKey"
                       />
 
                       <!-- <Paragraph
@@ -301,6 +302,7 @@
                       :valor="formSimulador2.salary"
                       @keypress="onlyNumber"
                       @textvalue="(e) => checkRenta(e)"
+                      :key="componentKey"
                     />
                     <Paragraph
                       class="absolute w-full -bottom-6 md:-bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
@@ -328,6 +330,7 @@
                         date
                         @update:text="(e) => (formSimulador2.birth_date = e)"
                         @textvalue="checkFecha(e)"
+                        :key="componentKey"
                       />
 
                       <Paragraph
@@ -496,6 +499,8 @@ const formActive = ref(true);
 const formActive2 = ref(false);
 const warningDownPayment = ref(false);
 const newUser = ref(false);
+
+const componentKey = ref(0);
 //PASO 1
 const handleForm = async () => {
   loading.value = true;
@@ -507,6 +512,10 @@ const handleForm = async () => {
   } catch (error) {
     console.log("error");
   }
+};
+
+const forceRerender = () => {
+  componentKey.value += 1;
 };
 
 //PASO INTERMEDIO
@@ -558,6 +567,7 @@ const handleTransition = async (cuota) => {
       formSimulador2.second_surname = "";
       formSimulador2.email = "";
       formSimulador2.phone = "";
+      forceRerender();
     }
   } catch (error) {
     console.log(error);
@@ -578,10 +588,11 @@ const handleTransition = async (cuota) => {
 };
 
 const volverAnterior = () => {
-  formSimulador2.nationality = "";
   formSimulador2.salary = "";
   formSimulador2.income_type = "";
   formSimulador2.work_continuity = "";
+  formSimulador2.birth_date = "";
+  warningFecha.value = false;
   formActive2.value = false;
   formActive.value = true;
 };
@@ -600,7 +611,6 @@ const handleForm2 = async () => {
       const res_register = await axios.post(REGISTER_URL_TWO, registerForm);
 
       const res = await axios.post(EVALUACION_URL_2, formSimulador2);
-      console.log(res);
 
       isSuccess.value = true;
 
@@ -614,7 +624,7 @@ const handleForm2 = async () => {
   }
   try {
     const res = await axios.post(EVALUACION_URL_2, formSimulador2);
-    console.log(res);
+
     if (res.data.success) loading.value = false;
     isSuccess.value = true;
   } catch (error) {
@@ -757,8 +767,6 @@ const onlyNumber = ($event) => {
 watch(formSimulador2, () => {
   let formated = "";
 
-  console.log();
-
   if (formSimulador2.phone.length > 0) {
     if (formSimulador2.phone.length != 9) {
       warningPhone.value = true;
@@ -788,7 +796,8 @@ watch(formSimulador2, () => {
     warningName.value == true ||
     warningSurname.value == true ||
     warningMail.value == true ||
-    warningFecha.value == true
+    warningFecha.value == true ||
+    formSimulador2.birth_date == ""
   ) {
     errorForm2.value = true;
   } else {
@@ -823,11 +832,6 @@ const registerHandle = () => {
     },
   });
 };
-
-onMounted(() => {
-  console.log(fecha_hoy.getFullYear());
-  console.log(formSimulador2.birth_date);
-});
 
 const loginHandle = () => {
   router.push({
