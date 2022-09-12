@@ -46,7 +46,7 @@
             autoplay
             controls
             muted
-            src="../assets/video/promo.mp4"
+            src="../assets/video/promo-nuevo.mp4"
             class="w-full md:w-auto rounded-3xl"
           ></video>
         </div>

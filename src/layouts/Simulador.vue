@@ -100,8 +100,7 @@
                     class="text-red-700 justify-self-center text-center grid-flow-row col-end-3 mt-2"
                     v-if="warningDownPayment"
                   >
-                    Pie Inicial debe ser mayor o igual al 20% del valor del
-                    vehículo
+                    {{ mensajeValor }}
                   </Paragraph>
                 </div>
               </div>
@@ -125,12 +124,13 @@
                 />
               </div>
             </div>
-            <div class="footer grid justify-center py-4">
+            <div class="footer grid justify-items-center align-middle py-4">
               <Button1
                 text="Consulta tu cuota"
                 secondary
                 :disabled="errorForm"
                 id="boton-consultar-cuota"
+                style="max-width: 200px"
               />
             </div>
           </form>
@@ -420,6 +420,7 @@ import { useSimuladorStore } from "../stores/simulador";
 import { useContactoStore } from "../stores/contacto";
 import { findProp } from "@vue/compiler-core";
 
+const validarMonto = ref(false);
 const useSimulador = useSimuladorStore();
 const useUtms = useContactoStore();
 const router = useRouter();
@@ -427,6 +428,7 @@ const errorForm = ref(true);
 const errorForm2 = ref(true);
 const fecha_hoy = new Date();
 const mensajeFecha = ref("");
+const mensajeValor = ref("");
 const disabledModel = ref(true);
 const formSimulador = reactive({
   dni: "",
@@ -491,7 +493,6 @@ const warningName = ref(false);
 const warningSurname = ref(false);
 const warningSecondSurname = ref(false);
 const warningFecha = ref(false);
-const warningNacionalidad = ref(false);
 const warningMail = ref(false);
 const warningEmail = ref(false);
 const complete = ref(false);
@@ -503,6 +504,7 @@ const newUser = ref(false);
 const componentKey = ref(0);
 //PASO 1
 const handleForm = async () => {
+  validarMonto.value = false;
   loading.value = true;
   try {
     const res = await axios.post(EVALUACION_URL_1, formSimulador);
@@ -644,13 +646,20 @@ watch(formSimulador, () => {
       formSimulador.requested_amount = res.toString();
       errorForm.value = false;
 
-      if (
+      if (formSimulador.vehicle_price - formSimulador.down_payment < 1500000) {
+        warningDownPayment.value = true;
+        mensajeValor.value = "El monto mínimo a solicitar es de $1.500.000.";
+        errorForm.value = true;
+      } else if (
         formSimulador.down_payment <
         (formSimulador.vehicle_price * 20) / 100
       ) {
         warningDownPayment.value = true;
         errorForm.value = true;
+        mensajeValor.value =
+          "Pie Inicial debe ser mayor o igual al 20% del valor del vehículo";
       } else {
+        mensajeValor.value = "";
         errorForm.value = false;
         warningDownPayment.value = false;
       }
