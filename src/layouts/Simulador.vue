@@ -637,6 +637,7 @@ const handleForm2 = async () => {
 //PASO 2
 
 watch(formSimulador, () => {
+  complete.value = false;
   if (formEmpty(formSimulador)) {
     errorForm.value = true;
   } else {
