@@ -67,6 +67,7 @@
       @change="handler"
       required
       :min="fecha"
+      max="2999-12-31"
     />
     <input
       v-else-if="money"
