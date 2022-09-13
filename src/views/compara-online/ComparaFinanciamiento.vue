@@ -1,6 +1,7 @@
 <template>
   <Container class="xl:mt-8">
-    <BannerHome>
+    <Simulador class="mt-20" />
+    <BannerHome class="mt-0">
       <template #content>
         <Heading
           content="Obtén tu financiamiento en solo 7 minutos."
@@ -33,7 +34,7 @@
         </div>
       </template>
     </BannerHome>
-    <Simulador />
+
     <!-- <Contacto /> -->
     <div class="md:hidden mt-8">
       <Heading content="Conoce más sobre Autocred" class="mb-4" />
