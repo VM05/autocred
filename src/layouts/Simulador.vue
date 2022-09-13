@@ -894,7 +894,7 @@ const loginHandle = () => {
     border-radius: 40px;
     object-fit: cover;
     filter: brightness(0.8);
-    margin-bottom: 550px;
+    margin-bottom: 520px;
   }
   .card {
     width: 95%;
