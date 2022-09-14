@@ -29,7 +29,7 @@
 
 <script setup>
 import Heading from "../components/Heading.vue";
-import { Carousel, Navigation, Slide } from "vue3-carousel";
+import { Carousel, Slide } from "vue3-carousel";
 import { brands } from "../assets/helpers/constants";
 
 const breakpoints = {

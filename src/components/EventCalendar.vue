@@ -153,7 +153,7 @@ const options = reactive({
   // },
 });
 
-const argumentosOpciones = ref("");
+// const argumentosOpciones = ref("");
 
 // options.events = getEvents.value;
 

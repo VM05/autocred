@@ -80,7 +80,6 @@ import {
   TransitionRoot,
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
-import { horas } from "../assets/helpers/API";
 
 const emit = defineEmits(["update:hora"]);
 

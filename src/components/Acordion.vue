@@ -67,7 +67,6 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import { ChevronUpIcon } from "@heroicons/vue/solid";
 import { formatNumbers } from "../assets/helpers/validate";
 import Button from "./Button.vue";
-import { ref } from "vue";
 import Heading from "./Heading.vue";
 
 // const creditoSmart = ref(false);

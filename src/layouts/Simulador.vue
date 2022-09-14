@@ -3,7 +3,7 @@
     <div class="relative grid">
       <div class="relative z-0">
         <img
-          src="../assets/img/cotizacion.jpg"
+          src="../assets/img/cotizacion.webp"
           alt=""
           class="imagen z-0 top-0"
         />

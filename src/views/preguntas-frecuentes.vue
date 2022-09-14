@@ -29,7 +29,7 @@
 import Container from "../layouts/Container.vue";
 import BannerHome from "../layouts/BannerHome.vue";
 import Heading from "../components/Heading.vue";
-import Button from "../components/Button.vue";
+
 import Hablemos from "../layouts/Hablemos.vue";
 import PreguntasList from "../layouts/preguntas/PreguntasList.vue";
 import { useHead } from "@vueuse/head";

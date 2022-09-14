@@ -12,9 +12,8 @@
 import Container from "../layouts/Container.vue";
 import Heading1 from "../components/Heading.vue";
 import Login1 from "../components/Login.vue";
-import Button from "../components/Button.vue";
+
 import { useHead } from "@vueuse/head";
-import axios from "axios";
 
 useHead({
   title: "Autocred | Iniciar Sesión",

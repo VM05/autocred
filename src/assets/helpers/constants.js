@@ -362,7 +362,7 @@ export const posts = [
     </ul>
     
     `,
-        "img": "/img/blog/autocred-alt.webp",
+        "img": "/img/blog/Autocred.webp",
         "date": "09-08-22",
         "medio": "Prensa"
     },
@@ -466,7 +466,7 @@ export const posts = [
     <a href="https://www.youtube.com/watch?v=vmfLw2LqU8I" target="_blank" rel="noreferrer noopener" class="font-semibold text-secondary-900">Ver la entrevista completa aquí</a>
     
     `,
-        "img": "/img/blog/emprendereslaclave.jpg",
+        "img": "/img/blog/emprendereslaclave.webp",
         "date": "29-06-22",
         "medio": "Radio"
     },

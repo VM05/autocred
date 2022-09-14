@@ -71,7 +71,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onUpdated, watch } from "vue";
+import { ref, computed, watch } from "vue";
 import {
   Combobox,
   ComboboxInput,

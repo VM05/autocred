@@ -60,9 +60,6 @@ import Container from "../../components/Yapo/Container.vue";
 import BannerHome from "../../layouts/BannerHome.vue";
 import Heading from "../../components/Heading.vue";
 import Simulador from "../../layouts/Simulador.vue";
-import Contacto from "../../components/Yapo/Contacto.vue";
-import CardServicio from "../../components/Yapo/CardServicio.vue";
-import { servicioCards } from "../../assets/helpers/API";
 </script>
 
 <style scoped>

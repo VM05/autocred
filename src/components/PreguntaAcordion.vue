@@ -32,7 +32,6 @@
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import { PlusCircleIcon, MinusCircleIcon } from "@heroicons/vue/outline";
-import { stringify } from "qs";
 
 defineProps({
   data: Object,

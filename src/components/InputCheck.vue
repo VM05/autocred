@@ -21,7 +21,7 @@
 
 <script setup>
 import { CheckIcon } from "@heroicons/vue/solid";
-import { useContactoStore } from "../stores/contacto";
+
 import { ref } from "vue";
 const props = defineProps({
   servicio: Object,
@@ -33,8 +33,6 @@ const clickService = (item) => {
 
   isSelected.value = !isSelected.value;
 };
-
-const useContacto = useContactoStore();
 </script>
 
 <style scoped></style>

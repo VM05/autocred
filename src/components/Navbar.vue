@@ -133,13 +133,8 @@ import {
   PopoverButton,
   PopoverGroup,
   PopoverPanel,
-  Menu,
-  MenuButton,
-  MenuItems,
-  MenuItem,
 } from "@headlessui/vue";
 
-import { ChevronDownIcon, MenuIcon, XIcon } from "@heroicons/vue/outline";
 import Button1 from "./Button.vue";
 import { links } from "../assets/helpers/constants";
 import MenuVue from "./Menu.vue";

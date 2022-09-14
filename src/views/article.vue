@@ -34,7 +34,7 @@ import Paragraph from "../components/Paragraph.vue";
 import Heading from "../components/Heading.vue";
 import Medios from "../layouts/Medios.vue";
 import { posts } from "../assets/helpers/constants";
-import { ref, watch, onMounted, onBeforeMount } from "vue";
+import { ref, watch, onBeforeMount } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();

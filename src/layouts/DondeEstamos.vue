@@ -165,7 +165,6 @@ import { ref, unref } from "vue";
 import { direcciones } from "../assets/helpers/API";
 import Paragraph from "../components/Paragraph.vue";
 import { CheckIcon, LocationMarkerIcon, ChatIcon } from "@heroicons/vue/solid";
-import { useHead } from "@vueuse/head";
 const activeSucursal = ref(direcciones[0].sucursales[0].name);
 const activeDirection = ref("R.Metropolitana");
 const active = (e) => {

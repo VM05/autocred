@@ -65,7 +65,6 @@
 </template>
 
 <script setup>
-import EventCalendar from "../components/EventCalendar.vue";
 import Container from "../layouts/Container.vue";
 import Servicios from "../layouts/Servicios.vue";
 import BannerHome from "../layouts/BannerHome.vue";
@@ -80,7 +79,6 @@ import Hablemos from "../layouts/Hablemos.vue";
 import Experiencia from "../layouts/Experiencia.vue";
 import { useHead } from "@vueuse/head";
 import Simulador from "../layouts/Simulador.vue";
-import ModalVanMovil from "../components/modalVanMovil.vue";
 
 useHead({
   title: "Autocred Chile tu mejor copiloto",

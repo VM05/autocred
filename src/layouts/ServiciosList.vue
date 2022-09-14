@@ -147,7 +147,7 @@ import {
   featuresSeguro,
 } from "../assets/helpers/constants";
 import { ref, onMounted, watch } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 
 import Heading from "../components/Heading.vue";
 import axios from "axios";
