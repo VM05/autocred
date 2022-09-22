@@ -1,5 +1,20 @@
 <template>
   <Container>
+    <!-- <ModalView>
+      <template v-slot:header>
+        <img
+          src="../assets/img/logo-autocred-menu.svg"
+          alt=""
+          class="mx-auto w-52 py-5"
+        />
+      </template>
+
+      <template v-slot:body>
+        <div class="text-center my-10">
+          <p>prueba de informacion desde popup</p>
+        </div>
+      </template>
+    </ModalView> -->
     <BannerHome>
       <template #content>
         <Heading
@@ -79,6 +94,8 @@ import Hablemos from "../layouts/Hablemos.vue";
 import Experiencia from "../layouts/Experiencia.vue";
 import { useHead } from "@vueuse/head";
 import Simulador from "../layouts/Simulador.vue";
+import ModalView from "../components/ModalView.vue";
+import Footer from "../components/amotor/Footer.vue";
 
 useHead({
   title: "Autocred Chile tu mejor copiloto",

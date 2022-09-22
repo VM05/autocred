@@ -8,7 +8,7 @@
     />
     <div class="grid grid-cols-1 md:grid-cols-2 pattern md:shadow-xl">
       <img
-        src="../../assets/img/nuestro-recorrido.jpg"
+        src="../../assets/img/nuestro-recorrido.webp"
         alt=""
         class="image w-full md:w-11/12"
       />

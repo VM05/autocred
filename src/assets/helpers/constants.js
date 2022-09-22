@@ -321,14 +321,14 @@ export const posts = [
     
     <div class="mt-10 flex justify-center" >
        
-        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FRadioDuna%2Fvideos%2F365438125630297%2F&show_text=0&width=560" width="860" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        <iframe class="video-radio" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FRadioDuna%2Fvideos%2F365438125630297%2F&show_text=0&width=560" width="860" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
     </div>
    
 
     
     `,
-        "img": "/img/blog/radioduna.png",
-        "imgMobile": "/img/blog/dunamobile.png",
+        "img": "/img/blog/radioduna.webp",
+        "imgMobile": "/img/blog/dunamobile.webp",
         "date": "19-08-22",
         "medio": "Radio"
     },
@@ -391,7 +391,7 @@ export const posts = [
    
     
     `,
-        "img": "/img/blog/t13.jpg",
+        "img": "/img/blog/t13.webp",
         "date": "20-07-22",
         "medio": "Prensa"
     },
@@ -427,7 +427,7 @@ export const posts = [
    
     
     `,
-        "img": "/img/blog/Conversaciones-digitales-Autocred.jpg",
+        "img": "/img/blog/Conversaciones-digitales-Autocred.webp",
         "date": "12-07-22",
         "medio": "Entrevista"
     },
@@ -448,7 +448,7 @@ export const posts = [
 
     
     `,
-        "img": "/img/blog/biobio.jpg",
+        "img": "/img/blog/biobio.webp",
         "date": "19-06-22",
         "medio": "Radio"
     },

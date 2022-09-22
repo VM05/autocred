@@ -506,9 +506,12 @@ const componentKey = ref(0);
 const handleForm = async () => {
   validarMonto.value = false;
   loading.value = true;
+
   try {
+    console.log(formSimulador);
     const res = await axios.post(EVALUACION_URL_1, formSimulador);
     dataCuotas.value = await res.data.data;
+    console.log(dataCuotas.value);
     loading.value = false;
     complete.value = true;
   } catch (error) {
