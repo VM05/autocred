@@ -300,7 +300,8 @@ watch(formContacto, () => {
     warnings.warningTelefono == false &&
     warnings.warningServicios == false &&
     isEmailValid.value == true &&
-    isFormComplete.value == false
+    isFormComplete.value == false &&
+    formContacto.mensaje != ""
   ) {
     warnings.isWarning = false;
   } else {
