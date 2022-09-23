@@ -33,7 +33,7 @@
                   placeholder="RUT"
                   class="w-full"
                   @update:rut="(e) => (formSimulador.dni = e)"
-                  @keypress="onlyNumber"
+                  @keypress="onlyRut"
                 />
                 <div class="md:flex">
                   <SelectMarcas1
@@ -769,8 +769,20 @@ const checkRenta = (e) => {
 };
 
 const onlyNumber = ($event) => {
-  let keyCode = $event.keyCode ? $event.keyCode : $event.which;
-  if ((keyCode < 48 || keyCode > 57) && keyCode !== 46) {
+  // let keyCode = $event.keyCode ? $event.keyCode : $event.which;
+  // if ((keyCode < 48 || keyCode > 57) && keyCode !== 46 && keyCode !== 190) {
+  //   $event.preventDefault();
+  // }
+
+  const validNumbers = /[0-9]+/;
+  if (!validNumbers.test($event.key)) {
+    $event.preventDefault();
+  }
+};
+
+const onlyRut = ($event) => {
+  const validRut = /[^kK0-9]/g;
+  if (validRut.test($event.key)) {
     $event.preventDefault();
   }
 };
