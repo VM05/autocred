@@ -105,6 +105,8 @@ export const procedencias = [
     { id: 41, name: "amotor", procedenciaId: 1 },
     { id: 42, name: "comparaonline", procedenciaId: 114 },
     { id: 43, name: "youtube", procedenciaId: 113 },
+    { id: 44, name: "Autoselect", procedenciaId: 115 },
+    { id: 45, name: "Whatsapp", procedenciaId: 116 },
 
 
 ]
