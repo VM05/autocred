@@ -51,7 +51,9 @@
                 text="Me interesa"
                 secondary
                 class="mt-4"
-                @click.prevent="handleAccordion(cuota.term, cuota.id)"
+                @click.prevent="
+                  handleAccordion(cuota.term, cuota.id, cuota.monthly_payment)
+                "
                 :id="'boton-' + cuota.term + '-cuotas'"
               />
             </div>
@@ -71,7 +73,8 @@ import Heading from "./Heading.vue";
 
 // const creditoSmart = ref(false);
 const emits = defineEmits(["select:term"]);
-const handleAccordion = (cuota, id) => emits("select:term", [cuota, id]);
+const handleAccordion = (cuota, id, mes) =>
+  emits("select:term", [cuota, id, mes]);
 const props = defineProps({
   cuotasSimulacion: Array,
   typeCredit: String,

@@ -308,7 +308,7 @@
                       class="absolute w-full -bottom-6 md:-bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
                       v-if="warningSalary"
                     >
-                      Renta liquida debe ser igual o mayor a $450.000
+                      {{ mensajeSalario }}
                     </Paragraph>
                   </div>
                   <div></div>
@@ -482,6 +482,8 @@ const registerForm = reactive({
   campaign: useUtms.utm_campaign || "Autocred",
 });
 
+const mensajeSalario = ref("");
+const pagoMes = ref("");
 const dataCuotas = ref([]);
 const loading = ref(false);
 const alerts = ref(false);
@@ -584,6 +586,9 @@ const handleTransition = async (cuota) => {
       warningSalary.value = false;
     }
   }
+
+  pagoMes.value = cuota[2];
+
   formSimulador2.term = cuota[0];
   formSimulador2.simulation_id = cuota[1];
 
@@ -761,9 +766,17 @@ const checkRenta = (e) => {
     if (formSimulador2.salary.length >= 0) {
       if (formSimulador2.salary <= 449999) {
         warningSalary.value = true;
+        mensajeSalario.value =
+          "Renta liquida debe ser igual o mayor a $450.000";
+      } else if (formSimulador2.salary * 0.3 < pagoMes.value) {
+        warningSalary.value = true;
+        mensajeSalario.value =
+          "Cuota mensual no debe superar el 30% de renta líquida";
       } else {
         warningSalary.value = false;
       }
+    } else {
+      warningSalary.value = false;
     }
   }
 };
@@ -799,9 +812,14 @@ watch(formSimulador2, () => {
     }
   }
 
-  if (formSimulador2.salary.length > 0) {
+  if (formSimulador2.salary.length > 0 || formSimulador2.salary) {
     if (formSimulador2.salary <= 449999) {
       warningSalary.value = true;
+      mensajeSalario.value = "Renta liquida debe ser igual o mayor a $450.000";
+    } else if (formSimulador2.salary * 0.3 < pagoMes.value) {
+      warningSalary.value = true;
+      mensajeSalario.value =
+        "Cuota mensual no debe superar el 30% de renta líquida";
     } else {
       warningSalary.value = false;
     }

@@ -18,6 +18,7 @@ import Heading from "../components/Heading.vue";
 import Hablemos from "../layouts/Hablemos.vue";
 import ServiciosList1 from "../layouts/ServiciosList.vue";
 import { useHead } from "@vueuse/head";
+import { onMounted } from "vue";
 
 useHead({
   title: "Autocred | Servicios",
@@ -31,4 +32,8 @@ useHead({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+#app {
+  scroll-behavior: smooth;
+}
+</style>
