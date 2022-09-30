@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a href="https://wa.me/+56946390268/" target="_blank">
+    <a href="https://wa.me/+56946474281/" target="_blank">
       <img src="../assets/img/ws.png" width="50" height="50" />
     </a>
   </div>
