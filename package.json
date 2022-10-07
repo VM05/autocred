@@ -36,7 +36,7 @@
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.13",
     "tailwindcss": "^3.0.24",
-    "vite": "^2.9.14",
+    "vite": "^2.9.15",
     "vite-plugin-radar": "^0.4.2"
   }
 }

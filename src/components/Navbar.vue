@@ -116,6 +116,7 @@
               <router-link
                 to="/login"
                 class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-900 hover:bg-primary-700"
+                @click="close"
               >
                 Ingresar
               </router-link>

@@ -1,12 +1,19 @@
+
 <template>
   <div>
-    <a href="https://wa.me/+56946474281/" target="_blank">
+    <a :href="`https://wa.me/+${telefono}/`" target="_blank">
       <img src="../assets/img/ws.png" width="50" height="50" />
+      
     </a>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+  const props = defineProps({
+    telefono: String,
+});
+
+</script>
 
 <style scoped>
 a {
