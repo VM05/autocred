@@ -25,7 +25,7 @@ onMounted(() => {
 
 <template>
   <router-view></router-view>
-  <WhatsappButton  telefono="56946474281"/>
+  <WhatsappButton  telefono="56946481460"/>
 </template>
 
 <style></style>
