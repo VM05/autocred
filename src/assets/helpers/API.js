@@ -6,7 +6,7 @@ export const direcciones = [
             { name: 'Sur', content: '<b>Zona Sur</b>: Mall Paseo Quilin <br>Piso 1, Entrada Central Vespucio', tel: '56946373862' },
             { name: 'Poniente', content: '<b>Zona Poniente</b>: Autocred Cerrillos <br>Las Americas 375', tel: '56932592736' },
             { name: 'Norte', content: '<b>Zona Norte</b>: Mall Plaza Norte <br>Piso 2, Patio automotriz', tel: '56946478330' },
-            { name: 'Oriente', content: '<b>Zona Oriente</b>: Apumanque <br>Piso 1, Entrada Apoquindo', tel: '56946476368' }
+            { name: 'Oriente', content: '<b>Zona Oriente</b>: Apumanque <br>Piso 1, Entrada Apoquindo', tel: '56946456800' }
         ]
     },
     {
