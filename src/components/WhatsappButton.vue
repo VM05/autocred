@@ -2,8 +2,7 @@
 <template>
   <div>
     <a :href="`https://wa.me/+${telefono}/`" target="_blank">
-      <img src="../assets/img/ws.png" width="50" height="50" />
-      
+      <img src="../assets/img/ws.png" />
     </a>
   </div>
 </template>

@@ -107,7 +107,8 @@ export const procedencias = [
     { id: 43, name: "youtube", procedenciaId: 113 },
     { id: 44, name: "Autoselect", procedenciaId: 115 },
     { id: 45, name: "Whatsapp", procedenciaId: 116 },
-
+    { id: 46, name: "Rutamotor", procedenciaId: 117 },
+    { id: 47, name: "mailing ", procedenciaId: 118 },
 
 ]
 
