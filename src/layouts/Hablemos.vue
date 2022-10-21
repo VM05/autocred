@@ -142,7 +142,7 @@ const warnings = reactive({
   warningServicios: true,
   isWarning: true,
 });
-const errorForm = ref(" uno de los campos esta vacio");
+const errorForm = ref("uno de los campos esta vacio");
 const dispositivo = ref("");
 const browserName = ref("");
 const direccion_sitio = window.location.href;

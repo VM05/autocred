@@ -26,7 +26,7 @@
       :name="nombre"
     />
     <span
-      class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+      class=" w-full -bottom-6 md:-bottom-6 left-1/2  text-red-700 justify-self-center grid-flow-row text-center block"
       >{{ validated }}</span
     >
   </div>
@@ -63,7 +63,7 @@ const validated = computed(() => {
   } else {
     return validateEmail(email.value)
       ? ""
-      : "Por favor ingresa una direccion de correo valida";
+      : "Por favor ingresa una dirección de correo valida";
   }
 });
 

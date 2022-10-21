@@ -19,7 +19,7 @@
       :id="props.id"
       @blur="handler"
     />
-    <span class="text-red-600 block">{{ validated }}</span>
+    <span class="text-red-700 block text-center">{{ validated }}</span>
   </div>
 </template>
 

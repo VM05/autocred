@@ -11,7 +11,7 @@
     }}</label>
     <div v-if="isPhone" class="flex w-full items-center">
       <label
-        class="phone border border-solid px-2 py-2 rounded-lg text-primary-900"
+        class="phone border border-solid px-2 py-2 rounded-lg text-primary-900 bg-white"
         :for="id"
       >
         +56</label
@@ -97,6 +97,7 @@
       :value="value"
       :disabled="disabled"
       @blur="handler"
+      @keyup="handler"
       required
       :name="nombre"
     />
@@ -117,6 +118,7 @@ const props = defineProps({
   password: Boolean,
   date: Boolean,
   money: Boolean,
+  check: Boolean,
   valor: Number,
   fecha: String,
   nombre: String,

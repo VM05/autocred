@@ -27,7 +27,12 @@ module.exports = {
         hablemos: {
           100: '#fafaff',
           300: '#f9f9f9'
-        }
+        },
+        whatsapp: {
+          900:'#25D366',
+          700:'#23aa54',
+        },
+        
       }
     },
   },

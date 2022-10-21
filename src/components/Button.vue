@@ -4,6 +4,8 @@
     :class="{
       'hover:bg-secondary-900 bg-secondary-700 text-white': secondary,
       'hover:bg-primary-900 bg-primary-700 text-white': primary,
+      'hover:bg-whatsapp-900 bg-whatsapp-700 text-white': whatsapp,
+      'hover:bg-red-600 bg-red-700 text-white':danger,
       'bg-transparent text-primary-900 border-2 border-primary-900 hover:bg-primary-900 hover:text-white':
         outlinePrimary,
       'bg-transparent text-secondary-900 border-2 border-secondary-900 hover:bg-secondary-900 hover:text-white':
@@ -36,6 +38,8 @@ defineProps({
   user: Boolean,
   primary: Boolean,
   secondary: Boolean,
+  whatsapp:Boolean,
+  danger:Boolean,
   outlinePrimary: Boolean,
   outlineSecondary: Boolean,
   type: String,
