@@ -75,7 +75,7 @@
           </div>
           <div class="popup_button_container py-3">
             <Button type="submit" whatsapp  :disabled="errorForm" text="Iniciar Chat" class="rounded-3xl"/>
-            <Button danger @click="isOpen = false" text="Cerrar Chat" class="rounded-3xl" />
+            <Button danger @click="isOpen = false,formularioWs.telefono = '', warningPhone = false " text="Cerrar Chat" class="rounded-3xl" />
           </div>
         </form>
       </div>
