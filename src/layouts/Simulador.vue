@@ -250,6 +250,7 @@
                   <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="relative">
                       <InputEmail
+                        absoluta
                         label="Email"
                         id="Email"
                         placeholder="Email"

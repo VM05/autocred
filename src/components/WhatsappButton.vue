@@ -25,7 +25,7 @@
             class="py-1"
             />
           </div>
-          <div class="md:text-sm">
+          <div class="md:text-sm relative">
             <Input
             label="Teléfono"
             id="Telefono"
@@ -36,8 +36,15 @@
             formularioWs.telefono ? formularioWs.telefono : ''
             "
             @keypress="onlyNumber"
+            @textvalue="(e) => checkTelefono(e)"
             class="py-1"
             />
+            <Paragraph
+                        class=" w-full -bottom-6 md:-bottom-6 left-1/2  text-red-700 justify-self-center grid-flow-row text-center"
+                      v-if="warningPhone"
+                      >
+                        El teléfono debe contener al menos 9 digitos
+                      </Paragraph>
           </div>
 
           <div class="md:text-sm relative">
@@ -91,6 +98,7 @@ import { useContactoStore } from "../stores/contacto";
 import { gestion, URL_GOGEMA } from "../assets/helpers/API";
 import qs from "qs";
 import { validateRut, RutFormat, formatRut } from "@fdograph/rut-utilities";
+import Paragraph from '../components/Paragraph.vue'
 
 const props = defineProps({
   telefono: String,
@@ -100,6 +108,7 @@ const isOpen = ref(false);
 const errorForm = ref(true);
 const isLoading = ref(false);
 const useUtms = useContactoStore();
+const warningPhone = ref(false)
 
 const formularioWs = reactive({
   nombre_completo: "",
@@ -158,6 +167,16 @@ const onlyNumber = ($event) => {
   const validNumbers = /[0-9]+/;
   if (!validNumbers.test($event.key)) {
     $event.preventDefault();
+  }
+};
+
+const checkTelefono = (e) => {
+  if (e.length >= 0) {
+    if (formularioWs.telefono == "" || formularioWs.telefono.length < 9) {
+      warningPhone.value = true;
+    } else {
+      warningPhone.value = false;
+    }
   }
 };
 

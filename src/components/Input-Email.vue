@@ -27,6 +27,7 @@
     />
     <span
       class=" w-full -bottom-6 md:-bottom-6 left-1/2  text-red-700 justify-self-center grid-flow-row text-center block"
+      :class=" absoluta? 'absolute -translate-x-1/2':''"
       >{{ validated }}</span
     >
   </div>
@@ -40,6 +41,7 @@ const props = defineProps({
   placeholder: String,
   hoverText: String,
   id: String,
+  absoluta: Boolean,
   label: String,
   value: { type: String, default: "" },
   valor: {
