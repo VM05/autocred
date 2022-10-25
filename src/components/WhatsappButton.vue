@@ -1,11 +1,11 @@
 <template>
   <div>
-    <a @click.prevent="isOpen = true">
+    <a  :href="`https://wa.me/${props.telefono}/`" target="_blank">
       <img src="../assets/img/ws.png" />
     </a>
   </div>
 
-  <div id="modal_container" class="modal-container" v-if="isOpen">
+  <!-- <div id="modal_container" class="modal-container" v-if="isOpen">
     <div class="modal">
       <p class="popup_title_text">Contacto vía Whatsapp</p>
       <div class="contenedor-formulario-titulo">
@@ -81,7 +81,7 @@
       </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script setup>

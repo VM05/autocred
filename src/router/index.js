@@ -20,6 +20,8 @@ import ComparaFinanciamiento from '../views/compara-online/ComparaFinanciamiento
 import calendarioVanMovil from '../views/CalendarioVanMovil.vue'
 import Amotor from '../views/amotor/Amotor.vue'
 import AmotorFinanciamiento from '../views/amotor/AmotorFinanciamiento.vue'
+import AutocredFinanciamiento from '../views/autocred/AutocredFinanciamiento.vue'
+import AutocredView from '../views/autocred/AutocredView.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -71,6 +73,13 @@ const router = createRouter({
             path: '/amotor', name: 'amotor', component: Amotor,
             children: [
                 { path: '/amotor/financiamiento', name: 'Amotor', component: AmotorFinanciamiento },
+            ]
+        },
+
+        {
+            path: '/autocred-financiamiento', name: 'autocred-financiamiento', component: AutocredView,
+            children: [
+                { path: '/autocred-financiamiento/financiamiento', name: 'Autocred-financiamiento', component: AutocredFinanciamiento },
             ]
         },
 

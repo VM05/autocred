@@ -3,12 +3,12 @@
     <div class="mascara relative grid place-content-center w-full">
       <img
         src="../assets/img/mascara3.svg"
-        alt=""
+        alt="mascara"
         class="mask z-0 w-full h-full"
       />
       <img
         src="../assets/img/Pedro.jpg"
-        alt=""
+        alt="pedro-engel"
         class="profile rounded-full self-center object-cover relative z-10"
       />
     </div>
