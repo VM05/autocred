@@ -1,7 +1,9 @@
 <template>
   <div class="py-6">
     <label class="text-primary-900 font-bold text-base">{{ label }}</label>
-    <fieldset class="grid grid-cols-1 md:grid-cols-2 pl-3 mt-1 gap-2">
+    <fieldset class="grid md:grid-cols-2 pl-3 mt-1 gap-2"
+    :class="columnas? 'grid-cols-2 pl-0':'grid-cols-1'"
+    >
       <div v-for="servicio in servicios" class="mt-1">
         <InputCheck
           :servicio="servicio"
@@ -20,6 +22,7 @@ import { ref } from "vue";
 const emit = defineEmits(["update:checkServicios"]);
 defineProps({
   label: String,
+  columnas:Boolean,
 });
 const selectedService = ref([]);
 

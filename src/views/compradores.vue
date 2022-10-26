@@ -4,8 +4,8 @@
       <template #content>
         <Heading
           content="En Autocred te acompañamos y apoyamos en la compra de tu próximo vehículo usado."
-          headingType="h2"
-          class="mb-5"
+          headingType="h1"
+          class="mb-5 leading-tight text-sm"
         />
         <Heading
           content="Solicita tu traslado, obtén financiamiento, transfiere, asegura y habilita tu Tag con nosotros."
@@ -25,9 +25,10 @@
       <template #image>
         <div class="grid place-content-center">
           <img
-            src="../assets/img/portada-compradores.png"
-            alt="lorem"
+            src="../assets/img/portada-compradores.webp"
+            alt="comprador de auto"
             class="w-full md:w-3/4 mx-auto"
+            title="comprador"
           />
         </div>
       </template>

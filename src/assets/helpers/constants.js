@@ -20,24 +20,24 @@ export const featuresVendedores = [
         name: "Crédito rápido",
         content:
             "En solo 7 minutos evalúa tu crédito con pago al vendedor.",
-        img: "/img/icons/Iconos_Autocred_Magenta_Credito_rapido.png",
+        img: "/img/icons/Iconos_Autocred_Magenta_Credito_rapido.webp",
     },
     {
         name: "La mejor cuota",
         content:
             "Evaluación directa y en línea con financieras que facilitan tu gestión.",
-        img: "/img/icons/Iconos_Autocred_Magenta_Mejor_cuota.png",
+        img: "/img/icons/Iconos_Autocred_Magenta_Mejor_cuota.webp",
     },
     {
         name: "Proceso Online o Presencial",
         content:
             "Evalúa tu crédito de forma online o acércate a nuestros módulos.",
-        img: "/img/icons/Iconos_Autocred_Magenta_proceso_online.png",
+        img: "/img/icons/Iconos_Autocred_Magenta_proceso_online.webp",
     },
     {
         name: "En tiempo record",
         content: "En solo 7 minutos realizamos tu primera evaluación.",
-        img: "/img/icons/Iconos_Autocred_Magenta_Tiempo_record.png",
+        img: "/img/icons/Iconos_Autocred_Magenta_Tiempo_record.webp",
     },
 
 ];
@@ -46,24 +46,24 @@ export const featuresCompradoress = [
         name: "Crédito rápido",
         content:
             "En solo 7 minutos evalúa tu crédito con pago al vendedor.",
-        img: "/img/icons/Iconos_Autocred_Azul_credito_rapido.png",
+        img: "/img/icons/Iconos_Autocred_Azul_credito_rapido.webp",
     },
     {
         name: "La mejor cuota",
         content:
             "Evaluación directa y en línea con financieras que facilitan tu gestión.",
-        img: "/img/icons/Iconos_Autocred_Azul_Mejor_cuota.png",
+        img: "/img/icons/Iconos_Autocred_Azul_Mejor_cuota.webp",
     },
     {
         name: "Proceso Online o Presencial",
         content:
             "Evalúa tu crédito de forma online o acércate a nuestros módulos.",
-        img: "/img/icons/Iconos_Autocred_Azul_Proceso_online.png",
+        img: "/img/icons/Iconos_Autocred_Azul_Proceso_online.webp",
     },
     {
         name: "En tiempo record",
         content: "En solo 7 minutos realizamos tu primera evaluación",
-        img: "/img/icons/Iconos_Autocred_Azul_Tiempo-_record.png",
+        img: "/img/icons/Iconos_Autocred_Azul_Tiempo-_record.webp",
     },
 
 ];
@@ -147,27 +147,27 @@ export const questionsVendedor = [
 export const brands = [
     {
         alt: "autofact",
-        url: "/img/brands/autofact2.png",
+        url: "/img/brands/autofact2.webp",
     },
     {
         alt: "forum",
-        url: "/img/brands/forum2.png",
+        url: "/img/brands/forum2.webp",
     },
     {
         alt: "tanner",
-        url: "/img/brands/tanner2.png",
+        url: "/img/brands/tanner2.webp",
     },
     {
         alt: "yapo",
-        url: "/img/brands/yapo2.png",
+        url: "/img/brands/yapo2.webp",
     },
     {
         alt: "hdi seguros",
-        url: "/img/brands/hdi.png",
+        url: "/img/brands/hdi.webp",
     },
     {
         alt: "MAF",
-        url: "/img/brands/maf.png",
+        url: "/img/brands/maf.webp",
     },
 ];
 export const comentarios = [
@@ -175,25 +175,25 @@ export const comentarios = [
         nombre: "Issac Valdés",
         username: "",
         comentario: "Hemos hecho 4 transferencias online con Autocred, en Pandemia fue la mejor opción para no ir al Registro Civil y evitar hasta 4 horas de espera. Jackeline, nuestra ejecutiva, fue muy diligente, muy rápida y amable acompañándonos en todo el proceso de la venta de nuestros vehículos. El sistema es muy amigable por lo que recomendé el servicio con Autocred a mis contactos.",
-        src: "/img/icons/Iconos_Autocred_Azul_Copiloto.png"
+        src: "/img/icons/Iconos_Autocred_Azul_Copiloto.webp"
     },
     {
         nombre: "Nicolás Juri",
         username: "@nicojuri0208",
         comentario: "Excelente experiencia con Autocred, Carolina muy atenta y flexible en las necesidades horarias para concretar transferencias, recomendable la plataforma, empresa y ejecutiva.",
-        src: "/img/icons/Iconos_Autocred_Azul_Copiloto.png"
+        src: "/img/icons/Iconos_Autocred_Azul_Copiloto.webp"
     },
     {
         nombre: "José Valdés",
         username: "@grupopremiumpropiedades",
         comentario: "Quiero destacar y felicitar a la empresa Autocred, y su personal, que me ayudaron una enormidad en una compra urgente que tuve que realizar. Todo se realizó en un par de horas, entregándome seguridad, confianza en la compra y sin poner en riesgo mi dinero. Felicitaciones y 100% recomendado Autocred.",
-        src: "/img/icons/Iconos_Autocred_Azul_Copiloto.png"
+        src: "/img/icons/Iconos_Autocred_Azul_Copiloto.webp"
     },
     {
         nombre: "Andrés Martínes",
         username: "",
         comentario: "Mi experiencia con Autocred ha sido siempre excelente, en especial por Jackeline nuestra ejecutiva, sin ir más lejos el martes vendimos el auto de mi señora, le envié la información y en unos minutos estaba todo OK. El comprador que no conocía Autocred quedó impresionado de irse con el auto y su contrato ante notario con firma digital, un excelente equipo de trabajo lo recomiendo a todos los conocidos.",
-        src: "/img/icons/Iconos_Autocred_Azul_Copiloto.png"
+        src: "/img/icons/Iconos_Autocred_Azul_Copiloto.webp"
     },
 
 ]
@@ -294,20 +294,20 @@ export const ventajas = [
         name: "Te Guiamos",
         content:
             "Estamos disponibles a través de nuestros distintos canales los 7 días de la semana para ayudarte en lo que necesites.",
-        src: '/img/ventajas/ventajas_teguiamos.png'
+        src: '/img/ventajas/ventajas_teguiamos.webp'
     },
     {
         name: "Te Acompañamos",
         content:
             "Te llevamos al comprador en nuestra van, entregamos financiamiento y facilidades de pago, y/o te acompañamos a ver o mostrar el auto.",
-        src: '/img/ventajas/ventajas_teacompañamos.png'
+        src: '/img/ventajas/ventajas_teacompañamos.webp'
 
     },
     {
         name: "Te Apoyamos",
         content:
             "Para comprar o vender, contamos con facilidades de pago, servicio de transferencia, seguro y TAG. Todo en un mismo lugar.",
-        src: '/img/ventajas/ventajas_teapoyamos.png'
+        src: '/img/ventajas/ventajas_teapoyamos.webp'
 
     }
 ]
@@ -593,28 +593,28 @@ export const serviciosVendores = [
         id: 'van',
         name: "Van/oficina móvil",
         content: "¿Quieres compañía cuando muestras el vehículo? <br> Utiliza nuestra <b>Oficina Móvil</b> para moverte junto al potencial comprador: <br> <ul class='list-disc pl-6'><li>Transferencias</li><li>Pagos con tarjetas</li><li>Servicio de Van 100% gratis</li><li>Financiamiento en solo 7 minutos</li><ul>",
-        img: "/img/icons/Iconos_Autocred_Magenta_Traslado.png",
+        img: "/img/icons/Iconos_Autocred_Magenta_Traslado.webp",
     },
     {
         id: 'financiamiento',
         name: "Plataforma de pago",
         content:
             "¿Quieres comprar un auto con tarjeta de crédito o financiamiento? En Autocred trabajamos con diferentes opciones financieras para hacer de tu compra, el mejor negocio.",
-        img: "/img/icons/Iconos_Autocred_Magenta_Plataformas_de_Pago.png",
+        img: "/img/icons/Iconos_Autocred_Magenta_Plataformas_de_Pago.webp",
     },
     {
         id: 'transferencias',
         name: "Transferencia",
         content:
             "¿Estás listo para transferir tu auto? Nuestro servicio está en línea con el registro civil, y contamos con 3 formatos de atención para una transferencia segura: <br> <ul class='list-disc pl-6'><li>Online</li><li>Presencial en nuestros módulos</li><li>Oficina Móvil</li><ul>",
-        img: "/img/icons/Iconos_Autocred_Magenta_transferencia.png",
+        img: "/img/icons/Iconos_Autocred_Magenta_transferencia.webp",
     },
     {
         id: 'seguro',
         name: "Queremos ser más",
         content:
             "Porque nos preocupamos de cada detalle, en Autocred puedes dar de baja tu seguro y Tag (solo autopista Vespucio Norte).",
-        img: "/img/icons/Iconos_Autocred_Magenta_Volante.png",
+        img: "/img/icons/Iconos_Autocred_Magenta_Volante.webp",
     },
 ];
 
@@ -626,7 +626,7 @@ export const serviciosCompradores = [
         name: "Van/oficina móvil",
         content:
             "Utiliza nuestra Oficina Móvil* para moverte junto al potencial comprador: <br> <ul class='list-disc pl-6'><li>Transferencias</li><li>Pagos con tarjetas</li><li>Servicio de Van 100% gratis</li><li>Financiamiento en solo 7 minutos</li><ul>",
-        img: "/img/icons/Iconos_Autocred_Azul_traslado.png",
+        img: "/img/icons/Iconos_Autocred_Azul_traslado.webp",
     },
 
     {
@@ -634,13 +634,13 @@ export const serviciosCompradores = [
         name: "Financiamiento",
         content:
             "Evaluación lista solo en 7 minutos. Nuestra plataforma permite pagos con tarjeta de crédito y financiamiento. El abono llega a tu cuenta al firmar la transferencia.",
-        img: "/img/icons/Iconos_Autocred_Azul_financiamiento.png",
+        img: "/img/icons/Iconos_Autocred_Azul_financiamiento.webp",
     },
     {
         id: 'transferencias',
         name: "Transferencia, seguros, tag y más",
         content:
             "Somos tu copiloto buscando y comprando. Contamos con Servicio de Transferencia en línea con Registro Civil, seguros exclusivos para compradores particulares, y Activación de TAG presencial, online, en nuestros módulos o donde quieras con nuestra Oficina Móvil.",
-        img: "/img/icons/Iconos_Autocred_Azul_seguro_automotriz.png",
+        img: "/img/icons/Iconos_Autocred_Azul_seguro_automotriz.webp",
     },
 ];

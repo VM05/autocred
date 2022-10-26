@@ -11,14 +11,14 @@
       />
     </div>
     <img
-      src="../assets/img/armado-vendedores.png"
-      alt=""
+      src="../assets/img/armado-vendedores.webp"
+      alt="servicio para vendedores"
       class="img absolute top-0 left-0 z-0"
       v-if="right"
     />
     <img
-      src="../assets/img/armado-compradores.png"
-      alt=""
+      src="../assets/img/armado-compradores.webp"
+      alt="servicio para compradores"
       class="img absolute top-0 right-0 z-0 md"
       v-if="!right"
     />

@@ -67,7 +67,7 @@ export const procedencias = [
     { id: 3, name: "Otras_Plataformas", procedenciaId: 109 },
     { id: 4, name: "Modulo", procedenciaId: 108 },
     { id: 5, name: "Referido", procedenciaId: 107 },
-    { id: 6, name: "Contacto Directo", procedenciaId: 107 },
+    { id: 6, name: "Contacto Directo", procedenciaId: 119 },
     { id: 7, name: "Instagram", procedenciaId: 106 },
     { id: 8, name: "Autocred", procedenciaId: 105 },
     { id: 9, name: "Forum", procedenciaId: 104 },
@@ -109,9 +109,9 @@ export const procedencias = [
     { id: 45, name: "Whatsapp", procedenciaId: 116 },
     { id: 46, name: "Rutamotor", procedenciaId: 117 },
     { id: 47, name: "mailing ", procedenciaId: 118 },
+    { id: 48, name: "ventainteligente", procedenciaId: 120 },
 
 ]
-
 
 export const PASSWORD_RESET = import.meta.env.VITE_PASSWORD_RESET
 export const BASE_URL = import.meta.env.VITE_BASE_URL

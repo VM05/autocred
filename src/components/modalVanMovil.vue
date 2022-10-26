@@ -13,7 +13,7 @@
     <template v-slot:header>
       <img
         src="../assets/img/logo-autocred-menu.svg"
-        alt=""
+        alt="autocred"
         class="mx-auto w-52 py-5"
       />
     </template>

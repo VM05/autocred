@@ -1,7 +1,7 @@
 <template>
   <div>
     <a  :href="`https://wa.me/${props.telefono}/`" target="_blank">
-      <img src="../assets/img/ws.png" />
+      <img src="../assets/img/ws.webp" alt="whatsapp autocred" title="whatsapp autocred" />
     </a>
   </div>
 
@@ -16,7 +16,7 @@
         <div class="flex justify-center contenedor-formulario flex-col">
         <Loading  medium v-if="isLoading"/>
         <form id="form_popup_whatsapp" @submit.prevent="enviarFormulario" v-if="!isLoading">
-          <div class="md:text-sm">
+          <div class="text-sm">
             <Input
             label="Nombre"
             id="nombre"
@@ -25,7 +25,7 @@
             class="py-1"
             />
           </div>
-          <div class="md:text-sm relative">
+          <div class="text-sm relative">
             <Input
             label="Teléfono"
             id="Telefono"
@@ -47,7 +47,7 @@
                       </Paragraph>
           </div>
 
-          <div class="md:text-sm relative">
+          <div class="text-sm relative">
             <InputEmail
             placeholder="Ingresa tu correo de contacto"
             label="Correo electrónico"
@@ -56,7 +56,7 @@
             class="py-1"
           />
           </div>
-          <div class="md:text-sm">
+          <div class="text-sm">
           <InputRut 
           label="Rut"
           id="RUT"
@@ -68,13 +68,14 @@
           </div>
          
           <div class="md:text-sm">
-            <CheckServicios
+            <CheckServicios class="py-1"
             label="¿Qué servicios necesitas?"
+            columnas
             @update:checkServicios="(e) => handleCheck(e)"
             />
           </div>
-          <div class="popup_button_container py-3">
-            <Button type="submit" whatsapp  :disabled="errorForm" text="Iniciar Chat" class="rounded-3xl"/>
+          <div class="popup_button_container py-2">
+            <Button type="submit" whatsapp  :disabled="errorForm" text="Iniciar Chat" class="rounded-3xl py-1"/>
             <Button danger @click="isOpen = false,formularioWs.telefono = '', warningPhone = false " text="Cerrar Chat" class="rounded-3xl" />
           </div>
         </form>
@@ -123,6 +124,7 @@ const formularioWs = reactive({
   utm_medium: useUtms.utm_medium || "web",
   utm_campaign: useUtms.utm_campaign || "web",
   canal_atencion: gestion[2].name,
+  sucursal_id: 1,
 })
 
 const enviarFormulario = async() => {
@@ -163,6 +165,11 @@ watch(formularioWs, ()=>{
   }
 })
 
+watch(isOpen,()=>{
+  isOpen.value && window.innerWidth < 768? document.documentElement.style.overflow = 'hidden': document.documentElement.style.overflow = 'auto';
+
+})
+
 const onlyNumber = ($event) => {
   const validNumbers = /[0-9]+/;
   if (!validNumbers.test($event.key)) {
@@ -181,6 +188,12 @@ const checkTelefono = (e) => {
 };
 
 </script>
+<style>
+.prueba{
+  overflow: hidden;
+}
+
+</style>
 
 <style scoped>
 
@@ -188,6 +201,8 @@ const checkTelefono = (e) => {
   min-height: 400px;
 
 }
+
+
 a {
   width: 100%;
   max-width: 60px;
@@ -268,6 +283,8 @@ form textarea {
   animation: appear 0.3s ease;
 }
 
+
+
 @keyframes appear {
   from {
     opacity: 0;
@@ -284,7 +301,8 @@ form textarea {
 }
 
 .modal {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   font-family: "Source Sans Pro", sans-serif;
   border: 1px solid #212559af;
   min-height: 200px;
@@ -296,6 +314,17 @@ form textarea {
   font-weight: bold;
   z-index: 10;
   max-width: 350px;
+}
+
+@media (max-width: 500px){
+  .modal-container{
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    right: unset;
+    width: 100%;
+
+  }
 }
 
 </style>

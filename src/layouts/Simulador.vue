@@ -4,7 +4,7 @@
       <div class="relative z-0">
         <img
           src="../assets/img/cotizacion.webp"
-          alt=""
+          alt="cotizaciones"
           class="imagen z-0 top-0"
         />
         <div class="imagen imagenBG top-0 absolute"></div>
@@ -108,7 +108,7 @@
                 class="grid place-content-center"
                 v-if="!loading && !complete"
               >
-                <img src="../assets/img/simulador.svg" alt="" class="w-full" />
+                <img src="../assets/img/simulador.svg" alt="simulador" class="w-full" />
               </div>
               <div class="grid place-content-center" v-if="loading">
                 <Loading />

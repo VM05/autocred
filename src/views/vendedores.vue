@@ -4,8 +4,8 @@
       <template #content>
         <Heading
           content="Somos tu copiloto en la venta de tu vehículo"
-          headingType="h2"
-          class="mb-5"
+          headingType="h1"
+          class="mb-5 leading-tight"
         />
         <Heading
           content="Publica y vende sin contratiempos ni intermediarios. Elige una plataforma de venta y obtén siempre el mejor valor."

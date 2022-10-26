@@ -151,7 +151,7 @@ h6 {
 }
 @media (min-width: 1024px) {
   h1 {
-    font-size: 45px;
+    font-size: 42px;
   }
   h2 {
     font-size: 35px;

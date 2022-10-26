@@ -56,7 +56,7 @@
         <div class="flex flex-col gap-2">
           <a v-for="red in rrss" :href="red.url" target="_blank">
             <div class="flex flex-row gap-2 items-center">
-              <img :src="red.src" alt="" class="w-5 h-5" />
+              <img :src="red.src" :alt="red.name" class="w-5 h-5"  :title="red.name"/>
               <p
                 class="text-base font-medium text-gray-500 hover:text-secondary-800 hover:cursor-pointer capitalize"
               >
@@ -71,7 +71,7 @@
   <div class="bg-primary-900 grid place-content-center py-6">
     <img
       src="../assets/img/logo-autocred-footer.svg"
-      alt=""
+      alt="autocred"
       class="w-full h-8 md:h-auto"
     />
   </div>

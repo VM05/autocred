@@ -11,7 +11,7 @@
             <img
               class="h-8 w-auto sm:h-10"
               src="../assets/img/logo-autocred-menu.svg"
-              alt=""
+              alt="autocred"
             />
           </router-link>
         </div>

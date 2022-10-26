@@ -18,6 +18,7 @@
           <img
             :src="slide.url"
             :alt="slide.alt"
+            :title="slide.alt"
             class="grayscale w-fit h-14 object-contain"
           />
         </div>
