@@ -35,7 +35,7 @@
             <router-link
               class="text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
               :to="link.url"
-              exact-active-class="activeMenu"
+              :exact-active-class="link.name == 'contacto' ? '' : 'activeMenu'"
               v-if="link.name != 'Servicios'"
             >
               {{ link.name }}
@@ -159,6 +159,6 @@ import MenuVue from "./Menu.vue";
 }
 
 .link-width:nth-child(5) {
-  min-width: 205px;
+  min-width: 80px;
 }
 </style>

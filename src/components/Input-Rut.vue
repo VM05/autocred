@@ -18,6 +18,7 @@
       @focusout="format"
       :id="props.id"
       @blur="handler"
+      @keypress="handler"
     />
     <span class="text-red-700 block text-center">{{ validated }}</span>
   </div>
@@ -26,9 +27,10 @@
 <script setup>
 import { ref, computed, onUpdated, unref } from "vue";
 import { validateRut, RutFormat, formatRut } from "@fdograph/rut-utilities";
-const emit = defineEmits(["update:rut"]);
+const emit = defineEmits(["update:rut","textvalue"]);
 const handler = (e) => {
   emit("update:rut", e.target.value);
+  emit("textvalue", e.target.value);
 };
 const props = defineProps({
   placeholder: String,

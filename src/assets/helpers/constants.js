@@ -1,7 +1,5 @@
 export const links = [
     { name: "Inicio", url: "/" },
-    { name: "Vendedores", url: "/vendedores" },
-    { name: "Compradores", url: "/compradores" },
     {
         name: "Servicios",
         url: "/servicios",
@@ -12,8 +10,12 @@ export const links = [
             { name: "Seguro Automotriz", link: 'seguro' }
         ]
     },
-    { name: "Preguntas Frecuentes", url: "/preguntas-frecuentes" },
+    { name: "Vendedores", url: "/vendedores" },
+    { name: "Compradores", url: "/compradores" },
+    
+    { name: "FAQ", url: "/preguntas-frecuentes" },
     { name: "Nosotros", url: "/nosotros" },
+    { name: "contacto", url: "/#contacto", params:"contacto"},
 ];
 export const featuresVendedores = [
     {

@@ -1,11 +1,17 @@
 <template>
-  <div>
+
+<!-- <div>
     <a  :href="`https://wa.me/${props.telefono}/`" target="_blank">
+      <img src="../assets/img/ws.webp" alt="whatsapp autocred" title="whatsapp autocred" />
+    </a>
+  </div> -->
+  <div>
+    <a @click.prevent="isOpen = true">
       <img src="../assets/img/ws.webp" alt="whatsapp autocred" title="whatsapp autocred" />
     </a>
   </div>
 
-  <!-- <div id="modal_container" class="modal-container" v-if="isOpen">
+  <div id="modal_container" class="modal-container" v-if="isOpen">
     <div class="modal">
       <p class="popup_title_text">Contacto vía Whatsapp</p>
       <div class="contenedor-formulario-titulo">
@@ -52,11 +58,11 @@
             placeholder="Ingresa tu correo de contacto"
             label="Correo electrónico"
             id="email"
-            @update:email="(e) => (formularioWs.email = e)"
+            @textvalue="(e) => (formularioWs.email = e)"
             class="py-1"
           />
           </div>
-          <div class="text-sm">
+          <div class="text-sm" v-if="!warningFinanciamiento">
           <InputRut 
           label="Rut"
           id="RUT"
@@ -82,7 +88,7 @@
       </div>
       </div>
     </div>
-  </div> -->
+  </div>
 </template>
 
 <script setup>
@@ -109,13 +115,14 @@ const isOpen = ref(false);
 const errorForm = ref(true);
 const isLoading = ref(false);
 const useUtms = useContactoStore();
-const warningPhone = ref(false)
+const warningPhone = ref(false);
+const warningFinanciamiento = ref(true);
 
 const formularioWs = reactive({
   nombre_completo: "",
   email: "",
   telefono: "",
-  dni:"",
+  dni:"0",
   mensaje: "desde whatsapp",
   procedencia_id: useUtms.utm_procedenciaId || 103,
   tipo_contacto: useUtms.utm_tipoProcedencia || "web",
@@ -124,7 +131,6 @@ const formularioWs = reactive({
   utm_medium: useUtms.utm_medium || "web",
   utm_campaign: useUtms.utm_campaign || "web",
   canal_atencion: gestion[2].name,
-  sucursal_id: 1,
 })
 
 const enviarFormulario = async() => {
@@ -158,11 +164,29 @@ const handleCheck = (e) => {
 };
 
 watch(formularioWs, ()=>{
-  if(formEmpty(formularioWs) || !validateEmail(formularioWs.email) || formularioWs.telefono.length < 9 || !validateRut(formularioWs.dni)){
+ 
+  if(formularioWs.servicios.includes('Financiamientos')){
+    warningFinanciamiento.value= false;
+  }else{
+    warningFinanciamiento.value = true;
+  }
+
+  if(!warningFinanciamiento.value){
+
+    if(formEmpty(formularioWs) || !validateEmail(formularioWs.email) || formularioWs.telefono.length < 9 || !validateRut(formularioWs.dni)){
     errorForm.value = true;
   }else{
     errorForm.value = false;
   }
+  }else{
+
+    if(formEmpty(formularioWs) || !validateEmail(formularioWs.email) || formularioWs.telefono.length < 9){
+    errorForm.value = true;
+  }else{
+    errorForm.value = false;
+  }
+  }
+
 })
 
 watch(isOpen,()=>{
@@ -239,7 +263,7 @@ form div.popup_button_container {
   right: 0;
   position: absolute;
   z-index: -1;
-  background: url("../assets/img/ws.webp");
+  background: url("../assets/img/wsbg.webp");
 }
 form textarea {
   border: solid 1px rgba(0, 0, 0, 0.185);
