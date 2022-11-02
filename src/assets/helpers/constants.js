@@ -15,7 +15,7 @@ export const links = [
     
     { name: "FAQ", url: "/preguntas-frecuentes" },
     { name: "Nosotros", url: "/nosotros" },
-    { name: "contacto", url: "/#contacto", params:"contacto"},
+    { name: "Contacto", url: "/#contacto", params:"contacto"},
 ];
 
 export const datosBannerPrincipal = [

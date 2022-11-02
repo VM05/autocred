@@ -35,7 +35,7 @@
             <router-link
               class="text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
               :to="link.url"
-              :exact-active-class="link.name == 'contacto' ? '' : 'activeMenu'"
+              :exact-active-class="link.name == 'Contacto' ? '' : 'activeMenu'"
               v-if="link.name != 'Servicios'"
             >
               {{ link.name }}
@@ -95,7 +95,7 @@
                     :key="item.name"
                     :to="item.url"
                     class="text-base font-medium text-primary-900 w-full text-center border-b border-primary-900 pb-4 last:border-0"
-                    :activeClass="item.name == 'contacto' ? '' : 'activeMenu'"
+                    :activeClass="item.name == 'Contacto' ? '' : 'activeMenu'"
                     @click="close"
                   >
                     {{ item.name }}
