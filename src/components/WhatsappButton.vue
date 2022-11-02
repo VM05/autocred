@@ -127,7 +127,7 @@ const formularioWs = reactive({
   procedencia_id: useUtms.utm_procedenciaId || 116,
   tipo_contacto: useUtms.utm_tipoProcedencia || "Whatsapp",
   servicios: "",
-  utm_source: useUtms.utm_source || "web",
+  utm_source: useUtms.utm_source || "Whatsapp",
   utm_medium: useUtms.utm_medium || "web",
   utm_campaign: useUtms.utm_campaign || "web",
   canal_atencion: gestion[2].name,
