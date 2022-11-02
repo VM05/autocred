@@ -68,7 +68,7 @@
           id="RUT"
           placeholder="Ingresa tu rut"
           class="w-full py-1 md:text-sm"
-          @update:rut="(e) => (formularioWs.dni= e)"
+          @textvalue="(e) => (formularioWs.dni= e)"
           @keypress="onlyRut"
           />
           </div>
@@ -124,8 +124,8 @@ const formularioWs = reactive({
   telefono: "",
   dni:"0",
   mensaje: "desde whatsapp",
-  procedencia_id: useUtms.utm_procedenciaId || 103,
-  tipo_contacto: useUtms.utm_tipoProcedencia || "web",
+  procedencia_id: useUtms.utm_procedenciaId || 116,
+  tipo_contacto: useUtms.utm_tipoProcedencia || "Whatsapp",
   servicios: "",
   utm_source: useUtms.utm_source || "web",
   utm_medium: useUtms.utm_medium || "web",
@@ -140,7 +140,11 @@ const enviarFormulario = async() => {
     const resp = await axios.post(URL_GOGEMA, qs.stringify(formularioWs));
     if (await resp.data.message) {
       isLoading.value = false;
+      if(warningFinanciamiento.value == true){
+        window.open(`https://api.whatsapp.com/send?phone=${props.telefono}&text=Hola mi nombre es ${formularioWs.nombre_completo}, mi correo electrónico es ${formularioWs.email}, mi número de teléfono es ${formularioWs.telefono} y me gustaría consultar por los servicios de: ${formularioWs.servicios}`, "_self")
+      }else{
       window.open(`https://api.whatsapp.com/send?phone=${props.telefono}&text=Hola mi nombre es ${formularioWs.nombre_completo}, mi correo electrónico es ${formularioWs.email}, mi Rut es ${formatRut(formularioWs.dni, RutFormat.DOTS_DASH)}, mi número de teléfono es ${formularioWs.telefono} y me gustaría consultar por los servicios de: ${formularioWs.servicios}`, "_self")
+      }
     }
   } catch (error) {
       console.log(error)
@@ -167,13 +171,15 @@ watch(formularioWs, ()=>{
  
   if(formularioWs.servicios.includes('Financiamientos')){
     warningFinanciamiento.value= false;
+    
   }else{
     warningFinanciamiento.value = true;
+    formularioWs.dni = '0'
   }
 
   if(!warningFinanciamiento.value){
 
-    if(formEmpty(formularioWs) || !validateEmail(formularioWs.email) || formularioWs.telefono.length < 9 || !validateRut(formularioWs.dni)){
+    if(formEmpty(formularioWs) || !validateEmail(formularioWs.email) || formularioWs.telefono.length < 9 || !validateRut(formularioWs.dni) || formularioWs.dni == '0'){
     errorForm.value = true;
   }else{
     errorForm.value = false;

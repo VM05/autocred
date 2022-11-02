@@ -95,7 +95,7 @@
                     :key="item.name"
                     :to="item.url"
                     class="text-base font-medium text-primary-900 w-full text-center border-b border-primary-900 pb-4 last:border-0"
-                    activeClass="activeMenu"
+                    :activeClass="item.name == 'contacto' ? '' : 'activeMenu'"
                     @click="close"
                   >
                     {{ item.name }}

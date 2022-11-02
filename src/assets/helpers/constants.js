@@ -17,6 +17,38 @@ export const links = [
     { name: "Nosotros", url: "/nosotros" },
     { name: "contacto", url: "/#contacto", params:"contacto"},
 ];
+
+export const datosBannerPrincipal = [
+    {
+        titulo: "En Autocred hacemos todos los trámites por ti",
+        content:"¡Evita filas, notarías y malos ratos!",
+        img: "/img/icons/Iconos_Autocred_Magenta_Credito_rapido.webp",
+        buttonText: "VER TRÁMITES",
+    },
+
+    {
+        titulo: "¡Te atendemos donde quieras!",
+        content: "100% online, Oficina Móvil, Módulos de atención",
+        img: "/img/icons/Iconos_Autocred_Magenta_Credito_rapido.webp",
+        buttonText: "QUIERO INFORMACIÓN"
+    },
+
+    {
+        titulo: "¡No te enredes!",
+        content:"La compra y venta de autos usados entre personas particulares es simple con Autocred.",
+        img: "/img/icons/Iconos_Autocred_Magenta_Credito_rapido.webp",
+        buttonText: "CONTÁCTANOS"
+    },
+
+    {
+        titulo: "¡Te financiamos!",
+        content:"completamos el valor que te falta para comprar el auto usado de tus sueños.",
+        img: "/img/icons/Iconos_Autocred_Magenta_Credito_rapido.webp",
+        buttonText: "EVALUACIÓN DE CRÉDITO"
+    },
+];
+
+
 export const featuresVendedores = [
     {
         name: "Crédito rápido",
@@ -533,11 +565,6 @@ export const posts = [
         "date": "28-06-22",
         "medio": "Medio prensa"
     },
-
-
-
-
-
 
 ]
 

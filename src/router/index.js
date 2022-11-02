@@ -48,7 +48,7 @@ const router = createRouter({
                         ...route.params
                     })
                 },
-                { path: '/servicios', name: 'Servicios', component: servicios, props: (route) => ({ ...route.params }) },
+                { path: '/servicios', name: 'Servicios', component: servicios },
                 { path: '/vendedores', name: 'Vendedores', component: vendedores },
                 { path: '/blog', name: 'Blog', component: Blog },
                 { path: '/blog/:id', name: 'Articulo', component: article },

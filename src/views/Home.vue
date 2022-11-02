@@ -15,6 +15,7 @@
         </div>
       </template>
     </ModalView> -->
+    <!-- <BannerSlider /> -->
     <BannerHome>
       <template #content>
         <Heading
@@ -96,6 +97,7 @@ import { useHead } from "@vueuse/head";
 import Simulador from "../layouts/Simulador.vue";
 import ModalView from "../components/ModalView.vue";
 import Footer from "../components/amotor/Footer.vue";
+import BannerSlider from '../layouts/BannerSlider.vue'
 
 useHead({
   title: "Autocred Chile tu mejor copiloto",
