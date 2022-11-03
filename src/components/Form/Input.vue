@@ -74,6 +74,7 @@
       type="text"
       :placeholder="placeholder"
       class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full"
+      :class="informativo ? 'border-0 px-0 bg-inherit' : ''"
       @mouseover="hover = true"
       @mouseleave="hover = false"
       @focusin="focus = true"
@@ -122,6 +123,7 @@ const props = defineProps({
   valor: Number,
   fecha: String,
   nombre: String,
+  informativo: Boolean,
 });
 
 const valorRenta = ref(props.valor);

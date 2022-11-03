@@ -53,6 +53,8 @@ export const gestion = [
 export const typeCredit = [
     { value: "conventional", name: "Credito Convencional" },
     { value: "smart", name: "Compra Inteligente" },
+    { value: "conventional express", name: "Credito Convencional Express" },
+    // { value: "smart", name: "Compra Inteligente Express" },
 ];
 export const servicioCards = [
     { id: 2, name: "Oficina Móvil", src: "/img/yapo/van.png", content: "Solicita acompañamiento y traslado gratuito para ver el vehículo del vendedor." },

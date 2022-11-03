@@ -3,6 +3,9 @@
     <!-- TODO: Modelar INPUT -->
     <!-- <Input v-model="value" /> -->
     <div class="relative py-6 w-full">
+      <label :for="id" class="text-primary-900 font-bold text-base">{{
+        label
+      }}</label>
       <input
         v-if="props.valorTotal"
         v-model="formatValue"
@@ -40,7 +43,7 @@
       v-else
       v-model="value"
       class="slider-red secon"
-      :max="20_000_000"
+      :max="40_000_000"
       :min="1_000_000"
       :merge="100"
       :step="50_000"
@@ -57,6 +60,8 @@ import { ref, unref, computed, watch } from "vue";
 const emits = defineEmits(["update:slider"]);
 const props = defineProps({
   valorTotal: Boolean,
+  valorAutomatico: Number,
+  label: String,
 });
 const value = ref(0);
 // const formatValue = computed(() => "$" + unref(value));
@@ -87,6 +92,10 @@ const format = (e) => {
 
 watch(value, () => {
   emits("update:slider", value.value.toString());
+});
+
+watch(props, () => {
+  value.value = props.valorAutomatico;
 });
 </script>
 

@@ -27,6 +27,12 @@
               class="content py-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 border-b"
             >
               <div class="col-span-1">
+                <SelectTypeCredito1
+                  label="Tipo Credito"
+                  id="Tipo Credito"
+                  @update:type="(e) => (formSimulador.type = e.value)"
+                  @valores="(e) => registrarValor(e)"
+                />
                 <InputRut1
                   label="RUT"
                   id="RUT"
@@ -71,30 +77,28 @@
                     label="Año"
                     id="Año"
                     @update:anio="(e) => (formSimulador.vehicle_year = e)"
+                    tipoCredito
+                    claseCredito
                   />
                 </div>
-                <SelectTypeCredito1
-                  label="Tipo Credito"
-                  id="Tipo Credito"
-                  @update:type="(e) => (formSimulador.type = e.value)"
-                />
               </div>
               <div
                 class="col-span-1 md:px-5 md:border-x grid gap-6 mb-8 md:mb-0"
               >
                 <div class="price">
-                  <Heading1 content="Valor del vehículo" headingType="h4" />
                   <SliderRange1
                     @update:slider="(e) => (formSimulador.vehicle_price = e)"
                     valorTotal
                     @keypress="onlyNumber"
+                    label="Valor del vehículo"
                   />
                 </div>
                 <div class="pie">
-                  <Heading1 content="Valor del pie" headingType="h4" />
                   <SliderRange1
                     @update:slider="(e) => (formSimulador.down_payment = e)"
                     @keypress="onlyNumber"
+                    :valorAutomatico="formSimulador.down_payment"
+                    label="Valor del pie"
                   />
                   <Paragraph
                     class="text-red-700 justify-self-center text-center grid-flow-row col-end-3 mt-2"
@@ -103,12 +107,26 @@
                     {{ mensajeValor }}
                   </Paragraph>
                 </div>
+
+                <Input
+                  label="Monto a financiar"
+                  id="financiar"
+                  placeholder="Monto a financiar"
+                  money
+                  :valor="valorFinanciar"
+                  disabled
+                  informativo
+                />
               </div>
               <div
                 class="grid place-content-center"
                 v-if="!loading && !complete"
               >
-                <img src="../assets/img/simulador.svg" alt="simulador" class="w-full" />
+                <img
+                  src="../assets/img/simulador.svg"
+                  alt="simulador"
+                  class="w-full"
+                />
               </div>
               <div class="grid place-content-center" v-if="loading">
                 <Loading />
@@ -445,6 +463,7 @@ const formSimulador = reactive({
   medium: useUtms.utm_medium || "Autocred",
   campaign: useUtms.utm_campaign || "Autocred",
 });
+
 const formSimulador2 = reactive({
   dni: "",
   vehicle_year: "",
@@ -503,12 +522,17 @@ const formActive = ref(true);
 const formActive2 = ref(false);
 const warningDownPayment = ref(false);
 const newUser = ref(false);
+const express = ref(false);
+const claseCredito = ref(false);
+const valorFinanciar = ref("");
 
 const componentKey = ref(0);
 //PASO 1
 const handleForm = async () => {
   validarMonto.value = false;
   loading.value = true;
+
+  express.value ? (formSimulador.type = "Conventional") : formSimulador.type;
 
   try {
     const res = await axios.post(EVALUACION_URL_1, formSimulador);
@@ -645,6 +669,29 @@ const handleForm2 = async () => {
 //PASO 2
 
 watch(formSimulador, () => {
+  valorFinanciar.value =
+    formSimulador.vehicle_price - formSimulador.down_payment;
+
+  switch (express.value) {
+    case true:
+      if (
+        formSimulador.down_payment < (formSimulador.vehicle_price * 40) / 100 ||
+        formSimulador.vehicle_price - formSimulador.down_payment < 500000
+      ) {
+        formSimulador.down_payment = (formSimulador.vehicle_price * 40) / 100;
+      }
+      break;
+
+    default:
+      if (
+        formSimulador.down_payment < (formSimulador.vehicle_price * 20) / 100 ||
+        formSimulador.vehicle_price - formSimulador.down_payment < 1500000
+      ) {
+        formSimulador.down_payment = (formSimulador.vehicle_price * 20) / 100;
+      }
+      break;
+  }
+
   complete.value = false;
   if (formEmpty(formSimulador)) {
     errorForm.value = true;
@@ -655,22 +702,60 @@ watch(formSimulador, () => {
       formSimulador.requested_amount = res.toString();
       errorForm.value = false;
 
-      if (formSimulador.vehicle_price - formSimulador.down_payment < 1500000) {
-        warningDownPayment.value = true;
-        mensajeValor.value = "El monto mínimo a solicitar es de $1.500.000.";
-        errorForm.value = true;
-      } else if (
-        formSimulador.down_payment <
-        (formSimulador.vehicle_price * 20) / 100
-      ) {
-        warningDownPayment.value = true;
-        errorForm.value = true;
-        mensajeValor.value =
-          "Pie Inicial debe ser mayor o igual al 20% del valor del vehículo";
-      } else {
-        mensajeValor.value = "";
-        errorForm.value = false;
-        warningDownPayment.value = false;
+      switch (express.value) {
+        case true:
+          if (
+            formSimulador.vehicle_price - formSimulador.down_payment <
+            5000000
+          ) {
+            warningDownPayment.value = true;
+            mensajeValor.value =
+              "El monto mínimo a financiar es de $5.000.000.";
+            errorForm.value = true;
+          } else if (
+            formSimulador.down_payment <
+            (formSimulador.vehicle_price * 40) / 100
+          ) {
+            warningDownPayment.value = true;
+            errorForm.value = true;
+            mensajeValor.value =
+              "Pie Inicial debe ser mayor o igual al 40% del valor del vehículo";
+          } else {
+            mensajeValor.value = "";
+            errorForm.value = false;
+            warningDownPayment.value = false;
+          }
+          break;
+
+        case false:
+          if (
+            formSimulador.vehicle_price - formSimulador.down_payment <
+            1500000
+          ) {
+            warningDownPayment.value = true;
+            mensajeValor.value =
+              "El monto mínimo a solicitar es de $1.500.000.";
+            errorForm.value = true;
+          } else if (
+            formSimulador.down_payment <
+            (formSimulador.vehicle_price * 20) / 100
+          ) {
+            warningDownPayment.value = true;
+            errorForm.value = true;
+            mensajeValor.value =
+              "Pie Inicial debe ser mayor o igual al 20% del valor del vehículo";
+          } else if (formSimulador.down_payment < 1500000) {
+            warningDownPayment.value = true;
+            mensajeValor.value =
+              "El monto mínimo a solicitar es de $1.500.000.";
+            errorForm.value = true;
+          } else {
+            mensajeValor.value = "";
+            errorForm.value = false;
+            warningDownPayment.value = false;
+          }
+
+          break;
       }
     } else {
       errorForm.value = true;
@@ -883,6 +968,31 @@ const loginHandle = () => {
       rut: formSimulador2.dni,
     },
   });
+};
+
+const registrarValor = (e) => {
+  express.value = e.name.includes("Express");
+  claseCredito.value = e.name.includes("Inteligente");
+
+  switch (express.value) {
+    case true:
+      if (
+        formSimulador.down_payment < (formSimulador.vehicle_price * 40) / 100 ||
+        formSimulador.vehicle_price - formSimulador.down_payment < 500000
+      ) {
+        formSimulador.down_payment = (formSimulador.vehicle_price * 40) / 100;
+      }
+      break;
+
+    case false:
+      if (
+        formSimulador.down_payment < (formSimulador.vehicle_price * 20) / 100 ||
+        formSimulador.vehicle_price - formSimulador.down_payment < 1500000
+      ) {
+        formSimulador.down_payment = (formSimulador.vehicle_price * 20) / 100;
+      }
+      break;
+  }
 };
 </script>
 

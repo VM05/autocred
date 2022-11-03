@@ -82,9 +82,12 @@ defineProps({
   label: String,
   id: String,
 });
-const emit = defineEmits(["update:type"]);
+const emit = defineEmits(["update:type", "valores"]);
 
-const handler = (element) => emits("update:type", element);
+const handler = (element) => {
+  emit("update:type", element);
+  emit("valores", element);
+};
 
 let selected = ref(typeCredit[0]);
 let query = ref("");

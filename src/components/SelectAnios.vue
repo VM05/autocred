@@ -23,10 +23,87 @@
           @after-leave="query = ''"
         >
           <ListboxOptions
+            v-if="!props.tipoCredito"
             class="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-primary-700 focus:outline-none sm:text-sm z-10"
           >
             <ListboxOption
               v-for="(anio, index) in data.data"
+              as="template"
+              :key="index"
+              :value="anio"
+              v-slot="{ selected, active }"
+              @click="handler(anio)"
+            >
+              <li
+                class="cursor-pointer select-none relative py-2 pl-10 pr-4"
+                :class="{
+                  'text-white bg-primary-900': active,
+                  'text-primary-900': !active,
+                }"
+              >
+                <span
+                  class="block truncate"
+                  :class="{ 'font-medium': selected, 'font-normal': !selected }"
+                >
+                  {{ anio }}
+                </span>
+                <span
+                  v-if="selected"
+                  class="absolute inset-y-0 left-0 flex items-center pl-3"
+                  :class="{ 'text-white': active }"
+                >
+                  <CheckIcon
+                    class="w-5 h-5 text-secondary-900"
+                    aria-hidden="true"
+                  />
+                </span>
+              </li>
+            </ListboxOption>
+          </ListboxOptions>
+          <ListboxOptions
+            v-else-if="props.tipoCredito && props.claseCredito"
+            class="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-primary-700 focus:outline-none sm:text-sm z-10"
+          >
+            <ListboxOption
+              v-for="(anio, index) in data.data.slice(0, 6)"
+              as="template"
+              :key="index"
+              :value="anio"
+              v-slot="{ selected, active }"
+              @click="handler(anio)"
+            >
+              <li
+                class="cursor-pointer select-none relative py-2 pl-10 pr-4"
+                :class="{
+                  'text-white bg-primary-900': active,
+                  'text-primary-900': !active,
+                }"
+              >
+                <span
+                  class="block truncate"
+                  :class="{ 'font-medium': selected, 'font-normal': !selected }"
+                >
+                  {{ anio }}
+                </span>
+                <span
+                  v-if="selected"
+                  class="absolute inset-y-0 left-0 flex items-center pl-3"
+                  :class="{ 'text-white': active }"
+                >
+                  <CheckIcon
+                    class="w-5 h-5 text-secondary-900"
+                    aria-hidden="true"
+                  />
+                </span>
+              </li>
+            </ListboxOption>
+          </ListboxOptions>
+          <ListboxOptions
+            v-else
+            class="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-primary-700 focus:outline-none sm:text-sm z-10"
+          >
+            <ListboxOption
+              v-for="(anio, index) in data.data.slice(0, 8)"
               as="template"
               :key="index"
               :value="anio"
@@ -80,9 +157,11 @@ import { ANIOS_VEHICULOS_URL } from "../assets/helpers/API";
 import { useSimuladorStore } from "../stores/simulador";
 const useSimulador = useSimuladorStore();
 
-defineProps({
+const props = defineProps({
   label: String,
   id: String,
+  tipoCredito: String,
+  claseCredito: String,
 });
 const emit = defineEmits(["update:anio"]);
 const data = ref();
@@ -102,6 +181,13 @@ let query = ref("");
 watch(selected, () => {
   changeAnio(selected.value);
   emit("update:anio", selected.value);
+});
+
+watch(props, () => {
+  if (props.tipoCredito) {
+    selected.value = 2022;
+    console.log("prueba");
+  }
 });
 
 const changeAnio = (value) => {
