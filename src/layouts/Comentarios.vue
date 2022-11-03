@@ -91,5 +91,16 @@ li.carousel__slide {
   .carousel__icon {
     color: #ba0b7c;
   }
+
+  button.carousel__pagination-button{
+    background-color: #ba0b7d4f ;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  button.carousel__pagination-button.carousel__pagination-button--active{
+    background-color: #ba0b7c;
+  }
 }
 </style>

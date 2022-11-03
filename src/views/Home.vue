@@ -15,7 +15,7 @@
         </div>
       </template>
     </ModalView> -->
-    <!-- <BannerSlider /> -->
+    <!-- <BannerSlider class="md:mb-5" /> -->
     <BannerHome>
       <template #content>
         <Heading
