@@ -19,8 +19,8 @@
         </div>
       </template>
     </BannerHome>
-    <PreguntasList vendedor secondary />
     <PreguntasList comprador primary />
+    <PreguntasList vendedor secondary />
     <Hablemos id="contacto" />
   </Container>
 </template>
