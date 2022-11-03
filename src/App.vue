@@ -1,7 +1,7 @@
 <script setup>
 import { useHead } from "@vueuse/head";
 import { useContactoStore } from "./stores/contacto";
-import { onMounted } from "vue";
+import { onBeforeMount } from "vue";
 import WhatsappButton from "./components/WhatsappButton.vue";
 
 useHead({
@@ -17,7 +17,7 @@ useHead({
 
 const storeContacto = useContactoStore();
 
-onMounted(() => {
+onBeforeMount(() => {
   storeContacto.fetchUtms();
   storeContacto.getProcedencia();
 });
@@ -25,7 +25,7 @@ onMounted(() => {
 
 <template>
   <router-view></router-view>
-  <WhatsappButton  telefono="+56946456800"/>
+  <WhatsappButton telefono="+56946456800" />
 </template>
 
 <style></style>
