@@ -22,7 +22,7 @@ import Amotor from '../views/amotor/Amotor.vue'
 import AmotorFinanciamiento from '../views/amotor/AmotorFinanciamiento.vue'
 import AutocredFinanciamiento from '../views/autocred/AutocredFinanciamiento.vue'
 import AutocredView from '../views/autocred/AutocredView.vue'
-
+import ServicioTag from '../views/ServicioTag.vue'
 const router = createRouter({
     history: createWebHistory(),
 
@@ -48,7 +48,11 @@ const router = createRouter({
                         ...route.params
                     })
                 },
-                { path: '/servicios', name: 'Servicios', component: servicios },
+                { path: '/servicios', name: 'Servicios', component: servicios,
+                // children:[
+                //     { path:'/servicios/tag', name:'serviciotag', component: ServicioTag}
+                // ]
+            },
                 { path: '/vendedores', name: 'Vendedores', component: vendedores },
                 { path: '/blog', name: 'Blog', component: Blog },
                 { path: '/blog/:id', name: 'Articulo', component: article },

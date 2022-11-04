@@ -77,8 +77,7 @@
                     label="Año"
                     id="Año"
                     @update:anio="(e) => (formSimulador.vehicle_year = e)"
-                    tipoCredito
-                    claseCredito
+                    :tipoCredito="express"
                   />
                 </div>
               </div>

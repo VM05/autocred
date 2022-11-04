@@ -160,8 +160,8 @@ const useSimulador = useSimuladorStore();
 const props = defineProps({
   label: String,
   id: String,
-  tipoCredito: String,
-  claseCredito: String,
+  tipoCredito: Boolean,
+  claseCredito: Boolean,
 });
 const emit = defineEmits(["update:anio"]);
 const data = ref();
@@ -186,7 +186,6 @@ watch(selected, () => {
 watch(props, () => {
   if (props.tipoCredito) {
     selected.value = 2022;
-    console.log("prueba");
   }
 });
 

@@ -81,6 +81,7 @@ const emit = defineEmits(["update:antiguedad"]);
 
 const props = defineProps({
   label: String,
+  id: String,
   valor: { type: Number, default: 0 },
 });
 const handler = (element) => {

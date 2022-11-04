@@ -3,7 +3,7 @@
     <!-- TODO: Modelar INPUT -->
     <!-- <Input v-model="value" /> -->
     <div class="relative py-6 w-full">
-      <label :for="id" class="text-primary-900 font-bold text-base">{{
+      <label  class="text-primary-900 font-bold text-base">{{
         label
       }}</label>
       <input
