@@ -530,11 +530,11 @@ const componentKey = ref(0);
 const handleForm = async () => {
   validarMonto.value = false;
   loading.value = true;
-
-  express.value ? (formSimulador.type = "Conventional") : formSimulador.type;
-
+  express.value ? (formSimulador.type = "conventional") : formSimulador.type;
+  formSimulador.vehicle_price = Number(formSimulador.vehicle_price) 
   try {
     const res = await axios.post(EVALUACION_URL_1, formSimulador);
+    console.log(res.data)
     dataCuotas.value = await res.data.data;
 
     loading.value = false;
@@ -668,6 +668,8 @@ const handleForm2 = async () => {
 //PASO 2
 
 watch(formSimulador, () => {
+ 
+
   valorFinanciar.value =
     formSimulador.vehicle_price - formSimulador.down_payment;
 
