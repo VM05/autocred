@@ -92,10 +92,13 @@ const format = (e) => {
 
 watch(value, () => {
   emits("update:slider", value.value.toString());
+  
 });
 
 watch(props, () => {
+
   value.value = props.valorAutomatico;
+  
 });
 </script>
 
