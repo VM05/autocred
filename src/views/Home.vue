@@ -68,7 +68,7 @@
         </div>
       </template>
     </BannerHome> -->
-    <Servicios />
+    <Servicios class="mt-10 md:mt-0"/>
     <Ventajas />
     <Respaldo />
     <Experiencia />
