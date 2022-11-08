@@ -639,6 +639,7 @@ export const serviciosVendores = [
         content:
             "¿Quieres comprar un auto con tarjeta de crédito o financiamiento? En Autocred trabajamos con diferentes opciones financieras para hacer de tu compra, el mejor negocio.",
         img: "/img/icons/Iconos_Autocred_Magenta_Plataformas_de_Pago.webp",
+        link:"/servicios/financiamiento"
     },
     {
         id: 'transferencias',
@@ -646,6 +647,7 @@ export const serviciosVendores = [
         content:
             "¿Estás listo para transferir tu auto? Nuestro servicio está en línea con el registro civil, y contamos con 3 formatos de atención para una transferencia segura: <br> <ul class='list-disc pl-6'><li>Online</li><li>Presencial en nuestros módulos</li><li>Oficina Móvil</li><ul>",
         img: "/img/icons/Iconos_Autocred_Magenta_transferencia.webp",
+        link:'/servicios/transferencias'
     },
     {
         id: 'seguro',
@@ -673,6 +675,7 @@ export const serviciosCompradores = [
         content:
             "Evaluación lista solo en 7 minutos. Nuestra plataforma permite pagos con tarjeta de crédito y financiamiento. El abono llega a tu cuenta al firmar la transferencia.",
         img: "/img/icons/Iconos_Autocred_Azul_financiamiento.webp",
+        link:"/servicios/financiamiento"
     },
     {
         id: 'transferencias',
