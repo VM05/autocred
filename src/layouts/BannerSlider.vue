@@ -75,12 +75,13 @@ import { datosBannerPrincipal } from "../assets/helpers/constants";
 
 img {
   height: 100%;
-  width: auto;
+  width: 100%;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
   pointer-events: none;
+  min-width: 370px;
 }
 </style>
