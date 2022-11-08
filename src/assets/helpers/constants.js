@@ -20,6 +20,19 @@ export const links = [
 
 export const datosBannerPrincipal = [
     {
+        titulo: "¡Te financiamos!",
+        content:"completamos el valor que te falta para comprar el auto usado de tus sueños.",
+        img: "/img/imagenBanner/celular.gif",
+        buttonText: "EVALUACIÓN DE CRÉDITO"
+    },
+
+    {
+        titulo: "¡No te enredes!",
+        content:"La compra y venta de autos usados entre personas particulares es simple con Autocred.",
+        img: "/img/imagenBanner/no-te-enredes.gif",
+        buttonText: "CONTÁCTANOS"
+    },
+    {
         titulo: "En Autocred hacemos todos los trámites por ti",
         content:"¡Evita filas, notarías y malos ratos!",
         img: "/img/imagenBanner/tramites-por-ti.webp",
@@ -33,19 +46,9 @@ export const datosBannerPrincipal = [
         buttonText: "QUIERO INFORMACIÓN"
     },
 
-    {
-        titulo: "¡No te enredes!",
-        content:"La compra y venta de autos usados entre personas particulares es simple con Autocred.",
-        img: "/img/imagenBanner/no-te-enredes.gif",
-        buttonText: "CONTÁCTANOS"
-    },
+  
 
-    {
-        titulo: "¡Te financiamos!",
-        content:"completamos el valor que te falta para comprar el auto usado de tus sueños.",
-        img: "/img/imagenBanner/celular.gif",
-        buttonText: "EVALUACIÓN DE CRÉDITO"
-    },
+   
 ];
 
 
