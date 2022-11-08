@@ -15,8 +15,8 @@
         </div>
       </template>
     </ModalView> -->
-    <!-- <BannerSlider class="md:mb-5" /> -->
-    <BannerHome>
+    <BannerSlider class="md:mb-5" />
+    <!-- <BannerHome>
       <template #content>
         <Heading
           content="Tu mejor copiloto para la compra y venta de vehículos usados entre personas"
@@ -35,13 +35,13 @@
           headingType="h4"
           class="mb-5"
         />
-        <div>
+        <div> -->
           <!-- <Heading
             content="¿En que viaje te guiamos?"
             headingType="h4"
             class="mb-3"
           /> -->
-          <div class="flex flex-col md:flex-row md:gap-4 gap-2">
+          <!-- <div class="flex flex-col md:flex-row md:gap-4 gap-2">
             <router-link to="/vendedores">
               <Button text="Quiero vender" secondary id="quiero-vender" />
             </router-link>
@@ -52,13 +52,13 @@
         </div>
       </template>
       <template #image>
-        <div class="grid place-content-center h-full">
+        <div class="grid place-content-center h-full"> -->
           <!-- <img
             src="../assets/img/home_header.png"
             alt="lorem"
             class="w-full md:w-auto"
           /> -->
-          <video
+          <!-- <video
             autoplay
             controls
             muted
@@ -67,15 +67,15 @@
           ></video>
         </div>
       </template>
-    </BannerHome>
-    <Ventajas />
+    </BannerHome> -->
     <Servicios />
+    <Ventajas />
     <Respaldo />
     <Experiencia />
     <Comentarios />
     <DondeEstamos />
     <Medios />
-    <Simulador />
+    <!-- <Simulador /> -->
     <Hablemos id="contacto" />
   </Container>
 </template>

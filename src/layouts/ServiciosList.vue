@@ -166,6 +166,7 @@ const elementActive = ref(route.params.active ? route.params.active : "");
 onMounted(async () => {
   try {
     const servicios = await axios.get(SERVICIOS_URL);
+    console.log(await servicios.data)
     data.value = await servicios.data;
   } catch (error) {
     console.log("error");

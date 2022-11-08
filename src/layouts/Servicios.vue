@@ -1,15 +1,31 @@
 <template>
   <div class="mb-24 md:px-12">
     <Heading
-      content="¿En qué consisten nuestros servicios?"
+      content="Servicios para compradores y vendedores "
       class="mb-8"
       v-if="title"
-      highlight="servicios"
+      highlight="Servicios"
       highlightImg="servicios"
     />
+    
+    <Heading
+      content="Compradores"
+      class="pb-4 border-b mb-8 font-bold"
+      :class="{ 'mb-1': descriptionCompradores }"
+      headingType="h3"
+    />
+    <p
+      v-if="descriptionCompradores"
+      class="mb-12 font-medium text-primary-900 text-lg"
+    >
+      {{ descriptionCompradores }}
+    </p>
+
+    <ServiciosList :data="serviciosCompradores" servicio="comprador" />
+
     <Heading
       content="Vendedores"
-      class="pb-4 border-b mb-8 font-bold"
+      class="pb-4 border-b mb-8 mt-8 font-bold"
       :class="{ 'mb-1': descriptionVendedores }"
       headingType="h3"
     />
@@ -25,20 +41,6 @@
       class="mb-8"
       servicio="vendedor"
     />
-    <Heading
-      content="Compradores"
-      class="pb-4 border-b mb-8 font-bold"
-      :class="{ 'mb-1': descriptionCompradores }"
-      headingType="h3"
-    />
-    <p
-      v-if="descriptionCompradores"
-      class="mb-12 font-medium text-primary-900 text-lg"
-    >
-      {{ descriptionCompradores }}
-    </p>
-
-    <ServiciosList :data="serviciosCompradores" servicio="comprador" />
   </div>
 </template>
 

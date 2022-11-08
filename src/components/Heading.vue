@@ -53,6 +53,8 @@ const activeImage = () => {
       return hightlightsImages.expertos;
     case "mueve":
       return hightlightsImages.mueve;
+    case "ventajas":
+        return hightlightsImages.juntos;
     default:
       return hightlightsImages.default;
   }
@@ -86,6 +88,9 @@ onMounted(() => {
     switch (props.highlightImg) {
       case "copiloto":
         renderImage("copiloto");
+        break;
+      case "ventajas":
+        renderImage("ventajas");
         break;
       case "juntos":
         renderImage("juntos");
@@ -189,6 +194,12 @@ h6 {
 .highlight.juntos::after {
   width: 130%;
   top: -5%;
+  left: -15%;
+}
+
+.highlight.ventajas::after {
+  width: 120%;
+  top: -35%;
   left: -15%;
 }
 .highlight.servicios::after {

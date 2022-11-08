@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col md:grid py-6 md:py-12 mb-24">
     <Heading
-      content="Pilotos que confiaron en Autocred"
+      content="Que dicen nuestros clientes"
       class="mb-8 md:mb-16 md:px-12"
-      highlight="confiaron"
+      highlight="clientes"
       highlight-img="confiaron"
     />
     <Carousel

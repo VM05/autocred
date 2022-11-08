@@ -2,7 +2,7 @@
   <router-link
     as="div"
     to="/servicios"
-    class="flex flex-row text-base justify-center font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
+    class="flex flex-row text-base justify-center font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold "
     activeClass="activeMenu"
     @mouseover="toogleMenu"
     @click="hideMenu"
@@ -21,9 +21,10 @@
       v-for="item in props.sublinks"
       class="text-primary-700 hover:bg-primary-900 hover:text-white px-3 py-3 rounded-md"
       :to="{
-        name: 'Servicios',
+        // name:'Servicios',
+        name: `servicio${item.link}`,
         params: { active: item.link },
-        hash: `#${item.link}`,
+        // hash: `#${item.link}`,
       }"
     >
       {{ item.name }}
@@ -50,7 +51,8 @@
       v-for="item in props.sublinks"
       as="div"
       :to="{
-        name: 'Servicios',
+        // name:'Servicios',
+        name: `servicio${item.link}`,
         params: { active: item.link },
         hash: `#${item.link}`,
       }"
@@ -72,9 +74,17 @@ const props = defineProps({
   mobile: Boolean,
   closeFunction: Function,
 });
+const clickeado = ref(false);
 const active = ref(false);
 const toogleMenu = () => (active.value = !active.value);
 const hideMenu = () => (active.value = false);
+
+const prueba = ()=>{
+  setTimeout(() => {
+    clickeado.value = window.location.href.includes('servicios')
+  },100);
+ 
+}
 </script>
 
 <style scoped></style>

@@ -23,6 +23,9 @@ import AmotorFinanciamiento from '../views/amotor/AmotorFinanciamiento.vue'
 import AutocredFinanciamiento from '../views/autocred/AutocredFinanciamiento.vue'
 import AutocredView from '../views/autocred/AutocredView.vue'
 import ServicioTag from '../views/ServicioTag.vue'
+import ServicioTransferencia from '../views/ServicioTransferencia.vue'
+import ServicioFinanciamiento from '../views/ServicioFinanciamiento.vue'
+import ServicioSeguro from '../views/ServicioSeguro.vue'
 const router = createRouter({
     history: createWebHistory(),
 
@@ -48,10 +51,13 @@ const router = createRouter({
                         ...route.params
                     })
                 },
-                { path: '/servicios', name: 'Servicios', component: servicios,
-                // children:[
-                //     { path:'/servicios/tag', name:'serviciotag', component: ServicioTag}
-                // ]
+                { path: '/servicios', name: 'Servicios', component: servicios, redirect:"/servicios/financiamiento",
+                children:[
+                    { path:'/servicios/tag', name:'serviciotag', component: ServicioTag},
+                    { path:'/servicios/transferencias', name:'serviciotransferencias', component: ServicioTransferencia},
+                    { path:'/servicios/financiamiento', name:'serviciofinanciamiento', component: ServicioFinanciamiento},
+                    { path:'/servicios/seguro', name:'servicioseguro', component: ServicioSeguro},
+                ]
             },
                 { path: '/vendedores', name: 'Vendedores', component: vendedores },
                 { path: '/blog', name: 'Blog', component: Blog },

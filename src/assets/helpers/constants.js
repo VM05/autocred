@@ -325,25 +325,31 @@ export const featuresSeguro = [
 
 export const ventajas = [
     {
-        name: "Te Guiamos",
+        name: "Te financiamos",
         content:
-            "Estamos disponibles a través de nuestros distintos canales los 7 días de la semana para ayudarte en lo que necesites.",
-        src: '/img/ventajas/ventajas_teguiamos.webp'
+            "Ahora puedes comprar o vender tu auto usado, entre personas, con Financiamiento. Evaluación en solo 7 minutos y pago al instante al vendedor.",
+        src: '/img/ventajas/ventajas_financiamiento.webp',
+        textoBoton: 'Evalúa tu crédito',
+        link: '/autocred-financiamiento/financiamiento',
     },
     {
-        name: "Te Acompañamos",
+        name: "Todos los trámites juntos",
         content:
-            "Te llevamos al comprador en nuestra van, entregamos financiamiento y facilidades de pago, y/o te acompañamos a ver o mostrar el auto.",
-        src: '/img/ventajas/ventajas_teacompañamos.webp'
+            "Nos encargamos de todos los trámites de compradores y vendedores particulares, liberándolos de largas filas en notarías, del Registro Civil y de ir a la autopista por trámites de TAG.",
+        src: '/img/ventajas/ventajas_teapoyamos.webp',
+        textoBoton: 'Transfiere tu auto',
+        link: '/servicios/transferencias',
 
     },
     {
-        name: "Te Apoyamos",
+        name: "Te guíamos y acompañamos",
         content:
-            "Para comprar o vender, contamos con facilidades de pago, servicio de transferencia, seguro y TAG. Todo en un mismo lugar.",
-        src: '/img/ventajas/ventajas_teapoyamos.webp'
-
-    }
+            "Te guiamos en como comprar y vender y llevamos al comprador particular a ver el auto usado que quiere comprar, y al vendedor particular a mostrar su auto usado, en nuestra Oficina Móvil.",
+        src: '/img/ventajas/ventajas_teacompañamos.webp',
+        textoBoton: 'Solicita tu viaje',
+        link: '/#contacto'
+    },
+    
 ]
 
 export const posts = [

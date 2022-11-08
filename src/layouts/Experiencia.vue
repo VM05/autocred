@@ -1,9 +1,8 @@
 <template>
   <Heading1
-    content="Descubre la experiencia de nuestro último piloto"
+    content="Casos de éxito"
     class="mb-14 md:px-12"
-    highlight="piloto"
-    highlight-img="piloto"
+   
   />
   <div class="grid justify-between mb-24 md:px-12">
     <CardExperiencia1 class="mb-8 md:mb-0" />

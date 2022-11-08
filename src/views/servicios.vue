@@ -1,21 +1,19 @@
 <template>
   <Container>
-    <Heading
+    <!-- <Heading
       content="Diferentes soluciones para que la compra o venta de vehículos entre las personas sea un viaje extraordinario:"
       headingType="h2"
       class="mb-10 md:px-12"
     />
     <ServiciosList1 />
-    <Hablemos id="contacto" />
-  
+    <Hablemos id="contacto" /> -->
+  <router-view></router-view>
   </Container>
 </template>
 
 <script setup>
 import Container from "../layouts/Container.vue";
-
 import Heading from "../components/Heading.vue";
-
 import Hablemos from "../layouts/Hablemos.vue";
 import ServiciosList1 from "../layouts/ServiciosList.vue";
 import { useHead } from "@vueuse/head";

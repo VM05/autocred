@@ -28,8 +28,8 @@
             >
               <div class="col-span-1">
                 <SelectTypeCredito1
-                  label="Tipo Credito"
-                  id="Tipo Credito"
+                  label="Tipo Crédito"
+                  id="Tipo Crédito"
                   @update:type="(e) => (formSimulador.type = e.value)"
                   @valores="(e) => registrarValor(e)"
                 />

@@ -3,10 +3,10 @@ export const direcciones = [
         name: 'R.Metropolitana',
         servicios: ['Presencial', 'Servicio 100 % online', 'Servicio Van / Oficina Móvil'],
         sucursales: [
-            { name: 'Sur', content: '<b>Zona Sur</b>: Mall Paseo Quilin <br>Piso 1, Entrada Central Vespucio', tel: '56946373862' },
+            // { name: 'Sur', content: '<b>Zona Sur</b>: Mall Paseo Quilin <br>Piso 1, Entrada Central Vespucio', tel: '56946373862' },
             { name: 'Poniente', content: '<b>Zona Poniente</b>: Autocred Cerrillos <br>Las Americas 375', tel: '56932592736' },
             { name: 'Norte', content: '<b>Zona Norte</b>: Mall Plaza Norte <br>Piso 2, Patio automotriz', tel: '56946478330' },
-            { name: 'Oriente', content: '<b>Zona Oriente</b>: Apumanque <br>Piso 1, Entrada Apoquindo', tel: '56946456800' }
+            // { name: 'Oriente', content: '<b>Zona Oriente</b>: Apumanque <br>Piso 1, Entrada Apoquindo', tel: '56946456800' }
         ]
     },
     {
@@ -51,9 +51,9 @@ export const gestion = [
     { id: 3, name: "Ejecutivo Online" },
 ]
 export const typeCredit = [
-    { value: "conventional", name: "Credito Convencional" },
+    { value: "conventional", name: "Crédito Convencional" },
     { value: "smart", name: "Compra Inteligente" },
-    { value: "conventional express", name: "Credito Convencional Express" },
+    { value: "conventional express", name: "Crédito Convencional Express" },
     // { value: "smart", name: "Compra Inteligente Express" },
 ];
 export const servicioCards = [

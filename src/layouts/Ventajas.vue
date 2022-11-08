@@ -1,10 +1,10 @@
 <template>
   <div class="mb-24 md:px-12">
     <Heading1
-      content="Ventajas de viajar juntos"
+      content="Ventajas de comprar o vender tu vehículo usado con Autocred"
       class="mb-12"
-      highlight="juntos"
-      highlight-img="juntos"
+      highlight="Ventajas"
+      highlight-img="ventajas"
     />
     <div
       class="w-full grid-cols-1 grid md:grid-cols-3 gap-16 md:gap-8 lg:gap-32 mb-20"
