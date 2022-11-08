@@ -22,28 +22,28 @@ export const datosBannerPrincipal = [
     {
         titulo: "En Autocred hacemos todos los trámites por ti",
         content:"¡Evita filas, notarías y malos ratos!",
-        img: "/src/assets/img/tramites-por-ti.png",
+        img: "/img/imagenBanner/tramites-por-ti.webp",
         buttonText: "VER TRÁMITES",
     },
 
     {
         titulo: "¡Te atendemos donde quieras!",
         content: "100% online, Oficina Móvil, Módulos de atención",
-        img: "/src/assets/img/donde-quieras.png",
+        img: "/img/imagenBanner/donde-quieras.webp",
         buttonText: "QUIERO INFORMACIÓN"
     },
 
     {
         titulo: "¡No te enredes!",
         content:"La compra y venta de autos usados entre personas particulares es simple con Autocred.",
-        img: "/src/assets/img/no-te-enredes.gif",
+        img: "/img/imagenBanner/no-te-enredes.gif",
         buttonText: "CONTÁCTANOS"
     },
 
     {
         titulo: "¡Te financiamos!",
         content:"completamos el valor que te falta para comprar el auto usado de tus sueños.",
-        img: "/src/assets/img/celular.gif",
+        img: "/img/imagenBanner/celular.gif",
         buttonText: "EVALUACIÓN DE CRÉDITO"
     },
 ];

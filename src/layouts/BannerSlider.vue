@@ -20,11 +20,11 @@
           />
 
           <div class="flex flex-col md:flex-row md:gap-4 gap-2 mt-10">
-            <router-link to="/vendedores">
-              <Button text="Quiero vender" secondary id="quiero-vender" />
+            <router-link to="/servicios/financiamiento">
+              <Button text="Financiamiento" secondary id="quiero-vender" />
             </router-link>
-            <router-link to="/compradores">
-              <Button text="Quiero comprar" primary id="quiero-comprar" />
+            <router-link to="/servicios/transferencias">
+              <Button text="Transferencia" primary id="quiero-comprar" />
             </router-link>
           </div>
 
