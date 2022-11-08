@@ -4,14 +4,14 @@ export const links = [
         name: "Servicios",
         url: "/servicios",
         sublink: [
-            { name: "Transferencia", link: 'transferencias' },
             { name: "Financiamiento", link: 'financiamiento' },
+            { name: "Transferencia", link: 'transferencias' },
             { name: "Tag", link: 'tag' },
             { name: "Seguro Automotriz", link: 'seguro' }
         ]
     },
-    { name: "Vendedores", url: "/vendedores" },
     { name: "Compradores", url: "/compradores" },
+    { name: "Vendedores", url: "/vendedores" },
     
     { name: "FAQ", url: "/preguntas-frecuentes" },
     { name: "Nosotros", url: "/nosotros" },
@@ -333,7 +333,7 @@ export const ventajas = [
             "Ahora puedes comprar o vender tu auto usado, entre personas, con Financiamiento. Evaluación en solo 7 minutos y pago al instante al vendedor.",
         src: '/img/ventajas/ventajas_financiamiento.webp',
         textoBoton: 'Evalúa tu crédito',
-        link: '/autocred-financiamiento/financiamiento',
+        link: '/servicios/financiamiento',
     },
     {
         name: "Todos los trámites juntos",
