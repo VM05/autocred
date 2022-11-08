@@ -9,7 +9,7 @@
         />
         <div class="imagen imagenBG top-0 absolute"></div>
       </div>
-      <div class="z-10 absolute top-12 md:top-16 left-4 md:left-16">
+      <div class="z-10 absolute top-12 md:top-6 left-4 md:left-16">
         <Heading1 content="Evalúa tu crédito" white />
         <Heading1 content="En solo 7 minutos " white />
       </div>
@@ -1048,7 +1048,7 @@ const registrarValor = (e) => {
     position: relative;
     justify-self: center;
     position: absolute;
-    top: 20%;
+    top: 14%;
   }
 }
 </style>
