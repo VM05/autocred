@@ -57,10 +57,10 @@ import { datosBannerPrincipal } from "../assets/helpers/constants";
 
 <style scoped>
 .carousel {
-  max-height: 500px;
+  max-height: 550px;
 }
 .carousel__slide {
-  max-height: 500px;
+  max-height: 550px;
 }
 
 @media (min-width: 768px) {
