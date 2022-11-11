@@ -41,8 +41,13 @@
     }(document, 'script', 'facebook-jssdk'));
   </script> -->
 
-  <script type="module" src="/src/main.js"></script>
+  <script type="module"  src="/src/main.js"></script>
+  <script type="module" vite-if="<{VITE_URL_MOUSEFLOW}> === dev" src="">
   
+  </script>
+  <script type="module" vite-else src="/src/mouseflow.js">
+  </script>
+
 </body>
 
 </html>

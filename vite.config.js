@@ -38,7 +38,7 @@ export default defineConfig(({ command, mode }) => {
         VitePluginHtmlEnv({
       prefix: '<{',
       suffix: '}>',
-      envPrefixes: ['VITE_', 'CUSTOME_PREFIX_']
+     
     })
       ],
       build: {
