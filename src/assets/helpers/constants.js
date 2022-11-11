@@ -635,9 +635,9 @@ export const serviciosVendores = [
     },
     {
         id: 'financiamiento',
-        name: "Plataforma de pago",
+        name: "Vende con financiamiento",
         content:
-            "¿Quieres comprar un auto con tarjeta de crédito o financiamiento? En Autocred trabajamos con diferentes opciones financieras para hacer de tu compra, el mejor negocio.",
+            "Ahora puedes vender tu auto con financiamiento! <br> Aumenta tus probabilidades de venta ofreciendo financiamiento a tus posibles compradores. El pago se realiza directo a tu cuenta al realizar la transferencia con nosotros.",
         img: "/img/icons/Iconos_Autocred_Magenta_Plataformas_de_Pago.webp",
         link:"/servicios/financiamiento"
     },
@@ -649,13 +649,13 @@ export const serviciosVendores = [
         img: "/img/icons/Iconos_Autocred_Magenta_transferencia.webp",
         link:'/servicios/transferencias'
     },
-    {
-        id: 'seguro',
-        name: "Queremos ser más",
-        content:
-            "Porque nos preocupamos de cada detalle, en Autocred puedes dar de baja tu seguro y Tag (solo autopista Vespucio Norte).",
-        img: "/img/icons/Iconos_Autocred_Magenta_Volante.webp",
-    },
+    // {
+    //     id: 'seguro',
+    //     name: "Queremos ser más",
+    //     content:
+    //         "Porque nos preocupamos de cada detalle, en Autocred puedes dar de baja tu seguro y Tag (solo autopista Vespucio Norte).",
+    //     img: "/img/icons/Iconos_Autocred_Magenta_Volante.webp",
+    // },
 ];
 
 //Used for CardCompradores and load servicios
@@ -663,9 +663,9 @@ export const serviciosVendores = [
 export const serviciosCompradores = [
     {
         id: 'van',
-        name: "Van/oficina móvil",
+        name: "Traslado Gratuito",
         content:
-            "Utiliza nuestra Oficina Móvil* para moverte junto al potencial comprador: <br> <ul class='list-disc pl-6'><li>Transferencias</li><li>Pagos con tarjetas</li><li>Servicio de Van 100% gratis</li><li>Financiamiento en solo 7 minutos</li><ul>",
+            "Utiliza nuestra oficina móvil* para ir a ver el auto usado que te guste.<br>Además la puedes solicitar para: Transferencias, pago con tarjeta, financiamiento.",
         img: "/img/icons/Iconos_Autocred_Azul_traslado.webp",
     },
 
