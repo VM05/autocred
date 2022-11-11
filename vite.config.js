@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import ViteRadar from 'vite-plugin-radar'
+import VitePluginHtmlEnv from 'vite-plugin-html-env'
 
 
 
@@ -23,13 +24,22 @@ import ViteRadar from 'vite-plugin-radar'
 //   ]
 // })
 
-export default defineConfig(({ command, mode }) => {
 
+
+
+
+export default defineConfig(({ command, mode }) => {
 
   if (mode === 'development') {
     return {
       plugins: [
+      
         vue(),
+        VitePluginHtmlEnv({
+      prefix: '<{',
+      suffix: '}>',
+      envPrefixes: ['VITE_', 'CUSTOME_PREFIX_']
+    })
       ],
       build: {
         chunkSizeWarningLimit: 1600,
