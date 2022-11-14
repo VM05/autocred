@@ -51,8 +51,6 @@ const pruebaEmit = () => {
 @media screen and (max-width: 500px) {
   .modal-container {
     max-width: 400px;
-   
-    overflow: auto;
   }
 }
 

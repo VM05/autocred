@@ -1,7 +1,7 @@
 <script setup>
 import { useHead } from "@vueuse/head";
 import { useContactoStore } from "./stores/contacto";
-import { onBeforeMount } from "vue";
+import { onBeforeMount, watch } from 'vue';
 import WhatsappButton from "./components/WhatsappButton.vue";
 
 useHead({
@@ -21,6 +21,15 @@ onBeforeMount(() => {
   storeContacto.fetchUtms();
   storeContacto.getProcedencia();
 });
+
+watch(storeContacto,()=>{
+  if(storeContacto.modal_open){
+    document.documentElement.style.overflow = "hidden"
+  }else{
+    document.documentElement.style.overflow = "auto"
+  }
+
+})
 </script>
 
 <template>

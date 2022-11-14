@@ -1,13 +1,11 @@
 <template>
     <div>
  <Modal @on:close="cerrarModal" v-if="contactoStore.modal_open" ancho="900px" >
-      <!-- <template v-slot:header>
-        <img
-          src="../assets/img/logo-autocred-menu.svg"
-          alt=""
-          class="mx-auto w-52 py-5"
-        />
-      </template> -->
+      <template v-slot:header>
+        <div class="relative">
+          <a class="absolute -right-10 text-gray-400 px-3 py-1 -top-10 bg-slate-100 font-semibold rounded-full cursor-pointer" href="" @click.prevent="cerrarModal">X</a>
+        </div>
+      </template>
 
       <template v-slot:body>
         <div class="flex relative mt-5 flex-col md:flex-row mb-36 md:mb-0">
