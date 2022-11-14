@@ -10,7 +10,7 @@
       </template> -->
 
       <template v-slot:body>
-        <div class="flex relative mt-5 flex-col md:flex-row mb-40 md:mb-0">
+        <div class="flex relative mt-5 flex-col md:flex-row mb-36 md:mb-0">
             <div class=" md:w-3/5 text-center">
                 <p class="text-primary-900 font-semibold leading-tight md:text-5xl text-2xl">Durante <span class="underline">Noviembre</span> <br> tu <span class="text-secondary-900">crédito</span> viene con <span class="text-secondary-900 uppercase">combustible!</span></p>
             </div>
@@ -23,7 +23,7 @@
         <div class="flex mt-14 mb-5 md:gap-10 gap-5 md:px-12 flex-col md:flex-row">
           <div class=" bg-gray-200 p-7 md:w-1/2 w-full text-center relative">
             <img src="../assets/img/flecha-azul.webp" alt="arrow" class="absolute w-12 right-1 md:-right-2 md:-top-2 -bottom-28 rotate-45 md:rotate-0">
-            <p class=" text-gray-700">Por cualquier <span class=" font-bold ">financiamiento</span> realizado en Autocred, recibe una <span class=" font-semibold">gift card</span> por <span class=" font-semibold">$50.000</span> de combustible para usar en estaciones Copec a lo largo de <span class=" font-semibold">todo Chile!</span></p>
+            <p class=" text-gray-700 text-sm md:text-base">Por cualquier <span class=" font-bold ">financiamiento</span> realizado en Autocred, recibe una <span class=" font-semibold">gift card</span> por <span class=" font-semibold">$50.000</span> de combustible para usar en estaciones Copec a lo largo de <span class=" font-semibold">todo Chile!</span></p>
           </div>
           <div class="flex flex-col items-center w-full md:w-80 relative">
             <div class="flex items-end absolute move-top md:h-fit md:static">
@@ -59,7 +59,7 @@ const cerrarModal = ()=>{
 <style scoped>
     @media (max-width:500px){
       .move-top{
-        top:-305px
+        top:-265px
 
       }
 
