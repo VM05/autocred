@@ -9,6 +9,13 @@
 </template>
 
 <script setup>
+const props = defineProps({
+  ancho: {
+    String,
+    default: '550px',
+  },
+})
+
 const emit = defineEmits(["on:close", "pruebaEmit"]);
 const pruebaEmit = () => {
   emit("on:close");
@@ -31,18 +38,20 @@ const pruebaEmit = () => {
 
 .modal-container {
   margin: 0px 20px;
-  width: 550px;
+  width: 100%;
+  max-width: v-bind('props.ancho');
   height: auto;
   padding: 30px;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  max-height: 95%;
 }
 
 @media screen and (max-width: 500px) {
   .modal-container {
     max-width: 400px;
-    height: 70%;
+   
     overflow: auto;
   }
 }

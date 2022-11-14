@@ -1,20 +1,6 @@
 <template>
   <Container>
-    <!-- <Modal @on:close="cerrarModal" v-if="isOpen">
-      <template v-slot:header>
-        <img
-          src="../assets/img/logo-autocred-menu.svg"
-          alt=""
-          class="mx-auto w-52 py-5"
-        />
-      </template>
-
-      <template v-slot:body>
-        <div class="text-center my-10">
-          <p>prueba de informacion desde popup</p>
-        </div>
-      </template>
-    </Modal> -->
+   <ModalCopec/>
     <BannerSlider class="md:mb-5" />
     <!-- <BannerHome>
       <template #content>
@@ -95,16 +81,10 @@ import Hablemos from "../layouts/Hablemos.vue";
 import Experiencia from "../layouts/Experiencia.vue";
 import { useHead } from "@vueuse/head";
 import Simulador from "../layouts/Simulador.vue";
-import Modal from "../components/ModalView.vue";
+import ModalCopec from "../layouts/ModalCopec.vue"
 import Footer from "../components/amotor/Footer.vue";
 import BannerSlider from "../layouts/BannerSlider.vue";
-import {ref} from 'vue'
 
-const isOpen = ref(true)
-const cerrarModal = ()=>{
-  isOpen.value = false
-
-}
 useHead({
   title: "Autocred Chile tu mejor copiloto",
   meta: [

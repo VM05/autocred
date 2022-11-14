@@ -13,6 +13,7 @@ export const useContactoStore = defineStore("contacto", {
             utm_campaign: '',
             utm_procedenciaId: '',
             utm_tipoProcedencia: '',
+            modal_open: true,
 
         }
     },
