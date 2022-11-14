@@ -30,7 +30,7 @@
             </div>
             <span class="text-center block md:mt-2 ml-2 text-gray-400 md:text-lg italic font-semibold md:font-normal text-base">Oferta válida para todo Chile!</span>
             <div class="w-full md:w-1/2 mx-auto mt-5 flex justify-center">
-              <router-link to="/compradores#simulador">
+              <router-link to="/servicios/financiamiento#simulador">
               <Button text="Evalúa tu crédito" secondary id="evalua" @click="cerrarModal"/>
             </router-link>
             </div>
@@ -44,7 +44,6 @@
 <script setup>
 import Modal from "../components/ModalView.vue";
 import Button from "../components/Button.vue";
-import {ref} from 'vue'
 import { useContactoStore } from "../stores/contacto";
 
 
