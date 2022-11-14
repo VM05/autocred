@@ -22,14 +22,13 @@ onBeforeMount(() => {
   storeContacto.getProcedencia();
 });
 
-watch(storeContacto,()=>{
-  if(storeContacto.modal_open){
-    document.documentElement.style.overflow = "hidden"
-  }else{
-    document.documentElement.style.overflow = "auto"
-  }
-
-})
+// watch(storeContacto,()=>{
+//   if(storeContacto.modal_open){
+//     document.documentElement.style.overflow = "hidden"
+//   }else{
+//     document.documentElement.style.overflow = "auto"
+//   }
+// })
 </script>
 
 <template>

@@ -1,4 +1,38 @@
 <template>
+  <Modal v-if="isOpen" @on:close="cerrarModal">
+    <template v-slot:header>
+      <div class="relative">
+          <a class="absolute -right-10 text-gray-400 px-3 py-1 -top-10 bg-slate-100 hover:bg-slate-200 font-semibold rounded-full cursor-pointer transition" href="" @click.prevent="cerrarModal">X</a>
+        </div>
+        <img
+          src="../assets/img/logo-autocred-menu.svg"
+          alt=""
+          class="mx-auto w-52 pb-5"
+        />
+        <div class="flex flex-row text-center relative px-5 mb-5">
+          <Heading1 primary content="Crédito Convencional Express" class="w-full  md:px-0" headingType="h3"/>
+          <img src="../assets/img/rayo512.webp" alt="rayo" class="absolute md:w-10 w-8 -right-2 md:right-5">
+        </div>
+      </template>
+
+      <template v-slot:body>
+          <div class=" mx-auto">
+          <Paragraph
+            primary
+            class="text-center text-base mb-3"
+            >Obtén tu financiamiento sólo con tu cédula de identidad !! <br>  Requisitos:
+        </Paragraph>
+      
+        <ul class='list-none md:list-disc text-center md:text-left text-primary-900'>
+        
+          <li>Antigüedad Vehículo: entre 2016 a 2022</li>
+          <li>Pie mínimo: 40%</li>
+          <li>Monto mínimo a financiar: $5.000.000</li>
+        </ul>
+      </div>
+      </template>
+  </Modal>
+
   <div class="md:px-12" id="simulador">
     <div class="relative grid">
       <div class="relative z-0">
@@ -436,7 +470,7 @@ import { useRouter } from "vue-router";
 import { formEmpty, validateEmail } from "../assets/helpers/validate";
 import { useSimuladorStore } from "../stores/simulador";
 import { useContactoStore } from "../stores/contacto";
-import { findProp } from "@vue/compiler-core";
+import Modal from '../components/ModalView.vue'
 
 const validarMonto = ref(false);
 const useSimulador = useSimuladorStore();
@@ -524,6 +558,7 @@ const newUser = ref(false);
 const express = ref(false);
 const claseCredito = ref(false);
 const valorFinanciar = ref("");
+const isOpen = ref(false)
 
 const componentKey = ref(0);
 //PASO 1
@@ -977,6 +1012,7 @@ const registrarValor = (e) => {
 
   switch (express.value) {
     case true:
+      isOpen.value= true
       if (
         formSimulador.down_payment < (formSimulador.vehicle_price * 40) / 100 ||
         formSimulador.vehicle_price - formSimulador.down_payment < 500000
@@ -995,6 +1031,10 @@ const registrarValor = (e) => {
       break;
   }
 };
+
+const cerrarModal = ()=>{
+  isOpen.value = false
+}
 </script>
 
 <style scoped>

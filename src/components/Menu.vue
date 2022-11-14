@@ -79,12 +79,12 @@ const active = ref(false);
 const toogleMenu = () => (active.value = !active.value);
 const hideMenu = () => (active.value = false);
 
-const prueba = ()=>{
-  setTimeout(() => {
-    clickeado.value = window.location.href.includes('servicios')
-  },100);
+// const prueba = ()=>{
+//   setTimeout(() => {
+//     clickeado.value = window.location.href.includes('servicios')
+//   },100);
  
-}
+// }
 </script>
 
 <style scoped></style>
