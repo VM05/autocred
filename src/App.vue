@@ -33,7 +33,7 @@ onBeforeMount(() => {
 
 <template>
   <router-view></router-view>
-  <WhatsappButton telefono="+56946456800" />
+  <WhatsappButton telefono="+56946483871" />
 </template>
 
 <style></style>
