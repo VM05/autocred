@@ -53,6 +53,19 @@ import Heading from '../components/Heading.vue';
 import Paragraph1 from '../components/Paragraph.vue';
 import Button1 from '../components/Button.vue';
 import Simulador from '../layouts/Simulador.vue';
+import { useHead } from "@vueuse/head";
+
+useHead({
+  title: "Autocred | Servicios de Financiamiento",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Resuelve tu financiamiento solo en 7 minutos. Recibe la aprobación con pago inmediato al vendedor. Paga el 100% del valor del vehículo, dando un pie, transferencia o con tarjetas de crédito.",
+    },
+  ],
+});
+
 </script>
 
 <style lang="scss" scoped>

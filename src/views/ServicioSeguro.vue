@@ -51,7 +51,17 @@ import FeaturesList from "../components/FeaturesList.vue";
 import Heading from '../components/Heading.vue';
 import Paragraph1 from '../components/Paragraph.vue';
 import Button1 from '../components/Button.vue';
+import { useHead } from "@vueuse/head";
 
+useHead({
+  title: "Autocred | Servicios de Seguro Automotriz",
+  meta: [
+    {
+      name: "description",
+      content:"Con Autocred asegura tu vehículo al realizar la transferencia a través de nuestros módulos, Oficina Móvil o vía online."
+    },
+  ],
+});
 </script>
 
 <style lang="scss" scoped>

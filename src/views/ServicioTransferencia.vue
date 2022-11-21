@@ -50,6 +50,19 @@ import FeaturesList from "../components/FeaturesList.vue";
 import Heading from '../components/Heading.vue';
 import Paragraph1 from '../components/Paragraph.vue';
 import Button1 from '../components/Button.vue';
+import { useHead } from "@vueuse/head";
+
+useHead({
+  title: "Autocred | Servicios de Transferencias de Automóviles",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Transfiere en solo 20 minutos. En nuestros módulos, oficina móvil o vía online, sin filas ni esperas.",
+    },
+  ],
+});
+
 </script>
 
 <style lang="scss" scoped>

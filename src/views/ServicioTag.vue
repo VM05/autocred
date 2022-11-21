@@ -50,6 +50,18 @@ import FeaturesList from "../components/FeaturesList.vue";
 import Heading from '../components/Heading.vue';
 import Paragraph1 from '../components/Paragraph.vue';
 import Button1 from '../components/Button.vue';
+import { useHead } from "@vueuse/head";
+
+useHead({
+  title: "Autocred | Servicio Tag ",
+  meta: [
+    {
+      name: "description",
+      content:"Te ayudamos con la habilitación o baja de tu Tag para evitar a la concesionaria."
+    },
+  ],
+});
+
 </script>
 
 <style lang="scss" scoped>
