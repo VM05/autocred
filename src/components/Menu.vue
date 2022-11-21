@@ -54,7 +54,7 @@
         // name:'Servicios',
         name: `servicio${item.link}`,
         params: { active: item.link },
-        hash: `#${item.link}`,
+        // hash: `#${item.link}`,
       }"
       class="text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
       activeClass="activeMenu"
