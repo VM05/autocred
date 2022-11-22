@@ -112,6 +112,7 @@ export const procedencias = [
     { id: 46, name: "Rutamotor", procedenciaId: 117 },
     { id: 47, name: "mailing ", procedenciaId: 118 },
     { id: 48, name: "ventainteligente", procedenciaId: 120 },
+    { id: 49, name: "MV", procedenciaId: 121 },
 
 ]
 

@@ -6,15 +6,15 @@
     :wrap-around="true"
     pauseAutoplayOnHover="true"
   >
-    <slide v-for="datos in datosBannerPrincipal" :key="datos" >
+    <slide v-for="(datos, index) in datosBannerPrincipal" :key="datos" >
       <div
         class="w-full flex flex-col-reverse md:flex-row mx-auto md:px-12 md:gap-10"
       >
         <div class="md:w-1/2 text-left">
-          <Heading :content="datos.titulo" headingType="h1" secondary />
+          <Heading :content="datos.titulo" :headingType="index == '0'? 'h1' : 'h2' " secondary />
           <Heading
             :content="datos.content"
-            headingType="h3"
+            headingType="h2"
             class="mb-5 mt-3"
             primary
           />
