@@ -91,7 +91,7 @@ useHead({
     {
       name: "description",
       content:
-        "Tu mejor copiloto para la compra y venta de vehículos usados entre personas, servicio de financiamiento inteligente, servicio de financiamiento express, servicio de financiamiento convencional, Autos usados en Chile, Compra y venta autos usados en Chile, Autos Seminuevos, Vehículos Usados, financiamiento, Chile auto, Autos Chile, Financiamiento de autos, Financiamiento de Vehículos, financiamiento de autos usados de lujo en Chile, contamos con Asesores ejecutivos que te ayudarán a concretar la venta.",
+        "Tu mejor copiloto para la compra y venta de vehículos usados entre personas. ¡Que tu experiencia sea un gran viaje! Te acompañamos de manera presencial, online y móvil durante todo el proceso.",
     },
   ],
 });

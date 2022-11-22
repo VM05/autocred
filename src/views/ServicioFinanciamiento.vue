@@ -56,12 +56,12 @@ import Simulador from '../layouts/Simulador.vue';
 import { useHead } from "@vueuse/head";
 
 useHead({
-  title: "Autocred | Servicios de Financiamiento",
+  title: "Crédito Automotriz - financiamiento para tu auto usado | Autocred.cl",
   meta: [
     {
       name: "description",
       content:
-        "Resuelve tu financiamiento solo en 7 minutos. Recibe la aprobación con pago inmediato al vendedor. Paga el 100% del valor del vehículo, dando un pie, transferencia o con tarjetas de crédito.",
+        "Tu mejor copiloto para la compra y venta de vehículos usados entre personas, servicio de financiamiento inteligente, servicio de financiamiento express, servicio de financiamiento convencional, Autos usados en Chile, Compra y venta autos usados en Chile, Autos Seminuevos, Vehículos Usados, financiamiento, Chile auto, Autos Chile, Financiamiento de autos, Financiamiento de Vehículos, financiamiento de autos usados de lujo en Chile, contamos con Asesores ejecutivos que te ayudarán a concretar la venta.",
     },
   ],
 });
