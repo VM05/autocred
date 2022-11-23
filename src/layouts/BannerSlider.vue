@@ -36,7 +36,11 @@
           /> -->
         </div>
         <div class="md:w-1/2 mb-4 md:mb-0 flex justify-center align-middle">
-          <img :src="datos.img" alt="servicios autocred" />
+          <img  v-if='datos.tipo == "imagen"' :src="datos.img" alt="servicios autocred" />
+          <video v-else autoplay loop>
+            <source :src="datos.img" type="video/mp4" width="400" height="300">
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </slide>
@@ -83,5 +87,9 @@ img {
   user-select: none;
   pointer-events: none;
   min-width: 370px;
+}
+
+video{
+  border: none;
 }
 </style>

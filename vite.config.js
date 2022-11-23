@@ -2,9 +2,8 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import ViteRadar from 'vite-plugin-radar'
 import VitePluginHtmlEnv from 'vite-plugin-html-env'
-
-
-
+import Pages from 'vite-plugin-pages'
+import generateSitemap from 'vite-plugin-pages-sitemap'
 
 // https://vitejs.dev/config/
 
@@ -24,22 +23,19 @@ import VitePluginHtmlEnv from 'vite-plugin-html-env'
 //   ]
 // })
 
-
-
-
-
 export default defineConfig(({ command, mode }) => {
 
   if (mode === 'development') {
     return {
       plugins: [
-      
-        vue(),
-        VitePluginHtmlEnv({
-      prefix: '<{',
-      suffix: '}>',
-     
-    })
+      vue(),
+    //   VitePluginHtmlEnv({
+    //   prefix: '<{',
+    //   suffix: '}>',
+    // }),
+    // Pages({
+    //   onRoutesGenerated: routes => (generateSitemap({ routes })),
+    // }),
       ],
       build: {
         chunkSizeWarningLimit: 1600,
@@ -82,9 +78,6 @@ export default defineConfig(({ command, mode }) => {
         })
       ]
     }
-
   }
-
-
 })
 
