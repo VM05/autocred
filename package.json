@@ -38,6 +38,7 @@
     "postcss": "^8.4.13",
     "tailwindcss": "^3.0.24",
     "vite": "^2.9.15",
+    "vite-plugin-pages": "^0.27.1",
     "vite-plugin-radar": "^0.4.2",
     "vite-plugin-sitemap": "^0.3.0"
   }

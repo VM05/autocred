@@ -23,13 +23,27 @@ import Sitemap from 'vite-plugin-sitemap'
 //   ]
 // })
 
+const hostname = 'https://www.autocred.cl'
+const names = [
+  '/servicios/financiamiento',
+  '/servicios/transferencias',
+  '/servicios/tag',
+  '/servicios/seguro',
+  '/compradores',
+  '/vendedores',
+  '/preguntas-frecuentes',
+  '/nosotros',
+  '/login',
+]
+const dynamicRoutes = names.map(name => `${name}`)
+
 export default defineConfig(({ command, mode }) => {
 
   if (mode === 'development') {
     return {
       plugins: [
       vue(),
-      Sitemap(),
+      Sitemap({hostname, dynamicRoutes }),
     //   VitePluginHtmlEnv({
     //   prefix: '<{',
     //   suffix: '}>',
@@ -48,7 +62,7 @@ export default defineConfig(({ command, mode }) => {
       },
       plugins: [
         vue(),
-        Sitemap(),
+        Sitemap({hostname, dynamicRoutes, priority:0.8} ),
         ViteRadar({
           // Google Analytics tag injection
           analytics: [{
