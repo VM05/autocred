@@ -12,34 +12,34 @@ export const links = [
     },
     { name: "Compradores", url: "/compradores" },
     { name: "Vendedores", url: "/vendedores" },
-    
+
     { name: "FAQ", url: "/preguntas-frecuentes" },
     { name: "Nosotros", url: "/nosotros" },
-    { name: "Contacto", url: "/#contacto", params:"contacto"},
+    { name: "Contacto", url: "/#contacto", params: "contacto" },
 ];
 
 export const datosBannerPrincipal = [
     {
         titulo: "¡Te financiamos!",
-        content:"completamos el valor que te falta para comprar el auto usado de tus sueños.",
-        img: "/img/imagenBanner/celular.gif",
+        content: "completamos el valor que te falta para comprar el auto usado de tus sueños.",
+        img: "/img/videoBanner/celular.mp4",
         buttonText: "EVALUACIÓN DE CRÉDITO",
-        tipo:'imagen',
+        tipo: 'video',
     },
 
     {
         titulo: "¡No te enredes!",
-        content:"La compra y venta de autos usados entre personas particulares es simple con Autocred.",
-        img: "/img/imagenBanner/no-te-enredes.gif",
+        content: "La compra y venta de autos usados entre personas particulares es simple con Autocred.",
+        img: "/img/videoBanner/no-te-enredes.mp4",
         buttonText: "CONTÁCTANOS",
-        tipo:'imagen',
+        tipo: 'video',
     },
     {
         titulo: "En Autocred hacemos todos los trámites por ti",
-        content:"¡Evita filas, notarías y malos ratos!",
+        content: "¡Evita filas, notarías y malos ratos!",
         img: "/img/imagenBanner/tramites-por-ti.webp",
         buttonText: "VER TRÁMITES",
-        tipo:'imagen',
+        tipo: 'imagen',
     },
 
     {
@@ -47,12 +47,12 @@ export const datosBannerPrincipal = [
         content: "100% online, Oficina Móvil, Módulos de atención",
         img: "/img/imagenBanner/donde-quieras.webp",
         buttonText: "QUIERO INFORMACIÓN",
-        tipo:'imagen',
+        tipo: 'imagen',
     },
 
-  
 
-   
+
+
 ];
 
 
@@ -356,7 +356,7 @@ export const ventajas = [
         textoBoton: 'Solicita tu viaje',
         link: '/#contacto'
     },
-    
+
 ]
 
 export const posts = [
@@ -643,7 +643,7 @@ export const serviciosVendores = [
         content:
             "Ahora puedes vender tu auto con financiamiento! <br> Aumenta tus probabilidades de venta ofreciendo financiamiento a tus posibles compradores. El pago se realiza directo a tu cuenta al realizar la transferencia con nosotros.",
         img: "/img/icons/Iconos_Autocred_Magenta_Plataformas_de_Pago.webp",
-        link:"/servicios/financiamiento"
+        link: "/servicios/financiamiento"
     },
     {
         id: 'transferencias',
@@ -651,7 +651,7 @@ export const serviciosVendores = [
         content:
             "¿Estás listo para transferir tu auto? Nuestro servicio está en línea con el registro civil, y contamos con 3 formatos de atención para una transferencia segura: <br> <ul class='list-disc pl-6'><li>Online</li><li>Presencial en nuestros módulos</li><li>Oficina Móvil</li><ul>",
         img: "/img/icons/Iconos_Autocred_Magenta_transferencia.webp",
-        link:'/servicios/transferencias'
+        link: '/servicios/transferencias'
     },
     // {
     //     id: 'seguro',
@@ -679,7 +679,7 @@ export const serviciosCompradores = [
         content:
             "Evaluación lista solo en 7 minutos. Nuestra plataforma permite pagos con tarjeta de crédito y financiamiento. El abono llega a tu cuenta al firmar la transferencia.",
         img: "/img/icons/Iconos_Autocred_Azul_financiamiento.webp",
-        link:"/servicios/financiamiento"
+        link: "/servicios/financiamiento"
     },
     {
         id: 'transferencias',

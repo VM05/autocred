@@ -6,12 +6,16 @@
     :wrap-around="true"
     pauseAutoplayOnHover="true"
   >
-    <slide v-for="(datos, index) in datosBannerPrincipal" :key="datos" >
+    <slide v-for="(datos, index) in datosBannerPrincipal" :key="datos">
       <div
         class="w-full flex flex-col-reverse md:flex-row mx-auto md:px-12 md:gap-10"
       >
         <div class="md:w-1/2 text-left">
-          <Heading :content="datos.titulo" :headingType="index == '0'? 'h1' : 'h2' " secondary />
+          <Heading
+            :content="datos.titulo"
+            :headingType="index == '0' ? 'h1' : 'h2'"
+            secondary
+          />
           <Heading
             :content="datos.content"
             headingType="h2"
@@ -36,11 +40,16 @@
           /> -->
         </div>
         <div class="md:w-1/2 mb-4 md:mb-0 flex justify-center align-middle">
-          <img  v-if='datos.tipo == "imagen"' :src="datos.img" alt="servicios autocred" />
-          <video v-else autoplay loop>
-            <source :src="datos.img" type="video/mp4" width="400" height="300">
+          <video v-if="datos.tipo == 'video'" loop autoplay muted>
+            <source
+              :src="datos.img"
+              type="video/mp4"
+              width="400"
+              height="300"
+            />
             Your browser does not support the video tag.
           </video>
+          <img v-else :src="datos.img" alt="servicios autocred" />
         </div>
       </div>
     </slide>
@@ -89,7 +98,7 @@ img {
   min-width: 370px;
 }
 
-video{
+video {
   border: none;
 }
 </style>

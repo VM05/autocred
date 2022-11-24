@@ -5,13 +5,13 @@
     </a>
   </div> -->
   <div>
-    <a @click.prevent="isOpen = true">
+    <span @click.prevent="isOpen = true" class="cursor-pointer">
       <img
         src="../assets/img/ws.webp"
         alt="whatsapp autocred"
         title="whatsapp autocred"
       />
-    </a>
+    </span>
   </div>
 
   <div id="modal_container" class="modal-container" v-if="isOpen">
@@ -272,7 +272,7 @@ const checkTelefono = (e) => {
   min-height: 400px;
 }
 
-a {
+span {
   width: 100%;
   max-width: 60px;
   position: fixed;
@@ -282,10 +282,10 @@ a {
   transition: all 0.3s ease;
 }
 
-a > img {
+span > img {
   transition: all 0.3s ease;
 }
-a:hover img {
+span:hover img {
   transform: scale(1.1);
 }
 

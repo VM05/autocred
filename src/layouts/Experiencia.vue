@@ -1,9 +1,5 @@
 <template>
-  <Heading1
-    content="Casos de éxito"
-    class="mb-14 md:px-12"
-   
-  />
+  <Heading1 content="Casos de éxito" class="mb-14 md:px-12" />
   <div class="grid justify-between mb-24 md:px-12">
     <CardExperiencia1 class="mb-8 md:mb-0" />
     <div>
@@ -15,10 +11,7 @@
         muted
         class="rounded-3xl"
       >
-        <source
-          src="../assets/video/Autocred-PedroEngel.mp4"
-          type="video/mp4"
-        />
+        <source src="../assets/video/Untitled.mp4" type="video/mp4" />
       </video>
     </div>
   </div>
