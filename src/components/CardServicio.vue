@@ -1,7 +1,7 @@
 <template>
-  <a v-if="!props.data.link"
+  <span v-if="!props.data.link"
     class="bg-white shadow-2xl cardService rounded-3xl py-4 px-4 cursor-pointer"
-    @click="handlerCardService(props.data.id)"
+    @click.prevent="handlerCardService(props.data.id)"
   >
     <div
       class="flex flex-col gap-4 md:gap-0 md:grid place-content-center items-center"
@@ -22,7 +22,7 @@
         <p class="text-secondary-900 block mt-2 text-right italic">Lo quiero</p>
       </div>
     </div>
-  </a>
+  </span>
 
   <router-link :to="props.data.link" v-else
     class="bg-white shadow-2xl cardService rounded-3xl py-4 px-4 cursor-pointer"

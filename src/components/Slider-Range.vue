@@ -25,6 +25,7 @@
         max="10000000"
         placeholder="$1.000.000"
         @blur="format"
+        name="valor"
       />
     </div>
 
@@ -38,6 +39,7 @@
       :step="50_000"
       :format="{ prefix: '$' }"
       :tooltips="false"
+      name="valor total"
     />
     <Slider
       v-else

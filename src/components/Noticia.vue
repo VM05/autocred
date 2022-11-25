@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-2 noticia-grid">
     <div class="imagen-noticia">
-      <img :src="data.img" alt="" />
+      <img :src="data.img" alt="noticias Autocred" />
     </div>
 
     <Paragraph class="font-medium text-base text-primary-700">
