@@ -1,9 +1,13 @@
 <template>
-  <p class="text-primary-900">
+  <p :class="color ? 'text-secondary-900': 'text-primary-900'">
     <slot></slot>
   </p>
 </template>
 
-<script setup></script>
+<script setup>
+ const props = defineProps({
+    color: Boolean,
+  })
+</script>
 
 <style scoped></style>

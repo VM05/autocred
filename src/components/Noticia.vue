@@ -8,10 +8,14 @@
       {{ data.medio + " " + data.date }}
     </Paragraph>
 
-    <Heading
+    <!-- <Heading
       :content="data.title"
       :headingType="highlight || indice == 0 ? 'h3' : 'h5'"
-    />
+    /> -->
+      <Paragraph class="font-semibold mb-3" :class="highlight || indice == '0' ? 'text-2xl': 'text-lg'" >
+        {{data.title}}
+      </Paragraph>
+
     <router-link
       :to="{
         name: 'Articulo',

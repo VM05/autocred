@@ -11,7 +11,7 @@
             alt=""
             class="h-60 md:h-96 w-24"
           />
-          <ul class="flex flex-col gap-2 px-6 contenedor-regiones">
+          <div class="flex flex-col gap-2 px-6 contenedor-regiones">
             <Paragraph1
               v-for="(direccion, index) in direcciones"
               :key="index"
@@ -27,7 +27,7 @@
             >
               {{ direccion.name }}
             </Paragraph1>
-          </ul>
+          </div>
         </div>
         <div class="border-0 md:border-r-2">
           <div

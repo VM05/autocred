@@ -6,7 +6,9 @@
       to="/blog"
     >
       <img src="../assets/img/flecha-medios.svg" alt="" class="h-6 w-fit" />
-      <Heading content="Ver todas las apariciones" headingType="h5" secondary />
+      <Paragraph color class="font-semibold text-lg">
+        Ver Todas las apariciones
+      </Paragraph>
     </router-link>
     <GridNoticias />
 
@@ -15,7 +17,10 @@
       to="/blog"
     >
       <img src="../assets/img/flecha-medios.svg" alt="" class="h-6 w-fit" />
-      <Heading content="Ver todas las apariciones" headingType="h5" secondary />
+      
+      <Paragraph color class="font-semibold text-lg">
+        Ver Todas las apariciones
+      </Paragraph>
     </router-link>
   </div>
 </template>
@@ -23,6 +28,7 @@
 <script setup>
 import Heading from "../components/Heading.vue";
 import GridNoticias from "../components/GridNoticias.vue";
+import Paragraph from "../components/Paragraph.vue";
 </script>
 
 <style lang="scss" scoped></style>

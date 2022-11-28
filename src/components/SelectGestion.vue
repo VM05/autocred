@@ -8,9 +8,11 @@
           readonly
           :displayValue="(brand) => brand.name"
           @change="query = $event.target.value"
+          role="main"
         />
         <ComboboxButton
           class="absolute inset-y-0 right-0 flex items-center pr-2 w-full flex flex-row-reverse"
+          title="boton seleccion de servicio"
         >
           <SelectorIcon
             class="w-5 h-5 text-gray-400 right-0"
@@ -26,6 +28,7 @@
         >
           <ComboboxOptions
             class="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-primary-700 focus:outline-none sm:text-sm z-10"
+           
           >
             <div
               v-if="filteredBrands.length === 0 && query !== ''"
@@ -40,6 +43,7 @@
               :key="brand.id"
               :value="brand"
               v-slot="{ selected, active }"
+              
             >
               <li
                 class="cursor-pointer select-none relative py-2 pl-10 pr-4"
