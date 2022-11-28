@@ -1,12 +1,3 @@
-Header always set Strict-Transport-Security "max-age=31536000;"
-Header always set x-xss-protection "1; mode=block"
-Header always set x-frame-options "SAMEORIGIN"
-Header always set X-Content-Type-Options "nosniff"
-Header always set Cache-Control "max-age=2628000, public"
-Header always set Referrer-Policy "no-referrer-when-downgrade"
-Header always set Content-Security-Policy "upgrade-insecure-requests"
-Header always set Permissions-Policy "geolocation=(); midi=();notifications=();>
-
 <IfModule mod_rewrite.c>
         RewriteEngine On
         RewriteBase /
@@ -17,6 +8,14 @@ Header always set Permissions-Policy "geolocation=(); midi=();notifications=();>
 </IfModule>
 <IfModule mod_headers.c>
         <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js)$">
-                Header set Access-Control-Allow-Origin "*"
+                Header always set Access-Control-Allow-Origin "*"
+                Header always set Strict-Transport-Security "max-age=31536000;"
+                Header always set x-xss-protection "1; mode=block"
+                Header always set x-frame-options "SAMEORIGIN"
+                Header always set X-Content-Type-Options "nosniff"
+                Header always set Cache-Control "max-age=2628000, public"
+                Header always set Referrer-Policy "no-referrer-when-downgrade"
+                Header always set Content-Security-Policy "upgrade-insecure-requests"
+                Header always set Permissions-Policy "geolocation=(); midi=();notifications=();push=();sync-xhr=();accelerometer=(); gyroscope=(); magnetometer=(); payment=(); camera=(); microphone=();usb=(); xr=();speaker=(self);vibrate=();fullscreen=(self);"
         </FilesMatch>
 </IfModule>

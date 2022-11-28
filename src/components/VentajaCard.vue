@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col justify-between gap-4">
     <div class="flex flex-col gap-4 grow">
-      <img :src="data.src" alt="" class="w-full" />
+      <img :src="data.src" alt="ventajas-autocred" class="w-full" width="640" height="640"/>
       <Heading1 headingType="h3" :content="data.name" />
       <Paragraph class="font-medium text-base">
         {{ data.content }}
