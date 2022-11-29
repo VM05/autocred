@@ -10,7 +10,7 @@
         src="../assets/img/ws.webp"
         alt="whatsapp autocred"
         title="whatsapp autocred"
-        class="h-fit"
+        class="botton-ws"
       />
     </span>
   </div>
@@ -281,6 +281,11 @@ span {
   bottom: 30px;
   z-index: 10;
   transition: all 0.3s ease;
+}
+
+.botton-ws{
+  height: 60px;
+  width: 60px;
 }
 
 span > img {
