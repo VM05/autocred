@@ -3,12 +3,15 @@ import {defineAsyncComponent} from 'vue'
 
 import Home from '../views/Home.vue'
 
+const Autocred = ()=> import('../views/Autocred.vue')
+const servicioTag = ()=> import('../views/ServicioTag.vue')
+
 const router = createRouter({
     history: createWebHistory(),
 
     routes: [
         {
-            path: '/', name: 'Autocred', component: defineAsyncComponent(()=> import('../views/Autocred.vue')),
+            path: '/', name: 'Autocred', component: Autocred,
             children: [
                 { path: '/', name: 'Home', component: Home },
                 { path: '/login', name: 'Login', component: defineAsyncComponent(()=> import('../views/login.vue')) },
@@ -30,7 +33,7 @@ const router = createRouter({
                 },
                 { path: '/servicios', name: 'Servicios', component:defineAsyncComponent(()=> import('../views/servicios.vue')), redirect:"/servicios/financiamiento",
                 children:[
-                    { path:'/servicios/tag', name:'serviciotag', component:defineAsyncComponent( ()=> import('../views/ServicioTag.vue'))},
+                    { path:'/servicios/tag', name:'serviciotag', component: servicioTag},
                     { path:'/servicios/transferencias', name:'serviciotransferencias', component:defineAsyncComponent( ()=> import('../views/ServicioTransferencia.vue'))},
                     { path:'/servicios/financiamiento', name:'serviciofinanciamiento', component:defineAsyncComponent( ()=> import('../views/ServicioFinanciamiento.vue'))},
                     { path:'/servicios/seguro', name:'servicioseguro', component:()=> import('../views/ServicioSeguro.vue')},
