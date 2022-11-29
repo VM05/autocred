@@ -1,95 +1,71 @@
 import { createRouter, createWebHistory } from "vue-router"
+
 import Home from '../views/Home.vue'
-import compradores from '../views/compradores.vue'
-import encuesta from '../views/encuesta.vue'
-import login from '../views/login.vue'
-import nosotros from '../views/nosotros.vue'
-import FAQ from '../views/preguntas-frecuentes.vue'
-import registro from '../views/registro.vue'
-import servicios from '../views/servicios.vue'
-import vendedores from '../views/vendedores.vue'
-import Blog from '../views/Blog.vue'
-import article from '../views/article.vue'
-import NotFound from '../views/NotFound.vue'
-import Autocred from '../views/Autocred.vue'
-import Yapo from '../views/Yapo/Yapo.vue'
-import Financiamiento from '../views/Yapo/Financiamiento.vue'
-import Terms from '../views/Terms.vue'
-import ComparaOnline from '../views/compara-online/ComparaOnline.vue'
-import ComparaFinanciamiento from '../views/compara-online/ComparaFinanciamiento.vue'
-import calendarioVanMovil from '../views/CalendarioVanMovil.vue'
-import Amotor from '../views/amotor/Amotor.vue'
-import AmotorFinanciamiento from '../views/amotor/AmotorFinanciamiento.vue'
-import AutocredFinanciamiento from '../views/autocred/AutocredFinanciamiento.vue'
-import AutocredView from '../views/autocred/AutocredView.vue'
-import ServicioTag from '../views/ServicioTag.vue'
-import ServicioTransferencia from '../views/ServicioTransferencia.vue'
-import ServicioFinanciamiento from '../views/ServicioFinanciamiento.vue'
-import ServicioSeguro from '../views/ServicioSeguro.vue'
+
 const router = createRouter({
     history: createWebHistory(),
 
     routes: [
         {
-            path: '/', name: 'Autocred', component: Autocred,
+            path: '/', name: 'Autocred', component: ()=> import('../views/Autocred.vue'),
             children: [
                 { path: '/', name: 'Home', component: Home },
-                { path: '/login', name: 'Login', component: login },
-                { path: '/compradores', name: 'Compradores', component: compradores },
-                { path: '/encuesta', name: 'Encuesta', component: encuesta },
-                { path: '/calendario', name: 'Calendario', component: calendarioVanMovil },
-                { path: '/nosotros', name: 'Nosotros', component: nosotros },
+                { path: '/login', name: 'Login', component: ()=> import('../views/login.vue') },
+                { path: '/compradores', name: 'Compradores', component: ()=> import('../views/compradores.vue') },
+                { path: '/encuesta', name: 'Encuesta', component: ()=> import('../views/encuesta.vue') },
+                { path: '/calendario', name: 'Calendario', component: ()=> import('../views/CalendarioVanMovil.vue') },
+                { path: '/nosotros', name: 'Nosotros', component:()=> import('../views/nosotros.vue') },
                 {
                     path: '/preguntas-frecuentes',
                     name: 'Preguntas Frecuentes',
-                    component: FAQ
+                    component: ()=> import('../views/preguntas-frecuentes.vue')
                 },
                 {
                     path: '/registro', name: 'Registro',
-                    component: registro,
+                    component: ()=> import('../views/registro.vue'),
                     props: (route) => ({
                         ...route.params
                     })
                 },
-                { path: '/servicios', name: 'Servicios', component: servicios, redirect:"/servicios/financiamiento",
+                { path: '/servicios', name: 'Servicios', component:()=> import('../views/servicios.vue'), redirect:"/servicios/financiamiento",
                 children:[
-                    { path:'/servicios/tag', name:'serviciotag', component: ServicioTag},
-                    { path:'/servicios/transferencias', name:'serviciotransferencias', component: ServicioTransferencia},
-                    { path:'/servicios/financiamiento', name:'serviciofinanciamiento', component: ServicioFinanciamiento},
-                    { path:'/servicios/seguro', name:'servicioseguro', component: ServicioSeguro},
+                    { path:'/servicios/tag', name:'serviciotag', component: ()=> import('../views/ServicioTag.vue')},
+                    { path:'/servicios/transferencias', name:'serviciotransferencias', component: ()=> import('../views/ServicioTransferencia.vue')},
+                    { path:'/servicios/financiamiento', name:'serviciofinanciamiento', component: ()=> import('../views/ServicioFinanciamiento.vue')},
+                    { path:'/servicios/seguro', name:'servicioseguro', component:()=> import('../views/ServicioSeguro.vue')},
                 ]
             },
-                { path: '/vendedores', name: 'Vendedores', component: vendedores },
-                { path: '/blog', name: 'Blog', component: Blog },
-                { path: '/blog/:id', name: 'Articulo', component: article },
-                { path: '/terminos-y-condiciones', name: 'Terms', component: Terms },
+                { path: '/vendedores', name: 'Vendedores', component: ()=> import('../views/vendedores.vue') },
+                { path: '/blog', name: 'Blog', component:()=> import('../views/Blog.vue') },
+                { path: '/blog/:id', name: 'Articulo', component: ()=> import('../views/article.vue') },
+                { path: '/terminos-y-condiciones', name: 'Terms', component:()=> import('../views/Terms.vue') },
 
             ]
         },
-        { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
+        { path: '/:pathMatch(.*)*', name: 'NotFound', component: ()=> import('../views/NotFound.vue') },
         {
-            path: '/yapo', name: 'Yapo', component: Yapo,
+            path: '/yapo', name: 'Yapo', component: ()=> import('../views/Yapo/Yapo.vue'),
             children: [
-                { path: '/yapo/financiamiento', name: 'Financiamiento-Yapo', component: Financiamiento },
+                { path: '/yapo/financiamiento', name: 'Financiamiento-Yapo', component: ()=> import('../views/Yapo/Financiamiento.vue') },
             ]
         },
         {
-            path: '/compara-online', name: 'comprara-online', component: ComparaOnline,
+            path: '/compara-online', name: 'comprara-online', component: ()=> import('../views/compara-online/ComparaOnline.vue'),
             children: [
-                { path: '/compara-online/financiamiento', name: 'Financiamiento-comprara-online', component: ComparaFinanciamiento },
+                { path: '/compara-online/financiamiento', name: 'Financiamiento-comprara-online', component: ()=> import('../views/compara-online/ComparaFinanciamiento.vue') },
             ]
         },
         {
-            path: '/amotor', name: 'amotor', component: Amotor,
+            path: '/amotor', name: 'amotor', component: ()=> import('../views/amotor/Amotor.vue'),
             children: [
-                { path: '/amotor/financiamiento', name: 'Amotor', component: AmotorFinanciamiento },
+                { path: '/amotor/financiamiento', name: 'Amotor', component: ()=> import('../views/amotor/AmotorFinanciamiento.vue')},
             ]
         },
 
         {
-            path: '/autocred-financiamiento', name: 'autocred-financiamiento', component: AutocredView,
+            path: '/autocred-financiamiento', name: 'autocred-financiamiento', component: ()=> import('../views/autocred/AutocredFinanciamiento.vue'),
             children: [
-                { path: '/autocred-financiamiento/financiamiento', name: 'Autocred-financiamiento', component: AutocredFinanciamiento },
+                { path: '/autocred-financiamiento/financiamiento', name: 'Autocred-financiamiento', component: ()=> import('../views/autocred/AutocredView.vue') },
             ]
         },
 
