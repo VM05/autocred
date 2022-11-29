@@ -80,9 +80,6 @@ export default defineConfig(({ command, mode }) => {
           {
             id: 'AW-10870501766'
           }],
-          pixel: {
-            id: '6b6ae67a-e1b2-4508-9c12-629992ce2545',
-          },
           gtm: [
             {
               id: 'GTM-NCBTPD5'
