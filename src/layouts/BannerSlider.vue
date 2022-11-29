@@ -40,7 +40,7 @@
           /> -->
         </div>
         <div class="md:w-1/2 mb-4 md:mb-0 flex justify-center align-middle">
-          <video v-if="datos.tipo == 'video'" loop autoplay playsinline muted>
+          <video v-if="datos.tipo == 'video'" autoplay loop  playsinline muted>
             <source
               :src="datos.img"
               type="video/mp4"
