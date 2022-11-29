@@ -82,7 +82,7 @@
     <img
       src="../assets/img/logo-autocred-footer.svg"
       alt="autocred"
-      class="w-full h-8 md:h-auto"
+      class="w-full h-8 md:h-fit"
     />
   </div>
 </template>

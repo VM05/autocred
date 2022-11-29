@@ -65,7 +65,7 @@
               <img
                 src="../assets/img/copec.webp"
                 alt="copec"
-                class="mr-2 md:w-16 w-12"
+                class="mr-2 md:w-16 w-12 h-fit"
               />
               <p
                 class="md:text-5xl text-4xl text-primary-900 font-semibold italic"

@@ -10,6 +10,7 @@
         :src="props.data.img"
         :alt="props.data.name"
         class="w-24 md:w-full"
+        
       />
       <div class="content">
         <Heading1
@@ -35,6 +36,7 @@
         :src="props.data.img"
         :alt="props.data.name"
         class="w-24 md:w-full"
+      
       />
       <div class="content">
         <Heading1
@@ -91,5 +93,12 @@ const handlerCardService = (id) => {
 .md\:grid {
   grid-template-columns: 100px 1fr;
   gap: 2rem;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  max-height: 96px;
+  max-width: 96px;
 }
 </style>

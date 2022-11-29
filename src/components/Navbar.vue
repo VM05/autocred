@@ -9,7 +9,7 @@
           <router-link to="/">
             <span class="sr-only">Autocred</span>
             <img
-              class="h-8 w-auto sm:h-10"
+              class="h-8 w-full sm:h-10"
               src="../assets/img/logo-autocred-menu.svg"
               alt="autocred"
             />

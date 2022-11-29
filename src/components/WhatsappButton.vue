@@ -10,6 +10,7 @@
         src="../assets/img/ws.webp"
         alt="whatsapp autocred"
         title="whatsapp autocred"
+        class="h-fit"
       />
     </span>
   </div>

@@ -17,20 +17,15 @@
 <script setup>
 import Container from "../layouts/Container.vue";
 import Servicios from "../layouts/Servicios.vue";
-import BannerHome from "../layouts/BannerHome.vue";
 import Ventajas from "../layouts/Ventajas.vue";
 import Respaldo from "../layouts/Respaldo.vue";
-import Heading from "../components/Heading.vue";
-import Button from "../components/Button.vue";
 import Comentarios from "../layouts/Comentarios.vue";
 import DondeEstamos from "../layouts/DondeEstamos.vue";
 import Medios from "../layouts/Medios.vue";
 import Hablemos from "../layouts/Hablemos.vue";
 import Experiencia from "../layouts/Experiencia.vue";
 import { useHead } from "@vueuse/head";
-import Simulador from "../layouts/Simulador.vue";
 import ModalCopec from "../layouts/ModalCopec.vue";
-import Footer from "../components/amotor/Footer.vue";
 import BannerSlider from "../layouts/BannerSlider.vue";
 
 useHead({
