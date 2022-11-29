@@ -8,6 +8,7 @@
 </IfModule>
 <IfModule mod_headers.c>
         <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js)$">
+		Header always set Content-Type "text/html; charset=UTF-8"
                 Header always set Access-Control-Allow-Origin "*"
                 Header always set Strict-Transport-Security "max-age=31536000;"
                 Header always set x-xss-protection "1; mode=block"
