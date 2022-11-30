@@ -5,7 +5,7 @@ Header always set X-Content-Type-Options "nosniff"
 Header always set Cache-Control "max-age=2628000, public"
 Header always set Referrer-Policy "no-referrer-when-downgrade"
 Header always set Content-Security-Policy "upgrade-insecure-requests"
-Header always set Permissions-Policy "geolocation=(self "https://autocred.cl"); midi=();notifications=();>
+Header always set Permissions-Policy "geolocation=(self); midi=();notifications=();>
 
 <IfModule mod_rewrite.c>
         RewriteEngine On
