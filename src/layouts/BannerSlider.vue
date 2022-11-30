@@ -4,7 +4,7 @@
     :itemsToScroll="1"
     :autoplay="8000"
     :wrap-around="true"
-    pauseAutoplayOnHover="true"
+    pauseAutoplayOnHover
   >
     <slide v-for="(datos, index) in datosBannerPrincipal" :key="datos">
       <div
