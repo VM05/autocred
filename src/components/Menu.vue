@@ -81,9 +81,6 @@ const active = ref(false);
 const toogleMenu = () => (active.value = !active.value);
 const hideMenu = () => (active.value = false);
 
-onMounted(()=>{
-  console.log(route.fullPath)
-})
 watch(
   () => route.fullPath,
   () => {
