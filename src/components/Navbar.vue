@@ -144,7 +144,7 @@ import MenuVue from "./Menu.vue";
 .activeMenu {
   color: #ba0b7c !important;
   font-weight: 700 !important;
-  font-size: 18px !important;
+  font-size: 17px !important;
 }
 .activeMenu:hover {
   font-weight: 700;
