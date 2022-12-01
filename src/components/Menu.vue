@@ -2,7 +2,7 @@
   <span
     as="div"
     class="flex flex-row text-base justify-center font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
-    :class="activo?'activeMenu': ''"
+    :class="activo? 'activeMenu': ''"
     @mouseover="toogleMenu"
     @click="hideMenu"
     v-if="!mobile"
@@ -33,7 +33,8 @@
 
   <span
     as="div"
-    class="flex flex-row text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold justify-center items-center activeMenu"
+    class="flex flex-row text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold justify-center items-center"
+    :class="activo? 'activeMenu': ''"
     @click="toogleMenu"
     v-if="mobile"
   >
