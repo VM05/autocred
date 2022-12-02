@@ -58,7 +58,7 @@ useHead({
     {
       name: "description",
       content:
-        "Transfiere en solo 20 minutos. En nuestros módulos, oficina móvil o vía online, sin filas ni esperas.",
+        "Transfiere tu automóvil en solo 20 minutos. En nuestros módulos, oficina móvil o vía online, sin filas ni esperas.",
     },
   ],
 });

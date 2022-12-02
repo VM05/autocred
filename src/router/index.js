@@ -30,6 +30,7 @@ const amotorFinanciamiento = ()=> import('../views/amotor/AmotorFinanciamiento.v
 const autocredFinanciamiento = ()=> import('../views/autocred/AutocredFinanciamiento.vue')
 const autocredFinanciamientoView =  ()=> import('../views/autocred/AutocredView.vue')
 
+
 const router = createRouter({
     history: createWebHistory(),
 
@@ -67,6 +68,7 @@ const router = createRouter({
                 { path: '/blog', name: 'Blog', component: blog },
                 { path: '/blog/:id', name: 'Articulo', component: articulo },
                 { path: '/terminos-y-condiciones', name: 'Terms', component: termino },
+                { path: '/new-home', name: 'newHome', component: ()=> import('../views/HomeNew.vue') },
 
             ]
         },

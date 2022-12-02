@@ -43,7 +43,10 @@
             <MenuVue v-else :sublinks="link.sublink">Servicios</MenuVue>
           </div>
         </PopoverGroup>
-        <div class="hidden lg:flex items-center justify-end lg:flex-1 lg:w-0">
+        <div class="hidden lg:flex items-center justify-end lg:flex-1 lg:w-0 gap-">
+          <!-- <router-link to="/#contacto">
+            <Button1 text="Contacto" secondary/>
+          </router-link> -->
           <router-link to="/login">
             <Button1 text="Ingresar" outlinePrimary user class="text-lg" />
           </router-link>

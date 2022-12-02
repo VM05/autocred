@@ -49,12 +49,72 @@ export const datosBannerPrincipal = [
         buttonText: "QUIERO INFORMACIÓN",
         tipo: 'imagen',
     },
-
-
-
-
 ];
 
+
+export const datosBannerNuevo = [
+    {
+        titulo: "La compra y venta de <span class=' text-secondary-900'> autos usados</span> entre <span class=' text-secondary-900'>personas particulares </span> es simple con Autocred.",
+        content: "¡No te enredes!",
+        img: "/img/videoBanner/no-te-enredes.mp4",
+        buttonText: "CONTÁCTANOS",
+        tipo: 'video',
+    },
+    {
+        titulo: "¡Te financiamos!",
+        content: "completamos el valor que te falta para comprar el auto usado de tus sueños.",
+        img: "/img/videoBanner/celular.mp4",
+        buttonText: "EVALUACIÓN DE CRÉDITO",
+        tipo: 'video',
+    },
+
+  
+    {
+        titulo: "En Autocred hacemos todos los trámites por ti",
+        content: "¡Evita filas, notarías y malos ratos!",
+        img: "/img/imagenBanner/tramites-por-ti.webp",
+        buttonText: "VER TRÁMITES",
+        tipo: 'imagen',
+    },
+
+    {
+        titulo: "¡Te atendemos donde quieras!",
+        content: "100% online, Oficina Móvil, Módulos de atención",
+        img: "/img/imagenBanner/donde-quieras.webp",
+        buttonText: "QUIERO INFORMACIÓN",
+        tipo: 'imagen',
+    },
+];
+
+export const nuevosServicios =[
+    {
+        imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
+        titulo:"prueba",
+        id:"1",
+        link:"",
+    },
+    {
+        imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
+        titulo:"prueba",
+        id:"2",
+    },
+    {
+        imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
+        titulo:"prueba",
+        id:"3",
+    },
+    {
+        imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
+        titulo:"prueba",
+        id:"4",
+    },
+    {
+        imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
+        titulo:"prueba",
+        id:"5",
+    },
+   
+]
 
 export const featuresVendedores = [
     {
@@ -363,6 +423,36 @@ export const posts = [
 
     {
         "id": 1,
+        "title": "Nueva ley para los deudores de pensiones alimenticias",
+        "body": ` <p class="mb-2">¿Puedo transferir mi vehículo? A partir del viernes 18 de noviembre de 2022 comenzó a regir la nueva Ley Nº 21.389 sobre el Registro Nacional de Deudores de Pensiones de Alimentos en Chile. En caso de que estés pensando comprar, vender o realizar una transferencia de vehículo y no sepas de qué manera puede afectar esta ley en tu transacción, te contamos que establece el rechazo de la inscripción de dominio en la compraventa de un vehículo motorizado, en caso de que una de las personas, ya sea vendedor o comprador, se encuentre con una deuda vigente en dicho Registro Nacional.</p>
+        <p class="mb-2">Esto se traduce en que ningún deudor de pensiones alimenticias registrado podrá efectuar una transferencia de vehículo hasta que regularice su morosidad, o bajo las siguientes consideraciones:<p>
+
+        <ul class='list-decimal list-inside md:list-decimal'>
+        <li class="mb-3">Comprador con deuda: el contrato de compraventa resulta rechazado en el Registro Civil sin excepciones.</li>
+        
+        <li >Vendedor con registro de deuda de pensiones alimenticias: el contrato de compraventa resulta rechazado por el Registro Civil, salvo ciertas condiciones:
+            <ul class="list-disc pl-6 my-2">
+            <li class="mb-3">Pago sin financiamiento: es necesario dejar constancia en notaría que el 50% del dinero de la compraventa será retenido para la regulación de la morosidad, o entregando garantías de que se pagará en un plazo no mayor de cinco días hábiles. En caso de que la deuda sea menor al 50% de la compraventa, solo se resta el monto a pagar. </li>
+        
+            <li>Pago con financiamiento: la financiera tiene la obligación de retener hasta el 50% del financiamiento, dependiendo al monto que deba ser saldado. En caso de que la financiera no cumpla, será multada con el doble del monto que debió haber sido retenido. </li>
+            </ul>
+        </li>
+        </ul>
+
+        <p class="mb-2">Para no tener inconvenientes a la hora de realizar una transacción, TransaTuAuto exigirá el certificado de registro de deuda de pensiones alimenticias a todos los clientes a modo de asegurar la factibilidad y agilidad del proceso. Para obtener el certificado, tanto vendedor como comprador deben descargar su documento gratuito en la página del Registro Civil con su clave única.</p>
+
+        <h3 class="text-secondary-900 mb-3 text-xl font-semibold md:text-3xl">Registro Nacional de Deudores de pensiones de alimentos</h3>
+
+        <p class="mb-2">La ley Nº 21.389 responde a la necesidad nacional de promover, bajo diversas medidas legales, el cumplimiento del pago de pensiones de alimentos. Para ello, recurre al Registro Nacional de Deudores de Pensiones de Alimentos, donde cualquier persona con el interés legítimo podrá consultar en dicho registro si alguien es actualmente un deudor o se encuentra moroso, según lo determinado por los tribunales de familia, y así poder determinar si se puede llevar acabo la transferencia de vehículo.</p>
+    `,
+        "img": "/img/blog/t13.webp",
+       
+        "date": "02-12-22",
+        "medio": "Informativo"
+    },
+
+    {
+        "id": 2,
         "title": "Viernes de emprendedores con Felipe Lira, Socio Fundador de Autocred habla sobre el mercado automotriz de autos usados.",
         "body": ` <p class="mb-2">El 19 de agosto en la edición AM de Radio Duna, tuvimos Viernes de Emprendedores con Felipe Lira, socio fundador de Autocred:</p>
     
@@ -382,7 +472,7 @@ export const posts = [
 
 
     {
-        "id": 2,
+        "id": 3,
         "title": "Startup nacional simplifica la transferencia de vehículos usados entre particulares",
         "body": ` <p class="mb-2 font-bold">La plataforma está en línea con financieras, Registro Civil, notarías y empresas de seguro y además su servicio incluye traslado en van para conectar al comprador y vendedor.</p>
 
@@ -414,7 +504,7 @@ export const posts = [
         "medio": "Prensa"
     },
     {
-        "id": 3,
+        "id": 4,
         "title": "Julio y Agosto, los meses claves para comprar autos usados.",
         "body": ` <p class="mb-2">El mercado de los autos usados vería reflejada la histórica alza del dólar en septiembre. Felipe Lira socio director de Autocred explica en esta nota de T13.cl porqué estos meses son propicios para adquirir un vehículo usado.</p>
 
@@ -444,7 +534,7 @@ export const posts = [
     },
 
     {
-        "id": 4,
+        "id": 5,
         "title": "Yapo.cl la nueva alianza de Autocred",
         "body": ` <p class="mb-2">En Autocred queremos ser el mejor copiloto para la compra y venta de vehículos usados entre personas. Felipe Lira Socio Director de Autocred en entrevista con Claudia Castro, Gerenta Comercial de Yapo.cl explicó todo los beneficios de esta alianza enfocado siempre en apoyar a las personas en todo el proceso.</p>
 
@@ -480,7 +570,7 @@ export const posts = [
     },
 
     {
-        "id": 5,
+        "id": 6,
         "title": "Entrevista en Radio Biobío Felipe Lira, Socio Fundador de Autocred habla sobre el mercado automotriz de autos usados.",
         "body": ` <p class="mb-2">En programa Una semana en La Radio, de Radio Biobío, Felipe Lira, Socio Fundador de Autocred habla sobre el aumento de la demanda automotriz de vehículos usados y cómo Autocred llega para apoyar en la compra y venta de vehículos usados entre personas, acompañando y apoyando en todo el proceso a cada una de las partes con Financiamiento, Seguro, Tag, Transferencia y todo lo necesario para que la experiencia de este proceso sea un gran viaje.</p>
     
@@ -500,7 +590,7 @@ export const posts = [
         "medio": "Radio"
     },
     {
-        "id": 6,
+        "id": 7,
         "title": "Programa Emprender es Clave de Radio La Clave, Felipe Lira Socio Director habla sobre Autocred y la compra o venta de autos usados",
         "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
         para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se
@@ -518,7 +608,7 @@ export const posts = [
         "medio": "Radio"
     },
     {
-        "id": 7,
+        "id": 8,
         "title": "Forum debuta en mundo venture e invierte US$ 1 millón en Autocred | DFMAS",
         "body": ` <p class="mb-2">Todos los días una van azul recorre las calles de Santiago con un objetivo: <b>ser la oficina móvil
         para que diversas personas puedan vender su auto sin acudir a la notaría ni al banco.</b> “La idea es que se
