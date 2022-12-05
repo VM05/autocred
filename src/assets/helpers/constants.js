@@ -89,29 +89,39 @@ export const datosBannerNuevo = [
 export const nuevosServicios =[
     {
         imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
-        titulo:"prueba",
+        titulo:"Financiamiento",
         id:"1",
-        link:"",
+        link:"/",
     },
     {
         imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
-        titulo:"prueba",
+        titulo:"Transferencia e inscripción",
         id:"2",
+        link:"/",
     },
     {
         imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
-        titulo:"prueba",
+        titulo:"Oficina Móvil",
         id:"3",
+        link:"/",
     },
     {
         imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
-        titulo:"prueba",
+        titulo:"TAG: Activación o dar de baja",
         id:"4",
+        link:"/",
     },
     {
         imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
-        titulo:"prueba",
+        titulo:"Informe con antecedentes del vehículo usado",
         id:"5",
+        link:"/",
+    },
+    {
+        imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
+        titulo:"Seguro automotriz",
+        id:"6",
+        link:"/",
     },
    
 ]
@@ -423,7 +433,7 @@ export const posts = [
 
     {
         "id": 1,
-        "title": "Nueva ley para los deudores de pensiones alimenticias",
+        "title": "Nueva ley para los deudores de pensiones alimenticias y su relación con la compra y vehículos usados",
         "body": ` <p class="mb-2">¿Puedo transferir mi vehículo? A partir del viernes 18 de noviembre de 2022 comenzó a regir la nueva Ley Nº 21.389 sobre el Registro Nacional de Deudores de Pensiones de Alimentos en Chile. En caso de que estés pensando comprar, vender o realizar una transferencia de vehículo y no sepas de qué manera puede afectar esta ley en tu transacción, te contamos que establece el rechazo de la inscripción de dominio en la compraventa de un vehículo motorizado, en caso de que una de las personas, ya sea vendedor o comprador, se encuentre con una deuda vigente en dicho Registro Nacional.</p>
         <p class="mb-2">Esto se traduce en que ningún deudor de pensiones alimenticias registrado podrá efectuar una transferencia de vehículo hasta que regularice su morosidad, o bajo las siguientes consideraciones:<p>
 

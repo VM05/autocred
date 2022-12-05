@@ -2,7 +2,7 @@
     <Container>
       <nuevoBanner class="md:mb-5" />
       <Servicios class="mt-10 md:mt-0" />
-      <ListaServicios />
+      <ListaServicios class="my-10"/>
       <Ventajas />
       <Respaldo />
       <Experiencia />

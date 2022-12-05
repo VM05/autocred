@@ -49,9 +49,6 @@ import Button from '../components/Button.vue';
 
 const contactoStore = useContactoStore();
 
-onBeforeMount(()=>{
-    console.log(JSON.parse(localStorage.getItem('noMostrar'))? 'hola': 'chao')
-})
 
 const cerrarModal = () => {
   contactoStore.modal_open = false;
