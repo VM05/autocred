@@ -433,7 +433,7 @@ export const posts = [
 
     {
         "id": 1,
-        "title": "Nueva ley para los deudores de pensiones alimenticias y su relación con la compra y vehículos usados",
+        "title": "Nueva ley para los deudores de pensiones alimenticias y su relación con la compra y venta de vehículos usados",
         "body": ` <p class="mb-2">¿Puedo transferir mi vehículo? A partir del viernes 18 de noviembre de 2022 comenzó a regir la nueva Ley Nº 21.389 sobre el Registro Nacional de Deudores de Pensiones de Alimentos en Chile. En caso de que estés pensando comprar, vender o realizar una transferencia de vehículo y no sepas de qué manera puede afectar esta ley en tu transacción, te contamos que establece el rechazo de la inscripción de dominio en la compraventa de un vehículo motorizado, en caso de que una de las personas, ya sea vendedor o comprador, se encuentre con una deuda vigente en dicho Registro Nacional.</p>
         <p class="mb-2">Esto se traduce en que ningún deudor de pensiones alimenticias registrado podrá efectuar una transferencia de vehículo hasta que regularice su morosidad, o bajo las siguientes consideraciones:<p>
 
