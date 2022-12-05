@@ -56,7 +56,7 @@ const router = createRouter({
                         ...route.params
                     })
                 },
-                { path: '/servicios', name: 'Servicios', component: servicios, redirect:"/servicios/financiamiento",
+                { path: '/servicios', name: 'Servicios', component: servicios,
                 children:[
                     { path:'/servicios/tag', name:'serviciotag', component: servicioTag},
                     { path:'/servicios/transferencias', name:'serviciotransferencias', component: transferencias},
