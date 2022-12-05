@@ -1,8 +1,7 @@
 <template>
     <Container>
       <nuevoBanner class="md:mb-5" />
-      <Servicios class="mt-10 md:mt-0" />
-      <ListaServicios class="my-10"/>
+      <ListaServicios/>
       <Ventajas />
       <Respaldo />
       <Experiencia />

@@ -93,9 +93,9 @@ const router = createRouter({
         },
 
         {
-            path: '/autocred-financiamiento', name: 'autocred-financiamiento', component: autocredFinanciamiento,
+            path: '/autocred-financiamiento', name: 'autocred-view', component: autocredFinanciamientoView,
             children: [
-                { path: '/autocred-financiamiento/financiamiento', name: 'Autocred-financiamiento', component: autocredFinanciamientoView },
+                { path: '/autocred-financiamiento/financiamiento', name: 'Autocred-financiamiento', component: autocredFinanciamiento },
             ]
         },
 

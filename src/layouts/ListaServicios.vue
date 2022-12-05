@@ -1,6 +1,6 @@
 <template>
-    <div>
-    <Heading heading-type="h2" primary content="Nuestros Servicios" />
+    <div class="px-12 my-12">
+    <Heading heading-type="h2" primary content="Nuestros Servicios" class="mb-5" />
     
     
     <div class="grid md:grid-cols-3 grid-cols-1 gap-x-16 md:gap-y-7 gap-y-4">

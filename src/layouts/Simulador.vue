@@ -1,4 +1,5 @@
 <template>
+  <div>
   <Modal v-if="isOpen" @on:close="cerrarModal">
     <template v-slot:header>
       <div class="relative">
@@ -435,6 +436,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script setup>
