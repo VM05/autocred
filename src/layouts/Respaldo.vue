@@ -2,7 +2,7 @@
   <div class="bg-slate-100 py-6 mb-24 md:px-12">
     <Heading
       content="Nuestras alianzas:"
-      class="mb-4 text-black-100"
+      class="mb-4 text-black-100 pl-3 md:pl-0"
       headingType="h2"
     />
     <Carousel

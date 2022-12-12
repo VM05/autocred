@@ -1,5 +1,5 @@
 <template>
-    <div class="px-12 my-12">
+    <div class="md:px-12 my-20">
     <Heading heading-type="h2" primary content="Nuestros Servicios" class="mb-5" />
     
     

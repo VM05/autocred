@@ -21,7 +21,7 @@
         <Navigation />
       </template>
     </Carousel>
-    <router-link to="#contacto" class="justify-self-center w-fit">
+    <router-link to="#contacto" class="justify-self-center w-fit self-center">
       <Button1
         v-if="compradores"
         primary
@@ -33,7 +33,7 @@
         v-else
         secondary
         text="Agenda tu servicio"
-        class="justify-self-center w-fit"
+        class="justify-self-center w-fit mx-auto"
         id="agendar-servicio"
       />
     </router-link>

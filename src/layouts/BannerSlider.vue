@@ -76,7 +76,7 @@ import { datosBannerPrincipal } from "../assets/helpers/constants";
   max-height: 550px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .carousel__slide {
     max-height: 350px;
   }

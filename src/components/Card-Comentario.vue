@@ -2,7 +2,7 @@
   <div
     class="bg-hablemos-100 shadow-lg rounded-xl py-8 px-12 md:h-full md:flex md:flex-col md:justify-center"
   >
-    <div class="flex flex-row gap-4 justify-center items-center mb-4">
+    <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-4">
       <img :src="data.src" alt="profile" class="rounded-full h-20 w-20" />
       <div>
         <Paragraph1 class="font-bold text-xl"> {{ data.nombre }} </Paragraph1>

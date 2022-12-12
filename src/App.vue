@@ -20,6 +20,7 @@ const storeContacto = useContactoStore();
 onBeforeMount(() => {
   storeContacto.fetchUtms();
   storeContacto.getProcedencia();
+  storeContacto.isMobile();
   
 });
 

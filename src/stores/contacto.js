@@ -14,6 +14,7 @@ export const useContactoStore = defineStore("contacto", {
             utm_procedenciaId: '',
             utm_tipoProcedencia: '',
             modal_open: true,
+            mobile: '',
 
         }
     },
@@ -47,6 +48,16 @@ export const useContactoStore = defineStore("contacto", {
                 this.utm_procedenciaId = 103;
 
             }
+        },
+        isMobile(){
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+               
+                this.mobile= true
+                
+              } else {
+                
+                this.mobile= false
+              }
         }
     }
 })

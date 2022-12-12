@@ -429,6 +429,34 @@ export const ventajas = [
 
 ]
 
+export const nuevasVentajas=[
+    {
+        name: "Te financiamos",
+        content:
+            "Financiamos al comprador particular con el monto faltante para completar el valor del auto usado.",
+        src: '/img/icons/Iconos_Autocred_Blanco_Asesoramiento.png',
+        textoBoton: 'Evalúa tu crédito',
+        link: '/servicios/financiamiento'
+    },
+    {
+        name: "Hacemos todo por ti",
+        content:
+            "Nos encargamos de todos los trámites decompradores y vendedores particulares, liberándolos de largas filas en notarías, del Registro Civil y de ir a la autopista por trámites de TAG.",
+        src: '/img/icons/Iconos_Autocred_Blanco_Asesoramiento.png',
+        textoBoton: 'ver trámites',
+        link: '/servicios/tag'
+    },
+    {
+        name: "Te acompañamos",
+        content:
+            "Llevamos al comprador particular a ver el auto usado que quiere comprar, y al vendedor particular a mostrar su auto usado, en nuestra Oficina Móvil.",
+        src: '/img/icons/Iconos_Autocred_Blanco_Asesoramiento.png',
+        textoBoton: 'cotiza aquí',
+        link: '/servicios/transferencias'
+    },
+
+]
+
 export const posts = [
 
     {
@@ -789,3 +817,15 @@ export const serviciosCompradores = [
         img: "/img/icons/Iconos_Autocred_Azul_seguro_automotriz.webp",
     },
 ];
+
+export const stepsForm = [
+    {
+        title: 'Datos Principales'
+    },
+    {
+        title: 'Datos Vehículo'
+    },
+    {
+        title: 'Valor Vehículo'
+    },
+]

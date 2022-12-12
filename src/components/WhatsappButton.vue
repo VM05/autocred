@@ -153,10 +153,44 @@ const formularioWs = reactive({
   utm_medium: useUtms.utm_medium || "web",
   utm_campaign: useUtms.utm_campaign || "web",
   canal_atencion: gestion[2].name,
+  email_vendedor: ''
 });
 
 const enviarFormulario = async () => {
   isLoading.value = true;
+  
+  switch (props.telefono) {
+    case  '56946483871':
+      formularioWs.email_vendedor = 'jose.lopez@autocred.cl'
+      break;
+      case  '56946478330':
+      formularioWs.email_vendedor = 'barbara.saavedra@autocred.cl'
+      break;
+      case  '56946474281':
+      formularioWs.email_vendedor = 'iris.castro@autocred.cl'
+      break;
+      case  '56946481460':
+      formularioWs.email_vendedor = 'solange.canales@autocred.cl'
+      break;
+      case  '56932592736':
+      formularioWs.email_vendedor = 'jacky.martinez@autocred.cl'
+      break;
+      case  '56946456800':
+      formularioWs.email_vendedor = 'isis.vivas@autocred.cl'
+      break;
+      case  '56946337158':
+      formularioWs.email_vendedor = 'francisco.stemann@autocred.cl'
+      break;
+      case  '56946373862':
+      formularioWs.email_vendedor = 'cristian.fernandez@autocred.cl'
+      break;
+      case  '56946390268':
+      formularioWs.email_vendedor = 'carolina.ortiz@autocred.cl'
+      break;
+    default:
+      break;
+  }
+
   try {
     const resp = await axios.post(URL_GOGEMA, qs.stringify(formularioWs));
     if (await resp.data.message) {
