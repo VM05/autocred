@@ -64,6 +64,10 @@ const props = defineProps({
     type: String,
     default: "h2", // you can pass anything from 'h1' to 'h6' here
   },
+  customSize:{
+    type:String,
+    default:'24px',
+  },
   content: {
     type: String,
   },
@@ -162,7 +166,7 @@ h6 {
     font-size: 35px;
   }
   h3 {
-    font-size: 24px;
+    font-size: v-bind(customSize);
   }
   h4 {
     font-size: 20px;

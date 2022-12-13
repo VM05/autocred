@@ -54,14 +54,14 @@ export const datosBannerPrincipal = [
 
 export const datosBannerNuevo = [
     {
-        titulo: "La compra y venta de <span class=' text-secondary-900'> autos usados</span> entre <span class=' text-secondary-900'>personas particulares </span> es simple con Autocred.",
+        titulo: "<span class=' text-secondary-900'>La compra y venta de</span>  autos usados <span class=' text-secondary-900'>entre</span> personas particulares<span class=' text-secondary-900'> es simple con Autocred.</span>",
         content: "¡No te enredes!",
         img: "/img/videoBanner/no-te-enredes.mp4",
         buttonText: "CONTÁCTANOS",
         tipo: 'video',
     },
     {
-        titulo: "¡Te financiamos!",
+        titulo: "<span class=' text-secondary-900'>¡Te financiamos!</span>",
         content: "completamos el valor que te falta para comprar el auto usado de tus sueños.",
         img: "/img/videoBanner/celular.mp4",
         buttonText: "EVALUACIÓN DE CRÉDITO",
@@ -70,7 +70,7 @@ export const datosBannerNuevo = [
 
   
     {
-        titulo: "En Autocred hacemos todos los trámites por ti",
+        titulo: "<span class=' text-secondary-900'>En Autocred hacemos</span> todos los trámites <span class=' text-secondary-900'>por ti</span>",
         content: "¡Evita filas, notarías y malos ratos!",
         img: "/img/imagenBanner/tramites-por-ti.webp",
         buttonText: "VER TRÁMITES",
@@ -78,8 +78,8 @@ export const datosBannerNuevo = [
     },
 
     {
-        titulo: "¡Te atendemos donde quieras!",
-        content: "100% online, Oficina Móvil, Módulos de atención",
+        titulo: "100% online,<span class=' text-secondary-900'> Oficina Móvil y Módulos de atención</span>",
+        content: "¡Te atendemos donde quieras!",
         img: "/img/imagenBanner/donde-quieras.webp",
         buttonText: "QUIERO INFORMACIÓN",
         tipo: 'imagen',
@@ -88,37 +88,37 @@ export const datosBannerNuevo = [
 
 export const nuevosServicios =[
     {
-        imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
+        imagen:"/img/icons/homeIcons/financiamiento.webp",
         titulo:"Financiamiento",
         id:"1",
         link:"/",
     },
     {
-        imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
+        imagen:"/img/icons/homeIcons/transferencia.webp",
         titulo:"Transferencia e inscripción",
         id:"2",
         link:"/",
     },
     {
-        imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
+        imagen:"/img/icons/homeIcons/oficina.webp",
         titulo:"Oficina Móvil",
         id:"3",
         link:"/",
     },
     {
-        imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
+        imagen:"/img/icons/homeIcons/tag.webp",
         titulo:"TAG: Activación o dar de baja",
         id:"4",
         link:"/",
     },
     {
-        imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
+        imagen:"/img/icons/homeIcons/informe.webp",
         titulo:"Informe con antecedentes del vehículo usado",
         id:"5",
         link:"/",
     },
     {
-        imagen:"/img/icons/Iconos_Autocred_Azul_Copiloto.png",
+        imagen:"/img/icons/homeIcons/seguro.webp",
         titulo:"Seguro automotriz",
         id:"6",
         link:"/",
@@ -434,7 +434,7 @@ export const nuevasVentajas=[
         name: "Te financiamos",
         content:
             "Financiamos al comprador particular con el monto faltante para completar el valor del auto usado.",
-        src: '/img/icons/Iconos_Autocred_Blanco_Asesoramiento.png',
+        src: '/img/icons/homeIcons/te-financiamos.webp',
         textoBoton: 'Evalúa tu crédito',
         link: '/servicios/financiamiento'
     },
@@ -442,7 +442,7 @@ export const nuevasVentajas=[
         name: "Hacemos todo por ti",
         content:
             "Nos encargamos de todos los trámites decompradores y vendedores particulares, liberándolos de largas filas en notarías, del Registro Civil y de ir a la autopista por trámites de TAG.",
-        src: '/img/icons/Iconos_Autocred_Blanco_Asesoramiento.png',
+        src: '/img/icons/homeIcons/todo-por-ti.webp',
         textoBoton: 'ver trámites',
         link: '/servicios/tag'
     },
@@ -450,7 +450,7 @@ export const nuevasVentajas=[
         name: "Te acompañamos",
         content:
             "Llevamos al comprador particular a ver el auto usado que quiere comprar, y al vendedor particular a mostrar su auto usado, en nuestra Oficina Móvil.",
-        src: '/img/icons/Iconos_Autocred_Blanco_Asesoramiento.png',
+        src: '/img/icons/homeIcons/te-acompanamos.webp',
         textoBoton: 'cotiza aquí',
         link: '/servicios/transferencias'
     },

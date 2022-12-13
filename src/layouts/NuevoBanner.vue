@@ -19,9 +19,10 @@
             />
             <Heading
               :content="datos.content"
-              headingType="h2"
+              :headingType="index == '0' ? 'h2' : 'h3'"
               class="mb-5 mt-3"
-              secondary
+              primary
+              custom-size="28px"
             />
   
             <div class="flex flex-col md:flex-row md:gap-4 gap-2 mt-10">

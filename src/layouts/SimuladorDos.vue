@@ -65,7 +65,7 @@
                 class="content py-3 md:py-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 md:border-b"
               >
                 <div class="col-span-1">
-                  <div v-if="activo == 0  || !useUtms.mobile" class="step">
+                  <div v-show="activo == 0  || !useUtms.mobile" class="step">
                   <SelectTypeCredito1
                     label="Tipo Crédito"
                     id="Tipo Crédito"
@@ -81,7 +81,7 @@
                     @keypress="onlyRut"
                   />
                 </div>
-                <div v-if="activo == 1 || !useUtms.mobile" class="step">
+                <div v-show="activo == 1 || !useUtms.mobile" class="step">
                   <div class="flex flex-col md:flex-row">
                     <SelectMarcas1
                       label="Marca"
@@ -124,7 +124,7 @@
                 </div>
                 </div>
                 <div
-                  class="col-span-1 md:px-5 md:border-x grid gap-6 mb-8 md:mb-0 step" v-if="activo == 2 || !useUtms.mobile
+                  class="col-span-1 md:px-5 md:border-x grid gap-6 mb-8 md:mb-0 step" v-show="activo == 2 || !useUtms.mobile
                   "
                 >
                   <div class="price">
@@ -160,7 +160,7 @@
                     informativo
                   />
                 </div>
-                <div v-if="activo == 3 || !useUtms.mobile" class="step grid place-content-center">
+                <div v-show="activo == 3 || !useUtms.mobile" class="step grid place-content-center">
                 <div
                   class=""
                   v-if="!loading && !complete"

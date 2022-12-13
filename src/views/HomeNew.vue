@@ -15,11 +15,9 @@
   
   <script setup>
   import Container from "../layouts/Container.vue";
-  import Servicios from "../layouts/Servicios.vue";
   import Respaldo from "../layouts/Respaldo.vue";
   import Comentarios from "../layouts/Comentarios.vue";
   import DondeEstamos from "../layouts/DondeEstamos.vue";
-  import Hablemos from "../layouts/Hablemos.vue";
   import Experiencia from "../layouts/Experiencia.vue";
   import ListaServicios from "../layouts/ListaServicios.vue";
   import { useHead } from "@vueuse/head";
