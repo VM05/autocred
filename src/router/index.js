@@ -56,6 +56,8 @@ const router = createRouter({
                         ...route.params
                     })
                 },
+                { path: '/new-home', name: 'newHome', component: ()=> import('../views/HomeNew.vue') },
+                { path: '/new-transferencia', name: 'new-transferencia', component: ()=> import('../views/NuevoServicioTransferencia.vue') },
                 { path: '/servicios', name: 'Servicios', component: servicios,
                 children:[
                     { path:'/servicios/tag', name:'serviciotag', component: servicioTag},
@@ -68,7 +70,7 @@ const router = createRouter({
                 { path: '/blog', name: 'Blog', component: blog },
                 { path: '/blog/:id', name: 'Articulo', component: articulo },
                 { path: '/terminos-y-condiciones', name: 'Terms', component: termino },
-                { path: '/new-home', name: 'newHome', component: ()=> import('../views/HomeNew.vue') },
+               
 
             ]
         },

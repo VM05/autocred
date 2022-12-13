@@ -153,13 +153,13 @@ const formularioWs = reactive({
   utm_medium: useUtms.utm_medium || "web",
   utm_campaign: useUtms.utm_campaign || "web",
   canal_atencion: gestion[2].name,
-  email_vendedor: ''
+  // email_vendedor:'0',
 });
 
 const enviarFormulario = async () => {
   isLoading.value = true;
-  
-  switch (props.telefono) {
+
+   switch (props.telefono) {
     case  '56946483871':
       formularioWs.email_vendedor = 'jose.lopez@autocred.cl'
       break;
@@ -192,6 +192,8 @@ const enviarFormulario = async () => {
   }
 
   try {
+ 
+
     const resp = await axios.post(URL_GOGEMA, qs.stringify(formularioWs));
     if (await resp.data.message) {
       isLoading.value = false;
