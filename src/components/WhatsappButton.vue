@@ -205,14 +205,15 @@ const enviarFormulario = async () => {
     //           "sucursal_id" : "1"
     //         })
     //     })
-      const consulta = await axios.put('https://sandboxapiflux.go-gema.com/v1/leads/942964?access-token=i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG',{
-        "sucursal_id":"1"
-      })
-    console.log(consulta)
+    //   const consulta = await axios.put('https://sandboxapiflux.go-gema.com/v1/leads/942964?access-token=i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG',{
+    //     "sucursal_id":"1"
+    //   })
+    // console.log(consulta)
+
     const resp = await axios.post(URL_GOGEMA, qs.stringify(formularioWs));
     if (await resp.data.message) {
       console.log(resp.data)
-      return
+
       isLoading.value = false;
       if (warningFinanciamiento.value == true) {
         window.open(
