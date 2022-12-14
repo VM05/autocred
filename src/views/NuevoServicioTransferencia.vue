@@ -3,15 +3,15 @@
         <Heading :content="nuevaDataServicios[0].title" class="md:px-12" />
         <div class="md:px-12">
           <div
-            class="grid grid-cols-1 md:grid-cols-2 md:pb-40 mb-18 md:mb-36 gap-2 md:flex md:relative md:justify-end"
+            class="flex md:flex-row  flex-col justify-around items-center justify-items-center mt-10 mb-20"
           >
-            <div class="justify-self-end md:absolute md:w-5/12 top-0 left-0">
-              <img :src="nuevaDataServicios[0].img" :alt="nuevaDataServicios[0].title" class="w-full" />
+            <div class=" md:w-1/2 top-0 left-0">
+              <img :src="nuevaDataServicios[0].img" :alt="nuevaDataServicios[0].title" class="mx-auto md:mx-0 w-2/3 md:w-1/2" />
             </div>
             <div
-              class="bg-white rounded-xl shadow-xl pt-16 pb-10 px-8 flex flex-col justify-between md:w-1/2"
+              class="bg-white rounded-xl shadow-xl pt-16 pb-10 px-8 flex flex-col justify-between w-full md:w-1/2"
             >
-              <Paragraph1 class="text-primary-900 font-medium text-base mb-3">
+              <Paragraph1 class="text-primary-900 font-medium text-base text-center mb-3">
                 {{ nuevaDataServicios[0].content }}
               </Paragraph1>
               <router-link

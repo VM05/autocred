@@ -713,8 +713,8 @@ export const nuevaDataServicios = [
     {
         id: 'transferencias',
         title: "Servicio de transferencias",
-        content: "Transfiere en solo 20 minutos. En nuestros módulos, oficina móvil o vía online, sin filas ni esperas.",
-        img: "/img/servicios/01-servicios-transferencias.png",
+        content: "Gestionamos la transferencia de dominio de un vendedor particular a un comprador particular en sólo 20 minutos. ¡Sin filas en notaría y Registro Civil!",
+        img: "/img/nuevos-servicios/transferencia/icono-ManoConLlaves.webp",
         buttonText: "Agenda tu Servicio",
         name: "Transferencias"
     },
