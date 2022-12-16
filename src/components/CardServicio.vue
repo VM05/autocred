@@ -18,7 +18,7 @@
           headingType="h4"
           class="font-bold mb-3"
         />
-        <Paragraph class="font-medium text-base" v-html="props.data.content">
+        <Paragraph class="font-medium text-base " v-html="props.data.content">
         </Paragraph>
         <p class="text-secondary-900 block mt-2 text-right italic">Lo quiero</p>
       </div>

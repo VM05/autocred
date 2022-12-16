@@ -58,6 +58,10 @@ const router = createRouter({
                 },
                 { path: '/new-home', name: 'newHome', component: ()=> import('../views/HomeNew.vue') },
                 { path: '/new-transferencia', name: 'new-transferencia', component: ()=> import('../views/NuevoServicioTransferencia.vue') },
+                { path: '/new-seguro', name: 'new-seguro', component: ()=> import('../views/NuevoServicioSeguro.vue') },
+                { path: '/new-tag', name: 'new-tag', component: ()=> import('../views/NuevoServicioTag.vue') },
+                { path: '/new-financiamiento', name: 'new-financiamiento', component: ()=> import('../views/NuevoServicioFinanciamiento.vue') },
+                { path: '/nuestros-agentes', name: 'nuestros-agentes', component: ()=> import('../views/NuestrosAgentes.vue') },
                 { path: '/servicios', name: 'Servicios', component: servicios,
                 children:[
                     { path:'/servicios/tag', name:'serviciotag', component: servicioTag},

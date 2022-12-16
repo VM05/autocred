@@ -313,6 +313,96 @@ export const rrss = [
     { name: "instagram", url: "https://www.instagram.com/autocredcl/", src: "/img/rrss/rrss-instagram.svg" },
     { name: "linkedIn", url: "https://www.linkedin.com/company/autocredcl/", src: "/img/rrss/rrss-linkedin.svg" },
 ]
+
+export const newFeaturesTransferencia = [
+    {
+        name: "",
+        content:
+        "<span class='md:w-3/4 block font-semibold'>Trámite completo 100% online, en nuestra Oficina Móvil o en nuestros módulos de atención ¡Como prefieras!</span>",
+        img: "/img/nuevos-servicios/icono-Transferencia-03.webp",
+    },
+    {
+        name: "",
+        content:
+        "<span class='md:w-3/4 block font-semibold'>Registro de antecedentes, firma de documentos y firma de contratos</span>",
+        img: "/img/nuevos-servicios/icono-Transferencia-02.webp",
+    },
+    {
+        name: "",
+        content:
+            "<span class='md:w-3/4 block font-semibold'>Identificación biométrica para mayor seguridad en la operación</span>",
+        img: "/img/icons/Iconos_Autocred_Blanco_Identificacion_biometrica.png",
+    },
+    {
+        name: "",
+        content:
+            "<span class='md:w-3/4 block text-center md:text-left font-semibold'>Inscripción del vehículo usado a tu nombre</span>",
+        img: "/img/icons/Iconos_Autocred_Blanco_Proceso_completo.png",
+    },
+
+]
+
+export const newFeaturesFinanciamiento = [
+    {
+        name: "",
+        content:
+        "<span class='md:w-3/4 block text-center md:text-left font-semibold'>Crédito automotriz seguro con financiadoras reconocidas.</span>",
+        img: "/img/icons/Iconos_Autocred_Blanco_Credito_rapido.png",
+    },
+    {
+        name: "",
+        content:
+        "<span class='md:w-3/4 block text-center md:text-left font-semibold'>Recibe la aprobación con pago inmediato al vendedor particular.</span>",
+        img: "/img/nuevos-servicios/Icono-Transferencia-de-dominio-02.webp",
+    },
+    {
+        name: "",
+        content:
+            "<span class='md:w-3/4 block text-center md:text-left font-semibold'>Paga el 100% del valor del vehículo usado que quieres comprar dando un pie.</span>",
+        img: "/img/icons/Iconos_Autocred_Blanco_Financiamiento.png",
+    },
+    {
+        name: "",
+        content:
+            "<span class='md:w-3/4 block text-center md:text-left font-semibold'>Realiza el pago con transferencia o tarjeta de crédito</span>",
+        img: "/img/icons/Iconos_Autocred_Blanco_Mejor_cuota.png",
+    },
+
+]
+
+export const newFeaturesSeguro = [
+    {
+        name: "",
+        content:
+        "<span class='md:w-3/4 block font-semibold'>Seguro automotriz para siniestros</span>",
+        img: "/img/nuevos-servicios/Icono-Seguro02.webp",
+    },
+    {
+        name: "",
+        content:
+        "<span class='md:w-3/4 block font-semibold'>Proceso 100% online</span>",
+        img: "/img/nuevos-servicios/icono-Transferencia-03.webp",
+    },
+
+]
+
+
+export const newFeaturesTag = [
+    {
+        name: "",
+        content:
+        "<span class='md:w-3/4 block font-semibold'>Gestionamos la habilitación o damos de baja tu TAG</span>",
+        img: "/img/nuevos-servicios/Icono-TAG-01.webp",
+    },
+    {
+        name: "",
+        content:
+        "<span class='md:w-3/4 block font-semibold'>Proceso 100% online gracias a nuestra conexión con las autopistas</span>",
+        img: "/img/nuevos-servicios/icono-Transferencia-03.webp",
+    },
+
+]
+
 export const featuresTransferencia = [
     {
         name: "Identificacion Biometrica",
@@ -714,15 +804,15 @@ export const nuevaDataServicios = [
         id: 'transferencias',
         title: "Servicio de transferencias",
         content: "Gestionamos la transferencia de dominio de un vendedor particular a un comprador particular en sólo 20 minutos. ¡Sin filas en notaría y Registro Civil!",
-        img: "/img/nuevos-servicios/transferencia/icono-ManoConLlaves.webp",
+        img: "/img/nuevos-servicios/icono-ManoConLlaves.webp",
         buttonText: "Agenda tu Servicio",
         name: "Transferencias"
     },
     {
         id: 'financiamiento',
-        title: "Financia tu próximo vehículo",
-        content: "Resuelve tu financiamiento solo en 7 minutos. Recibe la aprobación con pago inmediato al vendedor. Paga el 100% del valor del vehículo, dando un pie, transferencia o con tarjetas de crédito. ",
-        img: "/img/servicios/02-servicios-financiamiento.png",
+        title: "Financiamos el valor que te falta para la compra del vehículo usado que quieres.",
+        content: "Compra un vehículo usado a un vendedor particular con tarjeta de débito, crédito o transferencia bancaria",
+        img: "/img/imagenBanner/financiamiento-imagen.webp",
         buttonText: "Quiero financiar ",
         name: "Financiamientos"
     },
@@ -737,8 +827,8 @@ export const nuevaDataServicios = [
     {
         id: 'seguro',
         title: "Servicio de seguro automotriz",
-        content: "Con Autocred asegura tu vehículo al realizar la transferencia a través de nuestros módulos, Oficina Móvil o vía online.",
-        img: "/img/servicios/04-servicios-seguro-(EN-BAJA).png",
+        content: "Aseguramos el vehículo usado que compraste al momento de realizar la transferencia",
+        img: "/img/nuevos-servicios/Icono-Seguro01.webp",
         buttonText: "Obtén tu Seguro",
         name: "Seguro"
     },
@@ -867,4 +957,104 @@ export const stepsForm = [
     {
         title: 'Valor Vehículo'
     },
+]
+
+export const ejecutivosPresencial = [
+    {
+        imagen:'',
+        nombre:'María',
+        apellido:'Saavedra',
+        ubicacion:'Paseo Quilin',
+        telefono: '+569 2365 5659',
+        email:'maria.saavedra@autocred.cl'
+    },
+    {
+        imagen:'/img/agentes/isis-vivas.webp',
+        nombre:'Isis',
+        apellido:'Vivas',
+        ubicacion:'Apumanque',
+        telefono: '+569 3728 6486',
+        email:'isis.vivas@autocred.cl'
+    },
+
+]
+
+export const ejecutivosOnline = [
+    {
+        imagen:'',
+        nombre:'María',
+        apellido:'Saavedra',
+        ubicacion:'Paseo Quilin',
+        telefono: '+569 2365 5659',
+        email:'maria.saavedra@autocred.cl'
+    },
+    {
+        imagen:'/img/agentes/isis-vivas.webp',
+        nombre:'Isis',
+        apellido:'Vivas',
+        ubicacion:'Apumanque',
+        telefono: '+569 3728 6486',
+        email:'isis.vivas@autocred.cl'
+    },
+    {
+        imagen:'/img/agentes/isis-vivas.webp',
+        nombre:'Isis',
+        apellido:'Vivas',
+        ubicacion:'Apumanque',
+        telefono: '+569 3728 6486',
+        email:'isis.vivas@autocred.cl'
+    },
+
+]
+
+export const ejecutivosVenta= [
+    {
+        imagen:'',
+        nombre:'María',
+        apellido:'Saavedra',
+        ubicacion:'Paseo Quilin',
+        telefono: '+569 2365 5659',
+        email:'maria.saavedra@autocred.cl'
+    },
+    {
+        imagen:'/img/agentes/isis-vivas.webp',
+        nombre:'Isis',
+        apellido:'Vivas',
+        ubicacion:'Apumanque',
+        telefono: '+569 3728 6486',
+        email:'isis.vivas@autocred.cl'
+    },
+    {
+        imagen:'/img/agentes/isis-vivas.webp',
+        nombre:'Isis',
+        apellido:'Vivas',
+        ubicacion:'Apumanque',
+        telefono: '+569 3728 6486',
+        email:'isis.vivas@autocred.cl'
+    },
+    {
+        imagen:'/img/agentes/isis-vivas.webp',
+        nombre:'Isis',
+        apellido:'Vivas',
+        ubicacion:'Apumanque',
+        telefono: '+569 3728 6486',
+        email:'isis.vivas@autocred.cl'
+    },
+    {
+        imagen:'/img/agentes/isis-vivas.webp',
+        nombre:'Isis',
+        apellido:'Vivas',
+        ubicacion:'Apumanque',
+        telefono: '+569 3728 6486',
+        email:'isis.vivas@autocred.cl'
+    },
+    {
+        imagen:'/img/agentes/isis-vivas.webp',
+        nombre:'Isis',
+        apellido:'Vivas',
+        ubicacion:'Apumanque',
+        telefono: '+569 3728 6486',
+        email:'isis.vivas@autocred.cl'
+    },
+
 ]

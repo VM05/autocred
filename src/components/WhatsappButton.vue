@@ -191,25 +191,33 @@ const enviarFormulario = async () => {
       break;
   }
 
-  942968
+  // 942968
+
+  // try {
+  //       const consulta = await fetch('https://sandboxapiflux.go-gema.com/v1/leads/942966?access-token=i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG', {
+  //           method: 'PUT',
+  //           headers: {
+  //               'Accept': 'application/json',
+  //               'Content-Type': 'application/json'
+  //           },
+  //           body: JSON.stringify({
+  //             "sucursal_id" : "1"
+  //           })
+  //       })
+  //     const consulta = await axios.put('https://sandboxapiflux.go-gema.com/v1/leads/942964?access-token=i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG',qs.stringify({
+  //       sucursal_id: 1
+  //     }),
+  //     {headers:{
+  //       'Accept': 'application/json',
+  //       'Content-Type': 'application/json'
+  //     }})
+  //   console.log(consulta)
+
+  // } catch (error) {
+    
+  // }
 
   try {
-
-    // const consulta = await fetch('https://sandboxapiflux.go-gema.com/v1/leads/942966?access-token=i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG', {
-    //         method: 'PUT',
-    //         headers: {
-    //             'Accept': 'application/json',
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({
-    //           "sucursal_id" : "1"
-    //         })
-    //     })
-    //   const consulta = await axios.put('https://sandboxapiflux.go-gema.com/v1/leads/942964?access-token=i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG',{
-    //     "sucursal_id":"1"
-    //   })
-    // console.log(consulta)
-
     const resp = await axios.post(URL_GOGEMA, qs.stringify(formularioWs));
     if (await resp.data.message) {
       console.log(resp.data)

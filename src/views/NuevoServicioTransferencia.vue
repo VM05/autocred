@@ -11,7 +11,7 @@
             <div
               class="bg-white rounded-xl shadow-xl pt-16 pb-10 px-8 flex flex-col justify-between w-full md:w-1/2"
             >
-              <Paragraph1 class="text-primary-900 font-medium text-base text-center mb-3">
+              <Paragraph1 class="text-primary-900 font-medium text-base md:text-left text-center mb-3">
                 {{ nuevaDataServicios[0].content }}
               </Paragraph1>
               <router-link
@@ -28,14 +28,14 @@
             </div>
           </div>
           </div>
-          <FeaturesList :data="featuresTransferencia" class="mb-24" />
+          <FeaturesList :data="newFeaturesTransferencia" class="mb-24" />
         <Hablemos id="contacto" />
       </Container>
 </template>
 
 <script setup>
 import Hablemos from '../layouts/Hablemos.vue';
-import { featuresTransferencia, nuevaDataServicios } from '../assets/helpers/constants';
+import { newFeaturesTransferencia, nuevaDataServicios } from '../assets/helpers/constants';
 import FeaturesList from "../components/FeaturesList.vue";
 import Heading from '../components/Heading.vue';
 import Paragraph1 from '../components/Paragraph.vue';
