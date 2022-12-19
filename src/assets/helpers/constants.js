@@ -818,9 +818,9 @@ export const nuevaDataServicios = [
     },
     {
         id: 'tag',
-        title: "Servicio Tag",
+        title: "Servicio de TAG",
         content: "Te ayudamos con la habilitación o baja de tu Tag para evitar a la concesionaria.",
-        img: "/img/servicios/03-servicios-tag-(EN-BAJA).png",
+        img: "/img/nuevos-servicios/Icono-TAG-02.webp",
         buttonText: "Obtén tu Tag",
         name: "Tag"
     },

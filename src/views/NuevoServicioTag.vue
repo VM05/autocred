@@ -1,12 +1,12 @@
 <template>
     <Container>
-          <Heading :content="nuevaDataServicios[3].title" class="md:px-12" />
+          <Heading :content="nuevaDataServicios[2].title" class="md:px-12" />
           <div class="md:px-12">
             <div
               class="flex md:flex-row  flex-col justify-around items-center justify-items-center mt-10 mb-20"
             >
               <div class=" md:w-1/2 top-0 left-0">
-                <img :src="nuevaDataServicios[3].img" :alt="nuevaDataServicios[2].title" class="mx-auto md:mx-0 w-2/3 md:w-1/2" />
+                <img :src="nuevaDataServicios[2].img" :alt="nuevaDataServicios[2].title" class="mx-auto md:mx-0 w-2/3 md:w-1/2" />
               </div>
               <div
                 class=" w-full md:w-1/2"
