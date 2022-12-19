@@ -1,6 +1,6 @@
 <template>
     <Container>
-      <ServicioAcordion/>
+   
       <nuevoBanner class="md:mb-5" />
       <VentajasView />
       <ExperienciaConAutocred />
@@ -27,7 +27,7 @@
   import VentajasView from "../layouts/VentajasView.vue";
   import SimuladorDos from '../layouts/SimuladorDos.vue'
   import {onBeforeMount, ref , defineAsyncComponent} from 'vue';
-  import ServicioAcordion from "../components/ServicioAcordion.vue";
+
 
   const Medios = defineAsyncComponent(()=> import(`../layouts/${componenteMedios.value}.vue`))
   const componenteMedios = ref('')
