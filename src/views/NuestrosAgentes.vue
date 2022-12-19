@@ -29,7 +29,7 @@ import Container from '../layouts/Container.vue';
 import ListaAgentes from '../layouts/ListaAgentes.vue';
 import BannerHome from '../layouts/BannerHome.vue';
 import { ejecutivosPresencial, ejecutivosOnline, ejecutivosVenta  } from '../assets/helpers/constants';
-import Paragraph from '../components/Paragraph.vue';
+
 
 </script>
 

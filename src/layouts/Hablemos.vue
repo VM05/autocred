@@ -77,6 +77,9 @@
               El teléfono debe contener al menos 9 digitos
             </Paragraph>
           </div>
+          <!-- <div v-if="!warningFinanciamiento">
+            <InputRut label="RUT"/>
+          </div> -->
         </div>
         <div class="right md:pl-8 p-0">
           <CheckServicios
@@ -130,6 +133,7 @@ import Button from "../components/Button.vue";
 import { useContactoStore } from "../stores/contacto";
 import { useRoute, useRouter } from "vue-router";
 import emailjs from "@emailjs/browser";
+import InputRut from "../components/Input-Rut.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -146,6 +150,7 @@ const errorForm = ref("uno de los campos esta vacio");
 const dispositivo = ref("");
 const browserName = ref("");
 const direccion_sitio = window.location.href;
+const warningFinanciamiento = ref(true)
 
 const encuentraDispositivo = () => {
   let userAgent = navigator.userAgent;
@@ -277,6 +282,14 @@ const handleCheck = (e) => {
 };
 
 watch(formContacto, () => {
+
+  if (formContacto.servicios.includes("Financiamientos")) {
+    warningFinanciamiento.value = false;
+  } else {
+    warningFinanciamiento.value = true;
+    formContacto.dni = "0";
+  }
+  
   isFormComplete.value = formEmpty(formContacto);
   isEmailValid.value = validateEmail(formContacto.email);
 

@@ -319,7 +319,7 @@ export const newFeaturesTransferencia = [
         name: "",
         content:
         "<span class='md:w-3/4 block font-semibold'>Trámite completo 100% online, en nuestra Oficina Móvil o en nuestros módulos de atención ¡Como prefieras!</span>",
-        img: "/img/nuevos-servicios/icono-Transferencia-03.webp",
+        img: "/img/nuevos-servicios/icono-transferencia-03.webp",
     },
     {
         name: "",
@@ -381,7 +381,7 @@ export const newFeaturesSeguro = [
         name: "",
         content:
         "<span class='md:w-3/4 block font-semibold'>Proceso 100% online</span>",
-        img: "/img/nuevos-servicios/icono-Transferencia-03.webp",
+        img: "/img/nuevos-servicios/icono-transferencia-03.webp",
     },
 
 ]
@@ -398,7 +398,7 @@ export const newFeaturesTag = [
         name: "",
         content:
         "<span class='md:w-3/4 block font-semibold'>Proceso 100% online gracias a nuestra conexión con las autopistas</span>",
-        img: "/img/nuevos-servicios/icono-Transferencia-03.webp",
+        img: "/img/nuevos-servicios/icono-transferencia-03.webp",
     },
 
 ]
