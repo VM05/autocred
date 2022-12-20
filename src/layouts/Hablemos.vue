@@ -77,9 +77,17 @@
               El teléfono debe contener al menos 9 digitos
             </Paragraph>
           </div>
-          <!-- <div v-if="!warningFinanciamiento">
-            <InputRut label="RUT"/>
-          </div> -->
+          <div v-if="!warningFinanciamiento">
+            <InputRut 
+              label="RUT"
+              id="RUT"
+              placeholder="RUT"
+              class="w-full"
+              @textvalue="(e) => (formContacto.dni = e)"
+              @keypress="onlyRut"
+              
+            />
+          </div>
         </div>
         <div class="right md:pl-8 p-0">
           <CheckServicios
@@ -134,6 +142,7 @@ import { useContactoStore } from "../stores/contacto";
 import { useRoute, useRouter } from "vue-router";
 import emailjs from "@emailjs/browser";
 import InputRut from "../components/Input-Rut.vue";
+import { validateRut } from "@fdograph/rut-utilities";
 
 const route = useRoute();
 const router = useRouter();
@@ -181,6 +190,13 @@ const encuentraDispositivo = () => {
   dispositivo.value = "desktop";
 };
 
+const onlyRut = ($event) => {
+  const validRut = /[^kK0-9]/g;
+  if (validRut.test($event.key)) {
+    $event.preventDefault();
+  }
+};
+
 onMounted(() => {
   encuentraDispositivo();
 });
@@ -207,6 +223,7 @@ const formContacto = reactive({
   utm_medium: useUtms.utm_medium || "web",
   utm_campaign: useUtms.utm_campaign || "web",
   sucursal_id: 1,
+  dni: "0"
 });
 
 // const modal = ref(false);
@@ -310,6 +327,21 @@ watch(formContacto, () => {
     warnings.warningServicios = true;
   }
 
+if(!warningFinanciamiento.value){
+  if (
+    warnings.warningTelefono == false &&
+    warnings.warningServicios == false &&
+    isEmailValid.value == true &&
+    isFormComplete.value == false &&
+    formContacto.mensaje != "" && validateRut(formContacto.dni)
+  ) {
+    warnings.isWarning = false;
+  } else {
+    warnings.isWarning = true;
+  }
+
+}else{
+
   if (
     warnings.warningTelefono == false &&
     warnings.warningServicios == false &&
@@ -321,7 +353,10 @@ watch(formContacto, () => {
   } else {
     warnings.isWarning = true;
   }
+}
 });
+
+
 watch([isLoading, isSuccess, isError], () => {
   isLoading.value == true || isSuccess.value == true || isError.value == true
     ? (alerts.value = true)

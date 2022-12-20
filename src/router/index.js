@@ -62,6 +62,7 @@ const router = createRouter({
                 { path: '/new-tag', name: 'new-tag', component: ()=> import('../views/NuevoServicioTag.vue') },
                 { path: '/new-financiamiento', name: 'new-financiamiento', component: ()=> import('../views/NuevoServicioFinanciamiento.vue') },
                 { path: '/nuestros-agentes', name: 'nuestros-agentes', component: ()=> import('../views/NuestrosAgentes.vue') },
+                { path: '/servicios-generales', name: 'servicios-generales', component: ()=> import('../views/ServiciosGenerales.vue') },
                 { path: '/servicios', name: 'Servicios', component: servicios,
                 children:[
                     { path:'/servicios/tag', name:'serviciotag', component: servicioTag},

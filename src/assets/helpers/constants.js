@@ -1058,3 +1058,81 @@ export const ejecutivosVenta= [
     },
 
 ]
+
+export const newDataServicios = [
+    {
+        nombre:'Transferencias',
+        imagen:'/img/nuevos-servicios/icono-ManoConLlaves.webp',
+        link:'', 
+    },
+
+    {
+        nombre:'Financiamiento',
+        imagen:'/img/nuevos-servicios/Icono-General-02.webp',
+        link:'',
+    },
+
+    {
+        nombre:'Seguro',
+        imagen:'/img/nuevos-servicios/Icono-Seguro01.webp',
+        link:'',
+    },
+
+    {
+        nombre:'Tag',
+        imagen:'/img/nuevos-servicios/Icono-TAG-02.webp',
+        link:'',
+    },
+
+]
+
+
+export const newCardDataCompradores = [
+    {
+        id: 'financiamiento',
+        name: "Financiamiento automotriz",
+        content: "Evalúa tu crédito automotriz en sólo 7 minutos en nuestro evaluador online. Puedes hacer el pago del monto que tienes disponible, para la compra de auto usado a un vendedor particular con tarjeta de débito, crédito o transferencia bancaria.",
+        img: "/img/icons/Iconos_Autocred_Blanco_Financiamiento.png",
+    },
+    {
+        id: 'transferencia',
+        name: "Transferencia de dominio, seguro, TAG y más",
+        content:
+            "¡Hacemos todos los trámites por ti! Contamos con el servicio de transferencia en línea con el Registro Civil, seguros excusivos para compradores particulares, y activación de TAG de forma presencial, online, en nuestros módulos de atención, o en el lugar que prefieras en nuestra Oficina Móvil",
+        img: "/img/nuevos-servicios/Icono-Transferencia-de-dominio.webp",
+        link: "/servicios/financiamiento"
+    },
+    {
+        id: 'van',
+        name: "Oficina Móvil",
+        content:
+            "Te llevamos a ver el auto usado que quieres comprar a un vendedor particular en nuestra van, en la que también puedes solicitar cualquiera de nuestros servicios para comenzar el proceso desde donde quieras.",
+        img: "/img/nuevos-servicios/Icono-Oficina-Movil.webp",
+        link: '/servicios/transferencias'
+    },
+]
+
+export const newCardDataVendedores = [
+    {
+        id: 'financiamiento',
+        name: "Transferencia de dominio",
+        content: "Transfiere tu auto usado a un comprador particular con nosotros, ¡Lo hacemos en línea con el Registro Civil! Evitándote largas filas. Solicita nuestro servicio de transferencia de forma online, presencial de nuestros módulos u Oficina Móvil",
+        img: "/img/nuevos-servicios/Icono-Transferencia-de-dominio-02.webp",
+    },
+    {
+        id: 'transferencia',
+        name: "Oficina Móvil",
+        content:
+            "Te acompañamos a mostrar tu vehículo usado en nuestra van, en la que también puedes solicitar nuestro servicio de transferencia para comenzar el proceso desde donde quieras",
+        img: "/img/nuevos-servicios/Icono-Oficina-Movil.webp",
+        link: "/servicios/financiamiento"
+    },
+    {
+        id: 'van',
+        name: "Vende con financiamiento",
+        content:
+            "Vende tu auto usado a un comprador particular con financiamiento seguro, aumentando las posibilidades de tu venta y garantizando que recibirás el monto que pides. El pago se hace directo a tu cuenta al realizar la transferencia de dominio con nosotros.",
+        img: "/img/icons/Iconos_Autocred_Blanco_Mejor_cuota.png",
+        link: '/servicios/transferencias'
+    },
+]
