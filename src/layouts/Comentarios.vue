@@ -65,6 +65,18 @@ li.carousel__slide {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
+button.carousel__pagination-button{
+    background-color: #ba0b7d4f ;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  button.carousel__pagination-button.carousel__pagination-button--active{
+    background-color: #ba0b7c;
+  }
+
 @media (min-width: 768px) {
   .carousel__viewport {
     padding-bottom: 1rem;
@@ -92,15 +104,6 @@ li.carousel__slide {
     color: #ba0b7c;
   }
 
-  button.carousel__pagination-button{
-    background-color: #ba0b7d4f ;
-    padding: 5px;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-  }
-
-  button.carousel__pagination-button.carousel__pagination-button--active{
-    background-color: #ba0b7c;
-  }
+  
 }
 </style>

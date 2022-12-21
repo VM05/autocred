@@ -1,9 +1,9 @@
 <template>
-    <div class="banner-text relative w-full bg-white">
+    <div class="banner-text relative w-full flex flex-col bg-white shadow-xl rounded-3xl">
         <div>
-            <img :src="linkImagen" alt="financiamiento-autocred" class="w-full">
+            <img :src="linkImagen" alt="financiamiento-autocred" class="w-full rounded-3xl">
         </div>
-      <Heading class="absolute top-1/2 -translate-y-1/2 w-2/5" heading-type="h2" 
+      <Heading class="absolute top-12 md:top-1/2 md:-translate-y-1/2 md:left-20 md:w-2/5 text-center md:text-left px-5" heading-type="h2" 
       :content="textoBanner" />
     </div>
 </template>

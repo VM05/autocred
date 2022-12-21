@@ -3,7 +3,7 @@
     <Heading :content="nuevaDataServicios[1].title" class="md:px-12 mb-10" heading-type="h1" />
     <Simulador id="simulador" />
         <div class=" flex">
-        <bannerText class="mb-20" :texto-banner="nuevaDataServicios[1].content" :link-imagen="nuevaDataServicios[1].img"/>
+        <bannerText class="mb-20" :texto-banner="nuevaDataServicios[1].content" :link-imagen="useStore.mobile? nuevaDataServicios[1].imgMobile: nuevaDataServicios[1].img"/>
         </div>
       <FeaturesList :data="newFeaturesFinanciamiento" class="mb-24" />
     <Hablemos id="contacto" />
@@ -19,8 +19,9 @@ import Simulador from '../layouts/SimuladorDos.vue';
 import { useHead } from "@vueuse/head";
 import Container from '../layouts/Container.vue';
 import bannerText from '../components/BannerText.vue'
-import ListaAgentes from '../layouts/ListaAgentes.vue';
-import {ejecutivosPresencial} from '../assets/helpers/constants';
+import { useContactoStore } from '../stores/contacto';
+
+const useStore = useContactoStore()
 
 useHead({
 title: "Crédito Automotriz - financiamiento para tu auto usado | Autocred.cl",
