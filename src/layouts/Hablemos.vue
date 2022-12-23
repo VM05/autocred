@@ -85,7 +85,6 @@
               class="w-full"
               @textvalue="(e) => (formContacto.dni = e)"
               @keypress="onlyRut"
-              
             />
           </div>
         </div>
@@ -299,7 +298,7 @@ const handleCheck = (e) => {
 };
 
 watch(formContacto, () => {
-
+  
   if (formContacto.servicios.includes("Financiamientos")) {
     warningFinanciamiento.value = false;
   } else {
@@ -354,6 +353,9 @@ if(!warningFinanciamiento.value){
     warnings.isWarning = true;
   }
 }
+
+console.log(validateRut(formContacto.dni))
+  console.log(formContacto.dni)
 });
 
 

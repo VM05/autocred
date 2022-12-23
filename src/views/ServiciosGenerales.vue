@@ -22,8 +22,8 @@
     import { defineAsyncComponent,onBeforeMount,ref } from 'vue';
 
     const contactoStore = useContactoStore()
-    const ServiciosItemsList = defineAsyncComponent(()=> import(`../layouts/${componenteMedios.value}.vue`))
-    const componenteMedios = ref('')
+    const ServiciosItemsList = defineAsyncComponent(()=> import(`../layouts/${componenteServicios.value}.vue`))
+    const componenteServicios = ref('')
   
   onBeforeMount(() => {
     if(contactoStore.mobile){
