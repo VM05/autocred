@@ -76,14 +76,14 @@ import { datosBannerPrincipal } from "../assets/helpers/constants";
   max-height: 550px;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .carousel__slide {
     max-height: 350px;
   }
-}
+} */
 
 .carousel__pagination {
-  margin-top: 50px;
+  margin: 30px 0px;
 }
 
 img {

@@ -27,9 +27,9 @@
   
   onBeforeMount(() => {
     if(contactoStore.mobile){
-      componenteMedios.value = 'SliderServicios'
+      componenteServicios.value = 'SliderServicios'
     }else{
-      componenteMedios.value = 'ServiciosItemsList'
+      componenteServicios.value = 'ServiciosItemsList'
     }
   })
 

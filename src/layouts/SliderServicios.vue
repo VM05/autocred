@@ -27,7 +27,7 @@
       </slide>
       <template #addons>
  
-        <Pagination />
+        <Pagination  />
       </template>
     </Carousel>
   </template>
@@ -56,5 +56,9 @@
     user-select: none;
     pointer-events: none;
   }
+
+  .carousel__pagination {
+  margin-top: 20px;
+}
   </style>
   
