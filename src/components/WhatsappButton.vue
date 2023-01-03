@@ -153,38 +153,42 @@ const formularioWs = reactive({
   utm_medium: useUtms.utm_medium || "web",
   utm_campaign: useUtms.utm_campaign || "web",
   canal_atencion: gestion[2].name,
-  // email_vendedor:'0',
+  sucursal_id: 1,
+  email_vendedor:'0',
+  
 });
 
 const enviarFormulario = async () => {
+  let idLead;
+
   isLoading.value = true;
 
    switch (props.telefono) {
-    case  '56946483871':
-      formularioWs.email_vendedor = 'jose.lopez@autocred.cl'
+    case  '+56946483871':
+    formularioWs.email_vendedor = 'jose.lopez@autocred.cl'
       break;
-      case  '56946478330':
+      case  '+56946478330':
       formularioWs.email_vendedor = 'barbara.saavedra@autocred.cl'
       break;
-      case  '56946474281':
+      case  '+56946474281':
       formularioWs.email_vendedor = 'iris.castro@autocred.cl'
       break;
-      case  '56946481460':
+      case  '+56946481460':
       formularioWs.email_vendedor = 'solange.canales@autocred.cl'
       break;
-      case  '56932592736':
+      case  '+56932592736':
       formularioWs.email_vendedor = 'jacky.martinez@autocred.cl'
       break;
-      case  '56946456800':
+      case  '+56946456800':
       formularioWs.email_vendedor = 'isis.vivas@autocred.cl'
       break;
-      case  '56946337158':
+      case  '+56946337158':
       formularioWs.email_vendedor = 'francisco.stemann@autocred.cl'
       break;
-      case  '56946373862':
+      case  '+56946373862':
       formularioWs.email_vendedor = 'cristian.fernandez@autocred.cl'
       break;
-      case  '56946390268':
+      case  '+56946390268':
       formularioWs.email_vendedor = 'carolina.ortiz@autocred.cl'
       break;
     default:
@@ -193,28 +197,12 @@ const enviarFormulario = async () => {
 
   // 942968
 
-  // try {
-  //     const consulta = await axios.put('https://sandboxapiflux.go-gema.com/v1/leads/942964?access-token=i29UiVtwsDXyPP1rb0LDP9Mku1MRZaPG',qs.stringify({
-  //       sucursal_id: 1,
-  //       mensaje:'probando put'
-  //     },
-  //     /* {headers:{
-  //       'Content-Type': 'application/json',
-  //     }} */))
-
-  //   console.log(consulta)
-
-  // } catch (error) {
-    
-  // }
-
-  // return
   try {
     const resp = await axios.post(URL_GOGEMA, qs.stringify(formularioWs));
     if (await resp.data.message) {
-      console.log(resp.data)
-
+      console.log(resp.data.data)
       isLoading.value = false;
+
       if (warningFinanciamiento.value == true) {
         window.open(
           `https://api.whatsapp.com/send?phone=${props.telefono}&text=Hola mi nombre es ${formularioWs.nombre_completo}, mi correo electrónico es ${formularioWs.email}, mi número de teléfono es ${formularioWs.telefono} y me gustaría consultar por los servicios de: ${formularioWs.servicios}`,

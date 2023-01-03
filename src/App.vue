@@ -21,7 +21,7 @@ onBeforeMount(() => {
   storeContacto.fetchUtms();
   storeContacto.getProcedencia();
   storeContacto.isMobile();
-  
+  storeContacto.randomNumber();
 });
 
 // watch(storeContacto,()=>{

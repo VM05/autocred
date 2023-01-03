@@ -58,6 +58,9 @@ export const useContactoStore = defineStore("contacto", {
                 
                 this.mobile= false
               }
+        },
+        randomNumber(){
+            console.log (Math.round(Math.random() * 10))
         }
     }
 })

@@ -8,7 +8,7 @@
     >
       <slide v-for="(data, index) in itemServicio" :key="index">
         <div class="flex flex-col items-center gap-4">
-                    <img :src="data.imagen" :alt="data.nombre" class="w-3/5">
+                    <img :src="data.imagen" :alt="data.nombre" class="w-auto">
                     
                
                 <Paragraph class="text-xl">
@@ -48,7 +48,6 @@
    
   img {
     height: 200px;
-    width: 100%;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;

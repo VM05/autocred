@@ -28,7 +28,9 @@
       <div>
         <Paragraph class="font-medium text-sm text-justify" v-html="props.data.content">
         </Paragraph>
+        <router-link to="/">
         <p class="text-secondary-900 block mt-2 text-right italic">Lo quiero</p>
+      </router-link>
       </div>
       </div>
     </div>

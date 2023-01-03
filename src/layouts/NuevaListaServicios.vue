@@ -11,7 +11,7 @@
             v-for="(cardData) in data"
             :data="cardData"
             :servicio="servicio"
-            @click="collapsar(cardData.cardNumber)"
+            @click="contactoStore.mobile? collapsar(cardData.cardNumber):''"
             class="servicio overflow-hidden "
             :class="contactoStore.mobile?' items-start':''"
             />
