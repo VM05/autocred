@@ -19,16 +19,17 @@
     <div class="modal">
       <p class="popup_title_text">Contacto vía Whatsapp</p>
       <div class="contenedor-formulario-titulo">
-        <p class="popup_title_subtitle">
+        <p class="popup_title_subtitle" v-if="!isLoading && !errorMessage">
           Completa con tus datos para contactar por <strong>Whatsapp</strong> a
           nuestro ejecutivo
         </p>
         <div class="flex justify-center contenedor-formulario flex-col">
+          <Paragraph class="text-center px-3" v-if="errorMessage">Ha ocurrido un problema, por favor intenta mas tarde</Paragraph>
           <Loading medium v-if="isLoading" />
           <form
             id="form_popup_whatsapp"
             @submit.prevent="enviarFormulario"
-            v-if="!isLoading"
+            v-if="!isLoading && !errorMessage"
           >
             <div class="text-sm">
               <Input
@@ -139,6 +140,7 @@ const isLoading = ref(false);
 const useUtms = useContactoStore();
 const warningPhone = ref(false);
 const warningFinanciamiento = ref(true);
+const errorMessage = ref(false)
 
 const formularioWs = reactive({
   nombre_completo: "",
@@ -232,6 +234,12 @@ const enviarFormulario = async () => {
     console.log(error);
     if (error.response.data.message) {
       isLoading.value = false;
+      errorMessage.value = true;
+
+      setTimeout(() => {
+        errorMessage.value = false
+        formularioWs.servicios = ''
+      }, 3000);
     }
   }
 };
@@ -428,7 +436,7 @@ form textarea {
   border-bottom-left-radius: 25px;
   font-weight: bold;
   z-index: 10;
-  max-width: 350px;
+  width: 350px;
 }
 
 @media (max-width: 500px) {
