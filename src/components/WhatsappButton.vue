@@ -115,7 +115,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, watch, onMounted } from "vue";
+import { ref, reactive, watch } from "vue";
 import Button from "../components/Button.vue";
 import Input from "../components/Form/Input.vue";
 import InputRut from "../components/Input-Rut.vue";
@@ -161,7 +161,6 @@ const formularioWs = reactive({
 });
 
 const enviarFormulario = async () => {
-  let idLead;
 
   isLoading.value = true;
 
@@ -193,11 +192,9 @@ const enviarFormulario = async () => {
       case  '+56946390268':
       formularioWs.email_vendedor = 'carolina.ortiz@autocred.cl'
       break;
-
       case  '+56946453667':
-      formularioWs.email_vendedor = 'josselin.vejar@autocred.cl'
+      formularioWs.email_vendedor = 'josseline.vejar@autocred.cl'
       break;
-
       case  '+56946439563':
       formularioWs.email_vendedor = 'felipe.macaya@autocred.cl'
       break;
