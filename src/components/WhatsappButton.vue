@@ -193,6 +193,14 @@ const enviarFormulario = async () => {
       case  '+56946390268':
       formularioWs.email_vendedor = 'carolina.ortiz@autocred.cl'
       break;
+
+      case  '+56946453667':
+      formularioWs.email_vendedor = 'josselin.vejar@autocred.cl'
+      break;
+
+      case  '+56946439563':
+      formularioWs.email_vendedor = 'felipe.macaya@autocred.cl'
+      break;
     default:
       break;
   }
