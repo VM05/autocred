@@ -42,8 +42,8 @@
         />
 
         <input type="hidden" name="user_errorform" :value="errorForm" />
-        <input type="hidden" name="user_browser" :value="browserName" />
-        <input type="hidden" name="user_device" :value="dispositivo" />
+        <input type="hidden" name="user_browser" :value="useUtms.browserName" />
+        <input type="hidden" name="user_device" :value="useUtms.dispositivo" />
         <input type="hidden" name="user_href" :value="direccion_sitio" />
 
         <div class="left p-0 md:pr-8 md:border-r border-0">
@@ -155,39 +155,8 @@ const warnings = reactive({
   isWarning: true,
 });
 const errorForm = ref("uno de los campos esta vacio");
-const dispositivo = ref("");
-const browserName = ref("");
 const direccion_sitio = window.location.href;
 const warningFinanciamiento = ref(true)
-
-const encuentraDispositivo = () => {
-  let userAgent = navigator.userAgent;
-
-  if (userAgent.match(/chrome|chromium|crios/i)) {
-    browserName.value = "Chrome";
-  } else if (userAgent.match(/firefox|fxios/i)) {
-    browserName.value = "Firefox";
-  } else if (userAgent.match(/safari/i)) {
-    browserName.value = "Safari";
-  } else if (userAgent.match(/opr\//i)) {
-    browserName.value = "Opera";
-  } else if (userAgent.match(/edg/i)) {
-    browserName.value = "Edge";
-  } else {
-    browserName.value = "Unknown";
-  }
-
-  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(userAgent)) {
-    dispositivo.value = "tablet";
-  } else if (
-    /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
-      userAgent
-    )
-  ) {
-    dispositivo.value = "mobile";
-  }
-  dispositivo.value = "desktop";
-};
 
 const onlyRut = ($event) => {
   const validRut = /[^kK0-9]/g;
@@ -195,10 +164,6 @@ const onlyRut = ($event) => {
     $event.preventDefault();
   }
 };
-
-onMounted(() => {
-  encuentraDispositivo();
-});
 
 //Use Params
 const useUtms = useContactoStore();

@@ -15,7 +15,8 @@ export const useContactoStore = defineStore("contacto", {
             utm_tipoProcedencia: '',
             modal_open: true,
             mobile: '',
-
+            browserName:'',
+            dispositivo:'',
         }
     },
     actions: {
@@ -61,6 +62,35 @@ export const useContactoStore = defineStore("contacto", {
         },
         randomNumber(){
             console.log (Math.round(Math.random() * 10))
-        }
+        },
+        
+       encuentraDispositivo(){
+            let userAgent = navigator.userAgent;
+          
+            if (userAgent.match(/chrome|chromium|crios/i)) {
+              this.browserName = "Chrome";
+            } else if (userAgent.match(/firefox|fxios/i)) {
+              this.browserName = "Firefox";
+            } else if (userAgent.match(/safari/i)) {
+              this.browserName= "Safari";
+            } else if (userAgent.match(/opr\//i)) {
+              this.browserName= "Opera";
+            } else if (userAgent.match(/edg/i)) {
+              this.browserName= "Edge";
+            } else {
+              this.browserName = "Unknown";
+            }
+          
+            if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(userAgent)) {
+                this.dispositivo = "tablet";
+            } else if (
+              /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+                userAgent
+              )
+            ) {
+                this.dispositivo = "mobile";
+            }
+                this.dispositivo = "desktop";
+          }
     }
 })

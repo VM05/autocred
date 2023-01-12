@@ -19,17 +19,17 @@
     <div class="modal">
       <p class="popup_title_text">Contacto vía Whatsapp</p>
       <div class="contenedor-formulario-titulo">
-        <p class="popup_title_subtitle" v-if="!isLoading && !errorMessage">
+        <p class="popup_title_subtitle" v-if="!isLoading">
           Completa con tus datos para contactar por <strong>Whatsapp</strong> a
           nuestro ejecutivo
         </p>
         <div class="flex justify-center contenedor-formulario flex-col">
-          <Paragraph class="text-center px-3" v-if="errorMessage">Ha ocurrido un problema, por favor intenta mas tarde</Paragraph>
+         
           <Loading medium v-if="isLoading" />
           <form
             id="form_popup_whatsapp"
             @submit.prevent="enviarFormulario"
-            v-if="!isLoading && !errorMessage"
+            v-show="!isLoading"
           >
             <div class="text-sm">
               <Input
@@ -38,6 +38,7 @@
                 placeholder="Nombre"
                 @textvalue="(e) => (formularioWs.nombre_completo = e)"
                 class="py-1"
+                nombre="user_name"
               />
             </div>
             <div class="text-sm relative">
@@ -51,6 +52,7 @@
                 @keypress="onlyNumber"
                 @textvalue="(e) => checkTelefono(e)"
                 class="py-1"
+                nombre="user_phone"
               />
               <Paragraph
                 class="w-full -bottom-6 md:-bottom-6 left-1/2 text-red-700 justify-self-center grid-flow-row text-center"
@@ -67,6 +69,7 @@
                 id="email"
                 @textvalue="(e) => (formularioWs.email = e)"
                 class="py-1"
+                nombre="user_email"
               />
             </div>
             <div class="text-sm" v-if="!warningFinanciamiento">
@@ -88,6 +91,13 @@
                 @update:checkServicios="(e) => handleCheck(e)"
               />
             </div>
+
+            <input type="hidden" name="user_servicios" :value="formularioWs.servicios" />
+            <input type="hidden" name="user_errorform" :value="errorMessage" />
+            <input type="hidden" name="user_browser" :value="useUtms.browserName" />
+            <input type="hidden" name="user_device" :value="useUtms.dispositivo" />
+            <input type="hidden" name="user_href" :value="direccion_sitio" />
+
             <div class="popup_button_container py-2">
               <Button
                 type="submit"
@@ -115,7 +125,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, watch } from "vue";
+import { ref, reactive, watch, onMounted } from "vue";
 import Button from "../components/Button.vue";
 import Input from "../components/Form/Input.vue";
 import InputRut from "../components/Input-Rut.vue";
@@ -129,6 +139,7 @@ import { gestion, URL_GOGEMA } from "../assets/helpers/API";
 import qs from "qs";
 import { validateRut, RutFormat, formatRut } from "@fdograph/rut-utilities";
 import Paragraph from "../components/Paragraph.vue";
+import emailjs from "@emailjs/browser";
 
 const props = defineProps({
   telefono: String,
@@ -140,7 +151,10 @@ const isLoading = ref(false);
 const useUtms = useContactoStore();
 const warningPhone = ref(false);
 const warningFinanciamiento = ref(true);
-const errorMessage = ref(false)
+const errorMessage = ref("uno de los campos esta vacio");
+const direccion_sitio = window.location.href;
+const sabados = [];
+const domingos= [];
 
 const formularioWs = reactive({
   nombre_completo: "",
@@ -202,15 +216,22 @@ const enviarFormulario = async () => {
       break;
   }
 
-  // 942968
-
   try {
     const resp = await axios.post(URL_GOGEMA, qs.stringify(formularioWs));
     if (await resp.data.message) {
-      console.log(resp.data.data)
       isLoading.value = false;
+    }
+  } catch (error) {
+    errorMessage.value = error.response.data.message;
+    console.log(errorMessage.value)
+    setTimeout(() => {
+     enviarMail();
+    }, 10);
+   
+  }
 
-      if (warningFinanciamiento.value == true) {
+  setTimeout(() => {
+    if (warningFinanciamiento.value == true) {
         window.open(
           `https://api.whatsapp.com/send?phone=${props.telefono}&text=Hola mi nombre es ${formularioWs.nombre_completo}, mi correo electrónico es ${formularioWs.email}, mi número de teléfono es ${formularioWs.telefono} y me gustaría consultar por los servicios de: ${formularioWs.servicios}`,
           "_self"
@@ -234,20 +255,8 @@ const enviarFormulario = async () => {
           "_self"
         );
       }
-    }
-  } catch (error) {
-    console.log(error);
-    if (error.response.data.message) {
-      isLoading.value = false;
-      errorMessage.value = true;
-
-      setTimeout(() => {
-        errorMessage.value = false
-        formularioWs.servicios = ''
-      }, 3000);
-    }
-  }
-};
+  }, 1000);
+}
 
 const onlyRut = ($event) => {
   const validRut = /[^kK0-9]/g;
@@ -300,6 +309,7 @@ watch(isOpen, () => {
     : (document.documentElement.style.overflow = "auto");
 });
 
+
 const onlyNumber = ($event) => {
   const validNumbers = /[0-9]+/;
   if (!validNumbers.test($event.key)) {
@@ -316,6 +326,44 @@ const checkTelefono = (e) => {
     }
   }
 };
+
+const enviarMail = () => {
+  const formulario = document.getElementById("form_popup_whatsapp");
+  emailjs.sendForm(
+    "service_pgv1taa",
+    "template_lfhcybm",
+    formulario,
+    "Jm7OFS9JSVMS2XjET"
+  );
+};
+
+function diasDelMes(mes,anio) {
+    return new Date(anio, mes, 0).getDate();
+}
+
+onMounted(() => {
+const dia = new Date();
+const diasMesActual = diasDelMes(dia.getMonth()+1, dia.getFullYear());
+
+for(let i= 1; i <= diasMesActual; i++){
+  var newDate = new Date(dia.getFullYear(),dia.getMonth(),i)
+    if(newDate.getDay()==0){
+          sabados.push(i)
+      }
+      if(newDate.getDay()==6){
+          domingos.push(i)
+      }
+}
+
+Date.prototype.getWeek = function() {
+        var onejan = new Date(this.getFullYear(), 0, 1);
+        return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+}
+
+console.log(new Date().getWeek())
+
+})
+
 </script>
 <style>
 .prueba {

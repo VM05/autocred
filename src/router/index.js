@@ -105,6 +105,20 @@ const router = createRouter({
             ]
         },
 
+        {
+            path: '/club-porsche', name: 'club-porsche', component: ()=> import('../views/club-porsche/ClubPorsche.vue'),
+            children: [
+                { path: '/club-porsche/financiamiento', name: 'porsche-financiamiento', component: ()=> import('../views/club-porsche/ClubPorscheFinanciamiento.vue') },
+            ]
+        },
+
+        {
+            path: '/universidad-catolica', name: 'universidad-catolica', component: ()=> import('../views/UC/UniversidadCatolica.vue'),
+            children: [
+                { path: '/universidad-catolica/financiamiento', name: 'catolica-financiamiento', component: ()=> import('../views/UC/UcFinanciamiento.vue') },
+            ]
+        },
+
     ],
     scrollBehavior(to, from, savedPosition) {
         if (to.hash) {

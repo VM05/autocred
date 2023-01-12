@@ -1,6 +1,5 @@
 <template>
   <Container>
-    <ModalLey/>
     <BannerSlider class="md:mb-5" />
     <Servicios class="mt-10 md:mt-0" />
     <Ventajas />
@@ -25,7 +24,6 @@ import Medios from "../layouts/Medios.vue";
 import Hablemos from "../layouts/Hablemos.vue";
 import Experiencia from "../layouts/Experiencia.vue";
 import { useHead } from "@vueuse/head";
-import ModalLey from "../layouts/ModalLey.vue";
 
 import BannerSlider from "../layouts/BannerSlider.vue";
 
