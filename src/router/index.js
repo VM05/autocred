@@ -113,9 +113,9 @@ const router = createRouter({
         },
 
         {
-            path: '/universidad-catolica', name: 'universidad-catolica', component: ()=> import('../views/UC/UniversidadCatolica.vue'),
+            path: '/MBA-UC', name: 'universidad-catolica', component: ()=> import('../views/UC/UniversidadCatolica.vue'),
             children: [
-                { path: '/universidad-catolica/financiamiento', name: 'catolica-financiamiento', component: ()=> import('../views/UC/UcFinanciamiento.vue') },
+                { path: '/MBA-UC/financiamiento', name: 'catolica-financiamiento', component: ()=> import('../views/UC/UcFinanciamiento.vue') },
             ]
         },
 
