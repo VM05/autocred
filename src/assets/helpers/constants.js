@@ -12,7 +12,6 @@ export const links = [
     },
     { name: "Compradores", url: "/compradores" },
     { name: "Vendedores", url: "/vendedores" },
-
     { name: "FAQ", url: "/preguntas-frecuentes" },
     { name: "Nosotros", url: "/nosotros" },
     { name: "Contacto", url: "/#contacto", params: "contacto" },

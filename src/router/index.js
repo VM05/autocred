@@ -74,6 +74,7 @@ const router = createRouter({
                 { path: '/blog', name: 'Blog', component: blog },
                 { path: '/blog/:id', name: 'Articulo', component: articulo },
                 { path: '/terminos-y-condiciones', name: 'Terms', component: termino },
+                { path: '/vendedores-autocred', name: 'Terms', component: ()=> import('../views/VendedoresAutocred.vue') },
                
 
             ]
