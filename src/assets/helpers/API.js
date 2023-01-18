@@ -113,8 +113,11 @@ export const procedencias = [
     { id: 47, name: "mailing ", procedenciaId: 118 },
     { id: 48, name: "ventainteligente", procedenciaId: 120 },
     { id: 49, name: "MV", procedenciaId: 121 },
-    { id: 50, name: "america-remates", procedenciaId: 125 },
-    { id: 51, name: "carsandcoffee", procedenciaId: 126 },
+    { id: 50, name: "clubmbmw", procedenciaId: 122 },
+    { id: 51, name: "mbauc", procedenciaId: 123 },
+    { id: 52, name: "clubporche", procedenciaId: 124 },
+    { id: 53, name: "america-remates", procedenciaId: 125 },
+    { id: 54, name: "carsandcoffee", procedenciaId: 126 },
 
 ]
 
