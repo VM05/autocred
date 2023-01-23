@@ -141,10 +141,12 @@ import { validateRut, RutFormat, formatRut } from "@fdograph/rut-utilities";
 import Paragraph from "../components/Paragraph.vue";
 import emailjs from "@emailjs/browser";
 
+
 const props = defineProps({
   telefono: String,
 });
 
+const contactoStore = useContactoStore()
 const isOpen = ref(false);
 const errorForm = ref(true);
 const isLoading = ref(false);
@@ -153,8 +155,8 @@ const warningPhone = ref(false);
 const warningFinanciamiento = ref(true);
 const errorMessage = ref("uno de los campos esta vacio");
 const direccion_sitio = window.location.href;
-const sabados = [];
-const domingos= [];
+const elegido = ref()
+const telefonoElegido = ref()
 
 const formularioWs = reactive({
   nombre_completo: "",
@@ -170,51 +172,12 @@ const formularioWs = reactive({
   utm_campaign: useUtms.utm_campaign || "web",
   canal_atencion: gestion[2].name,
   sucursal_id: 1,
-  email_vendedor:'0',
-  
+  email_vendedor: '0',
 });
 
 const enviarFormulario = async () => {
 
   isLoading.value = true;
-
-   switch (props.telefono) {
-    case  '+56946483871':
-    formularioWs.email_vendedor = 'jose.lopez@autocred.cl'
-      break;
-      case  '+56946478330':
-      formularioWs.email_vendedor = 'barbara.saavedra@autocred.cl'
-      break;
-      case  '+56946474281':
-      formularioWs.email_vendedor = 'iris.castro@autocred.cl'
-      break;
-      case  '+56946481460':
-      formularioWs.email_vendedor = 'solange.canales@autocred.cl'
-      break;
-      case  '+56932592736':
-      formularioWs.email_vendedor = 'jacky.martinez@autocred.cl'
-      break;
-      case  '+56946456800':
-      formularioWs.email_vendedor = 'isis.vivas@autocred.cl'
-      break;
-      case  '+56946337158':
-      formularioWs.email_vendedor = 'francisco.stemann@autocred.cl'
-      break;
-      case  '+56946373862':
-      formularioWs.email_vendedor = 'cristian.fernandez@autocred.cl'
-      break;
-      case  '+56946390268':
-      formularioWs.email_vendedor = 'carolina.ortiz@autocred.cl'
-      break;
-      case  '+56946453667':
-      formularioWs.email_vendedor = 'josseline.vejar@autocred.cl'
-      break;
-      case  '+56946439563':
-      formularioWs.email_vendedor = 'felipe.macaya@autocred.cl'
-      break;
-    default:
-      break;
-  }
 
   try {
     const resp = await axios.post(URL_GOGEMA, qs.stringify(formularioWs));
@@ -233,7 +196,7 @@ const enviarFormulario = async () => {
   setTimeout(() => {
     if (warningFinanciamiento.value == true) {
         window.open(
-          `https://api.whatsapp.com/send?phone=${props.telefono}&text=Hola mi nombre es ${formularioWs.nombre_completo}, mi correo electrónico es ${formularioWs.email}, mi número de teléfono es ${formularioWs.telefono} y me gustaría consultar por los servicios de: ${formularioWs.servicios}`,
+          `https://api.whatsapp.com/send?phone=${telefonoElegido.value}&text=Hola mi nombre es ${formularioWs.nombre_completo}, mi correo electrónico es ${formularioWs.email}, mi número de teléfono es ${formularioWs.telefono} y me gustaría consultar por los servicios de: ${formularioWs.servicios}`,
           "_self"
         );
       } else {
@@ -337,31 +300,14 @@ const enviarMail = () => {
   );
 };
 
-function diasDelMes(mes,anio) {
-    return new Date(anio, mes, 0).getDate();
-}
+onMounted(async () => {
+  await contactoStore.getData()
+  elegido.value = Math.floor(Math.random() * contactoStore.telefonoWhatsapp.length)
+  formularioWs.email_vendedor = contactoStore.telefonoWhatsapp[elegido.value].email
+  telefonoElegido.value = contactoStore.telefonoWhatsapp[elegido.value].telefono
 
-onMounted(() => {
-const dia = new Date();
-const diasMesActual = diasDelMes(dia.getMonth()+1, dia.getFullYear());
-
-for(let i= 1; i <= diasMesActual; i++){
-  var newDate = new Date(dia.getFullYear(),dia.getMonth(),i)
-    if(newDate.getDay()==0){
-          sabados.push(i)
-      }
-      if(newDate.getDay()==6){
-          domingos.push(i)
-      }
-}
-
-Date.prototype.getWeek = function() {
-        var onejan = new Date(this.getFullYear(), 0, 1);
-        return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
-}
-
-console.log(new Date().getWeek())
-
+  console.log(formularioWs.email_vendedor)
+  console.log(telefonoElegido.value)
 })
 
 </script>
@@ -502,3 +448,5 @@ form textarea {
   }
 }
 </style>
+
+

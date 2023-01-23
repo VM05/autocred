@@ -1,11 +1,10 @@
 <template>
+  
     <div  v-for="(boton,index) in options" class="flex flex-row justify-between my-5">
-      <div class="w-1/3">
+      <div class="w-2/3">
         <Paragraph>{{ boton.name }}</Paragraph>
       </div>
-       <div class="w-1/3">
-        <Paragraph>{{ boton.telefono.trim() }}</Paragraph>
-       </div>
+      
        
        <div class="w-2/3 flex justify-end">
         <BotonSwitch
@@ -18,28 +17,26 @@
         />
        </div>
     </div>
+    
 </template>
 
 <script setup>
 import BotonSwitch from '../components/BotonSwitch.vue';
-import { defineProps,defineEmits } from 'vue';
+import { defineProps,defineEmits, onMounted } from 'vue';
 import Paragraph from '../components/paragraph.vue'
+import Loading from '../components/Loading.vue';
 
 const Emits = defineEmits(["update:value"])
 
 const props = defineProps({
     options:Array,
-    value:{
-        type:Array,
-        required:true,
-    }
 })
 
+onMounted(()=>{
+  console.log(props.options)
+})
 const check = (optionId, checked)=>{
-    props.options.forEach(boton =>{
-      boton.check = false;
-    })
-      optionId.check = checked;
+      optionId.check = checked;   
 }
 
 </script>

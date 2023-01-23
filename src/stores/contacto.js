@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { dataServicios } from "../assets/helpers/constants";
 import { procedencias } from "../assets/helpers/API";
+import axios from 'axios';
 
 export const useContactoStore = defineStore("contacto", {
 
@@ -17,6 +18,8 @@ export const useContactoStore = defineStore("contacto", {
             mobile: '',
             browserName:'',
             dispositivo:'',
+            telefonoWhatsapp:'',
+            options:'',
         }
     },
     actions: {
@@ -91,6 +94,17 @@ export const useContactoStore = defineStore("contacto", {
                 this.dispositivo = "mobile";
             }
                 this.dispositivo = "desktop";
-          }
+          },
+
+        async getData(){
+            try {
+                const respuesta = await axios.get('https://calendardev.autocred.cl/api/numeros/getNumberWhatsapp')
+                this.options = JSON.parse(respuesta.data)
+                this.telefonoWhatsapp = this.options.filter(elegido => elegido.check == true)
+                console.log(this.telefonoWhatsapp)
+            } catch (error) {
+                console.log(error)
+            }
+         }
     }
 })

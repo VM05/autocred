@@ -1,7 +1,7 @@
 <template>
     <div>
         <label class="switch">
-            <input type="radio" :name="nombre" :checked="checked" @click="(e)=> handleEvent(e)" :id="Id">
+            <input type="checkbox" :name="nombre" :checked="checked" @click="(e)=> handleEvent(e)" :id="Id">
             <span class="slider round" 
             :class="{'bg-secondary-900':checked,
             'bg-primary-900':!checked,}"
@@ -27,7 +27,6 @@ const props = defineProps({
 })
 
 const handleEvent = (e)=>{
-  console.log(e.target.checked)
   Emits("update:checkVendedor", e.target.checked)
 }
 
