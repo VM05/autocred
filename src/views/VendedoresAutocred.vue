@@ -1,7 +1,7 @@
 <template>
     <Container>
         <div class="shadow-2xl md:w-1/2 mx-auto rounded-lg p-10">
-            <Heading content="Vendedores Autocred" class="text-center text-primary-900 mb-14" heading-type="h2" />
+            <Paragraph class="text-center text-primary-900 mb-14 text-3xl font-semibold">Vendedores Autocred</Paragraph>
             <ListaVendedoresAutocred  :options="options" />
             <div class="flex justify-center mt-14">
                 <Loading medium v-if="isLoading" />
@@ -16,7 +16,6 @@
 <script setup>
     import Container from '../layouts/Container.vue';
     import ListaVendedoresAutocred from '../layouts/ListaVendedoresAutocred.vue'
-    import Heading from '../components/heading.vue';
     import {ref,watch} from 'vue';
     import axios from 'axios';
     import Button from '../components/Button.vue';
