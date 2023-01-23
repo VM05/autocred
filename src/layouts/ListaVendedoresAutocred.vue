@@ -22,9 +22,8 @@
 
 <script setup>
 import BotonSwitch from '../components/BotonSwitch.vue';
-import { defineProps,defineEmits, onMounted } from 'vue';
-import Paragraph from '../components/paragraph.vue'
-import Loading from '../components/Loading.vue';
+import Paragraph from '../components/Paragraph.vue'
+
 
 const Emits = defineEmits(["update:value"])
 
