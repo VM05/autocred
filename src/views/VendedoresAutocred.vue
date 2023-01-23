@@ -16,7 +16,7 @@
 <script setup>
     import Container from '../layouts/Container.vue';
     import ListaVendedoresAutocred from '../layouts/ListaVendedoresAutocred.vue'
-    import Heading from '../components/heading.vue'
+    import Heading from '../components/heading.vue';
     import {ref,watch} from 'vue';
     import axios from 'axios';
     import Button from '../components/Button.vue';
