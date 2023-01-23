@@ -101,7 +101,6 @@ export const useContactoStore = defineStore("contacto", {
                 const respuesta = await axios.get('https://calendardev.autocred.cl/api/numeros/getNumberWhatsapp')
                 this.options = JSON.parse(respuesta.data)
                 this.telefonoWhatsapp = this.options.filter(elegido => elegido.check == true)
-                console.log(this.telefonoWhatsapp)
             } catch (error) {
                 console.log(error)
             }

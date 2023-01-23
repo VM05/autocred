@@ -305,9 +305,6 @@ onMounted(async () => {
   elegido.value = Math.floor(Math.random() * contactoStore.telefonoWhatsapp.length)
   formularioWs.email_vendedor = contactoStore.telefonoWhatsapp[elegido.value].email
   telefonoElegido.value = contactoStore.telefonoWhatsapp[elegido.value].telefono
-
-  console.log(formularioWs.email_vendedor)
-  console.log(telefonoElegido.value)
 })
 
 </script>

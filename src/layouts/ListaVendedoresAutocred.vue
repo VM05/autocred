@@ -32,9 +32,6 @@ const props = defineProps({
     options:Array,
 })
 
-onMounted(()=>{
-  console.log(props.options)
-})
 const check = (optionId, checked)=>{
       optionId.check = checked;   
 }
