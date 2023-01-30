@@ -571,7 +571,6 @@ const handleForm = async () => {
   formSimulador.vehicle_price = Number(formSimulador.vehicle_price) 
   try {
     const res = await axios.post(EVALUACION_URL_1, formSimulador);
-    console.log(res.data)
     dataCuotas.value = await res.data.data;
 
     loading.value = false;
@@ -876,8 +875,8 @@ const checkFecha = (e) => {
     if (formSimulador2.birth_date == "") {
       mensajeFecha.value = "Debe ingresar una fecha valida";
       warningFecha.value = true;
-    } else if (fechaValida < 18) {
-      mensajeFecha.value = "Debe ser mayor de edad para evaluar";
+    } else if (fechaValida < 21) {
+      mensajeFecha.value = "Debe tener 21 años o más para poder evaluar";
       warningFecha.value = true;
     } else {
       warningFecha.value = false;

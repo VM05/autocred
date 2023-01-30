@@ -53,7 +53,7 @@
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
+import { reactive, ref, watch } from "vue";
 import Heading1 from "../components/Heading.vue";
 import InputRut1 from "../components/Input-Rut.vue";
 import Input from "./Form/Input.vue";
@@ -101,6 +101,11 @@ const handleLogin = async () => {
     errorForm.value = true;
   }
 };
+
+watch(loginForm,()=>{
+  console.log(loginForm.dni)
+
+})
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
