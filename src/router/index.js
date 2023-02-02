@@ -61,6 +61,7 @@ const router = createRouter({
                 { path: '/new-tag', name: 'new-tag', component: ()=> import('../views/NuevoServicioTag.vue') },
                 { path: '/new-financiamiento', name: 'new-financiamiento', component: ()=> import('../views/NuevoServicioFinanciamiento.vue') },
                 { path: '/nuestros-agentes', name: 'nuestros-agentes', component: ()=> import('../views/NuestrosAgentes.vue') },
+                { path: '/redirect', name: 'redirect', component: ()=> import('../components/RedirectTel.vue') },
                 { path: '/servicios-generales', name: 'servicios-generales', component: ()=> import('../views/ServiciosGenerales.vue') },
                 { path: '/servicios', name: 'Servicios', component: servicios,
                 children:[
@@ -75,8 +76,7 @@ const router = createRouter({
                 { path: '/blog/:id', name: 'Articulo', component: articulo },
                 { path: '/terminos-y-condiciones', name: 'Terms', component: termino },
                 { path: '/vendedores-autocred', name: 'Terms', component: ()=> import('../views/VendedoresAutocred.vue') },
-               
-
+            
             ]
         },
         { path: '/:pathMatch(.*)*', name: 'NotFound', component: notFound },
