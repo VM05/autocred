@@ -1,8 +1,5 @@
 <template>
     <Container>
-    <div  class="mt-50 ">
-        <a href="tel:+56224024934" class="block telefono text-white">+56224024934</a>
-    </div>
     </Container>
 </template>
 
@@ -11,8 +8,7 @@ import Container from '../layouts/Container.vue';
 import { onMounted } from 'vue';
 
 onMounted(()=>{
-    const telefono = document.querySelector('.telefono')
-    telefono.click()
+    window.location.href="tel:+56224024934"
 })
 </script>
 
