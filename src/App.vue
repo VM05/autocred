@@ -1,7 +1,7 @@
 <script setup>
 import { useHead } from "@vueuse/head";
 import { useContactoStore } from "./stores/contacto";
-import { onBeforeMount, watch } from 'vue';
+import { onBeforeMount, watch } from "vue";
 import WhatsappButton from "./components/WhatsappButton.vue";
 
 useHead({
