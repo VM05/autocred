@@ -125,7 +125,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, watch, onMounted } from "vue";
+import { ref, reactive, watch, onMounted, onBeforeMount } from "vue";
 import Button from "../components/Button.vue";
 import Input from "../components/Form/Input.vue";
 import InputRut from "../components/Input-Rut.vue";
@@ -300,12 +300,14 @@ const enviarMail = () => {
   );
 };
 
-onMounted(async () => {
+onBeforeMount(async() => {
   await contactoStore.getData()
   elegido.value = Math.floor(Math.random() * contactoStore.telefonoWhatsapp.length)
   formularioWs.email_vendedor = contactoStore.telefonoWhatsapp[elegido.value].email
   telefonoElegido.value = contactoStore.telefonoWhatsapp[elegido.value].telefono
 })
+
+
 
 </script>
 <style>
