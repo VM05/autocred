@@ -62,7 +62,6 @@ onMounted(()=>{
 
 const verificarUsuario = ()=>{
 
-    
     if(formVendedores.usuario === 'johanna' && formVendedores.password === 'zDHn8QqX{#t,`f,H'){
         contactoStore.authenticated = true
         sessionStorage.setItem('authenticated', true)
