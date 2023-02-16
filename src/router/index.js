@@ -1,33 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router"
+import isAuthenticated from "./auth"
 
 import Home from '../views/Home.vue'
-
-const autocred = ()=> import('../views/Autocred.vue')
-const login = ()=> import('../views/login.vue')
-const Compradores = ()=> import('../views/compradores.vue')
-const encuesta = ()=> import('../views/encuesta.vue') 
-const servicioTag = ()=> import('../views/ServicioTag.vue')
-const calendario = ()=> import('../views/CalendarioVanMovil.vue')
-const nosotros = ()=> import('../views/nosotros.vue')
-const faq = ()=> import('../views/preguntas-frecuentes.vue')
-const registro = ()=> import('../views/registro.vue')
-const servicios = ()=> import('../views/servicios.vue')
-const transferencias = ()=> import('../views/ServicioTransferencia.vue')
-const financiamiento = ()=> import('../views/ServicioFinanciamiento.vue')
-const seguro = ()=> import('../views/ServicioSeguro.vue')
-const vendedores = ()=> import('../views/vendedores.vue')
-const blog = ()=> import('../views/Blog.vue')
-const articulo = ()=> import('../views/article.vue')
-const termino = ()=> import('../views/Terms.vue')
-const notFound = ()=> import('../views/NotFound.vue')
-const yapo = ()=> import('../views/Yapo/Yapo.vue')
-const yapoFinanciamiento = ()=> import('../views/Yapo/Financiamiento.vue')
-const comparaOnline = ()=> import('../views/compara-online/ComparaOnline.vue')
-const comparaFinanciamiento = ()=> import('../views/compara-online/ComparaFinanciamiento.vue')
-const amotor = ()=> import('../views/amotor/Amotor.vue')
-const amotorFinanciamiento = ()=> import('../views/amotor/AmotorFinanciamiento.vue')
-const autocredFinanciamiento = ()=> import('../views/autocred/AutocredFinanciamiento.vue')
-const autocredFinanciamientoView =  ()=> import('../views/autocred/AutocredView.vue')
 
 
 const router = createRouter({
@@ -35,22 +9,22 @@ const router = createRouter({
 
     routes: [
         {
-            path: '/', name: 'Autocred', component: autocred,
+            path: '/', name: 'Autocred', component: ()=> import('../views/Autocred.vue'),
             children: [
                 { path: '/', name: 'Home', component: Home },
-                { path: '/login', name: 'Login', component: login },
-                { path: '/compradores', name: 'Compradores', component: Compradores},
-                { path: '/encuesta', name: 'Encuesta', component: encuesta },
-                { path: '/calendario', name: 'Calendario', component: calendario},
-                { path: '/nosotros', name: 'Nosotros', component: nosotros },
+                { path: '/login', name: 'Login', component: ()=> import('../views/login.vue') },
+                { path: '/compradores', name: 'Compradores', component: ()=> import('../views/compradores.vue')},
+                { path: '/encuesta', name: 'Encuesta', component: ()=> import('../views/encuesta.vue')  },
+                { path: '/calendario', name: 'Calendario', component: ()=> import('../views/CalendarioVanMovil.vue')},
+                { path: '/nosotros', name: 'Nosotros', component: ()=> import('../views/nosotros.vue') },
                 {
                     path: '/preguntas-frecuentes',
                     name: 'Preguntas Frecuentes',
-                    component: faq
+                    component: ()=> import('../views/preguntas-frecuentes.vue')
                 },
                 {
                     path: '/registro', name: 'Registro',
-                    component: registro,
+                    component: ()=> import('../views/registro.vue'),
                     props: (route) => ({
                         ...route.params
                     })
@@ -63,46 +37,50 @@ const router = createRouter({
                 { path: '/nuestros-agentes', name: 'nuestros-agentes', component: ()=> import('../views/NuestrosAgentes.vue') },
                 { path: '/redirect', name: 'redirect', component: ()=> import('../components/RedirectTel.vue') },
                 { path: '/servicios-generales', name: 'servicios-generales', component: ()=> import('../views/ServiciosGenerales.vue') },
-                { path: '/servicios', name: 'Servicios', component: servicios,
+                { path: '/servicios', name: 'Servicios', component: ()=> import('../views/servicios.vue'),
                 children:[
-                    { path:'/servicios/tag', name:'serviciotag', component: servicioTag},
-                    { path:'/servicios/transferencias', name:'serviciotransferencias', component: transferencias},
-                    { path:'/servicios/financiamiento', name:'serviciofinanciamiento', component: financiamiento},
-                    { path:'/servicios/seguro', name:'servicioseguro', component: seguro},
+                    { path:'/servicios/tag', name:'serviciotag', component: ()=> import('../views/ServicioTag.vue')},
+                    { path:'/servicios/transferencias', name:'serviciotransferencias', component: ()=> import('../views/ServicioTransferencia.vue')},
+                    { path:'/servicios/financiamiento', name:'serviciofinanciamiento', component: ()=> import('../views/ServicioFinanciamiento.vue')},
+                    { path:'/servicios/seguro', name:'servicioseguro', component: ()=> import('../views/ServicioSeguro.vue')},
                 ]
             },
-                { path: '/vendedores', name: 'Vendedores', component: vendedores },
-                { path: '/blog', name: 'Blog', component: blog },
-                { path: '/blog/:id', name: 'Articulo', component: articulo },
-                { path: '/terminos-y-condiciones', name: 'Terms', component: termino },
-                { path: '/vendedores-autocred', name: 'Terms', component: ()=> import('../views/VendedoresAutocred.vue') },
+                { path: '/vendedores', name: 'Vendedores', component: ()=> import('../views/vendedores.vue') },
+                { path: '/blog', name: 'Blog', component: ()=> import('../views/Blog.vue') },
+                { path: '/blog/:id', name: 'Articulo', component: ()=> import('../views/article.vue') },
+                { path: '/terminos-y-condiciones', name: 'Terms', component: ()=> import('../views/Terms.vue') },
+                { path: '/login-vendedores', name: 'login-vendedores', component: ()=> import('../views/LoginVendedores.vue') },
+                { path: '/vendedores-autocred',
+                  name: 'vendedores-autocred',
+                  beforeEnter: [isAuthenticated],
+                  component: ()=> import('../views/VendedoresAutocred.vue') },
             
             ]
         },
-        { path: '/:pathMatch(.*)*', name: 'NotFound', component: notFound },
+        { path: '/:pathMatch(.*)*', name: 'NotFound', component:  ()=> import('../views/NotFound.vue') },
         {
-            path: '/yapo', name: 'Yapo', component: yapo,
+            path: '/yapo', name: 'Yapo', component: ()=> import('../views/Yapo/Yapo.vue'),
             children: [
-                { path: '/yapo/financiamiento', name: 'Financiamiento-Yapo', component: yapoFinanciamiento },
+                { path: '/yapo/financiamiento', name: 'Financiamiento-Yapo', component: ()=> import('../views/Yapo/Financiamiento.vue') },
             ]
         },
         {
-            path: '/compara-online', name: 'comprara-online', component: comparaOnline,
+            path: '/compara-online', name: 'comprara-online', component: ()=> import('../views/compara-online/ComparaOnline.vue'),
             children: [
-                { path: '/compara-online/financiamiento', name: 'Financiamiento-comprara-online', component: comparaFinanciamiento},
+                { path: '/compara-online/financiamiento', name: 'Financiamiento-comprara-online', component: ()=> import('../views/compara-online/ComparaFinanciamiento.vue')},
             ]
         },
         {
-            path: '/amotor', name: 'amotor', component:amotor,
+            path: '/amotor', name: 'amotor', component:()=> import('../views/amotor/Amotor.vue'),
             children: [
-                { path: '/amotor/financiamiento', name: 'Amotor', component: amotorFinanciamiento},
+                { path: '/amotor/financiamiento', name: 'Amotor', component: ()=> import('../views/amotor/AmotorFinanciamiento.vue')},
             ]
         },
 
         {
-            path: '/autocred-financiamiento', name: 'autocred-view', component: autocredFinanciamientoView,
+            path: '/autocred-financiamiento', name: 'autocred-view', component:  ()=> import('../views/autocred/AutocredView.vue'),
             children: [
-                { path: '/autocred-financiamiento/financiamiento', name: 'Autocred-financiamiento', component: autocredFinanciamiento },
+                { path: '/autocred-financiamiento/financiamiento', name: 'Autocred-financiamiento', component: ()=> import('../views/autocred/AutocredFinanciamiento.vue') },
             ]
         },
 

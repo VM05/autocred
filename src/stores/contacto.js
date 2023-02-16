@@ -20,6 +20,8 @@ export const useContactoStore = defineStore("contacto", {
             dispositivo:'',
             telefonoWhatsapp:'',
             options:'',
+            authenticated: false,
+
         }
     },
     actions: {
