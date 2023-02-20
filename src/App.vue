@@ -15,6 +15,8 @@ useHead({
   ],
 });
 
+
+
 const storeContacto = useContactoStore();
 
 onBeforeMount(() => {
