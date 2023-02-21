@@ -78,7 +78,7 @@
                 id="RUT"
                 placeholder="Ingresa tu rut"
                 class="w-full py-1 md:text-sm"
-                @textvalue="(e) => (formularioWs.dni = e)"
+                @textvalue="(e) => (formularioWs.rut = e)"
                 @keypress="onlyRut"
               />
             </div>
@@ -162,7 +162,7 @@ const formularioWs = reactive({
   nombre_completo: "",
   email: "",
   telefono: "",
-  dni: "0",
+  rut: "0",
   mensaje: "desde whatsapp",
   procedencia_id: 116,
   tipo_contacto: useUtms.utm_tipoProcedencia || "Whatsapp",
@@ -208,7 +208,7 @@ const enviarFormulario = async () => {
           }, mi correo electrónico es ${
             formularioWs.email
           }, mi Rut es ${formatRut(
-            formularioWs.dni,
+            formularioWs.rut,
             RutFormat.DOTS_DASH
           )}, mi número de teléfono es ${
             formularioWs.telefono
@@ -238,7 +238,7 @@ watch(formularioWs, () => {
     warningFinanciamiento.value = false;
   } else {
     warningFinanciamiento.value = true;
-    formularioWs.dni = "0";
+    formularioWs.rut = "0";
   }
 
   if (!warningFinanciamiento.value) {
@@ -246,8 +246,8 @@ watch(formularioWs, () => {
       formEmpty(formularioWs) ||
       !validateEmail(formularioWs.email) ||
       formularioWs.telefono.length < 9 ||
-      !validateRut(formularioWs.dni) ||
-      formularioWs.dni == "0"
+      !validateRut(formularioWs.rut) ||
+      formularioWs.rut == "0"
     ) {
       errorForm.value = true;
     } else {
