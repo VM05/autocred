@@ -524,6 +524,7 @@ const formSimulador2 = reactive({
   source: useUtms.utm_source || "Autocred",
   medium: useUtms.utm_medium || "Autocred",
   campaign: useUtms.utm_campaign || "Autocred",
+  utm_executive: Number(useUtms.utm_executive) ||  null,
 });
 
 const registerForm = reactive({

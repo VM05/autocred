@@ -14,6 +14,7 @@ export const useContactoStore = defineStore("contacto", {
             utm_campaign: '',
             utm_procedenciaId: '',
             utm_tipoProcedencia: '',
+            utm_executive: '',
             modal_open: true,
             mobile: '',
             browserName:'',
@@ -31,6 +32,7 @@ export const useContactoStore = defineStore("contacto", {
             urlParams.has('utm_source') ? this.utm_source = urlParams.get("utm_source") : ''
             urlParams.has('utm_medium') ? this.utm_medium = urlParams.get("utm_medium") : ''
             urlParams.has('utm_campaign') ? this.utm_campaign = urlParams.get("utm_campaign") : ''
+            urlParams.has('utm_executive') ? this.utm_executive = urlParams.get("utm_executive") : ''
         },
         getProcedencia() {
             const parametros = window.location.search;
