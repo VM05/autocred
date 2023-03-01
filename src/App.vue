@@ -3,6 +3,7 @@ import { useHead } from "@vueuse/head";
 import { useContactoStore } from "./stores/contacto";
 import { onBeforeMount, watch } from "vue";
 import WhatsappButton from "./components/WhatsappButton.vue";
+import ws from './components/ws.vue'
 
 useHead({
   title: "Autocred Chile tu mejor copiloto",
@@ -38,6 +39,7 @@ onBeforeMount(() => {
 <template>
   <router-view></router-view>
   <WhatsappButton telefono="+56946483871" />
+  <!-- <ws/> -->
 </template>
 
 <style></style>
