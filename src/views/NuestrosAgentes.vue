@@ -17,9 +17,7 @@
                 </div>
             </template>
         </BannerHome>
-        <ListaAgentes :data="ejecutivosPresencial" titulo="Ejecutivos de venta presencial" />
-        <ListaAgentes :data="ejecutivosOnline" titulo="Ejecutivos de venta online" />
-        <ListaAgentes :data="ejecutivosVenta" titulo="Ejecutivos de venta" />
+        <ListaAgentes :data="ejecutivosPresencial" />
     </Container>
 </template>
 

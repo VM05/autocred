@@ -961,21 +961,78 @@ export const stepsForm = [
 
 export const ejecutivosPresencial = [
     {
-        imagen:'',
-        nombre:'María',
-        apellido:'Saavedra',
-        ubicacion:'Paseo Quilin',
-        telefono: '+569 2365 5659',
-        email:'maria.saavedra@autocred.cl'
+        imagen:'/img/agentes/cristian-fernandez.webp',
+        nombre:'Cristian',
+        apellido:'Fernandez',
+        telefono: '+569 4637 3862',
+        email:'cristian.fernandez@autocred.cl'
     },
     {
-        imagen:'/img/agentes/isis-vivas.webp',
-        nombre:'Isis',
-        apellido:'Vivas',
-        ubicacion:'Apumanque',
-        telefono: '+569 3728 6486',
-        email:'isis.vivas@autocred.cl'
+        imagen:'/img/agentes/jose-lopez.webp',
+        nombre:'José',
+        apellido:'Lopéz',
+        telefono: '+569 8279 2053',
+        email:'jose.lopez@autocred.cl'
     },
+    {
+        imagen:'/img/agentes/barbara-saavedra.webp',
+        nombre:'Bárbara',
+        apellido:'Saavedra',
+        telefono: '+569 4647 8330',
+        email:'barbara.saavedra@autocred.cl'
+    },
+
+    {
+        imagen:'/img/agentes/jackeline.webp',
+        nombre:'Jackeline',
+        apellido:'Martínez',
+        telefono: '+569 9325 9236',
+        email:'jacky.martinez@autocred.cl'
+    },
+
+    {
+        imagen:'/img/agentes/iris-castro-.webp',
+        nombre:'Iris',
+        apellido:'Castro',
+        telefono: '+569 4647 4281',
+        email:'iris.castro@autocred.cl'
+    },
+    {
+        imagen:'/img/agentes/francisco-stemann.webp',
+        nombre:'Francisco',
+        apellido:'Stemann',
+        telefono: '+569 4633 7158',
+        email:'francisco.stemann@autocred.cl'
+    },
+    {
+        imagen:'/img/agentes/joseline-vejar.webp',
+        nombre:'Josseline',
+        apellido:'Vejar',
+        telefono: '+569 4645 3667',
+        email:'kpsseline.vejar@autocred.cl'
+    },
+    {
+        imagen:'/img/agentes/felipe-macaya.webp',
+        nombre:'Felipe',
+        apellido:'Macaya',
+        telefono: '+569 4643 9563',
+        email:'felipe.macaya@autocred.cl'
+    },
+    {
+        imagen:'/img/agentes/valeria-ruiz.webp',
+        nombre:'Valeria',
+        apellido:'Ruiz',
+        telefono: '+569 4638 4765',
+        email:'valeria.ruiz@autocred.cl'
+    },
+    {
+        imagen:'/img/agentes/felipe-cabrera.webp',
+        nombre:'Felipe',
+        apellido:'Cabrera',
+        telefono: '+569 4631 2496',
+        email:'jacky.martinez@autocred.cl'
+    },
+
 
 ]
 

@@ -19,16 +19,18 @@
 
 </body>
 <script>
-  // setTimeout(() => {
-  //   const botonCerrar = document.querySelector('.boton-minimizar')
-  //   const contenedorWs = document.querySelector('.contenedor-boton')
+  setTimeout(() => {
+    const botonCerrar = document.querySelector('.boton-minimizar')
+    const contenedorWs = document.querySelector('.contenedor-boton')
+    const nube = document.querySelector('.nube')
 
-  //   botonCerrar.addEventListener('click',()=>{
-  //     contenedorWs.classList.add('hide')
-
-  //   })
+    botonCerrar.addEventListener('click',()=>{
+      botonCerrar.classList.toggle('cambiar')
+      contenedorWs.classList.toggle('achicar')
+      nube.classList.toggle('desaparecer')
+    })
  
-  // },1000);
+  },1000);
 
 </script>
 </html>

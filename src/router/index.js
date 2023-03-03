@@ -50,10 +50,7 @@ const router = createRouter({
                 { path: '/blog/:id', name: 'Articulo', component: ()=> import('../views/article.vue') },
                 { path: '/terminos-y-condiciones', name: 'Terms', component: ()=> import('../views/Terms.vue') },
                 { path: '/login-vendedores', name: 'login-vendedores', component: ()=> import('../views/LoginVendedores.vue') },
-                { path: '/vendedores-autocred',
-                  name: 'vendedores-autocred',
-                  beforeEnter: [isAuthenticated],
-                  component: ()=> import('../views/VendedoresAutocred.vue') },
+                { path: '/vendedores-autocred', name: 'vendedores-autocred', beforeEnter: [isAuthenticated], component: ()=> import('../views/VendedoresAutocred.vue') },
             
             ]
         },
