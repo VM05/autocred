@@ -990,7 +990,7 @@ export const ejecutivosPresencial = [
         imagen:'/img/agentes/jose-lopez.webp',
         nombre:'José',
         apellido:'Lopéz',
-        telefono: '+569 8279 2053',
+        telefono: '+56 9 4648 3871',
         email:'jose.lopez@autocred.cl'
     },
     {
@@ -1005,7 +1005,7 @@ export const ejecutivosPresencial = [
         imagen:'/img/agentes/jackeline.webp',
         nombre:'Jackeline',
         apellido:'Martínez',
-        telefono: '+569 9325 9236',
+        telefono: '+56 9 4645 6800',
         email:'jacky.martinez@autocred.cl'
     },
 
