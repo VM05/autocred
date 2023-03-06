@@ -13,6 +13,25 @@ export const links = [
     { name: "Compradores", url: "/compradores" },
     { name: "Vendedores", url: "/vendedores" },
     { name: "FAQ", url: "/preguntas-frecuentes" },
+    { name: "Nuestros Agentes", url: "/nuestros-agentes" },
+    { name: "Contacto", url: "/#contacto", params: "contacto" },
+];
+
+export const links_footer = [
+    { name: "Inicio", url: "/" },
+    {
+        name: "Servicios",
+        url: "/servicios",
+        sublink: [
+            { name: "Financiamiento", link: 'financiamiento' },
+            { name: "Transferencia", link: 'transferencias' },
+            { name: "Tag", link: 'tag' },
+            { name: "Seguro Automotriz", link: 'seguro' }
+        ]
+    },
+    { name: "Compradores", url: "/compradores" },
+    { name: "Vendedores", url: "/vendedores" },
+    { name: "FAQ", url: "/preguntas-frecuentes" },
     { name: "Nosotros", url: "/nosotros" },
     { name: "Contacto", url: "/#contacto", params: "contacto" },
 ];

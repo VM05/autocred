@@ -22,7 +22,7 @@
             </Paragraph>
           <div class="flex flex-col">
             <router-link
-              v-for="link in links"
+              v-for="link in links_footer"
               :key="link"
               class="text-base font-medium text-gray-500 hover:text-secondary-800 hover:cursor-pointer"
               :to="link.url"
@@ -90,7 +90,7 @@
 <script setup>
 import Heading from "../components/Heading.vue";
 import Paragraph from "./Paragraph.vue";
-import { links, rrss } from "../assets/helpers/constants";
+import { links_footer, rrss } from "../assets/helpers/constants";
 import Container from "../layouts/Container.vue";
 </script>
 
