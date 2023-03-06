@@ -6,7 +6,7 @@
                     <Heading content="Conoce a nuestros agentes Autocred" headingType="h1" class="mb-5 text-center md:text-left" />
                 </div>
                 <Heading content="Somos expertos en financiamiento y gestión de trámites en la compra/venta de vehículos usados entre particulares."  headingType="h4" class="text-center md:text-left"/>
-                <router-link to="#nuestros-agentes">
+                <router-link to="#nuestros-agentes" class="flex justify-center md:justify-start">
                     <Button text="Conócenos" secondary class="mt-10"/>
                 </router-link>
             </template>
