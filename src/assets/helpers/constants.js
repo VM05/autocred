@@ -1028,7 +1028,7 @@ export const ejecutivosPresencial = [
         nombre:'Josseline',
         apellido:'Vejar',
         telefono: '+569 4645 3667',
-        email:'kpsseline.vejar@autocred.cl'
+        email:'josseline.vejar@autocred.cl'
     },
     {
         imagen:'/img/agentes/felipe-macaya.webp',
