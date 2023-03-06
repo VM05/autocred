@@ -33,6 +33,7 @@ const names = [
   '/vendedores',
   '/preguntas-frecuentes',
   '/nosotros',
+  '/nuestros-agentes'
 ]
 const dynamicRoutes = names.map(name => `${name}`)
 
