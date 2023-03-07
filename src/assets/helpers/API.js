@@ -52,9 +52,9 @@ export const gestion = [
 ]
 export const typeCredit = [
     { value: "", name: "Seleccione tipo de Crédito" },
+    { value: "conventional express", name: "Crédito Convencional Express" },
     { value: "conventional", name: "Crédito Convencional" },
     { value: "smart", name: "Compra Inteligente" },
-    { value: "conventional express", name: "Crédito Convencional Express" },
     // { value: "smart", name: "Compra Inteligente Express" },
 ];
 export const servicioCards = [
