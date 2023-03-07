@@ -52,7 +52,7 @@ export const gestion = [
 ]
 export const typeCredit = [
     { value: "", name: "Seleccione tipo de Crédito" },
-    { value: "conventional express", name: "Crédito Convencional Express" },
+    { value: "conventional express", name: "Crédito Express" },
     { value: "conventional", name: "Crédito Convencional" },
     { value: "smart", name: "Compra Inteligente" },
     // { value: "smart", name: "Compra Inteligente Express" },
