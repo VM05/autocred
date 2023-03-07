@@ -25,8 +25,8 @@ import Sitemap from 'vite-plugin-sitemap'
 
 const hostname = 'https://www.autocred.cl'
 const names = [
-  '/servicios/financiamiento',
-  '/servicios/transferencias',
+  '/financiamiento',
+  '/transferencias',
   '/servicios/tag',
   '/servicios/seguro',
   '/compradores',
@@ -34,7 +34,7 @@ const names = [
   '/preguntas-frecuentes',
   '/nosotros',
   '/nuestros-agentes'
-  
+
 ]
 const dynamicRoutes = names.map(name => `${name}`)
 
@@ -43,14 +43,14 @@ export default defineConfig(({ command, mode }) => {
   if (mode === 'development') {
     return {
       plugins: [
-      vue(),
-      Sitemap({hostname, dynamicRoutes }),
-    //   VitePluginHtmlEnv({
-    //   prefix: '<{',
-    //   suffix: '}>',
-    // }),
+        vue(),
+        Sitemap({ hostname, dynamicRoutes }),
+        //   VitePluginHtmlEnv({
+        //   prefix: '<{',
+        //   suffix: '}>',
+        // }),
       ],
-     
+
       build: {
         chunkSizeWarningLimit: 1600,
       },
@@ -63,7 +63,7 @@ export default defineConfig(({ command, mode }) => {
       },
       plugins: [
         vue(),
-        Sitemap({hostname, dynamicRoutes, priority:0.8} ),
+        Sitemap({ hostname, dynamicRoutes, priority: 0.8 }),
         ViteRadar({
           // Google Analytics tag injection
           analytics: [{

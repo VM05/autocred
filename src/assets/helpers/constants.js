@@ -1,19 +1,17 @@
 export const links = [
     { name: "Inicio", url: "/" },
+    { name: "Financiamiento", url: 'financiamiento' },
+    { name: "Transferencias", url: 'transferencias' },
+    { name: "FAQ", url: "/preguntas-frecuentes" },
     {
         name: "Servicios",
         url: "/servicios",
         sublink: [
-            { name: "Financiamiento", link: 'financiamiento' },
-            { name: "Transferencia", link: 'transferencias' },
             { name: "Tag", link: 'tag' },
             { name: "Seguro Automotriz", link: 'seguro' }
         ]
     },
-    { name: "Compradores", url: "/compradores" },
-    { name: "Vendedores", url: "/vendedores" },
-    { name: "FAQ", url: "/preguntas-frecuentes" },
-    { name: "Nuestros Agentes", url: "/nuestros-agentes" },
+    { name: "Nosotros", url: "/nuestros-agentes" },
     { name: "Contacto", url: "/#contacto", params: "contacto" },
 ];
 
@@ -22,12 +20,6 @@ export const links_footer = [
     {
         name: "Servicios",
         url: "/servicios",
-        sublink: [
-            { name: "Financiamiento", link: 'financiamiento' },
-            { name: "Transferencia", link: 'transferencias' },
-            { name: "Tag", link: 'tag' },
-            { name: "Seguro Automotriz", link: 'seguro' }
-        ]
     },
     { name: "Compradores", url: "/compradores" },
     { name: "Vendedores", url: "/vendedores" },
@@ -86,7 +78,7 @@ export const datosBannerNuevo = [
         tipo: 'video',
     },
 
-  
+
     {
         titulo: "<span class=' text-secondary-900'>En Autocred hacemos</span> todos los trámites <span class=' text-secondary-900'>por ti</span>",
         content: "¡Evita filas, notarías y malos ratos!",
@@ -104,44 +96,44 @@ export const datosBannerNuevo = [
     },
 ];
 
-export const nuevosServicios =[
+export const nuevosServicios = [
     {
-        imagen:"/img/icons/homeIcons/financiamiento.webp",
-        titulo:"Financiamiento",
-        id:"1",
-        link:"/",
+        imagen: "/img/icons/homeIcons/financiamiento.webp",
+        titulo: "Financiamiento",
+        id: "1",
+        link: "/",
     },
     {
-        imagen:"/img/icons/homeIcons/transferencia.webp",
-        titulo:"Transferencia e inscripción",
-        id:"2",
-        link:"/",
+        imagen: "/img/icons/homeIcons/transferencia.webp",
+        titulo: "Transferencia e inscripción",
+        id: "2",
+        link: "/",
     },
     {
-        imagen:"/img/icons/homeIcons/oficina.webp",
-        titulo:"Oficina Móvil",
-        id:"3",
-        link:"/",
+        imagen: "/img/icons/homeIcons/oficina.webp",
+        titulo: "Oficina Móvil",
+        id: "3",
+        link: "/",
     },
     {
-        imagen:"/img/icons/homeIcons/tag.webp",
-        titulo:"TAG: Activación o dar de baja",
-        id:"4",
-        link:"/",
+        imagen: "/img/icons/homeIcons/tag.webp",
+        titulo: "TAG: Activación o dar de baja",
+        id: "4",
+        link: "/",
     },
     {
-        imagen:"/img/icons/homeIcons/informe.webp",
-        titulo:"Informe con antecedentes del vehículo usado",
-        id:"5",
-        link:"/",
+        imagen: "/img/icons/homeIcons/informe.webp",
+        titulo: "Informe con antecedentes del vehículo usado",
+        id: "5",
+        link: "/",
     },
     {
-        imagen:"/img/icons/homeIcons/seguro.webp",
-        titulo:"Seguro automotriz",
-        id:"6",
-        link:"/",
+        imagen: "/img/icons/homeIcons/seguro.webp",
+        titulo: "Seguro automotriz",
+        id: "6",
+        link: "/",
     },
-   
+
 ]
 
 export const featuresVendedores = [
@@ -336,13 +328,13 @@ export const newFeaturesTransferencia = [
     {
         name: "",
         content:
-        "<span class='md:w-3/4 block font-semibold'>Trámite completo 100% online, en nuestra Oficina Móvil o en nuestros módulos de atención ¡Como prefieras!</span>",
+            "<span class='md:w-3/4 block font-semibold'>Trámite completo 100% online, en nuestra Oficina Móvil o en nuestros módulos de atención ¡Como prefieras!</span>",
         img: "/img/nuevos-servicios/icono-transferencia-03.webp",
     },
     {
         name: "",
         content:
-        "<span class='md:w-3/4 block font-semibold'>Registro de antecedentes, firma de documentos y firma de contratos</span>",
+            "<span class='md:w-3/4 block font-semibold'>Registro de antecedentes, firma de documentos y firma de contratos</span>",
         img: "/img/nuevos-servicios/icono-Transferencia-02.webp",
     },
     {
@@ -364,13 +356,13 @@ export const newFeaturesFinanciamiento = [
     {
         name: "",
         content:
-        "<span class='md:w-3/4 block text-center md:text-left font-semibold'>Crédito automotriz seguro con financiadoras reconocidas.</span>",
+            "<span class='md:w-3/4 block text-center md:text-left font-semibold'>Crédito automotriz seguro con financiadoras reconocidas.</span>",
         img: "/img/icons/Iconos_Autocred_Blanco_Credito_rapido.png",
     },
     {
         name: "",
         content:
-        "<span class='md:w-3/4 block text-center md:text-left font-semibold'>Recibe la aprobación con pago inmediato al vendedor particular.</span>",
+            "<span class='md:w-3/4 block text-center md:text-left font-semibold'>Recibe la aprobación con pago inmediato al vendedor particular.</span>",
         img: "/img/nuevos-servicios/Icono-Transferencia-de-dominio-02.webp",
     },
     {
@@ -392,13 +384,13 @@ export const newFeaturesSeguro = [
     {
         name: "",
         content:
-        "<span class='md:w-3/4 block font-semibold'>Seguro automotriz para siniestros</span>",
+            "<span class='md:w-3/4 block font-semibold'>Seguro automotriz para siniestros</span>",
         img: "/img/nuevos-servicios/Icono-Seguro02.webp",
     },
     {
         name: "",
         content:
-        "<span class='md:w-3/4 block font-semibold'>Proceso 100% online</span>",
+            "<span class='md:w-3/4 block font-semibold'>Proceso 100% online</span>",
         img: "/img/nuevos-servicios/icono-transferencia-03.webp",
     },
 
@@ -409,13 +401,13 @@ export const newFeaturesTag = [
     {
         name: "",
         content:
-        "<span class='md:w-3/4 block font-semibold'>Gestionamos la habilitación o damos de baja tu TAG</span>",
+            "<span class='md:w-3/4 block font-semibold'>Gestionamos la habilitación o damos de baja tu TAG</span>",
         img: "/img/nuevos-servicios/Icono-TAG-01.webp",
     },
     {
         name: "",
         content:
-        "<span class='md:w-3/4 block font-semibold'>Proceso 100% online gracias a nuestra conexión con las autopistas</span>",
+            "<span class='md:w-3/4 block font-semibold'>Proceso 100% online gracias a nuestra conexión con las autopistas</span>",
         img: "/img/nuevos-servicios/icono-transferencia-03.webp",
     },
 
@@ -532,7 +524,7 @@ export const ventajas = [
 
 ]
 
-export const nuevasVentajas=[
+export const nuevasVentajas = [
     {
         name: "Te financiamos",
         content:
@@ -587,7 +579,7 @@ export const posts = [
         <p class="mb-2">La ley Nº 21.389 responde a la necesidad nacional de promover, bajo diversas medidas legales, el cumplimiento del pago de pensiones de alimentos. Para ello, recurre al Registro Nacional de Deudores de Pensiones de Alimentos, donde cualquier persona con el interés legítimo podrá consultar en dicho registro si alguien es actualmente un deudor o se encuentra moroso, según lo determinado por los tribunales de familia, y así poder determinar si se puede llevar acabo la transferencia de vehículo.</p>
     `,
         "img": "/img/blog/t13.webp",
-       
+
         "date": "02-12-22",
         "medio": "Informativo"
     },
@@ -831,7 +823,7 @@ export const nuevaDataServicios = [
         title: "Financiamos el valor que te falta para la compra del vehículo usado que quieres.",
         content: "Compra un vehículo usado a un vendedor particular con tarjeta de débito, crédito o transferencia bancaria",
         img: "/img/nuevos-servicios/financiamiento-imagen-2.webp",
-        imgMobile:"/img/nuevos-servicios/financiamiento-imagen-Mobile.webp",
+        imgMobile: "/img/nuevos-servicios/financiamiento-imagen-Mobile.webp",
         buttonText: "Quiero financiar ",
         name: "Financiamientos"
     },
@@ -976,80 +968,81 @@ export const stepsForm = [
     {
         title: 'Valor Vehículo'
     },
+
 ]
 
 export const ejecutivosPresencial = [
     {
-        imagen:'/img/agentes/cristian-fernandez.webp',
-        nombre:'Cristian',
-        apellido:'Fernandez',
+        imagen: '/img/agentes/cristian-fernandez.webp',
+        nombre: 'Cristian',
+        apellido: 'Fernandez',
         telefono: '+569 4637 3862',
-        email:'cristian.fernandez@autocred.cl'
+        email: 'cristian.fernandez@autocred.cl'
     },
     {
-        imagen:'/img/agentes/jose-lopez.webp',
-        nombre:'José',
-        apellido:'Lopéz',
+        imagen: '/img/agentes/jose-lopez.webp',
+        nombre: 'José',
+        apellido: 'Lopéz',
         telefono: '+56 9 4648 3871',
-        email:'jose.lopez@autocred.cl'
+        email: 'jose.lopez@autocred.cl'
     },
     {
-        imagen:'/img/agentes/barbara-saavedra.webp',
-        nombre:'Bárbara',
-        apellido:'Saavedra',
+        imagen: '/img/agentes/barbara-saavedra.webp',
+        nombre: 'Bárbara',
+        apellido: 'Saavedra',
         telefono: '+569 4647 8330',
-        email:'barbara.saavedra@autocred.cl'
+        email: 'barbara.saavedra@autocred.cl'
     },
 
     {
-        imagen:'/img/agentes/jackeline.webp',
-        nombre:'Jackeline',
-        apellido:'Martínez',
+        imagen: '/img/agentes/jackeline.webp',
+        nombre: 'Jackeline',
+        apellido: 'Martínez',
         telefono: '+56 9 4645 6800',
-        email:'jacky.martinez@autocred.cl'
+        email: 'jacky.martinez@autocred.cl'
     },
 
     {
-        imagen:'/img/agentes/iris-castro-.webp',
-        nombre:'Iris',
-        apellido:'Castro',
+        imagen: '/img/agentes/iris-castro-.webp',
+        nombre: 'Iris',
+        apellido: 'Castro',
         telefono: '+569 4647 4281',
-        email:'iris.castro@autocred.cl'
+        email: 'iris.castro@autocred.cl'
     },
     {
-        imagen:'/img/agentes/francisco-stemann.webp',
-        nombre:'Francisco',
-        apellido:'Stemann',
+        imagen: '/img/agentes/francisco-stemann.webp',
+        nombre: 'Francisco',
+        apellido: 'Stemann',
         telefono: '+569 4633 7158',
-        email:'francisco.stemann@autocred.cl'
+        email: 'francisco.stemann@autocred.cl'
     },
     {
-        imagen:'/img/agentes/joseline-vejar.webp',
-        nombre:'Josseline',
-        apellido:'Vejar',
+        imagen: '/img/agentes/joseline-vejar.webp',
+        nombre: 'Josseline',
+        apellido: 'Vejar',
         telefono: '+569 4645 3667',
-        email:'josseline.vejar@autocred.cl'
+        email: 'josseline.vejar@autocred.cl'
     },
     {
-        imagen:'/img/agentes/felipe-macaya.webp',
-        nombre:'Felipe',
-        apellido:'Macaya',
+        imagen: '/img/agentes/felipe-macaya.webp',
+        nombre: 'Felipe',
+        apellido: 'Macaya',
         telefono: '+569 4643 9563',
-        email:'felipe.macaya@autocred.cl'
+        email: 'felipe.macaya@autocred.cl'
     },
     {
-        imagen:'/img/agentes/valeria-ruiz.webp',
-        nombre:'Valeria',
-        apellido:'Ruiz',
+        imagen: '/img/agentes/valeria-ruiz.webp',
+        nombre: 'Valeria',
+        apellido: 'Ruiz',
         telefono: '+569 4638 4765',
-        email:'valeria.ruiz@autocred.cl'
+        email: 'valeria.ruiz@autocred.cl'
     },
     {
-        imagen:'/img/agentes/felipe-cabrera.webp',
-        nombre:'Felipe',
-        apellido:'Cabrera',
+        imagen: '/img/agentes/felipe-cabrera.webp',
+        nombre: 'Felipe',
+        apellido: 'Cabrera',
         telefono: '+569 4631 2496',
-        email:'jacky.martinez@autocred.cl'
+        email: 'jacky.martinez@autocred.cl'
     },
 
 
@@ -1057,107 +1050,107 @@ export const ejecutivosPresencial = [
 
 export const ejecutivosOnline = [
     {
-        imagen:'',
-        nombre:'María',
-        apellido:'Saavedra',
-        ubicacion:'Paseo Quilin',
+        imagen: '',
+        nombre: 'María',
+        apellido: 'Saavedra',
+        ubicacion: 'Paseo Quilin',
         telefono: '+569 2365 5659',
-        email:'maria.saavedra@autocred.cl'
+        email: 'maria.saavedra@autocred.cl'
     },
     {
-        imagen:'/img/agentes/isis-vivas.webp',
-        nombre:'Isis',
-        apellido:'Vivas',
-        ubicacion:'Apumanque',
+        imagen: '/img/agentes/isis-vivas.webp',
+        nombre: 'Isis',
+        apellido: 'Vivas',
+        ubicacion: 'Apumanque',
         telefono: '+569 3728 6486',
-        email:'isis.vivas@autocred.cl'
+        email: 'isis.vivas@autocred.cl'
     },
     {
-        imagen:'/img/agentes/isis-vivas.webp',
-        nombre:'Isis',
-        apellido:'Vivas',
-        ubicacion:'Apumanque',
+        imagen: '/img/agentes/isis-vivas.webp',
+        nombre: 'Isis',
+        apellido: 'Vivas',
+        ubicacion: 'Apumanque',
         telefono: '+569 3728 6486',
-        email:'isis.vivas@autocred.cl'
+        email: 'isis.vivas@autocred.cl'
     },
 
 ]
 
-export const ejecutivosVenta= [
+export const ejecutivosVenta = [
     {
-        imagen:'',
-        nombre:'María',
-        apellido:'Saavedra',
-        ubicacion:'Paseo Quilin',
+        imagen: '',
+        nombre: 'María',
+        apellido: 'Saavedra',
+        ubicacion: 'Paseo Quilin',
         telefono: '+569 2365 5659',
-        email:'maria.saavedra@autocred.cl'
+        email: 'maria.saavedra@autocred.cl'
     },
     {
-        imagen:'/img/agentes/isis-vivas.webp',
-        nombre:'Isis',
-        apellido:'Vivas',
-        ubicacion:'Apumanque',
+        imagen: '/img/agentes/isis-vivas.webp',
+        nombre: 'Isis',
+        apellido: 'Vivas',
+        ubicacion: 'Apumanque',
         telefono: '+569 3728 6486',
-        email:'isis.vivas@autocred.cl'
+        email: 'isis.vivas@autocred.cl'
     },
     {
-        imagen:'/img/agentes/isis-vivas.webp',
-        nombre:'Isis',
-        apellido:'Vivas',
-        ubicacion:'Apumanque',
+        imagen: '/img/agentes/isis-vivas.webp',
+        nombre: 'Isis',
+        apellido: 'Vivas',
+        ubicacion: 'Apumanque',
         telefono: '+569 3728 6486',
-        email:'isis.vivas@autocred.cl'
+        email: 'isis.vivas@autocred.cl'
     },
     {
-        imagen:'/img/agentes/isis-vivas.webp',
-        nombre:'Isis',
-        apellido:'Vivas',
-        ubicacion:'Apumanque',
+        imagen: '/img/agentes/isis-vivas.webp',
+        nombre: 'Isis',
+        apellido: 'Vivas',
+        ubicacion: 'Apumanque',
         telefono: '+569 3728 6486',
-        email:'isis.vivas@autocred.cl'
+        email: 'isis.vivas@autocred.cl'
     },
     {
-        imagen:'/img/agentes/isis-vivas.webp',
-        nombre:'Isis',
-        apellido:'Vivas',
-        ubicacion:'Apumanque',
+        imagen: '/img/agentes/isis-vivas.webp',
+        nombre: 'Isis',
+        apellido: 'Vivas',
+        ubicacion: 'Apumanque',
         telefono: '+569 3728 6486',
-        email:'isis.vivas@autocred.cl'
+        email: 'isis.vivas@autocred.cl'
     },
     {
-        imagen:'/img/agentes/isis-vivas.webp',
-        nombre:'Isis',
-        apellido:'Vivas',
-        ubicacion:'Apumanque',
+        imagen: '/img/agentes/isis-vivas.webp',
+        nombre: 'Isis',
+        apellido: 'Vivas',
+        ubicacion: 'Apumanque',
         telefono: '+569 3728 6486',
-        email:'isis.vivas@autocred.cl'
+        email: 'isis.vivas@autocred.cl'
     },
 
 ]
 
 export const newDataServicios = [
     {
-        nombre:'Transferencias',
-        imagen:'/img/nuevos-servicios/icono-ManoConLlaves.webp',
-        link:'', 
+        nombre: 'Transferencias',
+        imagen: '/img/nuevos-servicios/icono-ManoConLlaves.webp',
+        link: '',
     },
 
     {
-        nombre:'Financiamiento',
-        imagen:'/img/nuevos-servicios/Icono-General-02.webp',
-        link:'',
+        nombre: 'Financiamiento',
+        imagen: '/img/nuevos-servicios/Icono-General-02.webp',
+        link: '',
     },
 
     {
-        nombre:'Seguro',
-        imagen:'/img/nuevos-servicios/Icono-Seguro01.webp',
-        link:'',
+        nombre: 'Seguro',
+        imagen: '/img/nuevos-servicios/Icono-Seguro01.webp',
+        link: '',
     },
 
     {
-        nombre:'Tag',
-        imagen:'/img/nuevos-servicios/Icono-TAG-02.webp',
-        link:'',
+        nombre: 'Tag',
+        imagen: '/img/nuevos-servicios/Icono-TAG-02.webp',
+        link: '',
     },
 
 ]
@@ -1169,7 +1162,7 @@ export const newCardDataCompradores = [
         name: "Financiamiento automotriz",
         content: "Evalúa tu crédito automotriz en sólo 7 minutos en nuestro evaluador online. Puedes hacer el pago del monto que tienes disponible, para la compra de auto usado a un vendedor particular con tarjeta de débito, crédito o transferencia bancaria.",
         img: "/img/icons/Iconos_Autocred_Blanco_Financiamiento.png",
-        cardNumber:0,
+        cardNumber: 0,
     },
     {
         id: 'transferencia',
@@ -1178,7 +1171,7 @@ export const newCardDataCompradores = [
             "¡Hacemos todos los trámites por ti! Contamos con el servicio de transferencia en línea con el Registro Civil, seguros excusivos para compradores particulares, y activación de TAG de forma presencial, online, en nuestros módulos de atención, o en el lugar que prefieras en nuestra Oficina Móvil",
         img: "/img/nuevos-servicios/Icono-Transferencia-de-dominio.webp",
         link: "/servicios/financiamiento",
-        cardNumber:1,
+        cardNumber: 1,
     },
     {
         id: 'van',
@@ -1187,7 +1180,7 @@ export const newCardDataCompradores = [
             "Te llevamos a ver el auto usado que quieres comprar a un vendedor particular en nuestra van, en la que también puedes solicitar cualquiera de nuestros servicios para comenzar el proceso desde donde quieras.",
         img: "/img/nuevos-servicios/Icono-Oficina-Movil.webp",
         link: '/servicios/transferencias',
-        cardNumber:2,
+        cardNumber: 2,
     },
 ]
 
@@ -1197,7 +1190,7 @@ export const newCardDataVendedores = [
         name: "Transferencia de dominio",
         content: "Transfiere tu auto usado a un comprador particular con nosotros, ¡Lo hacemos en línea con el Registro Civil! Evitándote largas filas. Solicita nuestro servicio de transferencia de forma online, presencial de nuestros módulos u Oficina Móvil",
         img: "/img/nuevos-servicios/Icono-Transferencia-de-dominio-02.webp",
-        cardNumber:3,
+        cardNumber: 3,
     },
     {
         id: 'transferencia',
@@ -1206,7 +1199,7 @@ export const newCardDataVendedores = [
             "Te acompañamos a mostrar tu vehículo usado en nuestra van, en la que también puedes solicitar nuestro servicio de transferencia para comenzar el proceso desde donde quieras",
         img: "/img/nuevos-servicios/Icono-Oficina-Movil.webp",
         link: "/servicios/financiamiento",
-        cardNumber:4,
+        cardNumber: 4,
     },
     {
         id: 'van',
@@ -1215,6 +1208,6 @@ export const newCardDataVendedores = [
             "Vende tu auto usado a un comprador particular con financiamiento seguro, aumentando las posibilidades de tu venta y garantizando que recibirás el monto que pides. El pago se hace directo a tu cuenta al realizar la transferencia de dominio con nosotros.",
         img: "/img/icons/Iconos_Autocred_Blanco_Mejor_cuota.png",
         link: '/servicios/transferencias',
-        cardNumber:5,
+        cardNumber: 5,
     },
 ]

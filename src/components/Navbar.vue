@@ -40,10 +40,12 @@
             >
               {{ link.name }}
             </router-link>
-            <MenuVue v-else :sublinks="link.sublink">Servicios</MenuVue>
+            <MenuVue v-else :sublinks="link.sublink">Más Servicios</MenuVue>
           </div>
         </PopoverGroup>
-        <div class="hidden lg:flex items-center justify-end lg:flex-1 lg:w-0 gap-">
+        <div
+          class="hidden lg:flex items-center justify-end lg:flex-1 lg:w-0 gap-"
+        >
           <!-- <router-link to="/#contacto">
             <Button1 text="Contacto" secondary/>
           </router-link> -->
