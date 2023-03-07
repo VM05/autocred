@@ -1,9 +1,14 @@
 <template>
   <div>
-  <Modal v-if="isOpen" @on:close="cerrarModal">
-    <template v-slot:header>
-      <div class="relative">
-          <a class="absolute -right-10 text-gray-400 px-3 py-1 -top-10 bg-slate-100 hover:bg-slate-200 font-semibold rounded-full cursor-pointer transition" href="" @click.prevent="cerrarModal">X</a>
+    <Modal v-if="isOpen" @on:close="cerrarModal">
+      <template v-slot:header>
+        <div class="relative">
+          <a
+            class="absolute -right-10 text-gray-400 px-3 py-1 -top-10 bg-slate-100 hover:bg-slate-200 font-semibold rounded-full cursor-pointer transition"
+            href=""
+            @click.prevent="cerrarModal"
+            >X</a
+          >
         </div>
         <img
           src="../assets/img/logo-autocred-menu.svg"
@@ -11,432 +16,443 @@
           class="mx-auto w-52 pb-5"
         />
         <div class="flex flex-row text-center relative px-5 mb-5">
-          <Heading1 primary content="Crédito Convencional Express" class="w-full  md:px-0" headingType="h3"/>
-          <img src="../assets/img/rayo512.webp" alt="rayo" class="absolute md:w-10 w-8 -right-2 md:right-5">
+          <Heading1
+            primary
+            content="Crédito Express"
+            class="w-full md:px-0"
+            headingType="h3"
+          />
+          <img
+            src="../assets/img/rayo512.webp"
+            alt="rayo"
+            class="absolute md:w-10 w-8 -right-2 md:right-5"
+          />
         </div>
       </template>
 
       <template v-slot:body>
-          <div class=" mx-auto">
-          <Paragraph
-            primary
-            class="text-center text-base mb-3"
-            >Obtén tu financiamiento sólo con tu cédula de identidad !! <br>  Requisitos:
-        </Paragraph>
-      
-        <ul class='list-none md:list-disc text-center md:text-left text-primary-900'>
-        
-          <li>Antigüedad Vehículo: entre 2016 a 2022</li>
-          <li>Pie mínimo: 40%</li>
-          <li>Monto mínimo a financiar: $5.000.000</li>
-        </ul>
-      </div>
+        <div class="mx-auto">
+          <Paragraph primary class="text-center text-base mb-3"
+            >Obtén tu financiamiento sólo con tu cédula de identidad !! <br />
+            Requisitos:
+          </Paragraph>
+
+          <ul
+            class="list-none md:list-disc text-center md:text-left text-primary-900"
+          >
+            <li>Antigüedad Vehículo: entre 2016 a 2022</li>
+            <li>Pie mínimo: 40%</li>
+            <li>Monto mínimo a financiar: $5.000.000</li>
+          </ul>
+        </div>
       </template>
-  </Modal>
+    </Modal>
 
-  <div class="md:px-12" id="simulador">
-    <div class="relative grid">
-      <div class="relative z-0">
-        <img
-          src="../assets/img/cotizacion.webp"
-          alt="cotizaciones"
-          class="imagen z-0 top-0"
-        />
-        <div class="imagen imagenBG top-0 absolute"></div>
-      </div>
-      <div class="z-10 absolute top-12 md:top-6 left-4 md:left-16">
-        <Heading1 content="Evalúa tu crédito" white />
-        <Heading1 content="En solo 7 minutos " white />
-      </div>
+    <div class="md:px-12" id="simulador">
+      <div class="relative grid">
+        <div class="relative z-0">
+          <img
+            src="../assets/img/cotizacion.webp"
+            alt="cotizaciones"
+            class="imagen z-0 top-0"
+          />
+          <div class="imagen imagenBG top-0 absolute"></div>
+        </div>
+        <div class="z-10 absolute top-12 md:top-6 left-4 md:left-16">
+          <Heading1 content="Evalúa tu crédito" white />
+          <Heading1 content="En solo 7 minutos " white />
+        </div>
 
-      <div class="card shadow-2xl px-6 py-8">
-        <Transition>
-          <form @submit.prevent="handleForm" v-show="formActive">
-            <div class="title border-b pb-4 border-primary-900">
-              <Heading1
-                content="Etapa 1: Consulta plazo y valor cuota"
-                headingType="h3"
-              />
-            </div>
-            <div
-              class="content py-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 border-b"
-            >
-              <div class="col-span-1">
-                <SelectTypeCredito1
-                  label="Tipo Crédito"
-                  id="Tipo Crédito"
-                  @update:type="(e) => (formSimulador.type = e.value)"
-                  @valores="(e) => registrarValor(e)"
-                />
-                <InputRut1
-                  label="RUT"
-                  id="RUT"
-                  placeholder="RUT"
-                  class="w-full"
-                  @update:rut="(e) => (formSimulador.dni = e)"
-                  @keypress="onlyRut"
-                />
-                <div class="md:flex">
-                  <SelectMarcas1
-                    label="Marca"
-                    id="Marca"
-                    @update:marca="
-                      (e) => {
-                        formSimulador.vehicle_brand = e.name;
-                        disabledModel = false;
-                        useSimulador.resetModelo();
-                      }
-                    "
-                  />
-                  <SelectModelo1
-                    label="Modelo"
-                    id="Modelo"
-                    @update:modelo="
-                      (e) =>
-                        e.name != 'Modelo'
-                          ? (formSimulador.vehicle_model = e.name)
-                          : (formSimulador.vehicle_model = '')
-                    "
-                    :disabled="disabledModel"
-                  />
-                </div>
-                <div class="md:flex">
-                  <Input
-                    label="Version"
-                    id="Version"
-                    placeholder="Version"
-                    @update:text="(e) => (formSimulador.vehicle_version = e)"
-                  />
-
-                  <SelectAnios1
-                    label="Año"
-                    id="Año"
-                    @update:anio="(e) => (formSimulador.vehicle_year = e)"
-                    :tipoCredito="express"
-                  />
-                </div>
-              </div>
-              <div
-                class="col-span-1 md:px-5 md:border-x grid gap-6 mb-8 md:mb-0"
-              >
-                <div class="price">
-                  <SliderRange1
-                    @update:slider="(e) => (formSimulador.vehicle_price = e)"
-                    valorTotal
-                    @keypress="onlyNumber"
-                    label="Valor del vehículo"
-                  />
-                </div>
-                <div class="pie">
-                  <SliderRange1
-                    @update:slider="(e) => (formSimulador.down_payment = e)"
-                    @keypress="onlyNumber"
-                    :valorAutomatico="formSimulador.down_payment"
-                    label="Valor del pie"
-                  />
-                  <Paragraph
-                    class="text-red-700 justify-self-center text-center grid-flow-row col-end-3 mt-2"
-                    v-if="warningDownPayment"
-                  >
-                    {{ mensajeValor }}
-                  </Paragraph>
-                </div>
-
-                <Input
-                  label="Monto a financiar"
-                  id="financiar"
-                  placeholder="Monto a financiar"
-                  money
-                  :valor="valorFinanciar"
-                  disabled
-                  informativo
-                />
-              </div>
-              <div
-                class="grid place-content-center"
-                v-if="!loading && !complete"
-              >
-                <img
-                  src="../assets/img/simulador.svg"
-                  alt="simulador"
-                  class="w-full"
-                />
-              </div>
-              <div class="grid place-content-center" v-if="loading">
-                <Loading />
-              </div>
-              <div
-                v-else-if="complete"
-                class="col-span-1 flex flex-col justify-between"
-              >
-                <Acordion1
-                  :cuotasSimulacion="dataCuotas"
-                  :typeCredit="formSimulador.type"
-                  @select:term="(cuota) => handleTransition(cuota)"
-                />
-              </div>
-            </div>
-            <div class="footer grid justify-items-center align-middle py-4">
-              <Button1
-                text="Consulta tu cuota"
-                secondary
-                :disabled="errorForm"
-                id="boton-consultar-cuota"
-                style="max-width: 200px"
-              />
-            </div>
-          </form>
-        </Transition>
-        <Transition>
-          <div v-show="formActive2">
-            <div class="grid place-content-center my-20" v-if="alerts">
-              <div v-if="loading" class="grid place-content-center">
-                <Paragraph class="text-center mb-8">
-                  Estamos evaluando su crédito, espere un momento
-                </Paragraph>
-                <Loading />
-              </div>
-              <div v-if="isSuccess && !newUser" class="text-center">
-                <Paragraph class="font-bold"
-                  >Estamos evaluando tu solicitud
-                </Paragraph>
-                <Paragraph class="mb-8"
-                  >{{ formSimulador2.name }}, te invitamos a iniciar sesión o
-                  recuperar tu contraseña para conocer tu resultado y continuar
-                  con el proceso
-                </Paragraph>
-                <div class="flex flex-col gap-2 justify-center">
-                  <router-link to="/login">
-                    <Button
-                      primary
-                      text="Iniciar sesión"
-                      @click="loginHandle"
-                    ></Button>
-                  </router-link>
-                  <!-- <router-link to="/registro"> -->
-                  <a
-                    :href="PASSWORD_RESET"
-                    class="text-primary-900 underline font-semibold text-base mt-5"
-                  >
-                    Recuperar mi contraseña
-                  </a>
-                  <!-- </router-link> -->
-                </div>
-              </div>
-              <div v-if="isError" class="text-center">
-                <Paragraph class="font-bold text-secondary-900"
-                  >Ocurrio un problema con los datos ingresados</Paragraph
-                >
-                <Paragraph class="mb-8 text-secondary-900"
-                  >Intenta de nuevo
-                </Paragraph>
-                <Button text="Volver" outlineSecondary @click="btnBack" />
-              </div>
-            </div>
-            <form @submit.prevent="handleForm2" v-else>
+        <div class="card shadow-2xl px-6 py-8">
+          <Transition>
+            <form @submit.prevent="handleForm" v-show="formActive">
               <div class="title border-b pb-4 border-primary-900">
                 <Heading1
-                  content="Etapa 2: Ingresa tus datos personales para evaluar"
+                  content="Etapa 1: Consulta plazo y valor cuota"
                   headingType="h3"
                 />
               </div>
               <div
-                class="content py-6 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 border-b"
+                class="content py-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 border-b"
               >
                 <div class="col-span-1">
-                  <div class="flex flex-col relative">
+                  <SelectTypeCredito1
+                    label="Tipo Crédito"
+                    id="Tipo Crédito"
+                    @update:type="(e) => (formSimulador.type = e.value)"
+                    @valores="(e) => registrarValor(e)"
+                  />
+                  <InputRut1
+                    label="RUT"
+                    id="RUT"
+                    placeholder="RUT"
+                    class="w-full"
+                    @update:rut="(e) => (formSimulador.dni = e)"
+                    @keypress="onlyRut"
+                  />
+                  <div class="md:flex">
+                    <SelectMarcas1
+                      label="Marca"
+                      id="Marca"
+                      @update:marca="
+                        (e) => {
+                          formSimulador.vehicle_brand = e.name;
+                          disabledModel = false;
+                          useSimulador.resetModelo();
+                        }
+                      "
+                    />
+                    <SelectModelo1
+                      label="Modelo"
+                      id="Modelo"
+                      @update:modelo="
+                        (e) =>
+                          e.name != 'Modelo'
+                            ? (formSimulador.vehicle_model = e.name)
+                            : (formSimulador.vehicle_model = '')
+                      "
+                      :disabled="disabledModel"
+                    />
+                  </div>
+                  <div class="md:flex">
                     <Input
-                      label="Nombre"
-                      id="Nombre"
-                      placeholder="Nombre"
-                      :value="formSimulador2.name"
-                      @update:text="(e) => (formSimulador2.name = e)"
-                      @textvalue="(e) => checkInput(e)"
+                      label="Version"
+                      id="Version"
+                      placeholder="Version"
+                      @update:text="(e) => (formSimulador.vehicle_version = e)"
+                    />
+
+                    <SelectAnios1
+                      label="Año"
+                      id="Año"
+                      @update:anio="(e) => (formSimulador.vehicle_year = e)"
+                      :tipoCredito="express"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="col-span-1 md:px-5 md:border-x grid gap-6 mb-8 md:mb-0"
+                >
+                  <div class="price">
+                    <SliderRange1
+                      @update:slider="(e) => (formSimulador.vehicle_price = e)"
+                      valorTotal
+                      @keypress="onlyNumber"
+                      label="Valor del vehículo"
+                    />
+                  </div>
+                  <div class="pie">
+                    <SliderRange1
+                      @update:slider="(e) => (formSimulador.down_payment = e)"
+                      @keypress="onlyNumber"
+                      :valorAutomatico="formSimulador.down_payment"
+                      label="Valor del pie"
                     />
                     <Paragraph
-                      class="absolute w-full bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                      v-if="warningName"
+                      class="text-red-700 justify-self-center text-center grid-flow-row col-end-3 mt-2"
+                      v-if="warningDownPayment"
                     >
-                      Debe ingresar su nombre
+                      {{ mensajeValor }}
                     </Paragraph>
                   </div>
 
-                  <div class="md:flex">
-                    <div class="relative">
-                      <Input
-                        label="Apellido Paterno"
-                        id="Apellido Paterno"
-                        placeholder="Apellido Paterno"
-                        :value="formSimulador2.first_surname"
-                        @update:text="(e) => (formSimulador2.first_surname = e)"
-                        @textvalue="(e) => checkSurname(e)"
-                      />
-                      <Paragraph
-                        class="absolute w-full bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                        v-if="warningSurname"
-                      >
-                        Debe ingresar su apellido paterno
-                      </Paragraph>
-                    </div>
-
-                    <div class="relative">
-                      <Input
-                        label="Apellido Materno"
-                        id="Apellido Materno"
-                        placeholder="Apellido Materno"
-                        :value="formSimulador2.second_surname"
-                        @update:text="
-                          (e) => (formSimulador2.second_surname = e)
-                        "
-                        @textvalue="(e) => checkSecondSurname(e)"
-                      />
-
-                      <Paragraph
-                        class="absolute w-full bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                        v-if="warningSecondSurname"
-                      >
-                        Debe ingresar su apellido materno
-                      </Paragraph>
-                    </div>
+                  <Input
+                    label="Monto a financiar"
+                    id="financiar"
+                    placeholder="Monto a financiar"
+                    money
+                    :valor="valorFinanciar"
+                    disabled
+                    informativo
+                  />
+                </div>
+                <div
+                  class="grid place-content-center"
+                  v-if="!loading && !complete"
+                >
+                  <img
+                    src="../assets/img/simulador.svg"
+                    alt="simulador"
+                    class="w-full"
+                  />
+                </div>
+                <div class="grid place-content-center" v-if="loading">
+                  <Loading />
+                </div>
+                <div
+                  v-else-if="complete"
+                  class="col-span-1 flex flex-col justify-between"
+                >
+                  <Acordion1
+                    :cuotasSimulacion="dataCuotas"
+                    :typeCredit="formSimulador.type"
+                    @select:term="(cuota) => handleTransition(cuota)"
+                  />
+                </div>
+              </div>
+              <div class="footer grid justify-items-center align-middle py-4">
+                <Button1
+                  text="Consulta tu cuota"
+                  secondary
+                  :disabled="errorForm"
+                  id="boton-consultar-cuota"
+                  style="max-width: 200px"
+                />
+              </div>
+            </form>
+          </Transition>
+          <Transition>
+            <div v-show="formActive2">
+              <div class="grid place-content-center my-20" v-if="alerts">
+                <div v-if="loading" class="grid place-content-center">
+                  <Paragraph class="text-center mb-8">
+                    Estamos evaluando su crédito, espere un momento
+                  </Paragraph>
+                  <Loading />
+                </div>
+                <div v-if="isSuccess && !newUser" class="text-center">
+                  <Paragraph class="font-bold"
+                    >Estamos evaluando tu solicitud
+                  </Paragraph>
+                  <Paragraph class="mb-8"
+                    >{{ formSimulador2.name }}, te invitamos a iniciar sesión o
+                    recuperar tu contraseña para conocer tu resultado y
+                    continuar con el proceso
+                  </Paragraph>
+                  <div class="flex flex-col gap-2 justify-center">
+                    <router-link to="/login">
+                      <Button
+                        primary
+                        text="Iniciar sesión"
+                        @click="loginHandle"
+                      ></Button>
+                    </router-link>
+                    <!-- <router-link to="/registro"> -->
+                    <a
+                      :href="PASSWORD_RESET"
+                      class="text-primary-900 underline font-semibold text-base mt-5"
+                    >
+                      Recuperar mi contraseña
+                    </a>
+                    <!-- </router-link> -->
                   </div>
-                  <div class="grid grid-cols-1 md:grid-cols-2">
-                    <div class="relative">
-                      <InputEmail
-                        absoluta
-                        label="Email"
-                        id="Email"
-                        placeholder="Email"
-                        @update:email="(e) => (formSimulador2.email = e)"
-                        :value="
-                          formSimulador2.email ? formSimulador2.email : ''
-                        "
-                        @textvalue="(e) => checkEmail(e)"
-                        :key="componentKey"
+                </div>
+                <div v-if="isError" class="text-center">
+                  <Paragraph class="font-bold text-secondary-900"
+                    >Ocurrio un problema con los datos ingresados</Paragraph
+                  >
+                  <Paragraph class="mb-8 text-secondary-900"
+                    >Intenta de nuevo
+                  </Paragraph>
+                  <Button text="Volver" outlineSecondary @click="btnBack" />
+                </div>
+              </div>
+              <form @submit.prevent="handleForm2" v-else>
+                <div class="title border-b pb-4 border-primary-900">
+                  <Heading1
+                    content="Etapa 2: Ingresa tus datos personales para evaluar"
+                    headingType="h3"
+                  />
+                </div>
+                <div
+                  class="content py-6 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 border-b"
+                >
+                  <div class="col-span-1">
+                    <div class="flex flex-col relative">
+                      <Input
+                        label="Nombre"
+                        id="Nombre"
+                        placeholder="Nombre"
+                        :value="formSimulador2.name"
+                        @update:text="(e) => (formSimulador2.name = e)"
+                        @textvalue="(e) => checkInput(e)"
                       />
+                      <Paragraph
+                        class="absolute w-full bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                        v-if="warningName"
+                      >
+                        Debe ingresar su nombre
+                      </Paragraph>
+                    </div>
 
-                      <!-- <Paragraph
+                    <div class="md:flex">
+                      <div class="relative">
+                        <Input
+                          label="Apellido Paterno"
+                          id="Apellido Paterno"
+                          placeholder="Apellido Paterno"
+                          :value="formSimulador2.first_surname"
+                          @update:text="
+                            (e) => (formSimulador2.first_surname = e)
+                          "
+                          @textvalue="(e) => checkSurname(e)"
+                        />
+                        <Paragraph
+                          class="absolute w-full bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                          v-if="warningSurname"
+                        >
+                          Debe ingresar su apellido paterno
+                        </Paragraph>
+                      </div>
+
+                      <div class="relative">
+                        <Input
+                          label="Apellido Materno"
+                          id="Apellido Materno"
+                          placeholder="Apellido Materno"
+                          :value="formSimulador2.second_surname"
+                          @update:text="
+                            (e) => (formSimulador2.second_surname = e)
+                          "
+                          @textvalue="(e) => checkSecondSurname(e)"
+                        />
+
+                        <Paragraph
+                          class="absolute w-full bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                          v-if="warningSecondSurname"
+                        >
+                          Debe ingresar su apellido materno
+                        </Paragraph>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                      <div class="relative">
+                        <InputEmail
+                          absoluta
+                          label="Email"
+                          id="Email"
+                          placeholder="Email"
+                          @update:email="(e) => (formSimulador2.email = e)"
+                          :value="
+                            formSimulador2.email ? formSimulador2.email : ''
+                          "
+                          @textvalue="(e) => checkEmail(e)"
+                          :key="componentKey"
+                        />
+
+                        <!-- <Paragraph
                         class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
                         v-if="warningEmail"
                       >
                         Por favor ingresa una direccion de correo valida
                       </Paragraph> -->
-                    </div>
+                      </div>
 
-                    <div class="relative">
+                      <div class="relative">
+                        <Input
+                          label="Teléfono"
+                          id="Telefono"
+                          isPhone
+                          placeholder="Teléfono"
+                          @update:text="(e) => (formSimulador2.phone = e)"
+                          :value="
+                            formSimulador2.phone ? formSimulador2.phone : ''
+                          "
+                          @keypress="onlyNumber"
+                          @textvalue="(e) => checkTelefono(e)"
+                        />
+                        <Paragraph
+                          class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                          v-if="warningPhone"
+                        >
+                          El teléfono debe contener al menos 9 digitos
+                        </Paragraph>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-span-1 md:px-5 md:border-x">
+                    <div class="flex flex-col relative">
                       <Input
-                        label="Teléfono"
-                        id="Telefono"
-                        isPhone
-                        placeholder="Teléfono"
-                        @update:text="(e) => (formSimulador2.phone = e)"
-                        :value="
-                          formSimulador2.phone ? formSimulador2.phone : ''
-                        "
+                        money
+                        label="Renta Líquida"
+                        id="Renta Líquida"
+                        placeholder="Renta Líquida"
+                        @update:text="(e) => (formSimulador2.salary = e)"
+                        :valor="formSimulador2.salary"
                         @keypress="onlyNumber"
-                        @textvalue="(e) => checkTelefono(e)"
-                      />
-                      <Paragraph
-                        class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                        v-if="warningPhone"
-                      >
-                        El teléfono debe contener al menos 9 digitos
-                      </Paragraph>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-span-1 md:px-5 md:border-x">
-                  <div class="flex flex-col relative">
-                    <Input
-                      money
-                      label="Renta Líquida"
-                      id="Renta Líquida"
-                      placeholder="Renta Líquida"
-                      @update:text="(e) => (formSimulador2.salary = e)"
-                      :valor="formSimulador2.salary"
-                      @keypress="onlyNumber"
-                      @textvalue="(e) => checkRenta(e)"
-                      :key="componentKey"
-                    />
-                    <Paragraph
-                      class="absolute w-full -bottom-6 md:-bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                      v-if="warningSalary"
-                    >
-                      {{ mensajeSalario }}
-                    </Paragraph>
-                  </div>
-                  <div></div>
-                  <div class="md:flex">
-                    <div class="w-full md:w-1/2">
-                      <SelectNacionalidad
-                        label="Nacionalidad"
-                        id="Nacionalidad"
-                        @update:nacionalidad="
-                          (e) => (formSimulador2.nationality = e)
-                        "
-                        :valor="formSimulador2.nationality"
-                      />
-                    </div>
-                    <div class="relative w-full md:w-1/2">
-                      <Input
-                        label="Fecha Nacimiento"
-                        id="Fecha Nacimiento"
-                        date
-                        @update:text="(e) => (formSimulador2.birth_date = e)"
-                        @textvalue="checkFecha(e)"
+                        @textvalue="(e) => checkRenta(e)"
                         :key="componentKey"
                       />
-
                       <Paragraph
-                        class="absolute w-full -bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                        v-if="warningFecha"
+                        class="absolute w-full -bottom-6 md:-bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                        v-if="warningSalary"
                       >
-                        {{ mensajeFecha }}
+                        {{ mensajeSalario }}
                       </Paragraph>
                     </div>
-                  </div>
-                  <div class="md:flex">
-                    <SelectEmpleo
-                      label="Tipo Ingreso"
-                      id="Tipo Ingreso"
-                      @update:empleo="(e) => (formSimulador2.income_type = e)"
-                      :valor="formSimulador2.income_type"
-                    />
-                    <SelectAntiguedad
-                      label="Antiguedad Laboral"
-                      id="antiguedad"
-                      @update:antiguedad="
-                        (e) => (formSimulador2.work_continuity = e)
-                      "
-                      :valor="
-                        formSimulador2.work_continuity
-                          ? formSimulador2.work_continuity
-                          : 0
-                      "
-                    />
+                    <div></div>
+                    <div class="md:flex">
+                      <div class="w-full md:w-1/2">
+                        <SelectNacionalidad
+                          label="Nacionalidad"
+                          id="Nacionalidad"
+                          @update:nacionalidad="
+                            (e) => (formSimulador2.nationality = e)
+                          "
+                          :valor="formSimulador2.nationality"
+                        />
+                      </div>
+                      <div class="relative w-full md:w-1/2">
+                        <Input
+                          label="Fecha Nacimiento"
+                          id="Fecha Nacimiento"
+                          date
+                          @update:text="(e) => (formSimulador2.birth_date = e)"
+                          @textvalue="checkFecha(e)"
+                          :key="componentKey"
+                        />
+
+                        <Paragraph
+                          class="absolute w-full -bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                          v-if="warningFecha"
+                        >
+                          {{ mensajeFecha }}
+                        </Paragraph>
+                      </div>
+                    </div>
+                    <div class="md:flex">
+                      <SelectEmpleo
+                        label="Tipo Ingreso"
+                        id="Tipo Ingreso"
+                        @update:empleo="(e) => (formSimulador2.income_type = e)"
+                        :valor="formSimulador2.income_type"
+                      />
+                      <SelectAntiguedad
+                        label="Antiguedad Laboral"
+                        id="antiguedad"
+                        @update:antiguedad="
+                          (e) => (formSimulador2.work_continuity = e)
+                        "
+                        :valor="
+                          formSimulador2.work_continuity
+                            ? formSimulador2.work_continuity
+                            : 0
+                        "
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="footer flex gap-x-10 justify-center py-4">
-                <Button1
-                  text="Volver"
-                  outlinePrimary
-                  @click.prevent="volverAnterior"
-                  id="volver-anterior"
-                />
-                <Button1
-                  text="Ver Resultados"
-                  secondary
-                  :disabled="errorForm2"
-                  id="boton-ver-resultados"
-                />
-              </div>
-            </form>
-          </div>
-        </Transition>
+                <div class="footer flex gap-x-10 justify-center py-4">
+                  <Button1
+                    text="Volver"
+                    outlinePrimary
+                    @click.prevent="volverAnterior"
+                    id="volver-anterior"
+                  />
+                  <Button1
+                    text="Ver Resultados"
+                    secondary
+                    :disabled="errorForm2"
+                    id="boton-ver-resultados"
+                  />
+                </div>
+              </form>
+            </div>
+          </Transition>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script setup>
@@ -472,7 +488,7 @@ import { useRouter } from "vue-router";
 import { formEmpty, validateEmail } from "../assets/helpers/validate";
 import { useSimuladorStore } from "../stores/simulador";
 import { useContactoStore } from "../stores/contacto";
-import Modal from '../components/ModalView.vue'
+import Modal from "../components/ModalView.vue";
 
 const validarMonto = ref(false);
 const useSimulador = useSimuladorStore();
@@ -524,7 +540,7 @@ const formSimulador2 = reactive({
   source: useUtms.utm_source || "Autocred",
   medium: useUtms.utm_medium || "Autocred",
   campaign: useUtms.utm_campaign || "Autocred",
-  utm_executive: Number(useUtms.utm_executive) ||  null,
+  utm_executive: Number(useUtms.utm_executive) || null,
 });
 
 const registerForm = reactive({
@@ -561,7 +577,7 @@ const newUser = ref(false);
 const express = ref(false);
 const claseCredito = ref(false);
 const valorFinanciar = ref("");
-const isOpen = ref(false)
+const isOpen = ref(false);
 
 const componentKey = ref(0);
 //PASO 1
@@ -569,7 +585,7 @@ const handleForm = async () => {
   validarMonto.value = false;
   loading.value = true;
   express.value ? (formSimulador.type = "conventional") : formSimulador.type;
-  formSimulador.vehicle_price = Number(formSimulador.vehicle_price) 
+  formSimulador.vehicle_price = Number(formSimulador.vehicle_price);
   try {
     const res = await axios.post(EVALUACION_URL_1, formSimulador);
     dataCuotas.value = await res.data.data;
@@ -705,8 +721,6 @@ const handleForm2 = async () => {
 //PASO 2
 
 watch(formSimulador, () => {
- 
-
   valorFinanciar.value =
     formSimulador.vehicle_price - formSimulador.down_payment;
 
@@ -1014,7 +1028,7 @@ const registrarValor = (e) => {
 
   switch (express.value) {
     case true:
-      isOpen.value= true
+      isOpen.value = true;
       if (
         formSimulador.down_payment < (formSimulador.vehicle_price * 40) / 100 ||
         formSimulador.vehicle_price - formSimulador.down_payment < 500000
@@ -1034,9 +1048,9 @@ const registrarValor = (e) => {
   }
 };
 
-const cerrarModal = ()=>{
-  isOpen.value = false
-}
+const cerrarModal = () => {
+  isOpen.value = false;
+};
 </script>
 
 <style scoped>
