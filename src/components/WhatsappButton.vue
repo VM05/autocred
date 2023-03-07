@@ -179,7 +179,7 @@ const formularioWs = reactive({
   servicios: "",
   utm_source: useUtms.utm_source || "Whatsapp",
   utm_medium: useUtms.utm_medium || "web",
-  utm_campaign: useUtms.utm_campaign || "web",
+  utm_campaign: useUtms.utm_campaign.toLowerCase() || "web",
   canal_atencion: gestion[2].name,
   sucursal_id: 1,
   email_vendedor: "0",
@@ -201,7 +201,6 @@ const enviarFormulario = async () => {
       enviarMail();
     }, 10);
   }
-  return;
 
   setTimeout(() => {
     if (warningFinanciamiento.value == true) {
