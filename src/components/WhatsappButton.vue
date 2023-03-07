@@ -194,9 +194,8 @@ const enviarFormulario = async () => {
       isLoading.value = false;
     }
   } catch (error) {
-    console.log(error.response);
     errorMessage.value = error.response.data.message;
-    console.log(errorMessage.value);
+    console.log(error);
     isLoading.value = false;
     setTimeout(() => {
       enviarMail();
