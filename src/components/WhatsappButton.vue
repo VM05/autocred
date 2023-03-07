@@ -197,10 +197,12 @@ const enviarFormulario = async () => {
     console.log(error.response);
     errorMessage.value = error.response.data.message;
     console.log(errorMessage.value);
+    isLoading.value = false;
     setTimeout(() => {
       enviarMail();
     }, 10);
   }
+  return;
 
   setTimeout(() => {
     if (warningFinanciamiento.value == true) {
