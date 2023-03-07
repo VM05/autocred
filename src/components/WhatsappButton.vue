@@ -24,7 +24,6 @@
           nuestro ejecutivo
         </p>
         <div class="flex justify-center contenedor-formulario flex-col">
-         
           <Loading medium v-if="isLoading" />
           <form
             id="form_popup_whatsapp"
@@ -92,10 +91,22 @@
               />
             </div>
 
-            <input type="hidden" name="user_servicios" :value="formularioWs.servicios" />
+            <input
+              type="hidden"
+              name="user_servicios"
+              :value="formularioWs.servicios"
+            />
             <input type="hidden" name="user_errorform" :value="errorMessage" />
-            <input type="hidden" name="user_browser" :value="useUtms.browserName" />
-            <input type="hidden" name="user_device" :value="useUtms.dispositivo" />
+            <input
+              type="hidden"
+              name="user_browser"
+              :value="useUtms.browserName"
+            />
+            <input
+              type="hidden"
+              name="user_device"
+              :value="useUtms.dispositivo"
+            />
             <input type="hidden" name="user_href" :value="direccion_sitio" />
 
             <div class="popup_button_container py-2">
@@ -141,12 +152,11 @@ import { validateRut, RutFormat, formatRut } from "@fdograph/rut-utilities";
 import Paragraph from "../components/Paragraph.vue";
 import emailjs from "@emailjs/browser";
 
-
 const props = defineProps({
   telefono: String,
 });
 
-const contactoStore = useContactoStore()
+const contactoStore = useContactoStore();
 const isOpen = ref(false);
 const errorForm = ref(true);
 const isLoading = ref(false);
@@ -155,8 +165,8 @@ const warningPhone = ref(false);
 const warningFinanciamiento = ref(true);
 const errorMessage = ref("uno de los campos esta vacio");
 const direccion_sitio = window.location.href;
-const elegido = ref()
-const telefonoElegido = ref()
+const elegido = ref();
+const telefonoElegido = ref();
 
 const formularioWs = reactive({
   nombre_completo: "",
@@ -172,11 +182,10 @@ const formularioWs = reactive({
   utm_campaign: useUtms.utm_campaign || "web",
   canal_atencion: gestion[2].name,
   sucursal_id: 1,
-  email_vendedor: '0',
+  email_vendedor: "0",
 });
 
 const enviarFormulario = async () => {
-
   isLoading.value = true;
 
   try {
@@ -185,41 +194,40 @@ const enviarFormulario = async () => {
       isLoading.value = false;
     }
   } catch (error) {
-    errorMessage.value = error.response.data.message;
-    console.log(errorMessage.value)
+    errorMessage.value = error.response.request.message;
+    console.log(errorMessage.value);
     setTimeout(() => {
-     enviarMail();
+      enviarMail();
     }, 10);
-   
   }
 
   setTimeout(() => {
     if (warningFinanciamiento.value == true) {
-        window.open(
-          `https://api.whatsapp.com/send?phone=${telefonoElegido.value}&text=Hola mi nombre es ${formularioWs.nombre_completo}, mi correo electrónico es ${formularioWs.email}, mi número de teléfono es ${formularioWs.telefono} y me gustaría consultar por los servicios de: ${formularioWs.servicios}`,
-          "_self"
-        );
-      } else {
-        window.open(
-          `https://api.whatsapp.com/send?phone=${
-            props.telefono
-          }&text=Hola mi nombre es ${
-            formularioWs.nombre_completo
-          }, mi correo electrónico es ${
-            formularioWs.email
-          }, mi Rut es ${formatRut(
-            formularioWs.rut,
-            RutFormat.DOTS_DASH
-          )}, mi número de teléfono es ${
-            formularioWs.telefono
-          } y me gustaría consultar por los servicios de: ${
-            formularioWs.servicios
-          }`,
-          "_self"
-        );
-      }
+      window.open(
+        `https://api.whatsapp.com/send?phone=${telefonoElegido.value}&text=Hola mi nombre es ${formularioWs.nombre_completo}, mi correo electrónico es ${formularioWs.email}, mi número de teléfono es ${formularioWs.telefono} y me gustaría consultar por los servicios de: ${formularioWs.servicios}`,
+        "_self"
+      );
+    } else {
+      window.open(
+        `https://api.whatsapp.com/send?phone=${
+          props.telefono
+        }&text=Hola mi nombre es ${
+          formularioWs.nombre_completo
+        }, mi correo electrónico es ${
+          formularioWs.email
+        }, mi Rut es ${formatRut(
+          formularioWs.rut,
+          RutFormat.DOTS_DASH
+        )}, mi número de teléfono es ${
+          formularioWs.telefono
+        } y me gustaría consultar por los servicios de: ${
+          formularioWs.servicios
+        }`,
+        "_self"
+      );
+    }
   }, 1000);
-}
+};
 
 const onlyRut = ($event) => {
   const validRut = /[^kK0-9]/g;
@@ -272,7 +280,6 @@ watch(isOpen, () => {
     : (document.documentElement.style.overflow = "auto");
 });
 
-
 const onlyNumber = ($event) => {
   const validNumbers = /[0-9]+/;
   if (!validNumbers.test($event.key)) {
@@ -300,15 +307,16 @@ const enviarMail = () => {
   );
 };
 
-onBeforeMount(async() => {
-  await contactoStore.getData()
-  elegido.value = Math.floor(Math.random() * contactoStore.telefonoWhatsapp.length)
-  formularioWs.email_vendedor = contactoStore.telefonoWhatsapp[elegido.value].email
-  telefonoElegido.value = contactoStore.telefonoWhatsapp[elegido.value].telefono
-})
-
-
-
+onBeforeMount(async () => {
+  await contactoStore.getData();
+  elegido.value = Math.floor(
+    Math.random() * contactoStore.telefonoWhatsapp.length
+  );
+  formularioWs.email_vendedor =
+    contactoStore.telefonoWhatsapp[elegido.value].email;
+  telefonoElegido.value =
+    contactoStore.telefonoWhatsapp[elegido.value].telefono;
+});
 </script>
 <style>
 .prueba {
@@ -331,7 +339,7 @@ span {
   transition: all 0.3s ease;
 }
 
-.botton-ws{
+.botton-ws {
   height: 60px;
   width: 60px;
 }
@@ -447,5 +455,3 @@ form textarea {
   }
 }
 </style>
-
-
