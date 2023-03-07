@@ -2,7 +2,6 @@ export const links = [
     { name: "Inicio", url: "/" },
     { name: "Financiamiento", url: 'financiamiento' },
     { name: "Transferencias", url: 'transferencias' },
-    { name: "FAQ", url: "/preguntas-frecuentes" },
     {
         name: "Servicios",
         url: "/servicios",
@@ -13,6 +12,7 @@ export const links = [
     },
     { name: "Nosotros", url: "/nuestros-agentes" },
     { name: "Contacto", url: "/#contacto", params: "contacto" },
+    { name: "FAQ", url: "/preguntas-frecuentes" },
 ];
 
 export const links_footer = [

@@ -156,7 +156,7 @@ import MenuVue from "./Menu.vue";
 }
 
 .link-width {
-  min-width: 140px;
+  min-width: 160px;
 }
 
 .link-width:nth-child(1) {
@@ -164,6 +164,14 @@ import MenuVue from "./Menu.vue";
 }
 
 .link-width:nth-child(5) {
+  min-width: 140px;
+}
+
+.link-width:nth-child(6) {
+  min-width: 80px;
+}
+
+.link-width:nth-child(7) {
   min-width: 80px;
 }
 </style>
