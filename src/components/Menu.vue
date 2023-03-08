@@ -2,14 +2,17 @@
   <span
     as="div"
     class="flex flex-row text-base justify-center font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold"
-    :class="activo? 'activeMenu': ''"
+    :class="activo ? 'activeMenu' : ''"
     @mouseover="toogleMenu"
     @click="hideMenu"
     v-if="!mobile"
   >
     <slot></slot>
-    <ChevronDownIcon class="ml-2 -mr-1 h-5 w-5 pointer-events-none" aria-hidden="true" />
-</span>
+    <ChevronDownIcon
+      class="ml-2 -mr-1 h-5 w-5 pointer-events-none"
+      aria-hidden="true"
+    />
+  </span>
   <div
     v-show="active"
     class="absolute right-1/2 left-1/2 mt-2 w-48 -ml-24 rounded-md grid grid-flow-row gap-2 bg-secondary-500"
@@ -34,13 +37,13 @@
   <span
     as="div"
     class="flex flex-row text-base font-medium text-primary-700 hover:text-primary-900 hover:cursor-pointer hover:font-semibold justify-center items-center"
-    :class="activo? 'activeMenu': ''"
+    :class="activo ? 'activeMenu' : ''"
     @click="toogleMenu"
     v-if="mobile"
   >
     <slot></slot>
     <ChevronDownIcon class="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
-</span>
+  </span>
   <div
     class="md:hidden flex flex-col items-center gap-4"
     :class="{ 'mt-3': active }"
@@ -66,7 +69,7 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted } from 'vue';
+import { ref, watch, onMounted } from "vue";
 import { ChevronDownIcon } from "@heroicons/vue/outline";
 import { useRoute } from "vue-router";
 
@@ -76,7 +79,7 @@ const props = defineProps({
   closeFunction: Function,
 });
 const route = useRoute();
-const activo = ref(false)
+const activo = ref(false);
 const active = ref(false);
 const toogleMenu = () => (active.value = !active.value);
 const hideMenu = () => (active.value = false);
@@ -84,9 +87,19 @@ const hideMenu = () => (active.value = false);
 watch(
   () => route.fullPath,
   () => {
-    route.fullPath.includes('servicios') ? activo.value = true : activo.value = false;
-  })
+    route.fullPath.includes("servicios") &&
+    !route.fullPath.includes("servicios/transferencias") &&
+    !route.fullPath.includes("servicios/financiamiento")
+      ? (activo.value = true)
+      : (activo.value = false);
+  }
+);
 
+onMounted(() => {
+  setTimeout(() => {
+    console.log(props.sublinks);
+  }, 1000);
+});
 </script>
 
 <style scoped></style>

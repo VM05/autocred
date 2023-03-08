@@ -1,7 +1,7 @@
 export const links = [
     { name: "Inicio", url: "/" },
-    { name: "Financiamiento", url: 'financiamiento' },
-    { name: "Transferencias", url: 'transferencias' },
+    { name: "Financiamiento", url: '/servicios/financiamiento' },
+    { name: "Transferencias", url: '/servicios/transferencias' },
     {
         name: "Servicios",
         url: "/servicios",

@@ -44,8 +44,8 @@ const router = createRouter({
                         { path: '/servicios/seguro', name: 'servicioseguro', component: () => import('../views/ServicioSeguro.vue') },
                     ]
                 },
-                { path: '/transferencias', name: 'serviciotransferencias', component: () => import('../views/ServicioTransferencia.vue') },
-                { path: '/financiamiento', name: 'serviciofinanciamiento', component: () => import('../views/ServicioFinanciamiento.vue') },
+                { path: '/servicios/transferencias', name: 'serviciotransferencias', component: () => import('../views/ServicioTransferencia.vue') },
+                { path: '/servicios/financiamiento', name: 'serviciofinanciamiento', component: () => import('../views/ServicioFinanciamiento.vue') },
                 { path: '/vendedores', name: 'Vendedores', component: () => import('../views/vendedores.vue') },
                 { path: '/blog', name: 'Blog', component: () => import('../views/Blog.vue') },
                 { path: '/blog/:id', name: 'Articulo', component: () => import('../views/article.vue') },
