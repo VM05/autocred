@@ -67,15 +67,20 @@
           <Transition>
             <form @submit.prevent="handleForm" v-show="formActive">
               <div class="title border-b pb-4 border-primary-900">
-                <Heading1 content="Queremos Conocerte" headingType="h3" />
+                <Heading1
+                  content="Etapa 1: Consulta plazo y valor cuota"
+                  headingType="h3"
+                />
               </div>
               <div>
                 <ProgressBar v-if="activo < 3" :activo="activo" />
               </div>
-              <div
-                class="content py-3 md:py-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 md:border-b"
-              >
-                <div v-show="activo == 0" class="step">
+              <div class="content py-3 md:py-6 gap-4 md:gap-6 md:border-b px-5">
+                <!-- comienzo primer paso-->
+                <div
+                  v-show="activo == 0"
+                  class="step grid grid-cols-1 md:grid-cols-3 gap-4"
+                >
                   <div class="col-span-1">
                     <!-- <SelectTypeCredito1
                       label="Tipo Crédito"
@@ -90,6 +95,7 @@
                       class="w-full"
                       @update:rut="(e) => (formSimulador.dni = e)"
                       @keypress="onlyRut"
+                      @focusout="validarCliente"
                     />
 
                     <div class="flex flex-col relative">
@@ -108,7 +114,8 @@
                         Debe ingresar su nombre
                       </Paragraph>
                     </div>
-                    <div class="md:flex gap-3">
+
+                    <div class="md:flex gap-2">
                       <div class="relative">
                         <Input
                           label="Apellido Paterno"
@@ -149,8 +156,79 @@
                       </div>
                     </div>
                   </div>
-                  <div v-show="activo == 1" class="step">
-                    <div class="flex flex-col md:flex-row">
+
+                  <div class="col-span-1 md:border-x px-2">
+                    <div class="relative">
+                      <InputEmail
+                        absoluta
+                        label="Email"
+                        id="Email"
+                        placeholder="Email"
+                        @update:email="(e) => (formSimulador2.email = e)"
+                        :value="
+                          formSimulador2.email ? formSimulador2.email : ''
+                        "
+                        @textvalue="(e) => checkEmail(e)"
+                        :key="componentKey"
+                      />
+
+                      <!-- <Paragraph
+                        class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                        v-if="warningEmail"
+                      >
+                        Por favor ingresa una direccion de correo valida
+                      </Paragraph> -->
+                    </div>
+
+                    <div class="relative">
+                      <Input
+                        label="Teléfono"
+                        id="Telefono"
+                        isPhone
+                        placeholder="Teléfono"
+                        @update:text="(e) => (formSimulador2.phone = e)"
+                        :value="
+                          formSimulador2.phone ? formSimulador2.phone : ''
+                        "
+                        @keypress="onlyNumber"
+                        @textvalue="(e) => checkTelefono(e)"
+                      />
+                      <Paragraph
+                        class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                        v-if="warningPhone"
+                      >
+                        El teléfono debe contener al menos 9 digitos
+                      </Paragraph>
+                    </div>
+
+                    <div class="relative w-full">
+                      <Input
+                        label="Fecha Nacimiento"
+                        id="Fecha Nacimiento"
+                        date
+                        @update:text="(e) => (formSimulador2.birth_date = e)"
+                        @textvalue="checkFecha(e)"
+                        :key="componentKey"
+                      />
+
+                      <Paragraph
+                        class="absolute w-full -bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                        v-if="warningFecha"
+                      >
+                        {{ mensajeFecha }}
+                      </Paragraph>
+                    </div>
+                  </div>
+
+                  <div class="col-span-1">
+                    <CheckServicios
+                      label="¿Como prefieres que te contactemos?"
+                      class="w-full mb-4"
+                      :items="formaDeContacto"
+                      @update:checkServicios="(e) => handleCheck(e)"
+                    />
+                  </div>
+                  <!-- <div class="flex flex-col md:flex-row">
                       <SelectMarcas1
                         label="Marca"
                         id="Marca"
@@ -190,14 +268,25 @@
                         @update:anio="(e) => (formSimulador.vehicle_year = e)"
                         :tipoCredito="express"
                       />
-                    </div>
-                  </div>
+                    </div> 
+                  </div>-->
                 </div>
+                <!-- fin primer paso -->
+
+                <!-- comienzo segundo paso -->
                 <div
-                  class="col-span-1 md:px-5 md:border-x grid gap-6 mb-8 md:mb-0 step"
-                  v-show="activo == 2"
+                  class="md:px-5 md:border-x mb-8 md:mb-0 step"
+                  v-show="activo == 1"
                 >
-                  <div class="price">
+                  <div class="grid grid-cols-3 gap-6">
+                    <CardTipoCredito
+                      v-for="item in tiposDeCredito"
+                      :key="item.valor"
+                      :valor="item.valor"
+                      @valor="(e) => handleCredito(e)"
+                    />
+                  </div>
+                  <!--  <div class="price">
                     <SliderRange1
                       @update:slider="(e) => (formSimulador.vehicle_price = e)"
                       valorTotal
@@ -228,11 +317,12 @@
                     :valor="valorFinanciar"
                     disabled
                     informativo
-                  />
+                  /> -->
                 </div>
+                <!--fin segundo paso-->
                 <div
-                  v-show="activo == 3"
-                  class="step grid place-content-center"
+                  v-show="activo == 2"
+                  class="step grid place-content-center transition"
                 >
                   <div class="" v-if="!loading && !complete">
                     <img
@@ -271,7 +361,7 @@
                   text="Continuar"
                   secondary
                   id="boton-volver"
-                  @click.prevent="validarPaso(activo)"
+                  @click.prevent="validarPaso"
                   v-if="activo < 2"
                 />
                 <Button1
@@ -359,50 +449,7 @@
                       </Paragraph>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                      <div class="relative">
-                        <InputEmail
-                          absoluta
-                          label="Email"
-                          id="Email"
-                          placeholder="Email"
-                          @update:email="(e) => (formSimulador2.email = e)"
-                          :value="
-                            formSimulador2.email ? formSimulador2.email : ''
-                          "
-                          @textvalue="(e) => checkEmail(e)"
-                          :key="componentKey"
-                        />
-
-                        <!-- <Paragraph
-                          class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                          v-if="warningEmail"
-                        >
-                          Por favor ingresa una direccion de correo valida
-                        </Paragraph> -->
-                      </div>
-
-                      <div class="relative">
-                        <Input
-                          label="Teléfono"
-                          id="Telefono"
-                          isPhone
-                          placeholder="Teléfono"
-                          @update:text="(e) => (formSimulador2.phone = e)"
-                          :value="
-                            formSimulador2.phone ? formSimulador2.phone : ''
-                          "
-                          @keypress="onlyNumber"
-                          @textvalue="(e) => checkTelefono(e)"
-                        />
-                        <Paragraph
-                          class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                          v-if="warningPhone"
-                        >
-                          El teléfono debe contener al menos 9 digitos
-                        </Paragraph>
-                      </div>
-                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2"></div>
                   </div>
                   <div class="col-span-1 md:px-5 md:border-x">
                     <div class="flex flex-col relative">
@@ -435,23 +482,6 @@
                           "
                           :valor="formSimulador2.nationality"
                         />
-                      </div>
-                      <div class="relative w-full md:w-1/2">
-                        <Input
-                          label="Fecha Nacimiento"
-                          id="Fecha Nacimiento"
-                          date
-                          @update:text="(e) => (formSimulador2.birth_date = e)"
-                          @textvalue="checkFecha(e)"
-                          :key="componentKey"
-                        />
-
-                        <Paragraph
-                          class="absolute w-full -bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                          v-if="warningFecha"
-                        >
-                          {{ mensajeFecha }}
-                        </Paragraph>
                       </div>
                     </div>
                     <div class="md:flex">
@@ -500,6 +530,7 @@
 </template>
 
 <script setup>
+import { tiposDeCredito } from "../assets/helpers/API";
 import Heading1 from "../components/Heading.vue";
 import InputRut1 from "../components/Input-Rut.vue";
 import SelectMarcas1 from "../components/SelectMarcas.vue";
@@ -534,7 +565,11 @@ import { useSimuladorStore } from "../stores/simulador";
 import { useContactoStore } from "../stores/contacto";
 import Modal from "../components/ModalView.vue";
 import ProgressBar from "../components/ProgressBar.vue";
+import CheckServicios from "../components/CheckServicios.vue";
+import { formaDeContacto } from "../assets/helpers/API";
+import CardTipoCredito from "../components/CardtTipoCredito.vue";
 
+const servicios = ref([]);
 const activo = ref(0);
 const validarMonto = ref(false);
 const useSimulador = useSimuladorStore();
@@ -588,6 +623,10 @@ const formSimulador2 = reactive({
   campaign: useUtms.utm_campaign || "Autocred",
 });
 
+const handleCredito = (e) => {
+  console.log(e.dataset.valor);
+};
+
 const registerForm = reactive({
   dni: "",
   name: "",
@@ -625,6 +664,11 @@ const valorFinanciar = ref("");
 const isOpen = ref(false);
 
 const componentKey = ref(0);
+
+const handleCheck = (e) => {
+  let formated = e.value.join(",");
+  servicios.value = formated;
+};
 //PASO 1
 const handleForm = async () => {
   if (useUtms.mobile) {
@@ -648,6 +692,46 @@ const handleForm = async () => {
 
 const forceRerender = () => {
   componentKey.value += 1;
+};
+
+const validarCliente = async () => {
+  try {
+    if (formSimulador.dni.length > 1) {
+      const res = await axios.get(CARGA_DATA + formSimulador.dni);
+      if (res.data.success == true) {
+        (await res.data.name) != undefined
+          ? (formSimulador2.name = await res.data.name)
+          : (formSimulador2.name = "");
+        (await res.data.first_surname) != undefined
+          ? (formSimulador2.first_surname = await res.data.first_surname)
+          : (formSimulador2.first_surname = "");
+        (await res.data.second_surname) != undefined
+          ? (formSimulador2.second_surname = await res.data.second_surname)
+          : (formSimulador2.second_surname = "");
+        (await res.data.email) != undefined
+          ? (formSimulador2.email = await res.data.email)
+          : (formSimulador2.email = "");
+        (await res.data.phone) != undefined
+          ? (formSimulador2.phone = await res.data.phone.slice(3))
+          : (formSimulador2.phone = "");
+        (await res.data.birth_date) != undefined
+          ? (formSimulador2.birth_date = document.querySelector(
+              'input[type="date"]'
+            ).value =
+              await res.data.birth_date.split("/").reverse().join("-"))
+          : "";
+      } else {
+        formSimulador2.name = "";
+        formSimulador2.first_surname = "";
+        formSimulador2.second_surname = "";
+        formSimulador2.email = "";
+        formSimulador2.phone = "";
+        forceRerender();
+      }
+    }
+  } catch (error) {
+    console.log(error.response);
+  }
 };
 
 //PASO INTERMEDIO
@@ -1101,8 +1185,7 @@ const cerrarModal = () => {
   isOpen.value = false;
 };
 
-const validarPaso = (numero) => {
-  console.log(numero);
+const validarPaso = () => {
   let steps = document.querySelectorAll(".step");
   let inputs = steps[0].querySelectorAll("input");
   activo.value++;

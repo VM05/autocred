@@ -27,7 +27,7 @@
 <script setup>
 import { ref, computed, onUpdated, unref } from "vue";
 import { validateRut, RutFormat, formatRut } from "@fdograph/rut-utilities";
-const emit = defineEmits(["update:rut","textvalue"]);
+const emit = defineEmits(["update:rut", "textvalue"]);
 const handler = (e) => {
   emit("update:rut", e.target.value);
   emit("textvalue", e.target.value);
@@ -62,42 +62,49 @@ const format = () => {
   focus.value = !focus.value;
   // rut.value = formatRut(unref(rut), RutFormat.DOTS_DASH);
   let Fn = {
-        validaRut: function (rutCompleto) {
-            if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test(rutCompleto))
-                return false;
-            let tmp = rutCompleto.split('-');
-            let digv = tmp[1];
-            let rut = tmp[0];
-            if (digv == 'K') digv = 'k';
-            return (Fn.dv(rut) == digv);
-        },
-        dv: function (T) {
-            let M = 0,
-                S = 1;
-            for (; T; T = Math.floor(T / 10))
-                S = (S + T % 10 * (9 - M++ % 6)) % 11;
-            return S ? S - 1 : 'k';
-        }
-    }
+    validaRut: function (rutCompleto) {
+      if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test(rutCompleto)) return false;
+      let tmp = rutCompleto.split("-");
+      let digv = tmp[1];
+      let rut = tmp[0];
+      if (digv == "K") digv = "k";
+      return Fn.dv(rut) == digv;
+    },
+    dv: function (T) {
+      let M = 0,
+        S = 1;
+      for (; T; T = Math.floor(T / 10))
+        S = (S + (T % 10) * (9 - (M++ % 6))) % 11;
+      return S ? S - 1 : "k";
+    },
+  };
 
-    rut.value = rut.value.replace(/[^kK0-9\_]/g, '');
-    let value = rut.value;
+  rut.value = rut.value.replace(/[^kK0-9\_]/g, "");
+  let value = rut.value;
 
-
-    if (value.length > 1) {
-        value = value.substring(0, value.length - 1) + '-' + value.substring(value.length - 1, value.length);
-    }
-    if (value.length > 5) {
-        value = value.substring(0, value.length - 5) + '.' + value.substring(value.length - 5, value.length);
-    }
-    if (value.length > 9) {
-        value = value.substring(0, value.length - 9) + '.' + value.substring(value.length - 9, value.length);
-    }
-    rut.value = value;
-    if (value.length >= 11) {
-        let valor = value.replace(".", "").replace(".", "");
-        Fn.validaRut(valor)
-    }
+  if (value.length > 1) {
+    value =
+      value.substring(0, value.length - 1) +
+      "-" +
+      value.substring(value.length - 1, value.length);
+  }
+  if (value.length > 5) {
+    value =
+      value.substring(0, value.length - 5) +
+      "." +
+      value.substring(value.length - 5, value.length);
+  }
+  if (value.length > 9) {
+    value =
+      value.substring(0, value.length - 9) +
+      "." +
+      value.substring(value.length - 9, value.length);
+  }
+  rut.value = value;
+  if (value.length >= 11) {
+    let valor = value.replace(".", "").replace(".", "");
+    Fn.validaRut(valor);
+  }
 };
 
 onUpdated(() => {

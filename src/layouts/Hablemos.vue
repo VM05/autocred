@@ -78,7 +78,7 @@
             </Paragraph>
           </div>
           <div v-if="!warningFinanciamiento">
-            <InputRut 
+            <InputRut
               label="RUT"
               id="RUT"
               placeholder="RUT"
@@ -92,6 +92,7 @@
           <CheckServicios
             label="¿Qué servicios necesitas?"
             class="w-full mb-4"
+            columnas
             @update:checkServicios="(e) => handleCheck(e)"
           />
           <SelectGestion
@@ -156,7 +157,7 @@ const warnings = reactive({
 });
 const errorForm = ref("uno de los campos esta vacio");
 const direccion_sitio = window.location.href;
-const warningFinanciamiento = ref(true)
+const warningFinanciamiento = ref(true);
 
 const onlyRut = ($event) => {
   const validRut = /[^kK0-9]/g;
@@ -187,7 +188,7 @@ const formContacto = reactive({
   utm_medium: useUtms.utm_medium || "web",
   utm_campaign: useUtms.utm_campaign || "web",
   sucursal_id: 1,
-  dni: "0"
+  dni: "0",
 });
 
 // const modal = ref(false);
@@ -263,14 +264,13 @@ const handleCheck = (e) => {
 };
 
 watch(formContacto, () => {
-  
   if (formContacto.servicios.includes("Financiamientos")) {
     warningFinanciamiento.value = false;
   } else {
     warningFinanciamiento.value = true;
     formContacto.dni = "0";
   }
-  
+
   isFormComplete.value = formEmpty(formContacto);
   isEmailValid.value = validateEmail(formContacto.email);
 
@@ -291,38 +291,36 @@ watch(formContacto, () => {
     warnings.warningServicios = true;
   }
 
-if(!warningFinanciamiento.value){
-  if (
-    warnings.warningTelefono == false &&
-    warnings.warningServicios == false &&
-    isEmailValid.value == true &&
-    isFormComplete.value == false &&
-    formContacto.mensaje != "" && validateRut(formContacto.dni)
-  ) {
-    warnings.isWarning = false;
+  if (!warningFinanciamiento.value) {
+    if (
+      warnings.warningTelefono == false &&
+      warnings.warningServicios == false &&
+      isEmailValid.value == true &&
+      isFormComplete.value == false &&
+      formContacto.mensaje != "" &&
+      validateRut(formContacto.dni)
+    ) {
+      warnings.isWarning = false;
+    } else {
+      warnings.isWarning = true;
+    }
   } else {
-    warnings.isWarning = true;
+    if (
+      warnings.warningTelefono == false &&
+      warnings.warningServicios == false &&
+      isEmailValid.value == true &&
+      isFormComplete.value == false &&
+      formContacto.mensaje != ""
+    ) {
+      warnings.isWarning = false;
+    } else {
+      warnings.isWarning = true;
+    }
   }
 
-}else{
-
-  if (
-    warnings.warningTelefono == false &&
-    warnings.warningServicios == false &&
-    isEmailValid.value == true &&
-    isFormComplete.value == false &&
-    formContacto.mensaje != ""
-  ) {
-    warnings.isWarning = false;
-  } else {
-    warnings.isWarning = true;
-  }
-}
-
-console.log(validateRut(formContacto.dni))
-  console.log(formContacto.dni)
+  console.log(validateRut(formContacto.dni));
+  console.log(formContacto.dni);
 });
-
 
 watch([isLoading, isSuccess, isError], () => {
   isLoading.value == true || isSuccess.value == true || isError.value == true

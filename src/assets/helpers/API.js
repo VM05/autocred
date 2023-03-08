@@ -14,6 +14,16 @@ export const direcciones = [
     },
 ]
 
+export const tiposDeCredito = [
+    {
+        valor: 1,
+
+    },
+    { valor: 2 },
+    { valor: 3 },
+
+]
+
 export const servicios = [
     { id: 2, name: "Financiamientos" },
     { id: 1, name: "Transferencias" },
@@ -22,6 +32,12 @@ export const servicios = [
     { id: 5, name: "Traslado en VAN" },
 
 ];
+
+export const formaDeContacto = [
+    { id: 2, name: "Teléfono" },
+    { id: 1, name: "Correo electrónico" },
+    { id: 3, name: "Whatsapp" },
+]
 
 const hoy = new Date().toLocaleDateString().split("-").reverse().join("-");
 
