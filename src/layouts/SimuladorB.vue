@@ -228,62 +228,17 @@
                       @update:checkServicios="(e) => handleCheck(e)"
                     />
                   </div>
-                  <!-- <div class="flex flex-col md:flex-row">
-                      <SelectMarcas1
-                        label="Marca"
-                        id="Marca"
-                        @update:marca="
-                          (e) => {
-                            formSimulador.vehicle_brand = e.name;
-                            disabledModel = false;
-                            useSimulador.resetModelo();
-                          }
-                        "
-                      />
-                      <SelectModelo1
-                        label="Modelo"
-                        id="Modelo"
-                        @update:modelo="
-                          (e) =>
-                            e.name != 'Modelo'
-                              ? (formSimulador.vehicle_model = e.name)
-                              : (formSimulador.vehicle_model = '')
-                        "
-                        :disabled="disabledModel"
-                      />
-                    </div>
-                    <div class="flex flex-col md:flex-row">
-                      <Input
-                        label="Version"
-                        id="Version"
-                        placeholder="Version"
-                        @update:text="
-                          (e) => (formSimulador.vehicle_version = e)
-                        "
-                      />
-
-                      <SelectAnios1
-                        label="Año"
-                        id="Año"
-                        @update:anio="(e) => (formSimulador.vehicle_year = e)"
-                        :tipoCredito="express"
-                      />
-                    </div> 
-                  </div>-->
                 </div>
                 <!-- fin primer paso -->
 
                 <!-- comienzo segundo paso -->
-                <div
-                  class="md:px-5 md:border-x mb-8 md:mb-0 step"
-                  v-show="activo == 1"
-                >
+                <div class="md:px-5 mb-8 md:mb-0 step" v-show="activo == 1">
                   <div class="grid grid-cols-3 gap-6">
                     <CardTipoCredito
                       v-for="item in tiposDeCredito"
                       :key="item.valor"
-                      :valor="item.valor"
-                      @valor="(e) => handleCredito(e)"
+                      :item="item"
+                      @credito="(e) => handleCredito(e)"
                     />
                   </div>
                   <!--  <div class="price">
@@ -320,11 +275,61 @@
                   /> -->
                 </div>
                 <!--fin segundo paso-->
+
+                <!--comienzo tercer paso-->
                 <div
                   v-show="activo == 2"
-                  class="step grid place-content-center transition"
+                  class="step transition md:px-5 mb-8 md:mb-0 step"
                 >
-                  <div class="" v-if="!loading && !complete">
+                  <div class="grid md:grid-cols-3">
+                    <div class="col-span-1 h-60 min-h-full">
+                      <RadioSelection @vehiculo-comprar="(e) => hands(e)" />
+                    </div>
+                    <div class="col-span-1 md:border-x px-3">
+                      <div class="flex flex-col md:flex-row gap-3">
+                        <SelectMarcas1
+                          label="Marca"
+                          id="Marca"
+                          @update:marca="
+                            (e) => {
+                              formSimulador.vehicle_brand = e.name;
+                              disabledModel = false;
+                              useSimulador.resetModelo();
+                            }
+                          "
+                        />
+                        <SelectModelo1
+                          label="Modelo"
+                          id="Modelo"
+                          @update:modelo="
+                            (e) =>
+                              e.name != 'Modelo'
+                                ? (formSimulador.vehicle_model = e.name)
+                                : (formSimulador.vehicle_model = '')
+                          "
+                          :disabled="disabledModel"
+                        />
+                      </div>
+                      <div class="flex flex-col gap-3">
+                        <Input
+                          label="Version"
+                          id="Version"
+                          placeholder="Version"
+                          @update:text="
+                            (e) => (formSimulador.vehicle_version = e)
+                          "
+                        />
+
+                        <SelectAnios1
+                          label="Año"
+                          id="Año"
+                          @update:anio="(e) => (formSimulador.vehicle_year = e)"
+                          :tipoCredito="express"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="" v-if="!loading && !complete">
                     <img
                       src="../assets/img/simulador.svg"
                       alt="simulador"
@@ -343,11 +348,11 @@
                       :typeCredit="formSimulador.type"
                       @select:term="(cuota) => handleTransition(cuota)"
                     />
-                  </div>
+                  </div>-->
                 </div>
               </div>
               <div
-                class="footer md:grid md:justify-items-center md:align-middle flex flex-row justify-center gap-3 py-4"
+                class="footer md:justify-items-center md:align-middle flex flex-row justify-center gap-3 py-4"
               >
                 <Button1
                   v-if="activo > 0"
@@ -544,6 +549,7 @@ import SelectModelo1 from "../components/SelectModelo.vue";
 import { reactive, ref, watch, onMounted, onUpdated, computed } from "vue";
 import { typeCredit } from "../assets/helpers/API";
 import axios from "axios";
+import RadioSelection from "../layouts/RadioSelection.vue";
 import {
   EVALUACION_URL_1,
   EVALUACION_URL_2,
@@ -624,7 +630,8 @@ const formSimulador2 = reactive({
 });
 
 const handleCredito = (e) => {
-  console.log(e.dataset.valor);
+  formSimulador.typeCredit = e.dataset.valor;
+  console.log(formSimulador.typeCredit);
 };
 
 const registerForm = reactive({
@@ -1187,8 +1194,14 @@ const cerrarModal = () => {
 
 const validarPaso = () => {
   let steps = document.querySelectorAll(".step");
-  let inputs = steps[0].querySelectorAll("input");
-  activo.value++;
+  let inputs = steps[activo.value].querySelectorAll("input");
+  console.log(inputs);
+
+  activo.value < 2 ? activo.value++ : "";
+};
+
+const hands = (e) => {
+  console.log(e);
 };
 </script>
 

@@ -5,7 +5,7 @@
   >
     <span
       tabindex="0"
-      class="w-5 h-5 border-2 border-gray-400 rounded-md focusfocus-within:border-primary-900"
+      class="w-5 h-5 border-2 border-gray-400 rounded-md focus-within:border-primary-900"
       v-show="!isSelected"
     />
     <CheckIcon
