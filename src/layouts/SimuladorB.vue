@@ -238,7 +238,12 @@
                       v-for="item in tiposDeCredito"
                       :key="item.valor"
                       :item="item"
-                      @credito="(e) => handleCredito(e)"
+                      :tipoCredito="formSimulador.typeCredit"
+                      @credito="
+                        (valor) => (
+                          activo++, (formSimulador.typeCredit = valor)
+                        )
+                      "
                     />
                   </div>
                   <!--  <div class="price">
@@ -279,13 +284,11 @@
                 <!--comienzo tercer paso-->
                 <div
                   v-show="activo == 2"
-                  class="step transition md:px-5 mb-8 md:mb-0 step"
+                  class="step transition md:px-5 md:mb-0 step"
                 >
                   <div class="grid md:grid-cols-3">
                     <div class="col-span-1 h-60 min-h-full">
                       <RadioSelection @vehiculo-comprar="(e) => hands(e)" />
-                    </div>
-                    <div class="col-span-1 md:border-x px-3">
                       <div class="flex flex-col md:flex-row gap-3">
                         <SelectMarcas1
                           label="Marca"
@@ -310,7 +313,7 @@
                           :disabled="disabledModel"
                         />
                       </div>
-                      <div class="flex flex-col gap-3">
+                      <div class="flex flex-col md:flex-row gap-3">
                         <Input
                           label="Version"
                           id="Version"
@@ -328,27 +331,30 @@
                         />
                       </div>
                     </div>
+                    <div class="col-span-1 md:border-x px-3"></div>
+                    <div class="col-span-1">
+                      <div class="" v-if="!loading && !complete">
+                        <img
+                          src="../assets/img/simulador.svg"
+                          alt="simulador"
+                          class="w-full"
+                        />
+                      </div>
+                      <div class="grid place-content-center" v-if="loading">
+                        <Loading />
+                      </div>
+                      <div
+                        v-else-if="complete"
+                        class="col-span-1 flex flex-col justify-between"
+                      >
+                        <Acordion1
+                          :cuotasSimulacion="dataCuotas"
+                          :typeCredit="formSimulador.type"
+                          @select:term="(cuota) => handleTransition(cuota)"
+                        />
+                      </div>
+                    </div>
                   </div>
-                  <!-- <div class="" v-if="!loading && !complete">
-                    <img
-                      src="../assets/img/simulador.svg"
-                      alt="simulador"
-                      class="w-full"
-                    />
-                  </div>
-                  <div class="grid place-content-center" v-if="loading">
-                    <Loading />
-                  </div>
-                  <div
-                    v-else-if="complete"
-                    class="col-span-1 flex flex-col justify-between"
-                  >
-                    <Acordion1
-                      :cuotasSimulacion="dataCuotas"
-                      :typeCredit="formSimulador.type"
-                      @select:term="(cuota) => handleTransition(cuota)"
-                    />
-                  </div>-->
                 </div>
               </div>
               <div
@@ -367,7 +373,7 @@
                   secondary
                   id="boton-volver"
                   @click.prevent="validarPaso"
-                  v-if="activo < 2"
+                  v-if="activo < 2 && activo != 1"
                 />
                 <Button1
                   text="Consulta tu cuota"
@@ -629,10 +635,9 @@ const formSimulador2 = reactive({
   campaign: useUtms.utm_campaign || "Autocred",
 });
 
-const handleCredito = (e) => {
-  formSimulador.typeCredit = e.dataset.valor;
-  console.log(formSimulador.typeCredit);
-};
+// const handleCredito = (valor) => {
+//   formSimulador.typeCredit = valor;
+// };
 
 const registerForm = reactive({
   dni: "",

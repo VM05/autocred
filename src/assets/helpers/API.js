@@ -145,6 +145,7 @@ export const procedencias = [
     { id: 52, name: "clubporche", procedenciaId: 124 },
     { id: 53, name: "america-remates", procedenciaId: 125 },
     { id: 54, name: "carsandcoffee", procedenciaId: 126 },
+    { id: 54, name: "opencar", procedenciaId: 129 },
 
 ]
 
