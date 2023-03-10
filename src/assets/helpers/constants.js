@@ -968,6 +968,9 @@ export const stepsForm = [
     {
         title: 'Valor Vehículo'
     },
+    {
+        title: 'ultimo paso'
+    },
 
 ]
 

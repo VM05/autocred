@@ -55,6 +55,7 @@
                   handleAccordion(cuota.term, cuota.id, cuota.monthly_payment)
                 "
                 :id="'boton-' + cuota.term + '-cuotas'"
+                @click="sumar"
               />
             </div>
           </DisclosurePanel>
@@ -72,11 +73,15 @@ import Button from "./Button.vue";
 import Heading from "./Heading.vue";
 
 // const creditoSmart = ref(false);
-const emits = defineEmits(["select:term"]);
+const emits = defineEmits(["select:term", "sumar"]);
 const handleAccordion = (cuota, id, mes) =>
   emits("select:term", [cuota, id, mes]);
 const props = defineProps({
   cuotasSimulacion: Array,
   typeCredit: String,
 });
+
+const sumar = () => {
+  emits("sumar", 1);
+};
 </script>

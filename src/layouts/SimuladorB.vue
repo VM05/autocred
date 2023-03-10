@@ -64,298 +64,313 @@
         </div>
 
         <div class="card shadow-2xl px-6 py-8">
+          <div class="title border-b pb-4 border-primary-900">
+            <Heading1
+              content="Etapa 1: Consulta plazo y valor cuota"
+              headingType="h3"
+            />
+          </div>
+          <div>
+            <ProgressBar v-if="activo < steps" :activo="activo" />
+          </div>
           <Transition>
             <form @submit.prevent="handleForm" v-show="formActive">
-              <div class="title border-b pb-4 border-primary-900">
-                <Heading1
-                  content="Etapa 1: Consulta plazo y valor cuota"
-                  headingType="h3"
-                />
-              </div>
-              <div>
-                <ProgressBar v-if="activo < 3" :activo="activo" />
-              </div>
               <div class="content py-3 md:py-6 gap-4 md:gap-6 md:border-b px-5">
                 <!-- comienzo primer paso-->
-                <div
-                  v-show="activo == 0"
-                  class="step grid grid-cols-1 md:grid-cols-3 gap-4"
-                >
-                  <div class="col-span-1">
-                    <!-- <SelectTypeCredito1
+                <Transition name="slide-fade">
+                  <div
+                    v-show="activo == 0"
+                    class="step grid grid-cols-1 md:grid-cols-3 gap-4"
+                  >
+                    <div class="col-span-1">
+                      <!-- <SelectTypeCredito1
                       label="Tipo Crédito"
                       id="Tipo Crédito"
                       @update:type="(e) => (formSimulador.type = e.value)"
                       @valores="(e) => registrarValor(e)"
                     /> -->
-                    <InputRut1
-                      label="RUT"
-                      id="RUT"
-                      placeholder="RUT"
-                      class="w-full"
-                      @update:rut="(e) => (formSimulador.dni = e)"
-                      @keypress="onlyRut"
-                      @focusout="validarCliente"
-                    />
-
-                    <div class="flex flex-col relative">
-                      <Input
-                        label="Nombre"
-                        id="Nombre"
-                        placeholder="Nombre"
-                        :value="formSimulador2.name"
-                        @update:text="(e) => (formSimulador2.name = e)"
-                        @textvalue="(e) => checkInput(e)"
+                      <InputRut1
+                        label="RUT"
+                        id="RUT"
+                        placeholder="RUT"
+                        class="w-full"
+                        @update:rut="(e) => (formSimulador.dni = e)"
+                        @keypress="onlyRut"
+                        @focusout="validarCliente"
                       />
-                      <Paragraph
-                        class="absolute w-full bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                        v-if="warningName"
-                      >
-                        Debe ingresar su nombre
-                      </Paragraph>
-                    </div>
 
-                    <div class="md:flex gap-2">
-                      <div class="relative">
+                      <div class="flex flex-col relative">
                         <Input
-                          label="Apellido Paterno"
-                          id="Apellido Paterno"
-                          placeholder="Apellido Paterno"
-                          :value="formSimulador2.first_surname"
-                          @update:text="
-                            (e) => (formSimulador2.first_surname = e)
-                          "
-                          @textvalue="(e) => checkSurname(e)"
+                          label="Nombre"
+                          id="Nombre"
+                          placeholder="Nombre"
+                          :value="formSimulador2.name"
+                          @update:text="(e) => (formSimulador2.name = e)"
+                          @textvalue="(e) => checkInput(e)"
                         />
                         <Paragraph
-                          class="absolute w-full bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                          v-if="warningSurname"
+                          class="absolute w-full bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                          v-if="warningName"
                         >
-                          Debe ingresar su apellido paterno
+                          Debe ingresar su nombre
                         </Paragraph>
                       </div>
 
-                      <div class="relative">
-                        <Input
-                          label="Apellido Materno"
-                          id="Apellido Materno"
-                          placeholder="Apellido Materno"
-                          :value="formSimulador2.second_surname"
-                          @update:text="
-                            (e) => (formSimulador2.second_surname = e)
-                          "
-                          @textvalue="(e) => checkSecondSurname(e)"
-                        />
+                      <div class="md:flex gap-2">
+                        <div class="relative">
+                          <Input
+                            label="Apellido Paterno"
+                            id="Apellido Paterno"
+                            placeholder="Apellido Paterno"
+                            :value="formSimulador2.first_surname"
+                            @update:text="
+                              (e) => (formSimulador2.first_surname = e)
+                            "
+                            @textvalue="(e) => checkSurname(e)"
+                          />
+                          <Paragraph
+                            class="absolute w-full bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                            v-if="warningSurname"
+                          >
+                            Debe ingresar su apellido paterno
+                          </Paragraph>
+                        </div>
 
-                        <Paragraph
-                          class="absolute w-full bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                          v-if="warningSecondSurname"
-                        >
-                          Debe ingresar su apellido materno
-                        </Paragraph>
+                        <div class="relative">
+                          <Input
+                            label="Apellido Materno"
+                            id="Apellido Materno"
+                            placeholder="Apellido Materno"
+                            :value="formSimulador2.second_surname"
+                            @update:text="
+                              (e) => (formSimulador2.second_surname = e)
+                            "
+                            @textvalue="(e) => checkSecondSurname(e)"
+                          />
+
+                          <Paragraph
+                            class="absolute w-full bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                            v-if="warningSecondSurname"
+                          >
+                            Debe ingresar su apellido materno
+                          </Paragraph>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="col-span-1 md:border-x px-2">
-                    <div class="relative">
-                      <InputEmail
-                        absoluta
-                        label="Email"
-                        id="Email"
-                        placeholder="Email"
-                        @update:email="(e) => (formSimulador2.email = e)"
-                        :value="
-                          formSimulador2.email ? formSimulador2.email : ''
-                        "
-                        @textvalue="(e) => checkEmail(e)"
-                        :key="componentKey"
-                      />
+                    <div class="col-span-1 md:border-x px-2">
+                      <div class="relative">
+                        <InputEmail
+                          absoluta
+                          label="Email"
+                          id="Email"
+                          placeholder="Email"
+                          @update:email="(e) => (formSimulador2.email = e)"
+                          :value="
+                            formSimulador2.email ? formSimulador2.email : ''
+                          "
+                          @textvalue="(e) => checkEmail(e)"
+                          :key="componentKey"
+                        />
 
-                      <!-- <Paragraph
+                        <!-- <Paragraph
                         class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
                         v-if="warningEmail"
                       >
                         Por favor ingresa una direccion de correo valida
                       </Paragraph> -->
+                      </div>
+
+                      <div class="relative">
+                        <Input
+                          label="Teléfono"
+                          id="Telefono"
+                          isPhone
+                          placeholder="Teléfono"
+                          @update:text="(e) => (formSimulador2.phone = e)"
+                          :value="
+                            formSimulador2.phone ? formSimulador2.phone : ''
+                          "
+                          @keypress="onlyNumber"
+                          @textvalue="(e) => checkTelefono(e)"
+                        />
+                        <Paragraph
+                          class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                          v-if="warningPhone"
+                        >
+                          El teléfono debe contener al menos 9 digitos
+                        </Paragraph>
+                      </div>
+
+                      <div class="relative w-full">
+                        <Input
+                          label="Fecha Nacimiento"
+                          id="Fecha Nacimiento"
+                          date
+                          @update:text="(e) => (formSimulador2.birth_date = e)"
+                          @textvalue="checkFecha(e)"
+                          :key="componentKey"
+                        />
+
+                        <Paragraph
+                          class="absolute w-full -bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                          v-if="warningFecha"
+                        >
+                          {{ mensajeFecha }}
+                        </Paragraph>
+                      </div>
                     </div>
 
-                    <div class="relative">
-                      <Input
-                        label="Teléfono"
-                        id="Telefono"
-                        isPhone
-                        placeholder="Teléfono"
-                        @update:text="(e) => (formSimulador2.phone = e)"
-                        :value="
-                          formSimulador2.phone ? formSimulador2.phone : ''
-                        "
-                        @keypress="onlyNumber"
-                        @textvalue="(e) => checkTelefono(e)"
+                    <div class="col-span-1">
+                      <CheckServicios
+                        label="¿Como prefieres que te contactemos?"
+                        class="w-full mb-4"
+                        :items="formaDeContacto"
+                        @update:checkServicios="(e) => handleCheck(e)"
                       />
-                      <Paragraph
-                        class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                        v-if="warningPhone"
-                      >
-                        El teléfono debe contener al menos 9 digitos
-                      </Paragraph>
-                    </div>
-
-                    <div class="relative w-full">
-                      <Input
-                        label="Fecha Nacimiento"
-                        id="Fecha Nacimiento"
-                        date
-                        @update:text="(e) => (formSimulador2.birth_date = e)"
-                        @textvalue="checkFecha(e)"
-                        :key="componentKey"
-                      />
-
-                      <Paragraph
-                        class="absolute w-full -bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                        v-if="warningFecha"
-                      >
-                        {{ mensajeFecha }}
-                      </Paragraph>
                     </div>
                   </div>
-
-                  <div class="col-span-1">
-                    <CheckServicios
-                      label="¿Como prefieres que te contactemos?"
-                      class="w-full mb-4"
-                      :items="formaDeContacto"
-                      @update:checkServicios="(e) => handleCheck(e)"
-                    />
-                  </div>
-                </div>
+                </Transition>
                 <!-- fin primer paso -->
 
                 <!-- comienzo segundo paso -->
-                <div class="md:px-5 mb-8 md:mb-0 step" v-show="activo == 1">
-                  <div class="grid grid-cols-3 gap-6">
-                    <CardTipoCredito
-                      v-for="item in tiposDeCredito"
-                      :key="item.valor"
-                      :item="item"
-                      :tipoCredito="formSimulador.typeCredit"
-                      @credito="
-                        (valor) => (
-                          activo++, (formSimulador.typeCredit = valor)
-                        )
-                      "
-                    />
+                <Transition name="slide-fade">
+                  <div class="md:px-5 mb-8 md:mb-0 step" v-show="activo == 1">
+                    <div class="grid grid-cols-3 gap-6">
+                      <CardTipoCredito
+                        v-for="item in tiposDeCredito"
+                        :key="item.valor"
+                        :item="item"
+                        :tipoCredito="formSimulador.type"
+                        @credito="
+                          (valor) => (activo++, (formSimulador.type = valor))
+                        "
+                      />
+                    </div>
                   </div>
-                  <!--  <div class="price">
-                    <SliderRange1
-                      @update:slider="(e) => (formSimulador.vehicle_price = e)"
-                      valorTotal
-                      @keypress="onlyNumber"
-                      label="Valor del vehículo"
-                    />
-                  </div>
-                  <div class="pie">
-                    <SliderRange1
-                      @update:slider="(e) => (formSimulador.down_payment = e)"
-                      @keypress="onlyNumber"
-                      :valorAutomatico="formSimulador.down_payment"
-                      label="Valor del pie"
-                    />
-                    <Paragraph
-                      class="text-red-700 justify-self-center text-center grid-flow-row col-end-3 mt-2"
-                      v-if="warningDownPayment"
-                    >
-                      {{ mensajeValor }}
-                    </Paragraph>
-                  </div>
-
-                  <Input
-                    label="Monto a financiar"
-                    id="financiar"
-                    placeholder="Monto a financiar"
-                    money
-                    :valor="valorFinanciar"
-                    disabled
-                    informativo
-                  /> -->
-                </div>
+                </Transition>
                 <!--fin segundo paso-->
 
                 <!--comienzo tercer paso-->
-                <div
-                  v-show="activo == 2"
-                  class="step transition md:px-5 md:mb-0 step"
-                >
-                  <div class="grid md:grid-cols-3">
-                    <div class="col-span-1 h-60 min-h-full">
-                      <RadioSelection @vehiculo-comprar="(e) => hands(e)" />
-                      <div class="flex flex-col md:flex-row gap-3">
-                        <SelectMarcas1
-                          label="Marca"
-                          id="Marca"
-                          @update:marca="
-                            (e) => {
-                              formSimulador.vehicle_brand = e.name;
-                              disabledModel = false;
-                              useSimulador.resetModelo();
-                            }
-                          "
-                        />
-                        <SelectModelo1
-                          label="Modelo"
-                          id="Modelo"
-                          @update:modelo="
-                            (e) =>
-                              e.name != 'Modelo'
-                                ? (formSimulador.vehicle_model = e.name)
-                                : (formSimulador.vehicle_model = '')
-                          "
-                          :disabled="disabledModel"
-                        />
-                      </div>
-                      <div class="flex flex-col md:flex-row gap-3">
-                        <Input
-                          label="Version"
-                          id="Version"
-                          placeholder="Version"
-                          @update:text="
-                            (e) => (formSimulador.vehicle_version = e)
-                          "
-                        />
+                <Transition name="slide-fade">
+                  <div
+                    v-show="activo == 2"
+                    class="step transition md:px-5 md:mb-0"
+                  >
+                    <div class="grid md:grid-cols-3 md:gap-6">
+                      <div class="col-span-1 h-60 min-h-full">
+                        <RadioSelection @vehiculo-comprar="(e) => hands(e)" />
+                        <div class="flex flex-col md:flex-row gap-3">
+                          <SelectMarcas1
+                            label="Marca"
+                            id="Marca"
+                            @update:marca="
+                              (e) => {
+                                formSimulador.vehicle_brand = e.name;
+                                disabledModel = false;
+                                useSimulador.resetModelo();
+                              }
+                            "
+                          />
+                          <SelectModelo1
+                            label="Modelo"
+                            id="Modelo"
+                            @update:modelo="
+                              (e) =>
+                                e.name != 'Modelo'
+                                  ? (formSimulador.vehicle_model = e.name)
+                                  : (formSimulador.vehicle_model = '')
+                            "
+                            :disabled="disabledModel"
+                          />
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-3">
+                          <Input
+                            label="Version"
+                            id="Version"
+                            placeholder="Version"
+                            @update:text="
+                              (e) => (formSimulador.vehicle_version = e)
+                            "
+                          />
 
-                        <SelectAnios1
-                          label="Año"
-                          id="Año"
-                          @update:anio="(e) => (formSimulador.vehicle_year = e)"
-                          :tipoCredito="express"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-span-1 md:border-x px-3"></div>
-                    <div class="col-span-1">
-                      <div class="" v-if="!loading && !complete">
-                        <img
-                          src="../assets/img/simulador.svg"
-                          alt="simulador"
-                          class="w-full"
-                        />
-                      </div>
-                      <div class="grid place-content-center" v-if="loading">
-                        <Loading />
+                          <SelectAnios1
+                            label="Año"
+                            id="Año"
+                            @update:anio="
+                              (e) => (formSimulador.vehicle_year = e)
+                            "
+                            :tipoCredito="express"
+                          />
+                        </div>
                       </div>
                       <div
-                        v-else-if="complete"
-                        class="col-span-1 flex flex-col justify-between"
+                        class="col-span-1 md:border-x px-3 gap-6 flex flex-col"
                       >
-                        <Acordion1
-                          :cuotasSimulacion="dataCuotas"
-                          :typeCredit="formSimulador.type"
-                          @select:term="(cuota) => handleTransition(cuota)"
+                        <div class="price">
+                          <SliderRange1
+                            @update:slider="
+                              (e) => (formSimulador.vehicle_price = e)
+                            "
+                            valorTotal
+                            @keypress="onlyNumber"
+                            label="Valor del vehículo"
+                          />
+                        </div>
+                        <div class="pie">
+                          <SliderRange1
+                            @update:slider="
+                              (e) => (formSimulador.down_payment = e)
+                            "
+                            @keypress="onlyNumber"
+                            :valorAutomatico="formSimulador.down_payment"
+                            label="Valor del pie"
+                          />
+                          <Paragraph
+                            class="text-red-700 justify-self-center text-center grid-flow-row col-end-3 mt-2"
+                            v-if="warningDownPayment"
+                          >
+                            {{ mensajeValor }}
+                          </Paragraph>
+                        </div>
+
+                        <Input
+                          label="Monto a financiar"
+                          id="financiar"
+                          placeholder="Monto a financiar"
+                          money
+                          :valor="valorFinanciar"
+                          disabled
+                          informativo
                         />
+                      </div>
+                      <div class="col-span-1">
+                        <div class="" v-if="!loading && !complete">
+                          <img
+                            src="../assets/img/simulador.svg"
+                            alt="simulador"
+                            class="w-full"
+                          />
+                        </div>
+                        <div class="grid place-content-center" v-if="loading">
+                          <Loading />
+                        </div>
+                        <div
+                          v-else-if="complete"
+                          class="col-span-1 flex flex-col justify-between"
+                        >
+                          <Acordion1
+                            :cuotasSimulacion="dataCuotas"
+                            :typeCredit="formSimulador.type"
+                            @select:term="(cuota) => handleTransition(cuota)"
+                            @sumar="activo++"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Transition>
+                <!--fin tercer paso-->
               </div>
               <div
                 class="footer md:justify-items-center md:align-middle flex flex-row justify-center gap-3 py-4"
@@ -386,7 +401,7 @@
               </div>
             </form>
           </Transition>
-          <Transition>
+          <Transition name="slide-fade">
             <div v-show="formActive2">
               <div class="grid place-content-center my-20" v-if="alerts">
                 <div v-if="loading" class="grid place-content-center">
@@ -433,69 +448,47 @@
                 </div>
               </div>
               <form @submit.prevent="handleForm2" v-else>
-                <div class="title border-b pb-4 border-primary-900">
-                  <Heading1
-                    content="Etapa 2: Ingresa tus datos personales para evaluar"
-                    headingType="h3"
-                  />
-                </div>
                 <div
-                  class="content py-6 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 border-b"
+                  class="content py-6 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 border-b step"
                 >
                   <div class="col-span-1">
                     <div class="flex flex-col relative">
-                      <Input
-                        label="Nombre"
-                        id="Nombre"
-                        placeholder="Nombre"
-                        :value="formSimulador2.name"
-                        @update:text="(e) => (formSimulador2.name = e)"
-                        @textvalue="(e) => checkInput(e)"
-                      />
-                      <Paragraph
-                        class="absolute w-full bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                        v-if="warningName"
-                      >
-                        Debe ingresar su nombre
-                      </Paragraph>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2"></div>
-                  </div>
-                  <div class="col-span-1 md:px-5 md:border-x">
-                    <div class="flex flex-col relative">
-                      <Input
-                        money
-                        label="Renta Líquida"
-                        id="Renta Líquida"
-                        placeholder="Renta Líquida"
-                        @update:text="(e) => (formSimulador2.salary = e)"
-                        :valor="formSimulador2.salary"
-                        @keypress="onlyNumber"
-                        @textvalue="(e) => checkRenta(e)"
-                        :key="componentKey"
-                      />
-                      <Paragraph
-                        class="absolute w-full -bottom-6 md:-bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                        v-if="warningSalary"
-                      >
-                        {{ mensajeSalario }}
-                      </Paragraph>
-                    </div>
-                    <div></div>
-                    <div class="md:flex">
-                      <div class="w-full md:w-1/2">
-                        <SelectNacionalidad
-                          label="Nacionalidad"
-                          id="Nacionalidad"
-                          @update:nacionalidad="
-                            (e) => (formSimulador2.nationality = e)
-                          "
-                          :valor="formSimulador2.nationality"
+                      <div class="flex flex-col relative">
+                        <Input
+                          money
+                          label="Renta Líquida"
+                          id="Renta Líquida"
+                          placeholder="Renta Líquida"
+                          @update:text="(e) => (formSimulador2.salary = e)"
+                          :valor="formSimulador2.salary"
+                          @keypress="onlyNumber"
+                          @textvalue="(e) => checkRenta(e)"
+                          :key="componentKey"
                         />
+                        <Paragraph
+                          class="absolute w-full -bottom-6 md:-bottom-0 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                          v-if="warningSalary"
+                        >
+                          {{ mensajeSalario }}
+                        </Paragraph>
+                      </div>
+
+                      <div class="md:flex">
+                        <div class="w-full">
+                          <SelectNacionalidad
+                            label="Nacionalidad"
+                            id="Nacionalidad"
+                            @update:nacionalidad="
+                              (e) => (formSimulador2.nationality = e)
+                            "
+                            :valor="formSimulador2.nationality"
+                          />
+                        </div>
                       </div>
                     </div>
-                    <div class="md:flex">
+                  </div>
+                  <div class="col-span-1 md:px-5 md:border-x">
+                    <div>
                       <SelectEmpleo
                         label="Tipo Ingreso"
                         id="Tipo Ingreso"
@@ -580,6 +573,8 @@ import ProgressBar from "../components/ProgressBar.vue";
 import CheckServicios from "../components/CheckServicios.vue";
 import { formaDeContacto } from "../assets/helpers/API";
 import CardTipoCredito from "../components/CardtTipoCredito.vue";
+
+const steps = ref("");
 
 const servicios = ref([]);
 const activo = ref(0);
@@ -701,6 +696,11 @@ const handleForm = async () => {
     console.log("error");
   }
 };
+
+onMounted(() => {
+  steps.value = document.querySelectorAll(".step").length;
+  console.log(steps.value);
+});
 
 const forceRerender = () => {
   componentKey.value += 1;
@@ -1200,7 +1200,6 @@ const cerrarModal = () => {
 const validarPaso = () => {
   let steps = document.querySelectorAll(".step");
   let inputs = steps[activo.value].querySelectorAll("input");
-  console.log(inputs);
 
   activo.value < 2 ? activo.value++ : "";
 };
@@ -1211,6 +1210,28 @@ const hands = (e) => {
 </script>
 
 <style scoped>
+/*
+  Enter and leave animations can use different
+  durations and timing functions.
+*/
+.slide-fade-enter-active {
+  transition: all 0.4s linear;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from {
+  transform: translateX(20px);
+  opacity: 0;
+}
+.slide-fade-leave-to {
+  transition-duration: 0s;
+  transform: translateX(20px);
+  opacity: 0;
+}
+
 .imagen {
   width: 100%;
   max-width: 100%;
