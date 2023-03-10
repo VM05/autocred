@@ -3,7 +3,7 @@
     <div
       class="shadow-xl hover:shadow-2xl rounded-xl p-5 flex flex-col flex-grow-1 h-full place-items-center cards-tipo-credito transition group hover:-translate-y-1 hover:bg-primary-800 focus:bg-primary-800 focus:-translate-y-1 text-primary-900"
       tabindex="-1"
-      @click="handler"
+      @click.prevent="handler"
       :data-valor="item.valor"
     >
       <Heading
@@ -34,8 +34,17 @@ const emit = defineEmits(["credito"]);
 
 const handler = (e) => {
   const cards = document.querySelectorAll(".cards-tipo-credito");
+    cards.forEach(item =>{
+      item.classList.remove('text-primary-900','text-white','-translate-y-1','bg-primary-900')
+      item.firstChild.classList.remove('text-white')
+    })
 
-  emit("credito", e.target);
+    e.target.classList.add('text-white','-translate-y-1','bg-primary-900')
+    e.target.firstChild.classList.add('text-white')
+
+     
+   
+  // emit("credito", e.target);
 };
 </script>
 
