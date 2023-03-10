@@ -3,7 +3,7 @@
     <div
       class="shadow-xl hover:shadow-2xl rounded-xl p-5 flex flex-col flex-grow-1 h-full place-items-center cards-tipo-credito transition group hover:-translate-y-1 hover:bg-primary-800 focus:bg-primary-800 focus:-translate-y-1 text-primary-900"
       tabindex="-1"
-      @click="handler"
+      @click="handler(e)"
       :data-valor="item.valor"
     >
       <Heading
