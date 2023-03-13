@@ -73,14 +73,14 @@
           <div>
             <ProgressBar v-if="activo < steps" :activo="activo" />
           </div>
-          <Transition>
+          <Transition name="slide-fade">
             <form @submit.prevent="handleForm" v-show="formActive">
               <div class="content py-3 md:py-6 gap-4 md:gap-6 md:border-b px-5">
                 <!-- comienzo primer paso-->
                 <Transition name="slide-fade">
                   <div
                     v-show="activo == 0"
-                    class="step grid grid-cols-1 md:grid-cols-3 gap-4"
+                    class="step grid grid-cols-1 md:grid-cols-3 md:gap-4"
                   >
                     <div class="col-span-1">
                       <!-- <SelectTypeCredito1
@@ -158,7 +158,7 @@
                       </div>
                     </div>
 
-                    <div class="col-span-1 md:border-x px-2">
+                    <div class="col-span-1 md:border-x md:px-2">
                       <div class="relative">
                         <InputEmail
                           absoluta
@@ -237,6 +237,30 @@
                 <Transition name="slide-fade">
                   <div class="md:px-5 mb-8 md:mb-0 step" v-show="activo == 1">
                     <div class="grid grid-cols-3 gap-6">
+                      <Carousel
+                        :items-to-show="1"
+                        :itemsToScroll="1"
+                        :wrap-around="true"
+                        pauseAutoplayOnHover
+                        v-if="useUtms.mobile"
+                      >
+                        <slide v-for="item in tiposDeCredito" :key="item.name">
+                          <CardTipoCredito
+                            :key="item.valor"
+                            :item="item"
+                            :tipoCredito="formSimulador.type"
+                            @credito="
+                              (valor) => (
+                                activo++, (formSimulador.type = valor)
+                              )
+                            "
+                          />
+                        </slide>
+                        <template #addons>
+                          <Pagination />
+                        </template>
+                      </Carousel>
+
                       <CardTipoCredito
                         v-for="item in tiposDeCredito"
                         :key="item.valor"
@@ -258,7 +282,7 @@
                     class="step transition md:px-5 md:mb-0"
                   >
                     <div class="grid md:grid-cols-3 md:gap-6">
-                      <div class="col-span-1 h-60 min-h-full">
+                      <div class="col-span-1">
                         <RadioSelection @vehiculo-comprar="(e) => hands(e)" />
                         <div class="flex flex-col md:flex-row gap-3">
                           <SelectMarcas1
@@ -305,7 +329,7 @@
                         </div>
                       </div>
                       <div
-                        class="col-span-1 md:border-x px-3 gap-6 flex flex-col"
+                        class="col-span-1 md:border-x md:px-3 md:gap-6 flex flex-col"
                       >
                         <div class="price">
                           <SliderRange1
@@ -344,7 +368,7 @@
                           informativo
                         />
                       </div>
-                      <div class="col-span-1">
+                      <div class="col-span-1 flex flex-col">
                         <div class="" v-if="!loading && !complete">
                           <img
                             src="../assets/img/simulador.svg"
@@ -352,7 +376,7 @@
                             class="w-full"
                           />
                         </div>
-                        <div class="grid place-content-center" v-if="loading">
+                        <div class="flex justify-center h-full" v-if="loading">
                           <Loading />
                         </div>
                         <div
@@ -378,8 +402,8 @@
                 <Button1
                   v-if="activo > 0"
                   text="volver"
-                  primary
-                  id="boton-volver"
+                  outlinePrimary
+                  id="boton-continuar"
                   @click.prevent="activo--"
                 />
 
@@ -543,7 +567,6 @@ import Button1 from "../components/Button.vue";
 import SliderRange1 from "../components/Slider-Range.vue";
 import Acordion1 from "../components/Acordion.vue";
 import SelectAnios1 from "../components/SelectAnios.vue";
-import SelectTypeCredito1 from "../components/SelectTypeCredito.vue";
 import SelectModelo1 from "../components/SelectModelo.vue";
 import { reactive, ref, watch, onMounted, onUpdated, computed } from "vue";
 import { typeCredit } from "../assets/helpers/API";
@@ -573,8 +596,11 @@ import ProgressBar from "../components/ProgressBar.vue";
 import CheckServicios from "../components/CheckServicios.vue";
 import { formaDeContacto } from "../assets/helpers/API";
 import CardTipoCredito from "../components/CardtTipoCredito.vue";
+import { Carousel, Slide, Pagination } from "vue3-carousel";
+import "vue3-carousel/dist/carousel.css";
 
 const steps = ref("");
+const windowSize = ref(window.innerWidth);
 
 const servicios = ref([]);
 const activo = ref(0);
@@ -699,7 +725,6 @@ const handleForm = async () => {
 
 onMounted(() => {
   steps.value = document.querySelectorAll(".step").length;
-  console.log(steps.value);
 });
 
 const forceRerender = () => {
@@ -819,6 +844,7 @@ const handleTransition = async (cuota) => {
 };
 
 const volverAnterior = () => {
+  activo.value--;
   formSimulador2.salary = "";
   formSimulador2.income_type = "";
   formSimulador2.work_continuity = "";
@@ -1065,11 +1091,6 @@ const checkRenta = (e) => {
 };
 
 const onlyNumber = ($event) => {
-  // let keyCode = $event.keyCode ? $event.keyCode : $event.which;
-  // if ((keyCode < 48 || keyCode > 57) && keyCode !== 46 && keyCode !== 190) {
-  //   $event.preventDefault();
-  // }
-
   const validNumbers = /[0-9]+/;
   if (!validNumbers.test($event.key)) {
     $event.preventDefault();
@@ -1203,17 +1224,9 @@ const validarPaso = () => {
 
   activo.value < 2 ? activo.value++ : "";
 };
-
-const hands = (e) => {
-  console.log(e);
-};
 </script>
 
 <style scoped>
-/*
-  Enter and leave animations can use different
-  durations and timing functions.
-*/
 .slide-fade-enter-active {
   transition: all 0.4s linear;
 }
