@@ -40,7 +40,7 @@
           /> -->
         </div>
         <div class="md:w-1/2 mb-4 md:mb-0 flex justify-center align-middle">
-          <video v-if="datos.tipo == 'video'" autoplay loop  playsinline muted>
+          <video v-if="datos.tipo == 'video'" autoplay loop playsinline muted>
             <source
               :src="datos.img"
               type="video/mp4"
@@ -83,7 +83,7 @@ import { datosBannerPrincipal } from "../assets/helpers/constants";
 } */
 
 .carousel__pagination {
-  margin: 30px 0px;
+  margin: 20px 0px 30px;
 }
 
 img {

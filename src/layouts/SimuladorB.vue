@@ -236,7 +236,7 @@
                 <!-- comienzo segundo paso -->
                 <Transition name="slide-fade">
                   <div class="md:px-5 mb-8 md:mb-0 step" v-show="activo == 1">
-                    <div class="grid grid-cols-1">
+                    <div class="grid grid-cols-1" v-if="useUtms.mobile">
                       <Carousel
                         :items-to-show="1"
                         :itemsToScroll="1"
@@ -261,7 +261,7 @@
                         </template>
                       </Carousel>
                     </div>
-                    <!-- <div class="grid grid-cols-3 gap-6">
+                    <div class="grid grid-cols-3 gap-6" v-else>
                       <CardTipoCredito
                         v-for="item in tiposDeCredito"
                         :key="item.valor"
@@ -271,7 +271,7 @@
                           (valor) => (activo++, (formSimulador.type = valor))
                         "
                       />
-                    </div> -->
+                    </div>
                   </div>
                 </Transition>
                 <!--fin segundo paso-->
