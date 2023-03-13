@@ -236,31 +236,28 @@
                 <!-- comienzo segundo paso -->
                 <Transition name="slide-fade">
                   <div class="md:px-5 mb-8 md:mb-0 step" v-show="activo == 1">
-                    <div class="grid grid-cols-3 gap-6">
-                      <Carousel
-                        :items-to-show="1"
-                        :itemsToScroll="1"
-                        :wrap-around="true"
-                        pauseAutoplayOnHover
-                        v-if="useUtms.mobile"
-                      >
-                        <slide v-for="item in tiposDeCredito" :key="item.name">
-                          <CardTipoCredito
-                            :key="item.valor"
-                            :item="item"
-                            :tipoCredito="formSimulador.type"
-                            @credito="
-                              (valor) => (
-                                activo++, (formSimulador.type = valor)
-                              )
-                            "
-                          />
-                        </slide>
-                        <template #addons>
-                          <Pagination />
-                        </template>
-                      </Carousel>
-
+                    <Carousel
+                      :items-to-show="1"
+                      :itemsToScroll="1"
+                      :wrap-around="true"
+                      pauseAutoplayOnHover
+                      v-if="useUtms.mobile"
+                    >
+                      <slide v-for="item in tiposDeCredito" :key="item.name">
+                        <CardTipoCredito
+                          :key="item.valor"
+                          :item="item"
+                          :tipoCredito="formSimulador.type"
+                          @credito="
+                            (valor) => (activo++, (formSimulador.type = valor))
+                          "
+                        />
+                      </slide>
+                      <template #addons>
+                        <Pagination />
+                      </template>
+                    </Carousel>
+                    <div class="grid grid-cols-3 gap-6" v-else>
                       <CardTipoCredito
                         v-for="item in tiposDeCredito"
                         :key="item.valor"
