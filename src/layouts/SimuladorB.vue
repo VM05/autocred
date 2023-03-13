@@ -243,16 +243,20 @@
                       pauseAutoplayOnHover
                       v-if="useUtms.mobile"
                     >
-                      <slide v-for="item in tiposDeCredito" :key="item.name">
-                        <CardTipoCredito
-                          :key="item.valor"
-                          :item="item"
-                          :tipoCredito="formSimulador.type"
-                          @credito="
-                            (valor) => (activo++, (formSimulador.type = valor))
-                          "
-                        />
-                      </slide>
+                      <div class="grid grid-cols-1 gap-6">
+                        <slide v-for="item in tiposDeCredito" :key="item.name">
+                          <CardTipoCredito
+                            :key="item.valor"
+                            :item="item"
+                            :tipoCredito="formSimulador.type"
+                            @credito="
+                              (valor) => (
+                                activo++, (formSimulador.type = valor)
+                              )
+                            "
+                          />
+                        </slide>
+                      </div>
                       <template #addons>
                         <Pagination />
                       </template>
