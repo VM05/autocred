@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="shadow-xl hover:shadow-2xl rounded-xl p-5 flex flex-col flex-grow-1 h-full place-items-center cards-tipo-credito transition group hover:-translate-y-1 hover:bg-primary-800"
+      class="shadow-md md:shadow-xl md:hover:shadow-2xl rounded-xl p-5 flex flex-col flex-grow-1 h-full place-items-center cards-tipo-credito transition group hover:-translate-y-1 hover:bg-primary-800"
       :class="[
         item.valor == tipoCredito
           ? 'bg-primary-900 text-white -translate-y-1'
