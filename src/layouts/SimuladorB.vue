@@ -241,7 +241,6 @@
                         :items-to-show="1"
                         :itemsToScroll="1"
                         :wrap-around="true"
-                        pauseAutoplayOnHover
                       >
                         <slide v-for="item in tiposDeCredito" :key="item.name">
                           <CardTipoCredito
