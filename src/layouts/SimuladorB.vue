@@ -236,14 +236,13 @@
                 <!-- comienzo segundo paso -->
                 <Transition name="slide-fade">
                   <div class="md:px-5 mb-8 md:mb-0 step" v-show="activo == 1">
-                    <Carousel
-                      :items-to-show="1"
-                      :itemsToScroll="1"
-                      :wrap-around="true"
-                      pauseAutoplayOnHover
-                      v-if="useUtms.mobile"
-                    >
-                      <div class="grid grid-cols-1 gap-6">
+                    <div class="grid grid-cols-1">
+                      <Carousel
+                        :items-to-show="1"
+                        :itemsToScroll="1"
+                        :wrap-around="true"
+                        pauseAutoplayOnHover
+                      >
                         <slide v-for="item in tiposDeCredito" :key="item.name">
                           <CardTipoCredito
                             :key="item.valor"
@@ -256,12 +255,13 @@
                             "
                           />
                         </slide>
-                      </div>
-                      <template #addons>
-                        <Pagination />
-                      </template>
-                    </Carousel>
-                    <div class="grid grid-cols-3 gap-6" v-else>
+
+                        <template #addons>
+                          <Pagination />
+                        </template>
+                      </Carousel>
+                    </div>
+                    <!-- <div class="grid grid-cols-3 gap-6">
                       <CardTipoCredito
                         v-for="item in tiposDeCredito"
                         :key="item.valor"
@@ -271,7 +271,7 @@
                           (valor) => (activo++, (formSimulador.type = valor))
                         "
                       />
-                    </div>
+                    </div> -->
                   </div>
                 </Transition>
                 <!--fin segundo paso-->
