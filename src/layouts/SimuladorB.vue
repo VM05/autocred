@@ -236,15 +236,17 @@
                 <!-- comienzo segundo paso -->
                 <Transition name="slide-fade">
                   <div class="md:px-5 mb-8 md:mb-0 step" v-show="activo == 1">
-                    <div class="grid grid-cols-1" v-if="useUtms.mobile">
+                    <div
+                      class="grid grid-cols-1"
+                      v-if="useUtms.mobile && activo == 1"
+                    >
                       <Carousel
                         :items-to-show="1"
                         :itemsToScroll="1"
                         :wrap-around="true"
                       >
-                        <slide v-for="item in tiposDeCredito" :key="item.name">
+                        <slide v-for="item in tiposDeCredito" :key="item.valor">
                           <CardTipoCredito
-                            :key="item.valor"
                             :item="item"
                             :tipoCredito="formSimulador.type"
                             @credito="
@@ -704,10 +706,6 @@ const handleCheck = (e) => {
 };
 //PASO 1
 const handleForm = async () => {
-  if (useUtms.mobile) {
-    activo.value++;
-  }
-
   validarMonto.value = false;
   loading.value = true;
   express.value ? (formSimulador.type = "conventional") : formSimulador.type;
