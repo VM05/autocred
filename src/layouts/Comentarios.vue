@@ -64,7 +64,7 @@ defineProps({
 li.carousel__slide {
   /* padding-left: 1rem;
   padding-right: 1rem; */
-  padding: 20px 10px;
+  padding: 10px;
 }
 
 button.carousel__pagination-button {

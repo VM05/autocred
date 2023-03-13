@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="shadow-md md:shadow-xl md:hover:shadow-2xl rounded-xl p-5 flex flex-col flex-grow-1 h-full place-items-center cards-tipo-credito transition group hover:-translate-y-1 hover:bg-primary-800"
+      class="shadow-md md:shadow-xl md:hover:shadow-2xl rounded-xl p-5 flex flex-col flex-grow-1 h-full place-items-center cards-tipo-credito transition group md:hover:-translate-y-1 md:hover:bg-primary-800"
       :class="[
         item.valor == tipoCredito
           ? 'bg-primary-900 text-white -translate-y-1'
@@ -14,7 +14,7 @@
         primary
         :content="item.titulo"
         heading-type="h4"
-        class="group-hover:text-white"
+        class="md:group-hover:text-white"
         :class="item.valor == tipoCredito ? 'text-white' : ''"
       />
       <div class="mt-5">
