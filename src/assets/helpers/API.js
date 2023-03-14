@@ -16,18 +16,19 @@ export const direcciones = [
 
 export const tiposDeCredito = [
     {
-        valor: 1,
+        valor: "conventional express",
+        titulo: "Crédito Express",
         contenido: '<p class="my-2 text-center md:group-hover:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate vel sint officiis animi nemo modi eveniet optio tempora dicta consequuntur. Dicta in atque adipisci molestias ipsa ab quidem voluptate vero dignissimos! Id corporis magni labore, totam laboriosam praesentium assumenda, magnam pariatur optio porro error, natus cumque vero et fugit voluptates. </p > ',
-        titulo: 'Crédito Express'
+
     },
     {
-        valor: 2,
+        valor: "conventional",
         contenido: '<p class=" my-2 text-center md:group-hover:text-white ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate vel sint officiis animi nemo modi eveniet optio tempora dicta consequuntur. Dicta in atque adipisci molestias ipsa ab quidem voluptate vero dignissimos! Id corporis magni labore, totam laboriosam praesentium assumenda, magnam pariatur optio porro error, natus cumque vero et fugit voluptates. </p > ',
         titulo: 'Crédito Convencional'
 
     },
     {
-        valor: 3,
+        valor: "smart",
         contenido: '<p class=" my-2 text-center md:group-hover:text-white ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate vel sint officiis animi nemo modi eveniet optio tempora dicta consequuntur. Dicta in atque adipisci molestias ipsa ab quidem voluptate vero dignissimos! Id corporis magni labore, totam laboriosam praesentium assumenda, magnam pariatur optio porro error, natus cumque vero et fugit voluptates. </p > ',
         titulo: 'Compra Inteligente'
     },

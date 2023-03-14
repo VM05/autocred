@@ -44,7 +44,6 @@ const emit = defineEmits(["credito", "botonSeguir"]);
 
 const handler = (e) => {
   emit("credito", e.target.parentElement.dataset.valor);
-  emit("botonSeguir", 1);
 };
 </script>
 

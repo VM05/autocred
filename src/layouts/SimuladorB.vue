@@ -84,28 +84,37 @@
                   >
                     <div class="col-span-1">
                       <!-- <SelectTypeCredito1
-                      label="Tipo Crédito"
-                      id="Tipo Crédito"
-                      @update:type="(e) => (formSimulador.type = e.value)"
-                      @valores="(e) => registrarValor(e)"
-                    /> -->
+                        label="Tipo Crédito"
+                        id="Tipo Crédito"
+                        @update:type="(e) => (formSimulador.type = e.value)"
+                        @valores="(e) => registrarValor(e)"
+                      /> -->
                       <InputRut1
                         label="RUT"
                         id="RUT"
                         placeholder="RUT"
                         class="w-full"
-                        @update:rut="(e) => (formSimulador.dni = e)"
+                        @update:rut="
+                          (e) => (
+                            (formSimulador.dni = e),
+                            (formularioValidacion.dni = e)
+                          )
+                        "
                         @keypress="onlyRut"
                         @focusout="validarCliente"
                       />
-
                       <div class="flex flex-col relative">
                         <Input
                           label="Nombre"
                           id="Nombre"
                           placeholder="Nombre"
                           :value="formSimulador2.name"
-                          @update:text="(e) => (formSimulador2.name = e)"
+                          @update:text="
+                            (e) => (
+                              (formSimulador2.name = e),
+                              (formularioValidacion.name = e)
+                            )
+                          "
                           @textvalue="(e) => checkInput(e)"
                         />
                         <Paragraph
@@ -124,12 +133,15 @@
                             placeholder="Apellido Paterno"
                             :value="formSimulador2.first_surname"
                             @update:text="
-                              (e) => (formSimulador2.first_surname = e)
+                              (e) => (
+                                (formSimulador2.first_surname = e),
+                                (formularioValidacion.first_surname = e)
+                              )
                             "
                             @textvalue="(e) => checkSurname(e)"
                           />
                           <Paragraph
-                            class="absolute w-full bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                            class="absolute w-full -bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
                             v-if="warningSurname"
                           >
                             Debe ingresar su apellido paterno
@@ -143,13 +155,16 @@
                             placeholder="Apellido Materno"
                             :value="formSimulador2.second_surname"
                             @update:text="
-                              (e) => (formSimulador2.second_surname = e)
+                              (e) => (
+                                (formSimulador2.second_surname = e),
+                                (formularioValidacion.second_surname = e)
+                              )
                             "
                             @textvalue="(e) => checkSecondSurname(e)"
                           />
 
                           <Paragraph
-                            class="absolute w-full bottom-0 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
+                            class="absolute w-full -bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
                             v-if="warningSecondSurname"
                           >
                             Debe ingresar su apellido materno
@@ -165,20 +180,18 @@
                           label="Email"
                           id="Email"
                           placeholder="Email"
-                          @update:email="(e) => (formSimulador2.email = e)"
+                          @update:email="
+                            (e) => (
+                              (formSimulador2.email = e),
+                              (formularioValidacion.email = e)
+                            )
+                          "
                           :value="
                             formSimulador2.email ? formSimulador2.email : ''
                           "
                           @textvalue="(e) => checkEmail(e)"
                           :key="componentKey"
                         />
-
-                        <!-- <Paragraph
-                        class="absolute w-full -bottom-6 md:-bottom-6 left-1/2 -translate-x-1/2 text-red-700 justify-self-center grid-flow-row text-center"
-                        v-if="warningEmail"
-                      >
-                        Por favor ingresa una direccion de correo valida
-                      </Paragraph> -->
                       </div>
 
                       <div class="relative">
@@ -187,7 +200,12 @@
                           id="Telefono"
                           isPhone
                           placeholder="Teléfono"
-                          @update:text="(e) => (formSimulador2.phone = e)"
+                          @update:text="
+                            (e) => (
+                              (formSimulador2.phone = e),
+                              (formularioValidacion.phone = e)
+                            )
+                          "
                           :value="
                             formSimulador2.phone ? formSimulador2.phone : ''
                           "
@@ -207,7 +225,12 @@
                           label="Fecha Nacimiento"
                           id="Fecha Nacimiento"
                           date
-                          @update:text="(e) => (formSimulador2.birth_date = e)"
+                          @update:text="
+                            (e) => (
+                              (formSimulador2.birth_date = e),
+                              (formularioValidacion.birth_date = e)
+                            )
+                          "
                           @textvalue="checkFecha(e)"
                           :key="componentKey"
                         />
@@ -251,7 +274,9 @@
                             :tipoCredito="formSimulador.type"
                             @credito="
                               (valor) => (
-                                activo++, (formSimulador.type = valor)
+                                registrarValor(valor),
+                                activo++,
+                                (formSimulador.type = valor)
                               )
                             "
                           />
@@ -405,16 +430,17 @@
                   v-if="activo > 0"
                   text="volver"
                   outlinePrimary
-                  id="boton-continuar"
+                  id="boton-volver"
                   @click.prevent="activo--"
                 />
 
                 <Button1
                   text="Continuar"
                   secondary
-                  id="boton-volver"
-                  @click.prevent="validarPaso"
+                  id="boton-continuar"
+                  @click.prevent="activo < 2 ? activo++ : ''"
                   v-if="activo < 2 && activo != 1"
+                  :disabled="!botonContinuar"
                 />
                 <Button1
                   text="Consulta tu cuota"
@@ -600,11 +626,10 @@ import { formaDeContacto } from "../assets/helpers/API";
 import CardTipoCredito from "../components/CardtTipoCredito.vue";
 import { Carousel, Slide, Pagination } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
+import SelectTypeCredito1 from "../components/SelectTypeCredito.vue";
 
-const steps = ref("");
-const windowSize = ref(window.innerWidth);
-
-const servicios = ref([]);
+const steps = ref();
+const botonContinuar = ref(false);
 const activo = ref(0);
 const validarMonto = ref(false);
 const useSimulador = useSimuladorStore();
@@ -702,7 +727,7 @@ const componentKey = ref(0);
 
 const handleCheck = (e) => {
   let formated = e.value.join(",");
-  servicios.value = formated;
+  formularioValidacion.message = formated;
 };
 //PASO 1
 const handleForm = async () => {
@@ -721,10 +746,6 @@ const handleForm = async () => {
   }
 };
 
-onMounted(() => {
-  steps.value = document.querySelectorAll(".step").length;
-});
-
 const forceRerender = () => {
   componentKey.value += 1;
 };
@@ -735,25 +756,35 @@ const validarCliente = async () => {
       const res = await axios.get(CARGA_DATA + formSimulador.dni);
       if (res.data.success == true) {
         (await res.data.name) != undefined
-          ? (formSimulador2.name = await res.data.name)
+          ? ((formSimulador2.name = await res.data.name),
+            (formularioValidacion.name = await res.data.name))
           : (formSimulador2.name = "");
         (await res.data.first_surname) != undefined
-          ? (formSimulador2.first_surname = await res.data.first_surname)
+          ? ((formSimulador2.first_surname = await res.data.first_surname),
+            (formularioValidacion.first_surname = await res.data.first_surname))
           : (formSimulador2.first_surname = "");
         (await res.data.second_surname) != undefined
-          ? (formSimulador2.second_surname = await res.data.second_surname)
+          ? ((formSimulador2.second_surname = await res.data.second_surname),
+            (formularioValidacion.second_surname = await res.data
+              .second_surname))
           : (formSimulador2.second_surname = "");
         (await res.data.email) != undefined
-          ? (formSimulador2.email = await res.data.email)
+          ? ((formSimulador2.email = await res.data.email),
+            (formularioValidacion.email = await res.data.email))
           : (formSimulador2.email = "");
         (await res.data.phone) != undefined
-          ? (formSimulador2.phone = await res.data.phone.slice(3))
+          ? ((formSimulador2.phone = await res.data.phone.slice(3)),
+            (formularioValidacion.phone = await res.data.phone.slice(3)))
           : (formSimulador2.phone = "");
         (await res.data.birth_date) != undefined
-          ? (formSimulador2.birth_date = document.querySelector(
+          ? ((formSimulador2.birth_date = document.querySelector(
               'input[type="date"]'
             ).value =
-              await res.data.birth_date.split("/").reverse().join("-"))
+              await res.data.birth_date.split("/").reverse().join("-")),
+            (formularioValidacion.birth_date = document.querySelector(
+              'input[type="date"]'
+            ).value =
+              await res.data.birth_date.split("/").reverse().join("-")))
           : "";
       } else {
         formSimulador2.name = "";
@@ -1186,9 +1217,10 @@ const loginHandle = () => {
   });
 };
 
-const registrarValor = (e) => {
-  express.value = e.name.includes("Express");
-  claseCredito.value = e.name.includes("Inteligente");
+const registrarValor = (valor) => {
+  console.log(valor.includes("express"));
+  express.value = valor.includes("express");
+  claseCredito.value = valor.includes("Inteligente");
 
   switch (express.value) {
     case true:
@@ -1212,16 +1244,41 @@ const registrarValor = (e) => {
   }
 };
 
+const formularioValidacion = reactive({
+  dni: "",
+  name: "",
+  first_surname: "",
+  second_surname: "",
+  email: "",
+  phone: "",
+  birth_date: "",
+  message: "",
+});
+
+watch(formularioValidacion, () => {
+  console.log(warningFecha.value);
+  if (
+    formEmpty(formularioValidacion) ||
+    warningEmail.value ||
+    warningSecondSurname.value ||
+    warningSurname.value ||
+    warningName.value ||
+    warningPhone.value ||
+    warningFecha.value
+  ) {
+    botonContinuar.value = false;
+  } else {
+    botonContinuar.value = true;
+  }
+});
+
 const cerrarModal = () => {
   isOpen.value = false;
 };
 
-const validarPaso = () => {
-  let steps = document.querySelectorAll(".step");
-  let inputs = steps[activo.value].querySelectorAll("input");
-
-  activo.value < 2 ? activo.value++ : "";
-};
+onMounted(() => {
+  steps.value = document.querySelectorAll(".step").length;
+});
 </script>
 
 <style scoped>
