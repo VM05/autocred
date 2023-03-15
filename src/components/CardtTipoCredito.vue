@@ -22,6 +22,7 @@
       </div>
       <a
         @click="handler"
+        
         class="group-hover:bg-secondary-900 py-3 px-5 cursor-pointer text-white rounded-md block mt-5 transition"
         :class="
           item.valor == tipoCredito ? 'bg-secondary-900' : 'bg-secondary-700'
@@ -34,7 +35,7 @@
 
 <script setup>
 import Heading from "./Heading.vue";
-
+import { onMounted } from "vue";
 const props = defineProps({
   item: Object,
   tipoCredito: String,
@@ -42,9 +43,11 @@ const props = defineProps({
 
 const emit = defineEmits(["credito", "botonSeguir"]);
 
+
 const handler = (e) => {
   emit("credito", e.target.parentElement.dataset.valor);
+  emit("botonSeguir", e.target.parentElement.dataset.valor)
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
