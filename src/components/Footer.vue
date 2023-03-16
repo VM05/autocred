@@ -7,7 +7,7 @@
         <div id="documentosLegales">
           <Paragraph primary class="font-semibold mb-1">
             Documentos Legales
-            </Paragraph>
+          </Paragraph>
           <router-link
             class="text-base font-medium text-gray-500 hover:text-secondary-800 hover:cursor-pointer"
             to="/terminos-y-condiciones"
@@ -18,8 +18,8 @@
         </div>
         <div id="somosAutocred">
           <Paragraph primary class="font-semibold mb-1">
-           Somos Autocred
-            </Paragraph>
+            Somos Autocred
+          </Paragraph>
           <div class="flex flex-col">
             <router-link
               v-for="link in links_footer"
@@ -38,21 +38,25 @@
         <div id="casaMatriz">
           <Paragraph primary class="font-semibold mb-1">
             Casa Matriz
-            </Paragraph>
+          </Paragraph>
           <a
             href="https://www.google.cl/maps/place/Spaces/@-33.4145955,-70.603794,17z/data=!3m1!4b1!4m5!3m4!1s0x9662cf4212304611:0xa573dcf4ad3a9b63!8m2!3d-33.4146!4d-70.6016"
             class="text-base font-medium text-gray-500 hover:text-secondary-800 hover:cursor-pointer"
             target="_blank"
           >
-            El Bosque Norte 0211, Piso 3 (Spaces), Las Condes, RM
+            El Bosque Norte 0211, Piso 2 (Spaces), Las Condes, RM
           </a>
+
+          <a
+            href="tel:+56224024934"
+            class="text-base font-medium text-gray-500 hover:text-secondary-800 hover:cursor-pointer block"
+            >(2) 2402 4934</a
+          >
         </div>
         <div id="contacto">
-          <Paragraph primary class="font-semibold mb-1">
-            Contacto
-            </Paragraph>
+          <Paragraph primary class="font-semibold mb-1"> Contacto </Paragraph>
           <a
-            class="text-base font-medium text-gray-500 hover:text-secondary-800 hover:cursor-pointer"
+            class="text-base fontmedium text-gray-500 hover:text-secondary-800 hover:cursor-pointer"
             href="mailto:mail@autocred.cl"
           >
             contacto@autocred.cl
@@ -61,12 +65,17 @@
       </div>
       <div class="redes md:border-r-2 xl:px-12 md:px-5 pt-5">
         <Paragraph primary class="font-semibold mb-1">
-            Redes Sociales
-            </Paragraph>
+          Redes Sociales
+        </Paragraph>
         <div class="flex flex-col gap-2">
           <a v-for="red in rrss" :href="red.url" target="_blank">
             <div class="flex flex-row gap-2 items-center">
-              <img :src="red.src" :alt="red.name" class="w-5 h-5"  :title="red.name"/>
+              <img
+                :src="red.src"
+                :alt="red.name"
+                class="w-5 h-5"
+                :title="red.name"
+              />
               <p
                 class="text-base font-medium text-gray-500 hover:text-secondary-800 hover:cursor-pointer capitalize"
               >
@@ -88,7 +97,6 @@
 </template>
 
 <script setup>
-import Heading from "../components/Heading.vue";
 import Paragraph from "./Paragraph.vue";
 import { links_footer, rrss } from "../assets/helpers/constants";
 import Container from "../layouts/Container.vue";

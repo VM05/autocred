@@ -1045,7 +1045,7 @@ export const ejecutivosPresencial = [
         nombre: 'Felipe',
         apellido: 'Cabrera',
         telefono: '+569 4631 2496',
-        email: 'jacky.martinez@autocred.cl'
+        email: 'felipe.cabrera@autocred.cl'
     },
 
 
