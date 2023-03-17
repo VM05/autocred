@@ -1214,3 +1214,32 @@ export const newCardDataVendedores = [
         cardNumber: 5,
     },
 ]
+
+
+export const beneficios = [
+
+    {
+        content: " <p class='text-primary-900 check-icon'>Tus colaboradores podrán hacer la <span class='font-bold'>evaluación de su crédito en solo 7 minutos con su Rut</span></p>"
+    },
+    {
+        content: "<p class='text-primary-900 check-icon'>20% de descuento en</p><ul class='check-icon text-primary-900'><li class='font-bold'>Tasas de interés para socios y grupo familiar.</li><li><span class='font-bold'>Servicio de administración</span> por transferencia de dominio</li></ul>"
+    },
+    {
+        content: "<p class='text-primary-900 check-icon'>Pago del monto financiado al vendedor al recibir el pago del pie del comprador y firma del contrato de transferencia</p>"
+    },
+    {
+        content: "<p class='text-primary-900 check-icon'>Garantía mecánica por 1 año gratis, 4 contratando el Seguro automotriz HDI</p>"
+    },
+    {
+        content: "<p class='text-primary-900 check-icon'>Oficina Móvil gratis en la Región Metropolitana:</p><ul class='check-icon text-primary-900'><li class='font-bold'>Traslado para que el comprador particular vea el auto usado que quiere comprar a otro particular.</li><li><span class='font-bold'>Servicio de administración</span> Presencia en eventos anuales</li></ul>"
+    },
+    {
+        content: "<p class='text-primary-900 check-icon grow'>Ejecutivo de atención <span class='font-bold'>dedicado 8x7</span></p>"
+    },
+    {
+        content: "<p class='text-primary-900 check-icon'>Transferencia de dominio <span class='font-bold'>en sólo 20 minutos, transparente y segura en el marco de la Ley N° 21.389 y el Registro Nacional de Deudores de Pensiones de Alimentos</span>, gracias nuestro compromiso de velar por el interés de ambas partes al no realizar transacciones de dinero hasta confirmar si alguna de éstas es deudora de pensiones de alimentos</p>"
+    },
+
+
+
+]

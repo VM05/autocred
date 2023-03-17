@@ -32,7 +32,6 @@ defineProps({
 const selectedService = ref([]);
 
 const handleServices = (servicio) => {
-  console.log(selectedService.value.includes(servicio));
   if (selectedService.value.includes(servicio)) {
     selectedService.value = selectedService.value.filter(
       (el) => el != servicio

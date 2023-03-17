@@ -17,6 +17,7 @@ const router = createRouter({
                 { path: '/encuesta', name: 'Encuesta', component: () => import('../views/encuesta.vue') },
                 { path: '/calendario', name: 'Calendario', component: () => import('../views/CalendarioVanMovil.vue') },
                 { path: '/nosotros', name: 'Nosotros', component: () => import('../views/nosotros.vue') },
+                { path: '/business', name: 'business', component: () => import('../views/B2B.vue') },
                 {
                     path: '/preguntas-frecuentes',
                     name: 'Preguntas Frecuentes',

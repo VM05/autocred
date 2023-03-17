@@ -54,7 +54,7 @@ const activeImage = () => {
     case "mueve":
       return hightlightsImages.mueve;
     case "ventajas":
-        return hightlightsImages.juntos;
+      return hightlightsImages.juntos;
     default:
       return hightlightsImages.default;
   }
@@ -64,10 +64,16 @@ const props = defineProps({
     type: String,
     default: "h2", // you can pass anything from 'h1' to 'h6' here
   },
-  customSize:{
-    type:String,
-    default:'24px',
+  customSize: {
+    type: String,
+    default: "24px",
   },
+
+  customSizeTitle: {
+    type: String,
+    default: "42px",
+  },
+
   content: {
     type: String,
   },
@@ -160,7 +166,7 @@ h6 {
 }
 @media (min-width: 1024px) {
   h1 {
-    font-size: 42px;
+    font-size: v-bind(customSizeTitle);
   }
   h2 {
     font-size: 35px;

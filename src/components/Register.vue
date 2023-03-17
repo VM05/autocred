@@ -179,7 +179,6 @@ const handleForm = async () => {
     }
   } catch (error) {
     errorForm.value = true;
-    console.log(error.response.data.errors.dni[0])
     errorList.value = error.response.data.errors.dni[0];
   }
 };

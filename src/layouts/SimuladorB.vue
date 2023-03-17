@@ -274,9 +274,9 @@
                             :tipoCredito="formSimulador.type"
                             @credito="
                               (valor) => (
-                               
                                 activo++,
-                                (formSimulador.type = valor), registrarValor(valor)
+                                (formSimulador.type = valor),
+                                registrarValor(valor)
                               )
                             "
                           />
@@ -294,8 +294,11 @@
                         :item="item"
                         :tipoCredito="formSimulador.type"
                         @credito="
-                          (valor) => 
-                          (activo++, (formSimulador.type = valor) , registrarValor(valor))
+                          (valor) => (
+                            activo++,
+                            (formSimulador.type = valor),
+                            registrarValor(valor)
+                          )
                         "
                       />
                     </div>
@@ -1219,7 +1222,7 @@ const loginHandle = () => {
 };
 
 const registrarValor = (valor) => {
-  console.log(formSimulador.type)
+  console.log(formSimulador.type);
   express.value = valor.includes("express");
   claseCredito.value = valor.includes("Inteligente");
 
@@ -1257,7 +1260,6 @@ const formularioValidacion = reactive({
 });
 
 watch(formularioValidacion, () => {
-  console.log(warningFecha.value);
   if (
     formEmpty(formularioValidacion) ||
     warningEmail.value ||

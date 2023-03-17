@@ -101,11 +101,6 @@ const handleLogin = async () => {
     errorForm.value = true;
   }
 };
-
-watch(loginForm,()=>{
-  console.log(loginForm.dni)
-
-})
 </script>
 
 <style scoped></style>
