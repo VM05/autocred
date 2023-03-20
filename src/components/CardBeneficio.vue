@@ -21,39 +21,8 @@ import { defineProps } from "vue";
 
 const props = defineProps({
   data: Object,
-  numero: String,
+  numero: Number,
 });
 </script>
 
-<style scoped>
-li {
-  position: relative;
-}
-
-li::before {
-  content: "";
-  margin-right: 6px;
-  position: relative;
-  border: solid 1px rgba(156, 163, 175, 0.6);
-  width: 15px;
-  height: 15px;
-  border-radius: 5px;
-  display: inline-block;
-  top: 3px;
-}
-
-li::after {
-  content: "";
-  left: 6px;
-  top: 0px;
-  width: 8px;
-  height: 15px;
-  border: solid #ba0b7c;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  position: absolute;
-  z-index: 3;
-}
-</style>
+<style scoped></style>

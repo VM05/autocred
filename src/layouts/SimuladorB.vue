@@ -314,8 +314,12 @@
                   >
                     <div class="grid md:grid-cols-3 md:gap-6">
                       <div class="col-span-1">
-                        <RadioSelection @vehiculo-comprar="(e) => hands(e)" />
-                        <div class="flex flex-col md:flex-row gap-3">
+                        <RadioSelection
+                          @vehiculo-comprar="(e) => hands(e)"
+                          :items="plans"
+                          :titulo="'¿Ya sabes que vehículo deseas comprar?'"
+                        />
+                        <di:v class="flex flex-col md:flex-row gap-3">
                           <SelectMarcas1
                             label="Marca"
                             id="Marca"
@@ -338,7 +342,7 @@
                             "
                             :disabled="disabledModel"
                           />
-                        </div>
+                        </di:v>
                         <div class="flex flex-col md:flex-row gap-3">
                           <Input
                             label="Version"
@@ -631,6 +635,7 @@ import CardTipoCredito from "../components/CardtTipoCredito.vue";
 import { Carousel, Slide, Pagination } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 import SelectTypeCredito1 from "../components/SelectTypeCredito.vue";
+import { plans } from "../assets/helpers/constants";
 
 const steps = ref();
 const botonContinuar = ref(false);
@@ -1282,6 +1287,10 @@ const cerrarModal = () => {
 onMounted(() => {
   steps.value = document.querySelectorAll(".step").length;
 });
+
+const hands = (e) => {
+  console.log(e);
+};
 </script>
 
 <style scoped>

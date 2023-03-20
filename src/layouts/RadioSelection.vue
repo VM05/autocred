@@ -1,11 +1,12 @@
 <template>
   <RadioGroup v-model="plan" @click="handleVehiculo">
-    <RadioGroupLabel class="text-primary-900 mb-4 inline-block pt-6 font-bold"
-      >¿Ya sabes que vehículo deseas comprar?</RadioGroupLabel
+    <RadioGroupLabel
+      class="text-primary-900 mb-4 inline-block pt-6 font-bold"
+      >{{ titulo }}</RadioGroupLabel
     >
-    <div class="flex md:flex-row flex-col gap-5">
+    <div class="flex md:flex-row flex-col gap-10">
       <RadioGroupOption
-        v-for="plan in plans"
+        v-for="plan in items"
         :key="plan"
         :value="plan"
         as="template"
@@ -23,7 +24,9 @@
             class="w-5 h-5 text-secondary-900 border-2 border-gray-400 rounded-md"
             aria-hidden="true"
           />
-          {{ plan }}
+          <Paragraph primary>
+            {{ plan }}
+          </Paragraph>
         </div>
       </RadioGroupOption>
     </div>
@@ -34,10 +37,14 @@
 import { ref } from "vue";
 import { RadioGroup, RadioGroupLabel, RadioGroupOption } from "@headlessui/vue";
 import { CheckIcon } from "@heroicons/vue/solid";
+import Paragraph from "../components/Paragraph.vue";
 
 const emit = defineEmits(["vehiculoComprar"]);
-const plans = ["si", "no"];
-const plan = ref(plans[0]);
+const props = defineProps({
+  items: Array,
+  titulo: String,
+});
+const plan = ref(props.items[0]);
 
 const handleVehiculo = () => {
   emit("vehiculoComprar", plan.value);

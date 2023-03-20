@@ -1219,27 +1219,71 @@ export const newCardDataVendedores = [
 export const beneficios = [
 
     {
-        content: " <p class='text-primary-900 check-icon'>Tus colaboradores podrán hacer la <span class='font-bold'>evaluación de su crédito en solo 7 minutos con su Rut</span></p>"
+        content: " <p class='text-primary-900  '>Tus colaboradores podrán hacer la <span class='font-bold'>evaluación de su crédito en solo 7 minutos con su Rut</span></p>"
     },
     {
-        content: "<p class='text-primary-900 check-icon'>20% de descuento en</p><ul class='check-icon text-primary-900'><li class='font-bold'>Tasas de interés para socios y grupo familiar.</li><li><span class='font-bold'>Servicio de administración</span> por transferencia de dominio</li></ul>"
+        content: "<p class='text-primary-900  '>20% de descuento en</p><ul class='  text-primary-900'><li><span class='check-icon inline-block'></span> <span class='font-bold'>Tasas de interés</span> para socios y grupo familiar.</li><li><span class='check-icon inline-block'></span><span class='font-bold'>Servicio de administración</span> por transferencia de dominio</li></ul>"
     },
     {
-        content: "<p class='text-primary-900 check-icon'>Pago del monto financiado al vendedor al recibir el pago del pie del comprador y firma del contrato de transferencia</p>"
+        content: "<p class='text-primary-900'>Pago del monto financiado al vendedor <span class='font-bold'>al recibir el pago del pie</span> del comprador y firma del contrato de transferencia</p>"
     },
     {
-        content: "<p class='text-primary-900 check-icon'>Garantía mecánica por 1 año gratis, 4 contratando el Seguro automotriz HDI</p>"
+        content: "<p class='text-primary-900'>Garantía mecánica por 1 año gratis,<br><span class='font-bold'>contratando el Seguro automotriz HDI</span></p>"
     },
     {
-        content: "<p class='text-primary-900 check-icon'>Oficina Móvil gratis en la Región Metropolitana:</p><ul class='check-icon text-primary-900'><li class='font-bold'>Traslado para que el comprador particular vea el auto usado que quiere comprar a otro particular.</li><li><span class='font-bold'>Servicio de administración</span> Presencia en eventos anuales</li></ul>"
+        content: "<p class='text-primary-900'><span class='font-bold'>Oficina Móvil gratis</span> en la Región Metropolitana:</p><ul class='  text-primary-900'><li><span class='check-icon inline-block'></span> <span class='font-bold'>Traslado</span> para que el comprador particular vea el auto usado que quiere comprar a otro particular.</li><li><span class='check-icon inline-block'></span><span class='font-bold'>Presencia</span> en eventos anuales</li></ul>"
     },
     {
-        content: "<p class='text-primary-900 check-icon grow'>Ejecutivo de atención <span class='font-bold'>dedicado 8x7</span></p>"
+        content: "<p class='text-primary-900   grow'>Ejecutivo de atención <span class='font-bold'>dedicado 8x7</span></p>"
     },
     {
-        content: "<p class='text-primary-900 check-icon'>Transferencia de dominio <span class='font-bold'>en sólo 20 minutos, transparente y segura en el marco de la Ley N° 21.389 y el Registro Nacional de Deudores de Pensiones de Alimentos</span>, gracias nuestro compromiso de velar por el interés de ambas partes al no realizar transacciones de dinero hasta confirmar si alguna de éstas es deudora de pensiones de alimentos</p>"
+        content: "<p class='text-primary-900  '>Transferencia de dominio <span class='font-bold'>en sólo 20 minutos, transparente y segura en el marco de la Ley N° 21.389 y el Registro Nacional de Deudores de Pensiones de Alimentos</span>, gracias nuestro compromiso de velar por el interés de ambas partes al no realizar transacciones de dinero hasta confirmar si alguna de éstas es deudora de pensiones de alimentos</p>"
     },
 
 
 
 ]
+
+
+export const autocredGarantiza = [
+
+    {
+        img: '/img/imagenes-b2b/garantiza-1.webp',
+        texto: 'Solución integral de servicios',
+    },
+
+    {
+        img: '/img/imagenes-b2b/garantiza-2.webp',
+        texto: 'Transacción segura, respaldo y asesoría en todo el proceso',
+    },
+
+    {
+        img: '/img/imagenes-b2b/garantiza-3.webp',
+        texto: 'Pago del monto financiado al momento de la firma del contrato de transferencia',
+    },
+]
+
+export const infoTiposCreditos = [
+
+    {
+        title: 'Crédito convencional',
+        content: "<p class='text-primary-900 font-bold mb-3'>+20% de pie</p><ul class='text-primary-900'><li class='mb-2'><span class='check-icon inline-block'></span>Plazo para pago de saldo de 6 48 meses</li> <li class='mb-2'><span class='check-icon inline-block'></span>Acreditación de ingresos</li> <li class='mb-2'><span class='check-icon inline-block'></span>Antigüedad laboral</li> <li class='mb-2'><span class='check-icon inline-block'></span>Buen comportamiento financiero</li> <li class='mb-2'><span class='check-icon inline-block'></span>Ser mayor de 24 años</li></ul>"
+    },
+
+    //<span class='check-icon inline-block'></span>
+    {
+        title: 'Crédito instantáneo',
+        content: "<p class='text-primary-900 font-bold mb-3'>Chilenos: 40% de pie</p><ul class='text-primary-900'><li class='mb-2'><span class='check-icon inline-block'></span>Cedula de identidad</li> <li class='mb-2'><span class='check-icon inline-block'></span>Buen comportamiento financiero</li> <li class='mb-2'><span class='check-icon inline-block'></span>Estar bancarizado</li> <li class='mb-2'><span class='check-icon inline-block'></span>Ser mayor de 24 años</li></ul><p class='text-primary-900 font-bold mt-10 mb-3'>Extranjeros: 50% de pie</p> <ul class='text-primary-900'><li class='mb-2'><span class='check-icon inline-block'></span>Nacionalidad en trámite</li> <li class='mb-2'><span class='check-icon inline-block'></span>Buen comportamiento financiero</li> <li class='mb-2'><span class='check-icon inline-block'></span>Estar bancarizado</li> <li class='mb-2'><span class='check-icon inline-block'></span>Ser mayor de 24 años</li></ul>"
+    },
+
+    {
+        title: 'Crédito para compra inteligente',
+        content: "<p class='text-primary-900 font-bold mb-3'>20% a 35% de pie</p><ul class='text-primary-900'><li class='mb-2'><span class='check-icon inline-block'></span>Plazo para pago de saldo 13, 25, 37 y 48 meses</li> <li class='mb-2'><span class='check-icon inline-block'></span>Valor Futuro Mínimo Garantizado (VFMG) 35% a 50%</li> <li class='mb-2'><span class='check-icon inline-block'></span>Acreditación de ingresos</li> <li class='mb-2'><span class='check-icon inline-block'></span>Antigüedad laboral</li> <li class='mb-2'><span class='check-icon inline-block'></span>Buen comportaminto financiero</li> <li class='mb-2'><span class='check-icon inline-block'></span>Ser mayor de 24 años</li></ul>"
+    },
+
+]
+
+export const plans = ["si", "no"];
+
+export const personasQueTrabajan = ["Entre 1 y 20", "Entre 21 y 100", "Más de 100"]
+

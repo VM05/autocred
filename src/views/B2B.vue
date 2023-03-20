@@ -26,7 +26,7 @@
         <picture clas="w-full">
           <source
             media="(min-width:769px)"
-            :srcset="nuevaDataServicios[1].img"
+            srcset="../assets/img/landing-b2b-desktop.webp"
           />
           <source
             media="(max-width:768px)"
@@ -63,29 +63,45 @@
       </div>
     </div>
 
-    <div class="mt-20">
+    <div class="my-20">
       <Heading
         content="Autocred te garantiza"
         headingType="h3"
         customSize="38px"
-        class="text-center"
+        class="text-center mb-10"
       />
 
-      <div class="grid grid-cols-3 gap-5">
-        <div class="flex flex-col gap-3 justify-center">
-          <img
-            src="../../public/img/icons/Iconos_Autocred_Azul_Asesoramientoi.png"
-            alt=""
-          />
-        </div>
-        <div class="flex flex-col gap-3 justify-center">
-          <img
-            src="../../public/img/icons/Iconos_Autocred_Azul_Asesoramientoi.png"
-            alt=""
-          />
+      <div class="grid grid-cols-3 gap-10">
+        <div
+          class="flex flex-col gap-3 items-center shadow-2xl rounded-3xl p-14"
+          v-for="item in autocredGarantiza"
+          :key="item"
+        >
+          <img :src="item.img" :alt="item.name" class="h-auto w-44 my-5" />
+          <Paragraph primary class="font-bold text-xl text-center">{{
+            item.texto
+          }}</Paragraph>
         </div>
       </div>
     </div>
+
+    <div class="my-10">
+      <Heading
+        content="3 tipos de crédito Autocred"
+        primary
+        headingType="h2"
+        class="text-center my-10"
+      />
+      <div class="grid grid-cols-1 gap-10">
+        <AcordionTiposCredito
+          v-for="item in infoTiposCreditos"
+          :key="item"
+          :item="item"
+        />
+      </div>
+    </div>
+
+    <FormularioB2B />
   </Container>
 </template>
 
@@ -95,7 +111,13 @@ import Heading from "../components/Heading.vue";
 import { nuevaDataServicios } from "../assets/helpers/constants";
 import Paragraph from "../components/Paragraph.vue";
 import CardBeneficio from "../components/CardBeneficio.vue";
-import { beneficios } from "../assets/helpers/constants";
+import {
+  autocredGarantiza,
+  beneficios,
+  infoTiposCreditos,
+} from "../assets/helpers/constants";
+import AcordionTiposCredito from "../components/AcordionTiposCredito.vue";
+import FormularioB2B from "../layouts/FormularioB2B.vue";
 </script>
 
 <style scoped></style>
