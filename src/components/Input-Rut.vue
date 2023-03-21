@@ -20,17 +20,23 @@
       @keyup="handler"
       @input="format"
     />
-    <span class="text-red-700 block text-center">{{ validated }}</span>
+    <span
+      class="text-red-700 block text-center absolute left-1/2 -translate-x-1/2 w-full"
+      >{{ validated }}</span
+    >
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onUpdated, unref } from "vue";
+import { ref, computed, onUpdated, unref, watch } from "vue";
 import { validateRut, RutFormat, formatRut } from "@fdograph/rut-utilities";
-const emit = defineEmits(["update:rut", "textvalue"]);
+const emit = defineEmits(["update:rut", "textvalue", "validRut"]);
 const handler = (e) => {
+  isError;
+
   emit("update:rut", e.target.value);
   emit("textvalue", e.target.value);
+  emit("validRut", validRut.value);
 };
 const props = defineProps({
   placeholder: String,
@@ -45,6 +51,7 @@ const props = defineProps({
 let rut = ref(props.value);
 let focus = ref(false);
 let hover = ref(false);
+const validRut = ref(false);
 
 const validated = computed(() => {
   if (unref(rut) == "") {
@@ -109,6 +116,10 @@ const format = () => {
 
 onUpdated(() => {
   isError;
+});
+
+watch(rut, () => {
+  validRut.value = validateRut(rut.value);
 });
 </script>
 

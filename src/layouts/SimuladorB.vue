@@ -636,6 +636,7 @@ import { Carousel, Slide, Pagination } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 import SelectTypeCredito1 from "../components/SelectTypeCredito.vue";
 import { plans } from "../assets/helpers/constants";
+import { onlyNumber, onlyRut } from "../assets/helpers/validate";
 
 const steps = ref();
 const botonContinuar = ref(false);
@@ -1125,20 +1126,6 @@ const checkRenta = (e) => {
     } else {
       warningSalary.value = false;
     }
-  }
-};
-
-const onlyNumber = ($event) => {
-  const validNumbers = /[0-9]+/;
-  if (!validNumbers.test($event.key)) {
-    $event.preventDefault();
-  }
-};
-
-const onlyRut = ($event) => {
-  const validRut = /[^kK0-9]/g;
-  if (validRut.test($event.key)) {
-    $event.preventDefault();
   }
 };
 

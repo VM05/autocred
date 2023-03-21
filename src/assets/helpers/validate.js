@@ -34,3 +34,18 @@ export function search(id, array) {
     const found = array.find(element => element.id == id);
     return found
 }
+
+export const onlyNumber = ($event) => {
+    const validNumbers = /[0-9]+/;
+    if (!validNumbers.test($event.key)) {
+        $event.preventDefault();
+    }
+};
+
+
+export const onlyRut = ($event) => {
+    const validRut = /[^kK0-9]/g;
+    if (validRut.test($event.key)) {
+        $event.preventDefault();
+    }
+};

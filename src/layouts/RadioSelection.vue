@@ -1,10 +1,9 @@
 <template>
   <RadioGroup v-model="plan" @click="handleVehiculo">
-    <RadioGroupLabel
-      class="text-primary-900 mb-4 inline-block pt-6 font-bold"
-      >{{ titulo }}</RadioGroupLabel
-    >
-    <div class="flex md:flex-row flex-col gap-10">
+    <RadioGroupLabel class="text-primary-900 mb-4 inline-block font-bold">{{
+      titulo
+    }}</RadioGroupLabel>
+    <div class="flex md:flex-row flex-col gap-5 md:gap-10">
       <RadioGroupOption
         v-for="plan in items"
         :key="plan"
