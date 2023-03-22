@@ -7,7 +7,8 @@ export const links = [
         url: "/servicios",
         sublink: [
             { name: "Tag", link: 'tag' },
-            { name: "Seguro Automotriz", link: 'seguro' }
+            { name: "Seguro Automotriz", link: 'seguro' },
+            { name: "Convenio Empresas", link: "convenio-empresas" }
         ]
     },
     { name: "Nosotros", url: "/nuestros-agentes" },
@@ -1289,15 +1290,15 @@ export const personasQueTrabajan = ["Entre 1 y 20", "Entre 21 y 100", "Más de 1
 
 export const canalesAtencion = [
     {
-        img: 'img/imagenes-b2b/mundo.webp',
+        img: '/img/imagenes-b2b/mundo.webp',
         content: '  <span class="font-bold">Online</span> - Todo el país',
     },
     {
-        img: 'img/imagenes-b2b/tienda.webp',
+        img: '/img/imagenes-b2b/tienda.webp',
         content: '  <span class="font-bold">Presencial</span> - Te atendemos en nuestras sucursales',
     },
     {
-        img: 'img/imagenes-b2b/van.webp',
+        img: '/img/imagenes-b2b/van.webp',
         content: '  <span class="font-bold">Oficina Móvil</span> - Vamos a donde quieras dentro de la RM',
     },
 

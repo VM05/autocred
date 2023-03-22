@@ -17,7 +17,7 @@ const router = createRouter({
                 { path: '/encuesta', name: 'Encuesta', component: () => import('../views/encuesta.vue') },
                 { path: '/calendario', name: 'Calendario', component: () => import('../views/CalendarioVanMovil.vue') },
                 { path: '/nosotros', name: 'Nosotros', component: () => import('../views/nosotros.vue') },
-                { path: '/business', name: 'business', component: () => import('../views/B2B.vue') },
+
                 {
                     path: '/preguntas-frecuentes',
                     name: 'Preguntas Frecuentes',
@@ -43,6 +43,7 @@ const router = createRouter({
                     children: [
                         { path: '/servicios/tag', name: 'serviciotag', component: () => import('../views/ServicioTag.vue') },
                         { path: '/servicios/seguro', name: 'servicioseguro', component: () => import('../views/ServicioSeguro.vue') },
+                        { path: '/servicios/convenio-empresas', name: 'servicioconvenio-empresas', component: () => import('../views/B2B.vue') },
                     ]
                 },
                 { path: '/servicios/transferencias', name: 'serviciotransferencias', component: () => import('../views/ServicioTransferencia.vue') },

@@ -54,7 +54,7 @@
       as="div"
       :to="{
         // name:'Servicios',
-        name: `servicio${item.link}`,
+        name: `servicio ${item.link}`,
         params: { active: item.link },
         // hash: `#${item.link}`,
       }"
