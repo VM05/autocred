@@ -54,7 +54,7 @@
       as="div"
       :to="{
         // name:'Servicios',
-        name: `servicio ${item.link}`,
+        name: `servicio${item.link}`,
         params: { active: item.link },
         // hash: `#${item.link}`,
       }"
@@ -94,12 +94,6 @@ watch(
       : (activo.value = false);
   }
 );
-
-onMounted(() => {
-  setTimeout(() => {
-    console.log(props.sublinks);
-  }, 1000);
-});
 </script>
 
 <style scoped></style>
