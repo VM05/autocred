@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-end formulario-b2b relative">
+  <div class="flex justify-end formulario-b2b relative" v-if="!isSuccess">
     <img
       src="../assets/img/cotizacion.webp"
       alt="cotizaciones"
@@ -7,7 +7,7 @@
     />
     <div class="imagen imagenBG top-0 absolute"></div>
     <form
-      class="p-10 mt-80 md:mt-0 shadow-2xl bg-white z-0 md:w-3/5 rounded-2xl"
+      class="p-10 mt-72 md:mt-0 shadow-2xl bg-white z-0 md:w-3/5 rounded-2xl"
       @submit.prevent="handleForm"
       id="form"
     >
@@ -123,6 +123,30 @@
       <input type="hidden" name="user_rut" :value="formBusiness.rut" />
     </form>
   </div>
+  <div class="text-center flex justify-end formulario-b2b relative" v-else>
+    <img
+      src="../assets/img/cotizacion.webp"
+      alt="cotizaciones"
+      class="imagen z-0 top-0"
+    />
+    <div class="imagen imagenBG top-0 absolute"></div>
+    <div
+      class="p-10 mt-40 md:mt-0 shadow-2xl bg-white z-0 md:w-3/5 rounded-2xl h-96 flex flex-col items-center justify-center"
+    >
+      <Paragraph class="font-bold"
+        >¡Muchas gracias por comunicarte con nosotros!</Paragraph
+      >
+      <Paragraph class="mb-8">
+        Su registro se encuentra en proceso, pronto nos pondremos en contacto
+        con usted
+      </Paragraph>
+      <div class="flex flex-col gap-2 justify-center">
+        <router-link to="/nosotros">
+          <Button primary text="Conócenos"></Button>
+        </router-link>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -160,6 +184,7 @@ const disabled = ref(true);
 const warningTelefono = ref(false);
 const warningRut = ref(false);
 const isLoading = ref(false);
+const isSuccess = ref(false);
 
 // funciones
 const enviarMail = () => {
@@ -172,8 +197,20 @@ const enviarMail = () => {
   );
 };
 
-const handleForm = async () => {
-  enviarMail();
+const handleForm = () => {
+  isLoading.value = true;
+  setTimeout(() => {
+    enviarMail();
+    isLoading.value = false;
+    formBusiness.nombreEmpresa = "";
+    formBusiness.rut = "";
+    formBusiness.trabajadores = personasQueTrabajan[0];
+    formBusiness.nombreSolicitante = "";
+    formBusiness.cargoEmpresa = "";
+    formBusiness.telefono = "";
+    formBusiness.email = "";
+    isSuccess.value = true;
+  }, 1500);
 };
 
 //watchers
@@ -235,7 +272,7 @@ watch(formBusiness, () => {
   width: 70%;
   height: 95%;
   object-fit: cover;
-  border-radius: 40px;
+  border-radius: 30px 30px;
   object-fit: cover;
   filter: brightness(0.8);
   position: absolute;

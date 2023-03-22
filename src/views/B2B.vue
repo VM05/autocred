@@ -42,7 +42,9 @@
     </div>
   </div>
   <Container>
-    <Paragraph class="text-center mt-16 font-light text-xl md:px-12">
+    <Paragraph
+      class="text-center font-light md:text-xl md:px-12 relative -top-10"
+    >
       En Autocred queremos facilitarle la compra de vehículos usados a tus
       colaboradores y personal ofreciéndoles
       <span class="font-bold"
@@ -107,13 +109,16 @@
     </div>
 
     <FormularioB2B class="my-20" />
+
+    <div>
+      <CanalesAtencion class="mt-10" />
+    </div>
   </Container>
 </template>
 
 <script setup>
 import Container from "../layouts/Container.vue";
 import Heading from "../components/Heading.vue";
-import { nuevaDataServicios } from "../assets/helpers/constants";
 import Paragraph from "../components/Paragraph.vue";
 import CardBeneficio from "../components/CardBeneficio.vue";
 import {
@@ -123,6 +128,7 @@ import {
 } from "../assets/helpers/constants";
 import AcordionTiposCredito from "../components/AcordionTiposCredito.vue";
 import FormularioB2B from "../layouts/FormularioB2B.vue";
+import CanalesAtencion from "../layouts/CanalesAtencion.vue";
 </script>
 
 <style scoped></style>

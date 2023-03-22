@@ -1287,3 +1287,19 @@ export const plans = ["si", "no"];
 
 export const personasQueTrabajan = ["Entre 1 y 20", "Entre 21 y 100", "Más de 100"]
 
+export const canalesAtencion = [
+    {
+        img: 'img/imagenes-b2b/mundo.webp',
+        content: '  <span class="font-bold">Online</span> - Todo el país',
+    },
+    {
+        img: 'img/imagenes-b2b/tienda.webp',
+        content: '  <span class="font-bold">Presencial</span> - Te atendemos en nuestras sucursales',
+    },
+    {
+        img: 'img/imagenes-b2b/van.webp',
+        content: '  <span class="font-bold">Oficina Móvil</span> - Vamos a donde quieras dentro de la RM',
+    },
+
+]
+
