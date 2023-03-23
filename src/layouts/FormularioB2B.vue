@@ -1,11 +1,11 @@
 <template>
   <div class="flex justify-end formulario-b2b relative" v-if="!isSuccess">
     <img
-      src="../assets/img/cotizacion.webp"
+      src="../assets/img/formulario-b2b.png"
       alt="cotizaciones"
       class="imagen z-0 top-0"
     />
-    <div class="imagen imagenBG top-0 absolute"></div>
+    <!-- <div class="imagen imagenBG top-0 absolute"></div> -->
     <form
       class="p-10 mt-72 md:mt-0 shadow-2xl bg-white z-0 md:w-3/5 rounded-2xl"
       @submit.prevent="handleForm"
@@ -271,7 +271,7 @@ watch(formBusiness, () => {
 .imagen {
   width: 70%;
   height: 95%;
-  object-fit: cover;
+
   border-radius: 30px 30px;
   object-fit: cover;
   filter: brightness(0.8);
@@ -282,8 +282,8 @@ watch(formBusiness, () => {
 
 @media (max-width: 768px) {
   .imagen {
-    width: 100%;
-    height: 30%;
+    width: 420px;
+    height: 340px;
   }
 
   .formulario-b2b::before {
