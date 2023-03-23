@@ -1229,14 +1229,14 @@ export const beneficios = [
         content: "<p class='text-primary-900'>Pago del monto financiado al vendedor <span class='font-bold'>al recibir el pago del pie</span> del comprador y firma del contrato de transferencia</p>"
     },
     {
-        content: "<p class='text-primary-900'>Garantía mecánica por 1 año gratis,<br><span class='font-bold'>contratando el Seguro automotriz HDI</span></p>"
-    },
-    {
-        content: "<p class='text-primary-900'><span class='font-bold'>Oficina Móvil gratis</span> en la Región Metropolitana:</p><ul class='  text-primary-900'><li><span class='check-icon inline-block'></span> <span class='font-bold'>Traslado</span> para que el comprador particular vea el auto usado que quiere comprar a otro particular.</li><li><span class='check-icon inline-block'></span><span class='font-bold'>Presencia</span> en eventos anuales</li></ul>"
-    },
-    {
         content: "<p class='text-primary-900   grow'>Ejecutivo de atención <span class='font-bold'>dedicado 8x7</span></p>"
     },
+    {
+        content: "<p class='text-primary-900'>Garantía mecánica por 1 año gratis,<br><span class='font-bold'>contratando el Seguro automotriz HDI</span></p>"
+    },
+    // {
+    //     content: "<p class='text-primary-900'><span class='font-bold'>Oficina Móvil gratis</span> en la Región Metropolitana:</p><ul class='  text-primary-900'><li><span class='check-icon inline-block'></span> <span class='font-bold'>Traslado</span> para que el comprador particular vea el auto usado que quiere comprar a otro particular.</li><li><span class='check-icon inline-block'></span><span class='font-bold'>Presencia</span> en eventos anuales</li></ul>"
+    // },
     {
         content: "<p class='text-primary-900  '>Transferencia de dominio <span class='font-bold'>en sólo 20 minutos, transparente y segura en el marco de la Ley N° 21.389 y el Registro Nacional de Deudores de Pensiones de Alimentos</span>, gracias nuestro compromiso de velar por el interés de ambas partes al no realizar transacciones de dinero hasta confirmar si alguna de éstas es deudora de pensiones de alimentos</p>"
     },

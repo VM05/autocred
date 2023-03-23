@@ -9,7 +9,7 @@
     <form
       class="p-10 mt-72 md:mt-0 shadow-2xl bg-white z-0 md:w-3/5 rounded-2xl"
       @submit.prevent="handleForm"
-      id="form"
+      id="formulario-b2b"
     >
       <Heading
         heading-type="h2"
@@ -188,7 +188,7 @@ const isSuccess = ref(false);
 
 // funciones
 const enviarMail = () => {
-  const formulario = document.getElementById("form");
+  const formulario = document.getElementById("formulario-b2b");
   emailjs.sendForm(
     "service_h77elxc",
     "template_pwvmb4q",

@@ -52,6 +52,11 @@
       >, la gestión de todos los trámites relacionados y, por supuesto, un
       servicio personalizado y dedicado.
     </Paragraph>
+    <div class="flex justify-center">
+      <router-link to="#formulario-b2b">
+        <Button text="Contáctanos" secondary class="flex self-center" />
+      </router-link>
+    </div>
 
     <div class="mt-10 md:px-12">
       <Heading
@@ -89,6 +94,11 @@
             item.texto
           }}</Paragraph>
         </div>
+      </div>
+      <div class="flex justify-center">
+        <router-link to="#formulario-b2b" class="mt-20">
+          <Button text="Contáctanos" secondary class="flex self-center" />
+        </router-link>
       </div>
     </div>
 
@@ -129,6 +139,7 @@ import {
 import AcordionTiposCredito from "../components/AcordionTiposCredito.vue";
 import FormularioB2B from "../layouts/FormularioB2B.vue";
 import CanalesAtencion from "../layouts/CanalesAtencion.vue";
+import Button from "../components/Button.vue";
 </script>
 
 <style scoped></style>

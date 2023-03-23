@@ -446,7 +446,7 @@
                   text="Continuar"
                   secondary
                   id="boton-continuar"
-                  @click.prevent="activo < 2 ? activo++ : ''"
+                  @click.prevent="activo < 2 && botonContinuar ? activo++ : ''"
                   v-if="activo < 2 && activo != 1"
                   :disabled="!botonContinuar"
                 />
