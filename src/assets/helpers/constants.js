@@ -1267,15 +1267,16 @@ export const autocredGarantiza = [
 export const infoTiposCreditos = [
 
     {
+        title: 'Crédito instantáneo',
+        content: "<p class='text-primary-900 font-bold mb-3'>Chilenos: 40% de pie</p><ul class='text-primary-900'><li class='mb-2'><span class='check-icon inline-block'></span>Cedula de identidad</li> <li class='mb-2'><span class='check-icon inline-block'></span>Buen comportamiento financiero</li> <li class='mb-2'><span class='check-icon inline-block'></span>Estar bancarizado</li> <li class='mb-2'><span class='check-icon inline-block'></span>Ser mayor de 24 años</li></ul><p class='text-primary-900 font-bold mt-10 mb-3'>Extranjeros: 50% de pie</p> <ul class='text-primary-900'><li class='mb-2'><span class='check-icon inline-block'></span>Nacionalidad en trámite</li> <li class='mb-2'><span class='check-icon inline-block'></span>Buen comportamiento financiero</li> <li class='mb-2'><span class='check-icon inline-block'></span>Estar bancarizado</li> <li class='mb-2'><span class='check-icon inline-block'></span>Ser mayor de 24 años</li></ul>"
+    },
+    {
         title: 'Crédito convencional',
         content: "<p class='text-primary-900 font-bold mb-3'>+20% de pie</p><ul class='text-primary-900'><li class='mb-2'><span class='check-icon inline-block'></span>Plazo para pago de saldo de 6 48 meses</li> <li class='mb-2'><span class='check-icon inline-block'></span>Acreditación de ingresos</li> <li class='mb-2'><span class='check-icon inline-block'></span>Antigüedad laboral</li> <li class='mb-2'><span class='check-icon inline-block'></span>Buen comportamiento financiero</li> <li class='mb-2'><span class='check-icon inline-block'></span>Ser mayor de 24 años</li></ul>"
     },
 
     //<span class='check-icon inline-block'></span>
-    {
-        title: 'Crédito instantáneo',
-        content: "<p class='text-primary-900 font-bold mb-3'>Chilenos: 40% de pie</p><ul class='text-primary-900'><li class='mb-2'><span class='check-icon inline-block'></span>Cedula de identidad</li> <li class='mb-2'><span class='check-icon inline-block'></span>Buen comportamiento financiero</li> <li class='mb-2'><span class='check-icon inline-block'></span>Estar bancarizado</li> <li class='mb-2'><span class='check-icon inline-block'></span>Ser mayor de 24 años</li></ul><p class='text-primary-900 font-bold mt-10 mb-3'>Extranjeros: 50% de pie</p> <ul class='text-primary-900'><li class='mb-2'><span class='check-icon inline-block'></span>Nacionalidad en trámite</li> <li class='mb-2'><span class='check-icon inline-block'></span>Buen comportamiento financiero</li> <li class='mb-2'><span class='check-icon inline-block'></span>Estar bancarizado</li> <li class='mb-2'><span class='check-icon inline-block'></span>Ser mayor de 24 años</li></ul>"
-    },
+
 
     {
         title: 'Crédito para compra inteligente',

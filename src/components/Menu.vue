@@ -15,7 +15,7 @@
   </span>
   <div
     v-show="active"
-    class="absolute right-1/2 left-1/2 mt-2 w-48 -ml-24 rounded-md grid grid-flow-row gap-2 bg-secondary-500"
+    class="absolute right-1/2 left-1/2 mt-2 w-52 -ml-24 rounded-md grid grid-flow-row gap-2 bg-secondary-500"
     @mouseleave="toogleMenu"
     v-if="!mobile"
   >
