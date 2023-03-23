@@ -3,7 +3,7 @@
     <Heading
       heading-type="h3"
       custom-size="32px"
-      content="Canales de Atencion"
+      content="Canales de Atención"
       class="text-center mb-10"
     />
 
