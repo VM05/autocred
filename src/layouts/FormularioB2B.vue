@@ -94,6 +94,7 @@
           class="w-1/3 mx-auto md:mx-0"
           :disabled="disabled"
           v-if="!isLoading"
+          type="submit"
         />
         <Loading v-else medium />
       </div>
@@ -125,13 +126,13 @@
   </div>
   <div class="text-center flex justify-end formulario-b2b relative" v-else>
     <img
-      src="../assets/img/cotizacion.webp"
+      src="../assets/img/formulario-b2b.png"
       alt="cotizaciones"
       class="imagen z-0 top-0"
     />
-    <div class="imagen imagenBG top-0 absolute"></div>
+
     <div
-      class="p-10 mt-40 md:mt-0 shadow-2xl bg-white z-0 md:w-3/5 rounded-2xl h-96 flex flex-col items-center justify-center"
+      class="p-10 mt-40 md:mt-0 shadow-2xl bg-white z-0 md:w-3/5 rounded-2xl h-96 flex flex-col items-center justify-center container-gracias"
     >
       <Paragraph class="font-bold"
         >¡Muchas gracias por comunicarte con nosotros!</Paragraph
@@ -187,30 +188,32 @@ const isLoading = ref(false);
 const isSuccess = ref(false);
 
 // funciones
-const enviarMail = () => {
-  const formulario = document.getElementById("formulario-b2b");
-  emailjs.sendForm(
-    "service_h77elxc",
-    "template_pwvmb4q",
-    formulario,
-    "HYC0cLjbkpNRKFnpy"
-  );
-};
 
-const handleForm = () => {
+const handleForm = async () => {
+  const formulario = document.getElementById("formulario-b2b");
   isLoading.value = true;
-  setTimeout(() => {
-    enviarMail();
-    isLoading.value = false;
-    formBusiness.nombreEmpresa = "";
-    formBusiness.rut = "";
-    formBusiness.trabajadores = personasQueTrabajan[0];
-    formBusiness.nombreSolicitante = "";
-    formBusiness.cargoEmpresa = "";
-    formBusiness.telefono = "";
-    formBusiness.email = "";
-    isSuccess.value = true;
-  }, 1500);
+  try {
+    const respuesta = await emailjs.sendForm(
+      "service_h77elxc",
+      "template_pwvmb4q",
+      formulario,
+      "HYC0cLjbkpNRKFnpy"
+    );
+
+    if (respuesta.status == 200) {
+      isLoading.value = false;
+      formBusiness.nombreEmpresa = "";
+      formBusiness.rut = "";
+      formBusiness.trabajadores = personasQueTrabajan[0];
+      formBusiness.nombreSolicitante = "";
+      formBusiness.cargoEmpresa = "";
+      formBusiness.telefono = "";
+      formBusiness.email = "";
+      isSuccess.value = true;
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 //watchers
@@ -280,10 +283,18 @@ watch(formBusiness, () => {
   left: 0;
 }
 
+.container-gracias {
+  min-height: 600px;
+}
+
 @media (max-width: 768px) {
   .imagen {
     width: 420px;
     height: 340px;
+  }
+
+  .container-gracias {
+    min-height: unset;
   }
 
   .formulario-b2b::before {
