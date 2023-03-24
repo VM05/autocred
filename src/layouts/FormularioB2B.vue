@@ -1,5 +1,9 @@
 <template>
-  <div class="flex justify-end formulario-b2b relative" v-if="!isSuccess">
+  <div
+    class="flex justify-end formulario-b2b relative"
+    v-if="!isSuccess"
+    id="form-b2b-container"
+  >
     <img
       src="../assets/img/formulario-b2b.png"
       alt="cotizaciones"
@@ -210,6 +214,9 @@ const handleForm = async () => {
       formBusiness.telefono = "";
       formBusiness.email = "";
       isSuccess.value = true;
+      document.querySelector("#form-b2b-container").scrollIntoView({
+        behavior: "smooth",
+      });
     }
   } catch (error) {
     console.log(error);
