@@ -10,14 +10,14 @@
         outlinePrimary,
       'bg-transparent text-secondary-900 border-2 border-secondary-900 hover:bg-secondary-900 hover:text-white':
         outlineSecondary,
-      'py-2': user,
+      '': user,
       'cursor-pointer': !disabled,
       'bg-black-50 hover:bg-black-50 hover:cursor-not-allowed border-black-50':
         disabled,
     }"
   >
     <button
-      class="font-medium w-full py-3 px-5"
+      class="font-medium py-3 px-5 flex flex-row w-full justify-center"
       :class="{
         'text-sm': user,
         'hover:cursor-not-allowed text-white': disabled,
@@ -26,8 +26,8 @@
       :disabled="disabled"
     >
       {{ text }}
+      <UserIcon class="h-5 w-5" v-if="user" />
     </button>
-    <UserIcon class="h-5 w-5" v-if="user" />
   </div>
 </template>
 
