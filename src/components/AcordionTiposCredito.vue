@@ -1,21 +1,21 @@
 <template>
-  <div class="shadow-2xl rounded-2xl overflow-hidden">
-    <div class="relative bg-white text-center py-5" @click="handle">
+  <div class="shadow-2xl rounded-2xl overflow-hidden py-5">
+    <div class="relative bg-white text-center py-5">
       <Heading
         :content="item.title"
         heading-type="h3"
         secondary
         class="mx-10"
       />
-      <ChevronDownIcon
+      <!-- <ChevronDownIcon
         class="absolute top-1/2 -translate-y-1/2 right-5 w-8 transition text-gray-300"
         :class="isClicked ? 'rotate-180' : ''"
-      />
+      /> -->
     </div>
 
+    <!-- :class="isClicked ? 'max-h-full pb-10' : 'h-0'" -->
     <div
-      class="transition-all overflow-hidden px-10 text-center"
-      :class="isClicked ? 'max-h-full pb-10' : 'h-0'"
+      class="max-h-full transition-all overflow-hidden px-10 text-center"
       v-html="item.content"
     ></div>
   </div>
@@ -31,11 +31,11 @@ const props = defineProps({
 });
 
 //variables
-const isClicked = ref(true);
+// const isClicked = ref(true);
 // funciones
-const handle = () => {
-  isClicked.value ? (isClicked.value = false) : (isClicked.value = true);
-};
+// const handle = () => {
+//   isClicked.value ? (isClicked.value = false) : (isClicked.value = true);
+// };
 </script>
 
 <style scoped>

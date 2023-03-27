@@ -109,7 +109,7 @@
         headingType="h2"
         class="text-center my-10"
       />
-      <div class="grid grid-cols-1 gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
         <AcordionTiposCredito
           v-for="item in infoTiposCreditos"
           :key="item"
