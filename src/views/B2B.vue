@@ -12,7 +12,7 @@
       <Heading
         content="Dale la mejor experiencia de compra a tus
         colaboradores"
-        headingType="h1"
+        headingType="h2"
         secondary
         class="md:w-5/6"
       />
@@ -89,7 +89,7 @@
           v-for="item in autocredGarantiza"
           :key="item"
         >
-          <img :src="item.img" :alt="item.name" class="h-auto w-44 my-5" />
+          <img :src="item.img" :alt="item.texto" class="h-auto w-44 my-5" />
           <Paragraph primary class="font-bold text-xl text-center">{{
             item.texto
           }}</Paragraph>

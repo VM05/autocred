@@ -1251,6 +1251,7 @@ export const autocredGarantiza = [
     {
         img: '/img/imagenes-b2b/garantiza-1.webp',
         texto: 'Solución integral de servicios',
+        
     },
 
     {

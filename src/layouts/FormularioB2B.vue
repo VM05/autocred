@@ -1,11 +1,11 @@
 <template>
   <div
-    class="flex justify-end formulario-b2b relative"
+    class="flex justify-end formulario-empresas relative"
     v-if="!isSuccess"
     id="form-b2b-container"
   >
     <img
-      src="../assets/img/formulario-b2b.png"
+      src="../assets/img/formulario-b2b.webp"
       alt="cotizaciones"
       class="imagen z-0 top-0"
     />
@@ -243,7 +243,7 @@ watch(formBusiness, () => {
 </script>
 
 <style scoped>
-.formulario-b2b::before {
+.formulario-empresas::before {
   content: "¡Financiamos la compra de autos usados entre particulares!";
   color: white;
   position: absolute;
@@ -304,7 +304,7 @@ watch(formBusiness, () => {
     min-height: unset;
   }
 
-  .formulario-b2b::before {
+  .formulario-empresas::before {
     content: "¡Financiamos la compra de autos usados entre particulares!";
     color: white;
     position: absolute;
