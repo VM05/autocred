@@ -7,6 +7,7 @@
       <div class="relative">
         <ListboxButton
           class="px-4 py-2 border border-solid focus-visible:outline-primary-700 rounded-lg w-full text-left"
+        
         >
           <span class="">{{ selected.name }}</span>
           <span
@@ -58,7 +59,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUpdated, watch } from "vue";
+import { ref, onUpdated, watch,onBeforeMount } from "vue";
 import axios from "axios";
 import {
   Listbox,
@@ -70,7 +71,8 @@ import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
 import { useSimuladorStore } from "../stores/simulador";
 import { MARCAS_URL } from "../assets/helpers/API";
 const useSimulador = useSimuladorStore();
-defineProps({
+const props = defineProps({
+  valor: Object,
   label: String,
   id: String,
 });
@@ -91,14 +93,15 @@ watch(selected, () => {
   changeMarca(selected.value);
   emit("update:marca", selected.value);
 });
-onMounted(async () => {
+
+onBeforeMount(async() => {
   try {
     const marcas = await axios.get(MARCAS_URL);
     data.value = await marcas.data;
   } catch (error) {
     console.log("error");
   }
-});
+}),
 
 onUpdated(async () => {
   try {
@@ -111,4 +114,10 @@ onUpdated(async () => {
     console.log("error");
   }
 });
+
+watch(props,()=>{
+  selected.value = props.valor
+  console.log(selected.value);
+})
+
 </script>

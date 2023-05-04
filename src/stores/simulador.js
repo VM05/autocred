@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 
 export const useSimuladorStore = defineStore("simulador", {
     state: () => ({
-        marca: '',
+        marca: 'Agrale',
         modelos: [],
         modelo: { name: "Modelo" },
         anio: '',

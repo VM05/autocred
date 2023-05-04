@@ -319,7 +319,7 @@
                           :items="plans"
                           :titulo="'¿Ya sabes que vehículo deseas comprar?'"
                         />
-                        <di:v class="flex flex-col md:flex-row gap-3">
+                        <div class="flex flex-col md:flex-row gap-3">
                           <SelectMarcas1
                             label="Marca"
                             id="Marca"
@@ -329,7 +329,9 @@
                                 disabledModel = false;
                                 useSimulador.resetModelo();
                               }
+                            
                             "
+                            :valor="pruebaMarca"
                           />
                           <SelectModelo1
                             label="Modelo"
@@ -342,7 +344,7 @@
                             "
                             :disabled="disabledModel"
                           />
-                        </di:v>
+                        </div>
                         <div class="flex flex-col md:flex-row gap-3">
                           <Input
                             label="Version"
@@ -732,6 +734,7 @@ const express = ref(false);
 const claseCredito = ref(false);
 const valorFinanciar = ref("");
 const isOpen = ref(false);
+const pruebaMarca = ref()
 
 const componentKey = ref(0);
 
@@ -1276,7 +1279,9 @@ onMounted(() => {
 });
 
 const hands = (e) => {
-  console.log(e);
+  if(e == "no"){
+    pruebaMarca.value = {id: 1, name: 'ACURA'}
+  }
 };
 </script>
 
