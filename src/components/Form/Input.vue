@@ -27,11 +27,15 @@
         @focusin="focus = true"
         @focusout="focus = false"
         :id="id"
+<<<<<<< HEAD
         :value="value"
         @keyup="handler"
         @blur="handler"
         autocomplete="off"
         :name="nombre"
+=======
+        @blur="handler"
+>>>>>>> 2354c25 (Add Login with API)
       />
     </div>
     <input
@@ -48,6 +52,7 @@
       :value="value"
       :disabled="disabled"
       @blur="handler"
+<<<<<<< HEAD
       @keyup="handler"
       required
     />
@@ -83,6 +88,8 @@
       :value="valorRenta"
       :disabled="disabled"
       @blur="handlerMoney"
+=======
+>>>>>>> 2354c25 (Add Login with API)
       required
     />
     <input
@@ -98,9 +105,12 @@
       :value="value"
       :disabled="disabled"
       @blur="handler"
+<<<<<<< HEAD
       @keyup="handler"
       required
       :name="nombre"
+=======
+>>>>>>> 2354c25 (Add Login with API)
     />
   </div>
 </template>
@@ -125,6 +135,7 @@ const props = defineProps({
   nombre: String,
   informativo: Boolean,
 });
+<<<<<<< HEAD
 
 const valorRenta = ref(props.valor);
 const emit = defineEmits(["update:text", "textvalue"]);
@@ -145,6 +156,12 @@ const handlerMoney = (e) => {
   }
 };
 
+=======
+const emit = defineEmits(["update:text"]);
+const handler = (e) => {
+  emit("update:text", e.target.value);
+};
+>>>>>>> 2354c25 (Add Login with API)
 const hover = ref(false);
 let focus = ref(false);
 

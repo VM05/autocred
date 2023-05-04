@@ -12,8 +12,7 @@
         outlineSecondary,
       '': user,
       'cursor-pointer': !disabled,
-      'bg-black-50 hover:bg-black-50 hover:cursor-not-allowed border-black-50':
-        disabled,
+      'bg-black-50 hover:bg-black-50 hover:cursor-not-allowed border-black-50': disabled,
     }"
   >
     <button
@@ -32,19 +31,19 @@
 </template>
 
 <script setup>
-import { UserIcon } from "@heroicons/vue/outline";
-defineProps({
-  text: String,
-  user: Boolean,
-  primary: Boolean,
-  secondary: Boolean,
-  whatsapp: Boolean,
-  danger: Boolean,
-  outlinePrimary: Boolean,
-  outlineSecondary: Boolean,
-  type: String,
-  disabled: Boolean,
-});
+  import { UserIcon } from '@heroicons/vue/outline';
+  defineProps({
+    text: String,
+    user: Boolean,
+    primary: Boolean,
+    secondary: Boolean,
+    whatsapp: Boolean,
+    danger: Boolean,
+    outlinePrimary: Boolean,
+    outlineSecondary: Boolean,
+    type: String,
+    disabled: Boolean,
+  });
 </script>
 
 <style scoped></style>
