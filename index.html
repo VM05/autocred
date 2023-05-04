@@ -1,40 +1,32 @@
 <!DOCTYPE html>
 <html lang="es-CL">
-<head>
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-  <meta charset="UTF-8" />
-  <link rel="icon" href="./public/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-<<<<<<< HEAD
-  <meta name="facebook-domain-verification" content="0u4a5mjmgjagguf8ekgrk1opsvrrag" />
-  <title>Autocred Chile tu mejor copiloto</title>
-=======
-  <title>Autocred</title>
->>>>>>> 2354c25 (Add Login with API)
-</head>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./public/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <meta name="facebook-domain-verification" content="0u4a5mjmgjagguf8ekgrk1opsvrrag" />
+    <title>Autocred Chile tu mejor copiloto</title>
+  </head>
 
-<body>
-  <div id="app"></div>
+  <body>
+    <div id="app"></div>
 
-  <script type="module"  src="/src/main.js"></script>
-  <script type="module" src="/src/mouseflow.js">
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/mouseflow.js"></script>
+  </body>
+  <script>
+    setTimeout(() => {
+      const botonCerrar = document.querySelector('.boton-minimizar');
+      const contenedorWs = document.querySelector('.contenedor-boton');
+      const nube = document.querySelector('.nube');
+
+      botonCerrar.addEventListener('click', () => {
+        botonCerrar.classList.toggle('cambiar');
+        contenedorWs.classList.toggle('achicar');
+        nube.classList.toggle('desaparecer');
+      });
+    }, 1000);
   </script>
-
-</body>
-<script>
-  setTimeout(() => {
-    const botonCerrar = document.querySelector('.boton-minimizar')
-    const contenedorWs = document.querySelector('.contenedor-boton')
-    const nube = document.querySelector('.nube')
-
-    botonCerrar.addEventListener('click',()=>{
-      botonCerrar.classList.toggle('cambiar')
-      contenedorWs.classList.toggle('achicar')
-      nube.classList.toggle('desaparecer')
-    })
- 
-  },1000);
-
-</script>
 </html>

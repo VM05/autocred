@@ -6,9 +6,7 @@
     <span v-show="hover" class="block absolute top-0 right-0 text-black-100">{{
       hoverText
     }}</span> -->
-    <label :for="id" class="text-primary-900 font-bold text-base">{{
-      label
-    }}</label>
+    <label :for="id" class="text-primary-900 font-bold text-base">{{ label }}</label>
     <div v-if="isPhone" class="flex w-full items-center">
       <label
         class="phone border border-solid px-2 py-2 rounded-lg text-primary-900 bg-white"
@@ -27,15 +25,11 @@
         @focusin="focus = true"
         @focusout="focus = false"
         :id="id"
-<<<<<<< HEAD
         :value="value"
         @keyup="handler"
         @blur="handler"
         autocomplete="off"
         :name="nombre"
-=======
-        @blur="handler"
->>>>>>> 2354c25 (Add Login with API)
       />
     </div>
     <input
@@ -52,7 +46,6 @@
       :value="value"
       :disabled="disabled"
       @blur="handler"
-<<<<<<< HEAD
       @keyup="handler"
       required
     />
@@ -88,8 +81,6 @@
       :value="valorRenta"
       :disabled="disabled"
       @blur="handlerMoney"
-=======
->>>>>>> 2354c25 (Add Login with API)
       required
     />
     <input
@@ -105,82 +96,72 @@
       :value="value"
       :disabled="disabled"
       @blur="handler"
-<<<<<<< HEAD
       @keyup="handler"
       required
       :name="nombre"
-=======
->>>>>>> 2354c25 (Add Login with API)
     />
   </div>
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
-import { formatNumbers } from "../../assets/helpers/validate";
-const props = defineProps({
-  placeholder: String,
-  hoverText: String,
-  id: String,
-  label: String,
-  isPhone: Boolean,
-  value: String,
-  disabled: Boolean,
-  password: Boolean,
-  date: Boolean,
-  money: Boolean,
-  check: Boolean,
-  valor: Number,
-  fecha: String,
-  nombre: String,
-  informativo: Boolean,
-});
-<<<<<<< HEAD
+  import { ref, watch } from 'vue';
+  import { formatNumbers } from '../../assets/helpers/validate';
+  const props = defineProps({
+    placeholder: String,
+    hoverText: String,
+    id: String,
+    label: String,
+    isPhone: Boolean,
+    value: String,
+    disabled: Boolean,
+    password: Boolean,
+    date: Boolean,
+    money: Boolean,
+    check: Boolean,
+    valor: Number,
+    fecha: String,
+    nombre: String,
+    informativo: Boolean,
+  });
 
-const valorRenta = ref(props.valor);
-const emit = defineEmits(["update:text", "textvalue"]);
-const handler = (e) => {
-  emit("update:text", e.target.value);
-  emit("textvalue", e.target.value);
-};
+  const valorRenta = ref(props.valor);
+  const emit = defineEmits(['update:text', 'textvalue']);
+  const handler = (e) => {
+    emit('update:text', e.target.value);
+    emit('textvalue', e.target.value);
+  };
 
-const handlerMoney = (e) => {
-  emit("textvalue", e.target.value);
-  if (e.target.value.includes("$")) {
-    let desFormat = e.target.value.replaceAll("$", "").replaceAll(".", "");
-    emit("update:text", desFormat);
-    e.target.value = formatNumbers(desFormat);
-  } else {
-    emit("update:text", e.target.value);
-    e.target.value = formatNumbers(e.target.value);
-  }
-};
+  const handlerMoney = (e) => {
+    emit('textvalue', e.target.value);
+    if (e.target.value.includes('$')) {
+      let desFormat = e.target.value.replaceAll('$', '').replaceAll('.', '');
+      emit('update:text', desFormat);
+      e.target.value = formatNumbers(desFormat);
+    } else {
+      emit('update:text', e.target.value);
+      e.target.value = formatNumbers(e.target.value);
+    }
+  };
 
-=======
-const emit = defineEmits(["update:text"]);
-const handler = (e) => {
-  emit("update:text", e.target.value);
-};
->>>>>>> 2354c25 (Add Login with API)
-const hover = ref(false);
-let focus = ref(false);
+  const hover = ref(false);
+  let focus = ref(false);
 
-watch(props, () => {
-  if (props.valor != "") {
-    valorRenta.value = formatNumbers(props.valor);
-  }
-});
+  watch(props, () => {
+    if (props.valor != '') {
+      valorRenta.value = formatNumbers(props.valor);
+    }
+  });
 </script>
 
 <style scoped>
-.phone {
-  border-bottom-right-radius: 0px;
-  border-top-right-radius: 0px;
-  border-right: 1;
-}
-.phone-input {
-  border-bottom-left-radius: 0px;
-  border-top-left-radius: 0px;
-  border-left: 0;
-}
+  .phone {
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    border-right: 1;
+  }
+  .phone-input {
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-left: 0;
+  }
 </style>
